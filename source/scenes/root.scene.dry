@@ -429,7 +429,7 @@ Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
 Q.radbruch_advisor = 0; // Gustav Radbruch
 Q.stampfer_advisor = 0; // Friedrich Stampfer
 !}
-set-bg: img/background.jpg
+set-bg: img/background.png
 new-page: true
 
 > *"irresponsible groups of armed men, no longer bound by any State disciplineor controlled by any responsible central authority, who are striving to establish local Praetorian powers and possibly a national military dictatorship; coalitions of pseudo-political forces, who have no vital and long-term interests to defend or aims to propagate, but only their own individual and contingent interests and goals … This is the hour of the charlatans, of the confidence tricksters, of the grand promises that will never be fulfilled."*
