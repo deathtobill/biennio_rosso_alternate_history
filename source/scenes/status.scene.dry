@@ -62,7 +62,7 @@ Inflation: [+ inflation_2 +]%
 = Inter-party Relations
 
 
-{!<span class="tooltip-text" title="Italian Reformist Socialist Party">!}[? if not psri_reconcilled: PSRI][? if prsi_in_government != 0 and pci_formed : [+ psri_name +]?]{!</span>!}: [+ psri_relation : relationships +]
+{!<span class="tooltip-text" title="Italian Reformist Socialist Party">!}[? if not psri_reconcilled: PSRI ?][? if prsi_in_government != 0 and pci_formed : [+ psri_name +]?]{!</span>!}: [+ psri_relation : relationships +]
 
 {!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_relation : relationships +]
 
