@@ -33,9 +33,9 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 King: [+ king +]
 
-Chancellor: [+ prime_minister +] ([+ prime_minister_party +])
+Prime Minister: [+ prime_minister +] ([+ prime_minister_party +])
 
-Reichstag composition:
+Chamber of Deputies composition:
 
 # 1928: 30, 1930: 25, 1932: 22
 {!<span class="tooltip-text" title="Italian Socialist Party">PSI</span>!}: [+ psi_r +]%

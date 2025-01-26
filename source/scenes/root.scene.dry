@@ -235,9 +235,9 @@ Q.economic_records = [];
 
 
 // State of the government
-Q.king = "Emanuele III";
+Q.king = "Vittorio Emanuele III";
 // starting prime minister: Vittorio Emanuele Orlando
-Q.prime_minister = "orlando";
+Q.prime_minister = "Vittorio Emanuele Orlando";
 Q.prime_minister_party = 'UL';
 Q.psi_in_government = 0;
 Q.ppi_in_government = 1;
@@ -357,9 +357,9 @@ Q.n_elections = 0;
 Q.no_majority_elections = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
-Q.next_election_year = 1928;
-Q.next_election_month = 5;
-Q.next_election_time = 5;
+Q.next_election_year = 1919;
+Q.next_election_month = 12;
+Q.next_election_time = 12;
 // government affairs timers
 Q.agricultural_policy_timer = 0;
 Q.domestic_enemies_timer = 0;
@@ -429,16 +429,16 @@ Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
 Q.radbruch_advisor = 0; // Gustav Radbruch
 Q.stampfer_advisor = 0; // Friedrich Stampfer
 !}
-set-bg: img/map_2.jpg
+set-bg: img/background.jpg
 new-page: true
 
-> *"Such a general development cannot be attributed to the false tactics of any single party or to the mistakes of individual leaders. On the contrary, the conduct of individual leaders is determined largely by the sentiments of the people as a whole. It would be erroneous, however, to regard the sentiments of the moment as reflecting the natural make-up and character of the people. They are merely the consequence of the special circumstances which have brought about this profound degradation of the entire nation."*
+> *"irresponsible groups of armed men, no longer bound by any State disciplineor controlled by any responsible central authority, who are striving to establish local Praetorian powers and possibly a national military dictatorship; coalitions of pseudo-political forces, who have no vital and long-term interests to defend or aims to propagate, but only their own individual and contingent interests and goals … This is the hour of the charlatans, of the confidence tricksters, of the grand promises that will never be fulfilled."*
 
- - Karl Kautsky, *Hitlerism and Social Democracy*, 1934
+ - Antonio Gramsci, *The Return to Freedom*, 1919
 
 This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
 
-For more information on the politics and government of the German Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
+For more information on the politics and government of the Italian Kingdom, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
 - @1928_easy: Begin (easy difficulty)
 - @1928_main: Begin (normal difficulty)
