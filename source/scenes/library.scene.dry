@@ -272,7 +272,6 @@ Dissent: [+ reformist_dissent : dissent +]
 @figures
 title: Figures and Charts
 go-to: menu
-on-display: {!
 data = [
     {
         "id": "psri",
