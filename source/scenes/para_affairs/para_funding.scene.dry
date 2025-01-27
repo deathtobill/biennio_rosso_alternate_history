@@ -1,0 +1,58 @@
+title: Paramilitary Funding
+new-page: true
+view-if: para_funding_timer <= 0 and (not historical_mode)
+on-arrival: para_funding_timer = 6; month_actions += 1
+frequency: 300
+is-card: true
+card-image: img/poster_2.jpg
+tags: para_affairs
+
+= Paramilitary Funding
+
+For better or for worse, both the party and the paramilitaries cannot exist without money. The question is: How should we divide up our funds?
+
+- @big_fund: Siphon large amounts into the Red Gaurds.
+- @small_fund: Siphon a small amount into the Red Guards.
+- @big_decrease: Siphon a large amount back into our coffers.
+- @small_decrease: Siphon a small amount back into our coffers.
+- @big_decrease: Siphon a large amount back into our coffers.
+- @maintain: Maintain current fundings.
+
+@big_fund
+subtitle: -2 Party Resources, + 2 Paramilitary Resources
+choose-if: resources > 1
+unavailable-subtitle: [? if resources < 2 : We do not have enough to fund the Red Guards. ?]
+on-arrival: resources -= 2; para_resources += 2; communist_dissent -= 10; reformist_dissent += 10;
+
+The Communists are very pleased, but the Reformists are in an uproar at our willingness to turn to violence.
+
+@small_fund
+choose-if: resources > 0
+unavailable-subtitle: [? if resources < 1 : We do not have enough to fund the Red Guards. ?]
+subtitle: -1 Party Resources, + 1 Paramilitary Resources
+on-arrival: resources -= 1; para_resources += 1; communist_dissent -= 5; reformist_dissent += 5;
+
+The Communists are pleased, but the Reformists grumble at our willingness to turn to violence.
+
+@big_decrease
+choose-if: para_resources > 2
+unavailable-subtitle: [? if para_resources < 2 : We do not have enough to support the party. ?]
+subtitle: +2 Party Resources, -2 Paramilitary Resources
+on-arrival: resources += 2; para_resources -= 2; communist_dissent += 10; reformist_dissent -= 10;
+
+The Communists are in an uproar at our defunding , while the Reformists fiercely defend our committment to anti-violence.
+
+@small_decrease
+choose-if: para_resources > 1
+unavailable-subtitle: [? if para_resources < 1 : We do not have enough to support the party. ?]
+subtitle: +1 Party Resources, -1 Paramilitary Resources
+on-arrival: resources += 1; para_resources -= 1; communist_dissent += 5; reformist_dissent -= 5;
+
+The Communists are grumble at our defunding , while the Reformists applaud our committment to anti-violence.
+
+@maintain
+
+We maintain our current division of funds.
+
+- @return: Continue...
+

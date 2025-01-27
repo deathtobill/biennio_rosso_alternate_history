@@ -32,7 +32,8 @@ go-to: inter_party_relationships
 
 @para_funding
 title: Paramilitary Funding
-subtitle: *-1 Resources* *+1 Paramilitary Resources* From our party coffers, we can continue funding the Red Guards to expand their reach.
+subtitle: From our party coffers, we can continue funding the Red Guards to expand their reach.
 choose-if: advisor_action_timer = 0 and resources > 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if resources = 0 : We cannot afford to fund the Red Guards now. ?]
-on-arrival: advisor_action_timer = 6; resources -=1; para_resources += 1;
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; para_funding_timer -= 6;
+go-to: para_funding
