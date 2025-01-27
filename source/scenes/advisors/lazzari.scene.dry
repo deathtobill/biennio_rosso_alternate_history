@@ -18,7 +18,7 @@ Lazzari is a long-time member of the PSI, founding the party back in 1892. A mem
 title: Party Disunity
 subtitle: The current state of the party is disunited; factions are quarreling as every side pushes its own ideas.
 choose-if: advisor_action_timer == 0 and communist_dissent > 0 and reformist_dissent > 0 and tradeunionist_dissent > 0 and maximalist_dissent > 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if (communist_dissent = 0 and reformist_dissent = 0 and maximalist_dissent = 0 and tradeunionist_dissent = 0) : The party is the most united it has been in decades.]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if (communist_dissent = 0 and reformist_dissent = 0 and maximalist_dissent = 0 and tradeunionist_dissent = 0) : The party is the most united it has been in decades. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: party_disunity
 

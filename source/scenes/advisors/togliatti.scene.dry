@@ -27,7 +27,7 @@ We have improved our relations with the PPI, DS, PSRI and reduced tensions with 
 title: Foreign Policy
 subtitle: As we control the Foreign Ministry, we are able to direct policy, potentially benefitting us.
 choose-if: advisor_action_timer = 0 and psi_in_government and foreign_minister_party = "PSI"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not currently in government. ?][? if not foreign_minister_party = "PSI" " The PSI is not in control of the Foreign Ministry. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not currently in government. ?][? if not foreign_minister_party = "PSI" The PSI is not in control of the Foreign Ministry. ?]
 on-arrival: advisor_action_timer = 6; foreign_policy_timer -= 10; last_advisor_action = 1
 go-to: foreign_policy_timer
 

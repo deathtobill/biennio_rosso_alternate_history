@@ -12,7 +12,7 @@ if (Q.inflation) {
 [+ month : month +] [+ year +]
 
 Party Resources available: [+ resources +]
-Paramilitary Resources available: [+ para_resources]
+Paramilitary Resources available: [+ para_resources +]
 
 PSI position: [? if psi_in_government : in government - ?][? if psi_in_government == 0 : opposition ?]
 [? if in_centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if in_minority_government and psi_in_government: Minority government ?]
