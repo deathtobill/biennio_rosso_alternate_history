@@ -17,7 +17,7 @@ Serrati is a leader of the Maximalists, one of the factions of the PSI.
 @revolution_or_reformist
 title: Revolution or Reformist?
 subtitle: Debate our path forward. For Serrati, it is in favour of revolution.
-choose-if: advisor_action_timer <= 0
+choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
 on-arrival: advisor_action_timer = 6; revolutionary_fervor += 10; reformist_strength += 5; king_relation -= 5;
 
@@ -26,7 +26,7 @@ We have convinced the party further of our goals towards a revolution.
 @inter_party_relationships
 title: Inter-Party Relationships
 subtitle: Improve our relations with the different parties of Italy.
-choose-if: advisor_action_timer <= 0
+choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; inter_party_relationships_timer -= 6; last_advisor_action = 1
 go-to: inter_party_relationships
@@ -34,7 +34,7 @@ go-to: inter_party_relationships
 @comintern_relations
 title: Comintern Relations
 subtitle: Improve our standing amongst the Communist Internationale.
-choose-if: advisor_action_timer <= 0 and soviet_relation => 10
+choose-if: advisor_action_timer = 0 and soviet_relation => 10
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if soviet_relation > 10 : Our relations with the Soviet Union have reached its peak. ?]
 on-arrival: advisor_action_timer = 6; international_relations_timer -= 6; last_advisor_action = 1
 go-to: international_relations
