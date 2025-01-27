@@ -11,8 +11,9 @@ if (Q.inflation) {
 
 [+ month : month +] [+ year +]
 
-Party Resources available: [+ resources +]
-Paramilitary Resources available: [+ para_resources +]
+Resources available:
+Party: [+ resources +]
+Paramilitary: [+ para_resources +]
 
 PSI position: [? if psi_in_government : in government - ?][? if psi_in_government == 0 : opposition ?]
 [? if in_centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if in_minority_government and psi_in_government: Minority government ?]
@@ -75,7 +76,7 @@ Inflation: [+ inflation_2 +]%
 
 @paramilitaries
 on-arrival: {!
-if (Q.rb_strength) {
+if (Q.rg_strength) {
     Q.rg_strength_2 = Q.rg_strength.toFixed(1);
 }
 if (Q.fdc_strength) {

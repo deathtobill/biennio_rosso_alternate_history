@@ -57,6 +57,7 @@ is-deck: true
 @paramilitary
 title: Red Guard Affairs
 card-image: img/redguarddeck.jpg
+is-deck: true
 
 - #para_affairs
 
