@@ -5,7 +5,7 @@ go-to: menu
 
 = The Library
 
-Herein contains relevant information about the government and politics of the German republic.
+Herein contains relevant information about the government and politics of the Italian Kingdom.
 
 @menu
 
@@ -174,7 +174,8 @@ Current relations: [+ ldr_relation : relationships +]
 
 Current relations: [+ ds_relation : relationships +]
 
-**PPI** - *Partito Popolare Italiano* (Italian People's Part) - A newly formed Christian Democratic party under the merger of UECI, FUCI, CC and the PPT. The party has its support rooted in the Clergy, Rural Workers and Middle Class.
+**PPI** - *Partito Popolare Italiano* (Italian People's Party) - A newly formed Christian Democratic party under the merger of UECI, FUCI, CC and the PPT. The party has its support rooted in the Clergy, Rural Workers and Middle Class.
+
 Current relations: [+ ppi_relation : relationships +]
 
 **UL** - *Unione Liberale* (Liberal Union) - A centre-right party that remained as the remaining members that weren't merged into the LDR. 
@@ -232,6 +233,7 @@ Loyalty: [+ interior_police_loyalty : loyalty +]
 
 
 @factions
+go-to: menu
 
 **Internal factions of the SPD**
 
@@ -323,6 +325,7 @@ data = data.concat([
         "seats": Q.bn_r*5,
     },
 ]);
+
 if (d3 && window) {
     // get screen width
     var width = 500;
