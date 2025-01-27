@@ -20,12 +20,10 @@ if (Q.economic_growth) {
 
 Resources available: [+ resources +]
 
-PSI position: [? if psi_in_government : in government - ?][? if spd_in_government == 0 : opposition ?]
-[? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: SPD majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
+PSI position: [? if psi_in_government : in government - ?][? if psi_in_government == 0 : opposition ?]
+[? if in_centre_left_coalition and spd_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if in_minority_government and spd_in_government: Minority government ?]
 
-[? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
-
-[? if spd_in_government and (in_left_front or in_popular_front): KPD coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
+[? if spd_in_government and not in_spd_majority: Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
 Internal dissent: [+ dissent_percent : dissent +]
 
@@ -37,7 +35,6 @@ Prime Minister: [+ prime_minister +] ([+ prime_minister_party +])
 
 Chamber of Deputies composition:
 
-# 1928: 30, 1930: 25, 1932: 22
 {!<span class="tooltip-text" title="Italian Socialist Party">PSI</span>!}: [+ psi_r +]%
 {!<span class="tooltip-text" title="Italian People's Party">PPI</span>!}: [+ ppi_r +]%
 {!<span class="tooltip-text" title="Liberals, Democrats and Radicals">LDR</span>!}: [+ ldr_r +]%
@@ -55,12 +52,9 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 Inflation: [+ inflation_2 +]%
 
-# = Public Opinion
-
 @politics
 
 = Inter-party Relations
-
 
 {!<span class="tooltip-text" title="Italian Reformist Socialist Party">!}[? if not psri_reconcilled: PSRI ?][? if prsi_in_government != 0 and pci_formed : [+ psri_name +]?]{!</span>!}: [+ psri_relation : relationships +]
 
@@ -144,16 +138,16 @@ Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Workers: SPD: [+ workers_spd_display +]%, Z: [+ workers_z_display +]%, KPD: [+ workers_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ workers_ddp_display +]%, DVP: [+ workers_dvp_display +]%; DNVP: [+ workers_dnvp_display +]%, NSDAP: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Urban Workers: PSI: [+ workers_psi_display +]%, PPI: [+ workers_ppi_display +]%, LDR: [+ workers_ldr_display +]%, DS: [+ workers_ds_display +]%, UL: [+ workers_ul_display +]%; BN: [+ workers_bn_display +]%, PSRI: [+ workers_psi_display +]%, Others: [+ workers_other_display +]%
 
-New Middle Class: SPD: [+ new_middle_spd_display +]%, Z: [+ new_middle_z_display +]%, KPD: [+ new_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ new_middle_ddp_display +]%, DVP: [+ new_middle_dvp_display +]%; DNVP: [+ new_middle_dnvp_display +]%, NSDAP: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+Small Business Owners: PSI: [+ middle_class_spd_display +]%, PPI: [+ middle_class_ppi_display +]%, LDR: [+ middle_class_ldr_display +]%, DS: [+ middle_class_ddp_display +]%, UL: [+ middle_class_ul_display +]%; BN: [+ middle_class_bn_display +]%, PSRI: [+ middle_class_psri_display +]%, Others: [+ middle_class_other_display +]%  
 
-Old Middle Class: SPD: [+ old_middle_spd_display +]%, Z: [+ old_middle_z_display +]%, KPD: [+ old_middle_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ old_middle_ddp_display +]%, DVP: [+ old_middle_dvp_display +]%; DNVP: [+ old_middle_dnvp_display +]%, NSDAP: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Rural Workers & Farmers: SPD: PSI: [+ rural_spd_display +]%, PPI: [+ rural_ppi_display +]%, LDR: [+ rural_ldr_display +]%, DS: [+ rural_ddp_display +]%, UL: [+ rural_ul_display +]%; BN: [+ rural_bn_display +]%, PSRI: [+ rural_psri_display +]%, Others: [+ rural_other_display +]%
 
-Rural: SPD: [+ rural_spd_display +]%, Z: [+ rural_z_display +]%, KPD: [+ rural_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ rural_ddp_display +]%, DVP: [+ rural_dvp_display +]%; DNVP: [+ rural_dnvp_display +]%, NSDAP: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Industralists & Landowners: PSI: [+ industralists_middle_spd_display +]%, PPI: [+ industralists_middle_ppi_display +]%, LDR: [+ industralists_middle_ldr_display +]%, DS: [+ industralists_middle_ddp_display +]%, UL: [+ industralists_middle_ul_display +]%; BN: [+ industralists_middle_bn_display +]%, PSRI: [+ industralists_middle_psri_display +]%, Others: [+ industralists_middle_other_display +]% 
 
-Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, KPD: [+ unemployed_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, DVP: [+ unemployed_dvp_display +]%; DNVP: [+ unemployed_dnvp_display +]%, NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Veterans & Unemployed: PSI: [+ veterans_spd_display +]%, PPI: [+ veterans_ppi_display +]%, LDR: [+ veterans_ldr_display +]%, DS: [+ veterans_ddp_display +]%, UL: [+ veterans_ul_display +]%; BN: [+ veterans_bn_display +]%, PSRI: [+ veterans_psri_display +]%, Others: [+ veterans_other_display +]% 
 
-Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Catholics: PSI: [+ catholics_spd_display +]%, PPI: [+ catholics_ppi_display +]%, LDR: [+ catholics_ldr_display +]%, DS: [+ catholics_ddp_display +]%, UL: [+ catholics_ul_display +]%; BN: [+ catholics_bn_display +]%, PSRI: [+ catholics_psri_display +]%, Others: [+ catholics_other_display +]% 
 
 Support for the Monarchy: [+ pro_monarchy +]%

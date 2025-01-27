@@ -251,7 +251,7 @@ Q.bn_in_government = 0;
 Q.in_catholic_centre_coalition = 0;
 // Centre-Left Coalition = PSI + PPI + DS + PSRI
 Q.in_centre_left_coalition = 0;
-Q.in_spd_majority = 0;
+Q.in_psi_majority = 0;
 Q.catholic_centre_failed = 0;
 // if the SPD is ruling as part of a minority government
 Q.in_minority_government = 0;
@@ -358,8 +358,8 @@ Q.no_majority_elections = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
 Q.next_election_year = 1919;
-Q.next_election_month = 12;
-Q.next_election_time = 12;
+Q.next_election_month = 11;
+Q.next_election_time = 11;
 // government affairs timers
 Q.agricultural_policy_timer = 0;
 Q.domestic_enemies_timer = 0;
@@ -432,7 +432,7 @@ Q.stampfer_advisor = 0; // Friedrich Stampfer
 set-bg: img/background.png
 new-page: true
 
-> *"irresponsible groups of armed men, no longer bound by any State disciplineor controlled by any responsible central authority, who are striving to establish local Praetorian powers and possibly a national military dictatorship; coalitions of pseudo-political forces, who have no vital and long-term interests to defend or aims to propagate, but only their own individual and contingent interests and goals … This is the hour of the charlatans, of the confidence tricksters, of the grand promises that will never be fulfilled."*
+> *"Irresponsible groups of armed men, no longer bound by any State discipline or controlled by any responsible central authority, who are striving to establish local Praetorian powers and possibly a national military dictatorship; coalitions of pseudo-political forces, who have no vital and long-term interests to defend or aims to propagate, but only their own individual and contingent interests and goals … This is the hour of the charlatans, of the confidence tricksters, of the grand promises that will never be fulfilled."*
 
  - Antonio Gramsci, *The Return to Freedom*, 1919
 

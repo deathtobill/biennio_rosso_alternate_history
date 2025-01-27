@@ -9,8 +9,8 @@ Herein contains relevant information about the government and politics of the Ge
 
 @menu
 
-- @government: Germany's system of government
-- @weimar_timeline: Timeline of the Weimar Republic before 1928
+- @government: Italy's system of government
+- @weimar_timeline: Timeline of the Kingdom of Italy before 1919
 - @curr_gov: Current government details
 - @demographics: Demographics
 - @parties: Parties
@@ -23,78 +23,57 @@ Herein contains relevant information about the government and politics of the Ge
 @government
 go-to: menu
 
-The German Republic, called by some of our detractors as the "Weimar Republic", is a parliamentary republic with a somewhat weak president and a strong parliament, called the Reichstag. The Reichstag is responsible for governing, while the President has a largely ceremonial role but also has some important governing responsibilities.
+The Kingdom of Italy, also known as Italy, is a Constitutional Monarchy under a King and a Bicameral Parliament, composing the appointed Senate and the elective Chamber of Deputies. The Chamber is responsible for governing, while the King has a largely ceremonial role as well as a few important responsibilities. 
 
-The Reichstag is elected based on a proportional representation system, giving parties seats roughly proportional to their vote share in each electoral district. The Reichstag then elects the Chancellor and the cabinet by a majority vote, who are responsible for government. A majority vote-of-no-confidence can remove the current government.
+The Chamber of Deputies is elected based on a proportional representation voting system, added alongside newly introduced universal male suffrage. The King then appoints the Prime Minister and Cabinet, usually under the full request of the Chamber of Deputies. A majority vote-of-no-confidence can remove the current government.
 
-The President is elected by a national direct vote, in two rounds. The second round is used if the first round does not result in a majority for one candidate; the candidate who receives a plurality in the second round becomes president (there is no obligation for weaker candidates to drop out). The role of the president is mostly to represent Germany, but he also has some crucial governing powers. The president and chancellor can together use emergency decrees to govern, bypassing the Reichstag. The president can also appoint or remove a chancellor when a parliamentary majority is unable to be established, and can thus influence the formation of a government.
-
-Germany is divided into a number of states, each of which have their own governments with some responsibilities. By far the largest and most important state is Prussia.
+Italy is divided into a number of states, each of which have their own governments with some responsibilities.
 
 @weimar_timeline
 go-to: menu
 
-= Timeline of the SPD and the Republic (until 1928)
+= Timeline of the PSI and the Kingdom (until 1919)
 
-**1875**: The SPD is formed as a merger of the General German Workers' Association, founded by Ferdinand Lassalle, and the Social Democratic Workers' Party of Germany, led by Wilhelm Liebknecht and August Bebel. Eventually, the SPD grows to become the largest party in the German Empire.
+**1861**: The Kingdom of Italy is officially unified and established as a nation-state under a Constitutional Monarch.
 
-**1914**: The Great War begins. The SPD votes in favor of war credits, with substantial internal dissent. This begins a policy of *Burgfriedenspolitik*, a general peace between all political parties and trade unions.
+**1892**: The PSI is officially founded in Genoa, caused by the rise of labour, socialism and dissatisfaction with the political system. It is divided between the Reformists & Revolutionaries, growing throughout the rest of the Century into a coalition of Communists to Social Democrats.
 
-**1917**: The USPD, a left-wing anti-war split from the SPD, is formed.
+**1889**: Protests are violently suppressed by the Italian government, leading to political radicalisation of the working class and an increase in PSI popularity.
 
-**1918**: Following defeats in the war and uprisings by soldiers, sailors, and workers, SPD leader Philip Scheidemann proclaims the German Republic, and Kaiser Wilhelm II abdicates from his throne. An armistice is declared, ending the Great War. Conflict between center-left social democrats and far-left radicals erupts in the streets of Berlin and elsewhere.
+**1900**: King Umberto I is assassinated by an anarchist, further heightening tensions.
 
-**1919**: The Spartacist Uprising, in which communist workers attempt to seize control of government, is launched. The uprising is defeated by the Social Democratic government, now led by President Friedrich Ebert and Chancellor Philipp Scheidemann, with the support of the far-right Freikorps militas. The two key leaders of the uprising, Rosa Luxemburg and Karl Liebknecht, are murdered by the Freikorps. The Treaty of Versailles is signed under great protest from all political factions in Germany, officially ending the Great War. The Weimar Constitution is signed. The first "Weimar Coalition" government is formed, led by the SPD, DDP, and Center (Z) parties.
+**1914**: World War One begins. Parties are divided on the Italian stance towards the war, though the PSI adopts a neutrality stance against the war and opposes any intervention in the conflict.
 
-**1920**: The Kapp Putsch, an attempt by reactionary actors within the military to take power, is launched, and is defeated by the workers with a general strike. This is followed by left-wing uprisings in the Ruhr, which are defeated by the Reichswehr and Freikorps. The Weimar Coalition is defeated in the elections, with the right and far left increasing in vote share. Elected governments in this period are very unstable, often only lasting a matter of months. There is a split in the USPD, with the majority faction joining with the KPD and the Soviet Union's Communist International (Comintern) alliance.
+**1915**: Italy joins World War One on the side of the Entente after signing the Treaty of London The PSI fractures as more radical members supported the war whilst others remained anti-war, resulting in members like Benito Mussolini being kicked out of the party.
 
-**1921**: Communist uprisings in Saxony and Hamburg are defeated. Matthias Erzberger, the Center Party leader who signed the Versailles Treaty, is assassinated.
+**1917**: Increased war exhaustion and discontent increases the PSI's popularity, as many become frustrated with Italy's involvement in World War One.
 
-**1922**: Walther Rathenau, the DDP Foreign Minister, is assassinated. The SPD reunites with most of the remaining USPD.
-
-**1923**: Hyperinflation begins, largely due to the economic policy of "passive resistance" against the French occupation of the Ruhr and the Versailles reparations. The currency is rapidly devalued as prices for necessities rise to billions of Reichsmarks. The government launches a *Reichsexekution* against Saxony, which was led by a joint SPD-KPD government. The Nazi "Beer Hall Putsch" is launched in Munich, and fails, with the arrest of Hitler. Eventually, new policies manage to stabilize the currency, and the French occupation ends.
-
-**1924**: Parliamentary elections are held in May and December, the latter leading to the bourgeois-right governments that last until 1928. Germany begins to enter a period of relative stability, with the end of the hyperinflation crisis. Hitler is released from prison.
-
-**1925**:  President Friedrich Ebert dies, and new presidential elections are held, leading to the narrow election of Paul von Hindenburg in the second round. Hindenburg is a war hero and a right-wing reactionary. The SPD adopts the Heidelberg Program as its party platform. 
-
-**1926**: A referendum on the expropriation of the princes, supported by the SPD and KPD, fails.
+**1919**: World War One ends.
 
 @curr_gov
-go-to: cabinet if spd_in_government; menu if not spd_in_government
+go-to: cabinet if psi_in_government; menu if not psi_in_government
 
 = Current Government
 
-President: [+ president +]
+King: [+ king +]
 
-Chancellor: [+ chancellor +] ([+ chancellor_party +])
+Prime Minister: [+ prime_minister +] ([+ prime_minister_party +])
 
-Reichstag composition:
+Chamber of Deputies composition:
 
-# 1928: 30, 1930: 25, 1932: 22
-SPD: [+ spd_r +]%
-[? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
-# 1928: 15, 1930: 15, 1932: 
-Z + BVP: [+ z_r +]%
-# 1928: 10, 1930: 13
-KPD: [+ kpd_r +]%
-# 1928: 5, 1930: 4 (as DstP)
-[+ ddp_name +]: [+ ddp_r +]%
-# 1928: 9, 1930: 5
-DVP: [+ dvp_r +]%
-# 1928: 14, 1930: 7
-DNVP: [+ dnvp_r +]%
-# 1928: 3, 1930: 18
-NSDAP: [+ nsdap_r +]%
-# 1928: 9, 1930: 10
+PSI: [+ psi_r +]%
+PPI: [+ ppi_r +]%
+LDR: [+ ldr_r +]%
+[? if not psri_reconcilled: PSRI ?][? if psri_reconcilled != 0 and pci_formed : [+ psri_name +]?]: [+ psri_r +]%
+DS: [+ ds_r +]%
+UL: [+ ul_r +]%
+BN: [+ bn_r +]%
 Others: [+ other_r +]%
 
-SPD position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
-[? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: SPD majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
+PSI position: [? if psi_in_government : in government - ?][? if psi_in_government == 0 : opposition ?]
+[? if in_centre_left_coalition and spd_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if in_minority_government and spd_in_government: Minority government ?]
 
-[? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
-
-[? if spd_in_government and (in_left_front or in_popular_front): KPD coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
+[? if spd_in_government and not in_spd_majority : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
 @cabinet
 go-to: menu
@@ -107,15 +86,15 @@ Interior: [+ interior_minister_party +]
 
 Finance: [+ finance_minister_party +]
 
-Economic: [+ economic_minister_party +]
+Treasury: [+ treasury_minister_party +]
 
 Justice: [+ justice_minister_party +]
 
 Foreign: [+ foreign_minister_party +]
 
-Reichswehr: [+ reichswehr_minister_party +]
+Public Works: [+ public_works_minister_party +]
 
-Agriculture: [+ agriculture_minister_party +]
+Industry: [+ industry_minister_party +]
 
 
 @demographics
@@ -123,37 +102,28 @@ go-to: menu
 
 **Demographic Groups**
 
-**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Most are socialist, supporting either the SPD or KPD. They make up 40-50% of the population.
+**Urban Workers**: Consisting of blue-collar workers in factories, workshops, mines, et cetera. Most are socialists, supporting the PSI or any other communist faction. They make up about 20 to 25% of the population.
 
-**Old Mittelstand**: The old middle class consists of independent artisans, shopkeepers, and small-time businesspeople. They tend to be conservative and are the strongest base for the far right. 10-15% of the population.
+**Small Business Owners**: Consisting of shopkeepers, artisans, small business workers and the like. They are divided between the Catholic Parties, Liberal Parties and a small minority to the PSI. They make up about 15-20% of the population.
 
-**New Mittelstand**: The new middle class consists of white-collar workers and government employees. This is the base of liberalism. 10-15% of the population.
+**Rural Workers & Farmers**: Consisting of those who lived in the unindustrialised south who work as farmers, agricultural workers, et cetera. They are fairly evenly split between the PSI and the Catholic Parties of the UECI & CC. They make up about 50% of the population.
 
-**Rural**: Small and large farmers and independent rural workers. Protestant farmers often support the DNVP. 20-30% of the population.
+**Industralists & Landowners**: Consisting of the elite holding significant economic power. They are the bedrock of the liberal parties, seeing them as stable and protecting their wealth, though some more religious prefer the Catholic parties. They make up about 5-10% of the population.
 
-**Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the Center Party (or the Bavarian People's Party in Bavaria).
+**Veterans & Unemployed**: Consisting of veterans who felt betrayed by the government for their gains in the First World War. They are fierce supporters of nationalist and fascist movements, though some opted to support the PSI instead. They make up about 5% of the population.
 
-**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, mostly the DDP, although substantial numbers support the SPD or KPD.
+**Catholics**: Consisting of the clergy and those religious to the Catholic Church. They support the Catholic parties almost entirely, making up a strong foundation for the UECI & CC. They make up about 5% of the population.
 
 
 @public_opinion
 on-arrival: {!
-Q.pro_republic_disp = Math.round(Q.pro_republic);
-Q.nationalism_disp = Math.round(Q.nationalism);
-Q.socialism_disp = Math.round(Q.socialism);
+Q.pro_monarchy_disp = Math.round(Q.pro_monarchy);
 !}
 view-if: (not historical_mode) or game_over
 go-to: election_algorithm
 set-jump: election_projections
 
-**Public Opinion**
-
-#Support for Socialism: [+ socialism +]%
-
-#Support for Nationalism: [+ nationalism +]%
-
-Support for the Republic: [+ pro_republic_disp +]%
-
+Support for the Monarchy: [+ pro_monarchy_disp +]
 
 @election_projections
 view-if: (not historical_mode) or game_over
@@ -161,227 +131,186 @@ go-to: menu
 
 **Projected election results** (if the election were to be held now):
 
-# 1928: 30, 1930: 25, 1932: 22
-SPD: [+ spd_votes +]%
+PSI: [+ psi_votes +]%
 
-[? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
+LDR: [+ ldr_votes +]%
 
-# 1928: 15, 1930: 15, 1932: 
-Z + BVP: [+ z_votes +]%
+DS: [+ ds_votes +]%
 
-# 1928: 10, 1930: 13
-KPD: [+ kpd_votes +]%
+[? if not psri_reconcilled: PSRI ?][? if prsi_in_government != 0 and pci_formed : [+ psri_name +]?]: [+ psri_votes +]%
 
-# 1928: 5, 1930: 4 (as DstP)
-[+ ddp_name +]: [+ ddp_votes +]%
+PPI: [+ ppi_votes +]%
 
-# 1928: 9, 1930: 5
-DVP: [+ dvp_votes +]%
+UL: [+ ul_votes +]%
 
-# 1928: 14, 1930: 7
-DNVP: [+ dnvp_votes +]%
+BN: [+ bn_votes +]%
 
-# 1928: 3, 1930: 18
-NSDAP: [+ nsdap_votes +]%
-
-# 1928: 9, 1930: 10
 Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Workers: SPD: [+ workers_spd_display +]%, Z: [+ workers_z_display +]%, KPD: [+ workers_kpd_display +]%, [+ ddp_name +]: [+ workers_ddp_display +]%, DVP: [+ workers_dvp_display +]%; DNVP: [+ workers_dnvp_display +]%, NSDAP: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Urban Workers: PSI: [+ workers_psi_display +]%, PPI: [+ workers_ppi_display +]%, LDR: [+ workers_ldr_display +]%, DS: [+ workers_ds_display +]%, UL: [+ workers_ul_display +]%; BN: [+ workers_bn_display +]%, PSRI: [+ workers_psi_display +]%, Others: [+ workers_other_display +]%
 
-New Middle Class: SPD: [+ new_middle_spd_display +]%, Z: [+ new_middle_z_display +]%, KPD: [+ new_middle_kpd_display +]%, [+ ddp_name +]: [+ new_middle_ddp_display +]%, DVP: [+ new_middle_dvp_display +]%; DNVP: [+ new_middle_dnvp_display +]%, NSDAP: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+Small Business Owners: PSI: [+ middle_class_spd_display +]%, PPI: [+ middle_class_ppi_display +]%, LDR: [+ middle_class_ldr_display +]%, DS: [+ middle_class_ddp_display +]%, UL: [+ middle_class_ul_display +]%; BN: [+ middle_class_bn_display +]%, PSRI: [+ middle_class_psri_display +]%, Others: [+ middle_class_other_display +]%  
 
-Old Middle Class: SPD: [+ old_middle_spd_display +]%, Z: [+ old_middle_z_display +]%, KPD: [+ old_middle_kpd_display +]%, [+ ddp_name +]: [+ old_middle_ddp_display +]%, DVP: [+ old_middle_dvp_display +]%; DNVP: [+ old_middle_dnvp_display +]%, NSDAP: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Rural Workers & Farmers: SPD: PSI: [+ rural_spd_display +]%, PPI: [+ rural_ppi_display +]%, LDR: [+ rural_ldr_display +]%, DS: [+ rural_ddp_display +]%, UL: [+ rural_ul_display +]%; BN: [+ rural_bn_display +]%, PSRI: [+ rural_psri_display +]%, Others: [+ rural_other_display +]%
 
-Rural: SPD: [+ rural_spd_display +]%, Z: [+ rural_z_display +]%, KPD: [+ rural_kpd_display +]%, [+ ddp_name +]: [+ rural_ddp_display +]%, DVP: [+ rural_dvp_display +]%; DNVP: [+ rural_dnvp_display +]%, NSDAP: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Industralists & Landowners: PSI: [+ industralists_middle_spd_display +]%, PPI: [+ industralists_middle_ppi_display +]%, LDR: [+ industralists_middle_ldr_display +]%, DS: [+ industralists_middle_ddp_display +]%, UL: [+ industralists_middle_ul_display +]%; BN: [+ industralists_middle_bn_display +]%, PSRI: [+ industralists_middle_psri_display +]%, Others: [+ industralists_middle_other_display +]% 
 
-Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, KPD: [+ unemployed_kpd_display +]%, [+ ddp_name +]: [+ unemployed_ddp_display +]%, DVP: [+ unemployed_dvp_display +]%; DNVP: [+ unemployed_dnvp_display +]%, NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Veterans & Unemployed: PSI: [+ veterans_spd_display +]%, PPI: [+ veterans_ppi_display +]%, LDR: [+ veterans_ldr_display +]%, DS: [+ veterans_ddp_display +]%, UL: [+ veterans_ul_display +]%; BN: [+ veterans_bn_display +]%, PSRI: [+ veterans_psri_display +]%, Others: [+ veterans_other_display +]% 
 
-Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [+ ddp_name +]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Catholics: PSI: [+ catholics_spd_display +]%, PPI: [+ catholics_ppi_display +]%, LDR: [+ catholics_ldr_display +]%, DS: [+ catholics_ddp_display +]%, UL: [+ catholics_ul_display +]%; BN: [+ catholics_bn_display +]%, PSRI: [+ catholics_psri_display +]%, Others: [+ catholics_other_display +]% 
 
 @parties
 go-to: menu
 
-**SPD** - *Sozialdemokratische Partei Deutschlands* (Social Democratic Party of Germany) - this is us. We are a socialist and democratic party of the working class. We are the heirs of the legacy of Marx and Engels, Lassalle and Bebel. We are the foremost defenders of the Republic. The modern SPD was formed from a merger of the "Majority" SPD, which supported the Great War, and the "Independent" SPD or USPD, which opposed the war.
+**PSI** - *Partito Socialista Italiano* (Italian Socialist Party) - This is you. You are the major socialist party of the working class, founded by labour movements and socialist ideas. Currently, the party is split between those who wish to preserve the parliamentary system and those who wish to achieve socialism through a revolution.
 
-**Z** - *Zentrumspartei* (Center Party) - a centrist to center-right Catholic party that supports the Republic, and has historically supported many of our labor, welfare, and anti-militarist priorities. They have often been in coalitions with us. They are often associated with the **BVP** (Bavarian People's Party), which represents Catholics in Bavaria. [? if year >= 1930 or chancellor = "Brüning" : They have appeared to take a more conservative turn recently, with the rise of Brüning and the party leader, Ludwig Kaas. ?]
+**LDR** - *Liberali, democratici e radicali* (Liberals, Democrats and Radicals) - A recently formed centre party under the merger of the Liberal Union and the Italian Radical Party. They get their support mainly from the Industralists & Landowners under the leader of Prime Minister who ended the First World War.
 
-Current relations: [+ z_relation : relationships +]
+Current relations: [+ ldr_relation : relationships +]
 
-# TODO: replace this with the german state party after 1930
-**DDP** - *Deutsche Demokratische Partei* (German Democratic Party) - a center-left liberal party, popular among the intelligensia and educated middle class. They have often been in coalitions with us. [? if year >= 1930 : They have recently reformed themselves as the German State Party (DStP). ?]
+**DS** - *Democrazia Sociale* (Social Democracy) - A newly formed centre-left party under the merger of the Constitutional Democratic Party, the Democratic Party and parts of the Italian Radical Party. The party is supported mainly by the the Southern regions of Italy.
 
-Current relations: [+ ddp_relation : relationships +]
+Current relations: [+ ds_relation : relationships +]
 
-**DVP** - *Deutsche Volkspartei* (German People's Party) - a conservative-liberal party, supported by the middle classes and bourgeoisie. We have occasionally been in coalitions.
+**PPI** - *Partito Popolare Italiano* (Italian People's Part) - A newly formed Christian Democratic party under the merger of UECI, FUCI, CC and the PPT. The party has its support rooted in the Clergy, Rural Workers and Middle Class.
+Current relations: [+ ppi_relation : relationships +]
 
-Current relations: [+ dvp_relation : relationships +]
+**UL** - *Unione Liberale* (Liberal Union) - A centre-right party that remained as the remaining members that weren't merged into the LDR. 
 
-**DNVP** - *Deutschnationale Volkspartei* (German National People's Party) - a right-wing nationalist-conservative party, with authoritarian, monarchist, and racist elements. It is supported by the former aristocracy, rural landowners, and conservative Lutherans.
+Current relations: [+ ul_relation : relationships +]
 
-Current relations: [+ dnvp_relation : relationships +]
+**PSRI** - *Partito Socialista Riformista Italiano* (Italian Reformist Socialist Party) - A splinter of reformists from the PSI, the PRSI are a centre-left party, advocating for socialism through the parliamentary system. 
 
-**KPD** - *Kommunistische Partei Deutschlands* (German Communist Party) - a radical left-wing offshoot of the SPD that emerged in the aftermath of the German Revolution of 1918, they follow the path of Moscow, opposing parliamentary democracy in favor of a Soviet-style revolution.
+Current relations: [+ psri_relation : relationships +]
 
-Current relations: [+ kpd_relation : relationships +]
+**BN** - *Blocco Nazionale* - (National Bloc) - A newly formed coalition of right-wing parties opposed to socialism, headed by Giovanni Giolitti, Benito Mussolini and Enrico Corradini.
 
-[? if sapd_formed: SAPD - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Germany) - a party recently formed in a split from the SPD, the SAPD is essentially an agglomeration of various left-wing splinter groups between the SPD and KPD. ?]
+Current relations: [+ bn_relation : relationships +]
 
-**NSDAP** - *Nationalsozialistische Deutsche Arbeiterpartei* - (National Socialist German Worker's Party, or Nazis) - a far-right nationalist and antisemitic party. Led by Adolf Hitler, they attempted a coup in 1923, and were banned for it, but have since been legalized.
-
-Current relations: [+ nsdap_relation : relationships +]
-
-**Other parties** - there is a multitude of small, mostly conservative parties, such as the Economic Party of the German Middle Class, the Farmer's Party, the Agricultural League, and others. Their political position usually lies between the DVP and DNVP. 
+**Other parties** - There is a multitude of small parties, such as the Economic Party, the Italian Republican Party, Independent Socialists, and others. Their political position usually lies in the middle. 
 
 @paramilitaries
 on-arrival: {!
-Q.rb_strength = Math.round(Q.rb_strength);
-Q.sh_strength = Math.round(Q.sh_strength);
-Q.sa_strength = Math.round(Q.sa_strength); 
+Q.rg_strength = Math.round(Q.rb_strength);
+Q.fdc_strength = Math.round(Q.sh_strength);
+Q.sqd_strength = Math.round(Q.sa_strength); 
 !}
 go-to: menu
 
 **Paramilitary groups:**
 
-**Reichsbanner Schwarz-Rot-Gold**: The Reichsbanner is an organization affiliated with all of the democratic parties - the SPD, Z, and DDP, but primarily with the SPD. Historically, this has been an unarmed organization.
+**Red Guards**: The Red Guards are a paramilitary group most associated with the PSI, organising strikes, factory occupations as well as conflict with right-wing militias, most active in the Northern regions of Italy.
 
-Strength: [+ rb_strength +] thousand
+Strength: [+ rg_strength +] thousand
 
-Militarization: [+ rb_militancy : militancy +]
+Militarization: [+ rg_militancy : militancy +]
 
-**Rotfrontkämpferbund (RFB)**: The "Red Front Fighter's League" is associated with the KPD.
+**Fascisti di Combattimento**: The Fascisti are a paramilitary group headed by Benito Mussolini, and frequently come into conflict with the Red Guards.
 
-Strength: [+ rfb_strength +] thousand
+Strength: [+ fdc_strength +] thousand
 
-Militarization: [+ rfb_militancy : militancy +]
+Militarization: [+ fdc_militancy : militancy +]
 
-**Der Stahlhelm**: A right-wing nationalist organization of primarily Great War veterans, descended from the *Freikorps* that emerged after the war. Associated with the DNVP.
+**Squadristi**: The Squadristi are a paramilitary group allied with the Fascisti, operating as an independent group frequently coming into conflict with the Red Guards as well. 
 
-Strength: [+ sh_strength +] thousand
+Strength: [+ sqd_strength +] thousand
 
-Militarization: [+ sh_militancy : militancy +]
-
-**Sturmabteilung (SA)**: This is the nazi paramilitary group.
-
-Strength: [+ sa_strength +] thousand
-
-Militarization: [+ sa_militancy : militancy +]
+Militarization: [+ sqd_militancy : militancy +]
 
 **Official military/paramilitary groups:**
 
-**Reichswehr**: [+ reichswehr_strength +] thousand troops. This is Germany's military.
+**Regio Esercito**: [+ army_strength +] thousand troops. This is Italy's army, still mobilised after the First World War.
 
-Loyalty: [+ reichswehr_loyalty : loyalty +]
+Loyalty: [+ army_loyalty : loyalty +]
 
-**Prussian police**: [+ prussian_police_strength +] thousand members.
+**Carabinieri**: [+ interior_police_strength +] thousand members. This is the forces of the Interior Ministry.
 
-Loyalty: [+ prussian_police_loyalty : loyalty +]
+Loyalty: [+ interior_police_loyalty : loyalty +]
 
 
 
 @factions
-go-to: neorevisionists if neorevisionism > 0; menu if neorevisionism <= 0
 
 **Internal factions of the SPD**
 
 Overall dissent: [+ dissent_percent : dissent +]
 
-**Left**
+**Communists**
 
-Many leftists are former members of the USPD (the left-wing, anti-war Independent Social Democratic Party), or are young radicals. Many are interested in closer cooperation with the KPD, and some support extraparliamentary action.
+The Communists, known also as the Comunisti, is a faction that advocated for a more far-left stance against the Kingdom, favouring extraparliamentary action and the establishment of a communist state and alignment towards the Comintern, in contrast to the other factions.
 
-Strength: [+ left_strength : strength +]
+Strength: [+ communist_strength : strength +]
 
-Dissent: [+ left_dissent : dissent +]
+Dissent: [+ communist_dissent : dissent +]
 
-**Centrists**
+**Maximalists**
 
-Centrists in the SPD are followers of the doctrine of orthodox Marxism as expounded by Karl Kautsky and later Rudolf Hilferding. They seek a middle course between reform and revolution, while defending the democratic state.
+The Centre, also known as the Maximalists, is the majority faction, advocating for a revolutionary approach to socialism and the establishment of a socialist state. They currently control party leadership.
 
-Strength: [+ center_strength : strength +]
+Strength: [+ maximalist_strength : strength +]
 
-Dissent: [+ center_dissent : dissent +]
+Dissent: [+ maximalist_dissent : dissent +]
 
-**Labor**
+**Trade Unionists**
 
-Many SPD members are also part of the ADGB, the federation of free trade unions. Their goal is economic reform and benefits for organized workers.
+The Trade Unionists, known also as the Syndicalists, are a minority faction in the party, generally advocating for further workers' control and the strengthening of unions.
 
-Strength: [+ labor_strength : strength +]
+Strength: [+ tradeunionist_strength : strength +]
 
-Dissent: [+ labor_dissent : dissent +]
+Dissent: [+ tradeunionist_dissent : dissent +]
 
 **Reformists**
 
-Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy against the far right and left. [? if spd_prussia : They are dominant in the state government of Prussia. ?]
+The Reformists. also known as the Riformisti, are a minority faction in the party, weakened by the split to the PSRI and favouring the establishment of socialism through parliamentary means unlike the other factions. 
 
 Strength: [+ reformist_strength : strength +]
 
 Dissent: [+ reformist_dissent : dissent +]
 
-@neorevisionists
-go-to: menu
-
-**Neorevisionists**
-
-Neorevisionists focus on defending the republic and expanding democracy, while also expanding the party's base beyond the working class to create a people's party. They support new propaganda methods and extraparliamentary action in defense of the republic.
-
-Strength: [+ neorevisionist_strength : strength +]
-
-Dissent: [+ neorevisionist_dissent : dissent +]
-
-
 @figures
 title: Figures and Charts
 go-to: menu
-on-arrival: z_minus_bvp_r = z_r - 3;
 on-display: {!
 data = [
     {
-        "id": "kpd",
-        "legend": "KPD",
-        "name": "KPD",
-        "seats": Q.kpd_r*5,
+        "id": "psri",
+        "legend": "PSRI",
+        "name": "PSRI",
+        "seats": Q.psri_r*5,
     }];
-if (Q.sapd_formed && Q.sapd_r) {
-    data.push({
-            "id": "sapd",
-            "legend": "SAPD",
-            "name": "SAPD",
-            "seats": Math.round(Q.sapd_r*5),
-            });
-}
+
 data = data.concat([
     {
-        "id": "spd",
-        "legend": "SPD",
-        "name": "SPD",
-        "seats": Q.spd_r*5,
+        "id": "psi",
+        "legend": "PSI",
+        "name": "PSI",
+        "seats": Q.psi_r*5,
     },
     {
-        "id": "ddp",
-        "legend": "DDP",
-        "name": "DDP",
-        "seats": Q.ddp_r*5,
+        "id": "ppi",
+        "legend": "PPI",
+        "name": "PPI",
+        "seats": Q.ppi_r*5,
     },
     {
-        "id": "z",
-        "legend": "Center",
-        "name": "Center",
-        "seats": (Q.z_r - 3)*5,
+        "id": "ldr",
+        "legend": "LDR",
+        "name": "LDR",
+        "seats": (Q.ldr_r - 3)*5,
     },
     {
-        "id": "bvp",
-        "legend": "BVP",
-        "name": "BVP",
-        "seats": 3*5,
+        "id": "ds",
+        "legend": "DS",
+        "name": "DS",
+        "seats": Q.ds_r*5,
     },
     {
-        "id": "dvp",
-        "legend": "DVP",
-        "name": "DVP",
-        "seats": Q.dvp_r*5,
+        "id": "ul",
+        "legend": "UL",
+        "name": "UL",
+        "seats": Q.ul_r*5,
     },
     {
         "id": "other",
@@ -390,16 +319,10 @@ data = data.concat([
         "seats": Q.other_r*5,
     },
     {
-        "id": "dnvp",
-        "legend": "DNVP",
-        "name": "DNVP",
-        "seats": Q.dnvp_r*5,
-    },
-    {
-        "id": "nsdap",
-        "legend": "NSDAP",
-        "name": "NSDAP",
-        "seats": Q.nsdap_r*5,
+        "id": "bn",
+        "legend": "BN",
+        "name": "BN",
+        "seats": Q.bn_r*5,
     },
 ]);
 if (d3 && window) {
@@ -420,8 +343,8 @@ if (d3 && window) {
 
     var lines = d3.linegraph(false, false,
             Q.parties,
-            {'spd': '#E3000F', 'kpd': '#8B0000', 'ddp': '#DCCA4A', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3f7bc1', 'nsdap': '#954B00', 'other': '#a0a0a0', 'sapd': '#c40000'},
-            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': 'Z + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD'});
+            {'psri': '#E3000F', 'psi': '#8B0000', 'ldr': '#DCCA4A', 'ds': '#3f7bc1', 'ul': '#00008B', 'ppi': '#69A2BE', 'bn': '#954B00', 'other': '#a0a0a0', 'pci': '#c40000'},
+            {'psri': 'PSRI', 'psi': 'PSI', 'ldr': 'LDR', 'ds': 'DS', 'ul': 'UL', 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pci': 'PCI'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
     if (Q.election_records.length > 0) {
@@ -433,53 +356,50 @@ if (d3 && window) {
     if (!Q.historical_mode || Q.game_over) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties,
-            {'spd': '#E3000F', 'kpd': '#8B0000', 'ddp': '#DCCA4A', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3f7bc1', 'nsdap': '#954B00', 'other': '#a0a0a0', 'sapd': '#c40000'},
-            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': 'Z + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD'});
+            {'psri': '#E3000F', 'psi': '#8B0000', 'ldr': '#DCCA4A', 'ds': '#3f7bc1', 'ul': '#00008B', 'ppi': '#69A2BE', 'bn': '#954B00', 'other': '#a0a0a0', 'pci': '#c40000'},
+            {'psri': 'PSRI', 'psi': 'PSI', 'ldr': 'LDR', 'ds': 'DS', 'ul': 'UL', 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pci': 'PCI'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
 
     // economic stats
     var minInflation = d3.min(Q.economic_records, d => d.inflation);
-    var maxUnemployment = d3.max(Q.economic_records, d => d.unemployment);
-    var lines_3 = d3.linegraph(true, true, ['inflation', 'unemployment'],
-            {'inflation': '#0000FF', 'unemployment': '#FF0000'},
-            {'inflation': 'Inflation', 'unemployment': 'Unemployment'},
-            maxUnemployment + 5, minInflation - 5, 21);
+    var lines_3 = d3.linegraph(true, true, ['inflation'],
+            {'inflation': '#0000FF''},
+            {'inflation': 'Inflation'},
+            minInflation - 5, 21);
     lines_3.width(width).height(300);
     d3.select("#economic_history").datum(Q.economic_records).call(lines_3);
 }
 !}
 
-= Reichstag composition
+= Chamber of Deputies composition
 
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div></td><td>!} **SPD:** {!</td><td>!} **[+ spd_r +]%** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div></td><td>!} **PSI:** {!</td><td>!} **[+ psi_r +]%** {!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div></td> <td> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div></td> <td>!}KPD: {!</td><td>!} [+ kpd_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F'> </div></td> <td>!}PSRI: {!</td><td>!} [+ psri_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} LDR: {!</td><td>!} [+ ldr_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#000'> </div></td><td>!} Z: {!</td><td>!} [+ z_minus_bvp_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#69A2BE'> </div></td><td>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#69A2BE'> </div></td><td>!} BVP: {!</td><td>!} 3% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#00008B'> </div></td><td>!} UL: {!</td><td>!} [+ ul_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D5AC27'> </div></td><td>!} DVP: {!</td><td>!} [+ dvp_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#3f7bc1'> </div></td><td>!} DS: {!</td><td>!} [+ ds_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#3f7bc1'> </div></td><td>!} DNVP: {!</td><td>!} [+ dnvp_r +]% {!</td></tr>!}
-
-{!<tr><td><div class="box" style='background-color:#954B00'> </div></td><td>!} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#954B00'> </div></td><td>!} BN: {!</td><td>!} [+ bn_r +]% {!</td></tr>!}
 {!</table>!}
 
 = Election history
 
-[? if year = 1928 and month < 5 : No new elections yet. ?]
+[? if year = 1919 and month < 11 : No new elections yet. ?]
 
 {!<svg id="election_history" style="width: 500px; height: 400px;"> </svg>!}
 
