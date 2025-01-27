@@ -272,13 +272,6 @@ Dissent: [+ reformist_dissent : dissent +]
 @figures
 title: Figures and Charts
 go-to: menu
-data = [
-    {
-        "id": "psri",
-        "legend": "PSRI",
-        "name": "PSRI",
-        "seats": Q.psri_r*5,
-    }];
 
 data = data.concat([
     {
@@ -286,6 +279,12 @@ data = data.concat([
         "legend": "PSI",
         "name": "PSI",
         "seats": Q.psi_r*5,
+    },
+    {
+        "id": "psri",
+        "legend": "PSRI",
+        "name": "PSRI",
+        "seats": Q.psri_r*5,
     },
     {
         "id": "ppi",
