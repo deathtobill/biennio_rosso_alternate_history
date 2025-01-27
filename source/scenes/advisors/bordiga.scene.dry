@@ -1,0 +1,40 @@
+title: Amadeo Bordiga
+is-pinned-card: true
+tags: advisor, communist
+card-image: img/portraits/AmadeoBordiga.png
+view-if: bordiga_advisor = 1
+new-page: true 
+
+= Amadeo Bordiga
+
+Bordiga is one of the prominent figures of the Communist faction of the PSI.
+
+- @armed_uprising
+- @revolution
+- @choosing_our_targets
+- @root: Return to main
+
+@armed_uprising
+title: Armed Uprising
+subtitle: Order factory workers to seize control of their workplaces!
+choose-if: advisor_action_timer <= 0 and rg_strength => 20 and rg_banned = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rg_strength < 20 : The Red Guards don't have enough members to act. ?][? if rg_banned = 1 : The Red Guard are banned, they cannot act. ?]
+on-arrival: advisor_action_timer = 6; revolutionary_fervor += 5; rg_strength -= 20; reformist_dissent += 10;
+
+We have seized control of more factories and kicked the bourgeois industralists out!
+
+@revolution
+title: Revolution!
+subtitle: The time has finally come; the Red Guard will bring fourth a Socialist Revolution! **There is no coming back from this.**
+choose-if: advisor_action_timer == 0 and revolutionary_fervor => 80 and rg_banned = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if revolutionary_fervor < 80 : There is not enough support within the party to even attempt this. ?][? if rg_banned = 1 : The Red Guard are banned, they cannot act. ?]
+go-to: revolution
+
+@choosing_our_targets
+title: Choosing Our Targets
+subtitle: We need to choose who we are mainly aiming for.
+choose-if: advisor_action_timer <= 0 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
+go-to: choosing_our_targets
+

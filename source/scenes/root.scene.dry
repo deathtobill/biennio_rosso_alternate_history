@@ -37,6 +37,7 @@ Q.use_decimals = 0;
 
 // party resources
 Q.resources = 2;
+Q.para_resources = 2;
 // party dues
 Q.dues = 2;
 
@@ -119,6 +120,8 @@ Q.army_loyalty = 0.2;
 // popular opinion
 // pro-monarchy vs anti-monarchy
 Q.pro_monarchy = 84;
+// revolution vs radicalism
+Q.revolutionary_fervor = 60;
 
 // capital strikes happen when you upset the capitalists too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
 // when capital_strike_progress reaches 10, there's a special event that launches the coup.
@@ -387,47 +390,27 @@ Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 
 
-// all the initial advisors are centrists.
-Q.wels_advisor = 1; // Otto Wels
-Q.muller_advisor = 1; // Hermann Müller
-Q.muller_dead = 0;
-// okay I know Arthur Crispien was a leader irl but i couldn't find much interesting about him...
-Q.crispien_advisor = 0; // Arthur Crispien
-Q.hilferding_advisor = 1; // Rudolf Hilferding
+// Initial advisors are the respective leaders of their faction.
+Q.serrati_advisor = 1; // Giacinto Menotti Serrati; Maximalist Leader
+Q.bordiga_advisor = 1; // Amadeo Bordiga; Communist Leader
+Q.turati_advisor = 1; // Filippo Turati; Reformist Leader
 
-// left advisors
-Q.sender_advisor = 0; // Toni Sender
-Q.levi_advisor = 0; // Paul Levi
-Q.levi_dead = 0;
-Q.rosenfeld_advisor = 0; // Kurt Rosenfeld
-Q.seydewitz_advisor = 0; // Max Seydewitz
+// Communist advisors
+Q.tasca_advisor = 0; // Angelo Tasca
+Q.terracini_advisor = 0; // Umberto Terracini
+Q.togliatti_advisor = 0; // Palmiro Togliatti
+Q.gramsci_advisor = 0; // Antonio Gramsci
 
-// centrist alternate advisors
-Q.pfulf_advisor = 0; // Antonie Pfülf
-Q.breitscheid_advisor = 0; // Rudolf Breitscheid
+// Maximalist advisors
+Q.lazzari_advisor = 0; // Constantinto Lazzari
+Q.ferri_advisor = 0; // Enrico Ferri
 
 // Reformist advisors
-Q.severing_advisor = 0; // Carl Severing
-Q.braun_advisor = 0; // Otto Braun
-Q.juchacz_advisor = 0; // Marie Juchacz
-Q.baade_advisor = 0; // Fritz Baade
+Q.kuliscioff_advisor = 0; // Anna Kuliscioff
 
-// Labor advisors
-Q.leipart_advisor = 0; // Theodor Leipart
-Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
-Q.woytinsky_advisor = 0; // Wladimir Woytinsky (post-1930)
-Q.wissell_advisor = 0; // Rudolf Wissell
-
-// Revisionist advisors
-Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
-
-Q.leber_advisor = 0; // Julius Leber (post-1930)
-Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
-
-// Nonfactional advisors
-Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
-Q.radbruch_advisor = 0; // Gustav Radbruch
-Q.stampfer_advisor = 0; // Friedrich Stampfer
+// Trade Unionist advisors
+Q.treves_advisor = 0; // Claudio Treves
+Q.rigola_advisor = 0; // Rinaldo Rigola
 !}
 set-bg: img/background.png
 new-page: true
@@ -446,11 +429,11 @@ For more information on the politics and government of the Italian Kingdom, see 
 - @1928_historical: Begin (historical mode)
 
 @1928_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49; budget = 5;
+on-arrival: difficulty = -1; resources = 4; dues = 3; rg_strength = 2500; ppi_relation = 55; ds_relation = 55; psri_relation = 65; budget = 5;
 go-to: 1928_main
 
 @1928_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31; budget = 3;
+on-arrival: difficulty = 1; resources = 0; dues = 1; rg_strength = 1000; reformist_dissent = 30; communist_dissent = 30; tradeunionist_dissent = 20; maximalist__dissent = 15; ppi_relation = 35; ds_relation = 35; psri_relation = 35; budget = 3;
 go-to: 1928_main
 
 @1928_historical
@@ -460,14 +443,14 @@ Q.difficulty = 2;
 Q.historical_mode = 1;
 Q.resources = 2;
 Q.dues = 1;
-Q.rb_strength = 2000;
-Q.reformist_dissent = 25;
-Q.left_dissent = 30;
-Q.labor_dissent = 25;
-Q.center_dissent = 25;
-Q.z_relation = 41;
-Q.kpd_relation = 16;
-Q.dvp_relation = 31;
+Q.rg_strength = 2000;
+Q.reformist_dissent = 35;
+Q.communist_dissent = 35;
+Q.tradeunionist_dissent = 25;
+Q.maximalist_dissent = 25;
+Q.ppi_relation = 15;
+Q.ds_relation = 20;
+Q.prsi_relation = 25;
 Q.budget = 2;
 this.state.disableSaves = true;
 !}
@@ -480,8 +463,8 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 = 1928
 
-It is a bright time for German democracy. After a period of struggle, inflation is finally under control, and the economy is expanding steadily. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality. 
+It is a dark time for Italian Kingdom. After the first world war, inflation is uncontrollable as unemployment is widespread. Our internal situation isn't much better, as nationalist and socialist paramilitaries engage in effectively open warfare against each other whilst government inaction is critised.
 
-Now, the task of Social Democracy is to prepare for the next election. The bourgeois-right government of Wilhelm Marx is unpopular, and we stand to gain. Perhaps the next government will have a socialist majority.
+Now, your task is to prepare for the next election. The bourgeois-right government is unpopular, and with the new voting laws passed, we stand to gain. Perhaps the next government will have a socialist majority.
 
 

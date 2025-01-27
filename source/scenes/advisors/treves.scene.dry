@@ -1,0 +1,40 @@
+title: Claudio Treves
+is-pinned-card: true
+tags: advisor, tradeunionist
+card-image: img/portraits/ClaudioTreves.jpg
+view-if: treves_advisor = 1
+new-page: true
+#face-image: img/portraits/ClaudioTreves.jpg
+
+= Claudio Treves
+
+Treves is a member of the Trade Unionist faction of the PSI, as well as a journalist for the newspaper *Avanti!*.
+
+- @labour_affairs
+- @media
+- @labour_rights
+- @root: Return to main
+
+@labour_affairs
+title: Labour Affairs
+subtitle: With the control of the Labour & Social Security Ministry, we can help out the economic situation.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not in government. ?][? if not labour_minister_party = "PSI" : The PSI does not control the Labour & Social Security Ministry. ?]
+choose-if: advisor_action_timer = 0 and psi_in_government and labour_minister_party = "PSI"
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
+go-to: labour_affairs
+
+@media
+title: Media
+subtitle: Organise our media to spread our message further.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0
+on-arrival: advisor_action_timer = 6; media_timer -= 6; last_advisor_action = 1
+go-to: media
+
+@labour_rights
+title: Labour Rights
+subtitle: As a member of the government, we can help out our support base a bit.
+choose-if: advisor_action_timer <= 0 and (in_centre_left_coalition or in_minority_government or in_psi_majority)
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not (in_centre_left_coalition or in_minority_government or in_psi_majority) : The PSI is not in government to influence it. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+go-to: labour_rights

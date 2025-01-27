@@ -1,0 +1,39 @@
+title: Enrico Ferri
+is-pinned-card: true
+tags: advisor, maximalist
+card-image: img/portraits/EnricoFerri.jpg
+view-if: ferri_advisor = 1
+new-page: true 
+
+= Enrico Ferri
+
+Ferri is a member of the Maximalist faction of the PSI. Having served as the editor of *Avanti!* and a criminologist, he has influence in writing.
+
+- @judical_reform
+- @question_of_ideology
+- @media
+- @root: Return to main
+
+@judical_reform
+title: Judical Reform
+subtitle: Now in control of the Justice Ministry, we are able to reform it to purge corruption and reactionary forces.
+choose-if: advisor_action_timer <= 0 and (in_centre_left_coalition or in_psi_majority) and justice_ministry_party = "PSI"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not in_centre_left_coalition : The PSI is not currently in government. ?][if not justice_ministry_party = "PSI" : The PSI does not currently control the justice ministry.]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
+go-to: judical_reform
+
+@question_of_ideology
+title: Question of Ideology
+subtitle: There are a number of ideologues from each faction which seek to direct the path of the party.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
+go-to: question_of_ideology
+
+@media
+title: Media
+subtitle: Organise our media to spread our message further.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0
+on-arrival: advisor_action_timer = 6; media_timer -= 6; last_advisor_action = 1
+go-to: media

@@ -71,9 +71,9 @@ BN: [+ bn_r +]%
 Others: [+ other_r +]%
 
 PSI position: [? if psi_in_government : in government - ?][? if psi_in_government == 0 : opposition ?]
-[? if in_centre_left_coalition and spd_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if in_minority_government and spd_in_government: Minority government ?]
+[? if in_centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if in_minority_government and psi_in_government: Minority government ?]
 
-[? if spd_in_government and not in_spd_majority : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+[? if psi_in_government and not in_psi_majority : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
 @cabinet
 go-to: menu
@@ -151,15 +151,15 @@ Others: [+ other_votes +]%
 
 Urban Workers: PSI: [+ workers_psi_display +]%, PPI: [+ workers_ppi_display +]%, LDR: [+ workers_ldr_display +]%, DS: [+ workers_ds_display +]%, UL: [+ workers_ul_display +]%; BN: [+ workers_bn_display +]%, PSRI: [+ workers_psi_display +]%, Others: [+ workers_other_display +]%
 
-Small Business Owners: PSI: [+ middle_class_spd_display +]%, PPI: [+ middle_class_ppi_display +]%, LDR: [+ middle_class_ldr_display +]%, DS: [+ middle_class_ddp_display +]%, UL: [+ middle_class_ul_display +]%; BN: [+ middle_class_bn_display +]%, PSRI: [+ middle_class_psri_display +]%, Others: [+ middle_class_other_display +]%  
+Small Business Owners: PSI: [+ middle_class_psi_display +]%, PPI: [+ middle_class_ppi_display +]%, LDR: [+ middle_class_ldr_display +]%, DS: [+ middle_class_ddp_display +]%, UL: [+ middle_class_ul_display +]%; BN: [+ middle_class_bn_display +]%, PSRI: [+ middle_class_psri_display +]%, Others: [+ middle_class_other_display +]%  
 
-Rural Workers & Farmers: SPD: PSI: [+ rural_spd_display +]%, PPI: [+ rural_ppi_display +]%, LDR: [+ rural_ldr_display +]%, DS: [+ rural_ddp_display +]%, UL: [+ rural_ul_display +]%; BN: [+ rural_bn_display +]%, PSRI: [+ rural_psri_display +]%, Others: [+ rural_other_display +]%
+Rural Workers & Farmers: PSI: PSI: [+ rural_psi_display +]%, PPI: [+ rural_ppi_display +]%, LDR: [+ rural_ldr_display +]%, DS: [+ rural_ddp_display +]%, UL: [+ rural_ul_display +]%; BN: [+ rural_bn_display +]%, PSRI: [+ rural_psri_display +]%, Others: [+ rural_other_display +]%
 
-Industralists & Landowners: PSI: [+ industralists_middle_spd_display +]%, PPI: [+ industralists_middle_ppi_display +]%, LDR: [+ industralists_middle_ldr_display +]%, DS: [+ industralists_middle_ddp_display +]%, UL: [+ industralists_middle_ul_display +]%; BN: [+ industralists_middle_bn_display +]%, PSRI: [+ industralists_middle_psri_display +]%, Others: [+ industralists_middle_other_display +]% 
+Industralists & Landowners: PSI: [+ industralists_middle_psi_display +]%, PPI: [+ industralists_middle_ppi_display +]%, LDR: [+ industralists_middle_ldr_display +]%, DS: [+ industralists_middle_ddp_display +]%, UL: [+ industralists_middle_ul_display +]%; BN: [+ industralists_middle_bn_display +]%, PSRI: [+ industralists_middle_psri_display +]%, Others: [+ industralists_middle_other_display +]% 
 
-Veterans & Unemployed: PSI: [+ veterans_spd_display +]%, PPI: [+ veterans_ppi_display +]%, LDR: [+ veterans_ldr_display +]%, DS: [+ veterans_ddp_display +]%, UL: [+ veterans_ul_display +]%; BN: [+ veterans_bn_display +]%, PSRI: [+ veterans_psri_display +]%, Others: [+ veterans_other_display +]% 
+Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, PPI: [+ veterans_ppi_display +]%, LDR: [+ veterans_ldr_display +]%, DS: [+ veterans_ddp_display +]%, UL: [+ veterans_ul_display +]%; BN: [+ veterans_bn_display +]%, PSRI: [+ veterans_psri_display +]%, Others: [+ veterans_other_display +]% 
 
-Catholics: PSI: [+ catholics_spd_display +]%, PPI: [+ catholics_ppi_display +]%, LDR: [+ catholics_ldr_display +]%, DS: [+ catholics_ddp_display +]%, UL: [+ catholics_ul_display +]%; BN: [+ catholics_bn_display +]%, PSRI: [+ catholics_psri_display +]%, Others: [+ catholics_other_display +]% 
+Catholics: PSI: [+ catholics_psi_display +]%, PPI: [+ catholics_ppi_display +]%, LDR: [+ catholics_ldr_display +]%, DS: [+ catholics_ddp_display +]%, UL: [+ catholics_ul_display +]%; BN: [+ catholics_bn_display +]%, PSRI: [+ catholics_psri_display +]%, Others: [+ catholics_other_display +]% 
 
 @parties
 go-to: menu
@@ -235,7 +235,7 @@ Loyalty: [+ interior_police_loyalty : loyalty +]
 @factions
 go-to: menu
 
-**Internal factions of the SPD**
+**Internal factions of the PSI**
 
 Overall dissent: [+ dissent_percent : dissent +]
 

@@ -1,0 +1,39 @@
+title: Constantino Lazzari
+is-pinned-card: true
+tags: advisor, maximalist
+card-image: img/portraits/ConstantinoLazzari.jpg
+view-if: lazzari_advisor = 1
+new-page: true 
+
+= Constantino Lazzari
+
+Lazzari is a long-time member of the PSI, founding the party back in 1892. A member of the Maximalist faction, he holds significant influence in the party, being the current Secretary of the Party.
+
+- @party_disunity
+- @party_rally
+- @labour_rights
+- @root: Return to main
+
+@party_disunity
+title: Party Disunity
+subtitle: The current state of the party is disunited; factions are quarreling as every side pushes its own ideas.
+choose-if: advisor_action_timer == 0 and communist_dissent > 0 and reformist_dissent > 0 and tradeunionist_dissent > 0 and maximalist_dissent > 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if (communist_dissent = 0 and reformist_dissent = 0 and maximalist_dissent = 0 and tradeunionist_dissent = 0) : The party is the most united it has been in decades.]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+go-to: party_disunity
+
+@party_rally
+title: Party Rally
+subtitle: We should go rally our voters and spread our message further.
+choose-if: advisor_action_timer == 0 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+go-to: party_rally
+
+@labour_rights
+title: Labour Rights
+subtitle: As a member of the government, we can help out our support base a bit.
+choose-if: advisor_action_timer <= 0 and (in_centre_left_coalition or in_minority_government or in_psi_majority)
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not (in_centre_left_coalition or in_minority_government or in_psi_majority) : The PSI is not in government to influence it. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+go-to: labour_rights
