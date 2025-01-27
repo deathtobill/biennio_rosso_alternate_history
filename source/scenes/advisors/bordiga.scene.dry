@@ -17,7 +17,7 @@ Bordiga is one of the prominent figures of the Communist faction of the PSI.
 @armed_uprising
 title: Armed Uprising
 subtitle: Order factory workers to seize control of their workplaces!
-choose-if: advisor_action_timer <= 0 and rg_strength => 20 and rg_banned = 0
+choose-if: advisor_action_timer = 0 and rg_strength > 19 and rg_banned = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rg_strength < 20 : The Red Guards don't have enough members to act. ?][? if rg_banned = 1 : The Red Guard are banned, they cannot act. ?]
 on-arrival: advisor_action_timer = 6; revolutionary_fervor += 5; rg_strength -= 20; reformist_dissent += 10;
 

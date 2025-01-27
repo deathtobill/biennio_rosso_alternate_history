@@ -18,7 +18,7 @@ Terracini is a member of the Communist faction of the PSI. A lawyer and writer, 
 title: Comintern Relations
 subtitle: Improve our standing amongst the Communist Internationale.
 choose-if: advisor_action_timer <= 0 and soviet_relation => 10
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if soviet_relation => 10: Our relations with the Soviet Union have reached its peak. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if soviet_relation > 10 : Our relations with the Soviet Union have reached its peak. ?]
 on-arrival: advisor_action_timer = 6; international_relations_timer -= 6; last_advisor_action = 1
 go-to: international_relations
 
