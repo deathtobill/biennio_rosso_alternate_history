@@ -1,5 +1,5 @@
 title: Next month
-set-bg: img\background.png
+set-bg: img/background.png
 is-hand: true
 on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
