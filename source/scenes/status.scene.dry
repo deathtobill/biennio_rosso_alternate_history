@@ -5,6 +5,12 @@ on-arrival: {!
 if (Q.inflation) {
     Q.inflation_2 = Q.inflation.toFixed(1);
 }
+if (Q.economic_growth) {
+    Q.economic_growth_2 = Q.economic_growth.toFixed(1);
+}
+if (Q.unemployment) {
+    Q.unemployment_2 = Q.unemployment.toFixed(1);
+}
 !}
 
 = Status
@@ -16,11 +22,14 @@ Party: [+ resources +]
 Paramilitary: [+ para_resources +]
 
 PSI position: [? if psi_in_government : in government - ?][? if psi_in_government == 0 : opposition ?]
-[? if in_centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if in_minority_government and psi_in_government: Minority government ?]
+[? if centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if in_minority_government and psi_in_government: Minority government ?]
 
 [? if psi_in_government and not in_psi_majority: Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
 Internal dissent: [+ dissent_percent : dissent +]
+Revolutionary fervor: [+ revolutionary_fervor +]%
+Radicalism : [+ radicalisation : radicalisation +]
+Our approach: [+ party_approach +]
 
 = Government
 
@@ -46,6 +55,10 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 = Economics
 
 Inflation: [+ inflation_2 +]%
+
+Economic Growth: [+ economic_growth_2 +]%
+
+Unemployment: [+ unemployment_2 +]%
 
 @politics
 

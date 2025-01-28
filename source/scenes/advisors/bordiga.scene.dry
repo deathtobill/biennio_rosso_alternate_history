@@ -1,6 +1,7 @@
 title: Amadeo Bordiga
 is-pinned-card: true
 tags: advisor, communist
+on-action: bologna_occured = 1
 card-image: img/portraits/AmadeoBordiga.png
 view-if: bordiga_advisor = 1
 new-page: true 
@@ -19,16 +20,16 @@ title: Armed Uprising
 subtitle: Order factory workers to seize control of their workplaces!
 choose-if: advisor_action_timer = 0 and rg_strength > 19 and rg_banned = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rg_strength < 20 : The Red Guards don't have enough members to act. ?][? if rg_banned = 1 : The Red Guard are banned, they cannot act. ?]
-on-arrival: advisor_action_timer = 6; revolutionary_fervor += 5; rg_strength -= 20; reformist_dissent += 10;
+on-arrival: advisor_action_timer = 6; revolutionary_fervor += 5; rg_strength -= 10; reformist_dissent += 10;
 
 We have seized control of more factories and kicked the bourgeois industralists out!
 
 @revolution
 title: Revolution!
 subtitle: The time has finally come; the Red Guard will bring fourth a Socialist Revolution! **There is no coming back from this.**
-choose-if: advisor_action_timer = 0 and revolutionary_fervor > 79 and rg_banned = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if revolutionary_fervor < 80 : There is not enough support within the party to even attempt this. ?][? if rg_banned = 1 : The Red Guard are banned, they cannot act. ?]
-go-to: revolution
+choose-if: advisor_action_timer = 0 and revolutionary_fervor > 79 and rg_banned = 0 and participating = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if revolutionary_fervor < 80 : There is not enough support within the party to even attempt this. ?][? if rg_banned = 1 : The Red Guard are banned, they cannot act. ?][? if participating = 1 : We have already chosen to achieve socialism through parliamentary ways. ? ]
+go-to: civil_war
 
 @choosing_our_targets
 title: Choosing Our Targets

@@ -63,7 +63,7 @@ is-deck: true
 
 @govt
 title: Government Affairs
-view-if: time >= 6
+view-if: psi_in_government
 card-image: img/governmentdeck.jpg
 is-deck: true
 

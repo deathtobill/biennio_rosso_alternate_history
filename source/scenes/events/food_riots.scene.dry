@@ -1,0 +1,37 @@
+title: Food Riots!
+new-page: true
+subtitle: Riots have broken out across Italy!
+view-if: year = 1919 and month = 7
+max-visits: 1
+on-arrival: austrian_civil_war_seen = 1
+face-image: img/schutzbund.png
+#tags: event
+
+= Food riots break out across Italy!
+
+Riots have begun, mostly in Northern Italy, as strikes regarding food prices occur. What should be our response to this situation?
+
+- @expand_aid: Expand our welfare & food program.
+- @solidarity_protest: Protest in solidarity with the rioters.
+- @condemn_protest: Condemn the violent protestors.
+
+@expand_aid 
+subtitle: We need to seize this opportunity and help our comrades out.
+choose-if: resources > 0
+unavailable-subtitle: [? if resources > 0 : We don't have the funds to do this. ?]
+on-action: workers_psi += 3; rural_psi += 4;
+
+Our actions have earned us new supporters in our usual bases, thanking us for our aid.
+
+@solidarity_protest
+subtitle: Get our people out there!
+on-action: workers_psi += 1; rural_psi += 1; ldr_relation -= 5; ul_relation -= 5; ppi_relation -= 5;
+
+Our actions are appreciated by the protestors, but less so by the ruling government, seeing our actions as only exacerbating the situation further.
+
+@condemn_protest
+subtitles: Look at what they're doing!
+on-action: workers_psi -= 1; rural_psi -= 2; coalition_dissent += 0.03; communist_dissent += 10; maximalist__dissent += 10; tradeunionist_dissent += 10; reformist_dissent += 5; ldr_relation += 10; ul_relation += 5; ppi_relation += 10;
+
+Our actions are criticised by every faction. Though the ruling government certainly appreciates your condemnation, it comes at a loss of your voters.
+

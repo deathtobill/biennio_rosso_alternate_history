@@ -1,0 +1,11 @@
+title: 1920
+subtitle: A new year
+on-arrival: {!
+// see post_event.scene.dry for changes.
+!}
+tags: event
+view-if: year = 1920 and month = 1
+priority: 2
+max-visits: 1
+
+A new year begins. The forming of the Fasci is worrying; violence between the paramilitaries are intensifying. The economy is still in crisis. 

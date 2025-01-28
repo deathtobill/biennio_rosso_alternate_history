@@ -1,0 +1,175 @@
+title: March on Rome
+subtitle: The fascists are making their move!
+view-if: (year = 1922 and month = 10) or (fasci_coup_progress => 10 and year = 1922 and month < 10) and not fdc_banned and plot_whispers_seen = 1
+on-arrival: {!
+Q.rg_strength = Math.round(Q.rg_strength);
+Q.fdc_strength = Math.round(Q.fdc_strength);
+Q.sqd_strength = Math.round(Q.sqd_strength);
+Q.army_strength = Math.round(Q.rg_strength);
+
+Q.total_power = 0;
+Q.rg_power = Q.rg_militancy * Q.rg_strength * (100 - Q.dissent)
+Q.police_power = Q.interior_police_strength * Q.interior_police_militancy * Q.interior_police_loyalty
+Q.army_power = Q.army_strength * Q.army_loyalty * Q.army_militancy
+
+if (rome_rg_mobilise = 1) {
+    Q.total_power += Q.rg_power
+}
+if (rome_police_king = 1) {
+    Q.total_power += Q.police_power
+}
+if (rome_army_king = 1) {
+    Q.total_power += Q.army_power
+}
+if (rome_army_bypass = 1) {
+    Q.total_power += Q.army_power * 0.5
+}
+if (rome_police_bypass) {
+    Q.total_power += Q.police_power * 0.5
+}
+
+Q.enemy_power = 0;
+Q.fdc_power = Q.fdc_strength * Q.fdc_militancy
+Q.sqd_power = Q.sqd_strength * Q.sqd_militancy
+if (not sqd_banned) {
+    Q.enemy_power += Q.sqd_power
+}
+if (not fdc_banned) {
+    Q.enemy_power += Q.fdc_power
+}
+
+Q.rome_results = Q.total_power / Q.enemy_power
+if (Q.rome_results => 0.75) {
+    Q.rome_total_defeat = 1
+}
+if (Q.rome_results > 0.76 and Q.rome_results < 1.26) {
+    Q.rome_civil_war = 1
+}
+if (Q.rome_results > 1.25) {
+    Q.rome_victory = 1
+}
+
+!}
+max-visits: 1
+tags: event
+new-page: true
+go-to: rome_menu
+
+= March on Rome
+
+Benito Mussolini, alongisde his militants, have marched upon Rome, demanding the resignation of the current government. The party is in crisis, as factions scramble to assemble a coherent response to the threat. [? if centre_left_coalition : Our coalition partners not responded to Mussolini's demands, as frantic calls are made to them to organise meetings. ?][? if king_relation < 50 : The King has not responded to the demands as well, but we are pessimistic on his response, considering our strained relations. ?][? if king_relation > 49 : The King has not responded to the demands as well, but we are optimistic on his response, considering our warm relations. ?]
+
+[? if spd_in_government : We could utilise our government influence to bring down Mussolini and fascism once and for all. ?][if parliamentary = 0 : We cannot rely on the bourgois to defend this nation from fascism. ?] What do we do?
+
+@rome_menu
+
+- @rome_army_mobilise: Mobilise the Army to stop Mussolini!
+- @rome_police_mobilise: Mobilise the Carabinieri to stop Mussolini!
+- @rome_rg_mobilise: Mobilise the Red Guards to stop Mussolini!
+- @rome_done: We have done all we can.
+- @rome_nothing: There is nothing we can do.
+
+@rome_army_mobilise
+max-visits: 1
+subtitle: The army themselves seem to be willing to cooperate, now we have to convince the King...
+view-if: psi_in_government
+choose-if: army_loyalty > 0.71 
+unavailable-subtitle: [? if army_loyalty < 0.72 : Army loyalty is too low, they refuse to mobilise. ?]
+on-action: army_convinced = 1; rome_army_visited = 1
+go-to: rome_army_checks
+
+@rome_army_checks
+
+- @rome_army_king: Request the King formally mobilise the army.
+- @rome_army_bypass: The King be damned, mobilise the army already!
+
+@rome_army_king
+subtitle: This will result in full mobilisation of the army.
+choose-if: king_relation > 59
+unavailable-subtitle: [? if king_relation < 60: Our relations with the King are not high enough, despite our efforts. ?]
+on-action: army_king_successful = 1; army_king_bypassed = 0
+go-to: rome_menu
+
+@rome_army_king
+subtitle: Bypassing the King's authorisation will result in many refusing to heed our call.
+on-action: army_king_bypassed = 1; army_king_successful = 0
+go-to: rome_menu
+
+@rome_police_mobilise
+max-visits: 1
+subtitle: The police themselves seem to be willing to cooperate, now we have to convince the King...
+view-if: psi_in_government
+choose-if: interior_police_loyalty > 0.71 
+unavailable-subtitle: [? if army_loyalty < 0.72 : Police loyalty is too low, they refuse to mobilise. ?]
+on-action: police_convinced = 1; rome_police_visited = 1
+go-to: rome_army_checks
+
+@rome_army_checks
+
+- @rome_police_king: Request the King formally order the Carabinieri to crackdown.
+- @rome_police_bypass: The King be damned, send the orders out to the Carabinieri already!
+
+@rome_police_king
+subtitle: This will result in full mobilisation of the Carabinieri.
+choose-if: king_relation > 59
+unavailable-subtitle: [? if king_relation < 60: Our relations with the King are not high enough, despite our efforts. ?]
+on-action: police_king_successful = 1; police_king_bypassed = 0
+go-to: rome_menu
+
+@rome_army_king
+subtitle: Bypassing the King's authorisation will result in many refusing to heed our call.
+on-action: police_king_bypassed = 1; police_king_successful = 0
+go-to: rome_menu
+
+@rome_rg_mobilise
+max-visits: 1
+subtitle: Our forces will begin to March on Rome as well, [? if participating = 1 : in support of the government. ?] the bourgois may see this as a threat as well, however.
+choose-if: rg_banned = 0 or (communist_dissent > 50 and maximalist__dissent > 50 and reformist_dissent > 50 and tradeunionist_dissent > 50)
+unavailable-subtitle: [? if rg_banned = 1 : The Red Guards are banned, and cannot act. ?][? if (communist_dissent > 50 and maximalist__dissent > 50 and reformist_dissent > 50 and tradeunionist_dissent > 50) : The party is too disunited to act. ?]
+on-action: rome_rg_visited = 1
+go-to: rome_menu if participating = 1; rome_civil_war if participating = 0
+
+@rome_done
+max-visits: 1
+subtitle: Now we just have to hope it works.
+view-if: rome_army_visited = 1 or rome_police_visited = 1 or rome_rg_visited = 1
+go-to: total_defeat if rome_total_defeat = 1; rome_long_war if rome_civil_war = 1; rome_victory if rome_victory = 1
+
+@rome_nothing
+max-visits: 1
+subtitle: The fruits of our labour have shown themselves; the Army is willing to put down Mussolini!
+view-if: rome_army_visited = 0 or rome_police_visited = 0 or rome_rg_visited = 0
+go-to: mussolini_takes_power
+
+@total_defeat
+title: Total Defeat
+new-page: false
+view-if: rome_total_defeat = 1
+
+Against all odds, Mussolini has succeeded in his goals. [+ king +] has already appointed him Prime Minister, as it seems the tide has turned against us. 
+
+What happens now?
+
+@game_over: Game over.
+
+@rome_long_war
+title: Long War
+new-page: false
+view-if: rome_civil_war = 1;
+
+It seems the March on Rome has erupted into chaos, as forces across the nation take up arms, pledging support to one side or the other. 
+
+We are in a long, protracted war with the fascists now. This will be sure to shape our future immensely. Time will only tell how.
+
+@game_over: Game over.
+
+@rome_victory
+title: Victory
+new-page: false
+view-if: rome_victory = 1;
+on-action: march_failed = 1;
+
+Our forces easily overwhelm Mussolini's, as the Fasci are routed and forced to retreat. 
+
+Victory is achieved, and fascism is staved off for yet another day.
+

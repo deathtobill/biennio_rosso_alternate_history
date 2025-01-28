@@ -1,0 +1,37 @@
+title: Whispers of a Plot
+subtitle: Our sources have gathered crucial information...
+view-if: (year = 1922 and month = 8) or (fasci_coup_progress > 8 and year = 1922 and month < 8) 
+new-page: true
+on-arrival: fdc_strength += 25; plot_whispers_seen = 1
+max-visits: 1 
+tags: event
+
+= Whispers of a Plot
+
+Our sources have sent us concerning behaviour regarding the Fasci. They have been militarising further, as meetings between the fascists and the military have increased in frequency, with some even floating the rumor that the Mussolini is planning a coup.
+How should we react to these claims?
+
+- @expand_paramilitaries: Expand the Red Guard just in case.
+- @increase_relations: Improve our relations with our coalition allies and the King.
+- @nothing_ever_happens: What's the worst that could happen?
+
+@expand_paramilitaries
+subtitle: Perhaps an injection of funds to the Red Guard would help in the event of anything.
+unavailable-subtitle: [? if resources < 1 : We do not have the funds to do this. ?][? if revolutionary_fervor < 60 : The majority of the party refuses to support this based on mere rumors. ?]
+choose-if: resources > 0 and revolutionary_fervor > 59
+on-arrival: resources -= 1; rg_strength += 20 
+
+The expansion of the Red Guards is accepted by most of the factions as a necessity, especially seeing the violence occuring daily within Italy.
+
+@increase_relations
+subtitle: Stronger relations with our allies in government might help in the event of anything.
+choose-if: participating = 1 and psi_in_government = 1 and resources > 0
+unavailable-subtitle: [? if participating = 0 : We have already agreed to abandon parliamentary means. ?][? if not psi_in_government : We are not in government. ?][? if resources < 1 : We do not have the funds to do this. ?]
+on-arrival: ppi_relation += 10; ds_relation += 10; if not psri_reconcilled : psri_relation += 10; king_relation += 15 / radicalisation; resources -= 1
+
+Relations between the coalition parties are strengthened and overtures are made to the King, [? if radicalisation < 6 : who responds warmly to our attempts. ?][? if radicalisation > 5 : who responds mildly to our attempts. ?]
+
+@nothing_ever_happens
+subtitle: It would be absurd to act upon mere rumors.
+
+These rumors are discarded, as the party continues its regular activity.

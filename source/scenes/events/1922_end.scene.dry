@@ -1,0 +1,14 @@
+title: A New Year in Italy
+subtitle: Has fascism been defeated?
+tags: event
+priority: 3
+view-if: march_failed = 1 and prime_minister != "Mussolini" and year = "1923" and month = "1"
+max-visits: 1
+on-arrival: {!
+!}
+new-page: true
+go-to: game_over_1922
+
+= A New Day in Italy
+
+With the failure of the March on Rome, it seems the Fasci's momentum has stalled. Our forces are overwhelming theirs, as it seems revolution is, truly, inevitable.

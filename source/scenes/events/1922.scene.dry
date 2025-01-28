@@ -1,0 +1,13 @@
+title: 1931
+subtitle: A new year 
+on-arrival: {!
+Q.inflation -= 3.4;
+Q.economic_growth += 1.3;
+Q.unemployment -= 1.4;
+!}
+tags: event
+view-if: year = 1922 and month = 1
+priority: 2
+max-visits: 1
+
+A new year begins. The Fasci have only gotten stronger. [? if not psi_in_government: Government inaction has slowed recovery, as well as kept violence high. ?]

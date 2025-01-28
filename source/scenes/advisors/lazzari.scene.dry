@@ -33,7 +33,7 @@ go-to: party_rally
 @labour_rights
 title: Labour Rights
 subtitle: As a member of the government, we can help out our support base a bit.
-choose-if: advisor_action_timer <= 0 and (in_centre_left_coalition or in_minority_government or in_psi_majority)
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not (in_centre_left_coalition or in_minority_government or in_psi_majority) : The PSI is not in government to influence it. ?]
+choose-if: advisor_action_timer <= 0 and (centre_left_coalition or in_minority_government or in_psi_majority)
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not (centre_left_coalition or in_minority_government or in_psi_majority) : The PSI is not in government to influence it. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: labour_rights

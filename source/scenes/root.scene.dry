@@ -45,6 +45,7 @@ Q.dues = 2;
 // overall dissent reduces every increase in party support.
 Q.dissent = 0.05;
 Q.dissent_percent = 5;
+Q.party_approach = "Unclear";
 
 // factions
 Q.factions = ['Communists', 'Maximalists', 'Trade Unionists', 'Reformists'];
@@ -58,19 +59,21 @@ Q.tradeunionist_dissent = 10;
 Q.reformist_strength = 10;
 Q.reformist_dissent = 20;
 
-// secret events...
+// in the event dissent gets too high
 Q.unions_independent = 0;
 Q.maximalists_resign = 0;
 Q.communists_split = 0;
 Q.reformists_defect = 0;
 
-// crisis_urgency indicates how seriously the SPD is taking the economic crisis - scale from 0 to 10.
-Q.crisis_urgency = 0;
-// nazi_urgency indicates how seriously the PSI takes the fasci - scale from 0 to 10.
+// Depending on how the Congress goest
+Q.reformists_expelled = 0;
+Q.congress_communist_split = 0;
+
+// fasci_urgency indicates how seriously the PSI takes the fasci - scale from 0 to 10.
 Q.fasci_urgency = 0;
-// radicalization indicates how radical the PSI's rhetoric is - scale from 0 to 10.
-Q.radicalization = 5;
-// have we formed the iron front?
+// radicalisation indicates how radical the PSI's rhetoric is - scale from 0 to 10.
+Q.radicalisation = 5;
+// have we formed the Arditi del popolo?
 Q.arditi_del_popolo_formed = 0;
 
 // organizations
@@ -89,9 +92,9 @@ Q.ldr_leader = "Orlando";
 Q.ds_leader = "Colonna";
 Q.ppi_leader = "Sturzo";
 Q.psri_leader = "Ciotti";
-Q.nsdap_leader = "Hitler";
+Q.bn_leader = "Mussolini";
 
-// hmm... maybe we can play nice with Hindenburg???
+// relation with the king; for snap elections and march
 Q.king_relation = 10;
 
 // The array of forces - paramilitary groups
@@ -106,7 +109,7 @@ Q.sqd_strength = 0;
 Q.sqd_militancy = 0.50;
 Q.sqd_banned = 0;
 
-Q.interior_police_strength = 50;
+Q.interior_police_strength = 20;
 Q.interior_police_militancy = 1;
 Q.interior_police_loyalty = 0.45;
 
@@ -123,9 +126,12 @@ Q.pro_monarchy = 84;
 // revolution vs radicalism
 Q.revolutionary_fervor = 60;
 
-// capital strikes happen when you upset the capitalists too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
+// capital strikes happen when you upset the industralists & landowners too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
+// coup progress happens when you piss off the fasci too much too quickly + if they have enough troops
 // when capital_strike_progress reaches 10, there's a special event that launches the coup.
 Q.capital_strike_progress = 0;
+// if fasci_coup_progress reaches 10 before historical, march on rome event is triggered
+Q.fasci_coup_progress = 0;
 
 Q.budget = 2;
 
@@ -138,9 +144,11 @@ Q.veterans = 4;
 Q.catholics = 6;
 
 Q.inflation = 19.2;
+Q.economic_growth = -2.1;
+Q.unemployment = 13.5;
 
 Q.classes = ['workers', 'middle_class', 'industralists', 'rural', 'veterans', 'catholics'];
-Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'bn', 'other'];
+Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'bn', 'other', 'pci'];
 
 // Communist split from the party
 Q.pci_formed = 0;
@@ -156,6 +164,7 @@ Q.workers_ul = 4;
 Q.workers_bn = 7;
 Q.workers_psri = 13;
 Q.workers_other = 5;
+Q.workers_pci = 0;
 
 Q.middle_class_psi = 9;
 Q.middle_class_ppi = 33;
@@ -165,6 +174,7 @@ Q.middle_class_ul = 13;
 Q.middle_class_bn = 2;
 Q.middle_class_psri = 2;
 Q.middle_class_other = 10;
+Q.middle_class_pci = 0;
 
 Q.industralists_psi = 2;
 Q.industralists_ppi = 11;
@@ -174,6 +184,7 @@ Q.industralists_ul = 28;
 Q.industralists_bn = 1;
 Q.industralists_psri = 0;
 Q.industralists_other = 1;
+Q.industralists_pci = 0;
 
 Q.rural_psi = 27;
 Q.rural_ppi = 44;
@@ -183,6 +194,7 @@ Q.rural_ul = 3;
 Q.rural_bn = 7;
 Q.rural_psri = 2;
 Q.rural_other = 2;
+Q.rural_pci = 0;
 
 Q.veterans_psi = 14;
 Q.veterans_ppi = 3;
@@ -192,6 +204,7 @@ Q.veterans_ul = 3;
 Q.veterans_bn = 73;
 Q.veterans_psri = 2;
 Q.veterans_other = 2;
+Q.veterans_pci = 0;
 
 Q.catholics_psi = 6;
 Q.catholics_ppi = 2;
@@ -201,6 +214,7 @@ Q.catholics_ul = 2;
 Q.catholics_bn = 2;
 Q.catholics_psri = 1;
 Q.catholics_other = 2;
+Q.catholics_pci = 0;
 
 
 // Current Chamber of Deputies composition
@@ -215,6 +229,7 @@ Q.ul_r = 4;
 Q.bn_r = 0;
 Q.psri_r = 2;
 Q.other_r = 1;
+Q.pci_r = 0;
 
 // diff from prev
 Q.old_psi_r = 17;
@@ -225,9 +240,7 @@ Q.old_ul_r = 40;
 Q.old_bn_r = 0;
 Q.old_psri_r = 4;
 Q.old_other_r = 2;
-
-// for changing the DDP's name to the DStP
-Q.psri_name = "PCI";
+Q.old_pci_r = 0;
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
@@ -249,15 +262,17 @@ Q.ds_in_government = 1;
 Q.ul_in_government = 1;
 Q.prsi_in_government = 0;
 Q.bn_in_government = 0;
+Q.pci_in_government = 0;
 
 // Catholic-Centre Coalition = PPI + LDR + UL + DS
-Q.in_catholic_centre_coalition = 0;
+Q.catholic_centre_coalition = 0;
 // Centre-Left Coalition = PSI + PPI + DS + PSRI
-Q.in_centre_left_coalition = 0;
+Q.centre_left_coalition = 0;
 Q.in_psi_majority = 0;
 Q.catholic_centre_failed = 0;
 // if the SPD is ruling as part of a minority government
 Q.in_minority_government = 0;
+Q.anti_socialist_coalition = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from your partners.
 Q.coalition_dissent = 0;
@@ -423,20 +438,20 @@ This is a game of alternate history. While historical accuracy is a major concer
 
 For more information on the politics and government of the Italian Kingdom, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
-- @1928_easy: Begin (easy difficulty)
-- @1928_main: Begin (normal difficulty)
-- @1928_hard: Begin (hard difficulty)
-- @1928_historical: Begin (historical mode)
+- @1919_easy: Begin (easy difficulty)
+- @1919_main: Begin (normal difficulty)
+- @1919_hard: Begin (hard difficulty)
+- @1919_historical: Begin (historical mode)
 
-@1928_easy
+@1919_easy
 on-arrival: difficulty = -1; resources = 4; dues = 3; rg_strength = 2500; ppi_relation = 55; ds_relation = 55; psri_relation = 65; budget = 5;
-go-to: 1928_main
+go-to: 1919_main
 
-@1928_hard
+@1919_hard
 on-arrival: difficulty = 1; resources = 0; dues = 1; rg_strength = 1000; reformist_dissent = 30; communist_dissent = 30; tradeunionist_dissent = 20; maximalist__dissent = 15; ppi_relation = 35; ds_relation = 35; psri_relation = 35; budget = 3;
-go-to: 1928_main
+go-to: 1919_main
 
-@1928_historical
+@1919_historical
 subtitle: Saving, loading, and polls will be disabled. [? if not achievement_game_completed: Not recommended for a first playthrough. ?]
 on-arrival: {!
 Q.difficulty = 2;
@@ -454,15 +469,15 @@ Q.prsi_relation = 25;
 Q.budget = 2;
 this.state.disableSaves = true;
 !}
-go-to: 1928_main
+go-to: 1919_main
 
-@1928_main
+@1919_main
 set-bg: img\background.png
 audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg music/1928_1930/LiedDerPompadour.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
-= 1928
+= 1919
 
 It is a dark time for Italian Kingdom. After the first world war, the economy is in crisis, with inflation uncontrollable and unemployment widespread. Our internal situation isn't much better, as nationalist and socialist paramilitaries engage in effectively open warfare against each other whilst government inaction is critised.
 

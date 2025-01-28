@@ -1,0 +1,30 @@
+title: XVII Congress of the Italian Socialist Party
+subtitle: A divergence in paths is to be decided once more.
+new-page: true
+tags: event
+view-if: year = 1921 and month = 1
+max-visits: 1
+face-image: img/bankrun.jpg
+
+= XVII Congress of the Italian Socialist Party
+
+Debates and speeches from many are heard, as differing voices voice their opinions to the crowd. The 17th Congress has begun, and there is only one agenda: Do we follow the Third Internationale line and expel the reformists?
+
+- @refuse_comintern: The PSI must stand with its reformists. They will not be expelled.
+- @accept_comintern: The PSI must toe the Internationale line. The Reformists must be expelled.
+
+@refuse_comintern
+subtitle: This will greatly upset the Communists, potentially even causing a split!
+choose-if: participating = 0
+unavailable-subtitle: [? if participating = 1 : The Bologna Congress has already forced us to adopt a revolutionary stance. ?]
+on-action: communist_strength -= 100; communist_dissent += 100; congress_communist_split = 1; revolutionary_fervor -= 10
+
+[? if communists_split = 1 : Even as the communist faction remains minimal after the founding of the Italian Communist Party, ?] The communist faction has resigned, with the majority [? if communists_split = 1 : joining the existing PCI. ?][? if communists_split = 0 : creating a new party called the Italian Communist Party. ?]
+
+@accept_comintern
+subtitle: This will greatly upset the Reformists, potentially even causing a defection!
+choose-if: participating = 1
+unavailable-subtitle: [? if participating = 0 : The Bologna Congress has already forced us to adopt a parliamentary stance. ?]
+on-action: reformist_strength -= 100; reformist_dissent += 100; reformists_expelled = 1; revolutionary_fervor += 10
+
+[? if reformists_defect = 1 : Even as the reformist faction remains minimal after its defection to the PSRI, ?] The reformist faction has been expelled, with the majority joining the PSRI.

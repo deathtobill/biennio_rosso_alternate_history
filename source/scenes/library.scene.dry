@@ -71,7 +71,7 @@ BN: [+ bn_r +]%
 Others: [+ other_r +]%
 
 PSI position: [? if psi_in_government : in government - ?][? if psi_in_government == 0 : opposition ?]
-[? if in_centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if in_minority_government and psi_in_government: Minority government ?]
+[? if centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if in_minority_government and psi_in_government: Minority government ?]
 
 [? if psi_in_government and not in_psi_majority : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
@@ -275,7 +275,7 @@ Dissent: [+ reformist_dissent : dissent +]
 title: Figures and Charts
 go-to: menu
 
-data = data.concat([
+data = [
     {
         "id": "psi",
         "legend": "PSI",
@@ -298,7 +298,7 @@ data = data.concat([
         "id": "ldr",
         "legend": "LDR",
         "name": "LDR",
-        "seats": (Q.ldr_r - 3)*5,
+        "seats": Q.ldr_r*5,
     },
     {
         "id": "ds",
@@ -324,7 +324,7 @@ data = data.concat([
         "name": "BN",
         "seats": Q.bn_r*5,
     },
-]);
+];
 
 if (d3 && window) {
     // get screen width
@@ -379,8 +379,6 @@ if (d3 && window) {
 
 {!<table>!}
 {!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div></td><td>!} **PSI:** {!</td><td>!} **[+ psi_r +]%** {!</td></tr>!}
-
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div></td> <td> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#E3000F'> </div></td> <td>!}PSRI: {!</td><td>!} [+ psri_r +]% {!</td></tr>!}
 

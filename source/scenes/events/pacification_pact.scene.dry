@@ -1,0 +1,34 @@
+title: Pact of Pacification
+new-page: true
+subtitle: Brokered agreement between the us and the fascists.
+tags: event
+view-if: year = 1921 and month = 9
+max-visits: 1
+face-image: img/redfront.jpg
+
+= Pact of Pacification
+
+Tensions run high. Benito Mussolini has presented the Trade Unionists and the party itself with a peace agreement. We would halt all violence against each others party for the "mutual respect" of "all economic organisations".
+
+[? if communists_split = 0 and congress_communist_split = 0 : The Communists and ?] The Maximalists argue against the agreement, seeing it as collaboration with the bourgeois while [? if reformists_defect = 1 or reformists_expelled = 1 : what's left of ?] the reformists argue in favour of ending the violence between our two groups. What do we do?
+
+- @signed_pacification: Sign the Pact of Pacification.
+- @refused_pacification: Refuse to sign the Pact of Pacification.
+
+@signed_pacification
+subtitle: We need to ensure peace in the interior.
+choose-if: if reformists_defect = 0 and reformists_expelled = 0
+unavailable-subtitle: [? if reformists_defect = 1 or reformists_expelled = 1 : The party does not have enough to support to even consider this. ?]
+on-arrival: maximalist__dissent += 10; reformist_dissent -= 10; revolutionary_fervor -= 5;
+
+We sign the agreement, only for it to break down days later as fascist squad leaders refuse to honour it. 
+
+@refused_pacification
+subtitle: No deals with fascists!
+choose-if: if communists_split = 0 and congress_communist_split = 0
+unavailable-subtitle: [? if communists_split = 1 or congress_communist_split = 1 : The party does not have enough to support to even consider this. ?]
+on-arrival: maximalist__dissent -= 10; reformist_dissent -= 10; revolutionary_fervor += 5;
+
+We refuse to sign the Pact, and continue organising the Red Guards against the Fasci.
+
+

@@ -1,0 +1,31 @@
+title: Forming of the Fasci
+subtitle: A new paramilitary group has formed...
+view-if: year = 1919 and month = 4
+max-visits: 1
+tags: event
+new-page: true
+face-image: img/All_Quiet.jpg
+
+= Forming of the *Fasci Italiani di Combattimento*
+
+In the hall of Piazza San Sepolcro, a man speaks. He speaks of equal suffrage, of referendums, of nationalism, of how the Italian people were robbed, given this "mutilated victory" in its wake, as thunderous appluase shook the hall. The Fasci Italiani di Combattimento has been formed, and has already picked up momentum within the population.
+
+The party is split on the new party. After all, talks of equal suffrage, of the abolishment of the Senate, were those not in line with us? 
+
+- @distrust_watch_closely: We should be distrustful.
+- @trust_watch_closely: We shouldn't doubt them by mere rhetoric.
+
+@distrust_watch_closely
+subtitle: This new organisation needs to be viewed with suspicion
+on-arrival: veterans_bn += 5; distrusted_fasci = 1; fdc_strength += 10;
+
+Regardless, it seems the organisation is catching fire amongst the population, especially the veterans.
+
+@trust_watch_closely
+subtitle: We should give Mussolini and his 'Fasci' the benefit of the doubt.
+on-arrival: veterans_bn += 5; distrusted_fasci = 0; fdc_strength += 10;
+
+Regardless, it seems the organisation is catching fire amongst the population, especially the veterans.
+
+
+

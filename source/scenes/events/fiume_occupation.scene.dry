@@ -1,0 +1,30 @@
+title: Occupation of Fiume
+subtitle: D'Annunzio has sezied control of Fiume!
+new-page: true
+tags: event
+view-if: year = 1919 and month = 9
+max-visits: 1
+
+= Occupation of Fiume
+
+Gabriele D'Annunzio, a poet and officer of the Regio Esercito, along with his "*legionaries*", have seized control of the city of Fiume from Entente occupying forces, declaring the "Italian Regency of Carnaro" and demanding Italy annex the city. 
+
+So far, the government has refused. What should we do? Should we condemn D'Annunzio?
+
+However, the Allies, especially France, are likely to object. This agreement would break the terms of the Versailles Treaty, and could lead to economic sanctions, further hurting our economy.
+
+- @condemn_fiume: Condemn D'Annunzio and his nationalist march! 
+- @no_comment: Do not release a comment.
+
+@condemn_fiume 
+subtitle: Of course we should condemn this madman!
+on-action: veterans_psi -= 5; veterans_bn += 5; coalition_dissent -= 0.01; communist_dissent -= 5; maximalist_dissent -= 5; tradeunionist_dissent -= 5; reformist_dissent -= 5;
+
+Unsurprisingly, we issue a standard condemnation of D'Annunzio, decreasing dissent at the cost of alienating some of our veteran supporters.
+
+@no_comment
+subtitle: I think everyone knows our position by now.
+
+The lack of a condemnation doesn't catch anybody's attention, which is good for keeping support in the voting bloc of the veterans.
+
+

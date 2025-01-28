@@ -1,0 +1,44 @@
+title: CGL relinquishes control of the Turin Factory Councils
+subtitle: Unprecedented power is now in our hands.
+new-page: true
+tags: event
+view-if: year = 1920 and month = 9
+max-visits: 1
+face-image: img/danat_bank.jpg
+
+= Turin Factory Councils under control
+
+The Turin Factory Councils have been given control of to us by the General Confederation of Labour, and it seems we could use this opportunity to further our cause immensely. What should we do?
+
+- @turin_revolution: Begin the revolutionary process.
+- @turin_red_guards: Recruit more Red Guard members.
+- @turin_popularity: Increase our popular support.
+- @turin_conflict: We cannot do anything.
+
+@turin_revolution
+subtitle: This is the opportunity we needed to take control of Italy!
+view-if: (communist_dissent and reformist_dissent and maximalist__dissent and tradeunionist_dissent) < 50
+choose-if: participating = 1 and revolutionary_fervor > 79
+unavailable-subtitle: [? if participating = 0 : We have already decided to achieve socialism through parliamentary means. ?][? if revolutionary_fervor < 80 : Not enough of the party thinks we are prepared enough. ?]
+go-to: turin_revolution
+
+@turin_red_guards
+subtitle: Utilise the opportunity to strengthen our Red Guards.
+view-if: (communist_dissent and reformist_dissent and maximalist__dissent and tradeunionist_dissent) < 50
+on-arrival: rg_strength += 40
+
+Workers are flocking to the Red Guards in droves, expanding the paramilitary and preparing us for the eventual revolution.
+
+@turin_popularity
+subtitle: Utilise the opportunity to strengthen our popular support.
+view-if: (communist_dissent and reformist_dissent and maximalist__dissent and tradeunionist_dissent) < 50
+on-arrival: worker_psi += 6; rural_psi += 3; middle_class_psi += 2
+
+Our posters and newspapers are all over the streets of Turin, and our polling in the region has already skyrocketed.
+
+@turin_conflict
+subtitle: Party disunity paralyses the opportunity to take decisive action. 
+view-if: (communist_dissent and reformist_dissent and maximalist__dissent and tradeunionist_dissent) > 50
+on-arrival: tradeunionist_dissent += 10
+
+The opportunity to utilise the Turin Factory Councils slips by our hand, as the government and industralists crack down hard.

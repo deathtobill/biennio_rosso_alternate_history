@@ -1,0 +1,46 @@
+title: [? if psi_in_government : Military recommends action in Libya ?] Military prepares for war in Libya.
+subtitle: The nation seems to be on the brink of war once more.
+view-if: year = 1922 and month = 1
+new-page: true
+max-visits: 1
+tags: event
+
+= [? if psi_in_government : Military recommends action in Libya. ?] Military prepares for war in Libya.
+
+Our sources in the Army and Navy Ministries has informed us that the High Command is preparing for the pacification of Libya. Popular support for the war seems to be widespread, as many still remember the killings of civilians done by local guerrillas.
+
+[? if psi_in_government : Many within the party are pressuring us to use our position in the government to convince or influence the army to stop, or at least delay the invasion until a later time. ?][? if not psi_in_government : Realistically, there is not much we can do to stop this. ?]
+
+- @libya_majority: Refuse the military's recommendation for war.
+- @libya_coalition_influence: Utilise our government influence to delay the war.
+- @libya_military_influence: Utilise our military influence and coffers to delay the war.
+- @libya_nothing: Issue a letter of condemnation, but nothing else.
+
+@libya_majority
+subtitle: We're in control of the government after all, aren't we?
+view-if: in_psi_majority = 1
+on-arrival: maximalist__dissent -= 10; reformist_dissent -= 10; communist_dissent -= 10; tradeunionist_dissent -= 10; veterans_psi -= 7; veterans_bn += 7; army_loyalty -= 0.1; workers_psi -= 3
+
+Being in control of the government, we force the military to drop their plans, as the factions laud our decisive action. The military, however, is less than enthused by the news, and our veteran support base is in an uproar.
+
+@libya_coalition_influence
+subtitle: Thankfully, we can persuade our coalition to heed our concerns.
+view-if: centre_left_coalition = 1
+on-arrival: maximalist__dissent -= 5; reformist_dissent -= 5; communist_dissent -= 5; tradeunionist_dissent -= 5; coalition_dissent += 1; veterans_psi -= 4; veterans_bn += 4; army_loyalty -= 0.05;
+
+Our coalition members are able to see reason, at least temporarily, and decide to delay the war until the internal situation improves. Our veteran supporters, however, aren't happy, and the BN seizes the opportunity to increase their support.
+
+@libya_military_influence
+subtitle: *-1 Resource* Thankfully, we can use to influence as well as our coffers to 'delay' the war.
+choose-if: army_loyalty > 0.53 and resources > 0
+unavailable-subtitle: [? if army_loyalty < 0.54 : Our influence in the military is too low to even attempt this. ?][? if resources < 1 : We do not have the resources to do this. ?]
+on-arrival: resources -= 1; veterans_psi -= 1;
+
+Using our already-established influence, we coordinate troops to 'miscount' their equipment and 'take their time' in supplying equipment, whilst our funds go towards more 'friendly' officers who are persuaded to relax and take their time in ordering troops or planning. War preparations, seeming for no reason, has ground to a halt.
+
+@libya_nothing
+subtitle: What else could we do?
+on-arrival: maximalist__dissent += 7; reformist_dissent += 7; communist_dissent += 7; tradeunionist_dissent += 7;
+
+Realistically, there is nothing we can do. The factions are unsurprisingly outraged by our inaction, but it passes quickly, as usual.
+
