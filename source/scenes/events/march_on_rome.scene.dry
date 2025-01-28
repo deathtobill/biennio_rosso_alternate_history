@@ -11,9 +11,9 @@ Q.sqd_strength = Math.round(Q.sqd_strength);
 Q.army_strength = Math.round(Q.rg_strength);
 
 Q.total_power = 0;
-Q.rg_power = Q.rg_militancy * Q.rg_strength * (100 - Q.dissent)
-Q.police_power = Q.interior_police_strength * Q.interior_police_militancy * Q.interior_police_loyalty
-Q.army_power = Q.army_strength * Q.army_loyalty * Q.army_militancy
+Q.rg_power = Q.rg_militancy * Q.rg_strength * (100 - Q.dissent);
+Q.police_power = Q.interior_police_strength * Q.interior_police_militancy * Q.interior_police_loyalty;
+Q.army_power = Q.army_strength * Q.army_loyalty * Q.army_militancy;
 
 if (rome_rg_mobilise = 1) {
     Q.total_power += Q.rg_power
@@ -27,29 +27,29 @@ if (rome_army_king = 1) {
 if (rome_army_bypass = 1) {
     Q.total_power += Q.army_power * 0.5
 }
-if (rome_police_bypass) {
+if (rome_police_bypass = 1) {
     Q.total_power += Q.police_power * 0.5
 }
 
 Q.enemy_power = 0;
-Q.fdc_power = Q.fdc_strength * Q.fdc_militancy
-Q.sqd_power = Q.sqd_strength * Q.sqd_militancy
+Q.fdc_power = Q.fdc_strength * Q.fdc_militancy;
+Q.sqd_power = Q.sqd_strength * Q.sqd_militancy;
 if (not sqd_banned) {
-    Q.enemy_power += Q.sqd_power
+    Q.enemy_power += Q.sqd_power;
 }
 if (not fdc_banned) {
-    Q.enemy_power += Q.fdc_power
+    Q.enemy_power += Q.fdc_power;
 }
 
-Q.rome_results = Q.total_power / Q.enemy_power
-if (Q.rome_results => 0.75) {
-    Q.rome_total_defeat = 1
+Q.rome_results = Q.total_power / Q.enemy_power;
+if (Q.rome_results >= 0.75) {
+    Q.rome_total_defeat = 1;
 }
 if (Q.rome_results > 0.76 and Q.rome_results < 1.26) {
-    Q.rome_civil_war = 1
+    Q.rome_civil_war = 1;
 }
 if (Q.rome_results > 1.25) {
-    Q.rome_victory = 1
+    Q.rome_victory = 1;
 }
 !}
 go-to: rome_menu
@@ -123,8 +123,8 @@ go-to: rome_menu
 @rome_rg_mobilise
 max-visits: 1
 subtitle: Our forces will begin to March on Rome as well, [? if participating = 1 : in support of the government. ?] the bourgois may see this as a threat as well, however.
-choose-if: rg_banned = 0 or (communist_dissent > 50 and maximalist__dissent > 50 and reformist_dissent > 50 and tradeunionist_dissent > 50)
-unavailable-subtitle: [? if rg_banned = 1 : The Red Guards are banned, and cannot act. ?][? if (communist_dissent > 50 and maximalist__dissent > 50 and reformist_dissent > 50 and tradeunionist_dissent > 50) : The party is too disunited to act. ?]
+choose-if: rg_banned = 0 or (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and tradeunionist_dissent > 50)
+unavailable-subtitle: [? if rg_banned = 1 : The Red Guards are banned, and cannot act. ?][? if (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and tradeunionist_dissent > 50) : The party is too disunited to act. ?]
 on-action: rome_rg_visited = 1
 go-to: rome_menu if participating = 1; rome_civil_war if participating = 0
 

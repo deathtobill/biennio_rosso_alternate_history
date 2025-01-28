@@ -448,7 +448,7 @@ on-arrival: difficulty = -1; resources = 4; dues = 3; rg_strength = 2500; ppi_re
 go-to: 1919_main
 
 @1919_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; rg_strength = 1000; reformist_dissent = 30; communist_dissent = 30; tradeunionist_dissent = 20; maximalist__dissent = 15; ppi_relation = 35; ds_relation = 35; psri_relation = 35; budget = 3;
+on-arrival: difficulty = 1; resources = 0; dues = 1; rg_strength = 1000; reformist_dissent = 30; communist_dissent = 30; tradeunionist_dissent = 20; maximalist_dissent = 15; ppi_relation = 35; ds_relation = 35; psri_relation = 35; budget = 3;
 go-to: 1919_main
 
 @1919_historical

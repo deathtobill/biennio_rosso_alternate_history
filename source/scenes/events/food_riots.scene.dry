@@ -31,7 +31,7 @@ Our actions are appreciated by the protestors, but less so by the ruling governm
 
 @condemn_protest
 subtitle: Look at what they're doing!
-on-arrival: workers_psi -= 1; rural_psi -= 2; coalition_dissent += 0.03; communist_dissent += 10; maximalist__dissent += 10; tradeunionist_dissent += 10; reformist_dissent += 5; ldr_relation += 10; ul_relation += 5; ppi_relation += 10;
+on-arrival: workers_psi -= 1; rural_psi -= 2; coalition_dissent += 0.03; communist_dissent += 10; maximalist_dissent += 10; tradeunionist_dissent += 10; reformist_dissent += 5; ldr_relation += 10; ul_relation += 5; ppi_relation += 10;
 
 Our actions are criticised by every faction. Though the ruling government certainly appreciates your condemnation, it comes at a loss of your voters.
 
