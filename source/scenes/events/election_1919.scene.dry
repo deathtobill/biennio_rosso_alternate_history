@@ -4,7 +4,7 @@ tags: event
 priority: -1
 view-if: (year = next_election_year and month >= next_election_month) or (year > next_election_year)
 on-departure: month_actions += 1; in_election = 0; next_election_year = next_election_year + 2; n_elections += 1; next_election_time = time + 24;
-set-jump: post_election_1928
+set-jump: post_election_1919
 face-image: img/Rothe_Wahlen_1903.jpg
 
 = Elections, [+ month : month +] [+ year +]
@@ -13,7 +13,7 @@ The Chamber of Deputies elections are to be held now.
 
 - @election_algorithm: May we do our best...
 
-@post_election_1928
+@post_election_1919
 on-arrival: {!
 // set old results
 // election threshold constitutional reform
@@ -209,7 +209,7 @@ para_funding: What now?
 
 @centre_left_coalition
 title: Is a Centre-Left coalition possible?
-subtitle: PSI + PPI + DS + PSRI ([+ left_coalition +]%). The Communists and Maximalists will be in an uproar if we do this.
+subtitle: PSI + PPI + DS + PSRI ([+ center_left_coalition +]%). The Communists and Maximalists will be in an uproar if we do this.
 unavailable-subtitle: PSI + PPI + DS + PSRI: ([+ left_coalition +]%). [? if not participating = 1 : The party has decided against parliamentary means already. ?][? if ppi_relation < 50 : We do not have adequate relations with the PPI. ?][? if ds_relation < 50 : We do not have adequate relations with the PPI. ?]
 view-if: centre_left_coalition >= 50
 choose-if: participating = 1 and ppi_relation > 49 and ds_relation > 49
