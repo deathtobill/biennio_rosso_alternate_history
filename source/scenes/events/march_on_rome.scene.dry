@@ -74,7 +74,7 @@ subtitle: The army themselves seem to be willing to cooperate, now we have to co
 view-if: psi_in_government
 choose-if: army_loyalty > 0.71 
 unavailable-subtitle: [? if army_loyalty < 0.72 : Army loyalty is too low, they refuse to mobilise. ?]
-on-action: army_convinced = 1; rome_army_visited = 1
+on-arrival: army_convinced = 1; rome_army_visited = 1
 go-to: rome_army_checks
 
 @rome_army_checks
@@ -86,12 +86,12 @@ go-to: rome_army_checks
 subtitle: This will result in full mobilisation of the army.
 choose-if: king_relation > 59
 unavailable-subtitle: [? if king_relation < 60: Our relations with the King are not high enough, despite our efforts. ?]
-on-action: army_king_successful = 1; army_king_bypassed = 0
+on-arrival: army_king_successful = 1; army_king_bypassed = 0
 go-to: rome_menu
 
 @rome_army_bypass
 subtitle: Bypassing the King's authorisation will result in many refusing to heed our call.
-on-action: army_king_bypassed = 1; army_king_successful = 0
+on-arrival: army_king_bypassed = 1; army_king_successful = 0
 go-to: rome_menu
 
 @rome_police_mobilise
@@ -100,7 +100,7 @@ subtitle: The police themselves seem to be willing to cooperate, now we have to 
 view-if: psi_in_government
 choose-if: interior_police_loyalty > 0.71 
 unavailable-subtitle: [? if army_loyalty < 0.72 : Police loyalty is too low, they refuse to mobilise. ?]
-on-action: police_convinced = 1; rome_police_visited = 1
+on-arrival: police_convinced = 1; rome_police_visited = 1
 go-to: rome_police_checks
 
 @rome_police_checks
@@ -112,12 +112,12 @@ go-to: rome_police_checks
 subtitle: This will result in full mobilisation of the Carabinieri.
 choose-if: king_relation > 59
 unavailable-subtitle: [? if king_relation < 60: Our relations with the King are not high enough, despite our efforts. ?]
-on-action: police_king_successful = 1; police_king_bypassed = 0
+on-arrival: police_king_successful = 1; police_king_bypassed = 0
 go-to: rome_menu
 
 @rome_police_bypass
 subtitle: Bypassing the King's authorisation will result in many refusing to heed our call.
-on-action: police_king_bypassed = 1; police_king_successful = 0
+on-arrival: police_king_bypassed = 1; police_king_successful = 0
 go-to: rome_menu
 
 @rome_rg_mobilise
@@ -125,7 +125,7 @@ max-visits: 1
 subtitle: Our forces will begin to March on Rome as well, [? if participating = 1 : in support of the government. ?] the bourgois may see this as a threat as well, however.
 choose-if: rg_banned = 0 or (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and tradeunionist_dissent > 50)
 unavailable-subtitle: [? if rg_banned = 1 : The Red Guards are banned, and cannot act. ?][? if (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and tradeunionist_dissent > 50) : The party is too disunited to act. ?]
-on-action: rome_rg_visited = 1
+on-arrival: rome_rg_visited = 1
 go-to: rome_menu if participating = 1; rome_civil_war if participating = 0
 
 @rome_done
@@ -166,7 +166,7 @@ We are in a long, protracted war with the fascists now. This will be sure to sha
 title: Victory
 new-page: false
 view-if: rome_victory = 1;
-on-action: march_failed = 1;
+on-arrival: march_failed = 1;
 
 Our forces easily overwhelm Mussolini's, as the Fasci are routed and forced to retreat. 
 
