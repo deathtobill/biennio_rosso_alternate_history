@@ -200,7 +200,7 @@ There are some potential coalition arrangements.
 @anti_socialist_coalition
 title: Anti-Socialist coalition
 subtitle: BN + PPI + DS ([+ anti_socialist_coalition +]%)..
-view-if: Q.anti_socialist_coalition => 50 and radicalisation > 8 and participating = 1
+view-if: anti_socialist_coalition > 49 and radicalisation > 8 and participating = 1
 go-to: far_right_win 
 priority: 2
 
