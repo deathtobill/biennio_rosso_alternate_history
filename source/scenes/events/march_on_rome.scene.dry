@@ -154,7 +154,7 @@ What happens now?
 @rome_long_war
 title: Long War
 new-page: false
-view-if: rome_civil_war = 1;
+view-if: rome_civil_war = 1
 
 It seems the March on Rome has erupted into chaos, as forces across the nation take up arms, pledging support to one side or the other. 
 
@@ -165,7 +165,7 @@ We are in a long, protracted war with the fascists now. This will be sure to sha
 @rome_victory
 title: Victory
 new-page: false
-view-if: rome_victory = 1;
+view-if: rome_victory = 1
 on-arrival: march_failed = 1;
 
 Our forces easily overwhelm Mussolini's, as the Fasci are routed and forced to retreat. 
