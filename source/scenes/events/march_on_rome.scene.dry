@@ -11,7 +11,7 @@ Q.sqd_strength = Math.round(Q.sqd_strength);
 Q.army_strength = Math.round(Q.rg_strength);
 
 Q.total_power = 0;
-Q.rg_power = Q.rg_militancy * Q.rg_strength * (100 - Q.dissent);
+Q.rg_power = Q.rg_militancy * (Q.rg_strength * (100 - Q.dissent));
 Q.police_power = Q.interior_police_strength * Q.interior_police_militancy * Q.interior_police_loyalty;
 Q.army_power = Q.army_strength * Q.army_loyalty * Q.army_militancy;
 
