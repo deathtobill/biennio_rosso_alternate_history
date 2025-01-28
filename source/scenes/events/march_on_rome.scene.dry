@@ -150,7 +150,7 @@ Against all odds, Mussolini has succeeded in his goals. [+ king +] has already a
 
 What happens now?
 
-@game_over: Game over.
+- @game_over: Game over.
 
 @rome_long_war
 title: Long War
@@ -161,7 +161,7 @@ It seems the March on Rome has erupted into chaos, as forces across the nation t
 
 We are in a long, protracted war with the fascists now. This will be sure to shape our future immensely. Time will only tell how.
 
-@game_over: Game over.
+- @game_over: Game over.
 
 @rome_victory
 title: Victory
