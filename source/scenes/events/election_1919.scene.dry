@@ -213,7 +213,7 @@ title: Is a Centre-Left coalition possible?
 subtitle: PSI + PPI + DS + PSRI ([+ left_coalition +]%). The Communists and Maximalists will be in an uproar if we do this.
 unavailable-subtitle: PSI + PPI + DS + PSRI: ([+ left_coalition +]%). [? if not participating = 1 : The party has decided against parliamentary means already. ?][? if ppi_relation < 50 : We do not have adequate relations with the PPI. ?][? if ds_relation < 50 : We do not have adequate relations with the PPI. ?]
 view-if: centre_left_coalition >= 50
-choose-if: participating = 1; ppi_relation => 50; ds_relation => 50;
+choose-if: participating = 1; ppi_relation > 49; ds_relation > 49;
 on-action: prime_minister = "Turati"; prime_minister_party = "PSI"; communist_dissent += 10; maximalist__dissent += 10;
 
 Negotiation between the parties is fierce, but we eventually agree to form a coalition.

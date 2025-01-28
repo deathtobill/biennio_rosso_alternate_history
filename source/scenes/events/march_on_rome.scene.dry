@@ -1,6 +1,6 @@
 title: March on Rome
 subtitle: The fascists are making their move!
-view-if: ((year = 1922 and month = 10) or (fasci_coup_progress => 10 and year = 1922 and month < 10)) and fdc_banned = 0
+view-if: year = 1922 and month = 10 or (fasci_coup_progress => 10 and year = 1922 and month < 10) and fdc_banned = 0
 on-arrival: {!
 Q.rg_strength = Math.round(Q.rg_strength);
 Q.fdc_strength = Math.round(Q.fdc_strength);
