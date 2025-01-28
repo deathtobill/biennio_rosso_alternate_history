@@ -435,7 +435,7 @@ go-to: ministries
 @drop_industry
 title: Drop the Industrial & Commerce Ministry.
 view-if: justice_minister_party = "PSI"
-on-arrival: justice_minister_party = "PPI; justice_minister = "Nava"; leverage += 10;
+on-arrival: justice_minister_party = "PPI"; justice_minister = "Nava"; leverage += 10;
 tags: drop_mins_1919
 go-to: ministries
 
