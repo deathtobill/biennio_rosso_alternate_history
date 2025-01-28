@@ -73,7 +73,7 @@ if (Q.bn_r >= Q.psi_r && Q.bn_r >= Q.psri_r && Q.bn_r >= Q.pci_r) {
 
 // coalitions
 Q.center_left_coalition = Q.psi_r + Q.ppi_r + Q.ds_r + Q.psri_r
-Q.catholic_centre_coalition = Q.ppi_r + + Q.ul_r + Q.ldr_r + Q,psri_r
+Q.catholic_liberal_coalition = Q.ppi_r + + Q.ul_r + Q.ldr_r + Q,psri_r
 Q.anti_socialist_coalition = Q.bn_r + Q.ppi_r + Q.ds_r
 
 Q.leverage = Q.psi_r;
@@ -201,7 +201,6 @@ There are some potential coalition arrangements.
 title: Anti-Socialist coalition
 subtitle: BN + PPI + DS ([+ anti_socialist_coalition +]%)..
 view-if: anti_socialist_coalition > 49 and radicalisation > 8 and participating = 1
-go-to: far_right_win 
 priority: 2
 
 It seems our radicalism and absentionism has pushed the Catholics to ally with the National Bloc. [+ bn_leader +] has made himself crucial to this coalition, and has already been appointed Prime Minister by the King.
@@ -224,18 +223,18 @@ Who is to be Prime Minister?
 - @sturzo: Let the People's Party have their Prime Minister.
 
 
-@catholic_centre_coalition
+@catholic_liberal_coalition
 title: Refuse to form a government, so that the bourgeois coalition may be formed.
-subtitle: PPI + LDR + UL + DS ([+ catholic_centre_coalition +]%). [? if participating = 1 : This is an absurd choice to make, and even those in the reformists are questioning our decisions. ?]
-view-if: catholic_centre_coalition >= 50
+subtitle: PPI + LDR + UL + DS ([+ catholic_liberal_coalition +]%). [? if participating = 1 : This is an absurd choice to make, and even those in the reformists are questioning our decisions. ?]
+view-if: catholic_liberal_coalition >= 50
 
 There are enough votes for Catholic and Liberal coalition of the PPI, LDR, UL and DS. [? if largest_party == "PSI" and participating = 1: However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
 
-- @catholic_centre_coalition_yes: Yes, we will abdicate our responsibility for government formation, and let a right-wing coalition take power.
+- @catholic_liberal_coalition_yes: Yes, we will abdicate our responsibility for government formation, and let a right-wing coalition take power.
 - @centre_left_coalition: Actually, we wish to form a coalition after all.
 
 
-@catholic_centre_coalition_yes
+@catholic_liberal_coalition_yes
 subtitle: This is extremely unpopular with the reformists.
 on-arrival: reformist_dissent -= 15; psi_in_government = 0; prime_minister = "Francesco Saverio Nitti"; prime_minister_party = "DS"; interior_minister_party = "DS"; foreign_minister_party = "UL"; justice_minister_party = "Independent"; treasury_minister_party = "LDR"; finance_minister_party = "LDR"; industry_minister_party = "UL"; public_works_minister_party = "DS"; agriculture_minister_party = "LDR"; labor_minister_party = "UL";
 
@@ -258,7 +257,7 @@ go-to: ministries
 
 Turati appointment as chancellor is approved by all our potential allies.
 
-@sutrzo
+@sturzo
 title: Let the People's Party have their chancellor. This will improve our leverage.
 subtitle: Heinrich Brüning will be chancellor. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
 on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ppi_relation += 10; ds_relation += 5; ul_relation -= 5; center_left_coalition = 1; chancellor = "Sturzo"; chancellor_party = "PPI"; psi_in_government = 1; leverage += 5
