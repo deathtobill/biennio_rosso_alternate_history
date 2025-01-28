@@ -1,0 +1,453 @@
+title: Chmaber of Deputies Elections
+new-page: true
+tags: event
+priority: -1
+view-if: (year = next_election_year and month >= next_election_month) or (year > next_election_year)
+on-departure: month_actions += 1; in_election = 0; next_election_year = next_election_year + 2; n_elections += 1; next_election_time = time + 24;
+set-jump: post_election_1928
+face-image: img/Rothe_Wahlen_1903.jpg
+
+= Elections, [+ month : month +] [+ year +]
+
+The Chamber of Deputies elections are to be held now.
+
+- @election_algorithm: May we do our best...
+
+@post_election_1928
+on-arrival: {!
+// set old results
+// election threshold constitutional reform
+// banning parties
+var new_party_sum = 0;
+for (var party of Q.parties) {
+    Q['old_' + party + '_r'] = Q[party + '_r'];
+    if (Q.constitutional_reform > 0) {
+        if (Q[party + '_votes'] < Q.electoral_threshold || (Q.electoral_threshold > 1 && party == 'other') || Q[party + '_banned']) {
+            Q[party + '_r'] = 0;
+        } else {
+            Q[party + '_r'] = Q[party + '_votes'];
+        }
+        new_party_sum += Q[party + '_r'];
+    } else {
+        Q[party + '_r'] = Q[party + '_votes'];
+    }
+    // if we use decimals, then we might want to truncate the numbers
+    if (Q.use_decimals) {
+        Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
+    }  else {
+            Q[party + '_r_disp'] = Q[party+'_r'];
+    }
+    Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
+    var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
+    Q['str_change_' + party] = sign + Q['change_' + party + '_r'];//.toFixed(1);
+}
+// calculate new party sum if electoral reform
+if (Q.electoral_threshold && Q.electoral_threshold > 0) {
+    for (var party of Q.parties) {
+        if (Q[party + '_r'] > 0) {
+            if (Q.use_decimals) {
+                Q[party + '_r'] = Math.round(Q[party + '_r']*1000/new_party_sum)/10;
+            } else {
+                Q[party + '_r'] = Math.round(Q[party + '_r']*100/new_party_sum);
+            }
+        }
+        if (Q.use_decimals) {
+            Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
+        } else {
+            Q[party + '_r_disp'] = Q[party+'_r'];
+        }
+        Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
+        var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
+        Q['str_change_' + party] = sign + Q['change_' + party + '_r'];//.toFixed(1);
+    }
+}
+
+// get change arrows and signs
+
+
+// The largest party can only be the BN or the PSI.
+Q.largest_party = 'PSI';
+if (Q.bn_r >= Q.psi_r && Q.bn_r >= Q.psri_r && Q.bn_r >= Q.pci_r) {
+    Q.largest_party = 'BN';
+}
+
+// coalitions
+Q.center_left_coalition = Q.psi_r + Q.ppi_r + Q.ds_r + Q.psri_r
+Q.catholic_liberal_coalition = Q.ppi_r + + Q.ul_r + Q.ldr_r + Q,psri_r
+Q.anti_socialist_coalition = Q.bn_r + Q.ppi_r + Q.ds_r
+
+Q.leverage = Q.psi_r;
+
+var election_result = {'date': new Date(Q.year, Q.month - 1)};
+for (var party of Q.parties) {
+    election_result[party] = Q[party + '_r'];
+}
+Q.election_records.push(election_result);
+!}
+on-departure: fasci_urgency = 1 if (fasci_urgency == 0 and bn_r >= 15)
+on-display: {!
+data = [
+    {
+        "id": "psi",
+        "legend": "PSI",
+        "name": "PSI",
+        "seats": math.round(Q.psi_r*5),
+    },
+    {
+        "id": "psri",
+        "legend": "PSRI",
+        "name": "PSRI",
+        "seats": math.round(Q.psri_r*5),
+    },
+    {
+        "id": "ppi",
+        "legend": "PPI",
+        "name": "PPI",
+        "seats": math.round(Q.ppi_r*5),
+    },
+    {
+        "id": "ldr",
+        "legend": "LDR",
+        "name": "LDR",
+        "seats": math.round(Q.ldr_r*5),
+    },
+    {
+        "id": "ds",
+        "legend": "DS",
+        "name": "DS",
+        "seats": math.round(Q.ds_r*5),
+    },
+    {
+        "id": "ul",
+        "legend": "UL",
+        "name": "UL",
+        "seats": math.round(Q.ul_r*5),
+    },
+    {
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": math.round(Q.other_r*5),
+    },
+    {
+        "id": "bn",
+        "legend": "BN",
+        "name": "BN",
+        "seats": math.round(Q.bn_r*5),
+    },
+];
+
+if (window && d3) {
+    var width = 500; 
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50; 
+        height = width;
+        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+    } 
+
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#reichstag").datum(data).call(parliament);
+}
+!}
+go-to: coalition_menu
+
+= Election results
+
+{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!<table>!}
+{!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div></td><td>!} **PSI:** {!</td><td>!} **[+ psi_r +]%** {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#E3000F'> </div></td> <td>!}PSRI: {!</td><td>!} [+ psri_r +]% {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} LDR: {!</td><td>!} [+ ldr_r +]% {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#69A2BE'> </div></td><td>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#00008B'> </div></td><td>!} UL: {!</td><td>!} [+ ul_r +]% {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#3f7bc1'> </div></td><td>!} DS: {!</td><td>!} [+ ds_r +]% {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#954B00'> </div></td><td>!} BN: {!</td><td>!} [+ bn_r +]% {!</td></tr>!}
+{!</table>!}
+
+**Potential coalitions:**
+
+Centre-Left Coalition (PSI + PPI + DS + PSRI): [+ centre_left_coalition +]%
+
+Catholic-Liberal Coalition (PPI + LDR + UL + DS): [+ catholic_liberal_coalition +]%
+
+Anti-Socialist Coalition (BN + PPI + DS): [+ anti_socialist_coalition +]%
+
+[? if fasci_urgency <= 1 and bn_r >= 15 : The rapid rise in National Bloc votes is extremely worrying. Many had believed that the party was moribound; now, some of us consider it to be the greatest obstacle to socialism in Italy. ?]
+
+There are some potential coalition arrangements.
+
+@coalition_menu
+
+- @psi_majority
+- @centre_left_coalition
+- @catholic_liberal_coalition
+- @anti_socialist_coalition
+
+@anti_socialist_coalition
+title: Anti-Socialist coalition
+subtitle: BN + PPI + DS ([+ anti_socialist_coalition +]%)..
+view-if: anti_socialist_coalition > 49 and radicalisation > 8 and participating = 1
+priority: 2
+
+It seems our radicalism and absentionism has pushed the Catholics to ally with the National Bloc. [+ bn_leader +] has made himself crucial to this coalition, and has already been appointed Prime Minister by the King.
+
+- @mussolini_takes_power: What now?
+
+@centre_left_coalition
+title: Is a Centre-Left coalition possible?
+subtitle: PSI + PPI + DS + PSRI ([+ left_coalition +]%). The Communists and Maximalists will be in an uproar if we do this.
+unavailable-subtitle: PSI + PPI + DS + PSRI: ([+ left_coalition +]%). [? if not participating = 1 : The party has decided against parliamentary means already. ?][? if ppi_relation < 50 : We do not have adequate relations with the PPI. ?][? if ds_relation < 50 : We do not have adequate relations with the PPI. ?]
+view-if: centre_left_coalition >= 50
+choose-if: participating = 1 and ppi_relation > 49 and ds_relation > 49
+on-arrival: prime_minister = "Turati"; prime_minister_party = "PSI"; communist_dissent += 10; maximalist_dissent += 10;
+
+Negotiation between the parties is fierce, but we eventually agree to form a coalition.
+
+Who is to be Prime Minister?
+
+- @turati: Filippo Turati for Prime Minister. 
+- @sturzo: Let the People's Party have their Prime Minister.
+
+
+@catholic_liberal_coalition
+title: Refuse to form a government, so that the bourgeois coalition may be formed.
+subtitle: PPI + LDR + UL + DS ([+ catholic_liberal_coalition +]%). [? if participating = 1 : This is an absurd choice to make, and even those in the reformists are questioning our decisions. ?]
+view-if: catholic_liberal_coalition >= 50
+
+There are enough votes for Catholic and Liberal coalition of the PPI, LDR, UL and DS. [? if largest_party == "PSI" and participating = 1: However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
+
+- @catholic_liberal_coalition_yes: Yes, we will abdicate our responsibility for government formation, and let a right-wing coalition take power.
+- @centre_left_coalition: Actually, we wish to form a coalition after all.
+
+
+@catholic_liberal_coalition_yes
+subtitle: This is extremely unpopular with the reformists.
+on-arrival: reformist_dissent -= 15; psi_in_government = 0; prime_minister = "Francesco Saverio Nitti"; prime_minister_party = "DS"; interior_minister_party = "DS"; foreign_minister_party = "UL"; justice_minister_party = "Independent"; treasury_minister_party = "LDR"; finance_minister_party = "LDR"; industry_minister_party = "UL"; public_works_minister_party = "DS"; agriculture_minister_party = "LDR"; labor_minister_party = "UL";
+
+The government is formed, without us.
+
+@psi_majority
+title: PSI majority alone
+subtitle: PSI: [+ psi_r +]%
+view-if: psi_r >= 50
+on-arrival: prime_minister = "Empty"; prime_minister_party = "PSI"; psi_in_government = 1; in_psi_majority = 1; foreign_minister_party = "PSI"; interior_minister_party = "PSI"; justice_minister_party = "PSI"; labor_minister_party = "PSI"; finance_minister_party = "PSI"; treasury_minister_party = "PSI"; agriculture_minister_party = "PSI"; 
+
+Finally, the PSI can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
+
+
+@turati
+title: Filippo Turati for Prime Minister
+subtitle: Turati leads the reformist wing, and is an acceptable candidate for Prime Minister.
+on-arrival: psi_in_government = 1; prime_minister = "Turati"; prime_minister_party = "PSI"; center_left_coalition = 1
+go-to: ministries
+
+Turati appointment as chancellor is approved by all our potential allies.
+
+@sturzo
+title: Let the People's Party have their chancellor. This will improve our leverage.
+subtitle: Heinrich Brüning will be chancellor. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
+on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ppi_relation += 10; ds_relation += 5; ul_relation -= 5; center_left_coalition = 1; chancellor = "Sturzo"; chancellor_party = "PPI"; psi_in_government = 1; leverage += 5
+go-to: ministries
+
+This is highly unexpected, and many in the center and even the reformists of our party are criticizing this decision.
+
+
+
+@ministries
+
+We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area.
+
+- #mins_1919
+- #drop_mins_1919
+
+@labour
+title: Labour and Social Security Ministry
+subtitle: Taking the Labour Ministry is expected of us.
+unavailable-subtitle: We do not have enough leverage.
+tags: mins_1919
+choose-if: leverage >= 5
+view-if: labor_minister_party != "PSI"
+on-arrival: leverage -= 5; labor_minister_party = "PSI"; labor_minister = "Wissell"
+go-to: ministries
+
+Rudolf Wissell of the PSI has been appointed Labour and Social Security minister.
+
+@interior
+title: Interior Ministry
+subtitle: Taking the Interior Ministry is expected of us. The Interior Ministry controls domestic security.
+unavailable-subtitle: We do not have enough leverage.
+tags: mins_1919
+choose-if: leverage >= 5
+view-if: interior_minister_party != "PSI"
+on-arrival: leverage -= 5; interior_minister_party = "PSI"; interior_minister = "Turati"
+go-to: ministries
+
+Filippo Turati of the PSI has been appointed Interior Minister.
+
+@finance
+title: Finance Ministry
+subtitle: The Finance Ministry controls the government budget and taxes.
+unavailable-subtitle: We do not have enough leverage.
+tags: mins_1919
+choose-if: leverage >= 10 
+view-if: finance_minister_party != "PSI"
+on-arrival: leverage -= 10; finance_minister_party = "PSI"; finance_minister = "Lazzari"
+go-to: ministries
+
+Constantinto Lazzari of the PSI has been appointed Finance Minister.
+
+@treasury
+title: Treasury Ministry
+subtitle: The Treasury Ministry controls broader economic policy.
+unavailable-subtitle: We do not have enough leverage.
+tags: mins_1919
+choose-if: leverage >= 10 
+view-if: economic_minister_party != "PSI"
+on-arrival: leverage -= 10; economic_minister_party = "PSI"; economic_minister = "Modigliani"
+go-to: ministries
+
+Emanuele Modigliani of the PSI has been appointed Economic Minister.
+
+@justice
+title: Justice Ministry
+subtitle: The Justice Ministry controls the courts.
+unavailable-subtitle: We do not have enough leverage.
+tags: mins_1919
+choose-if: leverage >= 10 
+view-if: justice_minister_party != "PSI"
+on-arrival: leverage -= 10; justice_minister_party = "PSI"; justice_minister = "Treves"
+go-to: ministries
+
+Claudio Treves of the PSI has been appointed Justice Minister.
+
+@public_works
+title: Public Works Ministry
+subtitle: The Public Works Ministry control our national public works.
+unavailable-subtitle: We do not have enough leverage.
+tags: mins_1919
+choose-if: leverage >= 10 
+view-if: public_works_minister_party != "PSI"
+on-arrival: leverage -= 10; justice_minister_party = "PSI"; justice_minister = "Vella"
+go-to: ministries
+
+Arturo Vella of the PSI has been appointed Public Works Minister.
+
+@industry
+title: Industry & Commerce Ministry
+subtitle: The Industry & Commerce Ministry regulates companies and trade in Italy.
+unavailable-subtitle: We do not have enough leverage.
+tags: mins_1919
+choose-if: leverage >= 10 
+view-if: industry_minister_party != "PSI"
+on-arrival: leverage -= 10; justice_minister_party = "PSI"; justice_minister = "Tasca"
+go-to: ministries
+
+Angelo Tasca of the PSI has been appointed Industry & Commerce Minister.
+
+@foreign
+title: Foreign Ministry
+subtitle: The Foreign Ministry dictates our foreign policy.
+unavailable-subtitle: We do not have enough leverage.
+tags: mins_1919
+choose-if: leverage >= 10 
+view-if: foreign_minister_party != "PSI"
+on-arrival: leverage -= 10; foreign_minister_party = "PSI"; foreign_minister = "Matteotti"
+go-to: ministries
+
+Giacomo Matteotti of the PSI has been appointed Foreign Minister.
+
+@agriculture
+title: Agricultural Ministry
+subtitle: The Agricultural Ministry dictates our agricultural policy,
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 10 
+view-if: agriculture_minister_party != "PSI"
+on-arrival: leverage -= 10; agriculture_minister_party = "PSI"; agriculture_minister = "Graziadei"
+go-to: ministries
+tags: mins_1919
+
+Antonio Graziadei of the PSI has been appointed Agriculture Minister.
+
+@no_more
+title: No more ministries.
+subtitle: [? if leverage >= 10 : We still have some more leverage to gain ministries. ?][? if leverage < 10 : We do not have much leverage left. ?]
+tags: mins_1919
+
+This coalition arrangement is tolerable to all.
+
+@drop_labor
+title: Drop the Labor & Social Security Ministry.
+view-if: labor_minister_party = "PSI"
+on-arrival: labor_minister_party = "DS"; labor_minister = "Ferraris"; leverage += 5;
+tags: drop_mins_1919
+go-to: ministries
+
+@drop_interior
+title: Drop the Interior Ministry.
+view-if: interior_minister_party = "PSI"
+on-arrival: interior_minister_party = "PPI"; interior_minister = "Sturzo"; leverage += 5;
+tags: drop_mins_1919
+go-to: ministries
+
+@drop_finance
+title: Drop the Finance Ministry.
+view-if: finance_minister_party = "PSI"
+on-arrival: finance_minister_party = "DS"; finance_minister = "Tedesco"; leverage += 10;
+tags: drop_mins_1919
+go-to: ministries
+
+@drop_economic
+title: Drop the Economic Ministry.
+view-if: economic_minister_party = "PSI"
+on-arrival: economic_minister_party = "DS"; economic_minister = "Luzzati"; leverage += 10; 
+tags: drop_mins_1919
+go-to: ministries
+
+@drop_justice
+title: Drop the Justice Ministry.
+view-if: justice_minister_party = "PSI"
+on-arrival: justice_minister_party = "PPI"; justice_minister = "Mortara"; leverage += 10;
+tags: drop_mins_1919
+go-to: ministries
+
+@drop_public_works
+title: Drop the Public Works Ministry.
+view-if: justice_minister_party = "PSI"
+on-arrival: justice_minister_party = "PPI"; justice_minister = "Pantano"; leverage += 10;
+tags: drop_mins_1919
+go-to: ministries
+
+@drop_industry
+title: Drop the Industrial & Commerce Ministry.
+view-if: justice_minister_party = "PSI"
+on-arrival: justice_minister_party = "PPI"; justice_minister = "Nava"; leverage += 10;
+tags: drop_mins_1919
+go-to: ministries
+
+@drop_foreign
+title: Drop the Foreign Ministry.
+view-if: foreign_minister_party = "PSI"
+on-arrival: foreign_minister_party = "PSRI"; foreign_minister = "Bonomi"; leverage += 10;
+tags: drop_mins_1919
+go-to: ministries
+
+@drop_agriculture
+title: Drop the Agriculture Ministry.
+view-if: agriculture_minister_party = "PSI"
+on-arrival: agriculture_minister_party = "DS"; agriculture_minister = "Falcoini"; leverage += 10; 
+tags: drop_mins_1919
+go-to: ministries
