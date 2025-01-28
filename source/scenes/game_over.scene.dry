@@ -16,7 +16,7 @@ Q.game_over = true;
 - @end_game: End game.
 
 
-@@mussolini_wins
+@mussolini_wins
 view-if: prime_minister = "Mussolini" 
 title: Mussolini is the Prime Minister.
 tags: endings

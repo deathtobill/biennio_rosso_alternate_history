@@ -102,9 +102,9 @@ view-if: psi_in_government
 choose-if: interior_police_loyalty > 0.71 
 unavailable-subtitle: [? if army_loyalty < 0.72 : Police loyalty is too low, they refuse to mobilise. ?]
 on-action: police_convinced = 1; rome_police_visited = 1
-go-to: rome_army_checks
+go-to: rome_police_checks
 
-@rome_army_checks
+@rome_police_checks
 
 - @rome_police_king: Request the King formally order the Carabinieri to crackdown.
 - @rome_police_bypass: The King be damned, send the orders out to the Carabinieri already!

@@ -27,7 +27,7 @@ The expansion of the Red Guards is accepted by most of the factions as a necessi
 subtitle: Stronger relations with our allies in government might help in the event of anything.
 choose-if: participating = 1 and psi_in_government = 1 and resources > 0
 unavailable-subtitle: [? if participating = 0 : We have already agreed to abandon parliamentary means. ?][? if not psi_in_government : We are not in government. ?][? if resources < 1 : We do not have the funds to do this. ?]
-on-arrival: ppi_relation += 10; ds_relation += 10; psri_relation + 10 if not psri_reconcilled; king_relation += 15 / radicalisation; resources -= 1
+on-arrival: ppi_relation += 10; ds_relation += 10; psri_relation += 10; king_relation += 10 if radicalisation < 6; resources -= 1; king_relation += 15 if radicalisation > 5;
 
 Relations between the coalition parties are strengthened and overtures are made to the King, [? if radicalisation < 6 : who responds warmly to our attempts. ?][? if radicalisation > 5 : who responds mildly to our attempts. ?]
 

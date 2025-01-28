@@ -1,7 +1,7 @@
 title: Amadeo Bordiga
 is-pinned-card: true
 tags: advisor, communist
-on-action: bologna_occured = 1
+on-arrival: bologna_occured = 1
 card-image: img/portraits/AmadeoBordiga.png
 view-if: bordiga_advisor = 1
 new-page: true 

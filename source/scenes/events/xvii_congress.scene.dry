@@ -25,6 +25,6 @@ on-arrival: communist_strength -= 100; communist_dissent += 100; congress_commun
 subtitle: This will greatly upset the Reformists, potentially even causing a defection!
 choose-if: participating = 1
 unavailable-subtitle: [? if participating = 0 : The Bologna Congress has already forced us to adopt a parliamentary stance. ?]
-on-action: reformist_strength -= 100; reformist_dissent += 100; reformists_expelled = 1; revolutionary_fervor += 10
+on-arrival: reformist_strength -= 100; reformist_dissent += 100; reformists_expelled = 1; revolutionary_fervor += 10
 
 [? if reformists_defect = 1 : Even as the reformist faction remains minimal after its defection to the PSRI, ?] The reformist faction has been expelled, with the majority joining the PSRI.

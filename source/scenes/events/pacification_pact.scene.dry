@@ -25,7 +25,7 @@ We sign the agreement, only for it to break down days later as fascist squad lea
 
 @refused_pacification
 subtitle: No deals with fascists!
-choose-if: if communists_split = 0 and congress_communist_split = 0
+choose-if: communists_split = 0 and congress_communist_split = 0
 unavailable-subtitle: [? if communists_split = 1 or congress_communist_split = 1 : The party does not have enough to support to even consider this. ?]
 on-arrival: maximalist__dissent -= 10; reformist_dissent -= 10; revolutionary_fervor += 5;
 
