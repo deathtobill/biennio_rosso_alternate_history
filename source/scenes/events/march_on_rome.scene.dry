@@ -1,6 +1,9 @@
 title: March on Rome
 subtitle: The fascists are making their move!
 view-if: year = 1922 and month = 10 or (fasci_coup_progress >= 10 and year = 1922 and month < 10) and not fdc_banned and not sqd_banned
+max-visits: 1
+tags: event
+new-page: true
 on-arrival: {!
 Q.rg_strength = Math.round(Q.rg_strength);
 Q.fdc_strength = Math.round(Q.fdc_strength);
@@ -48,12 +51,7 @@ if (Q.rome_results > 0.76 and Q.rome_results < 1.26) {
 if (Q.rome_results > 1.25) {
     Q.rome_victory = 1
 }
-
 !}
-
-max-visits: 1
-tags: event
-new-page: true
 go-to: rome_menu
 
 = March on Rome
