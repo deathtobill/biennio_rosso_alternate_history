@@ -126,7 +126,7 @@ subtitle: Our forces will begin to March on Rome as well, [? if participating = 
 choose-if: rg_banned = 0 or (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and tradeunionist_dissent > 50)
 unavailable-subtitle: [? if rg_banned = 1 : The Red Guards are banned, and cannot act. ?][? if (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and tradeunionist_dissent > 50) : The party is too disunited to act. ?]
 on-arrival: rome_rg_visited = 1
-go-to: rome_menu if participating = 1; rome_civil_war if participating = 0
+go-to: rome_menu if participating = 1; para_funding if participating = 0
 
 @rome_done
 max-visits: 1
