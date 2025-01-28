@@ -138,7 +138,8 @@ go-to: total_defeat if rome_total_defeat = 1; rome_long_war if rome_civil_war = 
 max-visits: 1
 subtitle: The fruits of our labour have shown themselves; the Army is willing to put down Mussolini!
 view-if: rome_army_visited = 0 or rome_police_visited = 0 or rome_rg_visited = 0
-go-to: para_funding // CHANGE TO MUSSOLINI TAKES POWER
+go-to: para_funding 
+// CHANGE TO MUSSOLINI TAKES POWER
 
 @total_defeat
 title: Total Defeat
