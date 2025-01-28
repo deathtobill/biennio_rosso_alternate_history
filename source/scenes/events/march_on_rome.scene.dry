@@ -15,20 +15,20 @@ Q.rg_power = Q.rg_militancy * Q.rg_strength * (100 - Q.dissent);
 Q.police_power = Q.interior_police_strength * Q.interior_police_militancy * Q.interior_police_loyalty;
 Q.army_power = Q.army_strength * Q.army_loyalty * Q.army_militancy;
 
-if (rome_rg_mobilise = 1) {
-    Q.total_power += Q.rg_power
+if (rome_rg_mobilise == 1) {
+    Q.total_power += Q.rg_power;
 }
-if (rome_police_king = 1) {
-    Q.total_power += Q.police_power
+if (rome_police_king == 1) {
+    Q.total_power += Q.police_power;
 }
-if (rome_army_king = 1) {
-    Q.total_power += Q.army_power
+if (rome_army_king == 1) {
+    Q.total_power += Q.army_power;
 }
-if (rome_army_bypass = 1) {
-    Q.total_power += Q.army_power * 0.5
+if (rome_army_bypass == 1) {
+    Q.total_power += Q.army_power * 0.5;
 }
-if (rome_police_bypass = 1) {
-    Q.total_power += Q.police_power * 0.5
+if (rome_police_bypass == 1) {
+    Q.total_power += Q.police_power * 0.5;
 }
 
 Q.enemy_power = 0;
@@ -48,7 +48,7 @@ if (Q.rome_results >= 0.75) {
 if (Q.rome_results > 0.76 and Q.rome_results < 1.26) {
     Q.rome_civil_war = 1;
 }
-if (Q.rome_results > 1.25) {
+if (Q.rome_results >= 1.25) {
     Q.rome_victory = 1;
 }
 !}
