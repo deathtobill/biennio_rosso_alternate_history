@@ -245,7 +245,7 @@ The government is formed, without us.
 title: PSI majority alone
 subtitle: PSI: [+ psi_r +]%
 view-if: psi_r >= 50
-on-arrival: chancellor = "Empty"; chancellor_party = "PSI"; psi_in_government = 1; in_psi_majority = 1; foreign_minister_party = "PSI"; interior_minister_party = "PSI"; justice_minister_party = "PSI"; labor_minister_party = "PSI"; finance_minister_party = "PSI"; treasury_minister_party = "PSI"; agriculture_minister_party = "PSI"; 
+on-arrival: prime_minister = "Empty"; prime_minister_party = "PSI"; psi_in_government = 1; in_psi_majority = 1; foreign_minister_party = "PSI"; interior_minister_party = "PSI"; justice_minister_party = "PSI"; labor_minister_party = "PSI"; finance_minister_party = "PSI"; treasury_minister_party = "PSI"; agriculture_minister_party = "PSI"; 
 
 Finally, the PSI can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
 
@@ -261,7 +261,7 @@ Turati appointment as chancellor is approved by all our potential allies.
 @sutrzo
 title: Let the People's Party have their chancellor. This will improve our leverage.
 subtitle: Heinrich Brüning will be chancellor. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: reformist_dissent -+= 5; maximalist_dissent += 5; communist_dissent += 10; ppi_relation += 10; ds_relation += 5; ul_relation -= 5; center_left_coalition = 1; chancellor = "Sturzo"; chancellor_party = "PPI"; psi_in_government = 1; leverage += 5
+on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ppi_relation += 10; ds_relation += 5; ul_relation -= 5; center_left_coalition = 1; chancellor = "Sturzo"; chancellor_party = "PPI"; psi_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the center and even the reformists of our party are criticizing this decision.
