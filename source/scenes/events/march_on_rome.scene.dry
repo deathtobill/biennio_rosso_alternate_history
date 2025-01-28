@@ -34,10 +34,10 @@ if (rome_police_bypass == 1) {
 Q.enemy_power = 0;
 Q.fdc_power = Q.fdc_strength * Q.fdc_militancy;
 Q.sqd_power = Q.sqd_strength * Q.sqd_militancy;
-if (not sqd_banned) {
+if (Q.sqd_banned = 0) {
     Q.enemy_power += Q.sqd_power;
 }
-if (not fdc_banned) {
+if (Q.fdc_banned = 0) {
     Q.enemy_power += Q.fdc_power;
 }
 
