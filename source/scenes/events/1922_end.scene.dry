@@ -7,7 +7,7 @@ max-visits: 1
 on-arrival: {!
 !}
 new-page: true
-go-to: game_over_1922
+go-to: game_over
 
 = A New Day in Italy
 

@@ -12,8 +12,8 @@ go-to: start_menu_2
 
 - @start: Start game
 - @election_simulation: Election simulation
+- @mod_info: Mod Info
 - @credits: Credits
-- @game_over.achievements
 
 
 @start

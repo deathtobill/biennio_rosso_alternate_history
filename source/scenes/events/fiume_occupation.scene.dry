@@ -18,7 +18,7 @@ However, the Allies, especially France, are likely to object. This agreement wou
 
 @condemn_fiume 
 subtitle: Of course we should condemn this madman!
-on-action: veterans_psi -= 5; veterans_bn += 5; coalition_dissent -= 0.01; communist_dissent -= 5; maximalist_dissent -= 5; tradeunionist_dissent -= 5; reformist_dissent -= 5;
+on-arrival: veterans_psi -= 5; veterans_bn += 5; coalition_dissent -= 0.01; communist_dissent -= 5; maximalist_dissent -= 5; tradeunionist_dissent -= 5; reformist_dissent -= 5;
 
 Unsurprisingly, we issue a standard condemnation of D'Annunzio, decreasing dissent at the cost of alienating some of our veteran supporters.
 

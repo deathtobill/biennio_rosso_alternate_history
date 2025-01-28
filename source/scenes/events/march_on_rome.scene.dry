@@ -90,7 +90,7 @@ unavailable-subtitle: [? if king_relation < 60: Our relations with the King are 
 on-action: army_king_successful = 1; army_king_bypassed = 0
 go-to: rome_menu
 
-@rome_army_king
+@rome_army_bypass
 subtitle: Bypassing the King's authorisation will result in many refusing to heed our call.
 on-action: army_king_bypassed = 1; army_king_successful = 0
 go-to: rome_menu

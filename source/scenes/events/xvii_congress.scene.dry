@@ -17,7 +17,7 @@ Debates and speeches from many are heard, as differing voices voice their opinio
 subtitle: This will greatly upset the Communists, potentially even causing a split!
 choose-if: participating = 0
 unavailable-subtitle: [? if participating = 1 : The Bologna Congress has already forced us to adopt a revolutionary stance. ?]
-on-action: communist_strength -= 100; communist_dissent += 100; congress_communist_split = 1; revolutionary_fervor -= 10
+on-arrival: communist_strength -= 100; communist_dissent += 100; congress_communist_split = 1; revolutionary_fervor -= 10
 
 [? if communists_split = 1 : Even as the communist faction remains minimal after the founding of the Italian Communist Party, ?] The communist faction has resigned, with the majority [? if communists_split = 1 : joining the existing PCI. ?][? if communists_split = 0 : creating a new party called the Italian Communist Party. ?]
 

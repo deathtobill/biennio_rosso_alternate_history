@@ -2,12 +2,11 @@ title: Game Over.
 new-page: true
 go-to: eg_menu
 on-arrival: {!
-Q.game_over = 1;
+Q.game_over = true;
 // Achievements:
-
 // N/A for now.
-
 !}
+
 = End
 
 

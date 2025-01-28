@@ -19,7 +19,7 @@ Riots have begun, mostly in Northern Italy, as strikes regarding food prices occ
 subtitle: We need to seize this opportunity and help our comrades out.
 choose-if: resources > 0
 unavailable-subtitle: [? if resources > 0 : We don't have the funds to do this. ?]
-on-action: workers_psi += 3; rural_psi += 4;
+on-arrival: workers_psi += 3; rural_psi += 4;
 
 Our actions have earned us new supporters in our usual bases, thanking us for our aid.
 

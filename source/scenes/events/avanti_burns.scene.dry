@@ -9,11 +9,11 @@ max-visits: 1
 
 The Milan branch of *Avanti!* has been attacked and burned to the ground, and responsibility points to Mussolini and his "Fasci". This will severely impact our ability to spread our message in Milan.
 
-- @burning_reaction
+- @burning_reaction: It has been made clear what their stance is.
 
 @burning_reaction
 subtitle: Our forces are already preparing to strike the Fasci back.
-on-action: workers_psi -= 2; rural_psi -= 1; middle_class_psi -= 1;
+on-arrival: workers_psi -= 2; rural_psi -= 1; middle_class_psi -= 1; fasci_urgency += 1
 
 [? if distrusted_fasci = 1 : I knew we should have never trusted them! ?][if distrusted_fasci = 0 : Damn it! ?]
 

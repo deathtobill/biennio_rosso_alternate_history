@@ -17,7 +17,7 @@ Tensions run high. Benito Mussolini has presented the Trade Unionists and the pa
 
 @signed_pacification
 subtitle: We need to ensure peace in the interior.
-choose-if: if reformists_defect = 0 and reformists_expelled = 0
+choose-if: reformists_defect = 0 and reformists_expelled = 0
 unavailable-subtitle: [? if reformists_defect = 1 or reformists_expelled = 1 : The party does not have enough to support to even consider this. ?]
 on-arrival: maximalist__dissent += 10; reformist_dissent -= 10; revolutionary_fervor -= 5;
 
