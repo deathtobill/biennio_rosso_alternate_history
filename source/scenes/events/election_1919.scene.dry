@@ -73,7 +73,7 @@ if (Q.bn_r >= Q.psi_r && Q.bn_r >= Q.psri_r && Q.bn_r >= Q.pci_r) {
 
 // coalitions
 Q.center_left_coalition = Q.psi_r + Q.ppi_r + Q.ds_r + Q.psri_r
-Q.catholic_liberal_coalition = Q.ppi_r + + Q.ul_r + Q.ldr_r + Q,psri_r
+Q.catholic_liberal_coalition = Q.ppi_r + + Q.ul_r + Q.ldr_r + Q,psri_r + Q.other_r
 Q.anti_socialist_coalition = Q.bn_r + Q.ppi_r + Q.ds_r
 
 Q.leverage = Q.psi_r;
@@ -144,26 +144,26 @@ if (window && d3) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50; 
         height = width;
-        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+        document.getElementById("parliament").style.height = screenWidth/2 + "px";
     } 
 
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#reichstag").datum(data).call(parliament);
+    d3.select("#parliament").datum(data).call(parliament);
 }
 !}
 go-to: coalition_menu
 
 = Election results
 
-{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="parliament" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div></td><td>!} **PSI:** {!</td><td>!} **[+ psi_r +]%** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div></td><td>!} PSI: {!</td><td>!} [+ psi_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#E3000F'> </div></td> <td>!}PSRI: {!</td><td>!} [+ psri_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F'> </div></td> <td>!} PSRI: {!</td><td>!} [+ psri_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} LDR: {!</td><td>!} [+ ldr_r +]% {!</td></tr>!}
 
@@ -182,11 +182,11 @@ go-to: coalition_menu
 
 Centre-Left Coalition (PSI + PPI + DS + PSRI): [+ centre_left_coalition +]%
 
-Catholic-Liberal Coalition (PPI + LDR + UL + DS): [+ catholic_liberal_coalition +]%
+Catholic-Liberal Coalition (PPI + LDR + UL + DS + Others): [+ catholic_liberal_coalition +]%
 
 Anti-Socialist Coalition (BN + PPI + DS): [+ anti_socialist_coalition +]%
 
-[? if fasci_urgency <= 1 and bn_r >= 15 : The rapid rise in National Bloc votes is extremely worrying. Many had believed that the party was moribound; now, some of us consider it to be the greatest obstacle to socialism in Italy. ?]
+[? if fasci_urgency <= 2 and bn_r >= 15 : The rapid rise in National Bloc votes is extremely worrying. Many had believed that the party was moribound; now, some of us consider it to be the greatest obstacle to socialism in Italy. ?]
 
 There are some potential coalition arrangements.
 
@@ -211,7 +211,7 @@ para_funding: What now?
 title: Is a Centre-Left coalition possible?
 subtitle: PSI + PPI + DS + PSRI ([+ center_left_coalition +]%). The Communists and Maximalists will be in an uproar if we do this.
 unavailable-subtitle: PSI + PPI + DS + PSRI: ([+ left_coalition +]%). [? if not participating = 1 : The party has decided against parliamentary means already. ?][? if ppi_relation < 50 : We do not have adequate relations with the PPI. ?][? if ds_relation < 50 : We do not have adequate relations with the PPI. ?]
-view-if: centre_left_coalition >= 50
+view-if: centre_left_coalition >= 45
 choose-if: participating = 1 and ppi_relation > 49 and ds_relation > 49
 on-arrival: prime_minister = "Turati"; prime_minister_party = "PSI"; communist_dissent += 10; maximalist_dissent += 10;
 
@@ -225,8 +225,8 @@ Who is to be Prime Minister?
 
 @catholic_liberal_coalition
 title: Refuse to form a government, so that the bourgeois coalition may be formed.
-subtitle: PPI + LDR + UL + DS ([+ catholic_liberal_coalition +]%). [? if participating = 1 : This is an absurd choice to make, and even those in the reformists are questioning our decisions. ?]
-view-if: catholic_liberal_coalition >= 50
+subtitle: PPI + LDR + UL + DS + Others ([+ catholic_liberal_coalition +]%). [? if participating = 1 : This is an absurd choice to make, and even those in the reformists are questioning our decisions. ?]
+view-if: catholic_liberal_coalition >= 45
 
 There are enough votes for Catholic and Liberal coalition of the PPI, LDR, UL and DS. [? if largest_party == "PSI" and participating = 1: However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
 

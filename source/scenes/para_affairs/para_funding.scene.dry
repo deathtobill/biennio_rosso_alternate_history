@@ -34,7 +34,7 @@ on-arrival: resources -= 1; para_resources += 1;
 Small amounts of funds are sent over to the Red Gaurds.
 
 @big_decrease
-choose-if: para_resources > 2
+choose-if: para_resources > 1
 unavailable-subtitle: [? if para_resources < 2 : We do not have enough to support the party. ?]
 subtitle: +2 Party Resources, -2 Paramilitary Resources
 on-arrival: resources += 2; para_resources -= 2;
@@ -42,7 +42,7 @@ on-arrival: resources += 2; para_resources -= 2;
 Large amounts of funds are transferred back to the party coffers.
 
 @small_decrease
-choose-if: para_resources > 1
+choose-if: para_resources > 0
 unavailable-subtitle: [? if para_resources < 1 : We do not have enough to support the party. ?]
 subtitle: +1 Party Resources, -1 Paramilitary Resources
 on-arrival: resources += 1; para_resources -= 1;
