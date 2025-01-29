@@ -247,8 +247,7 @@ if (Q.month_actions >= 1) {
             Q.middle_class_bn += 4/12;
             Q.industralists_bn += 4/12;
             Q.rural_bn += 4/12;
-        }
-    } else if (Q.year == 1922) {
+        } else if (Q.year == 1922) {
         Q.middle_class_other -= 7/12;
         Q.rural_other -= 7/12;
         Q.middle_class_bn += 7/12;
