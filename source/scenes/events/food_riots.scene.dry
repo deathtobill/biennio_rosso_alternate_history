@@ -24,14 +24,14 @@ on-arrival: workers_psi += 3; rural_psi += 4;
 Our actions have earned us new supporters in our usual bases, thanking us for our aid.
 
 @solidarity_protest
-subtitle: Get our people out there!
+subtitle: Mobilise the organisation to support the workers!
 on-arrival: workers_psi += 1; rural_psi += 1; ldr_relation -= 5; ul_relation -= 5; ppi_relation -= 5;
 
 Our actions are appreciated by the protestors, but less so by the ruling government, seeing our actions as only exacerbating the situation further.
 
 @condemn_protest
-subtitle: Look at what they're doing!
+subtitle: The violent nature of the riots has forced our hand.
 on-arrival: workers_psi -= 1; rural_psi -= 2; coalition_dissent += 0.03; communist_dissent += 10; maximalist_dissent += 10; tradeunionist_dissent += 10; reformist_dissent += 5; ldr_relation += 10; ul_relation += 5; ppi_relation += 10;
 
-Our actions are criticised by every faction. Though the ruling government certainly appreciates your condemnation, it comes at a loss of your voters.
+Our actions are criticised by every faction. Though the ruling government certainly appreciates your condemnation, it comes at a loss of our voters.
 

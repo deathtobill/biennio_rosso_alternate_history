@@ -8,4 +8,4 @@ view-if: year = 1920 and month = 1
 priority: 2
 max-visits: 1
 
-A new year begins. The forming of the Fasci is worrying; violence between the paramilitaries are intensifying. The economy is still in crisis. 
+The turn of the decade has arrived. The post-war situation does not seem to be getting better. The economy is still in crisis as unemployment surges and inflation is rampant, [? if psi_in_government : though we are confident our new position in government will fix that. ?][? if not psi_in_government : and our expectations with the seemingly paralysed bourgeois parties to pull us out the crisi are low. ?]

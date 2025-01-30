@@ -8,51 +8,53 @@ tags: event
 
 = Congress of Bologna
 
-The Congress of Bologna has officially begun. The items on the agenda include: deciding between a reformist or revolutionary approach and participating in the November elections. **This will decide the path you will take.**
+The Congress of Bologna has officially begun. Though the Congress wil be have many debates and discussions on the future of the party, there are two main things to be discussed: deciding on an approach to advance the proletarian revolution and participation in the new November elections. 
+
+**This will decide the path you will take.**
 
 The first thing on the agenda is to decide between a reformist or revolutionary approach. The Reformists are staunch advocates of parliamentary action to achieve a socialist state, while the Communists and majority of the Maximalists advocate for revolutionary action to achieve a Soviet Republic.
 
--@revolutionary_approach: The Majority argument wins out; Revolution will occur by force.
--@maximalist_approach: A balance is achieved; Revolution shall occur.
--@reformist_approach: The Minority argument wins out; Socialism can be achieved through parliamentary means.
+-@revolutionary_approach: The Communist and Left-Maximalists sway enough of the party in their favour.
+-@maximalist_approach: The Right-Communists and Maximalists are able to establish a compromise that forms a majority.
+-@reformist_approach: The Reformists are able to sway enough of the Right-Maximalists to achieve a shocking majority.
 
 @revolutionary_approach
-subtitle: The Reformists will be in an uproar at this!
+subtitle: The party will fully abandon parliamentary means and pursue a policy of violent revolution.
 on-arrival: reformist_dissent += 20; reformist_strength -= 10; communist_strength += 15; maximalist_strength += 10; communist_dissent -= 20; maximalist_dissent -= 15; not_participating = 1; revolutionary_fervor += 5; king_relation -= 5; revolutionary_approach = "Revolution";
 go-to: @election_agenda
 
-The Communist faction is delighted at this result, and the Reformists are fuming. It seems the PSI will fully be engaging in revolution.
+This result only seems to exacerbate the friction within the party, as Reformist members storm out of the Congress as the results of the votes is announced.
 
 @maximalist_approach
-subtitle: Both the communists and reformists grumble at this result, but accept it.
+subtitle: The party will stay the course of revolution via extraparliamentary ways, but will not fully abandon parliamentary means
 on-arrival: reformist_dissent += 10; reformist_strength -= 5; communist_strength -= 5; maximalist_strength += 5; communist_dissent += 10; maximalist_dissent -= 20;
 go-to: @election_agenda
 
-The Maximalists approve of the result, whilst the Reformists and Communists are left grumbling.
+The less radical members of the Communists and Reformists accept the result, whilst the more radical members express their outrage over this effective 'appeasement' to keep the party together.
 
 @reformist_approach
-subtitle: The Communists will be in an uproar at this!
+subtitle: The party will abandon extraparliamentary means and pursue a policy of 
 on-arrival: reformist_dissent -= 20; reformist_strength += 10; communist_strength -= 15; maximalist_strength -= 10; communist_dissent += 20; maximalist_dissent += 15; participating = 1; revolutionary_fervor -= 10; king_relation += 5; revolutionary_approach = "Parliamentary";
 go-to: @election_agenda
 
-The Reformist faction is delighted at this result, and the Communists are fuming. It seems the PSI will reform this nation using parliamentary means.
+The Reformists, having lost leadership in 1912, are able to achieve a plurality through the vote, stunning many who saw the Reformists as having lost most of its support within the party. Already, as the vote is announced, Many Communist and Maximalist members storm out of the Congress, leaving the Reformists to continue the Congress.
 
 @election_agenda
 new-page: false
 
-The second and final thing on the agenda is whether or not the PSI should participate in the Novemer elections. The Reformists advocate for full participation, the Maximists token participation and the Communists full absention.
+The second and final thing on the agenda is whether or not the PSI should participate in the November elections. The Reformists advocate for full participation, the Maximists token participation and the Communists full absention.
 
-- @communist_arguments: The Communist argument wins out; Absentionism will occur. 
-- @maximalist_arguments: The Maximalist argument wins out; Partial electonism will occur.
-- @reformist_arguments: The Reformist argument wins out; Full electionism will occur.
+- @communist_arguments: The Communists are able to convince the rest of the party against the bourgeois elections.
+- @maximalist_arguments: The Maximalists utilise their majority to convince the rest of the party to compromise.
+- @reformist_arguments: The Reformists are able to eek through with support from the sympathetic Maximalist members.
 
 @communist_arguments
-subtitle: The Reformists will be in an uproar at this!
+subtitle: The party will fully refuse to participate in the upcoming election.
 choose-if: participating = 0
 unavailable-subtitle: [? if participating = 1 : We have already chosen to achieve socialism via parliamentary means. ?]
 on-arrival: reformist_dissent += 20; reformist_strength -= 10; communist_strength += 15; maximalist_strength += 10; communist_dissent -= 20; maximalist__dissent -= 15; not_participating = 1;
 
-The Communist faction is delighted at this result, and the Reformists are fuming. It seems the PSI will not be parting in the elections.
+The Communists are able to convince the Maximalists that wasting time on participating is a futile use of time, as the party votes for full absention in the upcoming elections.
 
 @maximalist_arguments
 subtitle: The Reformists will be in an uproar at this!
@@ -60,7 +62,7 @@ choose-if: not_participating = 0 and participating = 0
 unavailable-subtitle: [? if not_participating = 1: We have already chosen to abandon the reformist approach. ?][? if participating = 1 : We have already chosen to achieve socialism via parliamentary means. ?]
 on-arrival: reformist_dissent += 10; reformist_strength -= 5; communist_strength -= 5; maximalist_strength += 5; communist_dissent += 10; maximalist_dissent -= 20;
 
-Both factions grumble at the compromise, but give in at the end. It seems the PSI will be participating in the election; albeit not forming a coalition.
+The Maximalist majority secures a compromise solution, agreeing to participate in the upcoming elections but refusing any sort of coaliton with the bourgeois parties. 
 
 @reformist_arguments
 choose-if: not_participating = 0
@@ -68,4 +70,4 @@ unavailable-subtitle: [? if not_participating = 1 : We have already chosen to ac
 subtitle: The Communists will be in an uproar at this!
 on-arrival: reformist_dissent -= 20; reformist_strength += 10; communist_strength -= 15; maximalist_strength -= 10; communist_dissent += 20; maximalist_dissent += 15; participating = 1;
 
-The Reformist faction is delighted at this result, and the Communists are fuming. It seems the PSI will be parting in the elections.
+The Reformists are able to convince sympathetic Maximalist members to support their endavour to participate in the November elections and form a coalition with the bourgeois parties. The Communists and remaining Maximalists are unsurprisingly, outraged.

@@ -9,12 +9,12 @@ new-page: true
 
 Serrati is a leader of the Maximalists, one of the factions of the PSI.
 
-- @revolution_or_reformist
+- @serrati_revolution_or_reformist
 - @inter_party_relationships
 - @comintern_relations
 - @root: Return to main
 
-@revolution_or_reformist
+@serrati_revolution_or_reformist
 title: Revolution or Reformist?
 subtitle: Debate our path forward. For Serrati, it is in favour of revolution.
 choose-if: advisor_action_timer = 0 and bologna_occured = 0
@@ -31,9 +31,9 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; inter_party_relationships_timer -= 6; last_advisor_action = 1
 go-to: inter_party_relationships
 
-@comintern_relations
-title: Comintern Relations
-subtitle: Improve our standing amongst the Communist Internationale.
+@soviet_relations
+title: Soviet Relations
+subtitle: Improve our standing with the Soviet Union.
 choose-if: advisor_action_timer = 0 and soviet_relation = 10
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if soviet_relation > 10 : Our relations with the Soviet Union have reached its peak. ?]
 on-arrival: advisor_action_timer = 6; international_relations_timer -= 6; last_advisor_action = 1

@@ -9,12 +9,12 @@ new-page: true
 
 Turati is the leader of the Reformist faction of the PSI. He seeks to achieve revolution through parliamentary means.
 
-- @coalition
+- @turati_coalition
 - @labour_rights
 - @snap_election
 - @root: Return to main
 
-@coalition
+@turati_coalition
 title: Negotiating with the Coalition
 subtitle: Turati can improve our relationships with our centrist and center-left coalition partners in the Chamber of Deputies.
 choose-if: advisor_action_timer <= 0 and centre_left_coalition
@@ -25,9 +25,9 @@ We have improved our relations with the PPI, DS, PSRI and reduced tensions with 
 
 @labour_rights
 title: Labour Rights
-subtitle: As a member of the government, we can help out our support base a bit.
+subtitle: Now that we are in government, we can reform labour laws to help out our main support base, the workers.
 choose-if: advisor_action_timer <= 0 and (centre_left_coalition or in_minority_government or in_psi_majority)
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not (centre_left_coalition or in_minority_government or in_psi_majority) : The PSI is not in government to influence labour affairs. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not (centre_left_coalition or in_minority_government or in_psi_majority) : The PSI is not in government to influence policy. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: labour_rights
 

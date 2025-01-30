@@ -32,8 +32,8 @@ go-to: fiscal_policy
 
 @labour_rights
 title: Labour Rights
-subtitle: As a member of the government, we can help out our support base a bit.
+subtitle: Now that we are in government, we can reform labour laws to help out our main support base, the workers.
 choose-if: advisor_action_timer <= 0 and (centre_left_coalition or in_minority_government or in_psi_majority)
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not (centre_left_coalition or in_minority_government or in_psi_majority) : The PSI is not in government to influence it. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not (centre_left_coalition or in_minority_government or in_psi_majority) : The PSI is not in government to influence policy. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: labour_rights

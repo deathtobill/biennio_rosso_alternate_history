@@ -8,37 +8,79 @@ face-image: img/danat_bank.jpg
 
 = Turin Factory Councils under control
 
-The Turin Factory Councils have been given control of to us by the General Confederation of Labour, and it seems we could use this opportunity to further our cause immensely. What should we do?
+Beginning in early 1919, Factory councils across industrial plants in Italy were formed, modelled upon the Soviets in Russia. Most notable of were the Turin Factory Councils, witht the situation now exacerbated by the Turin General Strike.
+
+The General Confederation of Labour, an Italian labour union affiliated with us, have relinquished control of the Turin Factory Councils to us. Though historically we have not responded well to Turin's 'Syndicalism' rhetoric, we could use this opportunity to further our cause immensely. 
+
+Without our aid, the councils seem destined to fall under bourgeois pressure or be forced to negotiate. Notable Turin members such as Gramsci have supported the movement and requested that we ensure its survival.
+
+What should we do?
 
 - @turin_revolution: Begin the revolutionary process.
-- @turin_red_guards: Recruit more Red Guard members.
-- @turin_popularity: Increase our popular support.
+- @turin_red_guards: Mobilise the Red Guards to defend the councils.
+- @turin_popularity: Authorise funding to prop up the Councils for their own defence.
+- @turin_negotiate: Utilise our posiiton in government to negotiate favourable terms for both sides.
 - @turin_conflict: We cannot do anything.
 
 @turin_revolution
-subtitle: This is the opportunity we needed to take control of Italy!
+subtitle: Authorise the strikes past the Piedmont region into the entire nation and mobilise the Red Guards; now is the time to strike!
 view-if: communist_dissent < 50 and reformist_dissent < 50 and maximalist_dissent < 50 and tradeunionist_dissent < 50
 choose-if: participating = 1 and revolutionary_fervor > 79
-unavailable-subtitle: [? if participating = 0 : We have already decided to achieve socialism through parliamentary means. ?][? if revolutionary_fervor < 80 : Not enough of the party thinks we are prepared enough. ?]
+unavailable-subtitle: [? if participating = 0 : We have already decided to achieve socialism through parliamentary means. ?][? if revolutionary_fervor < 80 : The bulk of the party refuses to begin the process of revolution. ?]
 go-to: turin_revolution
 
 @turin_red_guards
-subtitle: Utilise the opportunity to strengthen our Red Guards.
+subtitle: *-30k Red Guards* The Red Guards will defend the Councils from violent bourgeois action.
 view-if: communist_dissent < 50 and reformist_dissent < 50 and maximalist_dissent < 50 and tradeunionist_dissent < 50
-on-arrival: rg_strength += 40
+choose-if: rg_strength < 30
+unavailable-subtitle: [? if rg_strength < 30 : The Red Guards do not have enough troops to defend the Councils. ?]
+on-arrival: rg_strength -= 30; communist_dissent -= 5; tradeunionist_dissent -= 10; workers_psi += 2;
 
-Workers are flocking to the Red Guards in droves, expanding the paramilitary and preparing us for the eventual revolution.
+The Red Guards are able to defend the Councils, and its continued existence encourage popular sentiment within the nation. 
 
 @turin_popularity
-subtitle: Utilise the opportunity to strengthen our popular support.
+subtitle: *-1 Resources* The Party will fund the Councils to defend themselves.
 view-if: communist_dissent < 50 and reformist_dissent < 50 and maximalist_dissent < 50 and tradeunionist_dissent < 50
-on-arrival: worker_psi += 6; rural_psi += 3; middle_class_psi += 2
+choose-if: resources > 0
+unavailable-subtitle: [? if resources < 1 : We do not have enough funds to do this. ?]
+on-arrival: workers_psi += 2; resources -= 1
 
-Our posters and newspapers are all over the streets of Turin, and our polling in the region has already skyrocketed.
+The Councils are able to utilise our aid for their own defence, their faith in our party renewed.
+
+@turin_negotiate
+subtitle: Hopefully we can come to an agreement for both sides...
+view-if: communist_dissent < 50 and reformist_dissent < 50 and maximalist_dissent < 50 and tradeunionist_dissent < 50
+choose-if: psi_in_government
+unavailable-subtitle: [? if not psi_in_government : The PSI are not in government. ?]
+
+Our status both controlling the Councils and in government places us in a unique situation, and we are tasked with negotiating an end to the strike,
+
+- @negotiate_labor_oriented: Favour the Councils in our negotiations.
+- @negotiate_balance: Favour neither side in our negotiations.
+- @negotiate_business_oriented: Favour the industralists in our negotiations.
+
+@negotiate_labor_oriented
+subtitle: Some goodwill for the Councils wouldn't hurt, would it?
+on-arrival: ds_relation -= 5; ppi_relation -= 5; communist_dissent -= 5; unemployment -= 2.3; councils_empowered = 1; coalition_dissent += 1; worker_psi += 2;
+
+The *Factory Control Act* is signed, granting the Councils greater control over the factories and giving them direct input into control of the factories. The industralists are unsurprisingly fuming, refusing to hire workers and worsening the unemployment situation somewhat [? if center_left_coalition : , while our coalition partners with the exception of the PSRI are also disatisfied. ?][? if not center_left_coalition : . ?]
+
+@negotiate_balance
+subtitle: We need this to be a fair agreement.
+on-arrival: communist_dissent += 5;
+
+The *Turin Accord* is signed, negotiating Council control within the factories to include Worker welfare and improved negotiating rights, as the state acts as an arbitrator in any disputes. Both sides seem to be satisfied with the agreement, and the factories continue working once more.
+
+@negotiate_business_oriented:
+subtitle: We can't afford to upset the Industralists in the economic crisis, can we?
+on-arrival: dissent += 5; councils_decreased; workers_psi -= 5; ds_relation += 5; ppi_relation += 10; coalition_dissent -= 1; unemployment -= 1.7; industralists_psi += 2; short_hours_reform += 1; wage_increase += 1;
+
+The *Productivity Agreement* is signed, promising wage increases, shorter hours in exchange for decrease Council control over the factories. The Communists and Trade Unionists give us hell for our decision to bend over backwards to appease the Industralists [? if center_left_coalition : , while our coalition members seem to be satisified. ?][if not center_left_coalition : . ?]
+
 
 @turin_conflict
-subtitle: Party disunity paralyses the opportunity to take decisive action. 
-view-if: communist_dissent < 50 and reformist_dissent < 50 and maximalist_dissent < 50 and tradeunionist_dissent < 50
-on-arrival: tradeunionist_dissent += 10
+subtitle: Party disunity and lack of resources paralyses the opportunity to take decisive action. 
+view-if: (communist_dissent < 50 and reformist_dissent < 50 and maximalist_dissent < 50 and tradeunionist_dissent < 50) or rg_strength < 30 or resources < 1
+on-arrival: tradeunionist_dissent += 10; worker_psi -= 7; communist_dissent += 5;
 
-The opportunity to utilise the Turin Factory Councils slips by our hand, as the government and industralists crack down hard.
+Either by choice or by force, we are unable to utilise the Turin Factory Councils, as the workers surrender to bourgeois forces and return to work, having lost faith in us.

@@ -16,7 +16,7 @@ Kuliscioff is a Russian-born member of the Reformist faction of the PSI. She is 
 
 @womens_rights
 title: Women's Rights
-subtitle: As a member of the government, we can now improve the status of women.
+subtitle: Now that we are in government, we can now reform the laws to improve the status of women.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not currently in government. ?]
 choose-if: advisor_action_timer = 0 and psi_in_government
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
@@ -24,7 +24,7 @@ go-to: womens_rights
 
 @dealing_with_welfare
 title: Dealing with Welfare
-subtitle: With the control of the Labour & Social Security Ministry, we can help out the economic situation.
+subtitle: With control of the Labour & Social Security Ministry, we can change our welfare policies.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not in government. ?][? if not labour_minister_party = "PSI" : The PSI does not control the Labour & Social Security Ministry. ?]
 choose-if: advisor_action_timer = 0 and psi_in_government and labour_minister_party = "PSI"
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1;

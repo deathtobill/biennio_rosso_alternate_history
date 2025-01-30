@@ -9,12 +9,12 @@ new-page: true
 
 Togliatti is a member of the Communist faction of the PSI. A popular figure on the far-left, he is one of the founders of *L'Ordine Nuovo*, the far-left newspaper.
 
-- @coalition
+- @togliatti_coalition
 - @foreign_policy
 - @shuffle_cabinet
 - @root: Return to main
 
-@coalition
+@togliatti_coalition
 title: Negotiating with the Coalition
 subtitle: Togliatti can improve our relationships with our centrist and center-left coalition partners in the Chamber of Deputies.
 choose-if: advisor_action_timer <= 0 and centre_left_coalition

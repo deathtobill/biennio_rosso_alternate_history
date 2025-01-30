@@ -5,9 +5,9 @@ new-page: true
 max-visits: 1
 tags: event
 
-= [? if psi_in_government : Military recommends action in Libya. ?] Military prepares for war in Libya.
+= [? if psi_in_government : Military recommends action in Libya. ?] Military prepares for war in Libya
 
-Our sources in the Army and Navy Ministries has informed us that the High Command is preparing for the pacification of Libya. Popular support for the war seems to be widespread, as many still remember the killings of civilians done by local guerrillas.
+Our sources in the Army and Navy Ministries has informed us that the High Command is preparing for the pacification of Libya once more. Popular support for the war seems to be widespread, as many still remember the killings of civilians done by local guerrillas done during the first world war.
 
 [? if psi_in_government : Many within the party are pressuring us to use our position in the government to convince or influence the army to stop, or at least delay the invasion until a later time. ?][? if not psi_in_government : Realistically, there is not much we can do to stop this. ?]
 

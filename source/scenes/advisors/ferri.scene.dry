@@ -16,9 +16,9 @@ Ferri is a member of the Maximalist faction of the PSI. Having served as the edi
 
 @judical_reform
 title: Judical Reform
-subtitle: Now in control of the Justice Ministry, we are able to reform it to purge corruption and reactionary forces.
+subtitle: Now that we are in control of the Justice Ministry, we are able to reform it to purge corruption and reactionary forces.
 choose-if: advisor_action_timer <= 0 and (centre_left_coalition or in_psi_majority) and justice_ministry_party = "PSI"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not centre_left_coalition : The PSI is not currently in government. ?][if not justice_ministry_party = "PSI" : The PSI does not currently control the justice ministry.]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not centre_left_coalition : The PSI is not currently in government. ?][if not justice_ministry_party = "PSI" : The PSI does not currently control the Justice Ministry.]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
 go-to: judical_reform
 
