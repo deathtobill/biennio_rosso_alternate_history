@@ -71,7 +71,7 @@ on-arrival: communist_dissent += 5;
 
 The *Turin Accord* is signed, negotiating Council control within the factories to include Worker welfare and improved negotiating rights, as the state acts as an arbitrator in any disputes. Both sides seem to be satisfied with the agreement, and the factories continue working once more.
 
-@negotiate_business_oriented:
+@negotiate_business_oriented
 subtitle: We can't afford to upset the Industralists in the economic crisis, can we?
 on-arrival: dissent += 5; councils_decreased; workers_psi -= 5; ds_relation += 5; ppi_relation += 10; coalition_dissent -= 1; unemployment -= 1.7; industralists_psi += 2; short_hours_reform += 1; wage_increase += 1;
 
