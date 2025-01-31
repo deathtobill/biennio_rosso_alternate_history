@@ -334,13 +334,13 @@ on-display: {!
         if (screenWidth < width - 50) {
             width = screenWidth - 50;
             height = width;
-            document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+            document.getElementById("chamber").style.height = screenWidth/2 + "px";
         }
         var parliament = d3.parliament();
         parliament.width(width).height(height).innerRadiusCoef(0.4);
         parliament.enter.fromCenter(true).smallToBig(true);
         parliament.exit.toCenter(false).bigToSmall(true);
-        d3.select("#reichstag").datum(data).call(parliament);
+        d3.select("#chamber").datum(data).call(parliament);
 
         var lines = d3.linegraph(false, false,
                 Q.parties,
@@ -365,8 +365,9 @@ on-display: {!
 
         // economic stats
         var minInflation = d3.min(Q.economic_records, d => d.inflation);
+        var maxUnemployment = d3.max(Q.economic_records, d => d.unemployment);
         var lines_3 = d3.linegraph(true, true, ['inflation'],
-                {'inflation': '#0000FF''},
+                {'inflation': '#0000FF'},
                 {'inflation': 'Inflation'},
                 minInflation - 5, 21);
         lines_3.width(width).height(300);
