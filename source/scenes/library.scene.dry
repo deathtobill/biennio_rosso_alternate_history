@@ -274,104 +274,105 @@ Dissent: [+ reformist_dissent : dissent +]
 @figures
 title: Figures and Charts
 go-to: menu
+on-display: {!
+    data = [
+        {
+            "id": "psi",
+            "legend": "PSI",
+            "name": "PSI",
+            "seats": Q.psi_r*5,
+        },
+        {
+            "id": "psri",
+            "legend": "PSRI",
+            "name": "PSRI",
+            "seats": Q.psri_r*5,
+        },
+        {
+            "id": "ppi",
+            "legend": "PPI",
+            "name": "PPI",
+            "seats": Q.ppi_r*5,
+        },
+        {
+            "id": "ldr",
+            "legend": "LDR",
+            "name": "LDR",
+            "seats": Q.ldr_r*5,
+        },
+        {
+            "id": "ds",
+            "legend": "DS",
+            "name": "DS",
+            "seats": Q.ds_r*5,
+        },
+        {
+            "id": "ul",
+            "legend": "UL",
+            "name": "UL",
+            "seats": Q.ul_r*5,
+        },
+        {
+            "id": "other",
+            "legend": "Other",
+            "name": "Other",
+            "seats": Q.other_r*5,
+        },
+        {
+            "id": "bn",
+            "legend": "BN",
+            "name": "BN",
+            "seats": Q.bn_r*5,
+        },
+    ];
 
-data = [
-    {
-        "id": "psi",
-        "legend": "PSI",
-        "name": "PSI",
-        "seats": Q.psi_r*5,
-    },
-    {
-        "id": "psri",
-        "legend": "PSRI",
-        "name": "PSRI",
-        "seats": Q.psri_r*5,
-    },
-    {
-        "id": "ppi",
-        "legend": "PPI",
-        "name": "PPI",
-        "seats": Q.ppi_r*5,
-    },
-    {
-        "id": "ldr",
-        "legend": "LDR",
-        "name": "LDR",
-        "seats": Q.ldr_r*5,
-    },
-    {
-        "id": "ds",
-        "legend": "DS",
-        "name": "DS",
-        "seats": Q.ds_r*5,
-    },
-    {
-        "id": "ul",
-        "legend": "UL",
-        "name": "UL",
-        "seats": Q.ul_r*5,
-    },
-    {
-        "id": "other",
-        "legend": "Other",
-        "name": "Other",
-        "seats": Q.other_r*5,
-    },
-    {
-        "id": "bn",
-        "legend": "BN",
-        "name": "BN",
-        "seats": Q.bn_r*5,
-    },
-];
+    if (d3 && window) {
+        // get screen width
+        var width = 500;
+        var height = 500;
+        var screenWidth = document.getElementById('content').offsetWidth;
+        if (screenWidth < width - 50) {
+            width = screenWidth - 50;
+            height = width;
+            document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+        }
+        var parliament = d3.parliament();
+        parliament.width(width).height(height).innerRadiusCoef(0.4);
+        parliament.enter.fromCenter(true).smallToBig(true);
+        parliament.exit.toCenter(false).bigToSmall(true);
+        d3.select("#reichstag").datum(data).call(parliament);
 
-if (d3 && window) {
-    // get screen width
-    var width = 500;
-    var height = 500;
-    var screenWidth = document.getElementById('content').offsetWidth;
-    if (screenWidth < width - 50) {
-        width = screenWidth - 50;
-        height = width;
-        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+        var lines = d3.linegraph(false, false,
+                Q.parties,
+                {'psri': '#E3000F', 'psi': '#8B0000', 'ldr': '#DCCA4A', 'ds': '#3f7bc1', 'ul': '#00008B', 'ppi': '#69A2BE', 'bn': '#954B00', 'other': '#a0a0a0', 'pci': '#c40000'},
+                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': 'LDR', 'ds': 'DS', 'ul': 'UL', 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pci': 'PCI'});
+        lines.width(width).height(400);
+        //var svg = lines(Q.election_records);
+        if (Q.election_records.length > 0) {
+            d3.select("#election_history").datum(Q.election_records).call(lines);
+        }
+        //document.getElementById('election_history').innerHTML = svg.outerHTML;
+
+        // party support records should not have so many ticks
+        if (!Q.historical_mode || Q.game_over) {
+            var lines_2 = d3.linegraph(true, true,
+                Q.parties,
+                {'psri': '#E3000F', 'psi': '#8B0000', 'ldr': '#DCCA4A', 'ds': '#3f7bc1', 'ul': '#00008B', 'ppi': '#69A2BE', 'bn': '#954B00', 'other': '#a0a0a0', 'pci': '#c40000'},
+                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': 'LDR', 'ds': 'DS', 'ul': 'UL', 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pci': 'PCI'});
+            lines_2.width(width).height(400);
+            d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
+        }
+
+        // economic stats
+        var minInflation = d3.min(Q.economic_records, d => d.inflation);
+        var lines_3 = d3.linegraph(true, true, ['inflation'],
+                {'inflation': '#0000FF''},
+                {'inflation': 'Inflation'},
+                minInflation - 5, 21);
+        lines_3.width(width).height(300);
+        d3.select("#economic_history").datum(Q.economic_records).call(lines_3);
     }
-    var parliament = d3.parliament();
-    parliament.width(width).height(height).innerRadiusCoef(0.4);
-    parliament.enter.fromCenter(true).smallToBig(true);
-    parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#reichstag").datum(data).call(parliament);
-
-    var lines = d3.linegraph(false, false,
-            Q.parties,
-            {'psri': '#E3000F', 'psi': '#8B0000', 'ldr': '#DCCA4A', 'ds': '#3f7bc1', 'ul': '#00008B', 'ppi': '#69A2BE', 'bn': '#954B00', 'other': '#a0a0a0', 'pci': '#c40000'},
-            {'psri': 'PSRI', 'psi': 'PSI', 'ldr': 'LDR', 'ds': 'DS', 'ul': 'UL', 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pci': 'PCI'});
-    lines.width(width).height(400);
-    //var svg = lines(Q.election_records);
-    if (Q.election_records.length > 0) {
-        d3.select("#election_history").datum(Q.election_records).call(lines);
-    }
-    //document.getElementById('election_history').innerHTML = svg.outerHTML;
-
-    // party support records should not have so many ticks
-    if (!Q.historical_mode || Q.game_over) {
-        var lines_2 = d3.linegraph(true, true,
-            Q.parties,
-            {'psri': '#E3000F', 'psi': '#8B0000', 'ldr': '#DCCA4A', 'ds': '#3f7bc1', 'ul': '#00008B', 'ppi': '#69A2BE', 'bn': '#954B00', 'other': '#a0a0a0', 'pci': '#c40000'},
-            {'psri': 'PSRI', 'psi': 'PSI', 'ldr': 'LDR', 'ds': 'DS', 'ul': 'UL', 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pci': 'PCI'});
-        lines_2.width(width).height(400);
-        d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
-    }
-
-    // economic stats
-    var minInflation = d3.min(Q.economic_records, d => d.inflation);
-    var lines_3 = d3.linegraph(true, true, ['inflation'],
-            {'inflation': '#0000FF''},
-            {'inflation': 'Inflation'},
-            minInflation - 5, 21);
-    lines_3.width(width).height(300);
-    d3.select("#economic_history").datum(Q.economic_records).call(lines_3);
-}
+!}
 
 = Chamber of Deputies composition
 
