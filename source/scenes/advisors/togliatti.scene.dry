@@ -16,7 +16,7 @@ Togliatti is a member of the Communist faction of the PSI. A popular figure on t
 
 @togliatti_coalition
 title: Negotiating with the Coalition
-subtitle: Togliatti can improve our relationships with our centrist and center-left coalition partners in the Chamber of Deputies.
+subtitle: Togliatti can improve our relationships with our centrist and centre-left coalition partners in the Chamber of Deputies.
 choose-if: advisor_action_timer <= 0 and centre_left_coalition
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not centre_left_coalition : The PSI is not currently in a coalition. ?]
 on-arrival: advisor_action_timer = 6; coalition_dissent -= 1; ppi_relation += 10; ds_relation += 5; psri_relation += 10; 

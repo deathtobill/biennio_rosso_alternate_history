@@ -1,0 +1,35 @@
+title: Mussolini takes power.
+subtitle: The beginning of the end.
+view-if: rome_
+on-arrival: spd_in_government = 0
+tags: event
+new-page: true
+
+= Mussolini Appointed Prime Minister!
+
+The March on Rome has succeeded, as the threat of violence and outright civil war forces the King to give in to Mussolini's demands. Vittorio Emanuele III has officially appointed Benito Mussolini as Prime Minister, as many fear he will quickly consolidate power and bring the full force of the governemnt towards us.
+
+He has promised a campaign of violent oppression of socialism, as reports have come out of violence across Italy already. Contacts between the Fasci Italiani di Combattimento and the army has strengthened, as seemingly more military arms appear more frequent in paramilitary hands.
+
+What are we to do now?
+
+- @fight: Mobilise the Red Guards and authorise workers to begin taking up arms against Mussolini's rule!
+- @give_up: This is no worse than the bourgeois rhetoric we have heard; we will continue to struggle and await revolution!
+
+
+@fight
+
+Do we realize that this means civil war, against the full force of the state?
+
+- @civil_war: Yes.
+- @give_up: We are not ready for war. Instead, we will continue to struggle and await revolution.
+
+@give_up
+
+Our refusal to act has burned our bridges with the Communists and Reformists, both breaking from the party to pursue their own means of resistance. It seems the united Left movement has come crumbling down. 
+
+Mussolini acts fast, as the Red Guards are harassed and attacked by both governemnt and right-wing paramilitaries. In the Chamber of Deputies, the assasination of Giacomo Matteotti by government forces sparks momentary outrage while Mussolini seizes the opportunity and passes the Acerbo Law to quickly consolidate Italy into one-party dictatorship.
+
+Italy is lost.
+
+- @game_over: Game over.

@@ -83,7 +83,7 @@ Unemployment: [+ unemployment_2 +]%
 
 {!<span class="tooltip-text" title="The Communists are interested in radical, transformative policies and revolutionary action.">Communists</span>!} strength: [+ communist_strength : strength +], dissent: [+ communist_dissent : dissent +]
 
-{!<span class="tooltip-text" title="The Maximalists is a faction of Center Marxists, between reform and revolution.">Maximalists</span>!} strength: [+ maximalist_strength : strength +], dissent: [+ maximalist_dissent : dissent +]
+{!<span class="tooltip-text" title="The Maximalists is a faction of Centre Marxists, between reform and revolution.">Maximalists</span>!} strength: [+ maximalist_strength : strength +], dissent: [+ maximalist_dissent : dissent +]
 
 {!<span class="tooltip-text" title="Trade Unionist's goal is economic reform and benefits for organized workers.">Trade Unionists</span>!} strength: [+ tradeunionist_strength : strength +], dissent: [+ tradeunionist_dissent : dissent +]
 
@@ -117,7 +117,7 @@ Fasci Militarization: [+ fdc_militancy : militancy +]
 
 Squadristi Militarization: [+ sqd_militancy : militancy +]
 
-= Official military/paramilitaries
+= Official Military
 
 Regio Esercito: [+ army_strength +] thousand troops.
 
@@ -137,7 +137,7 @@ LDR: [+ ldr_votes +]%
 
 DS: [+ ds_votes +]%
 
-[? if not psri_reconcilled: PSRI ?][? if prsi_in_government != 0 and pci_formed : [+ psri_name +]?]: [+ psri_v +]%
+PSRI : [+ psri_votes +]%
 
 PPI: [+ ppi_votes +]%
 

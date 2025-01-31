@@ -72,9 +72,9 @@ if (Q.bn_r >= Q.psi_r && Q.bn_r >= Q.psri_r && Q.bn_r >= Q.pci_r) {
 }
 
 // coalitions
-Q.center_left_coalition = Q.psi_r + Q.ppi_r + Q.ds_r + Q.psri_r
-Q.catholic_liberal_coalition = Q.ppi_r + + Q.ul_r + Q.ldr_r + Q,psri_r + Q.other_r
-Q.anti_socialist_coalition = Q.bn_r + Q.ppi_r + Q.ds_r
+Q.centre_left_coalition = Q.psi_r + Q.ppi_r + Q.ds_r + Q.psri_r;
+Q.catholic_liberal_coalition = Q.ppi_r + Q.ul_r + Q.ldr_r + Q.psri_r + Q.other_r;
+Q.anti_socialist_coalition = Q.bn_r + Q.ppi_r + Q.ds_r;
 
 Q.leverage = Q.psi_r;
 
@@ -151,14 +151,14 @@ if (window && d3) {
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#parliament").datum(data).call(parliament);
+    d3.select("#chamber").datum(data).call(parliament);
 }
 !}
 go-to: coalition_menu
 
 = Election results
 
-{!<svg id="parliament" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="chamber" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
 {!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div></td><td>!} PSI: {!</td><td>!} [+ psi_r +]% {!</td></tr>!}
@@ -205,12 +205,12 @@ priority: 2
 
 It seems our radicalism and absentionism has pushed the Catholics to ally with the National Bloc. [+ bn_leader +] has made himself crucial to this coalition, and has already been appointed Prime Minister by the King.
 
-para_funding: What now?
+- @mussolini_prime_minister: What now?
 
 @centre_left_coalition
 title: Is a Centre-Left coalition possible?
-subtitle: PSI + PPI + DS + PSRI ([+ center_left_coalition +]%). The Communists and Maximalists will be in an uproar if we do this.
-unavailable-subtitle: PSI + PPI + DS + PSRI: ([+ left_coalition +]%). [? if not participating = 1 : The party has decided against parliamentary means already. ?][? if ppi_relation < 50 : We do not have adequate relations with the PPI. ?][? if ds_relation < 50 : We do not have adequate relations with the PPI. ?]
+subtitle: PSI + PPI + DS + PSRI ([+ centre_left_coalition +]%). The Communists and Maximalists will be in an uproar if we do this.
+unavailable-subtitle: PSI + PPI + DS + PSRI: ([+ left_coalition +]%). [? if not participating = 1 : The party has decided against parliamentary means already. ?][? if ppi_relation < 50 : We do not have adequate relations with the PPI. ?][? if ds_relation < 50 : We do not have adequate relations with the DS. ?]
 view-if: centre_left_coalition >= 45
 choose-if: participating = 1 and ppi_relation > 49 and ds_relation > 49
 on-arrival: prime_minister = "Turati"; prime_minister_party = "PSI"; communist_dissent += 10; maximalist_dissent += 10;
@@ -226,11 +226,11 @@ Who is to be Prime Minister?
 @catholic_liberal_coalition
 title: Refuse to form a government, so that the bourgeois coalition may be formed.
 subtitle: PPI + LDR + UL + DS + Others ([+ catholic_liberal_coalition +]%). [? if participating = 1 : This is an absurd choice to make, and even those in the reformists are questioning our decisions. ?]
-view-if: catholic_liberal_coalition >= 45
+view-if: catholic_liberal_coalition >= 50 or (centre_left_coalition > 50 and participating = 0) or (center_left_coalition < 50 and participating = 1)
 
 There are enough votes for Catholic and Liberal coalition of the PPI, LDR, UL and DS. [? if largest_party == "PSI" and participating = 1: However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
 
-- @catholic_liberal_coalition_yes: Yes, we will abdicate our responsibility for government formation, and let a right-wing coalition take power.
+- @catholic_liberal_coalition_yes: Yes, we will abdicate our responsibility for government formation, and let a bourgeois coalition take power.
 - @centre_left_coalition: Actually, we wish to form a coalition after all.
 
 
@@ -252,7 +252,7 @@ Finally, the PSI can govern alone! Our long campaign of electioneering has paid 
 @turati
 title: Filippo Turati for Prime Minister
 subtitle: Turati leads the reformist wing, and is an acceptable candidate for Prime Minister.
-on-arrival: psi_in_government = 1; prime_minister = "Turati"; prime_minister_party = "PSI"; center_left_coalition = 1
+on-arrival: psi_in_government = 1; prime_minister = "Turati"; prime_minister_party = "PSI"; centre_left_coalition = 1
 go-to: ministries
 
 Turati appointment as chancellor is approved by all our potential allies.
@@ -260,10 +260,10 @@ Turati appointment as chancellor is approved by all our potential allies.
 @sturzo
 title: Let the People's Party have their chancellor. This will improve our leverage.
 subtitle: Heinrich Brüning will be chancellor. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ppi_relation += 10; ds_relation += 5; ul_relation -= 5; center_left_coalition = 1; chancellor = "Sturzo"; chancellor_party = "PPI"; psi_in_government = 1; leverage += 5
+on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ppi_relation += 10; ds_relation += 5; ul_relation -= 5; centre_left_coalition = 1; chancellor = "Sturzo"; chancellor_party = "PPI"; psi_in_government = 1; leverage += 5
 go-to: ministries
 
-This is highly unexpected, and many in the center and even the reformists of our party are criticizing this decision.
+This is highly unexpected, and many in the centre and even the reformists of our party are criticizing this decision.
 
 
 
