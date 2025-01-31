@@ -91,43 +91,43 @@ data = [
         "id": "psi",
         "legend": "PSI",
         "name": "PSI",
-        "seats": math.round(Q.psi_r*5),
+        "seats": Math.round(Q.psi_r*5),
     },
     {
         "id": "psri",
         "legend": "PSRI",
         "name": "PSRI",
-        "seats": math.round(Q.psri_r*5),
+        "seats": Math.round(Q.psri_r*5),
     },
     {
         "id": "ppi",
         "legend": "PPI",
         "name": "PPI",
-        "seats": math.round(Q.ppi_r*5),
+        "seats": Math.round(Q.ppi_r*5),
     },
     {
         "id": "ldr",
         "legend": "LDR",
         "name": "LDR",
-        "seats": math.round(Q.ldr_r*5),
+        "seats": Math.round(Q.ldr_r*5),
     },
     {
         "id": "ds",
         "legend": "DS",
         "name": "DS",
-        "seats": math.round(Q.ds_r*5),
+        "seats": Math.round(Q.ds_r*5),
     },
     {
         "id": "ul",
         "legend": "UL",
         "name": "UL",
-        "seats": math.round(Q.ul_r*5),
+        "seats": Math.round(Q.ul_r*5),
     },
     {
         "id": "other",
         "legend": "Other",
         "name": "Other",
-        "seats": math.round(Q.other_r*5),
+        "seats": Math.round(Q.other_r*5),
     },
     {
         "id": "bn",
@@ -144,7 +144,7 @@ if (window && d3) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50; 
         height = width;
-        document.getElementById("parliament").style.height = screenWidth/2 + "px";
+        document.getElementById("chamber").style.height = screenWidth/2 + "px";
     } 
 
     var parliament = d3.parliament();

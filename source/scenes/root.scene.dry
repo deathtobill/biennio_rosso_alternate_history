@@ -444,11 +444,11 @@ For more information on the politics and government of the Italian Kingdom, see 
 - @1919_historical: Begin (historical mode)
 
 @1919_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; rg_strength = 2500; ppi_relation = 55; ds_relation = 55; psri_relation = 65; budget = 5;
+on-arrival: difficulty = -1; resources = 4; dues = 3; rg_strength = 150; ppi_relation = 55; ds_relation = 55; psri_relation = 65; budget = 5;
 go-to: 1919_main
 
 @1919_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; rg_strength = 1000; reformist_dissent = 30; communist_dissent = 30; tradeunionist_dissent = 20; maximalist_dissent = 15; ppi_relation = 35; ds_relation = 35; psri_relation = 35; budget = 3;
+on-arrival: difficulty = 1; resources = 0; dues = 1; rg_strength = 75; reformist_dissent = 30; communist_dissent = 30; tradeunionist_dissent = 20; maximalist_dissent = 15; ppi_relation = 35; ds_relation = 35; psri_relation = 35; budget = 3;
 go-to: 1919_main
 
 @1919_historical
@@ -458,7 +458,7 @@ Q.difficulty = 2;
 Q.historical_mode = 1;
 Q.resources = 2;
 Q.dues = 1;
-Q.rg_strength = 2000;
+Q.rg_strength = 62;
 Q.reformist_dissent = 35;
 Q.communist_dissent = 35;
 Q.tradeunionist_dissent = 25;

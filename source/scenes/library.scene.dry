@@ -375,7 +375,7 @@ if (d3 && window) {
 
 = Chamber of Deputies composition
 
-{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="chamber" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
 {!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div></td><td>!} **PSI:** {!</td><td>!} **[+ psi_r +]%** {!</td></tr>!}
