@@ -133,7 +133,7 @@ data = [
         "id": "bn",
         "legend": "BN",
         "name": "BN",
-        "seats": math.round(Q.bn_r*5),
+        "seats": Math.round(Q.bn_r*5),
     },
 ];
 
