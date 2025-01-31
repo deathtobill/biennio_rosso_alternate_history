@@ -222,13 +222,12 @@ Who is to be Prime Minister?
 - @turati: Filippo Turati for Prime Minister. 
 - @sturzo: Let the People's Party have their Prime Minister.
 
-
 @catholic_liberal_coalition
-title: Refuse to form a government, so that the bourgeois coalition may be formed.
+title: Refuse to form a government, and let the other parties assume responsibility.
 subtitle: PPI + LDR + UL + DS + Others ([+ catholic_liberal_coalition +]%). [? if participating = 1 : This is an absurd choice to make, and even those in the reformists are questioning our decisions. ?]
 view-if: catholic_liberal_coalition >= 50 or (centre_left_coalition > 50 and participating = 0) or (center_left_coalition < 50 and participating = 1)
 
-There are enough votes for Catholic and Liberal coalition of the PPI, LDR, UL and DS. [? if largest_party == "PSI" and participating = 1: However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
+Though tense negotations between the Liberals and newly formed Catholic parties, the coalition of the PPI, LDR, UL and DS is established. [? if largest_party == "PSI" and participating = 1: However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
 
 - @catholic_liberal_coalition_yes: Yes, we will abdicate our responsibility for government formation, and let a bourgeois coalition take power.
 - @centre_left_coalition: Actually, we wish to form a coalition after all.
