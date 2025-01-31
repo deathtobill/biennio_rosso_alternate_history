@@ -1,0 +1,52 @@
+title: PSRI seeks reconciliation
+subtitle: PSRI leaders have requested a meeting between us...
+view-if: participating = 1 and reformists_defect = 0 and reformists_expelled = 0 and reformist_strength >= 40 and year >= 1920 and psri_relation >= 64.9
+on-arrival: {!
+
+
+psri_workers_movement = (workers_psri / 4) * 3;
+psri_middle_class_movement = (middle_class_psri / 4) * 3;
+psri_industralists_movement = (industralists_psri / 4) * 3;
+psri_veterans_movement = (veterans_psri / 4) * 3;
+psri_catholics_movement = (catholics_psri / 4) * 3;
+
+!}
+max-visits: 1
+tags: event
+
+The PSRI has offered us a meeting, seeing a movement from Maximalist leadership like the ones that expelled them in 1912, have offered to reconcile and reunite the parties into a single group once more.
+
+What do we do?
+
+- @reconcile_accept: Accept the offer and reunite the reformist faction.
+- @reconcile_deny: Refuse the offer and keep the PSRI seperate.
+
+@reconcile_accept
+subtitle: It is clear that our vision is aligned once more.
+on-arrival: {! 
+workers_psi += psri_workers_movement; 
+middle_class_psi += psri_middle_class_movement; 
+industralists_psi += psri_industralists_movement; 
+veterans_psi += psri_veterans_movement; 
+catholics_psi += psri_catholics_movement;
+
+workers_psri -= psri_workers_movement;
+middle_class_psri -= psri_middle_class_movement;
+industralists_psri -= psri_industralists_movement;
+veterans_psri -= psri_veterans_movement;
+catholics_psri -= psri_catholics_movement;
+
+reformist_strength += 10;
+communist_dissent += 10
+maximalist_dissent += 10
+
+psri_reconcilled = 1;
+!}
+
+Though the other factories decry this, the vast majority of the PSRI is reunited once more with the party, as new leadership flocks back. Though a small minority of the PSRI still remains, they are severely weakend by defections to us.
+
+@reconcile_deny
+subtitle: It is more suitable that we remain seperate.
+on-arrival: communist_dissent -= 10; maximalist_dissent -= 10; reformist_dissent += 10; psri_relation -= 10;
+
+Many within the Reformists and PSRI are confused by our actions, as are workers who are split on which party to vote for, though the other factions breathe a sigh of relief that the reformists don't get any stronger.

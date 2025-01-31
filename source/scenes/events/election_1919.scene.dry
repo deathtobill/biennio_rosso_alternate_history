@@ -236,7 +236,7 @@ There are enough votes for Catholic and Liberal coalition of the PPI, LDR, UL an
 
 @catholic_liberal_coalition_yes
 subtitle: This is extremely unpopular with the reformists.
-on-arrival: reformist_dissent -= 15; psi_in_government = 0; prime_minister = "Francesco Saverio Nitti"; prime_minister_party = "DS"; interior_minister_party = "DS"; foreign_minister_party = "UL"; justice_minister_party = "Independent"; treasury_minister_party = "LDR"; finance_minister_party = "LDR"; industry_minister_party = "UL"; public_works_minister_party = "DS"; agriculture_minister_party = "LDR"; labor_minister_party = "UL";
+on-arrival: reformist_dissent -= 15; psi_in_government = 0; prime_minister = "Francesco Saverio Nitti"; prime_minister_party = "DS"; interior_minister_party = "DS"; foreign_minister_party = "UL"; justice_minister_party = "Independent"; treasury_minister_party = "LDR"; finance_minister_party = "LDR"; industry_minister_party = "UL"; public_works_minister_party = "DS"; agriculture_minister_party = "LDR"; labour_minister_party = "UL";
 
 The government is formed, without us.
 
@@ -244,7 +244,7 @@ The government is formed, without us.
 title: PSI majority alone
 subtitle: PSI: [+ psi_r +]%
 view-if: psi_r >= 50
-on-arrival: prime_minister = "Empty"; prime_minister_party = "PSI"; psi_in_government = 1; in_psi_majority = 1; foreign_minister_party = "PSI"; interior_minister_party = "PSI"; justice_minister_party = "PSI"; labor_minister_party = "PSI"; finance_minister_party = "PSI"; treasury_minister_party = "PSI"; agriculture_minister_party = "PSI"; 
+on-arrival: prime_minister = "Empty"; prime_minister_party = "PSI"; psi_in_government = 1; in_psi_majority = 1; foreign_minister_party = "PSI"; interior_minister_party = "PSI"; justice_minister_party = "PSI"; labour_minister_party = "PSI"; finance_minister_party = "PSI"; treasury_minister_party = "PSI"; agriculture_minister_party = "PSI"; 
 
 Finally, the PSI can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
 
@@ -280,8 +280,8 @@ subtitle: Taking the Labour Ministry is expected of us.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1919
 choose-if: leverage >= 5
-view-if: labor_minister_party != "PSI"
-on-arrival: leverage -= 5; labor_minister_party = "PSI"; labor_minister = "Wissell"
+view-if: labour_minister_party != "PSI"
+on-arrival: leverage -= 5; labour_minister_party = "PSI"; labour_minister = "Wissell"
 go-to: ministries
 
 Rudolf Wissell of the PSI has been appointed Labour and Social Security minister.
@@ -389,10 +389,10 @@ tags: mins_1919
 
 This coalition arrangement is tolerable to all.
 
-@drop_labor
-title: Drop the Labor & Social Security Ministry.
-view-if: labor_minister_party = "PSI"
-on-arrival: labor_minister_party = "DS"; labor_minister = "Ferraris"; leverage += 5;
+@drop_labour
+title: Drop the Labour & Social Security Ministry.
+view-if: labour_minister_party = "PSI"
+on-arrival: labour_minister_party = "DS"; labour_minister = "Ferraris"; leverage += 5;
 tags: drop_mins_1919
 go-to: ministries
 

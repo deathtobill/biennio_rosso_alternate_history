@@ -55,11 +55,11 @@ unavailable-subtitle: [? if not psi_in_government : The PSI are not in governmen
 
 Our status both controlling the Councils and in government places us in a unique situation, and we are tasked with negotiating an end to the strike,
 
-- @negotiate_labor_oriented: Favour the Councils in our negotiations.
+- @negotiate_labour_oriented: Favour the Councils in our negotiations.
 - @negotiate_balance: Favour neither side in our negotiations.
 - @negotiate_business_oriented: Favour the industralists in our negotiations.
 
-@negotiate_labor_oriented
+@negotiate_labour_oriented
 subtitle: Some goodwill for the Councils wouldn't hurt, would it?
 on-arrival: ds_relation -= 5; ppi_relation -= 5; communist_dissent -= 5; unemployment -= 2.3; councils_empowered = 1; coalition_dissent += 1; worker_psi += 2;
 

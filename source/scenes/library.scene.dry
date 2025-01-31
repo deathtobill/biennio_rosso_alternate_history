@@ -80,7 +80,7 @@ go-to: menu
 
 Current cabinet:
 
-Labor: [+ labor_minister_party +]
+Labour: [+ labour_minister_party +]
 
 Interior: [+ interior_minister_party +]
 

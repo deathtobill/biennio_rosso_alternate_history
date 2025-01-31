@@ -1,11 +1,11 @@
-title: [? if psi_in_government : Military recommends action in Libya ?] Military prepares for war in Libya.
+title: [? if psi_in_government : Military recommends action in Libya ?] Military prepares for war in Libya
 subtitle: The nation seems to be on the brink of war once more.
 view-if: year = 1922 and month = 1
 new-page: true
 max-visits: 1
 tags: event
 
-= [? if psi_in_government : Military recommends action in Libya. ?] Military prepares for war in Libya
+= [? if psi_in_government : Military recommends action in Libya ?] Military prepares for war in Libya
 
 Our sources in the Army and Navy Ministries has informed us that the High Command is preparing for the pacification of Libya once more. Popular support for the war seems to be widespread, as many still remember the killings of civilians done by local guerrillas done during the first world war.
 
@@ -36,7 +36,7 @@ choose-if: army_loyalty > 0.53 and resources > 0
 unavailable-subtitle: [? if army_loyalty < 0.54 : Our influence in the military is too low to even attempt this. ?][? if resources < 1 : We do not have the resources to do this. ?]
 on-arrival: resources -= 1; veterans_psi -= 1;
 
-Using our already-established influence, we coordinate troops to 'miscount' their equipment and 'take their time' in supplying equipment, whilst our funds go towards more 'friendly' officers who are persuaded to relax and take their time in ordering troops or planning. War preparations, seeming for no reason, has ground to a halt.
+Using our already-established influence, we coordinate troops to 'miscount' their equipment and 'take their time' in supplying equipment, whilst our funds go towards more 'friendly' officers who are encouraged to go through the full bureaucratic process to order troops or planning. War preparations, seeming for no reason, has ground to a halt.
 
 @libya_nothing
 subtitle: What else could we do?
