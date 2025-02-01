@@ -72,7 +72,7 @@ if (Q.bn_r >= Q.psi_r && Q.bn_r >= Q.psri_r && Q.bn_r >= Q.pci_r) {
 }
 
 // coalitions
-Q.left_wing_coalition = Q.psi_r + Q.psri_r
+Q.left_wing_coalition = Q.psi_r + Q.psri_r;
 Q.centre_left_coalition = Q.psi_r + Q.ldr_r Q.+ Q.ds_r + Q.psri_r;
 Q.catholic_liberal_coalition = Q.ppi_r + Q.ul_r + Q.ldr_r + Q.psri_r + Q.other_r;
 Q.anti_socialist_coalition = Q.bn_r + Q.ppi_r + Q.ds_r;
