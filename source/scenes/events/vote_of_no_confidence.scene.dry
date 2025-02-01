@@ -1,0 +1,64 @@
+title: The Right calls a vote of no confidence against the current government!
+subtitle: We have angered our coalition partners too much...
+new-page: true
+on-arrival: tried_supporting_kpd = 0
+view-if: spd_in_government = 1 and centre_left_coalition and coalition_dissent >= 4 and spd_r < 50
+tags: event
+go-to: vonc_menu
+
+# Options: spend relations to reduce coalition_dissent, ask for kpd to abstain
+# (lmao KPD toleration arc...)
+
+= Vote of No Confidence
+
+The Liberals, Democrats and Radicals have called for a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be an election in a few months.
+
+@vonc_menu
+
+- @try_assuage: Try to assuage our partners.
+- @let_it_happen: Let the vote happen.
+
+@try_assuage
+
+How do we assuage our partners?
+
+- @austerity: Enact a massive austerity plan.
+- @resources: Use our resources to reduce dissent within the coalition.
+- @support_psri: Could we get the PSRI to abstain?
+- @let_it_happen: Never mind. Let the vote happen.
+
+
+@austerity
+view-if: welfare >= 0 and not secularized
+on-arrival: coalition_dissent = 0; workers_psi -= 10; unemployed_psi -= 10; workers_ppi += 7; workers_bn += 3; unemployed_ppi += 5; unemployed_bn += 5; communist_dissent += 15; maximalist_dissent += 10; labor_dissent += 15; reformist_dissent += 5; welfare -= 2; budget += 1; unemployed += 3; psri_relation -= 10
+
+Fine. We enacted a massive austerity program to cut welfare, in order to maintain the stability of our coalition. The vote has been called off.
+
+@resources
+view-if: secularized = 0
+choose-if: resources >= 3
+unavailable-subtitle: We do not have enough resources.
+subtitle: -3 resources
+on-arrival: resources -= 3; coalition_dissent -= 1;
+
+By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution.
+
+@support_psri
+choose-if: psri_relation >= 40 and left_wing_coalition > 49
+view-if: tried_supporting_kpd = 0
+on-arrival: owes_psri = 1
+unavailable-subtitle: [? if psri_relation < 50 : The PSRI is not friendly enough with us. ?] [? if left_wing_coalition < 45: The PSRI does not have enough votes. ?]
+
+Both our votes, alongside soem defectors from the minor parties are enoug for us to maintain control of the government. We owe a massive debt to the PSRI, which could lead to broader cooperation in the future, for better or for worse.
+
+@let_it_happen
+call: set_next_election_time
+on-arrival: time_to_election = 3;  coalition_dissent = 0; rural_psi -= 3; middle_class_psi -= 2; workers_psi -= 3; middle_class_bn += 2;
+go-to: caretaker_government
+
+@caretaker_government
+on-arrival: psi_caretaker = 1; psi_in_government = 0; centre_left_coalition = 0;
+
+The vote succeeds, and our government has resigned. Prime Minister [+ prime_minister +] remains as the head of a caretaker government, but no longer has the power to enact new policies.
+
+New elections have been set for [+ next_election_month : month +] [+ next_election_year +].

@@ -1,4 +1,4 @@
-title: Chmaber of Deputies Elections
+title: Chamber of Deputies Elections
 new-page: true
 tags: event
 priority: -1
@@ -72,7 +72,8 @@ if (Q.bn_r >= Q.psi_r && Q.bn_r >= Q.psri_r && Q.bn_r >= Q.pci_r) {
 }
 
 // coalitions
-Q.centre_left_coalition = Q.psi_r + Q.ppi_r + Q.ds_r + Q.psri_r;
+Q.left_wing_coalition = Q.psi_r + Q.psri_r
+Q.centre_left_coalition = Q.psi_r + Q.ldr_r Q.+ Q.ds_r + Q.psri_r;
 Q.catholic_liberal_coalition = Q.ppi_r + Q.ul_r + Q.ldr_r + Q.psri_r + Q.other_r;
 Q.anti_socialist_coalition = Q.bn_r + Q.ppi_r + Q.ds_r;
 
@@ -180,7 +181,9 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
-Centre-Left Coalition (PSI + PPI + DS + PSRI): [+ centre_left_coalition +]%
+Left-Wing Coalition (PSI + PSRI): [+ left_wing_coalition +]
+
+Centre-Left Coalition (PSI + LDR + DS + PSRI): [+ centre_left_coalition +]%
 
 Catholic-Liberal Coalition (PPI + LDR + UL + DS + Others): [+ catholic_liberal_coalition +]%
 
@@ -193,6 +196,7 @@ There are some potential coalition arrangements.
 @coalition_menu
 
 - @psi_majority
+- @left_wing_coalition
 - @centre_left_coalition
 - @catholic_liberal_coalition
 - @anti_socialist_coalition
@@ -200,38 +204,45 @@ There are some potential coalition arrangements.
 @anti_socialist_coalition
 title: Anti-Socialist coalition
 subtitle: BN + PPI + DS ([+ anti_socialist_coalition +]%)..
-view-if: anti_socialist_coalition > 49 and radicalisation > 8 and participating = 1
+view-if: anti_socialist_coalition > 49 and radicalisation > 8 and participating = 0
 priority: 2
 
 It seems our radicalism and absentionism has pushed the Catholics to ally with the National Bloc. [+ bn_leader +] has made himself crucial to this coalition, and has already been appointed Prime Minister by the King.
 
 - @mussolini_prime_minister: What now?
 
+@left_wing_coalition
+title: Will the Left pull off a majority?
+subtitle: PSI + PSI ([+ left_wing_coalition +]%)..
+view-if: left_wing_coalition > 49
+go-to: ministries
+
+It seems that the Left-wing of the political sphere has grown enough to ensure a stable coalition.
+
 @centre_left_coalition
-title: Is a Centre-Left coalition possible?
-subtitle: PSI + PPI + DS + PSRI ([+ centre_left_coalition +]%). The Communists and Maximalists will be in an uproar if we do this.
+title: Can the The Extreme unite once more?
+subtitle: PSI + LDR + DS + PSRI ([+ centre_left_coalition +]%). Dissent from the Communists and Maximalists will increase.
 unavailable-subtitle: PSI + PPI + DS + PSRI: ([+ left_coalition +]%). [? if not participating = 1 : The party has decided against parliamentary means already. ?][? if ppi_relation < 50 : We do not have adequate relations with the PPI. ?][? if ds_relation < 50 : We do not have adequate relations with the DS. ?]
 view-if: centre_left_coalition >= 45
-choose-if: participating = 1 and ppi_relation > 49 and ds_relation > 49
-on-arrival: prime_minister = "Turati"; prime_minister_party = "PSI"; communist_dissent += 10; maximalist_dissent += 10;
+choose-if: participating = 1 and ldr_relation > 49 and ds_relation > 49
+on-arrival: centre_left_coalition = 1;
 
 Negotiation between the parties is fierce, but we eventually agree to form a coalition.
 
 Who is to be Prime Minister?
 
 - @turati: Filippo Turati for Prime Minister. 
-- @sturzo: Let the People's Party have their Prime Minister.
+- @orlando: Let the LDR have their Prime Minister.
 
 @catholic_liberal_coalition
 title: Refuse to form a government, and let the other parties assume responsibility.
-subtitle: PPI + LDR + UL + DS + Others ([+ catholic_liberal_coalition +]%). [? if participating = 1 : This is an absurd choice to make, and even those in the reformists are questioning our decisions. ?]
-view-if: catholic_liberal_coalition >= 50 or (centre_left_coalition > 50 and participating = 0) or (center_left_coalition < 50 and participating = 1)
+subtitle: PPI + LDR + UL + DS + Others ([+ catholic_liberal_coalition +]%). [? if participating = 1 : The results of the Bologna Congress and our subsequent refusal to form a government is confusing to many. ?]
+view-if: catholic_liberal_coalition >= 50 or (centre_left_coalition > 50 and participating = 0) or (centre_left_coalition < 50 and participating = 1)
 
 Though tense negotations between the Liberals and newly formed Catholic parties, the coalition of the PPI, LDR, UL and DS is established. [? if largest_party == "PSI" and participating = 1: However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
 
 - @catholic_liberal_coalition_yes: Yes, we will abdicate our responsibility for government formation, and let a bourgeois coalition take power.
 - @centre_left_coalition: Actually, we wish to form a coalition after all.
-
 
 @catholic_liberal_coalition_yes
 subtitle: This is extremely unpopular with the reformists.
@@ -243,7 +254,7 @@ The government is formed, without us.
 title: PSI majority alone
 subtitle: PSI: [+ psi_r +]%
 view-if: psi_r >= 50
-on-arrival: prime_minister = "Empty"; prime_minister_party = "PSI"; psi_in_government = 1; in_psi_majority = 1; foreign_minister_party = "PSI"; interior_minister_party = "PSI"; justice_minister_party = "PSI"; labour_minister_party = "PSI"; finance_minister_party = "PSI"; treasury_minister_party = "PSI"; agriculture_minister_party = "PSI"; 
+on-arrival: prime_minister = "Turati"; prime_minister_party = "PSI"; psi_in_government = 1; in_psi_majority = 1; foreign_minister_party = "PSI"; interior_minister_party = "PSI"; justice_minister_party = "PSI"; labour_minister_party = "PSI"; finance_minister_party = "PSI"; treasury_minister_party = "PSI"; agriculture_minister_party = "PSI"; 
 
 Finally, the PSI can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
 
@@ -254,12 +265,12 @@ subtitle: Turati leads the reformist wing, and is an acceptable candidate for Pr
 on-arrival: psi_in_government = 1; prime_minister = "Turati"; prime_minister_party = "PSI"; centre_left_coalition = 1
 go-to: ministries
 
-Turati appointment as chancellor is approved by all our potential allies.
+Turati's appointment as chancellor is approved by all our potential allies.
 
-@sturzo
-title: Let the People's Party have their chancellor. This will improve our leverage.
-subtitle: Heinrich Brüning will be chancellor. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ppi_relation += 10; ds_relation += 5; ul_relation -= 5; centre_left_coalition = 1; chancellor = "Sturzo"; chancellor_party = "PPI"; psi_in_government = 1; leverage += 5
+@orlando
+title: Let the LDR have their chancellor. This will improve our leverage.
+subtitle: Orlando will be reappointed chancellor. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
+on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ldr_relation += 10; ds_relation += 5; ul_relation -= 5; centre_left_coalition = 1; chancellor = "Orlando"; chancellor_party = "LDR"; psi_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the centre and even the reformists of our party are criticizing this decision.
