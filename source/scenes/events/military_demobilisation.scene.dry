@@ -34,4 +34,4 @@ We are able to convince the army to end its demobilisation, the budget will be b
 
 @allow_demobilise
 subtitle: +1 Budget
-on-arrival: army_strength -= 692; unemployment += 1.9; budget += 1
+on-arrival: army_strength -= 692; unemployment += 1.9; budget += 1; demobilise_timer += 6;
