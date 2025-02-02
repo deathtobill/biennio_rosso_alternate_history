@@ -75,6 +75,8 @@ PSI position: [? if psi_in_government : in government - ?][? if psi_in_governmen
 
 [? if psi_in_government and not in_psi_majority : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
+@cabinet
+
 Current cabinet:
 
 Labour: [+ labour_minister_party +]
