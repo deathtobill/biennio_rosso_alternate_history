@@ -133,7 +133,7 @@ Q.capital_strike_progress = 0;
 // if fasci_coup_progress reaches 10 before historical, march on rome event is triggered
 Q.fasci_coup_progress = 0;
 
-Q.budget = 2;
+Q.budget = -3;
 
 // Proportion of different social groups
 Q.workers = 24; // industry and trade
@@ -253,8 +253,8 @@ Q.economic_records = [];
 // State of the government
 Q.king = "Vittorio Emanuele III";
 // starting prime minister: Vittorio Emanuele Orlando
-Q.prime_minister = "Vittorio Emanuele Orlando";
-Q.prime_minister_party = 'UL';
+Q.prime_minister = "Orlando";
+Q.prime_minister_party = 'LDR';
 Q.psi_in_government = 0;
 Q.ppi_in_government = 1;
 Q.ldr_in_government = 1;
@@ -264,6 +264,8 @@ Q.prsi_in_government = 0;
 Q.bn_in_government = 0;
 Q.pci_in_government = 0;
 
+// Left-Wing Coalition = PSI + PSRI
+Q.left_wing_coalition = 0
 // Catholic-Centre Coalition = PPI + LDR + UL + DS
 Q.catholic_centre_coalition = 0;
 // Centre-Left Coalition = PSI + PPI + DS + PSRI

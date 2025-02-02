@@ -33,7 +33,7 @@ Our coalition members are able to see reason, at least temporarily, and decide t
 @libya_military_influence
 subtitle: *-1 Resource* Thankfully, we can use to influence as well as our coffers to 'delay' the war.
 choose-if: army_loyalty > 0.53 and resources > 0
-unavailable-subtitle: [? if army_loyalty < 0.54 : Our influence in the military is too low to even attempt this. ?][? if resources < 1 : We do not have the resources to do this. ?]
+unavailable-subtitle: [? if army_loyalty < 0.54 : Our influence in the military is too low to even attempt this. ?][? if resources < 1 : Requires 1 Party Resource. ?]
 on-arrival: resources -= 1; veterans_psi -= 1;
 
 Using our already-established influence, we coordinate troops to 'miscount' their equipment and 'take their time' in supplying equipment, whilst our funds go towards more 'friendly' officers who are encouraged to go through the full bureaucratic process to order troops or planning. War preparations, seeming for no reason, has ground to a halt.

@@ -20,7 +20,7 @@ The first thing on the agenda is to decide between a reformist or revolutionary 
 
 @revolutionary_approach
 subtitle: The party will fully abandon parliamentary means and pursue a policy of violent revolution.
-on-arrival: reformist_dissent += 20; reformist_strength -= 10; communist_strength += 15; maximalist_strength += 10; communist_dissent -= 20; maximalist_dissent -= 15; not_participating = 1; revolutionary_fervor += 5; king_relation -= 5; revolutionary_approach = "Revolution";
+on-arrival: reformist_dissent += 20; reformist_strength -= 10; communist_strength += 15; maximalist_strength += 10; communist_dissent -= 20; maximalist_dissent -= 15; not_participating = 1; revolutionary_fervor += 5; king_relation -= 5; party_approach = 2;
 go-to: @election_agenda
 
 This result only seems to exacerbate the friction within the party, as Reformist members storm out of the Congress as the results of the votes is announced.
@@ -34,7 +34,7 @@ The less radical members of the Communists and Reformists accept the result, whi
 
 @reformist_approach
 subtitle: The party will abandon extraparliamentary means and pursue a policy of parliamentary reform.
-on-arrival: reformist_dissent -= 20; reformist_strength += 10; communist_strength -= 15; maximalist_strength -= 10; communist_dissent += 20; maximalist_dissent += 15; participating = 1; revolutionary_fervor -= 10; king_relation += 5; revolutionary_approach = "Parliamentary";
+on-arrival: reformist_dissent -= 20; reformist_strength += 10; communist_strength -= 15; maximalist_strength -= 10; communist_dissent += 20; maximalist_dissent += 15; participating = 1; revolutionary_fervor -= 10; king_relation += 5; party_approach = 1;
 go-to: @election_agenda
 
 The Reformists, having lost leadership in 1912, are able to achieve a plurality through the vote, stunning many who saw the Reformists as having lost most of its support within the party. Already, as the vote is announced, Many Communist and Maximalist members storm out of the Congress, leaving the Reformists to continue the Congress.

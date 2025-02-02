@@ -1,8 +1,7 @@
 title: The Right calls a vote of no confidence against the current government!
 subtitle: We have angered our coalition partners too much...
 new-page: true
-on-arrival: tried_supporting_kpd = 0
-view-if: spd_in_government = 1 and centre_left_coalition and coalition_dissent >= 4 and spd_r < 50
+view-if: psi_in_government = 1 and centre_left_coalition and coalition_dissent >= 4 and spd_r < 50
 tags: event
 go-to: vonc_menu
 

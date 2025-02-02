@@ -18,7 +18,7 @@ So far, the government has refused. What should we do? Should we condemn D'Annun
 subtitle: Of course we should condemn this madman!
 on-arrival: veterans_psi -= 5; veterans_bn += 5; coalition_dissent -= 0.01; communist_dissent -= 5; maximalist_dissent -= 5; tradeunionist_dissent -= 5; reformist_dissent -= 5;
 
-Unsurprisingly, we issue a standard condemnation of D'Annunzio, decreasing dissent at the cost of alienating some of our veteran supporters.
+Unsurprisingly, we issue a condemnation of D'Annunzio's actions, decreasing dissent at the cost of alienating some of our veteran supporters.
 
 @no_comment
 subtitle: I think everyone knows our position by now.

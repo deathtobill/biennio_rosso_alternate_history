@@ -25,7 +25,7 @@ go-to: menu
 
 The Kingdom of Italy, also known as Italy, is a Constitutional Monarchy under a King and a Bicameral Parliament, composing the appointed Senate and the elective Chamber of Deputies. The Chamber is responsible for governing, while the King has a largely ceremonial role as well as a few important responsibilities. 
 
-The Chamber of Deputies is elected based on a proportional representation voting system, added alongside newly introduced universal male suffrage. The King then appoints the Prime Minister and Cabinet, usually under the full request of the Chamber of Deputies. A majority vote-of-no-confidence can remove the current government.
+The Chamber of Deputies is elected based on a proportional representation voting system, added alongside newly introduced universal male suffrage. The King then appoints the Prime Minister and Cabinet, usually under the request of the Chamber of Deputies. A majority vote-of-no-confidence can remove the current government.
 
 Italy is divided into a number of states, each of which have their own governments with some responsibilities.
 
@@ -64,19 +64,16 @@ Chamber of Deputies composition:
 PSI: [+ psi_r +]%
 PPI: [+ ppi_r +]%
 LDR: [+ ldr_r +]%
-[? if not psri_reconcilled: PSRI ?][? if psri_reconcilled != 0 and pci_formed : [+ psri_name +]?]: [+ psri_r +]%
+PSRI: [+ psri_r +]%
 DS: [+ ds_r +]%
 UL: [+ ul_r +]%
 BN: [+ bn_r +]%
 Others: [+ other_r +]%
 
 PSI position: [? if psi_in_government : in government - ?][? if psi_in_government == 0 : opposition ?]
-[? if centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if in_minority_government and psi_in_government: Minority government ?]
+[? if left_wing_coalition and psi_in_government : Left-Wing Coalition ?][? if centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if in_minority_government and psi_in_government: Minority government ?]
 
 [? if psi_in_government and not in_psi_majority : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
-
-@cabinet
-go-to: menu
 
 Current cabinet:
 

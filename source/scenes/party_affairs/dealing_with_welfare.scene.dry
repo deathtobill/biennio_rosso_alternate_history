@@ -1,0 +1,23 @@
+title: Dealing with Unemployment
+new-page: true
+is-card: true
+view-if: 
+frequency: 
+on-arrival:
+card-image: img/portraits/RadbruchGustav.jpg
+tags: govt_affairs
+
+= Dealing with Welfare
+
+Placeholder
+
+# most of these will need to have a ministry involved as well; except the second one
+# unemployment insurance will need to be started by dealing_with_unemployment card
+
+- @veterans_organisations_gov: Increase the funding of government welfare organisations to veterans.
+- @unemployment_insurance_program: Increase the funding of our own government welfare organisations to veterans.
+- @tax_breaks: Increase tax breaks and loans given to businesses and cooperatives
+- @no_aid: Our budget limits our ability to aid the unemployed.
+- @easy_discard
+- @cancel_advisor_action
+
