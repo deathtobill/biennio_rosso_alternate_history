@@ -181,7 +181,7 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
-Left-Wing Coalition (PSI + PSRI): [+ left_wing_coalition +]
+Left-Wing Coalition (PSI + PSRI): [+ left_wing_coalition +]%
 
 Centre-Left Coalition (PSI + LDR + DS + PSRI): [+ centre_left_coalition +]%
 

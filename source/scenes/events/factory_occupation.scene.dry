@@ -24,14 +24,14 @@ What should we do?
 
 @turin_revolution
 subtitle: Authorise the strikes past the Piedmont region into the entire nation and mobilise the Red Guards; now is the time to strike!
-view-if: communist_dissent < 50 and reformist_dissent < 50 and maximalist_dissent < 50 and tradeunionist_dissent < 50
+view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or tradeunionist_dissent < 50
 choose-if: participating = 1 and revolutionary_fervor > 79
 unavailable-subtitle: [? if participating = 0 : We have already decided to achieve socialism through parliamentary means. ?][? if revolutionary_fervor < 80 : The bulk of the party refuses to begin the process of revolution. ?]
 go-to: turin_revolution
 
 @turin_red_guards
 subtitle: *-30k Red Guards* The Red Guards will defend the Councils from violent bourgeois action.
-view-if: communist_dissent < 50 and reformist_dissent < 50 and maximalist_dissent < 50 and tradeunionist_dissent < 50
+view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or tradeunionist_dissent < 50
 choose-if: rg_strength < 30
 unavailable-subtitle: [? if rg_strength < 30 : The Red Guards do not have enough troops to defend the Councils. ?]
 on-arrival: rg_strength -= 30; communist_dissent -= 5; tradeunionist_dissent -= 10; workers_psi += 2;
@@ -40,7 +40,7 @@ The Red Guards are able to defend the Councils, and its continued existence enco
 
 @turin_popularity
 subtitle: *-1 Resources* The Party will fund the Councils to defend themselves.
-view-if: communist_dissent < 50 and reformist_dissent < 50 and maximalist_dissent < 50 and tradeunionist_dissent < 50
+view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or tradeunionist_dissent < 50
 choose-if: resources > 0
 unavailable-subtitle: [? if resources < 1 : We do not have enough funds to do this. ?]
 on-arrival: workers_psi += 2; resources -= 1
@@ -49,7 +49,7 @@ The Councils are able to utilise our aid for their own defence, their faith in o
 
 @turin_negotiate
 subtitle: Hopefully we can come to an agreement for both sides...
-view-if: communist_dissent < 50 and reformist_dissent < 50 and maximalist_dissent < 50 and tradeunionist_dissent < 50
+view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or tradeunionist_dissent < 50
 choose-if: psi_in_government
 unavailable-subtitle: [? if not psi_in_government : The PSI are not in government. ?]
 
