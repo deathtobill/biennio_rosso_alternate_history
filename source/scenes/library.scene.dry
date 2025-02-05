@@ -93,9 +93,6 @@ Foreign: [+ foreign_minister_party +]
 
 Public Works: [+ public_works_minister_party +]
 
-Industry: [+ industry_minister_party +]
-
-
 @demographics
 go-to: menu
 

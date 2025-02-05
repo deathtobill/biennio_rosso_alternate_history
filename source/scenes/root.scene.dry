@@ -299,8 +299,6 @@ Q.finance_minister = 'Meda';
 Q.finance_minister_party = 'PPI';
 Q.agriculture_minister = 'Miliani';
 Q.agriculture_minister_party = 'LDR';
-Q.industry_minister = 'Ciuffelli';
-Q.industry_minister_party = 'LDR';
 
 // have we reformed these institutions to be more democratic?
 Q.judicial_reform = 0;

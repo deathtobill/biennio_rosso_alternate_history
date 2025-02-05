@@ -42,7 +42,7 @@ The Reformists, having lost leadership in 1912, are able to achieve a plurality 
 @election_agenda
 new-page: false
 
-The second and final thing on the agenda is whether or not the PSI should participate in the November elections. The Reformists advocate for full participation, the Maximists token participation and the Communists full absention.
+The second and final thing on the agenda is whether or not the PSI should participate in the November elections. The Reformists advocate for full participation, the Maximists token participation and the Communists full abstention.
 
 - @communist_arguments: The Communists are able to convince the rest of the party against the bourgeois elections.
 - @maximalist_arguments: The Maximalists utilise their majority to convince the rest of the party to compromise.
@@ -54,7 +54,7 @@ choose-if: participating = 0
 unavailable-subtitle: [? if participating = 1 : We have already chosen to achieve socialism via parliamentary means. ?]
 on-arrival: reformist_dissent += 20; reformist_strength -= 10; communist_strength += 15; maximalist_strength += 10; communist_dissent -= 20; maximalist__dissent -= 15; not_participating = 1;
 
-The Communists are able to convince the Maximalists that wasting time on participating is a futile use of time, as the party votes for full absention in the upcoming elections.
+The Communists are able to convince the Maximalists that wasting time on participating is a futile use of time, as the party votes for full abstention in the upcoming elections.
 
 @maximalist_arguments
 subtitle: The party will participate, but not form coalitions.
