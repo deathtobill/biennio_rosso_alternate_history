@@ -293,13 +293,13 @@ Having met with representatives from the LDR and the DS, they have put forward a
 While it seems do have a bit of wiggle room to negotiate, we certainly cannot outright refuse them. What do we do?
 
 Some major ones include:
-Land Reform
-Streetfighting Crackdowns
+Land Reform,
+Streetfighting Crackdowns, and
 Nationalisations
 
 While some minor ones are:
-Budget Surplus
-Foreign Affairs
+Budget Surplus,
+Foreign Affairs and
 Soviet Aid
 
 - #libdem_major
@@ -435,12 +435,12 @@ Having met with representatives from the PPI, they have put forward a series of 
 While it seems do have a bit of wiggle room to negotiate, we certainly cannot outright refuse them. What do we do?
 
 Some major ones include:
-Roman Question
-Catholic Schools
+the Roman Question,
+Catholic Schools and
 Family Structure
 
 While some minor ones are:
-Charity
+Charity and
 Nationalisations
 
 - #catholic_major
@@ -544,8 +544,8 @@ go-to: coalition_menu
 @finalise_catholic
 title: It seems we have come to an agreement.
 subtitle: This is an unstable coalition, to say the least.
-choose-if: liberal_negotiations >= 40
-unavailable-subtitle: The catholics are not satisfied with the current arrangement.
+choose-if: catholic_negotiations >= 40
+unavailable-subtitle: The Catholics are not satisfied with the current arrangement.
 on-departure: socialist_catholic_coalition = 1
 
 With the coalition agreed upon, it is time to choose a Prime Minister.
