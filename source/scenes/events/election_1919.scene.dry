@@ -541,8 +541,8 @@ subtitle: Maybe one with the Liberals might work?
 on-departure: ppi_negotiations_failed = 1
 go-to: coalition_menu 
 
-@finalise_libdem
-title It seems we have come to an agreement.
+@finalise_catholic
+title: It seems we have come to an agreement.
 subtitle: This is an unstable coalition, to say the least.
 choose-if: liberal_negotiations >= 40
 unavailable-subtitle: The catholics are not satisfied with the current arrangement.
