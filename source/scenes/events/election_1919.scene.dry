@@ -418,7 +418,7 @@ on-departure: ldr_negotiations_failed = 1
 go-to: coalition_menu 
 
 @finalise_libdem
-title It seems we have come to an agreement.
+title: It seems we have come to an agreement.
 subtitle: This is an unstable coalition, to say the least.
 choose-if: liberal_negotiations >= 50
 unavailable-subtitle: The liberals are not satisfied with the current arrangement.
