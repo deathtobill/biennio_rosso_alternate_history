@@ -7,7 +7,7 @@ current_budget = 0;
 current_budget += budget;
 !}
 face-image: img/schutzbund.png
-#tags: event
+tags: event
 
 = Unemployment Insurance Funding
 
@@ -22,7 +22,7 @@ subtitle: -2 Budget - Keep the Program running for another year. [? if catholic_
 choose-if: finance_minister_party = "PSI"
 unavailable-subtitle: The PSI does not control the Finance Ministry.
 on-arrival: unemployment_insurance_funded += 1; insurance_payments_timer = 12; budget -= 2; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ppi_promise_failed = 1; veterans_ppi += 4*(1-dissent)*unemployment_insurance_funded; veterans_bn -= 4*(1-dissent)*unemployment_insurance_funded; economic_growth += 0.7;
-go-to: ldr_promise_vonc if ldr_promise_failed = 1; catholic_promise_vonc if ppi_promise_failed = 1;
+go-to: ldr_promise_vonc if ldr_promise_failed = 1; catholic_promise_vonc if ppi_promise_failed = 1
 
 The Program is set to continue for another year, our appeal to veterans increase alongside it.
 
