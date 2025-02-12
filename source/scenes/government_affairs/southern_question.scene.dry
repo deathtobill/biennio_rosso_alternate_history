@@ -87,6 +87,7 @@ middle_class += 3*(1-dissent);
 industrialists_psi -= 3*(1-dissent); 
 catholics_psi -= 4*(1-dissent); 
 ppi_relation -= 7;
+!}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We expand education institutes, targeting the South, hiring teachers, building schools and the like. Both the landowners and the catholics certainly aren't pleased with our intrusion into the South.

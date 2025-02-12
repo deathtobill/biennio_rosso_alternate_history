@@ -76,7 +76,9 @@ on-arrival: {!
 ppi_relation += 15
 catholic_psi += 7*(1-dissent)
 
-budget -= 3 if vatican_compensation_offered
+if (vatican_compensation_offered == 1) {
+    budget -= 3
+}
 if ((current_budget > 0 && budget < 0) && liberal_budget_accepted == 1) {
     ldr_promise_failed;
 }

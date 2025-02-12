@@ -64,7 +64,7 @@ choose-if: finance_minister_party = "PSI"
 view-if: psi_in_government
 unavailable-subtitle: The PSI does not control the Financial Ministry.
 on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ppi_promise_failed = 1 if catholic_charity_accepted; veterans_psi += 2*(1-dissent); veterans_bn -= 2*(1-dissent); economic_growth += 0.7;
-go-to: ldr_promise_vonc if ldr_promise_failed = 1; catholic_promise_vonc if ppi_promise_failed;
+go-to: ldr_promise_vonc if ldr_promise_failed = 1; catholic_promise_vonc if ppi_promise_failed
 
 We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds are reallocated to aid veterans immediately.
 
@@ -77,7 +77,7 @@ choose-if: finance_minister_party = "PSI"
 view-if: psi_in_government
 unavailable-subtitle: The PSI does not control the Financial Ministry.
 on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); veterans_ppi += 1*(1-dissent); veterans_psi += 1*(1-dissent); veterans_bn -= 2*(1-dissent); economic_growth += 0.7;
-go-to: ldr_promise_vonc if ldr_promise_failed = 1;
+go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We begin distributing funds to Catholic-aligned organisations such as Churches, and the funds are reallocated to aid veterans immediately.
 

@@ -22,7 +22,7 @@ What do we do?
 
 
 - @veterans_organisations_party: Increase the funding of our own welfare organisations.
-- @no_aid: Our budget limits our ability to improve welfare.
+- @no_aid_party: Our budget limits our ability to improve welfare.
 - @easy_discard
 - @cancel_advisor_action
 
@@ -38,3 +38,5 @@ We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds 
 
 [? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
 [? if ppi_promise_failed : Unfortunately, the funding of a non-Catholic aligned welfare organisation has led us to enter a deficit, breaking our agreement with the Catholics, and their representatives have already requested a meeting with us. ?]
+
+@no_aid_party

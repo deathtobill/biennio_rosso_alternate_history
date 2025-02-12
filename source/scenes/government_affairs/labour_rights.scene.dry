@@ -45,4 +45,4 @@ The Labor Ministry works on developing and enforcing safety regulations, in orde
 @unemployment_insurance
 subtitle: -2 Budget - This will be a burden to our budget if we expand the scope too far. [? if catholic_charity_accepted : The creation of an non-Catholic welfare program would violate our agreement! ?][? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?]
 view-if: not unemployment_insurance_founded
-go-to: dealing_with_welfare.unemployment_insurance_program
+go-to: dealing_with_welfare_gov.unemployment_insurance_program

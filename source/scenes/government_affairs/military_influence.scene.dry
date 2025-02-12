@@ -45,6 +45,7 @@ on-arrival: army_loyalty += 0.09 if army_loyalty < 1; ldr_relation -= 5; ds_rela
 
 Through some careful movement and reassignment of officers, we are able to remove anti-socialist officers from positions of power, slowly but surely getting rid of anti-socialist sentiment within the army.
 
+@no_military
 
 
 
