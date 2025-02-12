@@ -37,7 +37,7 @@ on-arrival: {!
 unemployment_insurance_founded = 1; 
 insurance_payments_timer += 12; 
 budget -= 2; 
-if (budget < 0 && liberal_budget_accepted = 1 && current_budget > -1) {
+if (budget < 0 && liberal_budget_accepted == 1 && current_budget >= 0) {
     ldr_promise_failed = 1;
 }
 if (catholic_charity_accepted = 1) {
