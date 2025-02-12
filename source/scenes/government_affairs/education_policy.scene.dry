@@ -51,7 +51,7 @@ We begin a new round of funding for the public education system, allowing school
 
 @curriculum_reform
 subtitle: This will affect both public and religious schools. [? if catholic_education_accepted : This will violate our agreement with the Catholics! ?]
-on-arrival: education_reformed += 1; workers_psi += 2*(1-dissent); catholic_psi -= 3*(1-dissent); vatican_relations -= 1; ppi_relation -= 5*(1-dissent); ppi_promise_failed if catholic_education_accepted; psri_relation += 5*(1-dissent);
+on-arrival: education_reformed += 1; workers_psi += 2*(1-dissent); catholic_psi -= 3*(1-dissent); vatican_relations -= 1; ppi_relation -= 5*(1-dissent); ppi_promise_failed if catholic_education_accepted = 1; psri_relation += 5*(1-dissent);
 max-visits: 3
 go-to: catholic_promise_vonc if ppi_promise_failed
 

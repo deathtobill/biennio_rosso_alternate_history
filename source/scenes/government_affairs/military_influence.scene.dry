@@ -36,7 +36,7 @@ on-arrival: bribes_caught = 1; coalition_dissent += 3; workers_psi -= 8*(1-disse
 
 = Il Popolo d'Italia publishes damning article!
 
-It seems news of our...shady dealings have come to light. [? if centre_left_coalition or socialist_catholic_coalition : Our coalition partners are understandably outraged.] Our supporters have lost faith in us, and the National Bloc has seized the opportunity to further smear our image.
+It seems news of our...shady dealings have come to light. [? if centre_left_coalition or socialist_catholic_coalition : Our coalition partners are understandably outraged. ?] Our supporters have lost faith in us, and the National Bloc has seized the opportunity to further smear our image.
 
 @purge_loyalty
 choose-if: judicial_reform >= 2 and justice_minister_party = "PSI"

@@ -30,7 +30,7 @@ Where should we begin?
 @southern_land_reform_gov
 subtitle: -2 Budget - This will **irreversibly** damage our relations with the Liberals.
 choose-if: not centre_left_coalition and king_relation >= 60
-unavailable-subtitle: [? if centre_left_coalition : The Liberals are threatening a pre-emptive Vote-of-No-Confidence if this bill hits the Chamber floor.? ][? if king_relation < 60 : This King has informed us he will veto this bill upon arrival regardless. ?]
+unavailable-subtitle: [? if centre_left_coalition : The Liberals are threatening a pre-emptive Vote-of-No-Confidence if this bill hits the Chamber floor. ?][? if king_relation < 60 : This King has informed us he will veto this bill upon arrival regardless. ?]
 on-arrival: southern_land_reformed = 1; budget -= 2; ldr_relation -= 30; rural_psi += 17*(1-dissent); industrialists_ldr -= 27*(1-dissent); industrialists_bn += 20*(1-dissent); middle_class_bn += 14*(1-dissent); unemployment -= 4.3; inflation += 2.8; economic_growth += 2.7;
 go-to: let_it_happen if ldr_r >= 50
 
@@ -73,7 +73,7 @@ We expand education institutes, targeting the South, hiring teachers, building s
 
 @southern_mafia
 choose-if: interior_minister_party = "PSI" and mafia_strength > 0
-unavailable-subtitle: [? if not interior_minister_party = "PSI: The PSI does not control the Interior Ministry. ?][? if mafia_strength < 1 : The various forces of the mafia are no longer a threat to us.]
+unavailable-subtitle: [? if not interior_minister_party = "PSI: The PSI does not control the Interior Ministry. ?][? if mafia_strength < 1 : The various forces of the mafia are no longer a threat to us. ?]
 go-to: investigate_mafia_success if interior_police_loyalty >= 0.5 and judicial_reform > 1; investigate_mafia_failure if interior_police_loyalty < 0.5 or judicial_reform < 2
 
 @investigate_mafia_success

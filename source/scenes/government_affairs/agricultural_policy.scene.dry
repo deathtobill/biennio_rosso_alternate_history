@@ -8,7 +8,7 @@ agricultural_policy_timer = 5;
 current_budget = 0;
 current_budget += budget;
 !}
-view-if: psi_in_government and agriculture_minister_party = "PSI" and agricultural_policy_timer =< 0
+view-if: psi_in_government and agriculture_minister_party = "PSI" and agricultural_policy_timer <= 0
 frequency: 500
 card-image: img/portraits/BaadeFritz.jpg
 tags: govt_affairs

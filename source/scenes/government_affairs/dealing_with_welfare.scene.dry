@@ -43,7 +43,7 @@ Unfortunately, our current financial situation limits the scope of this welfare 
 [? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
 [? if ppi_promise_failed : Unfortunately, the creation of the Unemployment Insurance Program has led us to enter a deficit, breaking our agreement with the Catholics, and their representatives have already requested a meeting with us. ?]
 
-@veterans_organisations_party
+@veterans_organisations_gov
 subtitle: -1 Budget [? if catholic_charity_accepted :- The funding of an non-Catholic welfare program would violate our agreement! ?][? if budget < 1 and liberal_budget_accepted :- This will put us into a deficit! ?]
 choose-if: finance_minister_party = "PSI" 
 view-if: psi_in_government

@@ -42,9 +42,8 @@ By transferring resources to our coalition partners, we can reduce their dissent
 
 @support_psri
 choose-if: psri_relation >= 40 and left_wing_coalition > 49
-on-arrival: owes_psri = 1
 unavailable-subtitle: [? if psri_relation < 50 : The PSRI is not friendly enough with us. ?] [? if left_wing_coalition < 45: The PSRI does not have enough votes. ?]
-on-arrival: socialist_catholic_coalition = 0; left_wing_coalition = 1; ppi_relation -= 10;
+on-arrival: owes_psri = 1; socialist_catholic_coalition = 0; left_wing_coalition = 1; ppi_relation -= 10;
 go-to: election_1919.ministries
 
 Both party votes, alongside some defectors from the minor parties are enough for us to maintain control of the government. We owe a massive debt to the PSRI, which could lead to broader cooperation in the future, for better or for worse.

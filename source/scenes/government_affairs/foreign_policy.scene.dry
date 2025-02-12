@@ -49,7 +49,7 @@ We continue improving our relations with our former allies in the Entente. [? if
 
 @improve_soviet_relations
 subtitle: [? if liberal_foreign_accepted and soviet_relations <= entente_relations : This will disrupt our alignment with the Entente! ?]
-on-arrival: soviet_relations += 1; ldr_relation -= 4*(1-dissent); ds_relation -= 4*(1-dissent); ldr_promise_failed if soviet_relations > entente_relations
+on-arrival: soviet_relations += 1; ldr_relation -= 4*(1-dissent); ds_relation -= 4*(1-dissent); ldr_promise_failed if (soviet_relations > entente_relations);
 go-to: ldr_promise_vonc if ldr_promise_failed
 
 Our overtures to the Russian SFSR are noticed, and welcomed with open arms by our allies. [? if not rcw_over : However, they are still plagued by a fierce civil war with anti-socialist forces. ?]
