@@ -77,16 +77,27 @@ ppi_relation += 15
 catholic_psi += 7*(1-dissent)
 
 budget -= 3 if vatican_compensation_offered
-if ((current_budget > 0 && budget < 0) && liberal_budget_accepted) {
+if ((current_budget > 0 && budget < 0) && liberal_budget_accepted == 1) {
     ldr_promise_failed;
 }
 
-army_strength -= 50 if vatican_defence_offered
-army_loyalty -= 0.05 if vatican_defence_offered
+if (vatican_defence_offered == 1) {
+    army_strength -= 50;
+}
 
-secularised_education = 0 if vatican_education_offered
-communist_dissent += 10 if vatican_education_offered
-maximalist_dissent += 10 if vatican_education_offered
+if (vatican_defence_offered == 1) {
+    army_loyalty -= 0.05;
+}
+
+if (vatican_education_offered == 1) {
+    secularised_education = 0;
+}
+if (vatican_education_offered == 1) {
+    communist_dissent += 10;
+}
+if (vatican_education_offered == 1) {
+    maximalist_dissent += 10;
+}
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
