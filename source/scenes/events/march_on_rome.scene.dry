@@ -59,9 +59,9 @@ go-to: rome_menu
 
 = March on Rome
 
-Benito Mussolini, alongisde his militants, have marched upon Rome, demanding the resignation of the current government. The party is in crisis, as factions scramble to assemble a coherent response to the threat. [? if centre_left_coalition : Our coalition partners not responded to Mussolini's demands, as frantic calls are made to them to organise meetings. ?][? if king_relation < 50 : The King has not responded to the demands as well, but we are pessimistic on his response, considering our strained relations. ?][? if king_relation > 49 : The King has not responded to the demands as well, but we are optimistic on his response, considering our warm relations. ?]
+Benito Mussolini, alongside his militants, have marched upon Rome, demanding the resignation of the current government. The party is in crisis, as factions scramble to assemble a coherent response to the threat. [? if centre_left_coalition : Our coalition partners not responded to Mussolini's demands, as frantic calls are made to them to organise meetings. ?][? if king_relation < 50 : The King has not responded to the demands as well, but we are pessimistic on his response, considering our strained relations. ?][? if king_relation > 49 : The King has not responded to the demands as well, but we are optimistic on his response, considering our warm relations. ?]
 
-[? if spd_in_government : We could utilise our government influence to bring down Mussolini and fascism once and for all. ?][if parliamentary = 0 : We cannot rely on the bourgois parties to defend this nation from fascism. ?] What do we do?
+[? if spd_in_government : We could utilise our government influence to bring down Mussolini and fascism once and for all. ?][if parliamentary = 0 : We cannot rely on the bourgeois parties to defend this nation from fascism. ?] What do we do?
 
 @rome_menu
 
@@ -125,9 +125,9 @@ go-to: rome_menu
 
 @rome_rg_mobilise
 max-visits: 1
-subtitle: Our forces will begin to March on Rome as well, [? if participating = 1 : in support of the government. ?] the bourgois may see this as a threat as well, however.
-choose-if: rg_banned = 0 or (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and tradeunionist_dissent > 50)
-unavailable-subtitle: [? if rg_banned = 1 : The Red Guards are banned. ?][? if (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and tradeunionist_dissent > 50) : The party is too disunited to act. ?]
+subtitle: Our forces will begin to March on Rome as well, [? if participating = 1 : in support of the government. ?] the bourgeois may see this as a threat as well, however.
+choose-if: rg_banned = 0 or (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and syndicalist_dissent > 50)
+unavailable-subtitle: [? if rg_banned = 1 : The Red Guards are banned. ?][? if (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and syndicalist_dissent > 50) : The party is too disunited to act. ?]
 on-arrival: rome_rg_visited = 1
 go-to: rome_menu if participating = 1; civil_war if participating = 0
 

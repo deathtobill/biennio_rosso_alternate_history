@@ -1,0 +1,85 @@
+title: Internal Security
+new-page: true
+is-card: true
+tags: govt_affairs
+on-arrival: police_timer = 5; month_actions += 1
+view-if: spd_in_government = 1 and (interior_minister_party = "PSI" or (liberal_crackdown_accepted and not crackdown_done)) and police_timer <= 0
+card-image: img/portraits/SeveringCarl.jpg
+
+= Internal Security
+
+[? if interior_minister_party = "PSI": Being in control of the Interior Ministry, we hold control of the Carabinieri, the national gendarmerie, alongside the Defence Ministry, we can take care of the unstable internal situation of Italy. ?]
+
+[? if liberal_crackdown_accepted and not interior_minister_party = "PSI" : Although not in control of the Interior Ministry, our coalition partners have given us temporary control over matters of the Carabinieri. ?]
+
+# mafia mechanic only if declared war upon in southern question
+
+- @loyalty_interior: Improve the loyalty of the Carabinieri.
+- @investigate_corruption: Investigate corruption by big businesses.
+- @investigate_mafia: Investigate illegal activity among the Mafia.
+- @crackdown_far_right: Crack down on paramilitary organisations among the far right.
+- @crackdown_far_left: Crack down on paramilitary organisations among the far left.
+- @domestic_enemies: Investigate or ban our domestic enemies.
+- @root: Take no action for now.
+- @easy_discard
+- @cancel_advisor_action
+
+@loyalty_interior
+view-if: interior_minister_party = "PSI"
+on-arrival: interior_police_loyalty += 0.1;
+
+With some specific reassignments and improved training methods, we can root out reactionary and sympathetic fascist influence within the Carabinieri.
+
+Current Carabinieri loyalty: [+ interior_police_loyalty : loyalty +]
+
+@investigate_corruption
+view-if: interior_minister_party = "PSI"
+go-to: investigate_corruption_success if interior_police_loyalty >= 0.5; investigate_corruption_failure if interior_police_loyalty < 0.5
+
+@investigate_corruption_success
+on-arrival: investigate_corruption += 1; workers_psi += 5*(1-dissent); inflation -= 0.1 if inflation > 3; inflation -= 0.2 if inflation >= 8
+
+Corruption in big business is rampant, of course. We have uncovered a number of scandals, and publicizing them brings new attention to the work of Interior Minister [+ interior_minister +], building up his popular appeal and that of the PSI.
+
+@investigate_corruption_failure
+
+Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
+
+@crackdown_far_right
+go-to: crackdown_far_right_success if interior_police_loyalty >= 0.5; crackdown_far_right_failure if interior_police_loyalty < 0.5
+
+@crackdown_far_right_success
+on-arrival: crackdown_far_right += 1 if liberal_crackdown_accepted; sqd_strength -= 5; fdc_strength -= 5; 
+
+A number of coordinated raids and arrests have slightly paralysed the far-right paramilitaries.
+
+@crackdown_far_right_failure
+
+Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
+
+@crackdown_far_left
+go-to: crackdown_far_left_success if interior_police_loyalty >= 0.5; crackdown_far_left_failure if interior_police_loyalty < 0.5
+
+@crackdown_far_left_success
+on-arrival: crackdown_far_left += 1 if liberal_crackdown_accepted; rg_strength -= 5; communist_dissent += 10;
+
+A number of coordinated raids and arrests have slightly paralysed the far-left paramilitaries, as well as orders from party leadership to downsize the Red Guards. The left-wing of the party isn't exactly enthused about our decision, to say the least.
+
+@crackdown_far_left_failure
+
+Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
+
+@investigate_mafia
+view-if: interior_minister_party = "PSI"
+go-to: investigate_mafia_success if interior_police_loyalty >= 0.5 and judicial_reform > 1; investigate_mafia_failure if interior_police_loyalty < 0.5 or judicial_reform < 2
+
+@investigate_mafia_success
+on-arrival: mafia_investigation += 1; rural_psi += 3*(1-dissent)
+
+The Carabinieri are able to uncover files regarding illegal activity among a number of high-value individuals, and we are able to conduct raids and arrests the following day.
+
+@investigate_mafia_failure
+
+Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
+
+

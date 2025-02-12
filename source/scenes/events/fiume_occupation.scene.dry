@@ -1,5 +1,5 @@
 title: Occupation of Fiume
-subtitle: D'Annunzio has sezied control of Fiume!
+subtitle: D'Annunzio has seized control of Fiume!
 new-page: true
 tags: event
 view-if: year = 1919 and month = 9
@@ -16,7 +16,7 @@ So far, the government has refused. What should we do? Should we condemn D'Annun
 
 @condemn_fiume 
 subtitle: Of course we should condemn this madman!
-on-arrival: veterans_psi -= 5; veterans_bn += 5; coalition_dissent -= 0.01; communist_dissent -= 5; maximalist_dissent -= 5; tradeunionist_dissent -= 5; reformist_dissent -= 5;
+on-arrival: veterans_psi -= 5; veterans_bn += 5; coalition_dissent -= 0.01; communist_dissent -= 5; maximalist_dissent -= 5; syndicalist_dissent -= 5; reformist_dissent -= 5;
 
 Unsurprisingly, we issue a condemnation of D'Annunzio's actions, decreasing dissent at the cost of alienating some of our veteran supporters.
 

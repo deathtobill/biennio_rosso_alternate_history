@@ -1,0 +1,75 @@
+title: Economic Democracy
+new-page: true
+is-card: true
+view-if: psi_in_government and labour_minister_party = "PSI" and economic_democracy_timer <= 0
+frequency: 500
+on-arrival: {!
+month_actions += 1;
+current_budget = 0
+current_budget += budget
+economic_democracy_timer = 5
+!}
+card-image: img/portraits/RadbruchGustav.jpg
+tags: govt_affairs
+
+= Economic Democracy
+
+A key part of our policies is that workers should have more say within the economy. Hiring practises, wages, prices, shouldn't just be decided by wealthy industrialists, but by the consumers purchasing them and the workers producing them.
+
+Now that we are in control of the Labour and Social Security Ministry, we can apply our party policy into government policy.
+
+# labour ministry stuff
+# if turin agreement brokered in favour of workers; do that across the nation
+
+- @support_work_councils: Support Worker's Councils.
+- @support_work_councils_2: Empower the Worker's Councils further.
+- @enforce_turin_agreement: Enforce the Factory Control Act across the country!
+- @nationalise_industries: Begin nationalising key industries.
+- @no_democracy: Let's not do this for now.
+- @easy_discard
+- @cancel_advisor_action
+
+@support_work_councils
+subtitle: Give factory worker's councils greater influence in their workplace.
+on-arrival: coalition_dissent += 1 if not left_wing_coalition; workers_psi += 7*(1-dissent); syndicalist_dissent -= 6; ldr_relation -= 10; ds_relation -= 10; syndicalist_strength += 10; work_councils += 1; industrialists_bn += 4; industrialists_psi -= 4*(1-dissent); psri_relation += 5*(1-dissent);
+view-if: work_councils = 0 and councils_empowered = 0
+
+The Turin Factory Councils, a small group of unionised factories under worker-led governments, have received official support from the PSI-led government, granting them legitimacy across Italy. Already, demonstrations are occuring throughout Italy, as workers have begun establish workers councils in their workplaces.
+
+The Liberals, with their industrialist backers, are unsurprisingly outraged by this, while Syndicalists in our party praise our actions.
+
+@support_work_councils_2
+subtitle: Continue the expansion of influence for worker's councils.
+on-arrival: coalition_dissent += 1 if not left_wing_coalition; workers_psi += 7*(1-dissent); syndicalist_dissent -= 10; ldr_relation -= 15; ds_relation -= 15; ppi_relation -= 5; syndicalist_strength += 17; work_councils += 1; radicalisation += 1; industrialists_bn += 6; industrialists_psi -= 6*(1-dissent); psri_relation += 5*(1-dissent);
+view-if: work_councils += 1 and councils_empowered = 0
+
+Worker's councils are now given official recognition and further control of their factories, giving workers more of a voice as they are now able to have direct input into the operations. 
+
+The Liberals, joined now by some Catholics, are outraged as always, while the party praises us for our commitment to party ideals.
+
+@enforce_turin_agreement
+subtitle: This will ruin our relations with the Liberals.
+view-if: councils_empowered = 1 
+choose-if: (king_relation >= 50 or veto_removed) and not centre_left_coalition
+unavailable-subtitle: [? if king_relation < 50 : The Senate and King would kill the bill the moment it reaches them. ?][? if centre_left_coalition : The Liberals are threatening a pre-emptive Vote-of-No-Confidence if this is proposed. ?]
+on-arrival: coalition_dissent += 1 if socialist_catholic_coalition; workers_psi += 12*(1-dissent); ldr_relation -= 20; ds_relation -= 20; syndicalist_strength += 25; syndicalist_dissent -= 25; radicalisation += 2; industrialists_bn += 18; industrialists_ldr -= 10; industrialists_psi -= 8*(1-dissent); psri_relation += 9*(1-dissent);
+
+The *Factory Control Act*, signed in 1922 as an agreement to end the Turin workers conflict, has made its way onto the Chamber's floor once more, proposed now to be expanded across the country, giving the worker's councils extensive power within their workplace to act against the bourgeois businessmen and the industrialists.
+
+Though thought dead on arrival, the PSI, PSRI and defectors from other parties have managed to squeeze the bill through with a slim majority, and it has been approved by the Senate and the King, owing to our good relations and backroom dealings. The industrialists are fuming, and seeing the Liberals failing to defend their agenda, many have decided to switch over to Mussolini and his far-right bloc instead.
+
+@nationalise_industries
+subtitle: -1 Budget - We should begin buying out businesses and empower the workers and consumers to govern. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?][? if liberal_nationalisation_accepted : This will break our agreement with the Liberals! ?]
+view-if: industries_nationalised = 0
+on-arrival: budget -= 1; industries_nationalised += 1; workers_psi += 3*(1-dissent); industrialists_psi -= 4*(1-dissent); industrialists_bn += 3; ldr_relation -= 7; ds_relation -= 7; communist_strength += 7; communist_dissent -= 7; ldr_promise_failed if liberal_nationalisation_accepted; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); capital_strike_progress += 1; psri_relation += 5*(1-dissent);
+go-to: ldr_promise_vonc if ldr_promise_failed
+max-visits: 3
+
+We begin buying out now-defunct or bankrupt companies, repurposing and organising them into governing boards made up of state, worker and consumer representatives. The industrialists are not pleased at our intrusion into the economy.
+
+[? if ldr_promise_failed and budget < 0 : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+[? if ldr_promise_failed and liberal_nationalisation_accepted: Unfortunately, our decision to nationalise has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+
+@no_democracy
+
+

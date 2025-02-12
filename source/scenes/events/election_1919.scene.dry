@@ -3,6 +3,27 @@ new-page: true
 tags: event
 priority: -1
 view-if: (year = next_election_year and month >= next_election_month) or (year > next_election_year)
+on-arrival: {!
+// resetting coalition stuff
+ldr_promise_failed = 0;
+ppi_promise_failed = 0;
+
+liberal_aid_accepted = 0;
+liberal_budget_accepted = 0;
+liberal_crackdown_accepted = 0;
+liberal_foreign_accepted = 0;
+liberal_nationalisation_accepted = 0;
+liberal_reform_accepted = 0;
+
+catholic_charity_accepted = 0;
+catholic_education_accepted = 0;
+catholic_nationalisation_accepted = 0;
+catholic_papacy_accepted = 0;
+catholic_women_accepted = 0;
+
+liberal_coalition_failed = 0; 
+catholic_coalition_failed = 0;
+}
 on-departure: month_actions += 1; in_election = 0; next_election_year = next_election_year + 2; n_elections += 1; next_election_time = time + 24;
 set-jump: post_election_1919
 face-image: img/Rothe_Wahlen_1903.jpg
@@ -72,11 +93,11 @@ if (Q.bn_r >= Q.psi_r && Q.bn_r >= Q.psri_r && Q.bn_r >= Q.pci_r) {
 }
 
 // coalitions
-Q.left_wing_coalition = Q.psi_r + Q.psri_r;
-Q.centre_left_coalition = Q.psi_r + Q.ldr_r + Q.ds_r + Q.psri_r;
-Q.socialist_catholic_coalition = Q.psi_r + Q.psri_r + Q.ppi_r + Q.ul_r;
-Q.catholic_liberal_coalition = Q.ppi_r + Q.ul_r + Q.ldr_r + Q.other_r;
-Q.anti_socialist_coalition = Q.bn_r + Q.ppi_r + Q.ds_r;
+Q.left_wing_coalition_r = Q.psi_r + Q.psri_r;
+Q.centre_left_coalition_r = Q.psi_r + Q.ldr_r + Q.ds_r + Q.psri_r + Q.other_r;
+Q.socialist_catholic_coalition_r = Q.psi_r + Q.psri_r + Q.ppi_r;
+Q.catholic_liberal_coalition_r = Q.ppi_r + Q.ul_r + Q.ldr_r + Q.ds_r + Q.other_r;
+Q.anti_socialist_coalition_r = Q.bn_r + Q.ppi_r + Q.ds_r;
 
 Q.leverage = Q.psi_r;
 
@@ -184,13 +205,15 @@ go-to: coalition_menu
 
 Left-Wing Coalition (PSI + PSRI): [+ left_wing_coalition +]%
 
-Centre-Left Coalition (PSI + LDR + DS + PSRI): [+ centre_left_coalition +]%
+Centre-Left Coalition (PSI + LDR + DS + PSRI + Others): [+ centre_left_coalition_r +]%
 
-Catholic-Liberal Coalition (PPI + LDR + UL + DS + Others): [+ catholic_liberal_coalition +]%
+Socialist-Catholic Coalition (PSI + PPI + PSRI): [+ socialist_catholic_coalition_r +]%
 
-Anti-Socialist Coalition (BN + PPI + DS): [+ anti_socialist_coalition +]%
+Catholic-Liberal Coalition (PPI + LDR + UL + DS + Others): [+ catholic_liberal_coalition_r +]%
 
-[? if fasci_urgency <= 2 and bn_r >= 15 : The rapid rise in National Bloc votes is extremely worrying. Many had believed that the party was moribound; now, some of us consider it to be the greatest obstacle to socialism in Italy. ?]
+Anti-Socialist Coalition (BN + PPI + DS): [+ anti_socialist_coalition_r +]%
+
+[? if fasci_urgency <= 2 and bn_r >= 15 : The rapid rise in National Bloc votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest obstacle to socialism in Italy. ?]
 
 There are some potential coalition arrangements.
 
@@ -205,7 +228,7 @@ There are some potential coalition arrangements.
 
 @anti_socialist_coalition
 title: Anti-Socialist coalition
-subtitle: BN + PPI + DS ([+ anti_socialist_coalition +]%)..
+subtitle: BN + PPI + DS ([+ anti_socialist_coalition_r +]%)..
 view-if: anti_socialist_coalition > 49 and radicalisation > 8 and participating = 0
 priority: 2
 
@@ -214,52 +237,54 @@ It seems our radicalism and abstentionism has pushed the Catholics to ally with 
 - @mussolini_prime_minister: What now?
 
 @left_wing_coalition
-title: Will the Left pull off a majority?
-subtitle: PSI + PSI ([+ left_wing_coalition +]%)..
-view-if: left_wing_coalition > 49
+title: It seems the left-wing of the political sphere has a majority?
+subtitle: PSI + PSI ([+ left_wing_coalition_r +]%) 
+view-if: left_wing_coalition_r > 49
+choose-if: participating = 1 or maximalist_participating = 1
+unavailable-subtitle: [? if not participating = 1 : The party has already decided against parliamentary means.. ?]
 go-to: ministries
 
-It seems that the Left-wing of the political sphere has grown enough to ensure a stable coalition.
+Our negotiations with the PSRI goes smoothly, and we form a stable coalition.
 
 @centre_left_coalition
 title: Open negotiations with the Liberal parties.
-subtitle: PSI + LDR + DS + PSRI ([+ centre_left_coalition +]%). Dissent from the Communists and Maximalists will increase.
-unavailable-subtitle: PSI + LDR + DS + PSRI: ([+ centre_left_coalition +]%). [? if not participating = 1 : The party has decided against parliamentary means already. ?][? if ldr_relation < 50 : We do not have adequate relations with the LDR. ?][? if ds_relation < 50 : We do not have adequate relations with the DS. ?]
-view-if: centre_left_coalition >= 50
-choose-if: participating = 1 and ldr_relation > 49 and ds_relation > 49
+subtitle: PSI + LDR + DS + PSRI + Other ([+ centre_left_coalition_r +]%). Dissent from the Communists and Maximalists will increase.
+unavailable-subtitle: PSI + LDR + DS + PSRI: ([+ centre_left_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means.. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ldr_relation < 50 : We do not have adequate relations with the LDR. ?][? if ds_relation < 50 : We do not have adequate relations with the DS. ?][? if ldr_negotiations_failed: We have already failed to negotiate with the Liberals. ?][? if liberal_coalition_failed: The Liberals are unwilling to accept another coalition right after the previous one failed. ?][? if southern_land_reformed = 1 : The LDR has vowed against coalitions with us since our southern land reforms. ?]
+view-if: centre_left_coalition_r >= 50 and liberal_coalition_failed = 0
+choose-if: participating = 1 and ldr_relation > 49 and ds_relation > 49 and southern_land_reformed = 0
 on-departure: liberal_negotiations = 0;
 go-to: liberal_demands
 
 @socialist_catholic_coalition 
-title: Open negotiations with the Sturzo and his People's Party.
-subtitle: PSI + PPI + PSRI ([+ socialist_catholic_coalition +]%). Dissent from the Communists and Maximalists will increase.
-unavailable-subtitle: PSI + PPI + DS + PSRI: ([+ left_coalition +]%). [? if not participating = 1 : The party has decided against parliamentary means already. ?][? if ppi < 50 : We do not have adequate relations with the PPI. ?][? if ldr_negotiations_failed = 1 : We have already tried negotiating with the liberals. ?]
-view-if: socialist_catholic_coalition >= 50
-choose-if: participating = 1 and ppi_relation > 49 and ppi_negotiations_failed = 0
+title: Open negotiations with Sturzo and his People's Party.
+subtitle: PSI + PPI + PSRI ([+ socialist_catholic_coalition_r +]%). Dissent from the Communists and Maximalists will increase.
+unavailable-subtitle: PSI + PPI + DS + PSRI: ([+ socialist_catholic_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means.. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ppi < 50 : We do not have adequate relations with the PPI. ?][? if ppi_negotiations_failed = 1 : We have already tried negotiating with the liberals. ?][? if catholic_coalition_failed : The Catholics are unwilling to accept another coalition right after the previous one failed. ?][? if secularised_education = 1 : The PPI has vowed against coalitions with us since our education reforms. ?]
+view-if: socialist_catholic_coalition_r >= 50 and catholic_coalition_failed = 0
+choose-if: participating = 1 and ppi_relation > 49 and ppi_negotiations_failed = 0 and secularised_education = 0
 on-departure: catholic_negotiations = 0
 go-to: catholic_demands
 
 @catholic_liberal_coalition
 title: Refuse to form a government, and let the other parties assume responsibility.
-subtitle: PPI + LDR + UL + DS + Others ([+ catholic_liberal_coalition +]%). [? if participating = 1 : The results of the Bologna Congress and our subsequent refusal to form a government is confusing to many. ?]
-view-if: catholic_liberal_coalition >= 50 or (centre_left_coalition > 50 and participating = 0) or (centre_left_coalition < 50 and participating = 1)
+subtitle: PPI + LDR + UL + DS + Others ([+ catholic_liberal_coalition_r +]%). [? if participating = 1 : The results of the Bologna Congress and our subsequent refusal to form a government is confusing to many. ?]
+view-if: catholic_liberal_coalition_r >= 50 or (centre_left_coalition_r > 50 and participating = 0) or (centre_left_coalition_r < 50 and participating = 1)
 
-Though tense negotations between the Liberals and newly formed Catholic parties, the coalition of the PPI, LDR, UL and DS is established.
+Are we sure we wish to give up our opportunity to form the government?
 
 - @catholic_liberal_coalition_yes: Yes, we will abdicate our responsibility for government formation, and let a coalition without us take power.
-- @centre_left_coalition: Actually, we wish to form a coalition after all.
+- @coalition_menu: Actually, we wish to form a coalition after all.
 
 @catholic_liberal_coalition_yes
 subtitle: This is extremely unpopular with the reformists.
-on-arrival: reformist_dissent -= 15; psi_in_government = 0; prime_minister = "Francesco Saverio Nitti"; prime_minister_party = "LDR"; interior_minister_party = "DS"; foreign_minister_party = "UL"; justice_minister_party = "Independent"; treasury_minister_party = "LDR"; finance_minister_party = "LDR"; public_works_minister_party = "DS"; agriculture_minister_party = "LDR"; labour_minister_party = "UL";
+on-arrival: reformist_dissent += 15 if participating = 1; psi_in_government = 0; prime_minister = "Francesco Saverio Nitti"; prime_minister_party = "LDR"; interior_minister_party = "DS"; foreign_minister_party = "UL"; justice_minister_party = "Independent"; treasury_minister_party = "LDR"; finance_minister_party = "LDR"; public_works_minister_party = "DS"; public_education_minister_party = "LDR" agriculture_minister_party = "LDR"; labour_minister_party = "UL";
 
-The government is formed, without us.
+Though tense negotiations between the Liberals and newly formed Catholic parties, the coalition of the PPI, LDR, UL and DS is established.
 
 @psi_majority
 title: PSI majority alone
 subtitle: PSI: [+ psi_r +]%
 view-if: psi_r >= 50
-on-arrival: prime_minister = "Turati"; prime_minister_party = "PSI"; psi_in_government = 1; in_psi_majority = 1; foreign_minister_party = "PSI"; interior_minister_party = "PSI"; justice_minister_party = "PSI"; labour_minister_party = "PSI"; finance_minister_party = "PSI"; treasury_minister_party = "PSI"; agriculture_minister_party = "PSI"; public_education_ministry_party = "PSI"; public_works_minister_party = "PSI";
+on-arrival: prime_minister = "Turati"; prime_minister_party = "PSI"; psi_in_government = 1; in_psi_majority = 1; foreign_minister_party = "PSI"; interior_minister_party = "PSI"; justice_minister_party = "PSI"; labour_minister_party = "PSI"; finance_minister_party = "PSI"; treasury_minister_party = "PSI"; agriculture_minister_party = "PSI"; public_education_minister_party = "PSI"; public_works_minister_party = "PSI";
 
 Finally, the PSI can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
 
@@ -269,11 +294,11 @@ subtitle: Turati leads the reformist wing, and is an acceptable candidate for Pr
 on-arrival: psi_in_government = 1; prime_minister = "Turati"; prime_minister_party = "PSI";
 go-to: ministries
 
-Turati's appointment as Prime Minister is approved by all our potential allies.
+Filippo Turati's appointment as Prime Minister is approved by all our potential allies.
 
 @orlando
 title: Let the LDR have their Prime Minister. This will improve our leverage.
-subtitle: Orlando will be reappointed Prime Minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
+subtitle: Vittorio Emanuele Orlando will be reappointed Prime Minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
 on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ldr_relation += 10; ds_relation += 5; chancellor = "Orlando"; chancellor_party = "LDR"; psi_in_government = 1; leverage += 5
 go-to: ministries
 
@@ -281,33 +306,32 @@ This is highly unexpected, and many in the centre and even the reformists of our
 
 @sturzo
 title: Let the People's Party have their Prime Minister. This will improve over leverage.
-subtitle: Sturzo will be appointed Prime Minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
+subtitle: Luigi Sturzo will be appointed Prime Minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
 on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ppi_relation += 10; chancellor = "Sturzo"; chancellor_party = "PPI"; psi_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the centre and even the reformists of our party are criticizing this decision.
 
 @liberal_demands
+go-to: l_demands_menu
 
 Having met with representatives from the LDR and the DS, they have put forward a series of demands we are to either complete or policies we cannot change while in power.
 While it seems do have a bit of wiggle room to negotiate, we certainly cannot outright refuse them. What do we do?
 
-Some major ones include:
-Land Reform,
-Streetfighting Crackdowns, and
-Nationalisations
+**We will have one year to complete the crackdown of violence if given to us.**
 
-While some minor ones are:
-Budget Surplus,
-Foreign Affairs and
-Soviet Aid
+Some major ones include: Land Reform, Streetfighting Crackdowns, and Nationalisations,
+
+While some minor ones are: Budget Surplus, Foreign Affairs and Soviet Aid.
+
+@l_demands_menu
 
 - #libdem_major
-- #drop_libdem_major
 - #libdem_minor
-- #drop_libdem_minor
 - @refuse_libdem
 - @finalise_libdem
+- #drop_libdem_major
+- #drop_libdem_minor
 
 @liberal_reform
 title: End our violent seizure of land in the South and reject any form of land reform.
@@ -315,7 +339,7 @@ subtitle: This will be a major setback if we are to solve the Southern Question 
 tags: libdem_major
 view-if: liberal_reform_accepted = 0
 on-arrival: liberal_reform_accepted = 1; liberal_negotiations += 20;
-go-to: liberal_demands
+go-to: l_demands_menu
 
 This is a major point of conjecture for the Liberals, and secures us significant progress in negotiations.
 
@@ -324,8 +348,8 @@ title: Begin a crack down of violence in the streets, including the Red Guards.
 subtitle: This will force us to rely on the loyalties of government forces.
 tags: libdem_major
 view-if: liberal_crackdown_accepted = 0
-on-arrival: liberal_crackdown_accepted = 1; liberal_negotiations += 20;
-go-to: liberal_demands
+on-arrival: liberal_crackdown_accepted = 1; liberal_negotiations += 20; liberal_crackdown_timer = 12
+go-to: l_demands_menu
 
 This is a major point of conjecture for the Liberals, and secures us significant progress in negotiations.
 
@@ -335,7 +359,7 @@ subtitle: This will limit our ability to reform the current economic system.
 tags: libdem_major
 view-if: liberal_nationalisation_accepted = 0
 on-arrival: liberal_nationalisation_accepted = 1; liberal_negotiations += 20;
-go-to: liberal_demands
+go-to: l_demands_menu
 
 This is a major point of conjecture for the Liberals, and secures us significant progress in negotiations.
 
@@ -343,9 +367,11 @@ This is a major point of conjecture for the Liberals, and secures us significant
 title: Maintain a budget surplus.
 subtitle: This will limit our ability to conduct government policy.
 tags: libdem_minor
+choose-if: budget > -1
+unavailable-subtitle: We are already in a budget deficit.
 view-if: liberal_budget_accepted = 0
 on-arrival: liberal_budget_accepted = 1; liberal_negotiations += 10;
-go-to: liberal_demands
+go-to: l_demands_menu
 
 This is a minor point of conjecture for the Liberals, and secures us some progress in negotiations.
 
@@ -355,7 +381,7 @@ subtitle: This will hamper our actions if we are to control the Foreign Ministry
 tags: libdem_minor
 view-if: liberal_foreign_accepted = 0
 on-arrival: liberal_foreign_accepted = 1; liberal_negotiations += 10;
-go-to: liberal_demands
+go-to: l_demands_menu
 
 This is a minor point of conjecture for the Liberals, and secures us some progress in negotiations.
 
@@ -365,7 +391,7 @@ subtitle: This will limit our ability to improve relations with the Soviet Union
 tags: libdem_minor
 view-if: liberal_aid_accepted = 0
 on-arrival: liberal_aid_accepted = 1; liberal_negotiations += 10;
-go-to: liberal_demands
+go-to: l_demands_menu
 
 This is a minor point of conjecture for the Liberals, and secures us some progress in negotiations.
 
@@ -374,22 +400,21 @@ title: Drop our promise to reject land reform.
 tags: drop_libdem_major
 view-if: liberal_reform_accepted = 1
 on-arrival: liberal_reform_accepted = 0; liberal_negotiations -= 20;
-go-to: liberal_demands
+go-to: l_demands_menu
 
 @drop_liberal_crackdown
 title: Drop our promise to crack down on street violence.
 tags: drop_libdem_major
 view-if: liberal_crackdown_accepted = 1
 on-arrival: liberal_crackdown_accepted = 0; liberal_negotiations -= 20;
-go-to: liberal_demands
+go-to: l_demands_menu
 
 @drop_liberal_nationalisation
 title: Drop our promise to reject nationalisation.
 tags: drop_libdem_major
 view-if: liberal_nationalisation_accepted = 1
 on-arrival: liberal_nationalisation_accepted = 0; liberal_negotiations -= 20;
-go-to: liberal_demands
-
+go-to: l_demands_menu
 @drop_liberal_budget
 title: Drop our promise to maintain a surplus.
 tags: drop_libdem_minor
@@ -402,14 +427,14 @@ title: Drop our promise to keep alignment with the Entente.
 tags: drop_libdem_minor
 view-if: liberal_foreign_accepted = 1
 on-arrival: liberal_foreign_accepted = 0; liberal_negotiations -= 10;
-go-to: liberal_demands
+go-to: l_demands_menu
 
 @drop_liberal_aid
 title: Drop our promise to reject aid to the Soviet Union.
 tags: drop_libdem_minor
 view-if: liberal_aid_accepted = 1
 on-arrival: liberal_aid_accepted = 0; liberal_negotiations -= 10;
-go-to: liberal_demands
+go-to: l_demands_menu
 
 @refuse_libdem
 title: It seems we cannot come to an agreement.
@@ -422,7 +447,7 @@ title: It seems we have come to an agreement.
 subtitle: This is an unstable coalition, to say the least.
 choose-if: liberal_negotiations >= 50
 unavailable-subtitle: The liberals are not satisfied with the current arrangement.
-on-departure: centre_left_coalition = 1
+on-departure: centre_left_coalition = 1; catholic_coalition_failed = 0
 
 With the coalition agreed upon, it is time to choose a Prime Minister.
 
@@ -430,33 +455,33 @@ With the coalition agreed upon, it is time to choose a Prime Minister.
 - @orlando
 
 @catholic_demands
+go-to: c_demands_menu
 
 Having met with representatives from the PPI, they have put forward a series of demands we are to either complete or policies we cannot change while in power.
 While it seems do have a bit of wiggle room to negotiate, we certainly cannot outright refuse them. What do we do?
 
-Some major ones include:
-the Roman Question,
-Catholic Schools and
-Family Structure
+**We will have one year to complete the Roman Question if demanded to us.**
 
-While some minor ones are:
-Charity and
-Nationalisations
+Some major ones include: the Roman Question, Catholic Schools and Family Structure.
+
+While some minor ones are: Charity and Nationalisations.
+
+@c_demands_menu
 
 - #catholic_major
-- #drop_catholic_major
 - #catholic_minor
-- #drop_catholic_minor
 - @refuse_catholic
 - @finalise_catholic
+- #drop_catholic_major
+- #drop_catholic_minor
 
 @catholic_papacy
 title: Resolve the Roman Question with the Papacy.
 subtitle: This will benefit our Catholic bloc as well if we can form a compromise in time.
 tags: catholic_major
 view-if: catholic_papacy_accepted = 0
-on-arrival: catholic_papacy_accepted = 1; catholic_negotiations += 20;
-go-to: catholic_demands
+on-arrival: catholic_papacy_accepted = 1; catholic_negotiations += 20; catholic_papacy_timer = 12;
+go-to: c_demands_menu
 
 This is a major point of conjecture for the Catholics, and secures us significant progress in negotiations.
 
@@ -466,37 +491,37 @@ subtitle: This will limit our abilities to secularise education.
 tags: catholic_major
 view-if: catholic_education_accepted = 0
 on-arrival: catholic_education_accepted = 1; catholic_negotiations += 20;
-go-to: catholic_demands
+go-to: c_demands_menu
 
 This is a major point of conjecture for the Catholics, and secures us significant progress in negotiations.
 
 @catholic_women
 title: Reject any changes to the traditional family structure and women's rights.
-subtitle: This will limit our ability to institute reforms such as divorce or marriage.
+subtitle: This will limit our ability to institute reforms to laws as divorce or marriage.
 tags: catholic_major
 view-if: catholic_women_accepted = 0
 on-arrival: catholic_women_accepted = 1; catholic_negotiations += 20;
-go-to: catholic_demands
+go-to: c_demands_menu
 
 This is a major point of conjecture for the Catholics, and secures us significant progress in negotiations.
 
 @catholic_charity
 title: Expand welfare only through Catholic-aligned welfare programs.
-subtitle: This will solely increase the support for the People's Party.
+subtitle: This will solely increase the support for the People's Party if we are to fund welfare.
 tags: catholic_minor
 view-if: catholic_charity_accepted = 0
 on-arrival: catholic_charity_accepted = 1; catholic_negotiations += 10;
-go-to: catholic_demands
+go-to: c_demands_menu
 
 This is a minor point of conjecture for the Catholics, and secures us some progress in negotiations.
 
 @catholic_nationalisation
 title: Protect Church-owned lands from nationalisation or seizure.
-subtitle: This will undermine our ability for land distribution.
+subtitle: This will undermine our ability for land redistribution.
 tags: catholic_minor
 view-if: catholic_nationalisation_accepted = 0
 on-arrival: catholic_nationalisation_accepted = 1; catholic_negotiations += 10;
-go-to: catholic_demands
+go-to: c_demands_menu
 
 This is a minor point of conjecture for the Catholics, and secures us some progress in negotiations.
 
@@ -505,48 +530,48 @@ title: Drop our promise to resolve the Roman Question.
 tags: drop_catholic_major
 view-if: catholic_papacy_accepted = 1
 on-arrival: catholic_papacy_accepted = 0; catholic_negotiations -= 20;
-go-to: catholic_demands
+go-to: c_demands_menu
 
 @drop_catholic_education
 title: Drop our promise to reject changes to Catholic schools.
 tags: drop_catholic_major
 view-if: catholic_education_accepted = 1
 on-arrival: catholic_education_accepted = 0; catholic_negotiations -= 20;
-go-to: catholic_demands
+go-to: c_demands_menu
 
 @drop_catholic_women
 title: Drop our promise to reject changes to the traditional family structure.
 tags: drop_catholic_major
 view-if: catholic_women_accepted = 1
 on-arrival: catholic_women_accepted = 0; catholic_negotiations -= 20;
-go-to: catholic_demands
+go-to: c_demands_menu
 
 @drop_catholic_charity
 title: Drop our promise to expand Catholic-aligned welfare.
 tags: drop_catholic_minor
 view-if: catholic_charity_accepted = 1
 on-arrival: catholic_charity_accepted = 0; catholic_negotiations -= 10;
-go-to: catholic_demands
+go-to: c_demands_menu
 
 @drop_catholic_nationalisation
 title: Drop our promise to protect Church-owned lands.
 tags: drop_catholic_minor
 view-if: catholic_nationalisation_accepted = 1
 on-arrival: catholic_nationalisation_accepted = 0; catholic_negotiations -= 10;
-go-to: catholic_demands
+go-to: c_demands_menu
 
 @refuse_catholic
 title: It seems we cannot come to an agreement.
 subtitle: Maybe one with the Liberals might work?
 on-departure: ppi_negotiations_failed = 1
-go-to: coalition_menu 
+go-to: c_demands_menu
 
 @finalise_catholic
 title: It seems we have come to an agreement.
 subtitle: This is an unstable coalition, to say the least.
 choose-if: catholic_negotiations >= 40
 unavailable-subtitle: The Catholics are not satisfied with the current arrangement.
-on-departure: socialist_catholic_coalition = 1
+on-departure: socialist_catholic_coalition = 1; liberal_coalition_failed = 0;
 
 With the coalition agreed upon, it is time to choose a Prime Minister.
 
@@ -574,12 +599,12 @@ Rinaldo Rigola of the PSI has been appointed Labour and Social Security minister
 
 @interior
 title: Interior Ministry
-subtitle: Taking the Interior Ministry is expected of us. The Interior Ministry controls domestic security.
+subtitle: The Interior Ministry controls domestic security.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1919
-choose-if: leverage >= 5
+choose-if: leverage >= 10
 view-if: interior_minister_party != "PSI"
-on-arrival: leverage -= 5; interior_minister_party = "PSI"; interior_minister = "Turati"
+on-arrival: leverage -= 10; interior_minister_party = "PSI"; interior_minister = "Turati"
 go-to: ministries
 
 Filippo Turati of the PSI has been appointed Interior Minister.
@@ -638,9 +663,11 @@ subtitle: The Public Education Ministry manages the education system.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1919
 choose-if: leverage >= 10 
-view-if: public_education_ministry_party != "PSI"
-on-arrival: leverage -= 10; public_education_ministry_party = "PSI"; public_education_minister = "Schiavi"
+view-if: public_education_minister_party != "PSI"
+on-arrival: leverage -= 10; public_education_minister_party = "PSI"; public_education_minister = "Togliatti"
 go-to: ministries
+
+Palmiro Togliatti of the PSI has been appointed Public Education Minister.
 
 @foreign
 title: Foreign Ministry
@@ -668,7 +695,7 @@ Antonio Graziadei of the PSI has been appointed Agriculture Minister.
 
 @no_more
 title: No more ministries.
-subtitle: [? if leverage >= 10 : We still have some more leverage to gain ministries. ?][? if leverage < 10 : We do not have much leverage left. ?]
+subtitle: [? if leverage >= 10 : We still have some more leverage to gain ministries. ?][? if leverage < 10 : We do not have much leverage left. ?] 
 tags: mins_1919
 
 This coalition arrangement is tolerable to all.
@@ -717,8 +744,8 @@ go-to: ministries
 
 @drop_public_education
 title: Drop the Public Education Ministry.
-view-if: public_education_ministry_party = "PSI"
-on-arrival: public_education_ministry_party = "LDR"; public_education_minister = "Torre"; leverage += 10;
+view-if: public_education_minister_party = "PSI"
+on-arrival: public_education_minister_party = "LDR"; public_education_minister = "Torre"; leverage += 10;
 tags: drop_mins_1919
 go-to: ministries
 

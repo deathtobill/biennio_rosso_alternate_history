@@ -5,8 +5,8 @@ Q.rg_strength = Math.round(Q.rg_strength);
 Q.fdc_strength = Math.round(Q.sqd_strength);
 Q.sqd_strength = Math.round(Q.fdc_strength);
 
-var total_strength = Q.communist_strength + Q.maximalist_strength + Q.tradeunionist_strength + Q.reformist_strength
-var total_dissent = Q.communist_strength*Q.communist_dissent + Q.maximalist_strength*Q.maximalist_dissent + Q.tradeunionist_strength*Q.tradeunionist_dissent + Q.reformist_strength*Q.reformist_dissent;
+var total_strength = Q.communist_strength + Q.maximalist_strength + Q.syndicalist_strength + Q.reformist_strength
+var total_dissent = Q.communist_strength*Q.communist_dissent + Q.maximalist_strength*Q.maximalist_dissent + Q.syndicalist_strength*Q.syndicalist_dissent + Q.reformist_strength*Q.reformist_dissent;
 
 Q.dissent = 0.01*total_dissent/total_strength;
 console.log('new dissent: ' + Q.dissent);
@@ -39,22 +39,26 @@ if (Q.psi_in_government && Q.chancellor_party == "PSI") {
 } else {
     Q.total_power += Q.loyal_army_power/4;
 }
-Q.soviet_power = 50 * Q.soviet_mutliplier
+Q.soviet_power = 50 if not rcw_over
+Q.soviet_power = 75 if rcw_over and soviet_recovery_timer > 0
+Q.soviet_power = 100 if rcw_over and soviet_recovery_timer < 1
+
+Q.soviet_power * Q.soviet_multiplier
 if (Q.soviet_relations < 3) {
-    Q.soviet_mutliplier = 0.3
+    Q.soviet_multiplier = 0.3
 }
 if (Q.soviet_relations > 2 && Q.soviet_relations < 6) {
-    Q.soviet_mutliplier = 0.6
+    Q.soviet_multiplier = 0.6
 }
 if (Q.soviet_relations > 5 && Q.soviet_relations < 8) {
-    Q.soviet_mutliplier = 0.9
+    Q.soviet_multiplier = 0.9
 }
 if (Q.soviet_relations >= 8) {
-    Q.soviet_mutliplier = 1.2
+    Q.soviet_multiplier = 1.2
 }
 Q.total_power += Q.soviet_power
 
-// use normalized workers_psi instead of tradeunionist_strength?
+// use normalized workers_psi instead of syndicalist_strength?
 Q.normalized_workers_psi = 100*Q.workers_psi/(Q.workers_psi + Q.workers_psri + Q.workers_nsdap + Q.workers_other + Q.workers_dnvp + Q.workers_z);
 Q.normalized_workers_psri = 100*Q.workers_psri/(Q.workers_psi + Q.workers_psri + Q.workers_nsdap + Q.workers_other + Q.workers_dnvp + Q.workers_z);
 Q.normalized_workers_total = Q.normalized_workers_psi;
@@ -63,7 +67,7 @@ if (Q.psri_relation >= 60) {
 } else if (Q.psri_relation >= 45) {
     Q.normalized_workers_total += Q.normalized_workers_psri*0.5;
 }
-Q.total_power += (2 - Q.tradeunionist_dissent/100)*Q.normalized_workers_total*(2 - Q.unemployed/100)*2.5;
+Q.total_power += (2 - Q.syndicalist_dissent/100)*Q.normalized_workers_total*(2 - Q.unemployed/100)*2.5;
 console.log("Supporter strength:", Q.total_power);
 
 // our enemies
@@ -123,7 +127,7 @@ max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1;
 
-We have request aid from the Soviet Union to fight against the far-right groups, [? if participating = 0 : as well as the bourgeois parties,?] though not much can be sent as they are in their own civil war as well.
+We have request aid from the Soviet Union to fight against the far-right groups, [? if participating = 0 : as well as the bourgeois parties,?] [? if not rcw_over : though not much can be sent as they are in their own civil war as well.]
 
 [? if soviet_relations < 3 : The Soviet Union sends refuses to send us any aid owing to our terrible relations, though international forces flock to our aid. ?][? if soviet_relations > 2 and soviet_relations < 6 : The Soviet Union sends us the bare minimum, owing to our strained relations. ?][? if soviet_relations > 5 and soviet_relations < 8 : The Soviet Union sends are a force of willing volunteers, aiding our cause. ?][? if soviet_relations >= 8 : Owing to our good relations, the Soviet Union has sent us substantial aid, giving us a massive advantage. ?]
 
@@ -132,7 +136,7 @@ max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1
 
-General strikes are a significant tool we have against both the bourgeois and the far-right, and it can help us out now. [? if normalized_workers_total > 70 : The workers are largely united with us. ?][? if normalized_workers_total >= 50 and normalized_workers_total <= 70 : There is some dissent within labor, but a majority of workers support the general strike. ?][? if normalized_workers_total > 30 and normalized_workers_total < 50 : However, there is substantial dissent within labor, and less than half support the general strike. ?][? if normalized_workers_total <= 30 : However, labor is deeply divided, and most workers do not heed the call to strike. ?]
+General strikes are a significant tool we have against both the bourgeois and the far-right, and it can help us out now. [? if normalized_workers_total > 70 : The workers are largely united with us. ?][? if normalized_workers_total >= 50 and normalized_workers_total <= 70 : There is some dissent within labour, but a majority of workers support the general strike. ?][? if normalized_workers_total > 30 and normalized_workers_total < 50 : However, there is substantial dissent within labour, and less than half support the general strike. ?][? if normalized_workers_total <= 30 : However, labour is deeply divided, and most workers do not heed the call to strike. ?]
 
 @loyal_police
 max-visits: 1
@@ -179,7 +183,7 @@ Italy holds strong, against fascism.
 
 = Victory for the Soviets
 
-The bourgeois and fascists lines shatter, as their forces are quickly overwhelmed by pro-socialist forces and the Red Guard, forcing a surrender. The Monarchy has been abolished, as bourgeois leaders are arrested and trialled in people's courts across the nation. The 18th Congress has been scheduled to occur within a few months to determine the state and organisation of the new nation.
+The bourgeois and fascists lines shatter, as their forces are quickly overwhelmed by pro-socialist forces and the Red Guard, forcing a surrender. The Monarchy has been abolished, as bourgeois leaders are arrested and trialed in people's courts across the nation. The 18th Congress has been scheduled to occur within a few months to determine the state and organisation of the new nation.
 
 Italy has toppled its bourgeois oppressors and established a revolutionary state.
 

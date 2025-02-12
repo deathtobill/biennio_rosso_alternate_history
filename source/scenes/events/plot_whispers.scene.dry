@@ -21,7 +21,7 @@ unavailable-subtitle: [? if resources < 1 : Requires 1 Party Resource. ?][? if r
 choose-if: resources > 0 and revolutionary_fervor > 59
 on-arrival: resources -= 1; rg_strength += 20;
 
-The expansion of the Red Guards is accepted by most of the factions as a necessity, especially seeing the violence occuring daily within Italy.
+The expansion of the Red Guards is accepted by most of the factions as a necessity, especially seeing the violence occurring daily within Italy.
 
 @increase_relations
 subtitle: Stronger relations with our allies in government might help in the event of anything.

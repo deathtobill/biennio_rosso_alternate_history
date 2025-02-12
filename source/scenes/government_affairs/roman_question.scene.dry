@@ -1,0 +1,89 @@
+title: Roman Question
+new-page: true
+is-card: true
+view-if: psi_in_government and roman_question_timer <= 0
+frequency: 250
+on-arrival: {! 
+month_actions += 1;
+vatican-appeased = 0
+roman_question_timer = 5
+negotiating_power = 4 if vatican_relations <= 4 and pope = "Ratti";
+negotiating_power = 3 if (vatican_relations >= 5 and vatican_relations <= 7) or pope = "Ratti";
+negotiating_power = 2 if vatican_relations >= 7 or pope = "Gasparri";
+current_budget = 0;
+current_budget += budget;
+!}
+card-image: img/portraits/RadbruchGustav.jpg
+tags: govt_affairs
+
+= The Roman Question
+
+Following the Risorgimento, the newly formed Kingdom of Italy seized Rome from the Holy See, as the Pope declared himself 'Prisoner of the Vatican'. Though attempts have been made to resolve this issue since, the situation has largely not changed. 
+
+Now that we are in power, we might be able to resolve this issue with the Holy See.
+
+# list of demands you have to fufill, relations good less demands to fufill, relations bad more demands to fufill, etc
+@vatican_menu
+
+- @vatican_negotiations: Let us begin negotiations with the Holy See.
+- @no_vatican: Let us open negotiations another time.
+- @easy_discard
+- @cancel_advisor_action
+
+@vatican_negotiations
+
+- @vatican_compensation: Offer compensation to the Papacy for its loss of territories.
+- @vatican_state: Offer recognition of the sovereignty of the Holy See in Vatican City.
+- @vatican_defence: Offer the Holy See a commitment to defend its borders.
+- @vatican_education: Offer the Holy See unfettered authority over religious schools.
+- @vatican_sign: Sign the Lateran Treaty with the Holy See.
+- @vatican_return: Let's recall our delegates for now.
+
+@vatican_compensation
+subtitle: -3 Budget [? if liberal_budget_accepted and budget <= 2 : This will put us into a deficit! ?]
+view-if: vatican_compensation_offered = 0
+on-arrival: vatican_compensation_offered = 1; vatican_appeased += 1
+go-to: vatican_negotiations
+
+@vatican_state
+subtitle: This is expected of us.
+view-if: vatican_state_offered = 0
+on-arrival: vatican_state_offered = 1; vatican_appeased += 1;
+go-to: vatican_negotiations
+
+@vatican_defence
+subtitle: This is expected of us.
+view-if: vatican_defence_offered = 0
+on-arrival: vatican_defence_offered = 1; vatican_appeased += 1;
+go-to: vatican_negotiations
+
+@vatican_education
+subtitle: This is a controversial move within the party.
+view-if: vatican_education_offered = 0
+on-arrival: vatican_education_offered = 1; vatican_appeased += 1;
+go-to: vatican_negotiations
+
+@vatican_sign
+choose-if: vatican_appeased >= negotiating_power
+unavailable-subtitle: The Holy See would refuse this offer.
+on-arrival: {!
+ppi_relation += 15
+catholic_psi += 7*(1-dissent)
+
+budget -= 3 if vatican_compensation_offered
+ldr_promise_failed if ((current_budget > 0 and budget < 0) and liberal_budget_accepted)
+
+army_strength -= 50 if vatican_defence_offered
+army_loyalty -= 0.05 if vatican_defence_offered
+
+secularised_education = 0 if vatican_education_offered
+communist_dissent += 10 if vatican_education_offered
+maximalist_dissent += 10 if vatican_education_offered
+!}
+go-to: ldr_promise_vonc if ldr_promise_failed
+
+The Lateran Treaty of [+ year +] is signed, finally ending the Roman Question.
+
+@vatican_return
+on-arrival: vatican_appeased = 0; vatican_compensation_offered = 0; vatican_state_offered = 0; vatican_defence_offered = 0; vatican_education_offered = 0;
+go-to: vatican_negotiations

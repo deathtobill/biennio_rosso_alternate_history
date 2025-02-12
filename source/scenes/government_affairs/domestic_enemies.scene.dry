@@ -1,0 +1,62 @@
+title: Investigating Domestic Enemies
+on-arrival: month_actions += 1
+view-if: psi_in_government = 1 and interior_minister_party = "PSI"
+#card-image: img/portraits/SeveringCarl.jpg
+#is-card: true
+#new-page: true
+
+# this is not a card...
+
+= Investigating Domestic Enemies
+
+As we have control over the Interior Ministry, we can direct police and intelligence services to investigate internal enemies. We can proscribe various organizations.
+
+- @ban_fdc: Ban the Fasci Italiani di Combattimento.
+- @unban_fdc: Unban the Fasci Italiani di Combattimento.
+- @persecute_fdc
+- @ban_sqd: Ban the Squadrismo.
+- @unban_sqd: Unban the Squadrismo.
+- @persecute_sqd
+- @root: Take no action for now.
+
+@ban_fdc
+view-if: fasci_urgency >= 3 and fdc_banned == 0
+on-arrival: fdc_strength *= 0.85; fdc_strength *= 0.7 if interior_police_loyalty >= 0.7; fdc_banned = 1; ul_relation -= 3; interior_police_loyalty -= 0.05; fdc_militancy -= 0.05; fdc_ban_timer = 6;
+
+As it turns out, the Fasci have many allies in the police and bureaucracy. Our relationship with the Carabinieri weakens, and the Fasci can still organize illegally, right under the police's noses. [? if interior_police_loyalty >= 0.7 : Nevertheless, the Fasci is substantially weakened by our ban. ?]
+
+@unban_fdc
+view-if: fdc_banned = 1
+on-arrival: fdc_banned = 0; fdc_strength += 15; fdc_militancy += 0.05
+
+The Fasci is no longer banned. They immediately go on a recruiting spree.
+
+@persecute_fdc
+title: Further persecute the Fasci.
+view-if: fdc_banned = 1
+choose-if: judicial_reform >= 3 and interior_police_loyalty >= 0.7
+unavailable-subtitle: [? if judicial_reform < 3 : The judiciary would not allow this. ?] [? if interior_police_loyalty < 0.7 : The Carabinieri are too disloyal to be trusted with this. ?]
+on-arrival: fdc_strength *= 0.7; fdc_militancy -= 0.05
+
+We have arrested more of the Fasci's leaders and confiscated their weapons.
+
+@ban_sqd
+on-arrival: sqd_strength *= 0.85; sqd_strength *= 0.7 if interior_police_loyalty >= 0.7; sqd_banned = 1; dvp_relation -= 5; interior_police_loyalty -= 0.05; sqd_ban_timer = 6;
+view-if: sqd_banned == 0
+
+Banning the Squadrismo weakens our relationship with the political right and the police. In addition, the Squadrismo still operates out of public sight.
+
+@unban_sqd
+view-if: sqd_banned = 1
+on-arrival: sqd_banned = 0; sqd_strength += 5
+
+The Squadrismo is no longer banned.
+
+@persecute_sqd
+title: Further persecute the Squadrismo.
+view-if: sqd_banned = 1
+choose-if: judicial_reform >= 4 and interior_police_loyalty >= 0.7
+unavailable-subtitle: [? if judicial_reform < 4 : The judiciary would not allow this. ?] [? if interior_police_loyalty < 0.7 : The police are too disloyal to be trusted with this. ?]
+on-arrival: sqd_strength *= 0.7; sqd_militancy -= 0.05; dvp_relation -= 5; interior_police_loyalty -= 0.05;
+
+We have arrested more of the Squadrismo's leaders and confiscated their weapons.

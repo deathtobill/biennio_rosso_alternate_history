@@ -1,7 +1,7 @@
 title: Squadrismo unbanned
 subtitle: The judges have re-legalized the Squadrismo.
 view-if: sqd_banned == 1 and sqd_ban_timer == 0 and judicial_reform < 2
-on-arrival: sqd_banned = 0; sqd_strength += 30; sqd_militancy += 0.01
+on-arrival: sqd_banned = 0; sqd_strength += 5; sqd_militancy += 0.01
 tags: event
 
 Judges have ordered the Squadrismo to be re-legalized. They immediately return to mass recruiting.

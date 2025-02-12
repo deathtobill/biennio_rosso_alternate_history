@@ -1,0 +1,86 @@
+title: Southern Question
+new-page: true
+is-card: true
+view-if: psi_in_government = 1 and justice_minister_party = "PSI" and southern_timer = 0
+on-arrival: month_actions += 1; southern_timer += 5; current_budget = 0; current_budget += budget;
+card-image: img/portraits/RadbruchGustav.jpg
+tags: govt_affairs
+
+= The Southern Question
+
+There is a clear divide between the North and South of the nation. The rural south has lagged behind the industrial heartlands of the north, and the recent end of the war has only exacerbated the situation. Though it is unlikely we will ever see the end of the divide between the two regions, there is much we can do to stop the bleeding of economic divide, of population emigration, of corruption.
+
+Where should we begin?
+
+# if successful; major rural votes
+# first option pisses off the liberals massively; results in landowners flocking to bn; helps out eco crisis? needs labour ministry + judicial reform, or 
+# second is just empowered red guard for worse debuffs
+# third needs public works ministry
+# fourth needs education ministry; pisses of landowners + church since it'd be secular?
+
+- @southern_land_reform_gov: Begin massive land reforms in the South and issue compensation.
+- @southern_land_reform_rg: Seize land and redistribute it to the peasants!
+- @southern_infrastructure: Begin public works initiatives focused on the South.
+- @southern_literacy: Expand the education system & begin literacy programs in the South.
+- @southern_mafia: Crackdown on Mafia activity in the South.
+- @as_is: Leave the South as it is.
+- @easy_discard
+- @cancel_advisor_action
+
+@southern_land_reform_gov
+subtitle: -2 Budget - This will **irreversibly** damage our relations with the Liberals.
+choose-if: not centre_left_coalition and king_relation >= 60
+unavailable-subtitle: [? if centre_left_coalition : The Liberals are threatening a pre-emptive Vote-of-No-Confidence if this bill hits the Chamber floor.? ][? if king_relation < 60 : This King has informed us he will veto this bill upon arrival regardless. ?]
+on-arrival: southern_land_reformed = 1; budget -= 2; ldr_relation -= 30; rural_psi += 17*(1-dissent); industrialists_ldr -= 27*(1-dissent); industrialists_bn += 20*(1-dissent); middle_class_bn += 14*(1-dissent); unemployment -= 4.3; inflation += 2.8; economic_growth += 2.7;
+go-to: let_it_happen if ldr_r >= 50
+
+The bill is barely able to pass the floor, and the Liberals are in an uproar. Already, our contacts within the LDR have informed us of an exodus of their landowner backers from the party, instead seeking to align further with the far-right. Orlando and the LDR vow never to work with us again, as the Fascists use this opportunity to paint us as property-seizing radicals to the middle class.
+
+[? if anti_socialist_coalition > 50 : The LDR call a vote of no-confidence against us, and are able to succeed. ?]
+
+@southern_land_reform_rg
+subtitle: -50k Red Guards - This will **irreversibly** damage our relations with the Liberals.
+choose-if: rg_strength >= 50
+on-arrival: southern_land_reformed = 1; rg_strength -= 50; ldr_relation -= 35; rural_psi += 13*(1-dissent); industrialists_ldr -= 25*(1-dissent); industrialists_bn += 23*(1-dissent); middle_class_bn += 17*(1-dissent); unemployment -= 4.3; inflation += 2.8; economic_growth += 2.7;
+unavailable-subtitle: The Red Guards don't have enough manpower to do this.
+go-to: let_it_happen if anti_socialist_coalition_r >= 50
+
+The Red Guard, under our orders begin forceful seizures of landowner properties and the Liberals are in an uproar. Already, our contacts within the LDR have informed us of an exodus of their landowner backers from the party, instead seeking to align further with the far-right. Orlando and the LDR vow never to work with us again, as the Fascists use this opportunity to paint us as violent radicals to the middle class.
+
+[? if anti_socialist_coalition_r : The Liberals are able to rally a majority to call a vote of no-confidence against us, and are able to succeed. ?]
+
+@southern_infrastructure
+subtitle: -1 Budget - [? if budget = 0 : This will put us into a deficit! ?]
+choose-if: public_works_minister_party = "PSI"
+unavailable-subtitle: The PSI does not control the Public Works Ministry.
+on-arrival: southern_infrastructure_funded += 1; budget -= 1; ldr_promise_failed if (budget < 0 and current_budget > 0); economic_growth += 0.6; unemployment -= 0.7; rural_psi += 2*(1-dissent); industrialists_psi -= 3*(1-dissent);
+go-to: ldr_promise_vonc if ldr_promise_failed
+
+We begin a series of infrastructural projects directed by the Public Works Ministry, leading to decreased unemployment in the region. 
+
+[? if ldr_promise_failed : Unfortunately, our funding of new projects has led to a budget deficit, breaking our agreement with the Liberals, who have already requested a meeting. ?]
+
+@southern_literacy
+subtitle: -1 Budget - [? if budget = 0 : This will put us into a deficit! ?]
+choose-if: public_education = "PSI"
+unavailable-subtitle: The PSI does not control the Public Works Ministry.
+on-arrival: southern_education_funded += 1; budget -= 1; ldr_promise_failed if (budget < 0 and current_budget > 0); economic_growth += 0.6; unemployment -= 0.7; rural_psi += 4*(1-dissent); middle_class += 3*(1-dissent); industrialists_psi -= 3*(1-dissent); catholics_psi -= 4*(1-dissent); ppi_relation -= 7;
+go-to: ldr_promise_vonc if ldr_promise_failed
+
+We expand education institutes, targeting the South, hiring teachers, building schools and the like. Both the landowners and the catholics certainly aren't pleased with our intrusion into the South.
+
+[? if ldr_promise_failed : Unfortunately, our expansion of the education system has led to a budget deficit, breaking our agreement with the Liberals, who have already requested a meeting. ?]
+
+@southern_mafia
+choose-if: interior_minister_party = "PSI" and mafia_strength > 0
+unavailable-subtitle: [? if not interior_minister_party = "PSI: The PSI does not control the Interior Ministry. ?][? if mafia_strength < 1 : The various forces of the mafia are no longer a threat to us.]
+go-to: investigate_mafia_success if interior_police_loyalty >= 0.5 and judicial_reform > 1; investigate_mafia_failure if interior_police_loyalty < 0.5 or judicial_reform < 2
+
+@investigate_mafia_success
+on-arrival: mafia_investigation += 1; rural_psi += 3*(1-dissent); industrialists_psi -= 2*(1-dissent); industrialists_bn += 4*(1-dissent);
+
+The Carabinieri are able to uncover files regarding illegal activity among a number of high-value individuals, and we are able to conduct raids and arrests the following day.
+
+@investigate_mafia_failure
+
+Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.

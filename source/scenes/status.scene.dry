@@ -32,7 +32,7 @@ Revolutionary fervor: [+ revolutionary_fervor +]%
 
 Radicalism : [+ radicalisation : radicalisation +]
 
-Our approach: [+ party_approach +]
+Our approach: [+ party_approach : party_approach +]
 
 = Government
 
@@ -45,7 +45,7 @@ Chamber of Deputies composition:
 {!<span class="tooltip-text" title="Italian Socialist Party">PSI</span>!}: [+ psi_r +]%
 {!<span class="tooltip-text" title="Italian People's Party">PPI</span>!}: [+ ppi_r +]%
 {!<span class="tooltip-text" title="Liberals, Democrats and Radicals">LDR</span>!}: [+ ldr_r +]%
-{!<span class="tooltip-text" title="Italian Reformist Socialist Party">!}[? if not psri_reconcilled: PSRI ?][? if prsi_in_government != 0 and pci_formed : [+ psri_name +]?]{!</span>!}: [+ psri_r +]%
+{!<span class="tooltip-text" title="Italian Reformist Socialist Party">!}[? if not psri_reconciled: PSRI ?][? if psri_in_government != 0 and pci_formed : [+ psri_name +]?]{!</span>!}: [+ psri_r +]%
 {!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_r +]%
 {!<span class="tooltip-text" title="Liberal Union">UL</span>!}: [+ ul_r +]%
 {!<span class="tooltip-text" title="National Bloc">BN</span>!}: [+ bn_r +]%
@@ -67,7 +67,7 @@ Unemployment: [+ unemployment_2 +]%
 
 = Inter-party Relations
 
-{!<span class="tooltip-text" title="Italian Reformist Socialist Party">!}[? if not psri_reconcilled: PSRI ?][? if prsi_in_government != 0 and pci_formed : [+ psri_name +]?]{!</span>!}: [+ psri_relation : relationships +]
+{!<span class="tooltip-text" title="Italian Reformist Socialist Party">!}[? if not psri_reconciled: PSRI ?][? if psri_in_government != 0 and pci_formed : [+ psri_name +]?]{!</span>!}: [+ psri_relation : relationships +]
 
 {!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_relation : relationships +]
 
@@ -85,7 +85,7 @@ Unemployment: [+ unemployment_2 +]%
 
 {!<span class="tooltip-text" title="The Maximalists is a faction of Centre Marxists, between reform and revolution.">Maximalists</span>!} strength: [+ maximalist_strength : strength +], dissent: [+ maximalist_dissent : dissent +]
 
-{!<span class="tooltip-text" title="Trade Unionist's goal is economic reform and benefits for organized workers.">Trade Unionists</span>!} strength: [+ tradeunionist_strength : strength +], dissent: [+ tradeunionist_dissent : dissent +]
+{!<span class="tooltip-text" title="Trade Unionist's goal is economic reform and benefits for organized workers.">Trade Unionists</span>!} strength: [+ syndicalist_strength : strength +], dissent: [+ syndicalist_dissent : dissent +]
 
 {!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">Reformists</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
 
@@ -159,10 +159,10 @@ Small Business Owners: PSI: [+ middle_class_psi_display +]%, PPI: [+ middle_clas
 
 Rural Workers & Farmers: PSI: [+ rural_psi_display +]%, PPI: [+ rural_ppi_display +]%, LDR: [+ rural_ldr_display +]%, DS: [+ rural_ddp_display +]%, UL: [+ rural_ul_display +]%; BN: [+ rural_bn_display +]%, PSRI: [+ rural_psri_display +]%, Others: [+ rural_other_display +]%
 
-Industralists & Landowners: PSI: [+ industralists_middle_psi_display +]%, PPI: [+ industralists_middle_ppi_display +]%, LDR: [+ industralists_middle_ldr_display +]%, DS: [+ industralists_middle_ddp_display +]%, UL: [+ industralists_middle_ul_display +]%; BN: [+ industralists_middle_bn_display +]%, PSRI: [+ industralists_middle_psri_display +]%, Others: [+ industralists_middle_other_display +]% 
+industrialists & Landowners: PSI: [+ industrialists_middle_psi_display +]%, PPI: [+ industrialists_middle_ppi_display +]%, LDR: [+ industrialists_middle_ldr_display +]%, DS: [+ industrialists_middle_ddp_display +]%, UL: [+ industrialists_middle_ul_display +]%; BN: [+ industrialists_middle_bn_display +]%, PSRI: [+ industrialists_middle_psri_display +]%, Others: [+ industrialists_middle_other_display +]% 
 
 Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, PPI: [+ veterans_ppi_display +]%, LDR: [+ veterans_ldr_display +]%, DS: [+ veterans_ddp_display +]%, UL: [+ veterans_ul_display +]%; BN: [+ veterans_bn_display +]%, PSRI: [+ veterans_psri_display +]%, Others: [+ veterans_other_display +]% 
 
 Catholics: PSI: [+ catholics_psi_display +]%, PPI: [+ catholics_ppi_display +]%, LDR: [+ catholics_ldr_display +]%, DS: [+ catholics_ddp_display +]%, UL: [+ catholics_ul_display +]%; BN: [+ catholics_bn_display +]%, PSRI: [+ catholics_psri_display +]%, Others: [+ catholics_other_display +]% 
 
-Support for the Monarchy: [+ pro_monarchy +]%
+Support for the Monarchy: [+ republican_sentiment +]%

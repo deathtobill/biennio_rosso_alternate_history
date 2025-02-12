@@ -15,5 +15,5 @@ The Milan branch of *Avanti!* has been attacked and burned to the ground, and re
 subtitle: Our forces are already preparing to strike the Fasci back.
 on-arrival: workers_psi -= 2; rural_psi -= 1; middle_class_psi -= 1; fasci_urgency += 1
 
-[? if distrusted_fasci = 1 : It seems, as expected, the Fasci will be a new block in our way to achieving socialism. ?][? if distrusted_fasci = 0 : Our forces are in a disaray, with many not expecting the Fasci to be an enemy of the people. ?]
+[? if distrusted_fasci = 1 : It seems, as expected, the Fasci will be a new block in our way to achieving socialism. ?][? if distrusted_fasci = 0 : Our forces are in a disarray, with many not expecting the Fasci to be an enemy of the people. ?]
 

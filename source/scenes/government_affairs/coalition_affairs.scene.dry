@@ -1,0 +1,60 @@
+title: Coalition Affairs
+new-page: true
+is-card: true
+tags: govt_affairs
+frequency: 500
+on-arrival: month_actions += 1; coalition_affairs_timer = 5
+view-if: (centre_left_coalition or socialist_catholic_coalition) and coalition_dissent >= 1 and coalition_affairs_timer <= 0
+card-image: img/muller_cabinet.jpg
+
+= Coalition Affairs
+
+Though negotiations with our partners was tense, actually participating in government with them seems even tenser, as dissident members of our coalition parties are criticising our policies.
+
+How do we reduce tensions with the coalition?
+
+- @promise_cuts: Agree to the liberal plans to cut welfare.
+- @promise_funds: Fund Catholic groups supportive of the PPI.
+- @resources: Use our party resources to support our allies.
+- @bring_down: Instead, we will bring down the government with a no-confidence vote, and call for new elections.
+- @no_change: Take none of these actions.
+- @easy_discard
+- @cancel_advisor_action
+
+@promise_cuts
+subtitle: +1 Budget
+view-if: centre_left_coalition
+on-arrival: workers_psi -= 5; veterans_psi -= 6; veterans_bn += 6; workers_bn += 3; syndicalist_dissent += 10; welfare -= 2; budget += 1; coalition_dissent = 0
+
+This is a highly unpopular move, but smooth things over with our coalition partners.
+
+@promise_funds
+subtitle: -1 Budget 
+view-if: socialist_catholic_coalition
+on-arrival: budget -= 1; coalition_dissent = 0; syndicalist_dissent += 5; communist_dissent += 5; maximalist_dissent += 5; workers_ppi += 3; workers_psi -= 3
+
+This is a controversial move within the party, with many criticising our anti-secular move as a betrayal of party ideals.
+
+@resources
+subtitle: -2 Resources
+view-if: historical_mode = 0
+unavailable-subtitle: Not enough resources (need 2).
+choose-if: resources >= 2
+on-arrival: resources -= 2; coalition_dissent -= 1
+
+By transferring campaign funds to our coalition partners, we can make our policies more acceptable to them. Some would call this corruption, but perhaps it is necessary to keep the coalition together.
+
+@bring_down
+subtitle: Bring down the coalition ourselves before our enemies do.
+on-arrival: psi_in_government = 0; centre_left_coalition = 0; socialist_catholic_coalition = 0; reformist_dissent += 5; rural_psi -= 3; middle_class_psi -= 2; workers_psi -= 3; middle_class_bn += 2
+go-to: election_1919.coalition_menu if time_to_election >= 7
+
+The vote succeeds, and our government has resigned. Prime Minister [+ prime_minister +] remains as the head of the government, but no longer has the power to enact new policies.
+
+[? if time_to_election >= 7 : A new government will be formed within the scope of the current composition of the Chamber of Deputies. ?]
+[? if time_to_election < 7 : A new government will be formed within the scope of the next composition of the Chamber of Deputies within the next 6 months. ?]
+
+@no_change
+
+No. We will not do this.
+

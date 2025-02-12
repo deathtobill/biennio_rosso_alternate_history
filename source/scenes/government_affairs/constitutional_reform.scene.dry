@@ -1,0 +1,34 @@
+title: Constitutional Reform
+new-page: true
+is-card: true
+view-if: psi_in_government and ((ldr_relation > 65 and ds_relation > 65) or ppi_relation > 65) and constitutional_reform_timer <= 0 and republican_sentiment >= 20
+frequency: 500
+on-arrival: month_actions += 1; constitutional_reform_timer = 5
+card-image: img/portraits/RadbruchGustav.jpg
+go-to: reforms_menu
+tags: govt_affairs
+
+= Constitutional Reform
+
+The Statuto Albertino, the constitution of the current Kingdom of Italy and the Kingdom of Sardinia preceding it, has often been changed to keep up with modern times. The 1919 amendment to give all men the right to vote and alter the electoral system to a proportional representation system are the most recent examples.
+
+Now that we control a sizeable bloc in the Chamber of Deputies, we are able to alter the Statuto Albertino as well. We will need an absolute majority of the Chamber of Deputies as well as the approval of the Senate and the King to pass any reforms. 
+
+@reforms_menu
+
+- @article_55: Alter Article 55; Remove the King's veto.
+- @as_is: Do not pursue constitutional reform.
+- @easy_discard
+- @cancel_advisor_action
+
+@article_33
+subtitle: Remove the appointed Senate's ability to reject bills.
+view-if: centre_left_coalition_r > 50 or socialist_catholic_coalition > 50
+choose-if: king_relation > 70
+on-arrival: veto_removed = 1; fasci_coup_progress += 1;
+
+The Constitutional Amendment makes it to the King, who is convinced to approve the measure, limiting the powers of the Senate and further democratising the Kingdom.
+
+@as_is
+
+We should not do this, for now.

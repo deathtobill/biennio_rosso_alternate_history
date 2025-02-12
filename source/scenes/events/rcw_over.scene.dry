@@ -1,0 +1,15 @@
+title: The End of the Russian Civil War
+new-page: true
+subtitle: Have our Soviet allies won?
+tags: event
+view-if: soviet_end_timer = 0
+on-arrival: rcw_over = 1; soviet_recovery_timer = 4; communist_dissent -= 10; reformist_dissent -= 10; maximalist_dissent -= 10; syndicalist_dissent -= 10; communist_strength += 7*(1-dissent)
+max-visits: 1
+
+= The End of the Russian Civil War
+
+News is pouring out of the Russian state, as our contacts have informed us that the last of the White Army has surrendered to Lenin and the Red Army. Already, celebration has broken out amongst our allies at the establishment of the first socialist state to ever exist.
+
+The state is far from stable, however, and will require quite a long time to recover from its civil war. Regardless, the party is understandably in a celebratory mood.
+
+

@@ -48,14 +48,14 @@ Q.dissent_percent = 5;
 Q.party_approach = "Unclear";
 
 // factions
-Q.factions = ['Communists', 'Maximalists', 'Trade Unionists', 'Reformists'];
+Q.factions = ['communist', 'maximalist', 'syndicalist', 'reformist'];
 // should this be normalized to 100%?
 Q.communist_strength = 15;
 Q.communist_dissent = 20;
 Q.maximalist_strength = 35;
 Q.maximalist_dissent = 0;
-Q.tradeunionist_strength = 10;
-Q.tradeunionist_dissent = 10;
+Q.syndicalist_strength = 10;
+Q.syndicalist_dissent = 10;
 Q.reformist_strength = 10;
 Q.reformist_dissent = 20;
 
@@ -122,23 +122,23 @@ Q.army_loyalty = 0.2;
 
 // popular opinion
 // pro-monarchy vs anti-monarchy
-Q.pro_monarchy = 84;
+Q.republican_sentiment = 12;
 // revolution vs radicalism
 Q.revolutionary_fervor = 60;
 
-// capital strikes happen when you upset the industralists & landowners too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
+// capital strikes happen when you upset the industrialists & landowners too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
 // coup progress happens when you piss off the fasci too much too quickly + if they have enough troops
 // when capital_strike_progress reaches 10, there's a special event that launches the coup.
 Q.capital_strike_progress = 0;
 // if fasci_coup_progress reaches 10 before historical, march on rome event is triggered
 Q.fasci_coup_progress = 0;
 
-Q.budget = -3;
+Q.budget = -2;
 
 // Proportion of different social groups
 Q.workers = 24; // industry and trade
 Q.middle_class = 13; // small business owners
-Q.industralists = 7; // industralists & landowners
+Q.industrialists = 7; // industrialists & landowners
 Q.rural = 46; // agriculture and forestry employment... but many of those are proletarians so...
 Q.veterans = 4;
 Q.catholics = 6;
@@ -147,12 +147,12 @@ Q.inflation = 19.2;
 Q.economic_growth = -2.1;
 Q.unemployment = 13.5;
 
-Q.classes = ['workers', 'middle_class', 'industralists', 'rural', 'veterans', 'catholics'];
+Q.classes = ['workers', 'middle_class', 'industrialists', 'rural', 'veterans', 'catholics'];
 Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'bn', 'other', 'pci'];
 
 // Communist split from the party
 Q.pci_formed = 0;
-Q.psri_reconcilled = 0;
+Q.psri_reconciled = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -176,15 +176,15 @@ Q.middle_class_psri = 2;
 Q.middle_class_other = 10;
 Q.middle_class_pci = 0;
 
-Q.industralists_psi = 1;
-Q.industralists_ppi = 12;
-Q.industralists_ldr = 54;
-Q.industralists_ds = 3;
-Q.industralists_ul = 28;
-Q.industralists_bn = 1;
-Q.industralists_psri = 0;
-Q.industralists_other = 1;
-Q.industralists_pci = 0;
+Q.industrialists_psi = 1;
+Q.industrialists_ppi = 12;
+Q.industrialists_ldr = 54;
+Q.industrialists_ds = 3;
+Q.industrialists_ul = 28;
+Q.industrialists_bn = 1;
+Q.industrialists_psri = 0;
+Q.industrialists_other = 1;
+Q.industrialists_pci = 0;
 
 Q.rural_psi = 27;
 Q.rural_ppi = 44;
@@ -260,7 +260,7 @@ Q.ppi_in_government = 1;
 Q.ldr_in_government = 1;
 Q.ds_in_government = 1;
 Q.ul_in_government = 1;
-Q.prsi_in_government = 0;
+Q.psri_in_government = 0;
 Q.bn_in_government = 0;
 Q.pci_in_government = 0;
 
@@ -320,6 +320,10 @@ Q.lower_tax_rates = 0;
 Q.upper_tax_rates = 0;
 Q.tariffs = 0;
 
+// timers for the russian civil war
+soviet_end_timer = 45
+soviet_recovery_timer = 0
+
 // our conduct in the government, and the conduct of our coalition opponents.
 // did the PSI vote against the previous government in a vote of no confidence?
 Q.psi_no_confidence = 0;
@@ -348,7 +352,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
             'constitutional_reform', 'labour_rights',
             // events
             'emergency_cuts', 'unemployment_insurance',
-            'sa_ban', 'sh_ban', 'papen_chancellor',
+            'fdc_ban', 'sqd_ban', 'papen_chancellor',
             'kpd_policy', 'kpd_ultimatum', 'popular_front_dispute',
             'high_inflation', 'banking_crisis', 'march_on_berlin',
             'understanding_enemy'];
@@ -399,8 +403,8 @@ Q.coalition_affairs_timer = 0;
 // event timers
 Q.emergency_cuts_timer = 0;
 Q.unemployment_insurance_timer = 0;
-Q.sa_ban_timer = 0;
-Q.sh_ban_timer = 0;
+Q.fdc_ban_timer = 0;
+Q.sqd_ban_timer = 0;
 Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 
@@ -444,11 +448,11 @@ For more information on the politics and government of the Italian Kingdom, see 
 - @1919_historical: Begin (historical mode)
 
 @1919_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; rg_strength = 150; ppi_relation = 55; ds_relation = 55; psri_relation = 65; budget = 5;
+on-arrival: difficulty = -1; resources = 4; dues = 3; rg_strength = 150; ppi_relation = 55; ds_relation = 55; psri_relation = 65; budget = -2;
 go-to: 1919_main
 
 @1919_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; rg_strength = 75; reformist_dissent = 30; communist_dissent = 30; tradeunionist_dissent = 20; maximalist_dissent = 15; ppi_relation = 35; ds_relation = 35; psri_relation = 35; budget = 3;
+on-arrival: difficulty = 1; resources = 0; dues = 1; rg_strength = 75; reformist_dissent = 30; communist_dissent = 30; syndicalist_dissent = 20; maximalist_dissent = 15; ppi_relation = 35; ds_relation = 35; psri_relation = 35; budget = -3;
 go-to: 1919_main
 
 @1919_historical
@@ -461,12 +465,12 @@ Q.dues = 1;
 Q.rg_strength = 62;
 Q.reformist_dissent = 35;
 Q.communist_dissent = 35;
-Q.tradeunionist_dissent = 25;
+Q.syndicalist_dissent = 25;
 Q.maximalist_dissent = 25;
 Q.ppi_relation = 15;
 Q.ds_relation = 20;
-Q.prsi_relation = 25;
-Q.budget = 2;
+Q.psri_relation = 25;
+Q.budget = -4;
 this.state.disableSaves = true;
 !}
 go-to: 1919_main
@@ -479,7 +483,7 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 = 1919
 
-It is a dark time for Italian Kingdom. After the first world war, the economy is in crisis, with inflation uncontrollable and unemployment widespread. Our internal situation isn't much better, as nationalist and socialist paramilitaries engage in effectively open warfare against each other whilst government inaction is critised.
+It is a dark time for Italian Kingdom. After the first world war, the economy is in crisis, with inflation uncontrollable and unemployment widespread. Our internal situation isn't much better, as nationalist and socialist paramilitaries engage in effectively open warfare against each other whilst government inaction is criticised.
 
 Now, your task is to prepare for the next election. The bourgeois-right government is unpopular, and with the new voting laws passed, we stand to gain. Perhaps the next government will have a socialist majority.
 

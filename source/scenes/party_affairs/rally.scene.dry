@@ -5,9 +5,9 @@ tags: party_affairs
 view-if: rally_timer <= 0
 on-arrival: month_actions += 1; rally_timer = 6
 card-image: img/protest.jpg
-go-to: main_rally; sa_disrupt if sa_strength > 180 and not sa_banned and not return_to_normalcy
+go-to: main_rally; fdc_disrupt if fdc_strength > 180 and not fdc_banned and not return_to_normalcy
 
-@sa_disrupt
+@fdc_disrupt
 
 The Nazi SA has disrupted our rally! Their street troops are preventing us from meeting.
 
@@ -18,7 +18,7 @@ The Nazi SA has disrupted our rally! Their street troops are preventing us from 
 
 @police_protect
 view-if: spd_prussia == 1
-on-arrival: police_protect_success = prussian_police_loyalty * prussian_police_militancy * prussian_police_strength*2 - sa_militancy*sa_strength;
+on-arrival: police_protect_success = prussian_police_loyalty * prussian_police_militancy * prussian_police_strength*2 - fdc_militancy*fdc_strength;
 go-to: police_protect_win if police_protect_success >= 0; police_protect_lose if police_protect_success < 0
 
 @police_protect_win
@@ -32,7 +32,7 @@ on-arrival: strife += 1; workers_nsdap += 3
 Unfortunately, the police were unable or unwilling to hold back the SA mob. The Nazis have won this show of strength.
 
 @rb_protect
-on-arrival: rb_success = rb_strength*rb_militancy - sa_strength*sa_militancy; strife += 1
+on-arrival: rb_success = rb_strength*rb_militancy - fdc_strength*fdc_militancy; strife += 1
 go-to: rb_protect_win if rb_success >= 0; rb_protect_lose if rb_success < 0
 
 @rb_protect_win
@@ -49,7 +49,7 @@ Unfortunately, the Reichsbanner was not able to hold back the SA mob. The Nazis 
 view-if: spd_prussia
 choose-if: prussian_police_training > 0
 unavailable-subtitle: The loyal sections of the police have never coordinated with the Reichsbanner before.
-on-arrival: rb_success = rb_strength*rb_militancy - sa_strength*sa_militancy + prussian_police_loyalty*prussian_police_militancy*prussian_police_strength*2; strife += 1
+on-arrival: rb_success = rb_strength*rb_militancy - fdc_strength*fdc_militancy + prussian_police_loyalty*prussian_police_militancy*prussian_police_strength*2; strife += 1
 go-to: both_protect_win if rb_success >= 0; both_protect_lose if rb_success < 0
 
 @both_protect_win
@@ -86,17 +86,17 @@ on-arrival: workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent) if lef
 Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
 
 @welfare
-on-arrival: workers_spd += 3*(1-dissent); workers_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 4*(1-dissent) if welfare > 1; reformist_strength += 3; labor_strength += 4; reformist_dissent -= 3; labor_dissent -= 3;
+on-arrival: workers_spd += 3*(1-dissent); workers_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 4*(1-dissent) if welfare > 1; reformist_strength += 3; syndicalist_strength += 4; reformist_dissent -= 3; syndicalist_dissent -= 3;
 
 The reformist message appeals to the organized workers, whose benefits are the accomplishments of social democracy. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?]
 
 @democracy
-on-arrival: democratization += 1; pro_republic += 2*(1 - dissent); workers_spd += 4*(1-dissent) if democratization >= 3; unemployed_spd += 3*(1-dissent) if democratization >= 3; pro_republic += 4*(1 - dissent) if democratization >= 3; new_middle_spd += 4*(1-dissent) if democratization >= 3 
+on-arrival: democratisation += 1; pro_republic += 2*(1 - dissent); workers_spd += 4*(1-dissent) if democratisation >= 3; unemployed_spd += 3*(1-dissent) if democratisation >= 3; pro_republic += 4*(1 - dissent) if democratisation >= 3; new_middle_spd += 4*(1-dissent) if democratisation >= 3 
 
 Our speakers defend the republican system and rail against the monarchists and authoritarians who threaten it.
 
-[? if democratization < 3 : Talk of democracy does not excite the workers as much as more practical issues. But that may change; part of our job is to provide political education to the proletariat. ?]
-[? if democratization >= 3 : Since we have consistently made democratization a theme of our campaign, the workers are enthusiastic about our message. ?]
+[? if democratisation < 3 : Talk of democracy does not excite the workers as much as more practical issues. But that may change; part of our job is to provide political education to the proletariat. ?]
+[? if democratisation >= 3 : Since we have consistently made democratisation a theme of our campaign, the workers are enthusiastic about our message. ?]
 
 @pacifism
 on-arrival: pacifism += 1; nationalism -= 2*(1 - dissent); workers_spd += 4*(1 - dissent) if pacifism >= 3; unemployed_spd += 3*(1-dissent) if pacifism >= 3; nationalism -= 3*(1-dissent) if pacifism >= 3; new_middle_spd += 4*(1-dissent) if pacifism >= 3

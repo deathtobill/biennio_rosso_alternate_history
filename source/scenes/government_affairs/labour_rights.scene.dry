@@ -1,0 +1,48 @@
+title: Labour Rights
+new-page: true
+is-card: true
+view-if: psi_in_government and labour_minister_party = "PSI" and labour_rights_timer <= 0 
+frequency: 500
+on-arrival: month_actions += 1; labour_rights_timer = 5
+card-image: img/portraits/RadbruchGustav.jpg
+tags: govt_affairs
+
+= Labour Rights
+
+With control of the Labour & Social Security Ministry, we can set national standards for labour. Our supporters expect us to enact worker-aligned reforms, such as working hours or safety regulations.
+
+@labour_rights_menu
+
+- @working_hours: Develop and enforce the 40-hour work week.
+- @shorten_hours: Shorten work hours less than 40 hours.
+- @safety: Develop and enforce safety regulations.
+- @unemployment_insurance: Begin the Unemployment Insurance Program.
+- @root: Do not enact any policies.
+- @easy_discard
+- @cancel_advisor_action
+
+@working_hours
+view-if: working_hours < 2
+on-arrival: working_hours += 1; syndicalist_dissent -= 8; communist_dissent -= 5; syndicalist_strength += 5; workers_psi += 7*(1-dissent); ldr_relation -= 4; ds_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1 if ldr_relation <= 30; inflation += 0.1; economic_growth -= 0.1
+
+The Kingdom of Italy does not have a current labour code, nor a set maximum amount of hours per work week. However, taking from our allies in the Entente and the Weimar Republic, the party advocates for a new 40-hour work week. 
+
+Now, with the force of the Labor Ministry, we are able to implement this work week. The bourgeoisie and their political representatives are displeased.
+
+@shorten_hours
+view-if: working_hours >= 2
+subtitle: Could we induce more hiring and reduce unemployment by reducing work hours?
+on-arrival: working_hours += 1; syndicalist_dissent -= 8; communist_dissent -= 5; syndicalist_strength += 5; workers_psi += 7*(1-dissent); ldr_relation -= 4; ds_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1; unemployed -= 0.3; economic_growth -= 0.2;
+
+Some in the labor movement argue that by reducing the maximum number of hours worked, employers would be induced to hire more workers, reducing unemployment. The argument also goes that this would be complementary to deflation, maintaining the same purchasing power for workers by cutting hours without cutting wages. Employers, however, resist this policy, arguing for more flexibility in hiring and firing.
+
+
+@safety
+on-arrival: workers_safety += 1; syndicalist_dissent -= 5; syndicalist_strength += 2; workers_psi += 5*(1-dissent); capital_strike_progress += 1 if workers_safety >= 3
+
+The Labor Ministry works on developing and enforcing safety regulations, in order to ensure healthy working conditions for the proletariat. [? if workers_safety >= 3 : Businesses have begun to argue that our focus on safety is overbearing and unnecessary, interfering with the economy. ?]
+
+@unemployment_insurance
+subtitle: -2 Budget - This will be a burden to our budget if we expand the scope too far. [? if catholic_charity_accepted : The creation of an non-Catholic welfare program would violate our agreement! ?][? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?]
+view-if: not unemployment_insurance_founded
+go-to: dealing_with_welfare.unemployment_insurance_program

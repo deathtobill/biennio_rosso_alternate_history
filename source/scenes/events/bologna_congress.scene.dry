@@ -58,11 +58,11 @@ The Communists are able to convince the Maximalists that wasting time on partici
 
 @maximalist_arguments
 subtitle: The party will participate, but not form coalitions.
-choose-if: not_participating = 0 and participating = 0
-unavailable-subtitle: [? if not_participating = 1: We have already chosen to abandon the reformist approach. ?][? if participating = 1 : We have already chosen to achieve socialism via parliamentary means. ?]
-on-arrival: reformist_dissent += 10; reformist_strength -= 5; communist_strength -= 5; maximalist_strength += 5; communist_dissent += 10; maximalist_dissent -= 20;
+choose-if: not_participating = 0
+unavailable-subtitle: [? if not_participating = 1: We have already chosen to abandon the reformist approach. ?]
+on-arrival: reformist_dissent += 10; reformist_strength -= 5; communist_strength -= 5; maximalist_strength += 5; communist_dissent += 10; maximalist_dissent -= 20; maximalist_participating = 1;
 
-The Maximalist majority secures a compromise solution, agreeing to participate in the upcoming elections but refusing any sort of coaliton with the bourgeois parties. 
+The Maximalist majority secures a compromise solution, agreeing to participate in the upcoming elections but refusing any sort of coalition with the bourgeois parties. 
 
 @reformist_arguments
 choose-if: not_participating = 0
@@ -70,4 +70,4 @@ unavailable-subtitle: [? if not_participating = 1 : We have already chosen to ac
 subtitle: The party will fully participate in the upcoming election.
 on-arrival: reformist_dissent -= 20; reformist_strength += 10; communist_strength -= 15; maximalist_strength -= 10; communist_dissent += 20; maximalist_dissent += 15; participating = 1;
 
-The Reformists are able to convince sympathetic Maximalist members to support their endavour to participate in the November elections and form a coalition with the bourgeois parties. The Communists and remaining Maximalists are unsurprisingly, outraged.
+The Reformists are able to convince sympathetic Maximalist members to support their endeavour to participate in the November elections and form a coalition with the bourgeois parties. The Communists and remaining Maximalists are unsurprisingly, outraged.

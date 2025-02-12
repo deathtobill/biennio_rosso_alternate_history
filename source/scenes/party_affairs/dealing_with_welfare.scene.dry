@@ -1,0 +1,82 @@
+title: Dealing with Veterans' Welfare
+new-page: true
+is-card: true
+view-if: psi_in_government
+frequency: 500
+on-arrival: {!
+month_actions += 1;
+current_budget = 0;
+current_budget += budget;
+!}
+card-image: img/portraits/RadbruchGustav.jpg
+tags: govt_affairs
+
+= Dealing with Veterans' Welfare
+
+Following our defeat at Caporetto and the subsequent formation of the *Opera Nazionale Combattenti*, the previous liberal government promised soldiers welfare as high as the moon to re-moralise them, and now it is up to us to actually take care of our veterans and fufill these promises. 
+
+What do we do?
+
+# most of these will need to have a ministry involved as well; except the third one
+# place in party deck as well?
+
+- @unemployment_insurance_program: Begin the funding of the Unemployment Insurance Program.
+- @veterans_organisations_gov: Increasing the funding of government welfare organisations.
+- @veterans_organisations_party: Increase the funding of our own welfare organisations.
+- @veterans_organisations_catholic: Increase the funding of Catholic-run welfare organisaions
+- @no_aid: Our budget limits our ability to improve welfare.
+- @easy_discard
+- @cancel_advisor_action
+
+@unemployment_insurance_program
+subtitle: -2 Budget - This will be a burden to our budget if we expand the scope too far. [? if catholic_charity_accepted : The creation of an non-Catholic welfare program would violate our agreement! ?][? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?]
+choose-if: finance_minister_party = "PSI"
+view-if: unemployment_insurance_founded = 0 and psi_in_government
+unavailable-subtitle: The PSI does not control the Financial Ministry.
+on-arrival: unemployment_insurance_founded = 1; insurance_payments_timer = 12; budget -= 2; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ppi_promise_failed = 1 if catholic_charity_accepted; veterans_psi += 4*(1-dissent); veterans_bn -= 4*(1-dissent); economic_growth += 1.3;
+go-to: ldr_promise_vonc if ldr_promise_failed; catholic_promise_vonc if ppi_promise_failed;
+
+Proposed by one of our deputies, the unemployment insurance program would place hundreds of thousands or even millions onto a program that would ensure they would be able to feed themselves, as well as give workers a safety net to fall upon. 
+
+Unfortunately, our current financial situation limits the scope of this welfare program to unemployed and disabled veterans.
+
+[? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+[? if ppi_promise_failed : Unfortunately, the creation of the Unemployment Insurance Program has led us to enter a deficit, breaking our agreement with the Catholics, and their representatives have already requested a meeting with us. ?]
+
+@veterans_organisations_party
+subtitle: -1 Budget [? if catholic_charity_accepted :- The funding of an non-Catholic welfare program would violate our agreement! ?][? if budget < 1 and liberal_budget_accepted :- This will put us into a deficit! ?]
+choose-if: finance_minister_party = "PSI" 
+view-if: psi_in_government
+unavailable-subtitle: The PSI does not control the Financial Ministry.
+on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ppi_promise_failed = 1 if catholic_charity_accepted; veterans_psi += 2*(1-dissent); veterans_bn -= 2*(1-dissent); economic_growth += 0.7;
+go-to: ldr_promise_vonc if ldr_promise_failed; catholic_promise_vonc if ppi_promise_failed;
+
+We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds are reallocated to aid veterans immediately.
+
+[? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+[? if ppi_promise_failed : Unfortunately, the funding of a non-Catholic aligned welfare organisation has led us to enter a deficit, breaking our agreement with the Catholics, and their representatives have already requested a meeting with us. ?]
+
+@veterans_organisations_party
+subtitle: -1 Party Resources 
+choose-if: resources > 0
+unavailable: We do not have enough resources. 
+on-arrival: resources -= 1; veterans_psi += 5*(1-dissent); veterans_bn -= 5*(1-dissent); economic_growth += 0.3;
+
+We begin distributing funds towards the *Lega Proletaria fra Mutilati, Invalidi, Feriti e Reduci di Guerra*, who are able to expand their operations to provide for more veterans.
+
+@veterans_organisations_catholic
+subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted :- This will put us into a deficit! ?]
+choose-if: finance_minister_party = "PSI" 
+view-if: psi_in_government
+unavailable-subtitle: The PSI does not control the Financial Ministry.
+on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); veterans_ppi += 1*(1-dissent); veterans_psi += 1*(1-dissent); veterans_bn -= 2*(1-dissent); economic_growth += 0.7;
+go-to: ldr_promise_vonc if ldr_promise_failed;
+
+We begin distributing funds to Catholic-aligned organisations such as Churches, and the funds are reallocated to aid veterans immediately.
+
+[? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+
+
+@no_aid
+
+We cannot provide any aid, unfortunately.

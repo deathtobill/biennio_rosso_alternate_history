@@ -6,9 +6,9 @@ view-if: year = 1920 and month = 9
 max-visits: 1
 face-image: img/danat_bank.jpg
 
-= Turin Factory Councils under control
+= Turin Factory Councils under our control
 
-Beginning in early 1919, Factory councils across industrial plants in Italy were formed, modelled upon the Soviets in Russia. Most notable of were the Turin Factory Councils, witht the situation now exacerbated by the Turin General Strike.
+Beginning in early 1919, Factory councils across industrial plants in Italy were formed, modelled upon the Soviets in Russia. Most notable of were the Turin Factory Councils, with the situation now exacerbated by the Turin General Strike.
 
 The General Confederation of Labour, an Italian labour union affiliated with us, have relinquished control of the Turin Factory Councils to us. Though historically we have not responded well to Turin's 'Syndicalism' rhetoric, we could use this opportunity to further our cause immensely. 
 
@@ -19,37 +19,37 @@ What should we do?
 - @turin_revolution: Begin the revolutionary process.
 - @turin_red_guards: Mobilise the Red Guards to defend the councils.
 - @turin_popularity: Authorise funding to prop up the Councils for their own defence.
-- @turin_negotiate: Utilise our posiiton in government to negotiate favourable terms for both sides.
+- @turin_negotiate: Utilise our position in government to negotiate favourable terms for both sides.
 - @turin_conflict: We cannot do anything.
 
 @turin_revolution
 subtitle: Authorise the strikes past the Piedmont region into the entire nation and mobilise the Red Guards; now is the time to strike!
-view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or tradeunionist_dissent < 50
+view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or syndicalist_dissent < 50
 choose-if: participating = 1 and revolutionary_fervor > 79
 unavailable-subtitle: [? if participating = 0 : We have already decided to achieve socialism through parliamentary means. ?][? if revolutionary_fervor < 80 : The bulk of the party refuses to begin the process of revolution. ?]
 go-to: turin_revolution
 
 @turin_red_guards
 subtitle: *-30k Red Guards* The Red Guards will defend the Councils from violent bourgeois action.
-view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or tradeunionist_dissent < 50
+view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or syndicalist_dissent < 50
 choose-if: rg_strength < 30
 unavailable-subtitle: [? if rg_strength < 30 : The Red Guards do not have enough troops to defend the Councils. ?]
-on-arrival: rg_strength -= 30; communist_dissent -= 5; tradeunionist_dissent -= 10; workers_psi += 2;
+on-arrival: rg_strength -= 30; communist_dissent -= 5; syndicalist_dissent -= 10; workers_psi += 2; work_councils += 1;
 
 The Red Guards are able to defend the Councils, and its continued existence encourage popular sentiment within the nation. 
 
 @turin_popularity
 subtitle: *-1 Resources* The Party will fund the Councils to defend themselves.
-view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or tradeunionist_dissent < 50
+view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or syndicalist_dissent < 50
 choose-if: resources > 0
 unavailable-subtitle: [? if resources < 1 : We do not have enough funds to do this. ?]
-on-arrival: workers_psi += 2; resources -= 1
+on-arrival: workers_psi += 2; resources -= 1; work_councils += 1
 
 The Councils are able to utilise our aid for their own defence, their faith in our party renewed.
 
 @turin_negotiate
 subtitle: Hopefully we can come to an agreement for both sides...
-view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or tradeunionist_dissent < 50
+view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or syndicalist_dissent < 50
 choose-if: psi_in_government
 unavailable-subtitle: [? if not psi_in_government : The PSI are not in government. ?]
 
@@ -57,13 +57,13 @@ Our status both controlling the Councils and in government places us in a unique
 
 - @negotiate_labour_oriented: Favour the Councils in our negotiations.
 - @negotiate_balance: Favour neither side in our negotiations.
-- @negotiate_business_oriented: Favour the industralists in our negotiations.
+- @negotiate_business_oriented: Favour the industrialists in our negotiations.
 
 @negotiate_labour_oriented
 subtitle: Some goodwill for the Councils wouldn't hurt, would it?
 on-arrival: ds_relation -= 5; ppi_relation -= 5; communist_dissent -= 5; unemployment -= 2.3; councils_empowered = 1; coalition_dissent += 1; worker_psi += 2;
 
-The *Factory Control Act* is signed, granting the Councils greater control over the factories and giving them direct input into control of the factories. The industralists are unsurprisingly fuming, refusing to hire workers and worsening the unemployment situation somewhat [? if centre_left_coalition :, while our coalition partners with the exception of the PSRI are also disatisfied. ?][? if not centre_left_coalition :. ?]
+The *Factory Control Act* is signed, granting the Councils greater control over the factories and giving them direct input into control of the factories. The industrialists are unsurprisingly fuming, refusing to hire workers and worsening the unemployment situation somewhat [? if centre_left_coalition :, while our coalition partners with the exception of the PSRI are also disatisfied. ?][? if not centre_left_coalition :. ?]
 
 @negotiate_balance
 subtitle: We need this to be a fair agreement.
@@ -72,15 +72,15 @@ on-arrival: communist_dissent += 5;
 The *Turin Accord* is signed, negotiating Council control within the factories to include Worker welfare and improved negotiating rights, as the state acts as an arbitrator in any disputes. Both sides seem to be satisfied with the agreement, and the factories continue working once more.
 
 @negotiate_business_oriented
-subtitle: We can't afford to upset the Industralists in the economic crisis, can we?
-on-arrival: dissent += 5; councils_decreased = 1; workers_psi -= 5; ds_relation += 5; ppi_relation += 10; coalition_dissent -= 1; unemployment -= 1.7; industralists_psi += 2; short_hours_reform += 1; wage_increase += 1;
+subtitle: We can't afford to upset the industrialists in the economic crisis, can we?
+on-arrival: dissent += 5; councils_decreased = 1; workers_psi -= 5; ds_relation += 5; ppi_relation += 10; coalition_dissent -= 1; unemployment -= 1.7; industrialists_psi += 2; short_hours_reform += 1; wage_increase += 1;
 
-The *Productivity Agreement* is signed, promising wage increases, shorter hours in exchange for decreased Council control over the factories. The Communists and Trade Unionists give us hell for our decision to bend over backwards to appease the Industralists [? if centre_left_coalition :, while our coalition members seem to be satisified. ?][if not centre_left_coalition :. ?]
+The *Productivity Agreement* is signed, promising wage increases, shorter hours in exchange for decreased Council control over the factories. The Communists and Syndicalists give us hell for our decision to bend over backwards to appease the industrialists [? if centre_left_coalition :, while our coalition members seem to be satisified. ?][if not centre_left_coalition :. ?]
 
 
 @turin_conflict
 subtitle: Party disunity and lack of resources paralyses the opportunity to take decisive action. 
-view-if: (communist_dissent < 50 and reformist_dissent < 50 and maximalist_dissent < 50 and tradeunionist_dissent < 50) or rg_strength < 30 or resources < 1
-on-arrival: tradeunionist_dissent += 10; worker_psi -= 7; communist_dissent += 5;
+view-if: (communist_dissent < 50 and reformist_dissent < 50 and maximalist_dissent < 50 and syndicalist_dissent < 50) or rg_strength < 30 or resources < 1
+on-arrival: syndicalist_dissent += 10; worker_psi -= 7; communist_dissent += 5;
 
 Either by choice or by force, we are unable to utilise the Turin Factory Councils, as the workers surrender to bourgeois forces and return to work, having lost faith in us.

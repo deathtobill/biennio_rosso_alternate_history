@@ -1,7 +1,7 @@
 title: Amadeo Bordiga
 is-pinned-card: true
 tags: advisor, communist
-on-arrival: bologna_occured = 1
+on-arrival: bologna_occurred = 1
 card-image: img/portraits/AmadeoBordiga.png
 view-if: bordiga_advisor = 1
 new-page: true 
@@ -22,7 +22,7 @@ choose-if: advisor_action_timer = 0 and rg_strength > 19 and rg_banned = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rg_strength < 20 : The Red Guards don't have enough members to act. ?][? if rg_banned = 1 : The Red Guard are banned, they cannot act. ?]
 on-arrival: advisor_action_timer = 6; revolutionary_fervor += 5; rg_strength -= 10; reformist_dissent += 10;
 
-We have seized control of more factories and kicked the bourgeois industralists out!
+We have seized control of more factories and kicked the bourgeois industrialists out!
 
 @revolution
 title: Revolution!

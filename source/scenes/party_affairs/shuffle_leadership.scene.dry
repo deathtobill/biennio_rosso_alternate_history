@@ -21,7 +21,7 @@ Removing advisors will increase dissent from their faction of the party, while s
 
 @rm_main
 title: Remove advisors.
-tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor 
+tags: center_advisor, left_advisor, reformist_advisor, labour_advisor, neorev_advisor, nonfactional_advisor 
 frequency: 1
 
 - #remove_advisor
@@ -110,44 +110,44 @@ go-to: rm_main
 Pfülf has been removed as an advisor. The Reformist faction disapproves.
 
 
-# labor
+# labour
 
 @remove_leipart
 title: Remove Leipart
 view-if: leipart_advisor = 1
 tags: remove_advisor
-on-arrival: leipart_advisor = 0; labor_dissent += 5; n_advisors -= 1
+on-arrival: leipart_advisor = 0; syndicalist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Leipart has been removed as an advisor. The Labor faction disapproves.
+Leipart has been removed as an advisor. The Labour faction disapproves.
 
 @remove_aufhauser
 title: Remove Aufhäuser
 view-if: aufhauser_advisor = 1
 tags: remove_advisor
-on-arrival: aufhauser_advisor = 0; labor_dissent += 5; n_advisors -= 1
+on-arrival: aufhauser_advisor = 0; syndicalist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Aufhäuser has been removed as an advisor. The Labor faction disapproves.
+Aufhäuser has been removed as an advisor. The Labour faction disapproves.
 
 @remove_wissell
 title: Remove Wissell
 view-if: wissell_advisor = 1
 tags: remove_advisor
-on-arrival: wissell_advisor = 0; labor_dissent += 3; n_advisors -= 1
+on-arrival: wissell_advisor = 0; syndicalist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Wissell has been removed as an advisor. The Labor faction disapproves.
+Wissell has been removed as an advisor. The Labour faction disapproves.
 
 
 @remove_woytinsky
 title: Remove Woytinsky
 view-if: woytinsky_advisor = 1
 tags: remove_advisor
-on-arrival: woytinsky_advisor = 0; labor_dissent += 3; n_advisors -= 1
+on-arrival: woytinsky_advisor = 0; syndicalist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Woytinsky has been removed as an advisor. The Labor faction disapproves.
+Woytinsky has been removed as an advisor. The Labour faction disapproves.
 
 # left
 
@@ -286,14 +286,14 @@ go-to: advisor_menu
 
 @advisor_menu
 title: Add other advisors.
-tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor
+tags: center_advisor, left_advisor, reformist_advisor, labour_advisor, neorev_advisor, nonfactional_advisor
 frequency: 1
 
 
 - @centrist: Add Centrists
 - @left: Add Leftists
 - @reformist: Add Reformists
-- @labor: Add Labor
+- @labour: Add Labour
 - @neorev: Add Neorevisionists
 - @nonfactional: Add non-factional advisors
 - @rm_main: Remove advisors instead.
@@ -314,10 +314,10 @@ view-if: n_advisors < 3
 
 - #left_advisor
 
-@labor
+@labour
 view-if: n_advisors < 3
 
-- #labor_advisor
+- #labour_advisor
 
 @neorev
 view-if: neorevisionism > 0 and n_advisors < 3
@@ -494,16 +494,16 @@ Max Seydewitz is now an advisor.
 
 
 
-# labor
+# labour
 
 @add_leipart
 title: Theodor Leipart
 subtitle: Theodor Leipart is the leader of the ADGB, the German Trade Union Federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/LeipartTheodor.jpg
-tags: labor_advisor
+tags: labour_advisor
 view-if: leipart_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: leipart_advisor = 1; n_advisors += 1; labor_strength += 5
+on-arrival: leipart_advisor = 1; n_advisors += 1; syndicalist_strength += 5
 go-to: advisor_menu
 
 Theodor Leipart is now an advisor.
@@ -513,21 +513,21 @@ title: Siegfried Aufhäuser
 subtitle: Siegfried Aufhäuser is the leader of the AfA-Bund, the white-collar trade union federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/AufhäuserSiegfried.jpg
-tags: labor_advisor
+tags: labour_advisor
 view-if: aufhauser_advisor = 0 and n_advisors < 3
-on-arrival: aufhauser_advisor = 1; n_advisors += 1; labor_strength += 5
+on-arrival: aufhauser_advisor = 1; n_advisors += 1; syndicalist_strength += 5
 go-to: advisor_menu
 
 Siegfried Aufhäuser is now an advisor.
 
 @add_wissell
 title: Rudolf Wissell
-subtitle: Rudolf Wissell is an economist who has been the Labor Minister, and is an advocate for the interests of labor within the government. {!<br><br>!}[? if difficulty < 0 : Actions - Union-Party Coordination, Labor Rights ?]
+subtitle: Rudolf Wissell is an economist who has been the Labour Minister, and is an advocate for the interests of labour within the government. {!<br><br>!}[? if difficulty < 0 : Actions - Union-Party Coordination, Labour Rights ?]
 is-card: true
 card-image: img/portraits/WissellRudolf.jpg
-tags: labor_advisor
+tags: labour_advisor
 view-if: wissell_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: wissell_advisor = 1; n_advisors += 1; labor_strength += 3
+on-arrival: wissell_advisor = 1; n_advisors += 1; syndicalist_strength += 3
 go-to: advisor_menu
 
 Rudolf Wissell is now an advisor.
@@ -538,9 +538,9 @@ title: Wladimir Woytinsky
 subtitle: Wladimir Woytinsky is a former Russian Menshevik who is now the lead trade union economist. {!<br><br>!}[? if difficulty < 0 : Actions - Addressing the Economic Crisis, Carrying Out the Economic Plan ?]
 is-card: true
 card-image: img/portraits/WoytinskyWladimir.jpg
-tags: labor_advisor
+tags: labour_advisor
 view-if: woytinsky_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: woytinsky_advisor = 1; n_advisors += 1; labor_strength += 3
+on-arrival: woytinsky_advisor = 1; n_advisors += 1; syndicalist_strength += 3
 go-to: advisor_menu
 
 Wladimir Woytinsky is now an advisor.

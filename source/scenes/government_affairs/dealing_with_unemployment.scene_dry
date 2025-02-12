@@ -1,0 +1,48 @@
+title: Dealing with Unemployment
+new-page: true
+is-card: true
+view-if: psi_in_government 
+frequency: 500
+on-arrival: {!
+month_actions += 1;
+current_budget = 0;
+current_budget += budget;
+!}
+card-image: img/portraits/RadbruchGustav.jpg
+tags: govt_affairs
+
+= Dealing with Unemployment
+
+The economic situation within Italy after the war is worsening after the previous government dragged us into a senseless war. With the demobilisation of the army, combined with debts piling, our unemployment rate stands at [+ unemployment +]%.
+
+There are various ways we are able to tackle this problem now that we are in government, with proposals from numerous parties reaching the floor. What should we do?
+
+# most of these will need to have a ministry involved as well; public works, labour & social security, financial respectively; last one is unpopular amongst party
+
+- @public_works_program: Continue the expansion of infrastructure projects.
+- @tax_breaks: Increase tax breaks and loans given to businesses and cooperatives.
+- @no_aid: Our budget limits our ability to aid the unemployed.
+- @easy_discard
+- @cancel_advisor_action
+
+@public_works_program
+subtitle: -1 Budget - Expand our current infrastructural commitments further. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
+choose-if: public_works_minister_party = "PSI"
+unavailable-subtitle: The PSI does not control the Public Works Ministry.
+on-arrival: public_works_funded = 1; budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); unemployment -= 2 if unemployment >= 8; unemployment -= 1 if (unemployment > 4 and unemployment < 7); unemployment -= 0.5 if unemployment < 4; veterans_bn -= 3*(1-dissent); veterans_psi += 3*(1-dissent); rural_bn -= 2*(1-dissent); 
+go-to: ldr_promise_vonc if ldr_promise_failed
+
+We have increased funding to the Public Works Ministry, who have begun drafting up plans and hiring workers for further infrastructure projects.
+
+[? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+
+@tax_breaks
+subtitle: -1 Budget - Offer financial aid to small businesses and the like to alleviate their economic burden. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
+choose-if: finance_minister_party = "PSI"
+unavailable-subtitle: The PSI does not control the Financial Ministry.
+on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ldr_relation += 5; ds_relation += 5; syndicalist_dissent += 10; communist_dissent += 10; maximalist__dissent += 10; unemployment -= 2 if unemployment >= 8; unemployment -= 1 if (unemployment > 4 and unemployment < 7); unemployment -= 0.5 if unemployment < 4; middle_class_psi += 3*(1-dissent); middle_class_bn -= 3(1*dissent); workers_psi -= 4; capital_strike_progress -= 1; psri_relation -= 3*(1-dissent);
+go-to: ldr_promise_vonc if ldr_promise_failed; 
+
+This is an unpopular move within the party, and is seen handouts to petite-bourgeois voters. The loans however, are able to keep businesses afloat temporarily[? if centre_left_coalition : and our coalition partners seem satisfied. ?] [? if not centre_left_coalition:. ?]
+
+[? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]

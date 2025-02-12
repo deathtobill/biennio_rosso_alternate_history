@@ -6,7 +6,7 @@ on-arrival: {!
 
 psri_workers_movement = (workers_psri / 4) * 3;
 psri_middle_class_movement = (middle_class_psri / 4) * 3;
-psri_industralists_movement = (industralists_psri / 4) * 3;
+psri_industrialists_movement = (industrialists_psri / 4) * 3;
 psri_veterans_movement = (veterans_psri / 4) * 3;
 psri_catholics_movement = (catholics_psri / 4) * 3;
 
@@ -26,13 +26,13 @@ subtitle: It is clear that our vision is aligned once more.
 on-arrival: {! 
 workers_psi += psri_workers_movement; 
 middle_class_psi += psri_middle_class_movement; 
-industralists_psi += psri_industralists_movement; 
+industrialists_psi += psri_industrialists_movement; 
 veterans_psi += psri_veterans_movement; 
 catholics_psi += psri_catholics_movement;
 
 workers_psri -= psri_workers_movement;
 middle_class_psri -= psri_middle_class_movement;
-industralists_psri -= psri_industralists_movement;
+industrialists_psri -= psri_industrialists_movement;
 veterans_psri -= psri_veterans_movement;
 catholics_psri -= psri_catholics_movement;
 
@@ -40,13 +40,13 @@ reformist_strength += 10;
 communist_dissent += 10
 maximalist_dissent += 10
 
-psri_reconcilled = 1;
+psri_reconciled = 1;
 !}
 
-Though the other factories decry this, the vast majority of the PSRI is reunited once more with the party, as new leadership flocks back. Though a small minority of the PSRI still remains, they are severely weakend by defections to us.
+Though the other factories decry this, the vast majority of the PSRI is reunited once more with the party, as new leadership flocks back. Though a small minority of the PSRI still remains, they are severely weakened by defections to us.
 
 @reconcile_deny
-subtitle: It is more suitable that we remain seperate.
+subtitle: It is more suitable that we remain separate.
 on-arrival: communist_dissent -= 10; maximalist_dissent -= 10; reformist_dissent += 10; psri_relation -= 10;
 
 Many within the Reformists and PSRI are confused by our actions, as are workers who are split on which party to vote for, though the other factions breathe a sigh of relief that the reformists don't get any stronger.

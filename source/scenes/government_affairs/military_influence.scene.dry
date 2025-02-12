@@ -1,0 +1,51 @@
+title: Military Influence
+new-page: true
+is-card: true
+view-if: psi_in_government
+frequency: 500
+on-arrival: month_actions += 1; army_timer = 6
+card-image: img/portraits/RadbruchGustav.jpg
+tags: govt_affairs
+
+= Military Influence
+
+The Military has been historically anti-socialist and unfavourable towards us. Though we do not control the Army directly, being in government, we can certainly exert our influence on it. 
+
+# can't directly control the military logistics wise, but influence them
+# number 2 would require judiciary reformed + control of justice ministry
+
+- @buy_loyalty: Sway officers to our cause using our coffers.
+- @purge_loyalty: Utilise the legal system to remove anti-socialist officers.
+- @no_military: Do nothing for now.
+- @easy_discard
+- @cancel_advisor_action
+
+@buy_loyalty
+view-if: not bribes_caught
+choose-if: resources > 0
+unavailable-subtitle: [? if resources < 1: We don't have enough funds for this. (1 Resource) ?]
+subtitle: -1 Party Resource - It would be best not to try this often due to it's...legality.
+on-arrival: resources -= 1; bought_loyalty += 1; army_loyalty += 0.07 if army_loyalty < 1;
+go-to: caught_army if bought_loyalty > 2
+
+Through a couple of 'meetings' with some officers, we are able to convince them of our cause and make them friendlier towards us.
+
+@caught_army
+new-page: true
+on-arrival: bribes_caught = 1; coalition_dissent += 3; workers_psi -= 8*(1-dissent); workers_bn += 5*(1-dissent); workers_ldr += 3*(1-dissent) if socialist_catholic_coalition; workers_ldr += 3*(1-dissent) if centre_left_coalition; reformist_dissent += 10; ldr_relation -= 5; ds_relation -= 5; ul_relation -= 5; ppi_relation -= 5; psri_relation -= 5;
+
+= Il Popolo d'Italia publishes damning article!
+
+It seems news of our...shady dealings have come to light. [? if centre_left_coalition or socialist_catholic_coalition : Our coalition partners are understandably outraged.] Our supporters have lost faith in us, and the National Bloc has seized the opportunity to further smear our image.
+
+@purge_loyalty
+choose-if: judicial_reform >= 2 and justice_minister_party = "PSI"
+unavailable-subtitle: [if judicial_reform < 2 : The reactionary judiciary would not allow this. ?][? if not justice_minister_party = "PSI" : We do not have control of the Justice Ministry. ?]
+on-arrival: army_loyalty += 0.09 if if army_loyalty < 1; ldr_relation -= 5; ds_relation -= 5; army_strength -= 20 if army_strength > 0; unemployment += 0.3;
+
+Through some careful movement and reassignment of officers, we are able to remove anti-socialist officers from positions of power, slowly but surely getting rid of anti-socialist sentiment within the army.
+
+
+
+
+

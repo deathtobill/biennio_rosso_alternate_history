@@ -17,16 +17,16 @@ Tensions run high. Benito Mussolini has presented the Trade Unionists and the pa
 
 @signed_pacification
 subtitle: We need to ensure peace in the interior.
-choose-if: reformists_defect = 0 and reformists_expelled = 0
-unavailable-subtitle: [? if reformists_defect = 1 or reformists_expelled = 1 : The party does not have enough to support to even consider this. ?]
+choose-if: maximalist_strength < reformist_strength
+unavailable-subtitle: [? if reformists_defect = 1 or reformists_expelled = 1 : The majority of the party does not support this. ?]
 on-arrival: maximalist_dissent += 10; reformist_dissent -= 10; revolutionary_fervor -= 5;
 
 We sign the agreement, only for it to break down days later as fascist squad leaders refuse to honour it. 
 
 @refused_pacification
 subtitle: No deals with fascists!
-choose-if: communists_split = 0 and congress_communist_split = 0
-unavailable-subtitle: [? if communists_split = 1 or congress_communist_split = 1 : The party does not have enough to support to even consider this. ?]
+choose-if: maximalist_strength > reformist_strength
+unavailable-subtitle: [? if communists_split = 1 or congress_communist_split = 1 : The majority of the party does not support this. ?]
 on-arrival: maximalist_dissent -= 10; reformist_dissent += 10; revolutionary_fervor += 5;
 
 We refuse to sign the Pact, and continue organising the Red Guards against the Fasci.

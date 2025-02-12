@@ -102,24 +102,24 @@ go-to: menu
 
 **Small Business Owners**: Consisting of shopkeepers, artisans, small business workers and the like. They are divided between the Catholic Parties, Liberal Parties and a small minority to the PSI. They make up about 15-20% of the population.
 
-**Rural Workers & Farmers**: Consisting of those who lived in the unindustrialised south who work as farmers, agricultural workers, et cetera. They are fairly evenly split between the PSI and the Catholic Parties of the UECI & CC. They make up about 50% of the population.
+**Rural Workers & Farmers**: Consisting of those who lived in the unindustrialised south who work as farmers, agricultural workers, et cetera. They are fairly evenly split between the PSI and the Catholic PPI. They make up about 50% of the population.
 
-**Industralists & Landowners**: Consisting of the elite holding significant economic power. They are the bedrock of the liberal parties, seeing them as stable and protecting their wealth, though some more religious prefer the Catholic parties. They make up about 5-10% of the population.
+**industrialists & Landowners**: Consisting of the elite holding significant economic power. They are the bedrock of the liberal parties, seeing them as stable and protecting their wealth, though some more religious prefer the Catholic parties. They make up about 5-10% of the population.
 
 **Veterans & Unemployed**: Consisting of veterans who felt betrayed by the government for their gains in the First World War. They are fierce supporters of nationalist and fascist movements, though some opted to support the PSI instead. They make up about 5% of the population.
 
-**Catholics**: Consisting of the clergy and those religious to the Catholic Church. They support the Catholic parties almost entirely, making up a strong foundation for the UECI & CC. They make up about 5% of the population.
+**Catholics**: Consisting of the clergy and those religious to the Catholic Church. They support the Catholic parties almost entirely, making up a strong foundation for the PPI. They make up about 5% of the population.
 
 
 @public_opinion
 on-arrival: {!
-Q.pro_monarchy_disp = Math.round(Q.pro_monarchy);
+Q.republican_sentiment_disp = Math.round(Q.republican_sentiment);
 !}
 view-if: (not historical_mode) or game_over
 go-to: election_algorithm
 set-jump: election_projections
 
-Support for the Monarchy: [+ pro_monarchy_disp +]
+Support for the Monarchy: [+ republican_sentiment_disp +]
 
 @election_projections
 view-if: (not historical_mode) or game_over
@@ -133,7 +133,7 @@ LDR: [+ ldr_votes +]%
 
 DS: [+ ds_votes +]%
 
-[? if not psri_reconcilled: PSRI ?][? if prsi_in_government != 0 and pci_formed : [+ psri_name +]?]: [+ psri_votes +]%
+[? if not psri_reconciled: PSRI ?][? if psri_in_government != 0 and pci_formed : [+ psri_name +]?]: [+ psri_votes +]%
 
 PPI: [+ ppi_votes +]%
 
@@ -151,7 +151,7 @@ Small Business Owners: PSI: [+ middle_class_psi_display +]%, PPI: [+ middle_clas
 
 Rural Workers & Farmers: PSI: PSI: [+ rural_psi_display +]%, PPI: [+ rural_ppi_display +]%, LDR: [+ rural_ldr_display +]%, DS: [+ rural_ddp_display +]%, UL: [+ rural_ul_display +]%; BN: [+ rural_bn_display +]%, PSRI: [+ rural_psri_display +]%, Others: [+ rural_other_display +]%
 
-Industralists & Landowners: PSI: [+ industralists_middle_psi_display +]%, PPI: [+ industralists_middle_ppi_display +]%, LDR: [+ industralists_middle_ldr_display +]%, DS: [+ industralists_middle_ddp_display +]%, UL: [+ industralists_middle_ul_display +]%; BN: [+ industralists_middle_bn_display +]%, PSRI: [+ industralists_middle_psri_display +]%, Others: [+ industralists_middle_other_display +]% 
+industrialists & Landowners: PSI: [+ industrialists_middle_psi_display +]%, PPI: [+ industrialists_middle_ppi_display +]%, LDR: [+ industrialists_middle_ldr_display +]%, DS: [+ industrialists_middle_ddp_display +]%, UL: [+ industrialists_middle_ul_display +]%; BN: [+ industrialists_middle_bn_display +]%, PSRI: [+ industrialists_middle_psri_display +]%, Others: [+ industrialists_middle_other_display +]% 
 
 Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, PPI: [+ veterans_ppi_display +]%, LDR: [+ veterans_ldr_display +]%, DS: [+ veterans_ddp_display +]%, UL: [+ veterans_ul_display +]%; BN: [+ veterans_bn_display +]%, PSRI: [+ veterans_psri_display +]%, Others: [+ veterans_other_display +]% 
 
@@ -162,7 +162,7 @@ go-to: menu
 
 **PSI** - *Partito Socialista Italiano* (Italian Socialist Party) - This is you. You are the major socialist party of the working class, founded by labour movements and socialist ideas. Currently, the party is split between those who wish to preserve the parliamentary system and those who wish to achieve socialism through a revolution.
 
-**LDR** - *Liberali, democratici e radicali* (Liberals, Democrats and Radicals) - A recently formed centre party under the merger of the Liberal Union and the Italian Radical Party. They get their support mainly from the Industralists & Landowners under the leader of Prime Minister who ended the First World War.
+**LDR** - *Liberali, democratici e radicali* (Liberals, Democrats and Radicals) - A recently formed centre party under the merger of the Liberal Union and the Italian Radical Party. They get their support mainly from the industrialists & Landowners under the leader of Prime Minister who ended the First World War.
 
 Current relations: [+ ldr_relation : relationships +]
 
@@ -191,8 +191,8 @@ Current relations: [+ bn_relation : relationships +]
 @paramilitaries
 on-arrival: {!
 Q.rg_strength = Math.round(Q.rb_strength);
-Q.fdc_strength = Math.round(Q.sh_strength);
-Q.sqd_strength = Math.round(Q.sa_strength); 
+Q.fdc_strength = Math.round(Q.sqd_strength);
+Q.sqd_strength = Math.round(Q.fdc_strength); 
 !}
 go-to: menu
 
@@ -255,9 +255,9 @@ Dissent: [+ maximalist_dissent : dissent +]
 
 The Trade Unionists, known also as the Syndicalists, are a minority faction in the party, generally advocating for further workers' control and the strengthening of unions.
 
-Strength: [+ tradeunionist_strength : strength +]
+Strength: [+ syndicalist_strength : strength +]
 
-Dissent: [+ tradeunionist_dissent : dissent +]
+Dissent: [+ syndicalist_dissent : dissent +]
 
 **Reformists**
 
