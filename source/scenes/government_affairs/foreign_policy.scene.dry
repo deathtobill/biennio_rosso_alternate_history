@@ -31,7 +31,7 @@ Now that we are in control of the Foreign Ministry, we can alter Italy's relatio
 subtitle: -1 Budget - We will provide support to the Soviets. [? if liberal_aid_accepted : This will violate our agreement with the Liberals! ?][? if liberal_budget_accepted and budget < 1 : This will put us into a deficit! ?][? if liberal_foreign_accepted and soviet_relations <= entente_relations : This will disrupt our alignment with the Entente! ?]
 view-if: not rcw_over and soviet_recovery_timer > 0
 on-arrival: budget -= 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if soviet_recovery_timer > 0; soviet_relations += 1; ldr_relation -= 7*(1-dissent); ds_relation -= 4*(1-dissent); pci_relation += 3*(1-dissent); psri_relation += 3*(1-dissent); ldr_promise_failed = 1 if ((budget < 0 and liberal_budget_accepted and current_budget > -1) or liberal_aid_accepted or (liberal_foreign_accepted and soviet_relations > entente_relations));
-go-to: ldr_promise_vonc if ldr_promise_failed
+go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We are able to send aid to the Red Army via our diplomatic channels, and the Soviets thank us for the aid. [? if centre_left_coalition : Our coalition partners, however, are less than happy, calling our aid a 'waste of funds'. ?]
 
@@ -57,7 +57,7 @@ if (soviet_relations > entente_relations) {
     ldr_promise_failed = 1;
 }
 !}
-go-to: ldr_promise_vonc if ldr_promise_failed
+go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 Our overtures to the Russian SFSR are noticed, and welcomed with open arms by our allies. [? if not rcw_over : However, they are still plagued by a fierce civil war with anti-socialist forces. ?]
 

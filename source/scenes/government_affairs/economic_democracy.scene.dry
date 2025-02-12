@@ -78,7 +78,7 @@ if (budget < 0 and liberal_budget_accepted and current_budget > -1) {
 capital_strike_progress += 1; 
 psri_relation += 5*(1-dissent);
 !}
-go-to: ldr_promise_vonc if ldr_promise_failed
+go-to: ldr_promise_vonc if ldr_promise_failed = 1
 max-visits: 3
 
 We begin buying out now-defunct or bankrupt companies, repurposing and organising them into governing boards made up of state, worker and consumer representatives. The industrialists are not pleased at our intrusion into the economy.

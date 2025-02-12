@@ -7,13 +7,13 @@ on-arrival: {!
 month_actions += 1;
 vatican-appeased = 0
 roman_question_timer = 5
-if (vatican_relations <= 4 and pope = "Ratti") {
+if (vatican_relations <= 4 and pope == "Ratti") {
     negotiating_power = 4;
 }
-if (vatican_relations >= 5 and vatican_relations <= 7) or pope = "Ratti" {
+if (vatican_relations >= 5 and vatican_relations <= 7) or pope == "Ratti" {
     negotiating_power = 3;
 }
-if vatican_relations >= 7 or pope = "Gasparri" {
+if vatican_relations >= 7 or pope == "Gasparri" {
     negotiating_power = 2;
 }
 current_budget = 0;
@@ -86,7 +86,7 @@ secularised_education = 0 if vatican_education_offered
 communist_dissent += 10 if vatican_education_offered
 maximalist_dissent += 10 if vatican_education_offered
 !}
-go-to: ldr_promise_vonc if ldr_promise_failed
+go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 The Lateran Treaty of [+ year +] is signed, finally ending the Roman Question.
 

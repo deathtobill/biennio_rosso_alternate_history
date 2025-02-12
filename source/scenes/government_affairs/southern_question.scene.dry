@@ -64,7 +64,7 @@ unemployment -= 0.7;
 rural_psi += 2*(1-dissent); 
 industrialists_psi -= 3*(1-dissent);
 !}
-go-to: ldr_promise_vonc if ldr_promise_failed
+go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We begin a series of infrastructural projects directed by the Public Works Ministry, leading to decreased unemployment in the region. 
 
@@ -75,7 +75,7 @@ subtitle: -1 Budget - [? if budget = 0 : This will put us into a deficit! ?]
 choose-if: public_education = "PSI"
 unavailable-subtitle: The PSI does not control the Public Works Ministry.
 on-arrival: southern_education_funded += 1; budget -= 1; ldr_promise_failed if (budget < 0 and current_budget > 0); economic_growth += 0.6; unemployment -= 0.7; rural_psi += 4*(1-dissent); middle_class += 3*(1-dissent); industrialists_psi -= 3*(1-dissent); catholics_psi -= 4*(1-dissent); ppi_relation -= 7;
-go-to: ldr_promise_vonc if ldr_promise_failed
+go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We expand education institutes, targeting the South, hiring teachers, building schools and the like. Both the landowners and the catholics certainly aren't pleased with our intrusion into the South.
 

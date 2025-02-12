@@ -34,7 +34,7 @@ choose-if: finance_minister_party = "PSI"
 view-if: unemployment_insurance_founded = 0 and psi_in_government
 unavailable-subtitle: The PSI does not control the Financial Ministry.
 on-arrival: unemployment_insurance_founded = 1; insurance_payments_timer = 12; budget -= 2; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ppi_promise_failed = 1 if catholic_charity_accepted; veterans_psi += 4*(1-dissent); veterans_bn -= 4*(1-dissent); economic_growth += 1.3;
-go-to: ldr_promise_vonc if ldr_promise_failed; catholic_promise_vonc if ppi_promise_failed;
+go-to: ldr_promise_vonc if ldr_promise_failed = 1; catholic_promise_vonc if ppi_promise_failed;
 
 Proposed by one of our deputies, the unemployment insurance program would place hundreds of thousands or even millions onto a program that would ensure they would be able to feed themselves, as well as give workers a safety net to fall upon. 
 
@@ -49,7 +49,7 @@ choose-if: finance_minister_party = "PSI"
 view-if: psi_in_government
 unavailable-subtitle: The PSI does not control the Financial Ministry.
 on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ppi_promise_failed = 1 if catholic_charity_accepted; veterans_psi += 2*(1-dissent); veterans_bn -= 2*(1-dissent); economic_growth += 0.7;
-go-to: ldr_promise_vonc if ldr_promise_failed; catholic_promise_vonc if ppi_promise_failed;
+go-to: ldr_promise_vonc if ldr_promise_failed = 1; catholic_promise_vonc if ppi_promise_failed;
 
 We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds are reallocated to aid veterans immediately.
 
@@ -70,7 +70,7 @@ choose-if: finance_minister_party = "PSI"
 view-if: psi_in_government
 unavailable-subtitle: The PSI does not control the Financial Ministry.
 on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); veterans_ppi += 1*(1-dissent); veterans_psi += 1*(1-dissent); veterans_bn -= 2*(1-dissent); economic_growth += 0.7;
-go-to: ldr_promise_vonc if ldr_promise_failed;
+go-to: ldr_promise_vonc if ldr_promise_failed = 1;
 
 We begin distributing funds to Catholic-aligned organisations such as Churches, and the funds are reallocated to aid veterans immediately.
 

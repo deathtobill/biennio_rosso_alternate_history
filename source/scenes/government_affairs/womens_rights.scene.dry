@@ -53,7 +53,7 @@ if ((current_budget > 0 and budget < 0) and liberal_budget_accepted) {
     ldr_promise_failed;
 }
 !}
-go-to: ldr_promise_vonc if ldr_promise_failed
+go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We have increased welfare spending on women and children. [? if welfare >= 1 and unemployed >= 15 : Some of our coalition partners consider increased welfare spending profligate at this time. ?]
 

@@ -23,7 +23,7 @@ choose-if: finance_minister_party = "PSI"
 view-if: unemployment_insurance_founded = 0
 unavailable-subtitle: The PSI does not control the Finance Ministry.
 on-arrival: unemployment_insurance_funded += 1; insurance_payments_timer = 12; budget -= 2; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ppi_promise_failed = 1; veterans_ppi += 4*(1-dissent)*unemployment_insurance_funded; veterans_bn -= 4*(1-dissent)*unemployment_insurance_funded; economic_growth += 0.7;
-go-to: ldr_promise_vonc if ldr_promise_failed; catholic_promise_vonc if ppi_promise_failed;
+go-to: ldr_promise_vonc if ldr_promise_failed = 1; catholic_promise_vonc if ppi_promise_failed;
 
 The Program is set to continue for another year, our appeal to veterans increase alongside it.
 

@@ -42,7 +42,7 @@ Our decision to secularise education is met with immense backlash from Sturzo an
 @education_funding 
 subtitle: -1 Budget - This has broad popular support across the workers and middle class. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
 on-arrival: education_funded += 1; workers_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); industrialists_bn += 3*(1-dissent); economic_growth += 0.4 if economic_growth < 0; unemployment -= 0.4*(1-dissent); ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1);
-go-to: ldr_promise_vonc if ldr_promise_failed
+go-to: ldr_promise_vonc if ldr_promise_failed = 1
 max-visits: 3
 
 We begin a new round of funding for the public education system, allowing schools to expand their capacity and hire more teachers with improved access to education.
@@ -61,7 +61,7 @@ Our efforts to reform the curriculum is opposed every step of the way by the Cat
 subtitle: -1 Budget - Our voter base is fond of this policy.  [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
 on-arrival: trade_school_funded += 1; workers_psi += 4*(1-dissent); rural_psi += 4*(1-dissent); rural_bn -= 2*(1-dissent); workers_ppi -= 3*(1-dissent); ppi_relation -= 4*(1-dissent); catholic_psi -= 2*(1-dissent); ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1);
 max-visits: 3
-go-to: ldr_promise_vonc if ldr_promise_failed
+go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 Our funding of trade school appeases our traditional worker base, alongside swaying rural voters to our side.
 
