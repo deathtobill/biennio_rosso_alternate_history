@@ -20,10 +20,8 @@ What do we do?
 # most of these will need to have a ministry involved as well; except the third one
 # place in party deck as well?
 
-- @unemployment_insurance_program: Begin the funding of the Unemployment Insurance Program.
-- @veterans_organisations_gov: Increasing the funding of government welfare organisations.
+
 - @veterans_organisations_party: Increase the funding of our own welfare organisations.
-- @veterans_organisations_catholic: Increase the funding of Catholic-run welfare organisaions
 - @no_aid: Our budget limits our ability to improve welfare.
 - @easy_discard
 - @cancel_advisor_action
@@ -34,7 +32,7 @@ choose-if: finance_minister_party = "PSI"
 view-if: psi_in_government
 unavailable-subtitle: The PSI does not control the Financial Ministry.
 on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ppi_promise_failed = 1 if catholic_charity_accepted; veterans_psi += 2*(1-dissent); veterans_bn -= 2*(1-dissent); economic_growth += 0.7;
-go-to: ldr_promise_vonc if ldr_promise_failed = 1; catholic_promise_vonc if ppi_promise_failed;
+go-to: ldr_promise_vonc if ldr_promise_failed = 1; catholic_promise_vonc if ppi_promise_failed = 1;
 
 We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds are reallocated to aid veterans immediately.
 

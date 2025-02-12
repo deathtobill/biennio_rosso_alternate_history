@@ -31,7 +31,9 @@ land_seize += 1;
 coalition_dissent += 1; 
 rural_bn += 5*(1-dissent); 
 rural_bn -= 4*(1-dissent); 
-unemployed -= 1 if unemployed >= 5; 
+if unemployed >= 5 {
+    unemployed -= 1
+}
 ldr_relation -= 5; ds_relation -= 4; 
 communist_strength += 8; 
 communist_dissent -= 5; 

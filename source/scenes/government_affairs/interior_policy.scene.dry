@@ -16,7 +16,6 @@ card-image: img/portraits/SeveringCarl.jpg
 
 - @loyalty_interior: Improve the loyalty of the Carabinieri.
 - @investigate_corruption: Investigate corruption by big businesses.
-- @investigate_mafia: Investigate illegal activity among the Mafia.
 - @crackdown_far_right: Crack down on paramilitary organisations among the far right.
 - @crackdown_far_left: Crack down on paramilitary organisations among the far left.
 - @domestic_enemies: Investigate or ban our domestic enemies.
