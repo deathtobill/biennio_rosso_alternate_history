@@ -33,5 +33,6 @@ on-arrival: stopped_mobilisation = 1; budget -= 7 if army_strength > 3000; budge
 We are able to convince the army to end its demobilisation, the budget will be balanced some other way. Many in the party decry our seemingly pro-war stance, however.
 
 @allow_demobilise
+title: Let them demobilise.
 subtitle: +1 Budget
 on-arrival: army_strength -= 692; unemployment += 1.9; budget += 1; demobilise_timer += 6;
