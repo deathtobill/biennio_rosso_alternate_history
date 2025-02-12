@@ -35,5 +35,5 @@ The short-lived Program comes to an end, as veterans now without government supp
 @await_government
 subtitle: [? if not psi_in_government : We are no longer in government. ?][? if psi_in_government : We no longer control the Finance Ministry. ?]
 view-if: finance_minister_party = "PSI"
-go-to: fund_insurance if ((centre_left_coalition and budget > 2) or (not catholic_charity_accepted and socialist_catholic_coalition)); end_insurance if ((centre_left_coalition and budget < 2) or (catholic_charity_accepted and socialist_catholic_coalition))
+go-to: @fund_insurance if ((centre_left_coalition and budget > 2) or (not catholic_charity_accepted and socialist_catholic_coalition)); @end_insurance if ((centre_left_coalition and budget < 2) or (catholic_charity_accepted and socialist_catholic_coalition))
 

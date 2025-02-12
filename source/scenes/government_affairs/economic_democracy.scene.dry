@@ -71,7 +71,7 @@ ldr_relation -= 7;
 ds_relation -= 7; 
 communist_strength += 7; 
 communist_dissent -= 7; 
-if (liberal_nationalisation_accepted = 1) {
+if (liberal_nationalisation_accepted == 1) {
     ldr_promise_failed = 1;
 }
 if (budget < 0 and liberal_budget_accepted = 1 and current_budget > -1) {
