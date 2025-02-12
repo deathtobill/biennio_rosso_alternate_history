@@ -1,4 +1,5 @@
 title: Meeting with the Liberals
+view-if: psi_in_government and centre_left_coalition and ldr_promise_failed
 new-page: true
 tags: event
 
