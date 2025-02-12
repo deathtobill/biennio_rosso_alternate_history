@@ -44,7 +44,7 @@ ppi_promise_failed = 1 if catholic_charity_accepted;
 veterans_psi += 4*(1-dissent); 
 veterans_bn -= 4*(1-dissent); 
 economic_growth += 1.3; 
-inflation +- 0.3; 
+inflation += 0.3;
 psri_relation += 7*(1-dissent);
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1; catholic_promise_vonc if ppi_promise_failed;

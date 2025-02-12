@@ -27,7 +27,7 @@ subtitle: Conduct small seizures of land from large estates to give redistribute
 unavailable-subtitle: [? if judicial_reform < 2: The Judiciary would overturn our actions in a heartbeat. ?][? if land_seize >= 4 : There is not much we can do left without targeting the South. ?]
 choose-if: judicial_reform >= 2 and land_seize < 4
 on-arrival: {!
-land-seize += 1; 
+land_seize += 1; 
 coalition_dissent += 1; 
 rural_bn += 5*(1-dissent); 
 rural_bn -= 4*(1-dissent); 

@@ -3,8 +3,8 @@ new-page: true
 subtitle: It's time to fund the program once more...
 view-if: unemployment_insurance_timer = 0
 on-arrival: {!
-current_budget = 0
-current_budget += budget
+current_budget = 0;
+current_budget += budget;
 !}
 face-image: img/schutzbund.png
 #tags: event
@@ -20,10 +20,10 @@ Funding for the Unemployment Insurance Program has once again dried up, and sche
 @fund_insurance
 subtitle: -2 Budget - Keep the Program running for another year. [? if catholic_charity_accepted : The funding of any non-Catholic welfare program would violate our agreement! ?][? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?]
 choose-if: finance_minister_party = "PSI"
-view-if: unemployment_insurance_founded = 0
+view-if: not unemployment_insurance_founded 
 unavailable-subtitle: The PSI does not control the Finance Ministry.
 on-arrival: unemployment_insurance_funded += 1; insurance_payments_timer = 12; budget -= 2; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ppi_promise_failed = 1; veterans_ppi += 4*(1-dissent)*unemployment_insurance_funded; veterans_bn -= 4*(1-dissent)*unemployment_insurance_funded; economic_growth += 0.7;
-go-to: ldr_promise_vonc if ldr_promise_failed = 1; catholic_promise_vonc if ppi_promise_failed;
+go-to: ldr_promise_vonc if ldr_promise_failed = 1; catholic_promise_vonc if ppi_promise_failed = 1;
 
 The Program is set to continue for another year, our appeal to veterans increase alongside it.
 

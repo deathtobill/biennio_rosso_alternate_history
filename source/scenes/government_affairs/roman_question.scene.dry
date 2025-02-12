@@ -5,8 +5,8 @@ view-if: psi_in_government and roman_question_timer <= 0
 frequency: 250
 on-arrival: {! 
 month_actions += 1;
-vatican-appeased = 0
-roman_question_timer = 5
+vatican-appeased = 0;
+roman_question_timer = 5;
 if (vatican_relations <= 4 and pope == "Ratti") {
     negotiating_power = 4;
 }

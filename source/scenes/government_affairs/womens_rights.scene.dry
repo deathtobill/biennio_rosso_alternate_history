@@ -50,7 +50,7 @@ unemployed -= 0.4;
 inflation += 0.2; 
 economic_growth += 0.3; 
 if ((current_budget > 0 and budget < 0) and liberal_budget_accepted) {
-    ldr_promise_failed;
+    ldr_promise_failed = 1;
 }
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
