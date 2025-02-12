@@ -108,3 +108,5 @@ The Lateran Treaty of [+ year +] is signed, finally ending the Roman Question.
 @vatican_return
 on-arrival: vatican_appeased = 0; vatican_compensation_offered = 0; vatican_state_offered = 0; vatican_defence_offered = 0; vatican_education_offered = 0;
 go-to: vatican_negotiations
+
+@no_vatican

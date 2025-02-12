@@ -32,7 +32,7 @@ subtitle: -2 Budget - This will **irreversibly** damage our relations with the L
 choose-if: not centre_left_coalition and king_relation >= 60
 unavailable-subtitle: [? if centre_left_coalition : The Liberals are threatening a pre-emptive Vote-of-No-Confidence if this bill hits the Chamber floor. ?][? if king_relation < 60 : This King has informed us he will veto this bill upon arrival regardless. ?]
 on-arrival: southern_land_reformed = 1; budget -= 2; ldr_relation -= 30; rural_psi += 17*(1-dissent); industrialists_ldr -= 27*(1-dissent); industrialists_bn += 20*(1-dissent); middle_class_bn += 14*(1-dissent); unemployment -= 4.3; inflation += 2.8; economic_growth += 2.7;
-go-to: let_it_happen if ldr_r >= 50
+go-to: liberal_vote_of_no_confidence.let_it_happen if ldr_r >= 50
 
 The bill is barely able to pass the floor, and the Liberals are in an uproar. Already, our contacts within the LDR have informed us of an exodus of their landowner backers from the party, instead seeking to align further with the far-right. Orlando and the LDR vow never to work with us again, as the Fascists use this opportunity to paint us as property-seizing radicals to the middle class.
 
@@ -43,7 +43,7 @@ subtitle: -50k Red Guards - This will **irreversibly** damage our relations with
 choose-if: rg_strength >= 50
 on-arrival: southern_land_reformed = 1; rg_strength -= 50; ldr_relation -= 35; rural_psi += 13*(1-dissent); industrialists_ldr -= 25*(1-dissent); industrialists_bn += 23*(1-dissent); middle_class_bn += 17*(1-dissent); unemployment -= 4.3; inflation += 2.8; economic_growth += 2.7;
 unavailable-subtitle: The Red Guards don't have enough manpower to do this.
-go-to: let_it_happen if anti_socialist_coalition_r >= 50
+go-to: liberal_vote_of_no_confidence.let_it_happen if anti_socialist_coalition_r >= 50
 
 The Red Guard, under our orders begin forceful seizures of landowner properties and the Liberals are in an uproar. Already, our contacts within the LDR have informed us of an exodus of their landowner backers from the party, instead seeking to align further with the far-right. Orlando and the LDR vow never to work with us again, as the Fascists use this opportunity to paint us as violent radicals to the middle class.
 
@@ -107,3 +107,5 @@ The Carabinieri are able to uncover files regarding illegal activity among a num
 @investigate_mafia_failure
 
 Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
+
+@as_is
