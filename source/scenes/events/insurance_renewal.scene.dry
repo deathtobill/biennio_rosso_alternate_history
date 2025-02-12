@@ -18,7 +18,7 @@ Funding for the Unemployment Insurance Program has once again dried up, and sche
 - @await_government: There is not much else we can do.
 
 @fund_insurance
-subtitle: -2 Budget - Keep the Program running for another year. [? if catholic_charity_accepted : The funding of any non-Catholic welfare program would violate our agreement! ?][? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?]
+subtitle: -2 Budget - Keep the Program running for another year. [? if catholic_charity_accepted = 1: The funding of any non-Catholic welfare program would violate our agreement! ?][? if (budget < 2 and liberal_budget_accepted = 1) : This will put us into a deficit! ?]
 choose-if: finance_minister_party = "PSI"
 view-if: not unemployment_insurance_founded 
 unavailable-subtitle: The PSI does not control the Finance Ministry.

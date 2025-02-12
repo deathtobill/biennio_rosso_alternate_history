@@ -57,7 +57,7 @@ workers_psi += 2*(1-dissent);
 catholic_psi -= 3*(1-dissent); 
 vatican_relations -= 1; 
 ppi_relation -= 5*(1-dissent); 
-if catholic_education_accepted {
+if (catholic_education_accepted = 1) {
     ppi_promise_failed = 1;
 } 
 psri_relation += 5*(1-dissent);

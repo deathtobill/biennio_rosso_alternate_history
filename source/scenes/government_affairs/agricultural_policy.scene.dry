@@ -35,7 +35,10 @@ unemployed -= 1 if unemployed >= 5;
 ldr_relation -= 5; ds_relation -= 4; 
 communist_strength += 8; 
 communist_dissent -= 5; 
-rural_policy += 1; ldr_promise_failed if liberal_reform_accepted; 
+rural_policy += 1; 
+if (liberal_reform_accepted = 1) {
+    ldr_promise_failed = 1;
+}
 industrialists_bn += 3; 
 psri_relation += 3*(1-dissent);
 !}

@@ -10,10 +10,10 @@ roman_question_timer = 5;
 if (vatican_relations <= 4 and pope == "Ratti") {
     negotiating_power = 4;
 }
-if (vatican_relations >= 5 and vatican_relations <= 7) or pope == "Ratti" {
+if ((vatican_relations >= 5 and vatican_relations <= 7) or pope == "Ratti") {
     negotiating_power = 3;
 }
-if vatican_relations >= 7 or pope == "Gasparri" {
+if (vatican_relations >= 7 or pope == "Gasparri") {
     negotiating_power = 2;
 }
 current_budget = 0;

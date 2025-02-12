@@ -31,16 +31,18 @@ What do we do?
 @unemployment_insurance_program
 subtitle: -2 Budget - This will be a burden to our budget if we expand the scope too far. [? if catholic_charity_accepted : The creation of an non-Catholic welfare program would violate our agreement! ?][? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?]
 choose-if: finance_minister_party = "PSI"
-view-if: unemployment_insurance_founded = 0 and psi_in_government
+view-if: not unemployment_insurance_founded and psi_in_government
 unavailable-subtitle: The PSI does not control the Financial Ministry.
 on-arrival: {!
 unemployment_insurance_founded = 1; 
 insurance_payments_timer = 12; 
 budget -= 2; 
-if (budget < 0 and liberal_budget_accepted and current_budget > -1) {
+if (budget < 0 and liberal_budget_accepted = 1 and current_budget > -1) {
     ldr_promise_failed = 1;
 }
-ppi_promise_failed = 1 if catholic_charity_accepted; 
+if (catholic_charity_accepted = 1) {
+    ppi_promise_failed = 1;
+}
 veterans_psi += 4*(1-dissent); 
 veterans_bn -= 4*(1-dissent); 
 economic_growth += 1.3; 
