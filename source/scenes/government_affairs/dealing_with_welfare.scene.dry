@@ -56,14 +56,6 @@ We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds 
 [? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
 [? if ppi_promise_failed : Unfortunately, the funding of a non-Catholic aligned welfare organisation has led us to enter a deficit, breaking our agreement with the Catholics, and their representatives have already requested a meeting with us. ?]
 
-@veterans_organisations_party
-subtitle: -1 Party Resources 
-choose-if: resources > 0
-unavailable: We do not have enough resources. 
-on-arrival: resources -= 1; veterans_psi += 5*(1-dissent); veterans_bn -= 5*(1-dissent); economic_growth += 0.3;
-
-We begin distributing funds towards the *Lega Proletaria fra Mutilati, Invalidi, Feriti e Reduci di Guerra*, who are able to expand their operations to provide for more veterans.
-
 @veterans_organisations_catholic
 subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted :- This will put us into a deficit! ?]
 choose-if: finance_minister_party = "PSI" 

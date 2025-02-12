@@ -5,7 +5,7 @@ Q.rg_strength = Math.round(Q.rg_strength);
 Q.fdc_strength = Math.round(Q.sqd_strength);
 Q.sqd_strength = Math.round(Q.fdc_strength);
 
-var total_strength = Q.communist_strength + Q.maximalist_strength + Q.syndicalist_strength + Q.reformist_strength
+var total_strength = Q.communist_strength + Q.maximalist_strength + Q.syndicalist_strength + Q.reformist_strength;
 var total_dissent = Q.communist_strength*Q.communist_dissent + Q.maximalist_strength*Q.maximalist_dissent + Q.syndicalist_strength*Q.syndicalist_dissent + Q.reformist_strength*Q.reformist_dissent;
 
 Q.dissent = 0.01*total_dissent/total_strength;
@@ -39,11 +39,18 @@ if (Q.psi_in_government && Q.chancellor_party == "PSI") {
 } else {
     Q.total_power += Q.loyal_army_power/4;
 }
-Q.soviet_power = 50 if not rcw_over;
-Q.soviet_power = 75 if rcw_over and soviet_recovery_timer > 0;
-Q.soviet_power = 100 if rcw_over and soviet_recovery_timer < 1;
 
-Q.soviet_power * Q.soviet_multiplier;
+if (!rcw_over) {
+    Q.soviet_power = 50;
+}
+if (rcw_over && soviet_recovery_timer > 0) {
+    Q.soviet_power = 75;
+}
+if (rcw_over && soviet_recovery_timer < 1) {
+    Q.soviet_power = 100;
+}
+
+Q.soviet_power *= Q.soviet_multiplier;
 if (Q.soviet_relations < 3) {
     Q.soviet_multiplier = 0.3;
 }

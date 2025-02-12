@@ -7,9 +7,15 @@ on-arrival: {!
 month_actions += 1;
 vatican-appeased = 0
 roman_question_timer = 5
-negotiating_power = 4 if vatican_relations <= 4 and pope = "Ratti";
-negotiating_power = 3 if (vatican_relations >= 5 and vatican_relations <= 7) or pope = "Ratti";
-negotiating_power = 2 if vatican_relations >= 7 or pope = "Gasparri";
+if (vatican_relations <= 4 and pope = "Ratti") {
+    negotiating_power = 4;
+}
+if (vatican_relations >= 5 and vatican_relations <= 7) or pope = "Ratti" {
+    negotiating_power = 3;
+}
+if vatican_relations >= 7 or pope = "Gasparri" {
+    negotiating_power = 2;
+}
 current_budget = 0;
 current_budget += budget;
 !}
@@ -71,7 +77,7 @@ ppi_relation += 15
 catholic_psi += 7*(1-dissent)
 
 budget -= 3 if vatican_compensation_offered
-ldr_promise_failed if ((current_budget > 0 and budget < 0) and liberal_budget_accepted)
+ldr_promise_failed if} ((current_budget > 0 and budget < 0) and liberal_budget_accepted)
 
 army_strength -= 50 if vatican_defence_offered
 army_loyalty -= 0.05 if vatican_defence_offered

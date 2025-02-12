@@ -12,11 +12,11 @@ face-image: img/schutzbund.png
 
 Funding for the Unemployment Insurance Program has once again dried up, and scheduled for its yearly funding once more. What do we do?
 
-- @fund_insurance: Continue funding the Program.
+- @keep_funding: Continue funding the Program.
 - @end_insurance: End funding for the Program.
-- @await_government: What else can we do?
+- @await_government: There is not much else we can do.
 
-@fund_insurance
+@keep_funding
 subtitle: -2 Budget - Keep the Program running for another year. [? if catholic_charity_accepted : The funding of any non-Catholic welfare program would violate our agreement! ?][? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?]
 choose-if: finance_minister_party = "PSI"
 view-if: unemployment_insurance_founded = 0
