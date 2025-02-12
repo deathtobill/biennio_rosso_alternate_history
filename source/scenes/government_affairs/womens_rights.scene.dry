@@ -49,7 +49,7 @@ if (welfare >= 1 and unemployed >= 15) {
 unemployed -= 0.4; 
 inflation += 0.2; 
 economic_growth += 0.3; 
-if ((current_budget > 0 and budget < 0) and liberal_budget_accepted = 1) {
+if (current_budget >= 0 && budget < 0 && liberal_budget_accepted = 1) {
     ldr_promise_failed = 1;
 }
 !}

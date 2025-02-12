@@ -28,7 +28,7 @@ The Program is set to continue for another year, our appeal to veterans increase
 
 @end_insurance
 subtitle: We cannot afford another year.
-on-arrival: veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi if socialist_catholic_coalition -= 3; veterans_bn += 7;
+on-arrival: veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_bn += 7;
 
 The short-lived Program comes to an end, as veterans now without government support flock to the fascists, bitter regarding our betrayal.
 

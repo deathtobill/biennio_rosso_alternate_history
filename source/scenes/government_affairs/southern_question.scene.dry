@@ -56,7 +56,7 @@ unavailable-subtitle: The PSI does not control the Public Works Ministry.
 on-arrival: {!
 southern_infrastructure_funded += 1; 
 budget -= 1; 
-if (budget < 0 and current_budget > 0) {
+if (budget < 0 && current_budget > 0) {
     ldr_promise_failed = 1;
 } 
 economic_growth += 0.6; 
