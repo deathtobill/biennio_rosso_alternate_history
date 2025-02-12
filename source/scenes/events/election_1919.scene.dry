@@ -276,7 +276,7 @@ Are we sure we wish to give up our opportunity to form the government?
 
 @catholic_liberal_coalition_yes
 subtitle: This is extremely unpopular with the reformists.
-on-arrival: reformist_dissent += 15 if participating = 1; psi_in_government = 0; prime_minister = "Francesco Saverio Nitti"; prime_minister_party = "LDR"; interior_minister_party = "DS"; foreign_minister_party = "UL"; justice_minister_party = "Independent"; treasury_minister_party = "LDR"; finance_minister_party = "LDR"; public_works_minister_party = "DS"; public_education_minister_party = "LDR" agriculture_minister_party = "LDR"; labour_minister_party = "UL";
+on-arrival: reformist_dissent += 15 if participating = 1; psi_in_government = 0; prime_minister = "Francesco Saverio Nitti"; prime_minister_party = "LDR"; interior_minister_party = "DS"; foreign_minister_party = "UL"; justice_minister_party = "Independent"; treasury_minister_party = "LDR"; finance_minister_party = "LDR"; public_works_minister_party = "DS"; public_education_minister_party = "LDR"; agriculture_minister_party = "LDR"; labour_minister_party = "UL";
 
 Though tense negotiations between the Liberals and newly formed Catholic parties, the coalition of the PPI, LDR, UL and DS is established.
 

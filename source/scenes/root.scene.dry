@@ -314,6 +314,7 @@ Q.land_reform = 0;
 Q.soviet_relations = 0;
 // have there been any factory takeovers?
 Q.factory_takeovers = 0;
+Q.unemployment_insurance_founded = 0;
 
 // Tax rates relative to 1919 baseline
 Q.lower_tax_rates = 0;

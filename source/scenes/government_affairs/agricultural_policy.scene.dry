@@ -27,7 +27,19 @@ With control of the Agricultural Ministry in the hands of the PSI, it seems ther
 subtitle: Conduct small seizures of land from large estates to give redistribute to peasants and cooperatives, mainly situated in the central and northern regions. [? if liberal_reform_accepted : This will break our agreement with the Liberals! ?]
 unavailable-subtitle: [? if judicial_reform < 2: The Judiciary would overturn our actions in a heartbeat. ?][? if land_seize >= 4 : There is not much we can do left without targeting the South. ?]
 choose-if: judicial_reform >= 2 and land_seize < 4
-on-arrival: land-seize += 1; coalition_dissent += 1; rural_bn += 5*(1-dissent); rural_bn -= 4*(1-dissent); unemployed -= 1 if unemployed >= 5; ldr_relation -= 5; ds_relation -= 4; communist_strength += 8; communist_dissent -= 5; rural_policy += 1; ldr_promise_failed if} liberal_reform_accepted; industrialists_bn += 3; psri_relation += 3*(1-dissent);
+on-arrival: {!
+land-seize += 1; 
+coalition_dissent += 1; 
+rural_bn += 5*(1-dissent); 
+rural_bn -= 4*(1-dissent); 
+unemployed -= 1 if unemployed >= 5; 
+ldr_relation -= 5; ds_relation -= 4; 
+communist_strength += 8; 
+communist_dissent -= 5; 
+rural_policy += 1; ldr_promise_failed if liberal_reform_accepted; 
+industrialists_bn += 3; 
+psri_relation += 3*(1-dissent);
+!}
 go-to: ldr_promise_vonc if ldr_promise_failed
 
 We are able to seize land form large estate, mostly uncultivated land and hand them out to peasants and veteran-run cooperatives, reducing unemployment.

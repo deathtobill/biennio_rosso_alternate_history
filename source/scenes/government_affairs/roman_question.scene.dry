@@ -77,7 +77,7 @@ ppi_relation += 15
 catholic_psi += 7*(1-dissent)
 
 budget -= 3 if vatican_compensation_offered
-ldr_promise_failed if} ((current_budget > 0 and budget < 0) and liberal_budget_accepted)
+ldr_promise_failed if ((current_budget > 0 and budget < 0) and liberal_budget_accepted)
 
 army_strength -= 50 if vatican_defence_offered
 army_loyalty -= 0.05 if vatican_defence_offered
