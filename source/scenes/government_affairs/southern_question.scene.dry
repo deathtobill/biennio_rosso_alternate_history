@@ -96,7 +96,7 @@ We expand education institutes, targeting the South, hiring teachers, building s
 
 @southern_mafia
 choose-if: interior_minister_party = "PSI" and mafia_strength > 0
-unavailable-subtitle: [? if not interior_minister_party = "PSI: The PSI does not control the Interior Ministry. ?][? if mafia_strength < 1 : The various forces of the mafia are no longer a threat to us. ?]
+unavailable-subtitle: [? if not interior_minister_party = "PSI": The PSI does not control the Interior Ministry. ?][? if mafia_strength < 1 : The various forces of the mafia are no longer a threat to us. ?]
 go-to: investigate_mafia_success if interior_police_loyalty >= 0.5 and judicial_reform > 1; investigate_mafia_failure if interior_police_loyalty < 0.5 or judicial_reform < 2
 
 @investigate_mafia_success

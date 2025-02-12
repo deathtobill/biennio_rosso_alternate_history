@@ -33,7 +33,7 @@ on-arrival: secularised_education = 1; ppi_relation -= 8*(1-dissent); catholics_
 choose-if: not socialist_catholic_coalition
 unavailable-subtitle: The PPI are threatening a pre-emptive Vote-of-No-Confidence if we go through with this.
 max-visits: 1
-go-to: let_it_happen if ppi_r > 50
+go-to: catholic_vote_of_no_confidence.let_it_happen if ppi_r > 50
 
 Our decision to secularise education is met with immense backlash from Sturzo and the People's Party alongside the Catholic Church, who denounce us and vow never to work with us again.
 
