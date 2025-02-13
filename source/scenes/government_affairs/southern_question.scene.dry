@@ -50,7 +50,7 @@ The Red Guard, under our orders begin forceful seizures of landowner properties 
 [? if anti_socialist_coalition_r : The Liberals are able to rally a majority to call a vote of no-confidence against us, and are able to succeed. ?]
 
 @southern_infrastructure
-subtitle: -1 Budget - [? if budget = 0 : This will put us into a deficit! ?]
+subtitle: -1 Budget - [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
 choose-if: public_works_minister_party = "PSI"
 unavailable-subtitle: The PSI does not control the Public Works Ministry.
 on-arrival: {!
@@ -71,7 +71,7 @@ We begin a series of infrastructural projects directed by the Public Works Minis
 [? if ldr_promise_failed : Unfortunately, our funding of new projects has led to a budget deficit, breaking our agreement with the Liberals, who have already requested a meeting. ?]
 
 @southern_literacy
-subtitle: -1 Budget - [? if budget = 0 : This will put us into a deficit! ?]
+subtitle: -1 Budget - [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
 choose-if: public_education = "PSI"
 unavailable-subtitle: The PSI does not control the Public Works Ministry.
 on-arrival: {!

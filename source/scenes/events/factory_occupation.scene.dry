@@ -30,16 +30,16 @@ unavailable-subtitle: [? if participating = 0 : We have already decided to achie
 go-to: turin_revolution
 
 @turin_red_guards
-subtitle: *-30k Red Guards* The Red Guards will defend the Councils from violent bourgeois action.
+subtitle: *-30k Red Guards* - The Red Guards will defend the Councils from violent bourgeois action.
 view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or syndicalist_dissent < 50
-choose-if: rg_strength < 30
+choose-if: rg_strength > 30
 unavailable-subtitle: [? if rg_strength < 30 : The Red Guards do not have enough troops to defend the Councils. ?]
 on-arrival: rg_strength -= 30; communist_dissent -= 5; syndicalist_dissent -= 10; workers_psi += 2; work_councils += 1;
 
 The Red Guards are able to defend the Councils, and its continued existence encourage popular sentiment within the nation. 
 
 @turin_popularity
-subtitle: *-1 Resources* The Party will fund the Councils to defend themselves.
+subtitle: *-1 Resources* - The Party will fund the Councils to defend themselves.
 view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or syndicalist_dissent < 50
 choose-if: resources > 0
 unavailable-subtitle: [? if resources < 1 : We do not have enough funds to do this. ?]
@@ -80,7 +80,7 @@ The *Productivity Agreement* is signed, promising wage increases, shorter hours 
 
 @turin_conflict
 subtitle: Party disunity and lack of resources paralyses the opportunity to take decisive action. 
-view-if: (communist_dissent < 50 and reformist_dissent < 50 and maximalist_dissent < 50 and syndicalist_dissent < 50) or rg_strength < 30 or resources < 1
+view-if: (communist_dissent > 50 and reformist_dissent > 50 and maximalist_dissent > 50 and syndicalist_dissent > 50) or (rg_strength < 30 and resources < 1)
 on-arrival: syndicalist_dissent += 10; worker_psi -= 7; communist_dissent += 5;
 
 Either by choice or by force, we are unable to utilise the Turin Factory Councils, as the workers surrender to bourgeois forces and return to work, having lost faith in us.

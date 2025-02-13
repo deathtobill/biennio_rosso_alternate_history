@@ -40,7 +40,7 @@ It seems news of our...shady dealings have come to light. [? if centre_left_coal
 
 @purge_loyalty
 choose-if: judicial_reform >= 2 and justice_minister_party = "PSI"
-unavailable-subtitle: [if judicial_reform < 2 : The reactionary judiciary would not allow this. ?][? if not justice_minister_party = "PSI" : We do not have control of the Justice Ministry. ?]
+unavailable-subtitle: [? if judicial_reform < 2 : The reactionary judiciary would not allow this. ?][? if not justice_minister_party = "PSI" : We do not have control of the Justice Ministry. ?]
 on-arrival: army_loyalty += 0.09 if army_loyalty < 1; ldr_relation -= 5; ds_relation -= 5; army_strength -= 20 if army_strength > 0; unemployment += 0.3;
 
 Through some careful movement and reassignment of officers, we are able to remove anti-socialist officers from positions of power, slowly but surely getting rid of anti-socialist sentiment within the army.

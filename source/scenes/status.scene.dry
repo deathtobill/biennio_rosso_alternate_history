@@ -153,16 +153,16 @@ Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Urban Workers: PSI: [+ workers_psi_display +]%, PPI: [+ workers_ppi_display +]%, LDR: [+ workers_ldr_display +]%, DS: [+ workers_ds_display +]%, UL: [+ workers_ul_display +]%; BN: [+ workers_bn_display +]%, PSRI: [+ workers_psi_display +]%, Others: [+ workers_other_display +]%
+Urban Workers: PSI: [+ workers_psi_display +]%, PPI: [+ workers_ppi_display +]%, LDR: [+ workers_ldr_display +]%, DS: [+ workers_ds_display +]%, UL: [+ workers_ul_display +]%; BN: [+ workers_bn_display +]%, PSRI: [+ workers_psri_display +]%, Others: [+ workers_other_display +]%
 
 Small Business Owners: PSI: [+ middle_class_psi_display +]%, PPI: [+ middle_class_ppi_display +]%, LDR: [+ middle_class_ldr_display +]%, DS: [+ middle_class_ddp_display +]%, UL: [+ middle_class_ul_display +]%; BN: [+ middle_class_bn_display +]%, PSRI: [+ middle_class_psri_display +]%, Others: [+ middle_class_other_display +]%  
 
 Rural Workers & Farmers: PSI: [+ rural_psi_display +]%, PPI: [+ rural_ppi_display +]%, LDR: [+ rural_ldr_display +]%, DS: [+ rural_ddp_display +]%, UL: [+ rural_ul_display +]%; BN: [+ rural_bn_display +]%, PSRI: [+ rural_psri_display +]%, Others: [+ rural_other_display +]%
 
-industrialists & Landowners: PSI: [+ industrialists_middle_psi_display +]%, PPI: [+ industrialists_middle_ppi_display +]%, LDR: [+ industrialists_middle_ldr_display +]%, DS: [+ industrialists_middle_ddp_display +]%, UL: [+ industrialists_middle_ul_display +]%; BN: [+ industrialists_middle_bn_display +]%, PSRI: [+ industrialists_middle_psri_display +]%, Others: [+ industrialists_middle_other_display +]% 
+industrialists & Landowners: PSI: [+ industrialists_psi_display +]%, PPI: [+ industrialists_ppi_display +]%, LDR: [+ industrialists_ldr_display +]%, DS: [+ industrialists_ddp_display +]%, UL: [+ industrialists_ul_display +]%; BN: [+ industrialists_bn_display +]%, PSRI: [+ industrialists_psri_display +]%, Others: [+ industrialists_other_display +]% 
 
 Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, PPI: [+ veterans_ppi_display +]%, LDR: [+ veterans_ldr_display +]%, DS: [+ veterans_ddp_display +]%, UL: [+ veterans_ul_display +]%; BN: [+ veterans_bn_display +]%, PSRI: [+ veterans_psri_display +]%, Others: [+ veterans_other_display +]% 
 
 Catholics: PSI: [+ catholics_psi_display +]%, PPI: [+ catholics_ppi_display +]%, LDR: [+ catholics_ldr_display +]%, DS: [+ catholics_ddp_display +]%, UL: [+ catholics_ul_display +]%; BN: [+ catholics_bn_display +]%, PSRI: [+ catholics_psri_display +]%, Others: [+ catholics_other_display +]% 
 
-Support for the Monarchy: [+ republican_sentiment +]%
+Republican Sentiment: [+ republican_sentiment +]%

@@ -10,7 +10,7 @@ roman_question_timer = 5;
 if (vatican_relations <= 4 && pope == "Ratti") {
     negotiating_power = 4;
 }
-if ((vatican_relations >= 5 && vatican_relations <= 7) || pope == "Ratti") {
+if ((vatican_relations >= 5 && vatican_relations <= 7) || pope == "Ratti" || pope == "Della Chiesa" ) {
     negotiating_power = 3;
 }
 if (vatican_relations >= 7 || pope == "Gasparri") {
