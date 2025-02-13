@@ -95,7 +95,7 @@ if (Q.bn_r >= Q.psi_r && Q.bn_r >= Q.psri_r && Q.bn_r >= Q.pci_r) {
 // coalitions
 Q.left_wing_coalition_r = Q.psi_r + Q.psri_r;
 Q.centre_left_coalition_r = Q.psi_r + Q.ldr_r + Q.ds_r + Q.psri_r + Q.other_r;
-Q.socialist_catholic_coalition_r = Q.psi_r + Q.psri_r + Q.ppi_r;
+Q.socialist_catholic_coalition_r = Q.psi_r + Q.psri_r + Q.ppi_r + Q.other_r;
 Q.catholic_liberal_coalition_r = Q.ppi_r + Q.ul_r + Q.ldr_r + Q.ds_r + Q.other_r;
 Q.anti_socialist_coalition_r = Q.bn_r + Q.ppi_r + Q.ds_r;
 
@@ -184,21 +184,22 @@ go-to: coalition_menu
 {!<svg id="chamber" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div></td><td>!} PSI: {!</td><td>!} [+ psi_r +]% {!</td></tr>!}
+{!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div></td><td>!} PSI: {!</td><td>!} **[+ psi_r +]%** {!</td></tr>!} [+ str_change_psi +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#E3000F'> </div></td> <td>!} PSRI: {!</td><td>!} [+ psri_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F'> </div></td> <td>!} PSRI: {!</td><td>!} [+ psri_r +]% {!</td></tr>!} [+ str_change_psri +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} LDR: {!</td><td>!} [+ ldr_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} LDR: {!</td><td>!} [+ ldr_r +]% {!</td></tr>!} [+ str_change_ldr +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#69A2BE'> </div></td><td>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#69A2BE'> </div></td><td>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td></tr>!} [+ str_change_ppi +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#00008B'> </div></td><td>!} UL: {!</td><td>!} [+ ul_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#00008B'> </div></td><td>!} UL: {!</td><td>!} [+ ul_r +]% {!</td></tr>!} [+ str_change_ul +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#3f7bc1'> </div></td><td>!} DS: {!</td><td>!} [+ ds_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#3f7bc1'> </div></td><td>!} DS: {!</td><td>!} [+ ds_r +]% {!</td></tr>!} [+ str_change_ds +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +]% {!</td></tr>!} [+ str_change_other +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#954B00'> </div></td><td>!} BN: {!</td><td>!} [+ bn_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#954B00'> </div></td><td>!} BN: {!</td><td>!} [+ bn_r +]% {!</td></tr>!} [+ str_change_bn +] {!</td></tr>!}
 {!</table>!}
 
 **Potential coalitions:**
@@ -207,7 +208,7 @@ Left-Wing Coalition (PSI + PSRI): [+ left_wing_coalition +]%
 
 Centre-Left Coalition (PSI + LDR + DS + PSRI + Others): [+ centre_left_coalition_r +]%
 
-Socialist-Catholic Coalition (PSI + PPI + PSRI): [+ socialist_catholic_coalition_r +]%
+Socialist-Catholic Coalition (PSI + PPI + PSRI + Others): [+ socialist_catholic_coalition_r +]%
 
 Catholic-Liberal Coalition (PPI + LDR + UL + DS + Others): [+ catholic_liberal_coalition_r +]%
 

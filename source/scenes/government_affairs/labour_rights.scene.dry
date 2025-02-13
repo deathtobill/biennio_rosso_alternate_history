@@ -6,6 +6,7 @@ frequency: 500
 on-arrival: month_actions += 1; labour_rights_timer = 5
 card-image: img/portraits/RadbruchGustav.jpg
 tags: govt_affairs
+go-to: labour_rights_menu
 
 = Labour Rights
 
