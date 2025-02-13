@@ -185,21 +185,21 @@ go-to: coalition_menu
 
 {!<table>!}
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div>!} PSI: {!</td><td>!} **[+ psi_r +]%** {!</td><tr>!} [+ str_change_psi +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div>!} PSI: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} [+ str_change_psi +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#E3000F'> </div>!}PSRI: {!</td><td>!} [+ psri_r +]% {!</td><td>!} [+ str_change_psri +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F'> </div>!}PSRI: {!</td><td>!} [+ psri_r +]% {!</td><td>!} [+ str_change_psri +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div>!} LDR: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div>!} LDR: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#69A2BE'> </div>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td><td>!} [+ str_change_ppi +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#69A2BE'> </div>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td><td>!} [+ str_change_ppi +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#00008B'> </div>!} UL: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#00008B'> </div>!} UL: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#3f7bc1'> </div>!} DS: {!</td><td>!} [+ ds_r +]% {!</td><td>!} [+ str_change_ds +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#3f7bc1'> </div>!} DS: {!</td><td>!} [+ ds_r +]% {!</td><td>!} [+ str_change_ds +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div>!} Others: {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div>!} Others: {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#954B00'> </div>!} BN: {!</td><td>!} [+ bn_r +]% {!</td><td>!} [+ str_change_bn +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#954B00'> </div>!} BN: {!</td><td>!} [+ bn_r +]% {!</td><td>!} [+ str_change_bn +]% {!</td></tr>!}
 {!</table>!}
 
 **Potential coalitions:**
