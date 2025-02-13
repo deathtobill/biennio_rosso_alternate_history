@@ -322,8 +322,8 @@ Q.upper_tax_rates = 0;
 Q.tariffs = 0;
 
 // timers for the russian civil war
-soviet_end_timer = 45
-soviet_recovery_timer = 0
+Q.soviet_end_timer = 45;
+Q.soviet_recovery_timer = 0;
 
 // our conduct in the government, and the conduct of our coalition opponents.
 // did the PSI vote against the previous government in a vote of no confidence?
