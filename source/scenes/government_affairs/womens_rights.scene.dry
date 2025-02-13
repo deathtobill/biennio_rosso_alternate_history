@@ -65,7 +65,7 @@ go-to: liberalize_fail if left_wing_coalition_r < 50; liberalize_success if left
 @liberalize_fail
 on-arrival: ppi_relation -= 5; coalition_dissent += 1; workers_psi += 3*(1-dissent); catholics_psi -= 5;
 
-Unfortunately, our proposal is voted down in the Reichstag, with the Catholic Center party (our long-time partners) speaking in particularly vehement opposition, and some of our own members breaking party discipline. The activists, feeling demoralized from this attempt, have decided to bide their time.
+Unfortunately, our proposal is voted down in the Chamber of Deputies, with the Italian People's Party speaking in particularly vehement opposition, and some of our own members breaking party discipline. The activists, feeling demoralized from this attempt, have decided to bide their time.
 
 @liberalize_success
 on-arrival: abortion_rights += 1; womens_rights += 1; coalition_dissent += 1; ppi_relation -= 8; catholics_psi -= 10; ds_relation -= 5; workers_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); workers_ppi += 3; industrialists_ppi += 3; industrialists_ppi += 3; industrialists_ul += 3; rural_ul += 3; workers_bn -= 3; industrialists_bn -= 3; middle_class_bn -= 2; rural_bn -= 2; unemployed_bn -= 2; unemployed_ppi += 3; unemployed_psi += 3*(1-dissent)

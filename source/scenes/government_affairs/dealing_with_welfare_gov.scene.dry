@@ -1,7 +1,7 @@
 title: Dealing with Veterans' Welfare
 new-page: true
 is-card: true
-view-if: psi_in_government
+view-if: psi_in_government and (finance_minister_party = "PSI" or labour_minister_party = "PSI" or treasury_minister_party = "PSI")
 frequency: 500
 on-arrival: {!
 month_actions += 1;

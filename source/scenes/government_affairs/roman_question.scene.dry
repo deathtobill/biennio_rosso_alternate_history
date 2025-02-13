@@ -1,7 +1,7 @@
 title: Roman Question
 new-page: true
 is-card: true
-view-if: psi_in_government and roman_question_timer <= 0
+view-if: psi_in_government and roman_question_timer <= 0 and roman_question_answered = 0
 frequency: 250
 on-arrival: {! 
 month_actions += 1;
@@ -74,40 +74,41 @@ go-to: vatican_negotiations
 choose-if: vatican_appeased >= negotiating_power
 unavailable-subtitle: The Holy See would refuse this offer.
 on-arrival: {!
-ppi_relation += 15
-catholic_psi += 7*(1-dissent)
+roman_question_answered = 1;
+ppi_relation += 15;
+catholic_psi += 7*(1-dissent);
 
-if (vatican_compensation_offered == 1) {
-    budget -= 3
+if (vatican_compensation_offered) {
+    budget -= 3;
 }
 if ((current_budget > 0 && budget < 0) && liberal_budget_accepted == 1) {
     ldr_promise_failed;
 }
 
-if (vatican_defence_offered == 1) {
+if (vatican_defence_offered) {
     army_strength -= 50;
 }
 
-if (vatican_defence_offered == 1) {
+if (vatican_defence_offered) {
     army_loyalty -= 0.05;
 }
 
-if (vatican_education_offered == 1) {
+if (vatican_education_offered) {
     secularised_education = 0;
 }
-if (vatican_education_offered == 1) {
+if (vatican_education_offered) {
     communist_dissent += 10;
 }
-if (vatican_education_offered == 1) {
+if (vatican_education_offered) {
     maximalist_dissent += 10;
 }
 !}
-go-to: ldr_promise_vonc if ldr_promise_failed = 1
+go-to: ldr_promise_vonc if ldr_promise_failed
 
 The Lateran Treaty of [+ year +] is signed, finally ending the Roman Question.
 
 @vatican_return
 on-arrival: vatican_appeased = 0; vatican_compensation_offered = 0; vatican_state_offered = 0; vatican_defence_offered = 0; vatican_education_offered = 0;
-go-to: vatican_negotiations
+go-to: vatican_menu
 
 @no_vatican

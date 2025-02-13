@@ -64,7 +64,7 @@ Our overtures to the Russian SFSR are noticed, and welcomed with open arms by ou
 [? if ldr_promise_failed : Unfortunately, our recent attempts to turn Italy away from the Entente have angered our coalition partners, who have called a meeting with us. ?]
 
 @improve_vatican_relations
-view-if: not resolved_roman_question
+view-if: not roman_question_answered
 on-arrival: vatican_relations += 1; ppi_relation += 4*(1-dissent)
 
 We begin slowly mending diplomatic ties between both of our countries[? if not resolved_roman_question :, though the Roman Question still hangs above us.?][? if resolved_roman_question :. ?]

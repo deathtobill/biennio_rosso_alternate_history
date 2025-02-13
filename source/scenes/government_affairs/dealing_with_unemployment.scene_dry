@@ -1,7 +1,7 @@
 title: Dealing with Unemployment
 new-page: true
 is-card: true
-view-if: psi_in_government 
+view-if: psi_in_government and (public_works_minister_party = "PSI" or finance_minister_party = "PSI")
 frequency: 500
 on-arrival: {!
 month_actions += 1;
