@@ -11,11 +11,11 @@ tags: para_affairs
 
 For better or for worse, both the party and the paramilitaries cannot exist without money. The question is: How should we divide up our funds?
 
-- @big_fund: Siphon large amounts into the Red Gaurds.
+- @big_fund: Siphon large amounts into the Red Guards.
 - @small_fund: Siphon a small amount into the Red Guards.
 - @small_decrease: Siphon a small amount back into our coffers.
 - @big_decrease: Siphon a large amount back into our coffers.
-- @maintain: Maintain current fundings.
+- @maintain: Maintain current funds.
 
 @big_fund
 subtitle: -2 Party Resources, + 2 Paramilitary Resources
@@ -23,7 +23,7 @@ choose-if: resources > 1
 unavailable-subtitle: [? if resources < 2 : We do not have enough to fund the Red Guards. ?]
 on-arrival: resources -= 2; para_resources += 2
 
-Large amounts of funds are sent over to the Red Gaurds.
+Large amounts of funds are sent over to the Red Guards.
 
 @small_fund
 choose-if: resources > 0
@@ -31,7 +31,7 @@ unavailable-subtitle: [? if resources < 1 : We do not have enough to fund the Re
 subtitle: -1 Party Resources, + 1 Paramilitary Resources
 on-arrival: resources -= 1; para_resources += 1;
 
-Small amounts of funds are sent over to the Red Gaurds.
+Small amounts of funds are sent over to the Red Guards.
 
 @big_decrease
 choose-if: para_resources > 1
@@ -52,6 +52,3 @@ Large amounts of funds are transferred back to the party coffers.
 @maintain
 
 We maintain our current division of funds.
-
-- @return: Continue...
-

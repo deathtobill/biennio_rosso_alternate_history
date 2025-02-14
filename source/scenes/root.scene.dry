@@ -73,7 +73,7 @@ Q.fasci_urgency = 0;
 // radicalisation indicates how radical the PSI's rhetoric is - scale from 0 to 10.
 Q.radicalisation = 5;
 // have we formed the Arditi del popolo?
-Q.arditi_del_popolo_formed = 0;
+Q.arditi_formed = 0;
 
 // organizations
 
@@ -101,12 +101,15 @@ Q.king_relation = 10;
 Q.rg_strength = 100;
 Q.rg_militancy = 0.20;
 Q.rg_banned = 0;
-Q.fdc_strength = 0;
+Q.fdc_strength = 30;
 Q.fdc_militancy = 0.30;
-Q.fdc_banned = 0;
-Q.sqd_strength = 0;
-Q.sqd_militancy = 0.50;
-Q.sqd_banned = 0;
+Q.fdc_banned = 15;
+Q.ard_strength = 0;
+Q.ard_militancy = 0.50;
+Q.ard_banned = 0;
+Q.adp_strength = 0;
+Q.adp_militancy = 0.25;
+Q.adp_banned = 0;
 
 Q.interior_police_strength = 20;
 Q.interior_police_militancy = 1;
@@ -138,7 +141,7 @@ Q.budget = -2;
 Q.workers = 24; // industry and trade
 Q.middle_class = 13; // small business owners
 Q.industrialists = 7; // industrialists & landowners
-Q.rural = 46; // agriculture and forestry employment... but many of those are proletarians so...
+Q.rural = 46; // farmers & the like, many in the south
 Q.veterans = 4;
 Q.catholics = 6;
 
@@ -147,15 +150,19 @@ Q.economic_growth = -2.1;
 Q.unemployment = 13.5;
 
 Q.classes = ['workers', 'middle_class', 'industrialists', 'rural', 'veterans', 'catholics'];
-Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'bn', 'other', 'pci'];
+Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'bn', 'other', 'pcdi', 'psu'];
 
 // Communist split from the party
-Q.pci_formed = 0;
+Q.pcdi_formed = 0;
+Q.psu_formed = 0
 Q.psri_reconciled = 0;
+Q,arditi_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
+Q.workers_pcdi = 0;
 Q.workers_psi = 76;
+Q.workers_psu = 0;
 Q.workers_ppi = 3;
 Q.workers_ldr = 2;
 Q.workers_ds = 3;
@@ -163,9 +170,10 @@ Q.workers_ul = 4;
 Q.workers_bn = 7;
 Q.workers_psri = 13;
 Q.workers_other = 5;
-Q.workers_pci = 0;
 
+Q.middle_class_pcdi = 0;
 Q.middle_class_psi = 27;
+Q.middle_class_psu = 0;
 Q.middle_class_ppi = 33;
 Q.middle_class_ldr = 9;
 Q.middle_class_ds = 3;
@@ -173,9 +181,10 @@ Q.middle_class_ul = 13;
 Q.middle_class_bn = 2;
 Q.middle_class_psri = 2;
 Q.middle_class_other = 10;
-Q.middle_class_pci = 0;
 
+Q.industrialists_pcdi = 0;
 Q.industrialists_psi = 1;
+Q.industrialists_psu = 0;
 Q.industrialists_ppi = 12;
 Q.industrialists_ldr = 54;
 Q.industrialists_ds = 3;
@@ -183,9 +192,10 @@ Q.industrialists_ul = 28;
 Q.industrialists_bn = 1;
 Q.industrialists_psri = 0;
 Q.industrialists_other = 1;
-Q.industrialists_pci = 0;
 
+Q.rural_pcdi = 0;
 Q.rural_psi = 27;
+Q.rural_psu = 0;
 Q.rural_ppi = 44;
 Q.rural_ldr = 2;
 Q.rural_ds = 13;
@@ -193,9 +203,10 @@ Q.rural_ul = 3;
 Q.rural_bn = 7;
 Q.rural_psri = 2;
 Q.rural_other = 2;
-Q.rural_pci = 0;
 
+Q.veterans_pcdi = 0;
 Q.veterans_psi = 14;
+Q.veterans_psu = 0;
 Q.veterans_ppi = 3;
 Q.veterans_ldr = 2;
 Q.veterans_ds = 1;
@@ -203,9 +214,10 @@ Q.veterans_ul = 3;
 Q.veterans_bn = 73;
 Q.veterans_psri = 2;
 Q.veterans_other = 2;
-Q.veterans_pci = 0;
 
+Q.catholics_pcdi = 0;
 Q.catholics_psi = 6;
+Q.catholics_psu = 0;
 Q.catholics_ppi = 87;
 Q.catholics_ldr = 2;
 Q.catholics_ds = 3;
@@ -213,14 +225,15 @@ Q.catholics_ul = 2;
 Q.catholics_bn = 2;
 Q.catholics_psri = 1;
 Q.catholics_other = 2;
-Q.catholics_pci = 0;
 
 
 // Current Chamber of Deputies composition
 // % of Chamber of Deputies in Jan 1919
 // source: wikipedia
 // Had to do some early forming of BN and other parties to make this easier for me + gameplay wise 
+Q,pcdi_r = 0;
 Q.psi_r = 18;
+Q.psu_r = 0;
 Q.ppi_r = 6;
 Q.ldr_r = 49;
 Q.ds_r = 20;
@@ -228,10 +241,11 @@ Q.ul_r = 4;
 Q.bn_r = 0;
 Q.psri_r = 2;
 Q.other_r = 1;
-Q.pci_r = 0;
 
 // diff from prev
+Q.old_pcdi_r = 0;
 Q.old_psi_r = 17;
+Q.old_psu_r = 0;
 Q.old_ppi_r = 5;
 Q.old_ldr_r = 17;
 Q.old_ds_r = 15;
@@ -239,7 +253,6 @@ Q.old_ul_r = 40;
 Q.old_bn_r = 0;
 Q.old_psri_r = 4;
 Q.old_other_r = 2;
-Q.old_pci_r = 0;
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
@@ -254,14 +267,15 @@ Q.king = "Vittorio Emanuele III";
 // starting prime minister: Vittorio Emanuele Orlando
 Q.prime_minister = "Orlando";
 Q.prime_minister_party = 'LDR';
+Q.pcdi_in_government = 0;
 Q.psi_in_government = 0;
+Q.psu_in_government = 0;
 Q.ppi_in_government = 1;
 Q.ldr_in_government = 1;
 Q.ds_in_government = 1;
 Q.ul_in_government = 1;
 Q.psri_in_government = 0;
 Q.bn_in_government = 0;
-Q.pci_in_government = 0;
 
 // Left-Wing Coalition = PSI + PSRI
 Q.left_wing_coalition = 0
@@ -353,7 +367,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
             'constitutional_reform', 'labour_rights',
             // events
             'emergency_cuts', 'unemployment_insurance',
-            'fdc_ban', 'sqd_ban', 'papen_chancellor',
+            'fdc_ban', 'ard_ban', 'papen_chancellor',
             'kpd_policy', 'kpd_ultimatum', 'popular_front_dispute',
             'high_inflation', 'banking_crisis', 'march_on_berlin',
             'understanding_enemy', 'soviet_end'];
@@ -405,7 +419,7 @@ Q.coalition_affairs_timer = 0;
 Q.emergency_cuts_timer = 0;
 Q.unemployment_insurance_timer = 0;
 Q.fdc_ban_timer = 0;
-Q.sqd_ban_timer = 0;
+Q.ard_ban_timer = 0;
 Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 

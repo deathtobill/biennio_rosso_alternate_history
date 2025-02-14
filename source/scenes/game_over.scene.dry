@@ -48,7 +48,7 @@ view-if: kingdom_victory == 1
 tags: endings
 go-to: eg_menu
 
-We have won the civil war against the reactionary forces. Germany will be changed forever, but it is too early to know how.
+We have won the civil war against the reactionary forces. Italy will be changed forever, but it is too early to know how.
 
 @reformist_civil_war_lost
 title: We lost the civil war.
@@ -66,7 +66,7 @@ go-to: eg_menu
 
 Italy is currently in the grip of a civil war, a brutal affair that has no obvious end. Thousands of lives have already been extinguished, and it is likely that the war will not stop until Italy's cities are reduced to ruins. 
 
-[? if soviet_aid >= 1 : The Soviet Union has sent limited aid to us, still in the midst of its own civil war. ?][? if west_relation < 3 : Anti-communist sentiment has gripped our former allies, as they are aiding the fascists. ?]
+[? if soviet_aid >= 1 : The Soviet Union has sent limited aid to us, still in the midst of its own civil war. ?][? if entente_relation < 3 : Anti-communist sentiment has gripped our former allies, as they are aiding the fascists. ?]
 
 
 @communist_civil_war_wom
@@ -83,7 +83,7 @@ view-if: soviet_victory == 0
 tags: endings
 go-to: eg_menu
 
-We have failed to achieve revolution in Italy, as the last remaining socialist resistance is stamped out by the bourgois and fasci.
+We have failed to achieve revolution in Italy, as the last remaining socialist resistance is stamped out by the bourgeois and fasci.
 
 @psi_victorious
 title: PSI still in government

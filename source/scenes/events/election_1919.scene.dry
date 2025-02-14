@@ -23,6 +23,7 @@ catholic_women_accepted = 0;
 
 liberal_coalition_failed = 0; 
 catholic_coalition_failed = 0;
+coalition_dissent = 0;
 !}
 on-departure: month_actions += 1; in_election = 0; next_election_year = next_election_year + 2; n_elections += 1; next_election_time = time + 24;
 set-jump: post_election_1919
@@ -93,9 +94,9 @@ if (Q.bn_r >= Q.psi_r && Q.bn_r >= Q.psri_r && Q.bn_r >= Q.pci_r) {
 }
 
 // coalitions
-Q.left_wing_coalition_r = Q.psi_r + Q.psri_r;
-Q.centre_left_coalition_r = Q.psi_r + Q.ldr_r + Q.ds_r + Q.psri_r + Q.other_r;
-Q.socialist_catholic_coalition_r = Q.psi_r + Q.psri_r + Q.ppi_r + Q.other_r;
+Q.left_wing_coalition_r = Q.psi_r + Q.psri_r + Q.psu_r;
+Q.centre_left_coalition_r = Q.psi_r + Q.ldr_r + Q.ds_r + Q.psri_r + Q.other_r + Q.psu_r;
+Q.socialist_catholic_coalition_r = Q.psi_r + Q.psri_r + Q.ppi_r + Q.other_r + Q.psu_r;
 Q.catholic_liberal_coalition_r = Q.ppi_r + Q.ul_r + Q.ldr_r + Q.ds_r + Q.other_r;
 Q.anti_socialist_coalition_r = Q.bn_r + Q.ppi_r + Q.ds_r;
 
@@ -116,6 +117,16 @@ data = [
         "name": "PSI",
         "seats": Math.round(Q.psi_r*5),
     },
+]
+if (Q.pcdi_formed && Q.pcdi_r) {
+    data.push({
+        "id": "pcdi",
+        "legend": "PCD'I",
+        "name": "PCd'I",
+        "seats": Math.round(Q.pcdi_r*5),
+    });
+}
+data = data.concat([
     {
         "id": "psri",
         "legend": "PSRI",
@@ -158,7 +169,7 @@ data = [
         "name": "BN",
         "seats": Math.round(Q.bn_r*5),
     },
-];
+]);
 
 if (window && d3) {
     var width = 500; 
@@ -187,6 +198,10 @@ go-to: coalition_menu
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div>!} PSI: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} [+ str_change_psi +]% {!</td></tr>!}
 
+[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#E3000F'> </div>!}PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td></tr>!} ?]
+
+[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E3000F'> </div>!}PSU: {!</td><td>!} [+ psu_r +]% {!</td><td>!} [+ str_change_psu +]% {!</td></tr>!} ?]
+
 {!<tr><td><div class="box" style='background-color:#E3000F'> </div>!}PSRI: {!</td><td>!} [+ psri_r +]% {!</td><td>!} [+ str_change_psri +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#DCCA4A'> </div>!} LDR: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td></tr>!}
@@ -204,11 +219,11 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
-Left-Wing Coalition (PSI + PSRI): [+ left_wing_coalition_r +]%
+Left-Wing Coalition (PSI + PSRI [? if psu_formed :+ PSU?]): [+ left_wing_coalition_r +]%
 
-Centre-Left Coalition (PSI + LDR + DS + PSRI + Others): [+ centre_left_coalition_r +]%
+Centre-Left Coalition (PSI + LDR + DS + PSRI [? if psu_formed :+ PSU ?]+ Others): [+ centre_left_coalition_r +]%
 
-Socialist-Catholic Coalition (PSI + PPI + PSRI + Others): [+ socialist_catholic_coalition_r +]%
+Socialist-Catholic Coalition (PSI + PPI + PSRI [? if psu_formed :+ PSU ?]+ Others): [+ socialist_catholic_coalition_r +]%
 
 Catholic-Liberal Coalition (PPI + LDR + UL + DS + Others): [+ catholic_liberal_coalition_r +]%
 
@@ -239,7 +254,7 @@ It seems our radicalism and abstentionism has pushed the Catholics to ally with 
 
 @left_wing_coalition
 title: It seems the left-wing of the political sphere has a majority?
-subtitle: PSI + PSI ([+ left_wing_coalition_r +]%) 
+subtitle: PSI + PSI [? if psu_formed :+ PSU ?]([+ left_wing_coalition_r +]%) 
 view-if: left_wing_coalition_r > 49
 choose-if: participating = 1 or maximalist_participating = 1
 unavailable-subtitle: [? if not participating = 1 : The party has already decided against parliamentary means.. ?]
@@ -249,8 +264,8 @@ Our negotiations with the PSRI goes smoothly, and we form a stable coalition.
 
 @centre_left_coalition
 title: Open negotiations with the Liberal parties.
-subtitle: PSI + LDR + DS + PSRI + Other ([+ centre_left_coalition_r +]%). Dissent from the Communists and Maximalists will increase.
-unavailable-subtitle: PSI + LDR + DS + PSRI: ([+ centre_left_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means.. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ldr_relation < 50 : We do not have adequate relations with the LDR. ?][? if ds_relation < 50 : We do not have adequate relations with the DS. ?][? if ldr_negotiations_failed: We have already failed to negotiate with the Liberals. ?][? if liberal_coalition_failed: The Liberals are unwilling to accept another coalition right after the previous one failed. ?][? if southern_land_reformed = 1 : The LDR has vowed against coalitions with us since our southern land reforms. ?]
+subtitle: PSI + LDR + DS + PSRI [? if psu_formed :+ PSU ?]+ Other: ([+ centre_left_coalition_r +]%). Dissent from the Communists and Maximalists will increase.
+unavailable-subtitle: PSI + LDR + DS + PSRI [? if psu_formed :+ PSU ?]+ Other: ([+ centre_left_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means.. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ldr_relation < 50 : We do not have adequate relations with the LDR. ?][? if ds_relation < 50 : We do not have adequate relations with the DS. ?][? if ldr_negotiations_failed: We have already failed to negotiate with the Liberals. ?][? if liberal_coalition_failed: The Liberals are unwilling to accept another coalition right after the previous one failed. ?][? if southern_land_reformed = 1 : The LDR has vowed against coalitions with us since our southern land reforms. ?]
 view-if: centre_left_coalition_r >= 50 and liberal_coalition_failed = 0
 choose-if: participating = 1 and ldr_relation > 49 and ds_relation > 49 and southern_land_reformed = 0
 on-departure: liberal_negotiations = 0;
@@ -258,8 +273,8 @@ go-to: liberal_demands
 
 @socialist_catholic_coalition 
 title: Open negotiations with Sturzo and his People's Party.
-subtitle: PSI + PPI + PSRI ([+ socialist_catholic_coalition_r +]%). Dissent from the Communists and Maximalists will increase.
-unavailable-subtitle: PSI + PPI + DS + PSRI: ([+ socialist_catholic_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means.. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ppi < 50 : We do not have adequate relations with the PPI. ?][? if ppi_negotiations_failed = 1 : We have already tried negotiating with the liberals. ?][? if catholic_coalition_failed : The Catholics are unwilling to accept another coalition right after the previous one failed. ?][? if secularised_education = 1 : The PPI has vowed against coalitions with us since our education reforms. ?]
+subtitle: PSI + PPI + PSRI [? if psu_formed :+ PSU: ?]([+ socialist_catholic_coalition_r +]%). Dissent from the Communists and Maximalists will increase.
+unavailable-subtitle: PSI + PPI + DS + PSRI [? if psu_formed :+ PSU: ?]: ([+ socialist_catholic_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means.. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ppi < 50 : We do not have adequate relations with the PPI. ?][? if ppi_negotiations_failed = 1 : We have already tried negotiating with the liberals. ?][? if catholic_coalition_failed : The Catholics are unwilling to accept another coalition right after the previous one failed. ?][? if secularised_education = 1 : The PPI has vowed against coalitions with us since our education reforms. ?]
 view-if: socialist_catholic_coalition_r >= 50 and catholic_coalition_failed = 0
 choose-if: participating = 1 and ppi_relation > 49 and ppi_negotiations_failed = 0 and secularised_education = 0
 on-departure: catholic_negotiations = 0

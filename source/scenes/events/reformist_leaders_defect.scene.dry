@@ -3,9 +3,9 @@ new-page: true
 subtitle: Reformist disagreements with our policies have grown too severe.
 tags: event
 view-if: reformist_dissent >= 60
-on-arrival: reformist_strength *= 0.3; workers_psi -= 10; workers_others += 5; workers_psri += 5; n_advisors -= 1 if kuliscioff_advisor == 1; n_advisors -= 1 if turati == 1; kuliscioff_advisor = 0; turati_advisor = 0; rg_strength -= 40; reformists_defect = 1; psri_relation -= 5;
+on-arrival: reformist_strength *= 0.3; workers_psi -= 10; workers_others += 2; workers_psri += 2; workers_psu += 6; n_advisors -= 1 if kuliscioff_advisor == 1; n_advisors -= 1 if turati == 1; kuliscioff_advisor = 0; turati_advisor = 0; rg_strength -= 40; reformists_defect = 1; psri_relation -= 5; psu_formed = 1;
 max-visits: 1
 
 = Reformist leaders defect
 
-Our policy choices have greatly offended the reformist faction, seeing our turn towards radicalism. Many experienced leaders have resigned and defected to the PSRI, who seem to be more accomodating to their reformist ideals.
+Our policy choices have greatly offended the reformist faction, seeing our turn towards radicalism. While some have joined the PSRI, the remainder have set up the Unitary Socialist Party.

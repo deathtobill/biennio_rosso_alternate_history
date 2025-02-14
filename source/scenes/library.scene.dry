@@ -191,8 +191,8 @@ Current relations: [+ bn_relation : relationships +]
 @paramilitaries
 on-arrival: {!
 Q.rg_strength = Math.round(Q.rb_strength);
-Q.fdc_strength = Math.round(Q.sqd_strength);
-Q.sqd_strength = Math.round(Q.fdc_strength); 
+Q.fdc_strength = Math.round(Q.fdc_strength);
+Q.ard_strength = Math.round(Q.ard_strength); 
 !}
 go-to: menu
 
@@ -204,17 +204,23 @@ Strength: [+ rg_strength +] thousand
 
 Militarization: [+ rg_militancy : militancy +]
 
+[? if arditi_formed : **Arditi del Popolo**: The Arditi del Popolo are a broad anti-fascist group, formed to combat the Fasci. They are made up of anarchists, communists, socialists, republicans, syndicalists, and everything in between. ?]
+
+[? if arditi_formed : Strength: [+ adp_strength +] thousand ?]
+
+[? if arditi_formed : Militarization: [+ adp_militancy : militancy +]?]
+
 **Fascisti di Combattimento**: The Fascisti are a paramilitary group headed by Benito Mussolini, and frequently come into conflict with the Red Guards.
 
 Strength: [+ fdc_strength +] thousand
 
 Militarization: [+ fdc_militancy : militancy +]
 
-**Squadristi**: The Squadristi are a paramilitary group allied with the Fascisti, operating as an independent group frequently coming into conflict with the Red Guards as well. 
+**Arditi**: The Arditi are a paramilitary group allied with the Fascisti, operating as an independent group frequently coming into conflict with the Red Guards as well. 
 
-Strength: [+ sqd_strength +] thousand
+Strength: [+ ard_strength +] thousand
 
-Militarization: [+ sqd_militancy : militancy +]
+Militarization: [+ ard_militancy : militancy +]
 
 **Official military/paramilitary groups:**
 

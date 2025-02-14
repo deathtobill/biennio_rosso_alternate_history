@@ -48,7 +48,7 @@ Unfortunately, our investigations have failed to turn up anything. Rumors are th
 go-to: crackdown_far_right_success if interior_police_loyalty >= 0.5; crackdown_far_right_failure if interior_police_loyalty < 0.5
 
 @crackdown_far_right_success
-on-arrival: crackdown_far_right += 1 if liberal_crackdown_accepted; sqd_strength -= 5; fdc_strength -= 5; 
+on-arrival: crackdown_far_right += 1 if liberal_crackdown_accepted; ard_strength -= 5; fdc_strength -= 5; 
 
 A number of coordinated raids and arrests have slightly paralysed the far-right paramilitaries.
 
