@@ -114,9 +114,9 @@ if (Q.adp_strength) {
 
 Red Guard Militarization: [+ rg_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The Arditi del Popolo is a anti-fascist group composed of anarchists to communists to republicans..">Arditi del Poplo</span>!} Strength: [+ adp_strength_2 +] thousand
+[? if arditi_formed : {!<span class="tooltip-text" title="The Arditi del Popolo is a anti-fascist group composed of anarchists to communists to republicans.">Arditi del Poplo</span>!} Strength: [+ adp_strength_2 +] thousand ?]
 
-Arditi del Popolo Militarization: [+ adp_militancy : militancy +]
+[? if arditi_formed: Arditi del Popolo Militarization: [+ adp_militancy : militancy +]?]
 
 {!<span class="tooltip-text" title="The Fasci is a right-wing organization of war veterans associated with the BN.">Fasci</span>!} Strength: [+ fdc_strength_2 +] thousand
 
