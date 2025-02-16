@@ -20,15 +20,15 @@ Though not its usual tasks, the Red Guards are able to utilise its numbers to ra
 
 @defense
 subtitle: -[+ rg_militarization_cost +] resources
-choose-if: resources >= rg_militarization_cost
-on-arrival: resources -= rg_militarization_cost; rg_strength += 15*(1-dissent); rg_militancy += 0.05*(1-dissent); communist_dissent += 4*(1-dissent); fasci_urgency += 1; workers_bn -= 3*(1-dissent)
+choose-if: para_resources >= rg_militarization_cost
+on-arrival: para_resources -= rg_militarization_cost; rg_strength += 15*(1-dissent); rg_militancy += 0.05*(1-dissent); communist_dissent += 4*(1-dissent); fasci_urgency += 1; workers_bn -= 3*(1-dissent)
 
 The Red Guards rallies against the fascists, urging members of the party to be weary of this new threat and recruiting members to our cause. The Left wing of the party is critical of our silence towards the bourgeois parties, however.
 
 @revolution
 subtitle: -[+ rg_militarization_cost +] resources
 choose-if: resources >= rg_militarization_cost
-on-arrival: resources -= rg_militarization_cost; rg_strength += 15*(1-dissent); rg_militancy += 0.05*(1-dissent); reformist_dissent += 4*(1-dissent); ldr_relation -= 4; ul_relation -= 4; ds_relation -= 4; king_relation -= 5; workers_psi += 5*(1-dissent); radicalism += 0.1
+on-arrival: para_resources -= rg_militarization_cost; rg_strength += 15*(1-dissent); rg_militancy += 0.05*(1-dissent); reformist_dissent += 4*(1-dissent); ldr_relation -= 4; ul_relation -= 4; ds_relation -= 4; king_relation -= 5; workers_psi += 5*(1-dissent); radicalism += 0.1
 
 The Red Guards rally against the bourgeois parties and the king, reaffirming our commitment to the left and swaying some of the more radical voters back into our bloc. The King and the bourgeois are unsurprisingly shocked by our rhetoric, decreasing relations, as is the reformist wing of the party.
 
