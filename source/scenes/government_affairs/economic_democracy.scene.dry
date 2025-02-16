@@ -40,7 +40,7 @@ The Liberals, with their industrialist backers, are unsurprisingly outraged by t
 
 @support_work_councils_2
 subtitle: Continue the expansion of influence for worker's councils.
-on-arrival: coalition_dissent += 1 if not left_wing_coalition; workers_psi += 7*(1-dissent); syndicalist_dissent -= 10; ldr_relation -= 15; ds_relation -= 15; ppi_relation -= 5; syndicalist_strength += 17; work_councils += 1; radicalisation += 1; industrialists_bn += 6; industrialists_psi -= 6*(1-dissent); psri_relation += 5*(1-dissent);
+on-arrival: coalition_dissent += 1 if not left_wing_coalition; workers_psi += 7*(1-dissent); syndicalist_dissent -= 10; ldr_relation -= 15; ds_relation -= 15; ppi_relation -= 5; syndicalist_strength += 17; work_councils += 1; radicalisation += 0.5; industrialists_bn += 6; industrialists_psi -= 6*(1-dissent); psri_relation += 5*(1-dissent);
 view-if: work_councils >= 1 and councils_empowered = 0
 
 Worker's councils are now given official recognition and further control of their factories, giving workers more of a voice as they are now able to have direct input into the operations. 
@@ -52,7 +52,7 @@ subtitle: This will ruin our relations with the Liberals.
 view-if: councils_empowered = 1 
 choose-if: (king_relation >= 50 or veto_removed) and not centre_left_coalition
 unavailable-subtitle: [? if king_relation < 50 : The Senate and King would kill the bill the moment it reaches them. ?][? if centre_left_coalition : The Liberals are threatening a pre-emptive Vote-of-No-Confidence if this is proposed. ?]
-on-arrival: coalition_dissent += 1 if socialist_catholic_coalition; workers_psi += 12*(1-dissent); ldr_relation -= 20; ds_relation -= 20; syndicalist_strength += 25; syndicalist_dissent -= 25; radicalisation += 2; industrialists_bn += 18; industrialists_ldr -= 10; industrialists_psi -= 8*(1-dissent); psri_relation += 9*(1-dissent);
+on-arrival: coalition_dissent += 1 if socialist_catholic_coalition; workers_psi += 12*(1-dissent); ldr_relation -= 20; ds_relation -= 20; syndicalist_strength += 25; syndicalist_dissent -= 25; radicalisation += 1; industrialists_bn += 18; industrialists_ldr -= 10; industrialists_psi -= 8*(1-dissent); psri_relation += 9*(1-dissent);
 
 The *Factory Control Act*, signed in 1922 as an agreement to end the Turin workers conflict, has made its way onto the Chamber's floor once more, proposed now to be expanded across the country, giving the worker's councils extensive power within their workplace to act against the bourgeois businessmen and the industrialists.
 

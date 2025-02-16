@@ -104,7 +104,7 @@ go-to: menu
 
 **Rural Workers & Farmers**: Consisting of those who lived in the unindustrialised south who work as farmers, agricultural workers, et cetera. They are fairly evenly split between the PSI and the Catholic PPI. They make up about 50% of the population.
 
-**industrialists & Landowners**: Consisting of the elite holding significant economic power. They are the bedrock of the liberal parties, seeing them as stable and protecting their wealth, though some more religious prefer the Catholic parties. They make up about 5-10% of the population.
+**Industrialists & Landowners**: Consisting of the elite holding significant economic power. They are the bedrock of the liberal parties, seeing them as stable and protecting their wealth, though some more religious prefer the Catholic parties. They make up about 5-10% of the population.
 
 **Veterans & Unemployed**: Consisting of veterans who felt betrayed by the government for their gains in the First World War. They are fierce supporters of nationalist and fascist movements, though some opted to support the PSI instead. They make up about 5% of the population.
 
@@ -162,6 +162,10 @@ go-to: menu
 
 **PSI** - *Partito Socialista Italiano* (Italian Socialist Party) - This is you. You are the major socialist party of the working class, founded by labour movements and socialist ideas. Currently, the party is split between those who wish to preserve the parliamentary system and those who wish to achieve socialism through a revolution.
 
+[? if pcdi_formed : *Partito Comunista d'Italia* (Communist Party of Italy) - A splinter party of the PSI, formed after the left wing of the party and its leaders split. ?]
+
+[? if psu_formed : *Partito Socialista Unitario* (Unitary Socialist Party) - A splinter party of the PSI, formed after the reformist wing of the party and its leaders split. ?]
+
 **LDR** - *Liberali, democratici e radicali* (Liberals, Democrats and Radicals) - A recently formed centre party under the merger of the Liberal Union and the Italian Radical Party. They get their support mainly from the industrialists & Landowners under the leader of Prime Minister who ended the First World War.
 
 Current relations: [+ ldr_relation : relationships +]
@@ -193,6 +197,8 @@ on-arrival: {!
 Q.rg_strength = Math.round(Q.rb_strength);
 Q.fdc_strength = Math.round(Q.fdc_strength);
 Q.ard_strength = Math.round(Q.ard_strength); 
+Q.adp_strength = Math.round(Q.adp_strength);
+Q.abl_strength = Math.round(Q.abl_strength);
 !}
 go-to: menu
 
@@ -210,17 +216,23 @@ Militarization: [+ rg_militancy : militancy +]
 
 [? if arditi_formed : Militarization: [+ adp_militancy : militancy +]?]
 
-**Fascisti di Combattimento**: The Fascisti are a paramilitary group headed by Benito Mussolini, and frequently come into conflict with the Red Guards.
+**Fasci Italiano di Combattimento**: The Fasci are a paramilitary group headed by Benito Mussolini, and frequently come into conflict with the Red Guards.
 
 Strength: [+ fdc_strength +] thousand
 
 Militarization: [+ fdc_militancy : militancy +]
 
-**Arditi**: The Arditi are a paramilitary group allied with the Fascisti, operating as an independent group frequently coming into conflict with the Red Guards as well. 
+**Arditismo**: The Arditismo are a paramilitary group allied with the Fasci, operating as an independent group frequently coming into conflict with the Red Guards as well. 
 
 Strength: [+ ard_strength +] thousand
 
 Militarization: [+ ard_militancy : militancy +]
+
+**Anti-Bolshevik Leagues**: The Anti-Bolshevik Leagues are a group of local organisations opposed to socialism and created in direct response to the Biennio Rooso, funded primarily by landowners and industrialists.
+
+Strength: [+ abl_strength +] thousand
+
+Militarization: [+ abl_militancy : militancy +]
 
 **Official military/paramilitary groups:**
 

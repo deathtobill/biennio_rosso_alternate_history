@@ -1,7 +1,7 @@
 title: Judiciary Reform
 new-page: true
 is-card: true
-view-if: psi_in_government = 1 and justice_minister_party = "PSI" and judiciary_timer = 0
+view-if: psi_in_government = 1 and justice_minister_party = "PSI" and judiciary_timer <= 0
 on-arrival: month_actions += 1; judiciary_timer += 6
 card-image: img/portraits/RadbruchGustav.jpg
 tags: govt_affairs
@@ -24,7 +24,7 @@ The Judiciary is one of the most reactionary components of the government, along
 subtitle: -1 budget
 unavailable-subtitle: Not enough budget.
 choose-if: budget >= 1
-on-arrival: budget -= 1; democratisation += 2; coalition_dissent += 1; workers_spd += 5*(1-dissent) if democratisation >= 3; judicial_reform += 2; pro_republic += 5*(1-dissent); coup_progress += 1; coalition_dissent += 1 if historical_mode
+on-arrival: budget -= 1; democratisation += 2; coalition_dissent += 1; workers_spd += 5*(1-dissent) if democratisation >= 3; judicial_reform += 2; pro_republic += 5*(1-dissent); fasci_coup_progress += 1; 
 
 We investigate jurists who have shown themselves to have biased or corrupt behavior, and try to remove them, replacing them with more democratically-oriented jurists. This obviously raises quite a great deal of ire in conservative circles, including within our coalition. 
 

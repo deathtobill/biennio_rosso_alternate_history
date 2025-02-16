@@ -20,7 +20,9 @@ The first thing on the agenda is to decide between a reformist or revolutionary 
 
 @revolutionary_approach
 subtitle: The party will fully abandon parliamentary means and pursue a policy of violent revolution.
-on-arrival: reformist_dissent += 20; reformist_strength -= 10; communist_strength += 15; maximalist_strength += 10; communist_dissent -= 20; maximalist_dissent -= 15; not_participating = 1; revolutionary_fervor += 5; king_relation -= 5; party_approach = 2;
+choose-if: communist_strength > reformist_strength
+unavailable-subtitle: The bulk of the party are opposed to this.
+on-arrival: reformist_dissent += 20; reformist_strength -= 10; communist_strength += 15; maximalist_strength += 10; communist_dissent -= 20; maximalist_dissent -= 15; not_participating = 1; revolutionary_fervor += 5; king_relation -= 5; party_approach = "Revolutionary";
 go-to: @election_agenda
 
 This result only seems to exacerbate the friction within the party, as Reformist members storm out of the Congress as the results of the votes is announced.
@@ -33,8 +35,10 @@ go-to: @election_agenda
 The less radical members of the Communists and Reformists accept the result, whilst the more radical members express their outrage over this effective 'appeasement' to keep the party together.
 
 @reformist_approach
+choose-if: communist_strength < reformist_strength
+unavailable-subtitle: The bulk of the party are opposed to this.
 subtitle: The party will abandon extraparliamentary means and pursue a policy of parliamentary reform.
-on-arrival: reformist_dissent -= 20; reformist_strength += 10; communist_strength -= 15; maximalist_strength -= 10; communist_dissent += 20; maximalist_dissent += 15; participating = 1; revolutionary_fervor -= 10; king_relation += 5; party_approach = 1;
+on-arrival: reformist_dissent -= 20; reformist_strength += 10; communist_strength -= 15; maximalist_strength -= 10; communist_dissent += 20; maximalist_dissent += 15; participating = 1; revolutionary_fervor -= 10; king_relation += 5; party_approach = "Parliamentary";
 go-to: @election_agenda
 
 The Reformists, having lost leadership in 1912, are able to achieve a plurality through the vote, stunning many who saw the Reformists as having lost most of its support within the party. Already, as the vote is announced, Many Communist and Maximalist members storm out of the Congress, leaving the Reformists to continue the Congress.
@@ -52,7 +56,7 @@ The second and final thing on the agenda is whether or not the PSI should partic
 subtitle: The party will fully refuse to participate in the upcoming election.
 choose-if: participating = 0
 unavailable-subtitle: [? if participating = 1 : We have already chosen to achieve socialism via parliamentary means. ?]
-on-arrival: reformist_dissent += 20; reformist_strength -= 10; communist_strength += 15; maximalist_strength += 10; communist_dissent -= 20; maximalist__dissent -= 15; not_participating = 1;
+on-arrival: reformist_dissent += 20; reformist_strength -= 10; communist_strength += 15; maximalist_strength += 10; communist_dissent -= 20; maximalist_dissent -= 15; not_participating = 1;
 
 The Communists are able to convince the Maximalists that wasting time on participating is a futile use of time, as the party votes for full abstention in the upcoming elections.
 

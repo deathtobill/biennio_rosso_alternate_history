@@ -1,12 +1,13 @@
 title: Dealing with Unemployment
 new-page: true
 is-card: true
-view-if: psi_in_government and (public_works_minister_party = "PSI" or finance_minister_party = "PSI")
+view-if: psi_in_government and (public_works_minister_party = "PSI" or finance_minister_party = "PSI") and unemployment_gov_timer <= 0
 frequency: 500
 on-arrival: {!
 month_actions += 1;
 current_budget = 0;
 current_budget += budget;
+unemployment_gov_timer = 3
 !}
 card-image: img/portraits/RadbruchGustav.jpg
 tags: govt_affairs
@@ -40,7 +41,7 @@ We have increased funding to the Public Works Ministry, who have begun drafting 
 subtitle: -1 Budget - Offer financial aid to small businesses and the like to alleviate their economic burden. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
 choose-if: finance_minister_party = "PSI"
 unavailable-subtitle: The PSI does not control the Financial Ministry.
-on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ldr_relation += 5; ds_relation += 5; syndicalist_dissent += 10; communist_dissent += 10; maximalist__dissent += 10; unemployment -= 2 if unemployment >= 8; unemployment -= 1 if (unemployment > 4 and unemployment < 7); unemployment -= 0.5 if unemployment < 4; middle_class_psi += 3*(1-dissent); middle_class_bn -= 3(1*dissent); workers_psi -= 4; capital_strike_progress -= 1; psri_relation -= 3*(1-dissent);
+on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ldr_relation += 5; ds_relation += 5; syndicalist_dissent += 10; communist_dissent += 10; maximalist_dissent += 10; unemployment -= 2 if unemployment >= 8; unemployment -= 1 if (unemployment > 4 and unemployment < 7); unemployment -= 0.5 if unemployment < 4; middle_class_psi += 3*(1-dissent); middle_class_bn -= 3(1*dissent); workers_psi -= 4; capital_strike_progress -= 1; psri_relation -= 3*(1-dissent);
 go-to: ldr_promise_vonc if ldr_promise_failed = 1; 
 
 This is an unpopular move within the party, and is seen handouts to petite-bourgeois voters. The loans however, are able to keep businesses afloat temporarily[? if centre_left_coalition : and our coalition partners seem satisfied. ?] [? if not centre_left_coalition:. ?]

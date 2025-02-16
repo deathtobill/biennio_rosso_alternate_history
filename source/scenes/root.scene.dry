@@ -110,6 +110,9 @@ Q.ard_banned = 0;
 Q.adp_strength = 0;
 Q.adp_militancy = 0.25;
 Q.adp_banned = 0;
+Q.abl_strength = 10;
+Q.abl_militancy = 0.15;
+Q.abl_banned = 0;
 
 Q.interior_police_strength = 20;
 Q.interior_police_militancy = 1;

@@ -32,7 +32,7 @@ Revolutionary fervor: [+ revolutionary_fervor +]%
 
 Radicalism : [+ radicalisation : radicalisation +]
 
-Our approach: [+ party_approach : party_approach +]
+Our approach: [+ party_approach +]
 
 = Government
 
@@ -106,6 +106,9 @@ if (Q.ard_strength) {
 if (Q.adp_strength) {
     Q.adp_strength_2 = Q.adp_strength.toFixed(1);
 }
+if (Q.abl_strength) {
+    Q.abl_strength_2 = Q,abl_strength.toFixed(1);
+}
 !}
 
 = Paramilitaries
@@ -114,7 +117,7 @@ if (Q.adp_strength) {
 
 Red Guard Militarization: [+ rg_militancy : militancy +]
 
-[? if arditi_formed : {!<span class="tooltip-text" title="The Arditi del Popolo is a anti-fascist group composed of anarchists to communists to republicans.">Arditi del Poplo</span>!} Strength: [+ adp_strength_2 +] thousand ?]
+[? if arditi_formed : {!<span class="tooltip-text" title="The Arditi del Popolo is a anti-fascist group composed of anarchists to communists to republicans.">Arditi del Popolo</span>!} Strength: [+ adp_strength_2 +] thousand ?]
 
 [? if arditi_formed: Arditi del Popolo Militarization: [+ adp_militancy : militancy +]?]
 
@@ -125,6 +128,10 @@ Fasci Militarization: [+ fdc_militancy : militancy +]
 {!<span class="tooltip-text" title="The Arditi are an organisation associated with the Fasci, comprised of former members of the 'Arditi' in the Italian Army.">Arditi</span>!} Strength: [+ ard_strength_2 +] thousand
 
 Arditi Militarization: [+ ard_militancy : militancy +]
+
+{!<span class="tooltip-text" title="The Anti-Bolshevik Leagues are local organisations across Italy formed to combat socialist ideologies, funded by landowners and industrialists. ">Anti-Bolshevik Leagues</span>!} Strength: [+ abl_strength_2 +] thousand
+
+Anti-Bolshevik Leagues Militarization: [+ abl_militancy : militancy +]
 
 = Official Military
 

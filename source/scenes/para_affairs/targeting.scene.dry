@@ -1,0 +1,70 @@
+title: Targeting our Enemies
+new-page: true
+is-card: true
+on-arrival: targeting_timer = 6
+view-if: targeting_timer <= 0
+frequency: 200
+card-image: img/blutmai_2.jpg
+tags: para_affairs
+
+= Targeting our Enemies
+
+We are not acting alone. Even now, across the nation, the Fasci, Arditismo and Anti-Bolshevik Leagues have their forces out, inciting violence, threatening voters and the like. Fortunately, we can utilise our own paramilitary forces to combat them.
+
+- @rg_fasci: Focus the Red Guard's efforts against the veteran *Fasci Italiano di Combattimento*.
+- @rg_arditi: Focus the Red Guard's efforts against the rural *Arditismo*.
+- @rg_abl: Focus the Red Guard's efforts against the urban *Anti-Bolshevik Leagues*.
+- @rg_keep: Keep the *Red Guards* operating in the current scope.
+- @easy_discard
+
+@rg_fasci
+on-arrival: fasci_active = 0
+view-if: fasci_active = 1;
+go-to: adp_menu if arditi_formed
+
+The Red Guard focuses its targets on the *Fasci Italiano di Combattimento*.
+
+@rg_arditi  
+on-arrival: arditi_active = 0  
+view-if: arditi_active = 1;  
+go-to: adp_menu if arditi_formed  
+
+The Red Guard focuses its targets on the *Arditismo*.  
+
+@rg_abl  
+on-arrival: abl_active = 0  
+view-if: abl_active = 1;  
+go-to: adp_menu if arditi_formed  
+
+The Red Guard focuses its targets on the *Fasci Italiano di Combattimento*.
+
+The Red Guard focuses its targets on the *Anti-Bolshevik Leagues*.  
+
+@rg_keep
+
+@adp_menu
+
+- @adp_fasci: Focus the *Arditi del Popolo's* efforts against the veteran *Fasci Italiano di Combattimento*.
+- @adp_arditi: Focus the *Arditi del Popolo's* efforts against the rural *Arditismo*.
+- @adp_abl: Focus the *Arditi del Popolo's* efforts against the urban *Anti-Bolshevik Leagues*.
+- @adp_keep: Keep the *Arditi del Popolo* operating in the current scope.
+
+@adp_fasci
+on-arrival: fasci_active = 0
+view-if: fasci_active = 1;
+
+The Arditi del Popolo is directed to focus on the *Fasci Italiano di Combattimento*.
+
+@adp_arditi  
+on-arrival: arditi_active = 0  
+view-if: arditi_active = 1;  
+
+The *Arditi del Popolo* is directed to focus on the *Arditismo*.  
+
+@adp_abl  
+on-arrival: abl_active = 0  
+view-if: abl_active = 1;  
+
+The *Arditi del Popolo* is directed to focus on the *Anti-Bolshevik Leagues*.  
+
+@adp_keep  

@@ -2,8 +2,10 @@ title: Civil War
 audio: music/communist/A_las_barricadas.ogg
 on-arrival: {!
 Q.rg_strength = Math.round(Q.rg_strength);
+Q.adp_strength = Math.round(Q.adp_strength);
 Q.fdc_strength = Math.round(Q.ard_strength);
 Q.ard_strength = Math.round(Q.fdc_strength);
+Q.abl_strength = Math.round(Q.abl_strength);
 
 var total_strength = Q.communist_strength + Q.maximalist_strength + Q.syndicalist_strength + Q.reformist_strength;
 var total_dissent = Q.communist_strength*Q.communist_dissent + Q.maximalist_strength*Q.maximalist_dissent + Q.syndicalist_strength*Q.syndicalist_dissent + Q.reformist_strength*Q.reformist_dissent;
@@ -26,6 +28,9 @@ Q.rg_power = Q.rg_strength*Q.rg_militancy;
 if (Q.dissent > 0.15) {
     Q.rg_power *= (1 - Q.dissent/1.5);
 }
+if (preparation_done == 1) {
+    Q.rg_power*1.2;
+}
 Q.total_power += Q.rg_power;
 Q.internal_police_power = Q.internal_police_strength*Q.internal_police_militancy*Q.internal_police_loyalty;
 Q.total_power += Q.internal_police_power;
@@ -34,7 +39,7 @@ if (Q.army_loyalty < 0) {
     Q.army_loyalty = 0;
 }
 Q.loyal_army_power = Q.army_strength*Q.army_militancy*Q.army_loyalty;
-if (Q.psi_in_government && Q.chancellor_party == "PSI") {
+if (Q.psi_in_government) {
     Q.total_power += Q.loyal_army_power;
 } else {
     Q.total_power += Q.loyal_army_power/4;
@@ -48,6 +53,12 @@ if (rcw_over && soviet_recovery_timer > 0) {
 }
 if (rcw_over && soviet_recovery_timer < 1) {
     Q.soviet_power = 100;
+}
+
+Q.adp_power = Q.adp_strength*Q.adp_militancy
+
+if (arditi_cooperation == 1) {
+    Q.total_power += Q.adp_power;
 }
 
 Q.soviet_power *= Q.soviet_multiplier;
@@ -83,6 +94,8 @@ Q.fdc_power = Q.fdc_strength*Q.fdc_militancy;
 Q.enemy_power += Q.fdc_power;
 Q.ard_power = Q.ard_strength*Q.ard_militancy;
 Q.enemy_power += Q.ard_power;
+Q.abl_power = Q.abl_strength*Q.abl_militancy;
+Q.enemy_power += Q.abl_power
 Q.hostile_army_power = Q.army_strength*Q.army_militancy*(1-Q.army_loyalty);
 Q.enemy_power += Q.hostile_army_power;
 console.log("Enemy strength:", Q.enemy_power);
@@ -154,7 +167,7 @@ We urge the Carabinieri, the force of the Interior police, to join our cause. [?
 
 @war_outcome
 view-if: war_choices >= 2
-go-to: defeat if total_defeat = 1; long_war if long_war = 1; socialist_victory if socialist_victory = 1 and participating = 1; communist_victory if socialist_victory = 1 and participating = 0
+go-to: defeat if total_defeat = 1; long_war if long_war = 1; socialist_victory if socialist_victory = 1 and participating = 1; communist_victory if socialist_victory = 1 and not_participating = 1
 
 @defeat
 

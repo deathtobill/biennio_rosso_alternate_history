@@ -14,6 +14,7 @@ Q.rome_total_power = 0;
 Q.rg_power = Q.rg_militancy * (Q.rg_strength * (100 - Q.dissent));
 Q.police_power = Q.interior_police_strength * Q.interior_police_militancy * Q.interior_police_loyalty;
 Q.army_power = Q.army_strength * Q.army_loyalty * Q.army_militancy;
+Q.adp_power = Q.adp_strength * Q.adp_militancy
 
 if (rome_rg_mobilise == 1) {
     Q.rome_total_power += Q.rg_power;
@@ -39,6 +40,10 @@ if (Q.ard_banned === 0) {
 }
 if (Q.fdc_banned === 0) {
     Q.rome_enemy_power += Q.fdc_power;
+}
+
+if (Q.rome_adp_mobilise == 1) {
+    Q.rome_total_power += Q.adp_power;
 }
 
 Q.rome_results = Q.rome_total_power / Q.rome_enemy_power;
@@ -68,6 +73,7 @@ Benito Mussolini, alongside his militants, have marched upon Rome, demanding the
 - @rome_army_mobilise: Mobilise the Army to stop Mussolini!
 - @rome_police_mobilise: Mobilise the Carabinieri to stop Mussolini!
 - @rome_rg_mobilise: Mobilise the Red Guards to stop Mussolini!
+- @rome_adp_mobilise: Mobilise the Arditi del Popolo to stop Mussolini!
 - @rome_done: We have done all we can.
 - @rome_nothing: There is nothing we can do.
 
@@ -125,11 +131,19 @@ go-to: rome_menu
 
 @rome_rg_mobilise
 max-visits: 1
-subtitle: Our forces will begin to March on Rome as well, [? if participating = 1 : in support of the government. ?] the bourgeois may see this as a threat as well, however.
+subtitle: Our forces will begin to March on Rome as well, [? if participating = 1 : in support of the government. ?][? if not_participating = 1: the bourgeois may see this as a threat as well, however. ?]
 choose-if: rg_banned = 0 or (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and syndicalist_dissent > 50)
 unavailable-subtitle: [? if rg_banned = 1 : The Red Guards are banned. ?][? if (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and syndicalist_dissent > 50) : The party is too disunited to act. ?]
 on-arrival: rome_rg_visited = 1
 go-to: rome_menu if participating = 1; civil_war if participating = 0
+
+@rome_adp_mobilise
+max-visits: 1
+subtitle: Our allies will begin to March on Rome as well, in support of the government. the bourgeois may see this as a threat as well, however.
+choose-if: (communist_dissent < 50 and maximalist_dissent < 50 and reformist_dissent < 50 and syndicalist_dissent < 50)
+view-if: arditi_cooperation = 1
+unavailable-subtitle: [? if (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and syndicalist_dissent > 50) : The party is too disunited to act. ?]
+on-arrival: rome_adp_visited = 1
 
 @rome_done
 max-visits: 1

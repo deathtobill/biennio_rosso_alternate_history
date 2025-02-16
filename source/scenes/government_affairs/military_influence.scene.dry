@@ -1,7 +1,7 @@
 title: Military Influence
 new-page: true
 is-card: true
-view-if: psi_in_government
+view-if: psi_in_government and army_timer <= 0
 frequency: 500
 on-arrival: month_actions += 1; army_timer = 6
 card-image: img/portraits/RadbruchGustav.jpg

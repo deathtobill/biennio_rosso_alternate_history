@@ -1,7 +1,7 @@
 title: Paramilitary Funding
 new-page: true
 view-if: para_funding_timer <= 0 and (not historical_mode)
-on-arrival: para_funding_timer = 6; month_actions += 1
+on-arrival: para_funding_timer = 3; month_actions += 1
 frequency: 300
 is-card: true
 card-image: img/poster_2.jpg
@@ -16,6 +16,7 @@ For better or for worse, both the party and the paramilitaries cannot exist with
 - @small_decrease: Siphon a small amount back into our coffers.
 - @big_decrease: Siphon a large amount back into our coffers.
 - @maintain: Maintain current funds.
+- @easy_discard
 
 @big_fund
 subtitle: -2 Party Resources, + 2 Paramilitary Resources

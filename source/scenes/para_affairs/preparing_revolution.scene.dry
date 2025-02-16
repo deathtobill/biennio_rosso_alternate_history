@@ -1,0 +1,43 @@
+title: Preparing our Revolution
+new-page: true
+is-card: true
+on-arrival: rev_timer = 2
+view-if: not participating and preparation_done != 1 and rev_timer <= 0
+card-image: img/blutmai_2.jpg
+frequency: 300
+tags: para_affairs
+
+= Preparing the Revolution
+
+Though we have evidently decided to overthrow the corrupt bourgeois government via extraparliamentary ways, actually going through with this plan will require extensive planning, from securing allies to weaponry.
+
+- @rev_weapons: Infiltrate and secure weaponry for the Red Guards.
+- @rev_loyalty: Infiltrate and secure loyalties of government forces.
+- @rev_sabotage: Infiltrate and sabotage the reactionaries.
+- @rev_finish: Finish up the last of the plans.
+
+@rev_weapons
+subtitle: -1 Paramilitary Budget
+on-arrival: weaponry_rg += 1; para_resources -= 1; rg_militancy += 0.07*(1-dissent);
+max-visits: 3
+
+We continue arming the Red Guards, turning them into a true fighting force.
+
+@rev_loyalty
+subtitle: -1 Paramilitary Budget
+on-arrival: loyalty_rg += 1; para_resources -= 1; army_loyalty += 0.1*(1-dissent); interior_police_loyalty += 0.1*(1-dissent);
+max-visits: 3
+
+Via some...unconventional means, we are able to sway some of the Regio Esercito and Carabinieri to our side.
+
+@rev_sabotage
+subtitle: -1 Paramilitary Budget
+on-arrival: weaponry_rg += 1; para_resources -= 1; fdc_strength -= 7*(1-dissent); abl_strength -= 7*(1-dissent); ard_strength -= 7*(1-dissent); 
+max-visits: 3
+
+Through some carefully placed information and contacts, the Carabinieri 'discover' far-right paramilitary bases, raiding them and arresting their forces.
+
+@rev_finish
+on-arrival: preparation_done = 1;
+
+Our preparations seem to have borne fruit, as it seems will be have an advantage if we ever have to utilise our preparations in the near future.

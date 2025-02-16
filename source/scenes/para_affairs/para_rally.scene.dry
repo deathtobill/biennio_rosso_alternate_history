@@ -1,0 +1,54 @@
+title: Paramilitary Rally
+new-page: true
+is-card: true
+view-if: para_rally_timer <= 0
+on-arrival: para_rally_timer = 4; month_actions += 1;rg_militarization_cost = 2 if rg_militancy > 0.5 else rg_militarization_cost = 1; rg_militarization_cost = 3 if rb_militancy > 0.75
+card-image: img/iron_front.png
+frequency: 250
+tags: para_affairs
+
+= Paramilitary Rally
+
+Though not its usual tasks, the Red Guards are able to utilise its numbers to rally for party support, as well as sway the party to a more favourable side. What should we do?
+
+- @defense: Rally for defense against the fascists and the far-right.
+- @revolution: Rally for revolution against the bourgeois parties and the king.
+- @pacifism: Rally for pacifism, against nationalism and war.
+- @republic: Rally for further republicanism and against the monarchy.
+- @economy: Rally for economic recovery and decreased unemployment.
+- @no_rally: Keep the Red Guard for its defensive uses for now.
+- @easy_discard
+
+@defense
+subtitle: -[+ rb_militarization_cost +] resources
+choose-if: resources >= rb_militarization_cost
+on-arrival: resources -= rb_militarization_cost; rb_strength += 15*(1-dissent); rb_militancy += 0.05*(1-dissent); communist_dissent += 4*(1-dissent); fasci_urgency += 1; workers_bn -= 3*(1-dissent)
+
+The Red Guards rallies against the fascists, urging members of the party to be weary of this new threat and recruiting members to our cause. The Left wing of the party is critical of our silence towards the bourgeois parties, however.
+
+@revolution
+subtitle: -[+ rb_militarization_cost +] resources
+choose-if: resources >= rb_militarization_cost
+on-arrival: resources -= rb_militarization_cost; rb_strength += 15*(1-dissent); rb_militancy += 0.05*(1-dissent); reformist_dissent += 4*(1-dissent); ldr_relation -= 4; ul_relation -= 4; ds_relation -= 4; king_relation -= 5; workers_psi += 5*(1-dissent); radicalism += 0.1
+
+The Red Guards rally against the bourgeois parties and the king, reaffirming our commitment to the left and swaying some of the more radical voters back into our bloc. The King and the bourgeois are unsurprisingly shocked by our rhetoric, decreasing relations, as is the reformist wing of the party.
+
+@pacifism
+on-arrival: pacifism += 1; nationalism -= 5; workers_psi += 5*(1-dissent) if pacifism >= 4; veterans_psi += 4*(1-dissent) if pacifism >= 4; middle_class_psi += 4*(1-dissent) if pacifism >= 4
+
+The Red Guards toes the party line, advocating for pacifism and our anti-war stance.
+
+@republic
+on-arrival: republican_sentiment += 5*(1-dissent); democratisation += 1; workers_psi += 5*(1-dissent) if democratisation >= 4; veterans_psi += 4*(1-dissent) if democratisation >= 4; middle_class_psi += 4*(1-dissent) if democratisation >= 4; king_relation -= 5*(1-dissent);
+
+The Red Guards rallies for republicanism and against the monarchy, earning us some support from the Italian Republican Party.
+
+@economy
+choose-if: unemployment > 5 or economic_growth < 0
+unavailable-subtitle: The economic crisis is largely over now, and the public is no longer interested in hearing about it.
+view-if: not psi_in_government
+on-arrival: workers_psi += 2*(1-dissent); veterans_psi += 8*(1-dissent); middle_class_psi += 5*(1-dissent); catholics_psi += 3*(1-dissent); rural_psi += 3*(1-dissent); ppi_relation -= 5; ldr_relation -= 5; ul_relation -= 5; ds_relation -= 5;
+
+The Red Guards are able to utilise the current recession to criticise the government, forming broad popular support against government inaction. The coalition in power are less receptive towards our efforts, unsurprisingly.
+
+@no_rally

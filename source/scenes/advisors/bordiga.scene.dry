@@ -24,12 +24,12 @@ on-arrival: advisor_action_timer = 6; revolutionary_fervor += 5; rg_strength -= 
 
 We have seized control of more factories and kicked the bourgeois industrialists out!
 
-@revolution
-title: Revolution!
-subtitle: The time has finally come; the Red Guard will bring fourth a Socialist Revolution! **There is no coming back from this.**
+@bordiga_revolution
+title: Revolutionary Preparations
+subtitle: Continue our revolutionary planning.
 choose-if: advisor_action_timer = 0 and revolutionary_fervor > 79 and rg_banned = 0 and participating = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if revolutionary_fervor < 80 : There is not enough support within the party to even attempt this. ?][? if rg_banned = 1 : The Red Guard are banned, they cannot act. ?][? if participating = 1 : We have already chosen to achieve socialism through parliamentary ways. ?]
-go-to: civil_war
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if participating = 1 : We have already chosen to achieve socialism through parliamentary ways. ?]
+go-to: preparing_revolution
 
 
 @choosing_our_targets

@@ -80,7 +80,7 @@ The *Productivity Agreement* is signed, promising wage increases, shorter hours 
 
 @turin_conflict
 subtitle: Party disunity and lack of resources paralyses the opportunity to take decisive action. 
-view-if: (communist_dissent > 50 and reformist_dissent > 50 and maximalist_dissent > 50 and syndicalist_dissent > 50) or (rg_strength < 30 and resources < 1)
+view-if: not psi_in_government and ((communist_dissent > 50 and reformist_dissent > 50 and maximalist_dissent > 50 and syndicalist_dissent > 50) or (rg_strength < 30 and resources < 1))
 on-arrival: syndicalist_dissent += 10; worker_psi -= 7; communist_dissent += 5;
 
 Either by choice or by force, we are unable to utilise the Turin Factory Councils, as the workers surrender to bourgeois forces and return to work, having lost faith in us.
