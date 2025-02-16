@@ -18,6 +18,10 @@ if (vatican_relations >= 7 || pope == "Gasparri") {
 }
 current_budget = 0;
 current_budget += budget;
+vatican_compensation_offered = 0
+vatican_state_offered = 0
+vatican_defence_offered = 0
+vatican_education_offered = 0
 !}
 card-image: img/portraits/RadbruchGustav.jpg
 go-to: vatican_menu
@@ -66,7 +70,7 @@ go-to: vatican_negotiations
 
 @vatican_education
 subtitle: This is a controversial move within the party.
-view-if: vatican_education_offered = 0
+view-if: vatican_education_offered == 0
 on-arrival: vatican_education_offered = 1; vatican_appeased += 1;
 go-to: vatican_negotiations
 

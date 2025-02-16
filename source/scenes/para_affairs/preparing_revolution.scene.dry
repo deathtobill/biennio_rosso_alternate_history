@@ -1,7 +1,7 @@
 title: Preparing our Revolution
 new-page: true
 is-card: true
-on-arrival: rev_timer = 2
+on-arrival: rev_timer = 2; month_actions += 1
 view-if: not participating and preparation_done != 1 and rev_timer <= 0
 card-image: img/blutmai_2.jpg
 frequency: 300
@@ -40,7 +40,7 @@ max-visits: 3
 Through some carefully placed information and contacts, the Carabinieri 'discover' far-right paramilitary bases, raiding them and arresting their forces.
 
 @rev_finish
-choose-if: weaponry_rg = 3 and loyalty_rg = 3 and sabotage_rg = 3
+choose-if: weaponry_rg == 3 and loyalty_rg == 3 and sabotage_rg == 3
 on-arrival: preparation_done = 1;
 
 Our preparations seem to have borne fruit, as it seems will be have an advantage if we ever have to utilise our preparations in the near future.

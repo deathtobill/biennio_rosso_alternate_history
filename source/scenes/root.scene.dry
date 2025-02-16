@@ -72,7 +72,7 @@ Q.congress_communist_split = 0;
 Q.fasci_urgency = 1;
 Q.fasci_active = 1;
 Q.arditi_active = 1;
-Q.abl_active = 0;
+Q.abl_active = 1;
 // radicalisation indicates how radical the PSI's rhetoric is - scale from 0 to 10.
 Q.radicalisation = 5;
 // have we formed the Arditi del popolo?
