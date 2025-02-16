@@ -452,7 +452,6 @@ Q.kuliscioff_advisor = 0; // Anna Kuliscioff
 Q.treves_advisor = 0; // Claudio Treves
 Q.rigola_advisor = 0; // Rinaldo Rigola
 !}
-set-bg: img/background.png
 new-page: true
 
 > *"Irresponsible groups of armed men, no longer bound by any State discipline or controlled by any responsible central authority, who are striving to establish local Praetorian powers and possibly a national military dictatorship; coalitions of pseudo-political forces, who have no vital and long-term interests to defend or aims to propagate, but only their own individual and contingent interests and goals … This is the hour of the charlatans, of the confidence tricksters, of the grand promises that will never be fulfilled."*
@@ -497,7 +496,7 @@ this.state.disableSaves = true;
 go-to: 1919_main
 
 @1919_main
-set-bg: img\background.png
+set-bg: img/background.png
 audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg music/1928_1930/LiedDerPompadour.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0

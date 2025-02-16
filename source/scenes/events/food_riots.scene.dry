@@ -4,7 +4,7 @@ subtitle: Riots have broken out across Italy!
 view-if: year = 1919 and month = 7
 max-visits: 1
 face-image: img/schutzbund.png
-#tags: event
+tags: event
 
 = Food riots break out across Italy!
 
