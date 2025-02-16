@@ -15,6 +15,8 @@ Though we have evidently decided to overthrow the corrupt bourgeois government v
 - @rev_loyalty: Infiltrate and secure loyalties of government forces.
 - @rev_sabotage: Infiltrate and sabotage the reactionaries.
 - @rev_finish: Finish up the last of the plans.
+- @rev_none: Do nothing for now.
+- @easy_discard
 
 @rev_weapons
 subtitle: -1 Paramilitary Budget
@@ -32,12 +34,13 @@ Via some...unconventional means, we are able to sway some of the Regio Esercito 
 
 @rev_sabotage
 subtitle: -1 Paramilitary Budget
-on-arrival: weaponry_rg += 1; para_resources -= 1; fdc_strength -= 7*(1-dissent); abl_strength -= 7*(1-dissent); ard_strength -= 7*(1-dissent); 
+on-arrival: sabotage_rg += 1; para_resources -= 1; fdc_strength -= 7*(1-dissent); abl_strength -= 7*(1-dissent); ard_strength -= 7*(1-dissent); 
 max-visits: 3
 
 Through some carefully placed information and contacts, the Carabinieri 'discover' far-right paramilitary bases, raiding them and arresting their forces.
 
 @rev_finish
+choose-if: weaponry_rg = 3 and loyalty_rg = 3 and sabotage_rg = 3
 on-arrival: preparation_done = 1;
 
 Our preparations seem to have borne fruit, as it seems will be have an advantage if we ever have to utilise our preparations in the near future.

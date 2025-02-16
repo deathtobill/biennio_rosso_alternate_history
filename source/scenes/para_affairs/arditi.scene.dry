@@ -16,7 +16,6 @@ Though its broad reach has allowed it to remain non-sectarian to any party, they
 - @arditi_funding: Fund the Arditi del Popolo.
 - @arditi_training: Utilise the experienced Arditi members to train the Red Guards.
 - @arditi_fasci: Co-ordinate raids against the far-right groups.
-- @arditi_nothing: Keep the Arditi del Popolo as is.
 - @easy_discard
 
 @arditi_funding 
@@ -36,5 +35,3 @@ The more experienced Arditi offer to help train the Red Guards, growing our stre
 on-arrival: adp_strength -= 10; adp_militancy += 0.1*(1-dissent); rg_militancy += 0.05*(1-dissent); fdc_militancy -= 0.1*(1-dissent); fdc_strength += 20; ard_militancy -= 0.05*(1*dissent); ard_strength += 5; abl_strength += 7; radicalisation += 0.1; communist_strength += 7*(1-dissent); communist_dissent -= 5*(1-dissent);
 
 The Arditi, under our guidance, are able to carry out raids against far-right forces, seizing weapons and equipment. Our move secures weaponry for the Arditi and our own Red Guards, though the right take the opportunity to paint us as aggressive radicals to their backers, securing funding.
-
-@arditi_nothing

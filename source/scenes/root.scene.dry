@@ -69,9 +69,9 @@ Q.reformists_expelled = 0;
 Q.congress_communist_split = 0;
 
 // fasci_urgency indicates how seriously the PSI takes the fasci - scale from 0 to 10.
-Q.fasci_urgency = 0;
-Q.fasci_active = 0;
-Q.arditi_active = 0;
+Q.fasci_urgency = 1;
+Q.fasci_active = 1;
+Q.arditi_active = 1;
 Q.abl_active = 0;
 // radicalisation indicates how radical the PSI's rhetoric is - scale from 0 to 10.
 Q.radicalisation = 5;
