@@ -422,6 +422,16 @@ Q.rally_timer = 0;
 Q.revolutionary_timer = 0;
 Q.urgency_timer = 0;
 
+// n_elections is the number of elections that have happened since the start of the game.
+Q.n_elections = 0;
+// number of elections without a clear majority.
+Q.no_majority_elections = 0;
+// elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
+Q.in_election = 1;
+Q.next_election_year = 1919;
+Q.next_election_month = 11;
+Q.next_election_time = 11;
+
 
 // Initial advisors are the respective leaders of their faction.
 Q.serrati_advisor = 1; // Giacinto Menotti Serrati; Maximalist Leader
