@@ -103,7 +103,7 @@ Q.ul_full_name = "Liberal Union";
 Q.ul_full_italian = "Liberale Unione"
 
 // relation with the king; for snap elections and march
-Q.king_relation = 10;
+Q.king_relation = 20;
 
 // The array of forces - paramilitary groups
 // Number of members in 1919 (in thousands)
