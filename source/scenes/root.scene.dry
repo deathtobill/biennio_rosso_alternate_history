@@ -170,7 +170,7 @@ Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'bn', 'other', 'pcdi', 'ps
 Q.pcdi_formed = 0;
 Q.psu_formed = 0
 Q.psri_reconciled = 0;
-Q,arditi_formed = 0;
+Q.arditi_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -245,7 +245,7 @@ Q.catholics_other = 2;
 // % of Chamber of Deputies in Jan 1919
 // source: wikipedia
 // Had to do some early forming of BN and other parties to make this easier for me + gameplay wise 
-Q,pcdi_r = 0;
+Q.pcdi_r = 0;
 Q.psi_r = 18;
 Q.psu_r = 0;
 Q.ppi_r = 6;
@@ -308,21 +308,21 @@ Q.minority_government = 0;
 
 // ministries - which parties control the ministries?
 Q.foreign_minister = 'Sonnino';
-Q.foreign_minister_party = [+ ul_name +];
+Q.foreign_minister_party = ul_name;
 Q.interior_minister = 'Orlando';
-Q.interior_minister_party = [+ ldr_name +];
+Q.interior_minister_party = ldr_name +;
 Q.justice_minister = 'Sacchi';
 Q.justice_minister_party = 'DS';
 Q.labour_minister = 'Ferraris';
-Q.labour_minister_party = [+ ul_name +];
+Q.labour_minister_party = ul_name +;
 Q.public_works_minister = 'Dari';
-Q.public_works_minister_party = '[+ ul_name +]';
+Q.public_works_minister_party = ul_name;
 Q.treasury_minister = 'Nitti';
 Q.treasury_minister_party = 'DS';
 Q.finance_minister = 'Meda';
 Q.finance_minister_party = 'PPI';
 Q.agriculture_minister = 'Miliani';
-Q.agriculture_minister_party = [+ ldr_name +];
+Q.agriculture_minister_party = ldr_name;
 
 // have we reformed these institutions to be more democratic?
 Q.judicial_reform = 0;
