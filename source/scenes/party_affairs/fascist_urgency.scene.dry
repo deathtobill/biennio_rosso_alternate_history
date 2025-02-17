@@ -1,0 +1,41 @@
+title: Fascist Urgency
+new-page: true
+view-if: urgency_timer = 0 and (fasci_urgency > 0 or bn_r > 10)
+on-arrival: urgency_timer = 9; month_actions += 1
+frequency: 150
+is-card: true
+card-image: img/poster_2.jpg
+tags: party_affairs
+
+= Fascism in Italy
+
+Following the end of the First World War, it seems a new ideology has taken root in Italy, preying on the nationalistic sentiment of veterans, angered by our so-called 'mutilated victory' and promising revanchism, and that ideology is Fascism. Already, thousands are signing up in droves across the nation, from disgruntled veterans who have seen the horrors of war to youth who idolise our victory in the war, expanding the electorate of voters of the National Bloc and their paramilitary wing.
+
+Though initially thought to be moribund, it seems we have been proven wrong, and some within the party warn of its growing strength, especially as the *Biennio Rosso* continues on, and anti-socialist sentiment grows, it would not bode well for us if they are forced to turn to the fascists.
+
+- @fascist_paramilitary: Our main goal should be targeting their paramilitaries.
+- @fascist_parties: Our main goal should be to prevent the Bloc from ever entering government. 
+- @fascist_votes: Our main goal should be campaign to their voters to pull the rug from under them.
+- @fascist_ignore: It would be best to ignore them; giving them attention only improves their appeal.
+
+@fascist_paramilitary
+subtitle: The threat comes from their violent means, after all.
+on-arrival: fasci_urgency += 1; veterans_psi -= 2*(1-dissent); rg_strength: += 10*(1-dissent); ul_relation -= 5*(1-dissent)
+
+We focus on their paramilitaries, strengthening our own forces to combat them.
+
+@fascist_parties
+subtitle: The threat comes from any potential coalitions including the Bloc, after all.
+on-arrival: fasci_urgency += 1; veterans_psi -= 2*(1-dissent); rg_strength: -= 10*(1-dissent); ul_relation += 5*(1-dissent)
+
+We focus on our relations with the other parties, ensuring they do not find themselves forced to ally against us.
+
+@fascist_votes
+subtitle: The threat comes from their seats in the Chamber, after all.
+on-arrival: fasci_urgency += 1; veterans_psi += 2*(1-dissent); rg_strength: -= 10*(1-dissent); ul_relation -= 5*(1-dissent)
+
+We focus on their voters, campaigning towards them hard, sometimes clashing with the Fasci.
+
+@fascist_ignore
+subtitle: There is no threat; this is merely a post-war reaction that will die down sooner or later.
+on-arrival: fasci_urgency -= 1;

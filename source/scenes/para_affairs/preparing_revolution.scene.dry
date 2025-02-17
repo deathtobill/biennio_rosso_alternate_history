@@ -1,7 +1,7 @@
 title: Preparing our Revolution
 new-page: true
 is-card: true
-on-arrival: rev_timer = 2; month_actions += 1
+on-arrival: rev_timer = 3; month_actions += 1
 view-if: not participating and preparation_done != 1 and rev_timer <= 0
 card-image: img/blutmai_2.jpg
 frequency: 300

@@ -17,18 +17,18 @@ Togliatti is a member of the Communist faction of the PSI. A popular figure on t
 @togliatti_coalition
 title: Negotiating with the Coalition
 subtitle: Togliatti can improve our relationships with our centrist and centre-left coalition partners in the Chamber of Deputies.
-choose-if: advisor_action_timer <= 0 and centre_left_coalition
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not centre_left_coalition and not left_wing_coalition : The PSI is not currently in a coalition. ?]
-on-arrival: advisor_action_timer = 6; coalition_dissent -= 1; ldr_relation += 10 if centre_left_coalition; ds_relation += 5 if centre_left_coalition; psri_relation += 10; 
+choose-if: advisor_action_timer <= 0 and (centre_left_coalition or socialist_catholic_coalition or left_wing_coalition)
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition : The PSI is not currently in a coalition. ?]
+on-arrival: advisor_action_timer = 6; coalition_dissent -= 1; ldr_relation += 10 if centre_left_coalition; ds_relation += 5 if centre_left_coalition; psri_relation += 10; ppi_relation += 10 if socialist_catholic_coalition;
 
-We have improved our relations with the [? if centre_left_coalition:LDR, DS,?] PSRI and reduced tensions with the coalition.
+We have improved our relations with our coalition partners and reduced tensions with the coalition.
 
 @foreign_policy
 title: Foreign Policy
 subtitle: As we control the Foreign Ministry, we are able to direct policy, potentially benefitting us.
 choose-if: advisor_action_timer = 0 and psi_in_government and foreign_minister_party = "PSI"
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not currently in government. ?][? if not foreign_minister_party = "PSI" : The PSI is not in control of the Foreign Ministry. ?]
-on-arrival: advisor_action_timer = 6; foreign_policy_timer -= 10; last_advisor_action = 1
+on-arrival: advisor_action_timer = 6; foreign_policy_timer -= 5; last_advisor_action = 1
 go-to: foreign_policy
 
 @shuffle_cabinet
@@ -36,5 +36,5 @@ title: Shuffle Cabinet
 subtitle: Perhaps it is time we renegotiate the terms of the coalition with our partners.
 choose-if: advisor_action_timer = 0 and centre_left_coalition and coalition_dissent < 3
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not centre_left_coalition : The PSI is not currently in a coalition. ?][if coalition_dissent => 3 : Coalition dissent is far too high for us to negotiate with our partners. ?]
-on-arrival: advisor_action_timer = 6; shuffle_cabinet_timer -=10; last_advisor_action = 1
+on-arrival: advisor_action_timer = 6; shuffle_cabinet_timer -= 5; last_advisor_action = 1
 go-to: shuffle_cabinet

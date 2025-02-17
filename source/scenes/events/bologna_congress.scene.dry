@@ -1,6 +1,7 @@
 title: Congress of Bologna
 new-page: true
 subtitle: It is time to decide our path for the future.
+on-arrival: bologna_occured = 1;
 view-if: year = 1919 and month = 10
 max-visits: 1
 face-image: img/Dollfuss.jpg

@@ -17,9 +17,9 @@ Ferri is a member of the Maximalist faction of the PSI. Having served as the edi
 @judicial_reform
 title: Judicial Reform
 subtitle: Now that we are in control of the Justice Ministry, we are able to reform it to purge corruption and reactionary forces.
-choose-if: advisor_action_timer <= 0 and (centre_left_coalition or in_psi_majority or left_wing_coalition or socialist_catholic_coalition) and justice_minister_party = "PSI"
+choose-if: advisor_action_timer <= 0 and psi_in_government and justice_minister_party = "PSI"
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not currently in government. ?][if not justice_minister_party = "PSI" : The PSI does not currently control the Justice Ministry.]
-on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; judiciary_timer -= 5;
 go-to: judicial_reform
 
 @question_of_ideology
@@ -27,7 +27,7 @@ title: Question of Ideology
 subtitle: There are a number of ideologues from each faction which seek to direct the path of the party.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; ideology_timer -= 9;
 go-to: question_of_ideology
 
 @media

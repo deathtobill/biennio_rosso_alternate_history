@@ -520,21 +520,21 @@ table {
 
 /* Styles for parties */
 .seat.psi {
-    fill: #8B0000;
+    fill: #ED2855;
     stroke: #000;
     stroke-width: 1.5px;
 }
 .seat.psri {
-    fill: #E3000F;
+    fill: #FFC0CB;
 }
 .seat.ldr {
-    fill: #DCCA4A;
+    fill: #FFD700;
 }
 .seat.ul {
-    fill: #00008B;
+    fill: #0047AB;
 }
 .seat.ppi {
-    fill: #69A2BE;
+    fill: #87CEFA;
 }
 .seat.other {
     fill: #a0a0a0;
@@ -543,7 +543,13 @@ table {
     fill: #3F7BC1;
 }
 .seat.bn {
-    fill: #954B00;
+    fill: #272E75;
+}
+.seat.pcdi {
+  fill: #C72F35;
+}
+.seat.psu {
+  fill: #E35A5A;
 }
 
 .tooltip-text {

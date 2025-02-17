@@ -12,6 +12,7 @@ The Military is to continue its demobilisation of its forces back to post-war le
 
 - @delay_demobilise: Influence the army to delay the orders...
 - @stop_demobilise: Influence the army to end demobilisation.
+- @sway_demobilise: Recruit the newly discharged soldiers to the Red Guards.
 - @allow_demobilise
 
 @delay_demobilise 
@@ -31,6 +32,10 @@ unavailable-subtitle: Our influence within the army is too low.
 on-arrival: stopped_mobilisation = 1; budget -= 7 if army_strength > 3000; budget -= 5 if army_strength > 2000 and army_strength < 300; budget -= 3 if army_strength < 2000 and army_strength > 1000; dissent += 0.3;
 
 We are able to convince the army to end its demobilisation, the budget will be balanced some other way. Many in the party decry our seemingly pro-war stance, however.
+
+@sway_demobilise
+subtitle: -1 Paramilitary Resource
+on-arrival: para_resource -= 1; rg_strength += 15; rg_militancy += 0.02;
 
 @allow_demobilise
 title: Let them demobilise.

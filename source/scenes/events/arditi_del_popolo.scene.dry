@@ -1,5 +1,5 @@
 title: Formation of the Arditi del Popolo
-view-if: fasci_urgency > 6 or bn_r > 25 or (year = 1921 and month = 6)
+view-if: fasci_urgency > 5 or bn_r > 25 or (year = 1921 and month = 6)
 on-arrival: arditi_formed = 1; adp_strength += 20;
 tags: event
 max-visits: 1

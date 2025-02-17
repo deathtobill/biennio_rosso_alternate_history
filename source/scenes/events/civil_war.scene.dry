@@ -9,6 +9,7 @@ Q.abl_strength = Math.round(Q.abl_strength);
 
 var total_strength = Q.communist_strength + Q.maximalist_strength + Q.syndicalist_strength + Q.reformist_strength;
 var total_dissent = Q.communist_strength*Q.communist_dissent + Q.maximalist_strength*Q.maximalist_dissent + Q.syndicalist_strength*Q.syndicalist_dissent + Q.reformist_strength*Q.reformist_dissent;
+var total_fervor = Q.revolutionary_fervor/100
 
 Q.dissent = 0.01*total_dissent/total_strength;
 console.log('new dissent: ' + Q.dissent);
@@ -85,7 +86,7 @@ if (Q.psri_relation >= 60) {
 } else if (Q.psri_relation >= 45) {
     Q.normalized_workers_total += Q.normalized_workers_psri*0.5;
 }
-Q.total_power += (2 - Q.syndicalist_dissent/100)*Q.normalized_workers_total*(2 - Q.unemployed/100)*2.5;
+Q.total_power += (2 - Q.syndicalist_dissent/100)*Q.normalized_workers_total*(2 - Q.unemployed/100)*2.5*Q.total_fervor;
 console.log("Supporter strength:", Q.total_power);
 
 // our enemies

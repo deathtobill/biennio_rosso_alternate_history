@@ -98,7 +98,7 @@ Q.left_wing_coalition_r = Q.psi_r + Q.psri_r + Q.psu_r;
 Q.centre_left_coalition_r = Q.psi_r + Q.ldr_r + Q.ds_r + Q.psri_r + Q.other_r + Q.psu_r;
 Q.socialist_catholic_coalition_r = Q.psi_r + Q.psri_r + Q.ppi_r + Q.other_r + Q.psu_r;
 Q.catholic_liberal_coalition_r = Q.ppi_r + Q.ul_r + Q.ldr_r + Q.ds_r + Q.other_r;
-Q.anti_socialist_coalition_r = Q.bn_r + Q.ppi_r + Q.ds_r;
+Q.anti_socialist_coalition_r = Q.bn_r + Q.ldr_r + Q.ds_r;
 
 Q.leverage = Q.psi_r;
 
@@ -126,6 +126,14 @@ if (Q.pcdi_formed && Q.pcdi_r) {
         "seats": Math.round(Q.pcdi_r*5),
     });
 }
+if (Q.psu_formed && Q.psu_r) {
+    data.push({
+        "id": "psu",
+        "legend": "PSU",
+        "name": "PSU",
+        "seats": Math.round(Q.psu_r*5),
+    });
+}
 data = data.concat([
     {
         "id": "psri",
@@ -142,7 +150,7 @@ data = data.concat([
     {
         "id": "ldr",
         "legend": "LDR",
-        "name": "LDR",
+        "name": Q.ldr_name,
         "seats": Math.round(Q.ldr_r*5),
     },
     {
@@ -154,7 +162,7 @@ data = data.concat([
     {
         "id": "ul",
         "legend": "UL",
-        "name": "UL",
+        "name": Q.ul_name,
         "seats": Math.round(Q.ul_r*5),
     },
     {
@@ -196,38 +204,38 @@ go-to: coalition_menu
 
 {!<table>!}
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div>!} PSI: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} [+ str_change_psi +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} PSI: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} [+ str_change_psi +]% {!</td></tr>!}
 
-[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#E3000F'> </div>!}PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td></tr>!} ?]
+[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div>!}PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td></tr>!} ?]
 
-[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E3000F'> </div>!}PSU: {!</td><td>!} [+ psu_r +]% {!</td><td>!} [+ str_change_psu +]% {!</td></tr>!} ?]
+[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div>!}PSU: {!</td><td>!} [+ psu_r +]% {!</td><td>!} [+ str_change_psu +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#E3000F'> </div>!}PSRI: {!</td><td>!} [+ psri_r +]% {!</td><td>!} [+ str_change_psri +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#FFC0CB'> </div>!}PSRI: {!</td><td>!} [+ psri_r +]% {!</td><td>!} [+ str_change_psri +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div>!} LDR: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#FFD700'> </div>!} [+ ldr_name +]: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#69A2BE'> </div>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td><td>!} [+ str_change_ppi +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#87CEFA'> </div>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td><td>!} [+ str_change_ppi +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#00008B'> </div>!} UL: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} [+ ul_name +]: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#3f7bc1'> </div>!} DS: {!</td><td>!} [+ ds_r +]% {!</td><td>!} [+ str_change_ds +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#1E99C5'> </div>!} DS: {!</td><td>!} [+ ds_r +]% {!</td><td>!} [+ str_change_ds +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div>!} Others: {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#954B00'> </div>!} BN: {!</td><td>!} [+ bn_r +]% {!</td><td>!} [+ str_change_bn +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#272E75'> </div>!} BN: {!</td><td>!} [+ bn_r +]% {!</td><td>!} [+ str_change_bn +]% {!</td></tr>!}
 {!</table>!}
 
 **Potential coalitions:**
 
 Left-Wing Coalition (PSI + PSRI [? if psu_formed :+ PSU?]): [+ left_wing_coalition_r +]%
 
-Centre-Left Coalition (PSI + LDR + DS + PSRI [? if psu_formed :+ PSU ?]+ Others): [+ centre_left_coalition_r +]%
+Centre-Left Coalition (PSI + [+ ldr_name +] + DS + PSRI [? if psu_formed :+ PSU ?]+ Others): [+ centre_left_coalition_r +]%
 
 Socialist-Catholic Coalition (PSI + PPI + PSRI [? if psu_formed :+ PSU ?]+ Others): [+ socialist_catholic_coalition_r +]%
 
-Catholic-Liberal Coalition (PPI + LDR + UL + DS + Others): [+ catholic_liberal_coalition_r +]%
+Catholic-Liberal Coalition (PPI + [+ ldr_name +] + [+ ul_name +] + DS + Others): [+ catholic_liberal_coalition_r +]%
 
-Anti-Socialist Coalition (BN + PPI + DS): [+ anti_socialist_coalition_r +]%
+Anti-Socialist Coalition (BN + [+ ldr_name +] + DS): [+ anti_socialist_coalition_r +]%
 
 [? if fasci_urgency <= 2 and bn_r >= 15 : The rapid rise in National Bloc votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest obstacle to socialism in Italy. ?]
 
@@ -244,11 +252,11 @@ There are some potential coalition arrangements.
 
 @anti_socialist_coalition
 title: Anti-Socialist coalition
-subtitle: BN + PPI + DS ([+ anti_socialist_coalition_r +]%)..
+subtitle: BN + [+ ldr_name +] + DS ([+ anti_socialist_coalition_r +]%)..
 view-if: anti_socialist_coalition > 49 and radicalisation > 8 and participating = 0
 priority: 2
 
-It seems our radicalism and abstentionism has pushed the Catholics to ally with the National Bloc. [+ bn_leader +] has made himself crucial to this coalition, and has already been appointed Prime Minister by the King.
+It seems our radicalism and abstentionism has pushed the Liberals to ally with the National Bloc. [+ bn_leader +] has made himself crucial to this coalition, and has already been appointed Prime Minister by the King.
 
 - @mussolini_prime_minister: What now?
 
@@ -264,8 +272,8 @@ Our negotiations with the PSRI goes smoothly, and we form a stable coalition.
 
 @centre_left_coalition
 title: Open negotiations with the Liberal parties.
-subtitle: PSI + LDR + DS + PSRI [? if psu_formed :+ PSU ?]+ Other: ([+ centre_left_coalition_r +]%). Dissent from the Communists and Maximalists will increase.
-unavailable-subtitle: PSI + LDR + DS + PSRI [? if psu_formed :+ PSU ?]+ Other: ([+ centre_left_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means.. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ldr_relation < 50 : We do not have adequate relations with the LDR. ?][? if ds_relation < 50 : We do not have adequate relations with the DS. ?][? if ldr_negotiations_failed: We have already failed to negotiate with the Liberals. ?][? if liberal_coalition_failed: The Liberals are unwilling to accept another coalition right after the previous one failed. ?][? if southern_land_reformed = 1 : The LDR has vowed against coalitions with us since our southern land reforms. ?]
+subtitle: PSI + [+ ldr_name +] + DS + PSRI [? if psu_formed :+ PSU ?]+ Other: ([+ centre_left_coalition_r +]%). Dissent from the Communists and Maximalists will increase.
+unavailable-subtitle: PSI + [+ ldr_name +] + DS + PSRI [? if psu_formed :+ PSU ?]+ Other: ([+ centre_left_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means.. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ldr_relation < 50 : We do not have adequate relations with the LDR. ?][? if ds_relation < 50 : We do not have adequate relations with the DS. ?][? if ldr_negotiations_failed: We have already failed to negotiate with the Liberals. ?][? if liberal_coalition_failed: The Liberals are unwilling to accept another coalition right after the previous one failed. ?][? if southern_land_reformed = 1 : The LDR has vowed against coalitions with us since our southern land reforms. ?]
 view-if: centre_left_coalition_r >= 50 and liberal_coalition_failed = 0
 choose-if: participating = 1 and ldr_relation > 49 and ds_relation > 49 and southern_land_reformed = 0
 on-departure: liberal_negotiations = 0;
@@ -282,7 +290,7 @@ go-to: catholic_demands
 
 @catholic_liberal_coalition
 title: Refuse to form a government, and let the other parties assume responsibility.
-subtitle: PPI + LDR + UL + DS + Others ([+ catholic_liberal_coalition_r +]%). [? if participating = 1 : The results of the Bologna Congress and our subsequent refusal to form a government is confusing to many. ?]
+subtitle: PPI + [+ ldr_name +] + [+ ul_name +] + DS + Others ([+ catholic_liberal_coalition_r +]%). [? if participating = 1 : The results of the Bologna Congress and our subsequent refusal to form a government is confusing to many. ?]
 view-if: catholic_liberal_coalition_r >= 50 or (centre_left_coalition_r > 50 and participating = 0) or (centre_left_coalition_r < 50 and participating = 1)
 
 Are we sure we wish to give up our opportunity to form the government?
@@ -294,7 +302,7 @@ Are we sure we wish to give up our opportunity to form the government?
 subtitle: This is extremely unpopular with the reformists.
 on-arrival: reformist_dissent += 15 if participating = 1; psi_in_government = 0; prime_minister = "Francesco Saverio Nitti"; prime_minister_party = "LDR"; interior_minister_party = "DS"; foreign_minister_party = "UL"; justice_minister_party = "Independent"; treasury_minister_party = "LDR"; finance_minister_party = "LDR"; public_works_minister_party = "DS"; public_education_minister_party = "LDR"; agriculture_minister_party = "LDR"; labour_minister_party = "UL";
 
-Though tense negotiations between the Liberals and newly formed Catholic parties, the coalition of the PPI, LDR, UL and DS is established.
+Though tense negotiations between the Liberals and newly formed Catholic parties, the coalition of the PPI, [+ ldr_name +], [+ ul_name +] and DS is established.
 
 @psi_majority
 title: PSI majority alone
@@ -313,7 +321,7 @@ go-to: ministries
 Filippo Turati's appointment as Prime Minister is approved by all our potential allies.
 
 @orlando
-title: Let the LDR have their Prime Minister. This will improve our leverage.
+title: Let the [+ ldr_name +] have their Prime Minister. This will improve our leverage.
 subtitle: Vittorio Emanuele Orlando will be reappointed Prime Minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
 on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ldr_relation += 10; ds_relation += 5; chancellor = "Orlando"; chancellor_party = "LDR"; psi_in_government = 1; leverage += 5
 go-to: ministries

@@ -1,9 +1,9 @@
 title: Constitutional Reform
 new-page: true
 is-card: true
-view-if: psi_in_government and ((ldr_relation > 65 and ds_relation > 65) or ppi_relation > 65) and constitutional_reform_timer <= 0 and republican_sentiment >= 20
+view-if: psi_in_government and ((ldr_relation > 65 and ds_relation > 65) or ppi_relation > 65) and constitutional_reform_timer <= 0 and anti_monarchist_sentiment >= 20
 frequency: 500
-on-arrival: month_actions += 1; constitutional_reform_timer = 5
+on-arrival: month_actions += 1; constitutional_reform_timer = 9
 card-image: img/portraits/RadbruchGustav.jpg
 go-to: reforms_menu
 tags: govt_affairs

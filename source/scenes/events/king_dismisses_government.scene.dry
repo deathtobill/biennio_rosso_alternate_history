@@ -2,7 +2,7 @@ title: King dismisses government!
 view-if: king_relation < 10 and king_dismissed_cooldown <= 0 and psi_r < 50 and psi_in_government
 on-arrival: king_dismissed_cooldown = 12
 go-to: election_1919.coalition_menu if time_to_election >= 4
-tags: events
+tags: event
 
 = King dismisses government!
 

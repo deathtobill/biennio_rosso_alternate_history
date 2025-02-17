@@ -34,7 +34,7 @@ go-to: inter_party_relationships
 @soviet_relations
 title: Soviet Relations
 subtitle: Improve our standing with the Soviet Union.
-choose-if: advisor_action_timer = 0 and soviet_relations = 10
+choose-if: advisor_action_timer = 0 and soviet_relations < 10
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if soviet_relations > 10 : Our relations with the Soviet Union have reached its peak. ?]
-on-arrival: advisor_action_timer = 6; international_relations_timer -= 6; last_advisor_action = 1
+on-arrival: advisor_action_timer = 6; international_relations_timer -= 8; last_advisor_action = 1
 go-to: international_relations

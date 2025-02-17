@@ -9,7 +9,7 @@ view-if: psi_in_government = 1 and interior_minister_party = "PSI"
 
 = Investigating Domestic Enemies
 
-As we have control over the Interior Ministry, we can direct police and intelligence services to investigate internal enemies. We can proscribe various organizations.
+As we have control over the Interior Ministry, we can direct police and intelligence services to investigate internal enemies. We can proscribe various organisations.
 
 - @ban_fdc: Ban the Fasci Italiani di Combattimento.
 - @unban_fdc: Unban the Fasci Italiani di Combattimento.

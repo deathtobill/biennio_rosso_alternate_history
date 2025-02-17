@@ -6,7 +6,7 @@ frequency: 250
 on-arrival: {! 
 month_actions += 1;
 vatican_appeased = 0;
-roman_question_timer = 5;
+roman_question_timer = 8;
 if (vatican_relations <= 4 && pope == "Ratti") {
     negotiating_power = 4;
 }

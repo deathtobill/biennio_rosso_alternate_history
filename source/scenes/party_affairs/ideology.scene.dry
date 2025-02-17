@@ -3,14 +3,13 @@ new-page: true
 is-card: true
 tags: party_affairs
 view-if: ideology_timer = 0
-on-arrival: month_actions += 1; old_ideology = ideology; ideology_timer = 18
+on-arrival: month_actions += 1; old_ideology = ideology; ideology_timer = 9
 card-image: img/arbeiterbew.jpg
 max-visits: 3
-#subtitle: Setting the party's ideological direction.
 
 = Questions of Ideology
 
-The SPD is torn between many different ideological currents. What should be our primary ideological guidance for now?
+The PSI is torn between many different ideological currents. What should be our primary ideological guidance for now?
 
 [? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
 
@@ -27,9 +26,9 @@ if (Q.ideology && Q.ideology != "left") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "left"; left_strength += 10; communist_coalition += 1; left_dissent -= 5; z_relation -= 3; dvp_relation -= 5; nationalization_support += 1; kpd_relation += 3
+on-departure: ideology = "left"; communist_strength += 10; communist_dissent -= 5; ldr_relation -= 3; ul_relation -= 5;
 
-The radical left of the party supports a course of class struggle, and potentially a reconcilliation with the Communists.
+The radical left of the party supports a course of class struggle, and violent revolution.
 
 @centrist
 on-arrival: {!
@@ -38,9 +37,9 @@ if (Q.ideology && Q.ideology != "centrist") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "centrist"; center_strength += 10; center_dissent -= 10; left_dissent -= 5; reformist_dissent -= 5
+on-departure: ideology = "centrist"; maximalist_strength += 10; maximalist_dissent -= 10; communist_dissent -= 5; reformist_dissent -= 5
 
-The Center Marxists, represented by Kautsky and Hilferding, support a middle course of preparing for revolution while building up the consciousness of the working class.
+The Center Marxists, represented by Serrati's faction, support a middle course of preparing for revolution while building up the consciousness of the working class.
 
 @labour
 on-arrival: {!
@@ -49,9 +48,9 @@ if (Q.ideology && Q.ideology != "labour") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "labour"; syndicalist_strength += 10; wtb_support += 1; syndicalist_dissent -= 5; kpd_relation -= 3
+on-departure: ideology = "labour"; syndicalist_strength += 10; syndicalist_dissent -= 5; 
 
-The labour wing of the party supports continued particpation in government in order to provide benefits to the workers, and the creation of public works programs for employment.
+The labour wing of the party supports continued participation in government in order to provide benefits to the workers, and the creation of public works programs for employment.
 
 @reform
 on-arrival: {!
@@ -60,11 +59,11 @@ if (Q.ideology && Q.ideology != "reformist") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "reformist"; reformist_strength += 10; democratisation += 1; reformist_dissent -= 5; z_relation += 5; dvp_relation += 5; kpd_relation -= 8; moderate_plan_support += 1
+on-departure: ideology = "reformist"; reformist_strength += 10; democratisation += 1; reformist_dissent -= 5; ldr_relation += 5; ul_relation += 5; 
 
-The reformist wing of the party seeks to preserve the Republic and the democratic system of government, and is most supportive of coalitions with the other pro-democracy parties.
+The reformist wing of the party seeks to preserve continued participation in government, and is most supportive of coalitions with the other pro-democracy parties.
 
 @changed
-on-arrival: left_dissent += 5; center_dissent += 5; syndicalist_dissent += 5; reformist_dissent += 5
+on-arrival: communist_dissent += 5; maximalist_dissent += 5; syndicalist_dissent += 5; reformist_dissent += 5
 
 We have changed ideologies. Many in the party feel unmoored.
