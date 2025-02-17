@@ -21,7 +21,7 @@ choose-if: advisor_action_timer <= 0 and centre_left_coalition
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not centre_left_coalition and not left_wing_coalition : The PSI is not currently in a coalition. ?]
 on-arrival: advisor_action_timer = 6; coalition_dissent -= 1; ldr_relation += 10 if centre_left_coalition; ds_relation += 5 if centre_left_coalition; psri_relation += 10; 
 
-We have improved our relations with the [? if centre_left_coalition:LDR, DS,?] PSRI and reduced tensions with the coalition.
+We have improved our relations with the [? if centre_left_coalition:[+ ldr_name +], DS,?] PSRI and reduced tensions with the coalition.
 
 @foreign_policy
 title: Foreign Policy
