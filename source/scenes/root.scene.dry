@@ -100,7 +100,7 @@ Q.ldr_full_name = "Liberals, Democrats and Radicals";
 Q.ldr_full_italian = "Liberali, democratici e radicali";
 Q.ul_name = "UL";
 Q.ul_full_name = "Liberal Union";
-Q.ul_full_italian = "Unione Liberale"
+Q.ul_full_italian = "Unione Liberale";
 
 // relation with the king; for snap elections and march
 Q.king_relation = 10;
@@ -291,11 +291,8 @@ Q.ul_in_government = 1;
 Q.psri_in_government = 0;
 Q.bn_in_government = 0;
 
-// Left-Wing Coalition = PSI + PSRI
 Q.left_wing_coalition = 0
-// Catholic-Centre Coalition = PPI + [+ ldr_name +] + [+ ul_name +] + DS
 Q.catholic_centre_coalition = 0;
-// Centre-Left Coalition = PSI + PPI + DS + PSRI
 Q.centre_left_coalition = 0;
 Q.in_psi_majority = 0;
 Q.catholic_centre_failed = 0;
@@ -311,13 +308,13 @@ Q.minority_government = 0;
 
 // ministries - which parties control the ministries?
 Q.foreign_minister = 'Sonnino';
-Q.foreign_minister_party = '[+ ul_name +]';
+Q.foreign_minister_party = [+ ul_name +];
 Q.interior_minister = 'Orlando';
 Q.interior_minister_party = [+ ldr_name +];
 Q.justice_minister = 'Sacchi';
 Q.justice_minister_party = 'DS';
 Q.labour_minister = 'Ferraris';
-Q.labour_minister_party = '[+ ul_name +]';
+Q.labour_minister_party = [+ ul_name +];
 Q.public_works_minister = 'Dari';
 Q.public_works_minister_party = '[+ ul_name +]';
 Q.treasury_minister = 'Nitti';

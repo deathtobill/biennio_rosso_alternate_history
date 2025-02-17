@@ -193,15 +193,15 @@ if (Q.month_actions >= 1) {
 
 
     /////////////////////////////// update opinions based on economy
-    if (Q.unemployment > 15 && Q.republican_sentiment > 40 && != Q.psi_in_government) {
+    if (Q.unemployment > 15 && Q.republican_sentiment > 40 && Q.psi_in_government == 0) {
         Q.republican_sentiment -= 1;
         Q.socialist_sentiment += 1;
     }
-    if (Q.unemployment > 30 && Q.republican_sentiment > 20 && != Q.psi_in_government) {
+    if (Q.unemployment > 30 && Q.republican_sentiment > 20 && Q.psi_in_government == 0) {
         Q.republican_sentiment -= 1;
         Q.socialist_sentiment += 1;
     }
-    if (Q.inflation >= 8 && Q.republican_sentiment > 40 && != Q.psi_in_government) {
+    if (Q.inflation >= 8 && Q.republican_sentiment > 40 && Q.psi_in_government == 0) {
         Q.republican_sentiment -= 1;
         Q.socialist_sentiment += 1;
     }
