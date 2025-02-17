@@ -63,10 +63,10 @@ Chamber of Deputies composition:
 
 PSI: [+ psi_r +]%
 PPI: [+ ppi_r +]%
-[+ ldr_name +]: [+ ldr_r +]%
+LDR: [+ ldr_r +]%
 PSRI: [+ psri_r +]%
 DS: [+ ds_r +]%
-[+ ul_name +]: [+ ul_r +]%
+UL: [+ ul_r +]%
 BN: [+ bn_r +]%
 Others: [+ other_r +]%
 
@@ -114,16 +114,12 @@ go-to: menu
 @public_opinion
 on-arrival: {!
 Q.republican_sentiment_disp = Math.round(Q.republican_sentiment);
-Q.socialist_sentiment_disp = Math.round(Q.republican_sentiment);
-Q.nationalism_sentiment_disp = Math.round(Q.nationalist_sentiment);
 !}
 view-if: (not historical_mode) or game_over
 go-to: election_algorithm
 set-jump: election_projections
 
-Support for Republicanism: [+ republican_sentiment_disp +]
-Support for Socialism: [+ socialist_sentiment_disp +]
-Support for Nationalism: [+ nationalism_sentiment_disp +]
+Support for the Monarchy: [+ republican_sentiment_disp +]
 
 @election_projections
 view-if: (not historical_mode) or game_over
@@ -133,7 +129,7 @@ go-to: menu
 
 PSI: [+ psi_votes +]%
 
-[+ ldr_name +]: [+ ldr_votes +]%
+LDR: [+ ldr_votes +]%
 
 DS: [+ ds_votes +]%
 
@@ -141,7 +137,7 @@ DS: [+ ds_votes +]%
 
 PPI: [+ ppi_votes +]%
 
-[+ ul_name +]: [+ ul_votes +]%
+UL: [+ ul_votes +]%
 
 BN: [+ bn_votes +]%
 
@@ -149,17 +145,17 @@ Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Urban Workers: PSI: [+ workers_psi_display +]%, PPI: [+ workers_ppi_display +]%, [+ ldr_name +]: [+ workers_ldr_display +]%, DS: [+ workers_ds_display +]%, [+ ul_name +]: [+ workers_ul_display +]%; BN: [+ workers_bn_display +]%, PSRI: [+ workers_psi_display +]%, Others: [+ workers_other_display +]%
+Urban Workers: PSI: [+ workers_psi_display +]%, PPI: [+ workers_ppi_display +]%, LDR: [+ workers_ldr_display +]%, DS: [+ workers_ds_display +]%, UL: [+ workers_ul_display +]%; BN: [+ workers_bn_display +]%, PSRI: [+ workers_psi_display +]%, Others: [+ workers_other_display +]%
 
-Small Business Owners: PSI: [+ middle_class_psi_display +]%, PPI: [+ middle_class_ppi_display +]%, [+ ldr_name +]: [+ middle_class_ldr_display +]%, DS: [+ middle_class_ddp_display +]%, [+ ul_name +]: [+ middle_class_ul_display +]%; BN: [+ middle_class_bn_display +]%, PSRI: [+ middle_class_psri_display +]%, Others: [+ middle_class_other_display +]%  
+Small Business Owners: PSI: [+ middle_class_psi_display +]%, PPI: [+ middle_class_ppi_display +]%, LDR: [+ middle_class_ldr_display +]%, DS: [+ middle_class_ddp_display +]%, UL: [+ middle_class_ul_display +]%; BN: [+ middle_class_bn_display +]%, PSRI: [+ middle_class_psri_display +]%, Others: [+ middle_class_other_display +]%  
 
-Rural Workers & Farmers: PSI: PSI: [+ rural_psi_display +]%, PPI: [+ rural_ppi_display +]%, [+ ldr_name +]: [+ rural_ldr_display +]%, DS: [+ rural_ddp_display +]%, [+ ul_name +]: [+ rural_ul_display +]%; BN: [+ rural_bn_display +]%, PSRI: [+ rural_psri_display +]%, Others: [+ rural_other_display +]%
+Rural Workers & Farmers: PSI: PSI: [+ rural_psi_display +]%, PPI: [+ rural_ppi_display +]%, LDR: [+ rural_ldr_display +]%, DS: [+ rural_ddp_display +]%, UL: [+ rural_ul_display +]%; BN: [+ rural_bn_display +]%, PSRI: [+ rural_psri_display +]%, Others: [+ rural_other_display +]%
 
-industrialists & Landowners: PSI: [+ industrialists_middle_psi_display +]%, PPI: [+ industrialists_middle_ppi_display +]%, [+ ldr_name +]: [+ industrialists_middle_ldr_display +]%, DS: [+ industrialists_middle_ddp_display +]%, [+ ul_name +]: [+ industrialists_middle_ul_display +]%; BN: [+ industrialists_middle_bn_display +]%, PSRI: [+ industrialists_middle_psri_display +]%, Others: [+ industrialists_middle_other_display +]% 
+industrialists & Landowners: PSI: [+ industrialists_middle_psi_display +]%, PPI: [+ industrialists_middle_ppi_display +]%, LDR: [+ industrialists_middle_ldr_display +]%, DS: [+ industrialists_middle_ddp_display +]%, UL: [+ industrialists_middle_ul_display +]%; BN: [+ industrialists_middle_bn_display +]%, PSRI: [+ industrialists_middle_psri_display +]%, Others: [+ industrialists_middle_other_display +]% 
 
-Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, DS: [+ veterans_ddp_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%; BN: [+ veterans_bn_display +]%, PSRI: [+ veterans_psri_display +]%, Others: [+ veterans_other_display +]% 
+Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, PPI: [+ veterans_ppi_display +]%, LDR: [+ veterans_ldr_display +]%, DS: [+ veterans_ddp_display +]%, UL: [+ veterans_ul_display +]%; BN: [+ veterans_bn_display +]%, PSRI: [+ veterans_psri_display +]%, Others: [+ veterans_other_display +]% 
 
-Catholics: PSI: [+ catholics_psi_display +]%, PPI: [+ catholics_ppi_display +]%, [+ ldr_name +]: [+ catholics_ldr_display +]%, DS: [+ catholics_ddp_display +]%, [+ ul_name +]: [+ catholics_ul_display +]%; BN: [+ catholics_bn_display +]%, PSRI: [+ catholics_psri_display +]%, Others: [+ catholics_other_display +]% 
+Catholics: PSI: [+ catholics_psi_display +]%, PPI: [+ catholics_ppi_display +]%, LDR: [+ catholics_ldr_display +]%, DS: [+ catholics_ddp_display +]%, UL: [+ catholics_ul_display +]%; BN: [+ catholics_bn_display +]%, PSRI: [+ catholics_psri_display +]%, Others: [+ catholics_other_display +]% 
 
 @parties
 go-to: menu
@@ -170,7 +166,7 @@ go-to: menu
 
 [? if psu_formed : *Partito Socialista Unitario* (Unitary Socialist Party) - A splinter party of the PSI, formed after the reformist wing of the party and its leaders split. ?]
 
-**[+ ldr_name +]** - *[+ ldr_full_italian +]* ([+ ldr_full_name +]) - A recently formed centre party under the merger of the [+ ul_full_name +] and the Italian Radical Party. They get their support mainly from the industrialists & Landowners under the leader of Prime Minister who ended the First World War.
+**LDR** - *Liberali, democratici e radicali* (Liberals, Democrats and Radicals) - A recently formed centre party under the merger of the Liberal Union and the Italian Radical Party. They get their support mainly from the industrialists & Landowners under the leader of Prime Minister who ended the First World War.
 
 Current relations: [+ ldr_relation : relationships +]
 
@@ -182,7 +178,7 @@ Current relations: [+ ds_relation : relationships +]
 
 Current relations: [+ ppi_relation : relationships +]
 
-**[+ ul_name +]** - *[+ ul_full_italian +]* ([+ ul_full_name +]) - A centre-right party that remained as the remaining members that weren't merged into the [+ ldr_name +]. 
+**UL** - *Unione Liberale* (Liberal Union) - A centre-right party that remained as the remaining members that weren't merged into the LDR. 
 
 Current relations: [+ ul_relation : relationships +]
 
@@ -314,8 +310,8 @@ on-display: {!
         },
         {
             "id": "ldr",
-            "legend": "[+ ldr_name +]",
-            "name": "[+ ldr_name +]",
+            "legend": "LDR",
+            "name": "LDR",
             "seats": Q.ldr_r*5,
         },
         {
@@ -326,8 +322,8 @@ on-display: {!
         },
         {
             "id": "ul",
-            "legend": "[+ ul_name +]",
-            "name": "[+ ul_name +]",
+            "legend": "UL",
+            "name": "UL",
             "seats": Q.ul_r*5,
         },
         {
@@ -363,7 +359,7 @@ on-display: {!
         var lines = d3.linegraph(false, false,
                 Q.parties,
                 {'psri': '#E3000F', 'psi': '#8B0000', 'ldr': '#DCCA4A', 'ds': '#3f7bc1', 'ul': '#00008B', 'ppi': '#69A2BE', 'bn': '#954B00', 'other': '#a0a0a0', 'pci': '#c40000'},
-                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': [+ ldr_name +], 'ds': 'DS', 'ul': '[+ ul_name +]', 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pci': 'PCI'});
+                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': 'LDR', 'ds': 'DS', 'ul': 'UL', 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pci': 'PCI'});
         lines.width(width).height(400);
         //var svg = lines(Q.election_records);
         if (Q.election_records.length > 0) {
@@ -376,7 +372,7 @@ on-display: {!
             var lines_2 = d3.linegraph(true, true,
                 Q.parties,
                 {'psri': '#E3000F', 'psi': '#8B0000', 'ldr': '#DCCA4A', 'ds': '#3f7bc1', 'ul': '#00008B', 'ppi': '#69A2BE', 'bn': '#954B00', 'other': '#a0a0a0', 'pci': '#c40000'},
-                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': [+ ldr_name +], 'ds': 'DS', 'ul': '[+ ul_name +]', 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pci': 'PCI'});
+                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': 'LDR', 'ds': 'DS', 'ul': 'UL', 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pci': 'PCI'});
             lines_2.width(width).height(400);
             d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
         }
@@ -402,11 +398,11 @@ on-display: {!
 
 {!<tr><td><div class="box" style='background-color:#E3000F'> </div></td> <td>!}PSRI: {!</td><td>!} [+ psri_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} [+ ldr_name +]: {!</td><td>!} [+ ldr_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} LDR: {!</td><td>!} [+ ldr_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#69A2BE'> </div></td><td>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#00008B'> </div></td><td>!} [+ ul_name +]: {!</td><td>!} [+ ul_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#00008B'> </div></td><td>!} UL: {!</td><td>!} [+ ul_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#3f7bc1'> </div></td><td>!} DS: {!</td><td>!} [+ ds_r +]% {!</td></tr>!}
 

@@ -5,7 +5,6 @@ on-arrival: {!
 Q.inflation -= 1.4;
 Q.economic_growth += 0.3;
 Q.unemployment -= 0.2;
-Q.nationalist_sentiment += 2*(dissent);
 !}
 tags: event
 view-if: year = 1921 and month = 1 

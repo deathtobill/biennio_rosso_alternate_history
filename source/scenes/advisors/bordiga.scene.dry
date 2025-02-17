@@ -1,6 +1,7 @@
 title: Amadeo Bordiga
 is-pinned-card: true
 tags: advisor, communist
+on-arrival: bologna_occurred = 1
 card-image: img/portraits/AmadeoBordiga.png
 view-if: bordiga_advisor = 1
 new-page: true 
@@ -19,7 +20,7 @@ title: Armed Uprising
 subtitle: Order factory workers to seize control of their workplaces!
 choose-if: advisor_action_timer = 0 and rg_strength > 19 and rg_banned = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rg_strength < 20 : The Red Guards don't have enough members to act. ?][? if rg_banned = 1 : The Red Guard are banned, they cannot act. ?]
-on-arrival: advisor_action_timer = 6; revolutionary_fervor += 5; rg_strength -= 10; reformist_dissent += 10; last_advisor_action = 1;
+on-arrival: advisor_action_timer = 6; revolutionary_fervor += 5; rg_strength -= 10; reformist_dissent += 10;
 
 We have seized control of more factories and kicked the bourgeois industrialists out!
 
@@ -28,7 +29,6 @@ title: Revolutionary Preparations
 subtitle: Continue our revolutionary planning.
 choose-if: advisor_action_timer = 0 and revolutionary_fervor > 79 and rg_banned = 0 and participating = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if participating = 1 : We have already chosen to achieve socialism through parliamentary ways. ?]
-on-arrival: last_advisor_action = 1; advisor_action_timer = 6; preparing_revolution_timer = 5;
 go-to: preparing_revolution
 
 

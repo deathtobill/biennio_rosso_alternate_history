@@ -16,13 +16,13 @@ function addMonths(date, months) {
 d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataMax, dataMin, additionalMonths) {
     /* params */
     if (!parties) {
-        parties = ['psri', 'psi', 'ldr', 'ds', 'ul', 'ppi', 'bn', 'other', 'pcdi', 'psu'];
+        parties = ['psri', 'psi', 'ldr', 'ds', 'ul', 'ppi', 'bn', 'other'];
     }
     if (!partyColors) {
-        partyColors = {'psri': '#E3000F', 'psi': '#8B0000', 'ldr': '#DCCA4A', 'ds': '#000', 'ul': '#D5AC27', 'ppi': '#3f7bc1', 'bn': '#954B00', 'other': '#a0a0a0', 'pcdi': '#E3000F', 'psu': '#E3000F' };
+        partyColors = {'psri': '#E3000F', 'psi': '#8B0000', 'ldr': '#DCCA4A', 'ds': '#000', 'ul': '#D5AC27', 'ppi': '#3f7bc1', 'bn': '#954B00', 'other': '#a0a0a0'};
     }
     if (!partyNames) {
-        partyNames = {'psri': 'PSRI', 'psi': 'PSI', 'ldr': 'LDR', 'ds': 'DS', 'ul': 'UL', 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pcdi': 'PCdI', 'psu': "PSU"};
+        partyNames = {'psri': 'PSRI', 'psi': 'PSI', 'ldr': 'LDR', 'ds': 'DS', 'ul': 'UL', 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others'};
     }
     if (!additionalMonths) {
         additionalMonths = 10;

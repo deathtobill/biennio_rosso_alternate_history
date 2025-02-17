@@ -19,15 +19,6 @@ if (Q.republican_sentiment < 0) {
 if (Q.republican_sentiment >= 100) {
     Q.republican_sentiment = 99;
 }
-
-Q.socialist_sentiment = Math.round(Q.socialist_sentiment);
-
-if (Q.socialist_sentiment < 0) {
-    Q.socialist_sentiment = 0;
-}
-if (Q.socialist_sentiment >= 100) {
-    Q.socialist_sentiment = 99;
-}
 // re-calculate party support
 // calculate normalized class voting for the achievements
 for (var c of Q.classes) {
@@ -193,34 +184,19 @@ if (Q.month_actions >= 1) {
 
 
     /////////////////////////////// update opinions based on economy
-    if (Q.unemployment > 15 && Q.republican_sentiment > 40 && !== Q.psi_in_government) {
+    if (Q.unemployment > 15 && Q.republican_sentiment > 40) {
         Q.republican_sentiment -= 1;
-        Q.socialist_sentiment += 1;
     }
-    if (Q.unemployment > 30 && Q.republican_sentiment > 20 && !== Q.psi_in_government) {
+    if (Q.unemployment > 30 && Q.republican_sentiment > 20) {
         Q.republican_sentiment -= 1;
-        Q.socialist_sentiment += 1;
     }
-    if (Q.inflation >= 8 && Q.republican_sentiment > 40 && !== Q.psi_in_government) {
+    if (Q.inflation >= 8 && Q.republican_sentiment > 40) {
         Q.republican_sentiment -= 1;
-        Q.socialist_sentiment += 1;
-    }
-
-    if (Q.unemployment > 15 && Q.republican_sentiment > 40 && Q.psi_in_government) {
-        Q.socialist_sentiment -= 1;
-        Q.nationalist_sentiment += 1;
-    }
-    if (Q.unemployment > 30 && Q.republican_sentiment > 20 && Q.psi_in_government) {
-        Q.socialist_sentiment -= 1;
-        Q.nationalist_sentiment += 1;
-    }
-    if (Q.inflation >= 8 && Q.republican_sentiment > 40 && Q.psi_in_government) {
-        Q.socialist_sentiment -= 1;
-        Q.nationalist_sentiment += 1;
     }
 
     ///////////////////////////// change party support based on republican_sentiment
-    if (Q.anti_monarchist_sentiment < (Q.psi_votes + Q.ul_votes)) {
+    // if republican_sentiment is less than the support of the Weimar coalition, reduce PSI support...
+    if (Q.republican_sentiment < (Q.psi_votes + Q.ul_votes)) {
         if (Q.industrialists_psi > 0) {
             Q.industrialists_psi -= 4/12;
             Q.industrialists_bn += 2/12;
@@ -320,7 +296,7 @@ if (Q.month_actions >= 1) {
         }
     }
     // prevent forever support if the economy is bad
-    if (Q.year >= 1922 && (Q.inflation >= 8 || Q.unemployment >= 20) && Q.socialist_sentiment >= 45 && Q.psi_in_government) {
+    if (Q.year >= 1922 && (Q.inflation >= 8 || Q.unemployment >= 20) && Q.republican_sentiment >= 45 && Q.psi_in_government) {
         if (Q.workers_psi_normalized > 40) {
             Q.workers_psi -= 6/12;
         }
