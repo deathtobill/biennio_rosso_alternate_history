@@ -31,7 +31,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1;
-go-to: catholic_op if psi_in_government == 0; catholic_coalition if socialist_catholic_coalition == 1;
+go-to: catholic_op if psi_in_government == 0; catholic_coalition if socialist_catholic_coalition == 1
 
 @catholic_op
 on-arrival: ppi_relation += 5*(1 - dissent)
