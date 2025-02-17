@@ -98,9 +98,9 @@ Q.bn_leader = "Mussolini";
 Q.ldr_name = "LDR";
 Q.ldr_full_name = "Liberals, Democrats and Radicals";
 Q.ldr_full_italian = "Liberali, democratici e radicali";
-Q.ul_name = "[+ ul_name +]";
-Q.ul_full_name = "[+ ul_full_name +]";
-Q.ul_full_italian = "[+ ul_full_italian +]"
+Q.ul_name = "UL";
+Q.ul_full_name = "Liberal Union";
+Q.ul_full_italian = "Unione Liberale"
 
 // relation with the king; for snap elections and march
 Q.king_relation = 10;
