@@ -1,7 +1,7 @@
 title: Revolution or Reform 
 new-page: true
 is-card: true
-view-if: crisis_urgency >= 1 and revolutionary_timer <= 0;
+view-if: revolutionary_timer <= 0
 frequency: 200
 on-arrival: month_actions += 1; revolutionary_timer = 8;
 card-image: img/bankrun.jpg
