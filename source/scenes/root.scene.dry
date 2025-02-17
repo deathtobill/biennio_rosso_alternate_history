@@ -399,7 +399,6 @@ Q.insurance_payments_timer = 0;
 Q.fdc_ban_timer = 0;
 Q.ard_ban_timer = 0;
 Q.demobilise_timer = 0;
-Q.soviet_end_timer = 0;
 Q.agricultural_policy_timer = 0;
 Q.coalition_affairs_timer = 0;
 Q.unemployment_gov_timer = 0; 
