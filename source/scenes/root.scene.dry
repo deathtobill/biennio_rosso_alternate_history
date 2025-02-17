@@ -280,7 +280,7 @@ Q.economic_records = [];
 Q.king = "Vittorio Emanuele III";
 // starting prime minister: Vittorio Emanuele Orlando
 Q.prime_minister = "Orlando";
-Q.prime_minister_party = ldr_name;
+Q.prime_minister_party = ldr_name +;
 Q.pcdi_in_government = 0;
 Q.psi_in_government = 0;
 Q.psu_in_government = 0;
