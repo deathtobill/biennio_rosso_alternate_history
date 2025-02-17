@@ -363,7 +363,7 @@ on-display: {!
         var lines = d3.linegraph(false, false,
                 Q.parties,
                 {'psri': '#E3000F', 'psi': '#8B0000', 'ldr': '#DCCA4A', 'ds': '#3f7bc1', 'ul': '#00008B', 'ppi': '#69A2BE', 'bn': '#954B00', 'other': '#a0a0a0', 'pci': '#c40000'},
-                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': LDR, 'ds': 'DS', 'ul': UL, 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pci': 'PCI'});
+                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': [+ ldr_name +], 'ds': 'DS', 'ul': [+ ul_name +], 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pci': 'PCI'});
         lines.width(width).height(400);
         //var svg = lines(Q.election_records);
         if (Q.election_records.length > 0) {
@@ -376,7 +376,7 @@ on-display: {!
             var lines_2 = d3.linegraph(true, true,
                 Q.parties,
                 {'psri': '#E3000F', 'psi': '#8B0000', 'ldr': '#DCCA4A', 'ds': '#3f7bc1', 'ul': '#00008B', 'ppi': '#69A2BE', 'bn': '#954B00', 'other': '#a0a0a0', 'pci': '#c40000'},
-                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': LDR, 'ds': 'DS', 'ul': UL, 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pci': 'PCI'});
+                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': [+ ldr_name +], 'ds': 'DS', 'ul': [+ ul_name +], 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pci': 'PCI'});
             lines_2.width(width).height(400);
             d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
         }
