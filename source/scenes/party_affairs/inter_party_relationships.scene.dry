@@ -22,7 +22,9 @@ The PSI cannot govern by itself yet. Though we have not historically been any co
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; ul_relation += 5*(1-dissent); ds_relation += 5*(1-dissent); communist_dissent += 7*(1-dissent)
+on-arrival: resources -= 1; ul_relation += 5*(1-dissent); ds_relation += 5*(1-dissent); communist_dissent += 7*(1-dissent);
+
+We strengthen our contacts with the [+ ul_full_name +] and the Democrazia Sociale, improving relations.
 
 @catholic_party
 subtitle: -1 resources
