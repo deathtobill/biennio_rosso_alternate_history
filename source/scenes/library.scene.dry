@@ -362,7 +362,7 @@ on-display: {!
 
         var lines = d3.linegraph(false, false,
                 Q.parties,
-                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'bn': '#272E75', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A'},
+                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'bn': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A'},
                 {'psri': 'PSRI', 'psi': 'PSI', 'ldr': Q.ldr_name, 'ds': 'DS', 'ul': Q.ul_name, 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pcdi': 'PCdI', 'psu': 'PSU'});
         lines.width(width).height(400);
         //var svg = lines(Q.election_records);
@@ -375,7 +375,7 @@ on-display: {!
         if (!Q.historical_mode || Q.game_over) {
             var lines_2 = d3.linegraph(true, true,
                 Q.parties,
-                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'bn': '#272E75', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A'},
+                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'bn': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A'},
                 {'psri': 'PSRI', 'psi': 'PSI', 'ldr': Q.ldr_name, 'ds': 'DS', 'ul': Q.ul_name, 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pcdi': 'PCdI', 'psu': 'PSU'});
             lines_2.width(width).height(400);
             d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
