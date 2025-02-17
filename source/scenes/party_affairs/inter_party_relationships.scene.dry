@@ -12,7 +12,7 @@ max-visits: 12
 The PSI cannot govern by itself yet. Though we have not historically been any coalitions or in government, if we are to change that or take a more reformist turn, improving our relations with the bourgeois parties is certainly necessary to do so, or we could continue going alone.
 
 - @liberals: Strengthen our bonds with the [+ ldr_full_name +]
-- @catholics: Strengthen our bonds with the Catholic People's Party.
+- @catholic_party: Strengthen our bonds with the Catholic People's Party.
 - @minor_parties: Strengthen our bonds with the minor parties of the [+ ul_full_name +] and the Democrazia Sociale.
 - @psi_alone: The PSI can stand alone for now.
 - @easy_discard
@@ -24,7 +24,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; ul_relation += 5*(1-dissent); ds_relation += 5*(1-dissent); communist_dissent += 7*(1-dissent)
 
-@catholics
+@catholic_party
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.

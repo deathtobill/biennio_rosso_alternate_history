@@ -36,4 +36,4 @@ subtitle: Socialist & Fasci actions have only intensified in recent months; we h
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
 choose-if: advisor_action_timer == 0
 on-arrival: advisor_action_timer = 6; fasci_urgency -= 10; last_advisor_action = 1
-go-to: fascist_urgency
+go-to: fasci_urgency
