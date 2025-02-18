@@ -207,7 +207,7 @@ go-to: coalition_menu
 
 {!<table>!}
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} PSI: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} [+ str_change_psi +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} PSI: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td></tr>!}
 
 [? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div>!} PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td></tr>!} ?]
 
@@ -230,7 +230,7 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
-Left-Wing Coalition (PSI + PSRI [? if psu_formed :+ PSU?]): [+ left_wing_coalition_r +]%
+Left-Wing Coalition (PSI + PSRI[? if psu_formed : + PSU?]): [+ left_wing_coalition_r +]%
 
 Centre-Left Coalition (PSI + [+ ldr_name +] + DS + PSRI [? if psu_formed :+ PSU ?]+ Others): [+ centre_left_coalition_r +]%
 
@@ -284,7 +284,7 @@ go-to: liberal_demands
 
 @socialist_catholic_coalition 
 title: Open negotiations with the People's Party.
-subtitle: PSI + PPI + PSRI [? if psu_formed :+ PSU: ?]+ Other:([+ socialist_catholic_coalition_r +]%). Dissent from the Communists and Maximalists will increase.
+subtitle: PSI + PPI + PSRI [? if psu_formed :+ PSU: ?]+ Other: ([+ socialist_catholic_coalition_r +]%). Dissent from the Communists and Maximalists will increase.
 unavailable-subtitle: PSI + PPI + DS + PSRI [? if psu_formed :+ PSU: ?]+ Other: ([+ socialist_catholic_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means.. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ppi < 50 : We do not have adequate relations with the PPI. ?][? if ppi_negotiations_failed = 1 : We have already tried negotiating with the Catholics. ?][? if catholic_coalition_failed : The Catholics are unwilling to accept another coalition right after the previous one failed. ?][? if secularised_education = 1 : The PPI has vowed against coalitions with us since our education reforms. ?]
 view-if: socialist_catholic_coalition_r >= 50 and catholic_coalition_failed = 0
 choose-if: participating = 1 and ppi_relation > 49 and ppi_negotiations_failed = 0 and secularised_education = 0

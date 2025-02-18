@@ -11,15 +11,15 @@ if (Q.economic_growth) {
 if (Q.unemployment) {
     Q.unemployment_2 = Q.unemployment.toFixed(1);
 }
-Q.dissent = Math.round(Q.dissent);
+Q.dissent_percent = Math.round(Q.dissent_percent);
 !}
 
 = Status
 
 [+ month : month +] [+ year +]
 
-Resources available:
 Party: [+ resources +]
+
 Paramilitary: [+ para_resources +]
 
 PSI position: [? if psi_in_government : in government - ?][? if psi_in_government == 0 : opposition ?]
