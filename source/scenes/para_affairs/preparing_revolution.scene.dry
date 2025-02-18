@@ -20,6 +20,8 @@ Though we have evidently decided to overthrow the corrupt bourgeois government v
 
 @rev_weapons
 subtitle: -1 Paramilitary Budget
+choose-if: para_resources > 0
+unavailable-subtitle: We do not have enough Paramilitary Resources for this. (Need 1)
 on-arrival: weaponry_rg += 1; para_resources -= 1; rg_militancy += 0.07*(1-dissent);
 max-visits: 3
 
@@ -27,6 +29,8 @@ We continue arming the Red Guards, turning them into a true fighting force.
 
 @rev_loyalty
 subtitle: -1 Paramilitary Budget
+choose-if: para_resources > 0
+unavailable-subtitle: We do not have enough Paramilitary Resources for this. (Need 1)
 on-arrival: loyalty_rg += 1; para_resources -= 1; army_loyalty += 0.1*(1-dissent); interior_police_loyalty += 0.1*(1-dissent);
 max-visits: 3
 
@@ -34,6 +38,8 @@ Via some...unconventional means, we are able to sway some of the Regio Esercito 
 
 @rev_sabotage
 subtitle: -1 Paramilitary Budget
+choose-if: para_resources > 0
+unavailable-subtitle: We do not have enough Paramilitary Resources for this. (Need 1)
 on-arrival: sabotage_rg += 1; para_resources -= 1; fdc_strength -= 7*(1-dissent); abl_strength -= 7*(1-dissent); ard_strength -= 7*(1-dissent); 
 max-visits: 3
 
