@@ -18,7 +18,7 @@ Though we cannot obviously influence the conclave directly, our role and actions
 - @pope_result: Let's hope the new Pope is more accommodating...
 
 @pope_result
-go-to: delval_elected if delval_votes > gasparri_votes && delval_votes > ratti_votes; gasparri_elected if gasparri_votes > delval_votes && gasparri_votes > ratti_votes; ratti_elected if ratti_votes > gasparri_votes && gasparri_votes > delval_votes
+go-to: delval_elected if ((delval_votes > gasparri_votes) and (delval_votes > ratti_votes)); gasparri_elected if ((gasparri_votes > delval_votes) and (gasparri_votes > ratti_votes)); ratti_elected if ((ratti_votes > gasparri_votes) and (gasparri_votes > delval_votes))
 
 @delval_elected
 on-arrival: pope = "Del Val"
