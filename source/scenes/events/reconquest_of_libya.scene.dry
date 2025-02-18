@@ -5,7 +5,7 @@ new-page: true
 max-visits: 1
 tags: event
 
-= [? if psi_in_government : Military recommends action in Libya ?] Military prepares for war in Libya
+= [? if psi_in_government : Military recommends action in Libya ?] [? if not psi_in_government : Military prepares for war in Libya ?]
 
 Our sources in the Army and Navy Ministries has informed us that the High Command is preparing for the pacification of Libya once more. Popular support for the war seems to be widespread, as many still remember the killings of civilians done by local guerrillas done during the first world war.
 
@@ -25,7 +25,7 @@ Being in control of the government, we force the military to drop their plans, a
 
 @libya_coalition_influence
 subtitle: Thankfully, we can persuade our coalition to heed our concerns.
-view-if: centre_left_coalition = 1
+view-if: centre_left_coalition or socialist_catholic_coalition or left_wing_coalition
 on-arrival: maximalist_dissent -= 5; reformist_dissent -= 5; communist_dissent -= 5; syndicalist_dissent -= 5; coalition_dissent += 1; veterans_psi -= 4; veterans_bn += 4; army_loyalty -= 0.05;
 
 Our coalition members are able to see reason, at least temporarily, and decide to delay the war until the internal situation improves. Our veteran supporters, however, aren't happy, and the BN seizes the opportunity to increase their support.

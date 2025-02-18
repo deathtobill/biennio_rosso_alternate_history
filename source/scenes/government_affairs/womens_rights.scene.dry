@@ -34,9 +34,8 @@ max-visits: 2
 
 These policies aim to ensure that women have equal rights within a marriage, including the right to divorce. The more conservative segments of society treat our reforms as deleterious to the social fabric.
 
-
 @welfare
-subtitle: -1 Budget [? if budget < 1 : This will put us into a deficit! ?]
+subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted : This will put us into a deficit! ?]
 on-arrival: {! 
 Q.welfare += 1; 
 Q.workers_psi += 5*(1-dissent); 

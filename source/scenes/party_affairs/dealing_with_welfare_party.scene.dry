@@ -23,6 +23,8 @@ What do we do?
 
 @veterans_organisations_party
 subtitle: -1 Party Resource 
+choose-if: resources > 0
+unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; veterans_psi += 2*(1-dissent); veterans_bn -= 2*(1-dissent); economic_growth += 0.7;
 
 We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds are reallocated to aid veterans immediately.
