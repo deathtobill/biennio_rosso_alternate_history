@@ -5,6 +5,7 @@ tags: event
 view-if: soviet_end_timer <= 0
 on-arrival: rcw_over = 1; soviet_recovery_timer = 4; communist_dissent -= 10; reformist_dissent -= 10; maximalist_dissent -= 10; syndicalist_dissent -= 10; communist_strength += 7*(1-dissent)
 max-visits: 1
+face-image: img/RCWOver.jpg
 
 = The End of the Russian Civil War
 

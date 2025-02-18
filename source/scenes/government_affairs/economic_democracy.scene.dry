@@ -9,7 +9,7 @@ Q.current_budget = 0
 Q.current_budget += budget
 Q.economic_democracy_timer = 5
 !}
-card-image: img/portraits/RadbruchGustav.jpg
+card-image: img/portraits/RinaldoRigola.jpg
 tags: govt_affairs
 
 = Economic Democracy

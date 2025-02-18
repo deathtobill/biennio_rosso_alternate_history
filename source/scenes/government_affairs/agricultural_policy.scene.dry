@@ -9,7 +9,7 @@ Q.current_budget += budget;
 !}
 view-if: psi_in_government and agriculture_minister_party = "PSI" and agricultural_policy_timer <= 0
 frequency: 500
-card-image: img/portraits/BaadeFritz.jpg
+card-image: img/portraits/AntonioGraziadei.jpg
 tags: govt_affairs
 
 = Agricultural Policy

@@ -136,7 +136,7 @@ ul.choices li.unavailable {
   cursor: default !important;
 }
 ul.choices li:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 255, 0, 0.05);
   cursor: pointer;
 }
 ul.choices li:last-child {

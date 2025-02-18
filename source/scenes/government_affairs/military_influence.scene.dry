@@ -4,7 +4,7 @@ is-card: true
 view-if: psi_in_government and army_timer <= 0
 frequency: 500
 on-arrival: month_actions += 1; army_timer = 5
-card-image: img/portraits/RadbruchGustav.jpg
+card-image: img/MilitaryInfluence.jpg
 tags: govt_affairs
 
 = Military Influence

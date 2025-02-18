@@ -4,6 +4,7 @@ new-page: true
 tags: event
 view-if: year = 1919 and month = 9
 max-visits: 1
+face-image: img/Fiume.jpg
 
 = Occupation of Fiume
 

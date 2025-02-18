@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 view-if: para_rally_timer <= 0
 on-arrival: para_rally_timer = 3; month_actions += 1;rg_militarization_cost = 2 if rg_militancy > 0.5 else rg_militarization_cost = 1; rg_militarization_cost = 3 if rg_militancy > 0.75
-card-image: img/iron_front.png
+card-image: img/ParaRally.jpg
 frequency: 250
 tags: para_affairs
 

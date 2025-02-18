@@ -78,10 +78,10 @@ Q.arditi_formed = 0;
 // organisations
 
 // inter-party relations
-Q.ul_relation = 25;
+Q.ul_relation = 35;
 Q.ldr_relation = 35;
-Q.ds_relation = 50;
-Q.ppi_relation = 50;
+Q.ds_relation = 35;
+Q.ppi_relation = 40;
 Q.psri_relation = 60;
 // BN relations are invariably hostile
 Q.bn_relation = 0;
@@ -370,7 +370,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary', 'party_organisat
             'international_relations', 'shuffle_leadership', 'para_funding', 
             'constitutional_reform', 'urgency', 'foreign_policy', 'shuffle_cabinet', 
             'soviet_recovery', 'liberal_crackdown', 'cathoic_papacy', 'insurance_payments', 
-            'fdc_ban', 'ard_ban', 'demobilise', 'soviet_end', 
+            'fdc_ban', 'ard_ban', 'abl_ban', 'demobilise', 'soviet_end', 
             'agricultural_policy', 'coalition_affairs', 'unemployment_gov', 'welfare_gov', 
             'economic_democracy', 'education_policy', 'fiscal_policy', 'labour_rights', 
             'army', 'roman_question', 'southern_gov', 'arditi', 'para_rally', 'rev', 
@@ -397,6 +397,7 @@ Q.cathoic_papacy_timer = 0;
 Q.insurance_payments_timer = 0;
 Q.fdc_ban_timer = 0;
 Q.ard_ban_timer = 0;
+Q.abl_ban_timer = 0;
 Q.demobilise_timer = 0;
 Q.agricultural_policy_timer = 0;
 Q.coalition_affairs_timer = 0;
@@ -471,7 +472,7 @@ For more information on the politics and government of the Italian Kingdom, see 
 - @1919_historical: Begin (historical mode)
 
 @1919_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; rg_strength = 150; ppi_relation = 55; ds_relation = 55; psri_relation = 65; budget = -2;
+on-arrival: difficulty = -1; resources = 4; dues = 3; rg_strength = 150; ppi_relation = 55; ldr_relation = 55; psri_relation = 65; budget = -2;
 go-to: 1919_main
 
 @1919_hard

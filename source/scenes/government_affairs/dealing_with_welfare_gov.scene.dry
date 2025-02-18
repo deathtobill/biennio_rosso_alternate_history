@@ -9,7 +9,7 @@ Q.current_budget = 0;
 Q.current_budget += budget;
 Q.welfare_gov_timer = 3
 !}
-card-image: img/portraits/RadbruchGustav.jpg
+card-image: img/WelfareGov.jpg
 tags: govt_affairs
 
 = Dealing with Veterans' Welfare

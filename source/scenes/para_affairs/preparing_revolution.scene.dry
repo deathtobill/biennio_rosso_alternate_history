@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 on-arrival: rev_timer = 3; month_actions += 1
 view-if: not participating and preparation_done != 1 and rev_timer <= 0
-card-image: img/blutmai_2.jpg
+card-image: img/PreparingRevolution.jpg
 frequency: 300
 tags: para_affairs
 

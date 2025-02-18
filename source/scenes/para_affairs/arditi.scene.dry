@@ -4,7 +4,7 @@ is-card: true
 on-arrival: arditi_timer = 3; month_actions += 1; 
 view-if: arditi_formed and arditi_timer <= 0 and arditi_cooperation
 frequency: 300
-card-image: img/blutmai_2.jpg
+card-image: img/Arditi.png
 tags: para_affairs
 
 = Arditi del Popolo

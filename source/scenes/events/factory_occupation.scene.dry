@@ -4,7 +4,7 @@ new-page: true
 tags: event
 view-if: year = 1920 and month = 9
 max-visits: 1
-face-image: img/danat_bank.jpg
+face-image: img/TurinFactories.jpg
 
 = Turin Factory Councils under our control
 

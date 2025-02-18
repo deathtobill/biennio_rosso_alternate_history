@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: para_affairs
 view-if: red_guards_timer <= 0
-card-image: img/reichsbanner.jpg
+card-image: img/RedGuards.jpg
 on-arrival: month_actions += 1; red_guards_timer = 3; rg_militarization_cost = 2 if rg_militancy > 0.5 else rg_militarization_cost = 1; rg_militarization_cost = 3 if rg_militancy > 0.75
 
 = Red Guards

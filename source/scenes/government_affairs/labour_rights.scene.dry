@@ -4,7 +4,7 @@ is-card: true
 view-if: psi_in_government and labour_minister_party = "PSI" and labour_rights_timer <= 0 
 frequency: 500
 on-arrival: month_actions += 1; labour_rights_timer = 5
-card-image: img/portraits/RadbruchGustav.jpg
+card-image: img/portraits/RinaldoRigola.jpg
 tags: govt_affairs
 go-to: labour_rights_menu
 

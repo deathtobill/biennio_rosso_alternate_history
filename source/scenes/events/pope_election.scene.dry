@@ -5,6 +5,7 @@ new-page: true
 max-visits: 1 
 on-arrival: delval_votes += 1 if radicalisation > 7; delval_votes += 1 if papal_relation < 4; delval_votes += 1 if ppi_relation < 30; gasparri_votes += 1 if radicalisation < 4; gasparri_votes += 1 if papal_relation > 7; gasparri_votes += 1 if ppi_relation > 65; gasparri_votes += 1 if roman_question_answered == 1; ratti_votes += 1 if (radicalisation > 3 and radicalisation < 8); ratti_votes += 1 if (papal_relation > 3 and papal_relation < 8); ratti_votes += 1 if (ppi_relation > 30 and ppi_relation < 65);
 tags: event
+face-event: img/PopeElection.jpg
 
 
 = 1922 Papal Conclave
@@ -22,6 +23,7 @@ go-to: delval_elected if ((delval_votes > gasparri_votes) and (delval_votes > ra
 
 @delval_elected
 on-arrival: pope = "Del Val"
+face-image: img/portraits/del_Val.jpg
 
 = Cardinal Rafael Merry del Val succeeds Benedict XV
 
@@ -29,6 +31,7 @@ It seems our cold relations with the Holy See has pushed neutral cardinals to se
 
 @gasparri_elected
 on-arrival: pope = "Gasparri"
+face-image: img/portraits/Gasparri.jpg
 
 = Cardinal Pietro Gasparri succeeds Benedict XV
 
@@ -36,6 +39,7 @@ It seems our warm relations with the Holy See has pushed neutral cardinals to co
 
 @ratti_elected
 on-arrival: pope = "Ratti";
+face-image: img/portraits/Ratti.jpg
 
 = Cardinal Achille Ratti succeeds Benedict XV
 

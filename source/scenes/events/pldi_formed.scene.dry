@@ -4,6 +4,7 @@ view-if: year = 1921 and month = 4 and pldi_formed = 0
 new-page: true
 max-visits: 1
 tags: event
+face-image: img/PLDI.png
 
 = Formation of the Italian Democratic Liberal Party
 

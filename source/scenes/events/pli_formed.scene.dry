@@ -4,6 +4,7 @@ view-if: year = 1922 and month = 10 and pli_formed = 0
 new-page: true
 max-visits: 1
 tags: event
+face-image: img/PLI.png
 
 = Formation of the Italian Liberal Party
 

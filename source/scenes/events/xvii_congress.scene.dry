@@ -4,7 +4,7 @@ new-page: true
 tags: event
 view-if: year = 1921 and month = 1
 max-visits: 1
-face-image: img/bankrun.jpg
+face-image: img/XVIICongress.jpg
 
 = XVII Congress of the Italian Socialist Party
 

@@ -4,7 +4,7 @@ view-if: para_funding_timer <= 0 and (not historical_mode)
 on-arrival: para_funding_timer = 3; month_actions += 1
 frequency: 300
 is-card: true
-card-image: img/poster_2.jpg
+card-image: img/ParaFunding.jpg
 tags: para_affairs
 
 = Paramilitary Funding

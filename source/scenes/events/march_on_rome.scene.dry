@@ -4,6 +4,7 @@ view-if: ((year = 1922 and month = 10) or (fasci_coup_progress >= 10 and year = 
 max-visits: 1
 tags: event
 new-page: true
+face-image: img/MarchOnRome.jpg
 on-arrival: {!
 Q.rg_strength = Math.round(Q.rg_strength);
 Q.fdc_strength = Math.round(Q.fdc_strength);

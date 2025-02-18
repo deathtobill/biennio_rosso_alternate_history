@@ -4,6 +4,7 @@ on-arrival: arditi_formed = 1; adp_strength += 20;
 new-page: true
 tags: event
 max-visits: 1
+face-image: img/ArditidelPopolo.jpg
 
 = Formation of the Arditi del Popolo
 

@@ -4,7 +4,7 @@ is-card: true
 on-arrival: targeting_timer = 6; month_actions += 1
 view-if: targeting_timer <= 0
 frequency: 200
-card-image: img/blutmai_2.jpg
+card-image: img/Targeting.jpg
 tags: para_affairs
 
 = Targeting our Enemies
