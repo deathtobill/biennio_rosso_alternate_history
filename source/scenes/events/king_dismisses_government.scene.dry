@@ -2,6 +2,7 @@ title: King dismisses government!
 view-if: king_relation < 10 and king_dismissed_cooldown <= 0 and psi_r < 50 and psi_in_government
 on-arrival: king_dismissed_cooldown = 12; psi_in_government = 0; centre_left_coalition = 0; socialist_catholic_coalition = 0; left_wing_coalition = 0;
 go-to: election_1919.coalition_menu if time_to_election >= 4
+new-page: true
 tags: event
 
 = King dismisses government!

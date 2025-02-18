@@ -1,4 +1,4 @@
-title: [? if psi_in_government : Military recommends action in Libya ?] Military prepares for war in Libya
+title: [? if psi_in_government : Military recommends action in Libya ?] [? if not psi_in_government : Military prepares for war in Libya ?]
 subtitle: The nation seems to be on the brink of war once more.
 view-if: year = 1922 and month = 1
 new-page: true

@@ -1,5 +1,6 @@
 title: Civil War
 audio: music/communist/A_las_barricadas.ogg
+new-page: true
 on-arrival: {!
 Q.rg_strength = Math.round(Q.rg_strength);
 Q.adp_strength = Math.round(Q.adp_strength);

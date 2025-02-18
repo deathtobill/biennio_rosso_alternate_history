@@ -63,28 +63,28 @@ Q.roman_question_answered = 1;
 Q.ppi_relation += 15;
 Q.catholic_psi += 7*(1-dissent);
 
-if (Q.vatican_compensation_offered) {
+if (Q.vatican_compensation_offered == 1) {
     Q.budget -= 3;
 }
 if ((Q.current_budget > 0 && Q.budget < 0) && Q.liberal_budget_accepted == 1) {
     Q.ldr_promise_failed = 1;
 }
 
-if (Q.vatican_defence_offered) {
+if (Q.vatican_defence_offered == 1) {
     Q.army_strength -= 50;
 }
 
-if (Q.vatican_defence_offered) {
+if (Q.vatican_defence_offered == 1) {
     Q.army_loyalty -= 0.05;
 }
 
-if (Q.vatican_education_offered) {
+if (Q.vatican_education_offered == 1) {
     Q.secularised_education = 0;
 }
-if (Q.vatican_education_offered) {
+if (Q.vatican_education_offered == 1) {
     Q.communist_dissent += 10;
 }
-if (Q.vatican_education_offered) {
+if (Q.vatican_education_offered == 1) {
     Q.maximalist_dissent += 10;
 }
 !}

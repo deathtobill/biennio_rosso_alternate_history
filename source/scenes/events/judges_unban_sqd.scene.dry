@@ -1,5 +1,6 @@
 title: Arditi unbanned
 subtitle: The judges have re-legalized the Arditi.
+new-page: true
 view-if: ard_banned == 1 and ard_ban_timer == 0 and judicial_reform < 2
 on-arrival: ard_banned = 0; ard_strength += 5; ard_militancy += 0.01
 tags: event

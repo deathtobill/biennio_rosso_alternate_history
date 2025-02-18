@@ -1,5 +1,6 @@
 title: PSRI seeks reconciliation
 subtitle: PSRI leaders have requested a meeting between us...
+new-page: true
 view-if: participating = 1 and reformists_defect = 0 and reformists_expelled = 0 and reformist_strength >= 40 and year >= 1920 and psri_relation >= 64.9
 on-arrival: {!
 Q.psri_workers_movement = (workers_psri / 4) * 3;
