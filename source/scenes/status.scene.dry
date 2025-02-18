@@ -11,6 +11,7 @@ if (Q.economic_growth) {
 if (Q.unemployment) {
     Q.unemployment_2 = Q.unemployment.toFixed(1);
 }
+Q.dissent = Math.round(Q.dissent);
 !}
 
 = Status
@@ -22,7 +23,7 @@ Party: [+ resources +]
 Paramilitary: [+ para_resources +]
 
 PSI position: [? if psi_in_government : in government - ?][? if psi_in_government == 0 : opposition ?]
-[? if centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if in_minority_government and psi_in_government: Minority government ?]
+[? if centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if socialist_catholic_coalition and psi_in_government: Catholic-Socialist Coalition ?][? if left_wing_coalition and psi_in_government: Left-Wing Coalition ?]
 
 [? if psi_in_government and not in_psi_majority: Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 

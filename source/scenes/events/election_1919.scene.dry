@@ -285,7 +285,7 @@ go-to: liberal_demands
 @socialist_catholic_coalition 
 title: Open negotiations with the People's Party.
 subtitle: PSI + PPI + PSRI [? if psu_formed :+ PSU: ?]+ Other:([+ socialist_catholic_coalition_r +]%). Dissent from the Communists and Maximalists will increase.
-unavailable-subtitle: PSI + PPI + DS + PSRI [? if psu_formed :+ PSU: ?]+ Other: ([+ socialist_catholic_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means.. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ppi < 50 : We do not have adequate relations with the PPI. ?][? if ppi_negotiations_failed = 1 : We have already tried negotiating with the liberals. ?][? if catholic_coalition_failed : The Catholics are unwilling to accept another coalition right after the previous one failed. ?][? if secularised_education = 1 : The PPI has vowed against coalitions with us since our education reforms. ?]
+unavailable-subtitle: PSI + PPI + DS + PSRI [? if psu_formed :+ PSU: ?]+ Other: ([+ socialist_catholic_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means.. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ppi < 50 : We do not have adequate relations with the PPI. ?][? if ppi_negotiations_failed = 1 : We have already tried negotiating with the Catholics. ?][? if catholic_coalition_failed : The Catholics are unwilling to accept another coalition right after the previous one failed. ?][? if secularised_education = 1 : The PPI has vowed against coalitions with us since our education reforms. ?]
 view-if: socialist_catholic_coalition_r >= 50 and catholic_coalition_failed = 0
 choose-if: participating = 1 and ppi_relation > 49 and ppi_negotiations_failed = 0 and secularised_education = 0
 on-departure: catholic_negotiations = 0
@@ -442,6 +442,7 @@ tags: drop_libdem_major
 view-if: liberal_nationalisation_accepted = 1
 on-arrival: liberal_nationalisation_accepted = 0; liberal_negotiations -= 20;
 go-to: l_demands_menu
+
 @drop_liberal_budget
 title: Drop our promise to maintain a surplus.
 tags: drop_libdem_minor
@@ -591,7 +592,7 @@ go-to: c_demands_menu
 title: It seems we cannot come to an agreement.
 subtitle: Maybe one with the Liberals might work?
 on-departure: ppi_negotiations_failed = 1
-go-to: c_demands_menu
+go-to: coalition_menu
 
 @finalise_catholic
 title: It seems we have come to an agreement.

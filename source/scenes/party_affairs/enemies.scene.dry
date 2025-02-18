@@ -23,7 +23,7 @@ In our media and campaign materials, who should we consider as our main opponent
 view-if: pcdi_formed
 on-arrival: enemies = "anti-democratic parties"; maximalist_strength += 5; reformist_strength += 5; communist_dissent += 5; workers_pcdi -= 2; workers_bn -= 2; 
 
-Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties. This might also hamper our ability to reconcile with the KPD in the future.
+Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties.
 
 @bn
 on-arrival: enemies = "BN"; nazi_urgency += 1; workers_bn -= 4;
