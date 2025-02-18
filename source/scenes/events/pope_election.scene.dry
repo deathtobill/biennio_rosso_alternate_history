@@ -5,7 +5,7 @@ new-page: true
 max-visits: 1 
 on-arrival: delval_votes += 1 if radicalisation > 7; delval_votes += 1 if papal_relation < 4; delval_votes += 1 if ppi_relation < 30; gasparri_votes += 1 if radicalisation < 4; gasparri_votes += 1 if papal_relation > 7; gasparri_votes += 1 if ppi_relation > 65; gasparri_votes += 1 if roman_question_answered == 1; ratti_votes += 1 if (radicalisation > 3 and radicalisation < 8); ratti_votes += 1 if (papal_relation > 3 and papal_relation < 8); ratti_votes += 1 if (ppi_relation > 30 and ppi_relation < 65);
 tags: event
-face-event: img/PopeElection.jpg
+face-image: img/PopeElection.jpg
 
 
 = 1922 Papal Conclave
