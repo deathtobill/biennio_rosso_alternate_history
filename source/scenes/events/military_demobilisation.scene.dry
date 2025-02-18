@@ -35,6 +35,8 @@ We are able to convince the army to end its demobilisation, the budget will be b
 
 @sway_demobilise
 subtitle: -1 Paramilitary Resource
+choose-if: para_resources > 0
+unavailable-subtitle: Not enough paramilitary resources. (Need 1).
 on-arrival: para_resources -= 1; rg_strength += 15; rg_militancy += 0.02; demobilise_timer += 6;
 
 @allow_demobilise

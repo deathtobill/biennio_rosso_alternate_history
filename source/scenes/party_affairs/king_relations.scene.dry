@@ -19,7 +19,7 @@ Our relationship with the King can be described as wary as best, due to our diam
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; king_relations += 7*(1-dissent); king_relations += 2*(1-dissent) if radicalization < 2; king_relations -= 2*(1-dissent) if radicalization < 7
+on-arrival: resources -= 1; king_relations += 7*(1-dissent); king_relations += 2*(1-dissent) if radicalisation < 2; king_relations -= 2*(1-dissent) if radicalisation < 7
 
 We are received with wariness, though the King does not turn us away outright.
 

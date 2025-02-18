@@ -1,0 +1,43 @@
+title: Papal Conclave
+subtitle: Pope Benedict XV has passed away.
+view-if: year = 1922 and month = 2
+new-page: true
+max-visits: 1 
+on-arrival: delval_votes += 1 if radicalisation > 7; delval_votes += 1 if papal_relation < 4; delval_votes += 1 if ppi_relation < 30; gasparri_votes += 1 if radicalisation < 4; gasparri_votes += 1 if papal_relation > 7; gasparri_votes += 1 if ppi_relation > 65; gasparri_votes += 1 if roman_question_answered = 1; ratti_votes += 1 if radicalisation > 3 && radicalisation < 8; ratti_votes += 1 if papal_relation > 3 && papal_relation < 8; ratti_votes += 1 if ppi_relation > 30 && ppi_relation < 65;
+tags: event
+
+
+= 1922 Papal Conclave
+
+We have received news from Papacy; Pope Benedict XV has passed away. A new Pope is to be elected in the Sistine Chapel, and though historically, Benedict XV held a rather conciliatory attitude towards us, it is unclear the new Pope will keep with him.
+
+There are seemingly two factions within the election; The 'Integrationists', led by Cardinal Rafael Merry del Val, favouring the policies of former Pope Pius X, and the 'Conciliatorists', led by Pietro Gasparri, who wish to continue the policies and attitudes of the late Pope Benedict XV.
+
+Though we cannot obviously influence the conclave directly, our role and actions till now will play a significant role in swaying neutral cardinals to one side or the other.
+
+- @pope_result: Let's hope the new Pope is more accommodating...
+
+@pope_result
+go-to: delval_elected if delval_votes > gasparri_votes && delval_votes > ratti_votes; gasparri_elected if gasparri_votes > delval_votes && gasparri_votes > ratti_votes; ratti_elected if ratti_votes > gasparri_votes && gasparri_votes > delval_votes
+
+@delval_elected
+on-arrival: pope = "Del Val"
+
+= Cardinal Rafael Merry del Val succeeds Benedict XV
+
+It seems our cold relations with the Holy See has pushed neutral cardinals to see us as a bigger threat, electing del Val. Unfortunately, it is clear he will be less cordial than his predecessor.
+
+@gasparri_elected
+on-arrival: pope = "Gasparri"
+
+= Cardinal Pietro Gasparri succeeds Benedict XV
+
+It seems our warm relations with the Holy See has pushed neutral cardinals to continue conciliatory attitudes, electing Gasparri. Fortunately, it seems he will be following along with the attitudes and policies of his predecessor, perhaps even more cordially.
+
+@ratti_elected
+on-arrival: pope = "Ratti";
+
+= Cardinal Achille Ratti succeeds Benedict XV
+
+Surprisingly, neither del Val nor Gasparri have been elected. Instead, Ratti, a compromise candidate between the two factions was able to convince enough cardinals to be elected Pope. Taking on the name Pius XI, it seems he will neither be as warm as Gasparri, nor as cold as del Val.
+
