@@ -14,7 +14,7 @@ In addition to being a political party, the PSI is a social world onto itself, w
 - @newspapers: Fund more newspapers and journalists.
 - @welfare: Fund more mutual aid and welfare programs.
 - @culture: Fund sports leagues, educational, and cultural programs.
-- @rb: Fund the Red Guards, our paramilitary organization.
+- @rg: Fund the Red Guards, our paramilitary organization.
 - @nothing: Do not increase funding for any program.
 - @easy_discard
 
@@ -41,7 +41,7 @@ on-arrival: resources -= 1; maximalist_dissent -= 6; communist_dissent -= 6; syn
 
 It is not enough for the PSI to solely be a political party. Our schools, libraries, cultural events and initiatives are crucial to our members' lives. Funding these organisations makes our members more committed to the party, even when our policies might not be to their liking.
 
-@rb
+@rg
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources

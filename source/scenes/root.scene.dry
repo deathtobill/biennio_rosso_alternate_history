@@ -100,7 +100,9 @@ Q.ldr_full_name = "Liberals, Democrats and Radicals";
 Q.ldr_full_italian = "Liberali, democratici e radicali";
 Q.ul_name = "UL";
 Q.ul_full_name = "Liberal Union";
-Q.ul_full_italian = "Liberale Unione"
+Q.ul_full_italian = "Liberale Unione";
+Q.pli_formed = 0;
+Q.pldi_formed = 0;
 
 // relation with the king; for snap elections and march
 Q.king_relation = 20;
@@ -172,7 +174,7 @@ Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'bn', 'other', 'pcdi', 'ps
 Q.pcdi_formed = 0;
 Q.psu_formed = 0
 Q.psri_reconciled = 0;
-Q,arditi_formed = 0;
+Q.arditi_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -247,7 +249,7 @@ Q.catholics_other = 2;
 // % of Chamber of Deputies in Jan 1919
 // source: wikipedia
 // Had to do some early forming of BN and other parties to make this easier for me + gameplay wise 
-Q,pcdi_r = 0;
+Q.pcdi_r = 0;
 Q.psi_r = 18;
 Q.psu_r = 0;
 Q.ppi_r = 6;
@@ -376,7 +378,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary', 'party_organisat
             'economic_democracy', 'education_policy', 'fiscal_policy', 'labour_rights', 
             'army', 'roman_question', 'southern_gov', 'arditi', 'para_rally', 'rev', 
             'red_guards', 'targeting', 'enemies', 'fundraising', 'king_relations', 
-            'party_disunity', 'rally', 'revolutionary', 'urgency'];
+            'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party'];
 
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
@@ -421,6 +423,7 @@ Q.party_disunity_timer = 0;
 Q.rally_timer = 0;
 Q.revolutionary_timer = 0;
 Q.urgency_timer = 0;
+Q.welfare_party_timer = 0;
 
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;

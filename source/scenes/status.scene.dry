@@ -46,10 +46,12 @@ Chamber of Deputies composition:
 {!<span class="tooltip-text" title="Italian Socialist Party">PSI</span>!}: [+ psi_r +]%
 [? if psu_formed = 1: {!<span class="tooltip-text" title="Unitary Socialist Party">PSU</span>!}: [+ psu_r +]% ?]
 {!<span class="tooltip-text" title="Italian People's Party">PPI</span>!}: [+ ppi_r +]%
-{!<span class="tooltip-text" title=[+ ldr_full_name +]>[+ ldr_name +]</span>!}: [+ ldr_r +]%
+[? if not pldi_formed : {!<span class="tooltip-text" title="Liberals, Democrats & Radicals">LDR</span>!}: [+ ldr_r +]% ?]
+[? if pldi_formed : {!<span class="tooltip-text" title="Italian Democratic Liberal Party">PDLI</span>!}: [+ ldr_r +]% ?]
 {!<span class="tooltip-text" title="Italian Reformist Socialist Party">PSRI</span>!}: [+ psri_r +]%
 {!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_r +]%
-{!<span class="tooltip-text" title=[+ ul_full_name +]>[+ ul_name +]</span>!}: [+ ul_r +]%
+[? if not pli_formed : {!<span class="tooltip-text" title="Liberal Union">UL</span>!}: [+ ul_r +]% ?]
+[? if pli_formed : {!<span class="tooltip-text" title="Italian Liberal Party">PLI</span>!}: [+ ul_r +]% ?]
 {!<span class="tooltip-text" title="National Bloc">BN</span>!}: [+ bn_r +]%
 Others: [+ other_r +]%
 
@@ -73,11 +75,13 @@ Unemployment: [+ unemployment_2 +]%
 
 {!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_relation : relationships +]
 
-{!<span class="tooltip-text" title=[+ ldr_full_name +]>[+ ldr_name +]</span>!}: [+ ldr_relation : relationships +]
+[? if not pldi_formed : {!<span class="tooltip-text" title="Liberals, Democrats and Radicals">LDR</span>!}: [+ ldr_relation : relationships +] ?]
+[? if pldi_formed : {!<span class="tooltip-text" title="Italian Democratic Liberal Party">PLDI</span>!}: [+ ldr_relation : relationships +] ?]
 
 {!<span class="tooltip-text" title="Italian People's Party">PPI</span>!}: [+ ppi_relation : relationships +]
 
-{!<span class="tooltip-text" title=[+ ul_full_name +]>[+ ul_name +]</span>!}: [+ ul_relation : relationships +]
+[? if not pli_formed : {!<span class="tooltip-text" title="Liberal Union">UL</span>!}: [+ ul_relation : relationships +] ?]
+[? if pli_formed : {!<span class="tooltip-text" title="Italian Liberal Party">PLI</span>!}: [+ ul_relation : relationships +] ?]
 
 {!<span class="tooltip-text" title="National Bloc">BN</span>!}: [+ bn_relation : relationships +]
 
@@ -107,7 +111,7 @@ if (Q.adp_strength) {
     Q.adp_strength_2 = Q.adp_strength.toFixed(1);
 }
 if (Q.abl_strength) {
-    Q.abl_strength_2 = Q,abl_strength.toFixed(1);
+    Q.abl_strength_2 = Q.abl_strength.toFixed(1);
 }
 !}
 
@@ -139,11 +143,9 @@ Regio Esercito: [+ army_strength +] thousand troops.
 
 Regio Esercito Loyalty: [+ army_loyalty : loyalty +]
 
-Carabinieri: [+ interior_police_strength +] thousand officers
+[? if psi_in_government : Carabinieri: [+ interior_police_strength +] thousand officers ?]
 
-Carabinieri Loyalty: [+ interior_police_loyalty: loyalty +]
-
-[? if psi_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
+[? if psi_in_government : Carabinieri Loyalty: [+ interior_police_loyalty: loyalty +] ?]
 
 @polls
 on-arrival: {!

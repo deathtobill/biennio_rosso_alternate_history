@@ -135,7 +135,7 @@ if (Q.month_actions >= 1) {
     Q.economic_records.push({'date': new Date(Q.year, Q.month - 1),
                              'inflation': Q.inflation,
                              'unemployment': Q.unemployment,
-                             'economic growth': Q.economic_growth});
+                             'economicgrowth': Q.economic_growth});
     // change economic stats...
     // we're basically implicity drawing a Philips curve
     // budget deficits lead to some inflation

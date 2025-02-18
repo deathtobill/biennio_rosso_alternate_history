@@ -76,6 +76,7 @@ PSI position: [? if psi_in_government : in government - ?][? if psi_in_governmen
 [? if psi_in_government and not in_psi_majority : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
 @cabinet
+go-to: menu
 
 Current cabinet:
 
@@ -121,9 +122,11 @@ view-if: (not historical_mode) or game_over
 go-to: election_algorithm
 set-jump: election_projections
 
-Support for Republicanism: [+ republican_sentiment_disp +]
-Support for Socialism: [+ socialist_sentiment_disp +]
-Support for Nationalism: [+ nationalism_sentiment_disp +]
+Support for Republicanism: [+ republican_sentiment_disp +]%
+
+Support for Socialism: [+ socialist_sentiment_disp +]%
+
+Support for Nationalism: [+ nationalism_sentiment_disp +]%
 
 @election_projections
 view-if: (not historical_mode) or game_over
@@ -198,7 +201,7 @@ Current relations: [+ bn_relation : relationships +]
 
 @paramilitaries
 on-arrival: {!
-Q.rg_strength = Math.round(Q.rb_strength);
+Q.rg_strength = Math.round(Q.rg_strength);
 Q.fdc_strength = Math.round(Q.fdc_strength);
 Q.ard_strength = Math.round(Q.ard_strength); 
 Q.adp_strength = Math.round(Q.adp_strength);
@@ -293,56 +296,74 @@ Dissent: [+ reformist_dissent : dissent +]
 title: Figures and Charts
 go-to: menu
 on-display: {!
-    data = [
-        {
-            "id": "psi",
-            "legend": "PSI",
-            "name": "PSI",
-            "seats": Q.psi_r*5,
-        },
-        {
-            "id": "psri",
-            "legend": "PSRI",
-            "name": "PSRI",
-            "seats": Q.psri_r*5,
-        },
-        {
-            "id": "ppi",
-            "legend": "PPI",
-            "name": "PPI",
-            "seats": Q.ppi_r*5,
-        },
-        {
-            "id": "ldr",
-            "legend": "LDR",
-            "name": Q.ldr_name,
-            "seats": Q.ldr_r*5,
-        },
-        {
-            "id": "ds",
-            "legend": "DS",
-            "name": "DS",
-            "seats": Q.ds_r*5,
-        },
-        {
-            "id": "ul",
-            "legend": "UL",
-            "name": Q.ul_name,
-            "seats": Q.ul_r*5,
-        },
-        {
-            "id": "other",
-            "legend": "Other",
-            "name": "Other",
-            "seats": Q.other_r*5,
-        },
-        {
-            "id": "bn",
-            "legend": "BN",
-            "name": "BN",
-            "seats": Q.bn_r*5,
-        },
-    ];
+data = [
+    {
+        "id": "psi",
+        "legend": "PSI",
+        "name": "PSI",
+        "seats": Math.round(Q.psi_r*5),
+    },
+]
+if (Q.pcdi_formed && Q.pcdi_r) {
+    data.push({
+        "id": "pcdi",
+        "legend": "PCD'I",
+        "name": "PCd'I",
+        "seats": Math.round(Q.pcdi_r*5),
+    });
+}
+if (Q.psu_formed && Q.psu_r) {
+    data.push({
+        "id": "psu",
+        "legend": "PSU",
+        "name": "PSU",
+        "seats": Math.round(Q.psu_r*5),
+    });
+}
+data = data.concat([
+    {
+        "id": "psri",
+        "legend": "PSRI",
+        "name": "PSRI",
+        "seats": Math.round(Q.psri_r*5),
+    },
+    {
+        "id": "ppi",
+        "legend": "PPI",
+        "name": "PPI",
+        "seats": Math.round(Q.ppi_r*5),
+    },
+    {
+        "id": "ldr",
+        "legend": "LDR",
+        "name": Q.ldr_name,
+        "seats": Math.round(Q.ldr_r*5),
+    },
+    {
+        "id": "ds",
+        "legend": "DS",
+        "name": "DS",
+        "seats": Math.round(Q.ds_r*5),
+    },
+    {
+        "id": "ul",
+        "legend": "UL",
+        "name": Q.ul_name,
+        "seats": Math.round(Q.ul_r*5),
+    },
+    {
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_r*5),
+    },
+    {
+        "id": "bn",
+        "legend": "BN",
+        "name": "BN",
+        "seats": Math.round(Q.bn_r*5),
+    },
+]);
 
     if (d3 && window) {
         // get screen width
@@ -384,9 +405,9 @@ on-display: {!
         // economic stats
         var minInflation = d3.min(Q.economic_records, d => d.inflation);
         var maxUnemployment = d3.max(Q.economic_records, d => d.unemployment);
-        var lines_3 = d3.linegraph(true, true, ['inflation'],
-                {'inflation': '#0000FF'},
-                {'inflation': 'Inflation'},
+        var lines_3 = d3.linegraph(true, true, ['inflation', 'unemployment', 'economicgrowth'],
+                {'inflation': '#0000FF', 'unemployment': '1E99C5', '#economicgrowth': '#FFD700'},
+                {'inflation': 'Inflation', 'unemployment': 'Unemployment', 'economicgrowth': 'Economic Growth'},
                 minInflation - 5, 21);
         lines_3.width(width).height(300);
         d3.select("#economic_history").datum(Q.economic_records).call(lines_3);
@@ -400,9 +421,9 @@ on-display: {!
 {!<table>!}
 {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div></td><td>!} **PSI:** {!</td><td>!} **[+ psi_r +]%** {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#C72F35'> </div></td> <td>!}PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td></tr>!}
+[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div></td> <td>!}PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#E35A5A'> </div></td> <td>!}PSU: {!</td><td>!} [+ psu_r +]% {!</td></tr>!}
+[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div></td> <td>!}PSU: {!</td><td>!} [+ psu_r +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#FFC0CB'> </div></td> <td>!}PSRI: {!</td><td>!} [+ psri_r +]% {!</td></tr>!}
 

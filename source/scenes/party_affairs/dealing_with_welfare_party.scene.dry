@@ -1,13 +1,9 @@
 title: Dealing with Veterans' Welfare
 new-page: true
 is-card: true
-view-if: psi_in_government
 frequency: 500
-on-arrival: {!
-month_actions += 1;
-current_budget = 0;
-current_budget += budget;
-!}
+view-if: welfare_party_timer <= 0
+on-arrival: month_actions += 1; welfare_party_timer = 6
 card-image: img/portraits/RadbruchGustav.jpg
 tags: party_affairs
 
@@ -26,16 +22,9 @@ What do we do?
 - @cancel_advisor_action
 
 @veterans_organisations_party
-subtitle: -1 Budget [? if catholic_charity_accepted :- The funding of an non-Catholic welfare program would violate our agreement! ?][? if budget < 1 and liberal_budget_accepted :- This will put us into a deficit! ?]
-choose-if: finance_minister_party = "PSI" 
-view-if: psi_in_government
-unavailable-subtitle: The PSI does not control the Financial Ministry.
-on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ppi_promise_failed = 1 if catholic_charity_accepted; veterans_psi += 2*(1-dissent); veterans_bn -= 2*(1-dissent); economic_growth += 0.7;
-go-to: ldr_promise_vonc if ldr_promise_failed = 1; catholic_promise_vonc if ppi_promise_failed = 1
+subtitle: -1 Party Resource 
+on-arrival: resources -= 1; veterans_psi += 2*(1-dissent); veterans_bn -= 2*(1-dissent); economic_growth += 0.7;
 
 We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds are reallocated to aid veterans immediately.
-
-[? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
-[? if ppi_promise_failed : Unfortunately, the funding of a non-Catholic aligned welfare organisation has led us to enter a deficit, breaking our agreement with the Catholics, and their representatives have already requested a meeting with us. ?]
 
 @no_aid_party

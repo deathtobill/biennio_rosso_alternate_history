@@ -8,7 +8,7 @@ tags: event
 
 The Military is to continue its demobilisation of its forces back to post-war levels. It does so in waves, and this month seems to be the latest one. Though a strain on already high unemployment, this is sure to relieve the budget by a substantial amount.
 
-[? if psi_in_government : Should we do something about this ?][? if demobilised_delay and psi_in_government : We are already off schedule. ?]
+[? if psi_in_government : Should we do something about this? ?][? if demobilised_delay and psi_in_government : We are already off schedule. ?]
 
 - @delay_demobilise: Influence the army to delay the orders...
 - @stop_demobilise: Influence the army to end demobilisation.
