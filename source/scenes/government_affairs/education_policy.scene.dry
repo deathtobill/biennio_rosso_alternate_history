@@ -4,10 +4,10 @@ is-card: true
 view-if: psi_in_government and public_education_minister_party = "PSI" and education_policy_timer <= 0
 frequency: 500
 on-arrival: {!
-month_actions += 1;
-current_budget = 0;
-current_budget += budget;
-education_policy_timer = 5
+Q.month_actions += 1;
+Q.current_budget = 0;
+Q.current_budget += budget;
+Q.education_policy_timer = 5
 !}
 card-image: img/portraits/RadbruchGustav.jpg
 tags: govt_affairs
@@ -52,15 +52,15 @@ We begin a new round of funding for the public education system, allowing school
 @curriculum_reform
 subtitle: This will affect both public and religious schools. [? if catholic_education_accepted : This will violate our agreement with the Catholics! ?]
 on-arrival: {!
-education_reformed += 1; 
-workers_psi += 2*(1-dissent); 
-catholic_psi -= 3*(1-dissent); 
-vatican_relations -= 1; 
-ppi_relation -= 5*(1-dissent); 
-if (catholic_education_accepted = 1) {
-    ppi_promise_failed = 1;
+Q.education_reformed += 1; 
+Q.workers_psi += 2*(1-dissent); 
+Q.catholic_psi -= 3*(1-dissent); 
+Q.vatican_relations -= 1; 
+Q.ppi_relation -= 5*(1-dissent); 
+if (Q.catholic_education_accepted = 1) {
+    Q.ppi_promise_failed = 1;
 } 
-psri_relation += 5*(1-dissent);
+Q.psri_relation += 5*(1-dissent);
 !}
 max-visits: 3
 go-to: catholic_promise_vonc if ppi_promise_failed

@@ -4,10 +4,10 @@ is-card: true
 view-if: psi_in_government and (finance_minister_party = "PSI" or labour_minister_party = "PSI" or treasury_minister_party = "PSI") and welfare_gov_timer <= 0
 frequency: 500
 on-arrival: {!
-month_actions += 1;
-current_budget = 0;
-current_budget += budget;
-welfare_gov_timer = 3
+Q.month_actions += 1;
+Q.current_budget = 0;
+Q.current_budget += budget;
+Q.welfare_gov_timer = 3
 !}
 card-image: img/portraits/RadbruchGustav.jpg
 tags: govt_affairs
@@ -34,20 +34,20 @@ choose-if: finance_minister_party = "PSI"
 view-if: not unemployment_insurance_founded and psi_in_government
 unavailable-subtitle: The PSI does not control the Financial Ministry.
 on-arrival: {!
-unemployment_insurance_founded = 1; 
-insurance_payments_timer += 12; 
-budget -= 2; 
-if (budget < 0 && liberal_budget_accepted == 1 && current_budget >= 0) {
-    ldr_promise_failed = 1;
+Q.unemployment_insurance_founded = 1; 
+Q.insurance_payments_timer += 12; 
+Q.budget -= 2; 
+if (Q.budget < 0 && Q.liberal_budget_accepted == 1 && Q.current_budget >= 0) {
+    Q.ldr_promise_failed = 1;
 }
-if (catholic_charity_accepted = 1) {
-    ppi_promise_failed = 1;
+if (Q.catholic_charity_accepted == 1) {
+    Q.ppi_promise_failed = 1;
 }
-veterans_psi += 4*(1-dissent); 
-veterans_bn -= 4*(1-dissent); 
-economic_growth += 1.3; 
-inflation += 0.3;
-psri_relation += 7*(1-dissent);
+Q.veterans_psi += 4*(1-dissent); 
+Q.veterans_bn -= 4*(1-dissent); 
+Q.economic_growth += 1.3; 
+Q.inflation += 0.3;
+Q.psri_relation += 7*(1-dissent);
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1; catholic_promise_vonc if ppi_promise_failed
 

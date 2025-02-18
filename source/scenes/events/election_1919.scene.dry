@@ -5,28 +5,28 @@ priority: -1
 view-if: (year = next_election_year and month >= next_election_month) or (year > next_election_year)
 on-arrival: {!
 // resetting coalition stuff
-ldr_promise_failed = 0;
-ppi_promise_failed = 0;
+Q.ldr_promise_failed = 0;
+Q.ppi_promise_failed = 0;
 
-liberal_aid_accepted = 0;
-liberal_budget_accepted = 0;
-liberal_crackdown_accepted = 0;
-liberal_foreign_accepted = 0;
-liberal_nationalisation_accepted = 0;
-liberal_reform_accepted = 0;
+Q.liberal_aid_accepted = 0;
+Q.liberal_budget_accepted = 0;
+Q.liberal_crackdown_accepted = 0;
+Q.liberal_foreign_accepted = 0;
+Q.liberal_nationalisation_accepted = 0;
+Q.liberal_reform_accepted = 0;
 
-catholic_charity_accepted = 0;
-catholic_education_accepted = 0;
-catholic_nationalisation_accepted = 0;
-catholic_papacy_accepted = 0;
-catholic_women_accepted = 0;
+Q.catholic_charity_accepted = 0;
+Q.catholic_education_accepted = 0;
+Q.catholic_nationalisation_accepted = 0;
+Q.catholic_papacy_accepted = 0;
+Q.catholic_women_accepted = 0;
 
-liberal_coalition_failed = 0; 
-catholic_coalition_failed = 0;
-coalition_dissent = 0;
+Q.liberal_coalition_failed = 0; 
+Q.catholic_coalition_failed = 0;
+Q.coalition_dissent = 0;
 
 // prevents insta dismissal
-king_dismissed_cooldown = 6;
+Q.king_dismissed_cooldown = 6;
 !}
 on-departure: month_actions += 1; in_election = 0; next_election_year = next_election_year + 2; n_elections += 1; next_election_time = time + 24;
 set-jump: post_election_1919

@@ -59,33 +59,33 @@ go-to: vatican_negotiations
 choose-if: vatican_appeased >= negotiating_power
 unavailable-subtitle: The Holy See would refuse this offer.
 on-arrival: {!
-roman_question_answered = 1;
-ppi_relation += 15;
-catholic_psi += 7*(1-dissent);
+Q.roman_question_answered = 1;
+Q.ppi_relation += 15;
+Q.catholic_psi += 7*(1-dissent);
 
-if (vatican_compensation_offered) {
-    budget -= 3;
+if (Q.vatican_compensation_offered) {
+    Q.budget -= 3;
 }
-if ((current_budget > 0 && budget < 0) && liberal_budget_accepted == 1) {
-    ldr_promise_failed;
-}
-
-if (vatican_defence_offered) {
-    army_strength -= 50;
+if ((Q.current_budget > 0 && Q.budget < 0) && Q.liberal_budget_accepted == 1) {
+    Q.ldr_promise_failed = 1;
 }
 
-if (vatican_defence_offered) {
-    army_loyalty -= 0.05;
+if (Q.vatican_defence_offered) {
+    Q.army_strength -= 50;
 }
 
-if (vatican_education_offered) {
-    secularised_education = 0;
+if (Q.vatican_defence_offered) {
+    Q.army_loyalty -= 0.05;
 }
-if (vatican_education_offered) {
-    communist_dissent += 10;
+
+if (Q.vatican_education_offered) {
+    Q.secularised_education = 0;
 }
-if (vatican_education_offered) {
-    maximalist_dissent += 10;
+if (Q.vatican_education_offered) {
+    Q.communist_dissent += 10;
+}
+if (Q.vatican_education_offered) {
+    Q.maximalist_dissent += 10;
 }
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed

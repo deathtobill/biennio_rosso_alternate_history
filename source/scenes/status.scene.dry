@@ -100,19 +100,19 @@ Unemployment: [+ unemployment_2 +]%
 @paramilitaries
 on-arrival: {!
 if (Q.rg_strength) {
-    Q.rg_strength_2 = Q.rg_strength.toFixed(1);
+    Q.rg_strength_2 = Math.round(Q.rg_strength);
 }
 if (Q.fdc_strength) {
-    Q.fdc_strength_2 = Q.fdc_strength.toFixed(1);
+    Q.fdc_strength_2 = Math.round(Q.fdc_strength);
 }
 if (Q.ard_strength) {
-    Q.ard_strength_2 = Q.ard_strength.toFixed(1);
+    Q.ard_strength_2 = Math.round(Q.ard_strength);
 }
 if (Q.adp_strength) {
-    Q.adp_strength_2 = Q.adp_strength.toFixed(1);
+    Q.adp_strength_2 = Math.round(Q.adp_strength);
 }
 if (Q.abl_strength) {
-    Q.abl_strength_2 = Q.abl_strength.toFixed(1);
+    Q.abl_strength_2 = Math.round(Q.abl_strength);
 }
 !}
 

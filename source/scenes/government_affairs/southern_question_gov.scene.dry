@@ -56,15 +56,15 @@ subtitle: -1 Budget - [? if budget = 0 and liberal_budget_accepted : This will p
 choose-if: public_works_minister_party = "PSI"
 unavailable-subtitle: The PSI does not control the Public Works Ministry.
 on-arrival: {!
-southern_infrastructure_funded += 1; 
-budget -= 1; 
-if (budget < 0 && current_budget > 0) {
-    ldr_promise_failed = 1;
+Q.southern_infrastructure_funded += 1; 
+Q.budget -= 1; 
+if (Q.budget < 0 && Q.current_budget > 0) {
+    Q.ldr_promise_failed = 1;
 } 
-economic_growth += 0.6; 
-unemployment -= 0.7; 
-rural_psi += 2*(1-dissent); 
-industrialists_psi -= 3*(1-dissent);
+Q.economic_growth += 0.6; 
+Q.unemployment -= 0.7; 
+Q.rural_psi += 2*(1-dissent); 
+Q.industrialists_psi -= 3*(1-dissent);
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
@@ -77,18 +77,18 @@ subtitle: -1 Budget - [? if budget = 0 and liberal_budget_accepted : This will p
 choose-if: public_education_minister_party = "PSI"
 unavailable-subtitle: The PSI does not control the Public Education Ministry.
 on-arrival: {!
-southern_education_funded += 1; 
-budget -= 1; 
-if (budget < 0 && current_budget > 0) {
-    ldr_promise_failed = 1;
+Q.southern_education_funded += 1; 
+Q.budget -= 1; 
+if (Q.budget < 0 && Q.current_budget > 0) {
+    Q.ldr_promise_failed = 1;
 } 
-economic_growth += 0.6;
-unemployment -= 0.7; 
-rural_psi += 4*(1-dissent); 
-middle_class += 3*(1-dissent); 
-industrialists_psi -= 3*(1-dissent); 
-catholics_psi -= 4*(1-dissent); 
-ppi_relation -= 7;
+Q.economic_growth += 0.6;
+Q.unemployment -= 0.7; 
+Q.rural_psi += 4*(1-dissent); 
+Q.middle_class += 3*(1-dissent); 
+Q.industrialists_psi -= 3*(1-dissent); 
+Q.catholics_psi -= 4*(1-dissent); 
+Q.ppi_relation -= 7;
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 

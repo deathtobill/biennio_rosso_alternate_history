@@ -2,14 +2,11 @@ title: PSRI seeks reconciliation
 subtitle: PSRI leaders have requested a meeting between us...
 view-if: participating = 1 and reformists_defect = 0 and reformists_expelled = 0 and reformist_strength >= 40 and year >= 1920 and psri_relation >= 64.9
 on-arrival: {!
-
-
-psri_workers_movement = (workers_psri / 4) * 3;
-psri_middle_class_movement = (middle_class_psri / 4) * 3;
-psri_industrialists_movement = (industrialists_psri / 4) * 3;
-psri_veterans_movement = (veterans_psri / 4) * 3;
-psri_catholics_movement = (catholics_psri / 4) * 3;
-
+Q.psri_workers_movement = (workers_psri / 4) * 3;
+Q.psri_middle_class_movement = (middle_class_psri / 4) * 3;
+Q.psri_industrialists_movement = (industrialists_psri / 4) * 3;
+Q.psri_veterans_movement = (veterans_psri / 4) * 3;
+Q.psri_catholics_movement = (catholics_psri / 4) * 3;
 !}
 max-visits: 1
 tags: event
@@ -24,23 +21,23 @@ What do we do?
 @reconcile_accept
 subtitle: It is clear that our vision is aligned once more.
 on-arrival: {! 
-workers_psi += psri_workers_movement; 
-middle_class_psi += psri_middle_class_movement; 
-industrialists_psi += psri_industrialists_movement; 
-veterans_psi += psri_veterans_movement; 
-catholics_psi += psri_catholics_movement;
+Q.workers_psi += psri_workers_movement; 
+Q.middle_class_psi += psri_middle_class_movement; 
+Q.industrialists_psi += psri_industrialists_movement; 
+Q.veterans_psi += psri_veterans_movement; 
+Q.catholics_psi += psri_catholics_movement;
 
-workers_psri -= psri_workers_movement;
-middle_class_psri -= psri_middle_class_movement;
-industrialists_psri -= psri_industrialists_movement;
-veterans_psri -= psri_veterans_movement;
-catholics_psri -= psri_catholics_movement;
+Q.workers_psri -= psri_workers_movement;
+Q.middle_class_psri -= psri_middle_class_movement;
+Q.industrialists_psri -= psri_industrialists_movement;
+Q.veterans_psri -= psri_veterans_movement;
+Q.catholics_psri -= psri_catholics_movement;
 
-reformist_strength += 10;
-communist_dissent += 10
-maximalist_dissent += 10
+Q.reformist_strength += 10;
+Q.communist_dissent += 10
+Q.maximalist_dissent += 10
 
-psri_reconciled = 1;
+Q.psri_reconciled = 1;
 !}
 
 Though the other factories decry this, the vast majority of the PSRI is reunited once more with the party, as new leadership flocks back. Though a small minority of the PSRI still remains, they are severely weakened by defections to us.

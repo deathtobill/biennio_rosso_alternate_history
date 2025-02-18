@@ -4,10 +4,10 @@ is-card: true
 view-if: psi_in_government and labour_minister_party = "PSI" and economic_democracy_timer <= 0
 frequency: 500
 on-arrival: {!
-month_actions += 1;
-current_budget = 0
-current_budget += budget
-economic_democracy_timer = 5
+Q.month_actions += 1;
+Q.current_budget = 0
+Q.current_budget += budget
+Q.economic_democracy_timer = 5
 !}
 card-image: img/portraits/RadbruchGustav.jpg
 tags: govt_affairs
@@ -62,23 +62,23 @@ Though thought dead on arrival, the PSI, PSRI and defectors from other parties h
 subtitle: -1 Budget - We should begin buying out businesses and empower the workers and consumers to govern. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?][? if liberal_nationalisation_accepted : This will break our agreement with the Liberals! ?]
 view-if: industries_nationalised = 0
 on-arrival: {!
-budget -= 1; 
-industries_nationalised += 1; 
-workers_psi += 3*(1-dissent); 
-industrialists_psi -= 4*(1-dissent); 
-industrialists_bn += 3; 
-ldr_relation -= 7; 
-ds_relation -= 7; 
-communist_strength += 7; 
-communist_dissent -= 7; 
-if (liberal_nationalisation_accepted == 1) {
-    ldr_promise_failed = 1;
+Q.budget -= 1; 
+Q.industries_nationalised += 1; 
+Q.workers_psi += 3*(1-dissent); 
+Q.industrialists_psi -= 4*(1-dissent); 
+Q.industrialists_bn += 3; 
+Q.ldr_relation -= 7; 
+Q.ds_relation -= 7; 
+Q.communist_strength += 7; 
+Q.communist_dissent -= 7; 
+if (Q.liberal_nationalisation_accepted == 1) {
+    Q.ldr_promise_failed = 1;
 }
-if (budget < 0 && liberal_budget_accepted == 1 && current_budget > -1) {
-    ldr_promise_failed = 1;
+if (Q.budget < 0 && Q.liberal_budget_accepted == 1 && Q.current_budget > -1) {
+    Q.ldr_promise_failed = 1;
 } 
-capital_strike_progress += 1; 
-psri_relation += 5*(1-dissent);
+Q.capital_strike_progress += 1; 
+Q.psri_relation += 5*(1-dissent);
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 max-visits: 3

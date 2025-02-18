@@ -4,8 +4,6 @@ tags: event
 priority: 3
 view-if: march_failed = 1 and prime_minister != "Mussolini" and year = "1923" and month = "1"
 max-visits: 1
-on-arrival: {!
-!}
 new-page: true
 go-to: game_over
 

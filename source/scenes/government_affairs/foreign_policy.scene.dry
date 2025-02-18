@@ -45,11 +45,11 @@ We continue improving our relations with our former allies in the Entente. [? if
 @improve_soviet_relations
 subtitle: [? if liberal_foreign_accepted and soviet_relations <= entente_relations : This will disrupt our alignment with the Entente! ?]
 on-arrival: {! 
-soviet_relations += 1; 
-ldr_relation -= 4*(1-dissent); 
-ds_relation -= 4*(1-dissent);  
-if (soviet_relations > entente_relations) {
-    ldr_promise_failed = 1;
+Q.soviet_relations += 1; 
+Q.ldr_relation -= 4*(1-dissent); 
+Q.ds_relation -= 4*(1-dissent);  
+if (Q.soviet_relations > Q.entente_relations) {
+    Q.ldr_promise_failed = 1;
 }
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
