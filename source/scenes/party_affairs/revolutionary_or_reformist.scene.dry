@@ -4,7 +4,7 @@ is-card: true
 view-if: revolutionary_timer <= 0
 frequency: 200
 on-arrival: month_actions += 1; revolutionary_timer = 8;
-card-image: img/GiacintoMenottiSerrati.png
+card-image: img/portraits/GiacintoMenottiSerrati.png
 tags: party_affairs
 
 = Revolution or Reform?
