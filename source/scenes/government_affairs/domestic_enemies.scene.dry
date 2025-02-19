@@ -63,7 +63,7 @@ We have arrested more of the Arditi's leaders and confiscated their weapons.
 
 @ban_abl
 on-arrival: abl_strength *= 0.85; abl_strength *= 0.7 if interior_police_loyalty >= 0.7; abl_banned = 1; industrialists_bn += 5*(1-dissent); interior_police_loyalty -= 0.05; abl_ban_timer = 6;
-view-if: fasci_urgency >= 3 abl_banned == 0
+view-if: fasci_urgency >= 3 and abl_banned == 0
 
 Banning the Anti-Bolshevik League's weakens our relationship with the landowners and industrialists.
 
