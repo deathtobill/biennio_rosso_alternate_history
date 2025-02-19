@@ -49,7 +49,7 @@ subtitle: -3 resources
 choose-if: resources >= 3
 unavailable-subtitle: Not enough resources.
 view-if: radio = 0
-on-arrival: radio += 1; resources -= 3; middle_class_psi += 2*(1 - dissent); industrialists_psi += 4*(1 - dissent); workers_spd += 2*(1 - dissent); syndicalist_dissent += 5; socialist_sentiment += 3*(1 - dissent); nationalist_sentiment -= 3*(1 - dissent) if pacifism > 1; republican_sentiment += 3*(1-dissent) if democratisation > 1
+on-arrival: radio += 1; resources -= 3; middle_class_psi += 2*(1 - dissent); industrialists_psi += 4*(1 - dissent); workers_psi += 2*(1 - dissent); syndicalist_dissent += 5; socialist_sentiment += 3*(1 - dissent); nationalist_sentiment -= 3*(1 - dissent) if pacifism > 1; republican_sentiment += 3*(1-dissent) if democratisation > 1
 
 A radio station would be one of the first of its kind in Italy, and the first socialist station in the nation. Funding is expensive, and radio's in it of itself seem only affordable to the richest of the middle class, alongside industrialists and landowners, who will be the main consumers of our content, it seems.
 
@@ -67,7 +67,7 @@ Our new radio network has a mix of popular and political programming, and is pro
 title: We must keep on building up our radio network.
 subtitle: It is now financially self-sufficient, and does not require any more resources.
 view-if: radio > 3 and radio <= 5 and year <= 1921
-on-arrival: radio += 1; industrialists_psi += 5*(1 - dissent); middle_class_psi += 4*(1 - dissent); workers_psi += 4*(1 - dissent); rural_spd += 3*(1 - dissent); veterans_psi += 2*(1-dissent); socialist_sentiment += 3*(1 - dissent); nationalist_sentiment -= 3*(1 - dissent)*(pacifism-2) if pacifism > 2; republican_sentiment += 3*(1-dissent)*(democratisation-2) if democratisation > 2
+on-arrival: radio += 1; industrialists_psi += 5*(1 - dissent); middle_class_psi += 4*(1 - dissent); workers_psi += 4*(1 - dissent); rural_psi += 3*(1 - dissent); veterans_psi += 2*(1-dissent); socialist_sentiment += 3*(1 - dissent); nationalist_sentiment -= 3*(1 - dissent)*(pacifism-2) if pacifism > 2; republican_sentiment += 3*(1-dissent)*(democratisation-2) if democratisation > 2
 
 Our radio network has become a successful tool for spreading our message.
 

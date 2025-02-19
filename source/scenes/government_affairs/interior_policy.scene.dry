@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs
 on-arrival: police_timer = 5; month_actions += 1
-view-if: spd_in_government = 1 and (interior_minister_party = "PSI" or (liberal_crackdown_accepted and not crackdown_done)) and police_timer <= 0
+view-if: psi_in_government = 1 and (interior_minister_party = "PSI" or (liberal_crackdown_accepted and not crackdown_done)) and police_timer <= 0
 card-image: img/portraits/FilippoTurati.jpg
 
 = Internal Security

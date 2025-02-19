@@ -1,7 +1,7 @@
 title: Mussolini takes power.
 subtitle: The beginning of the end.
 view-if: rome_
-on-arrival: spd_in_government = 0
+on-arrival: psi_in_government = 0
 tags: event
 new-page: true
 

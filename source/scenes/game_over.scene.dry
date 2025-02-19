@@ -87,7 +87,7 @@ We have failed to achieve revolution in Italy, as the last remaining socialist r
 
 @psi_victorious
 title: PSI still in government
-view-if: psi_in_government == 1 and chancellor_party == "SPD" and total_defeat == 0 and long_war == 0
+view-if: psi_in_government == 1 and chancellor_party == "PSI" and total_defeat == 0 and long_war == 0
 tags: endings
 go-to: eg_menu
 

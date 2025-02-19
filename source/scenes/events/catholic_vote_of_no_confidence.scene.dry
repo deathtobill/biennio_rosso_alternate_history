@@ -1,7 +1,7 @@
 title: The Catholics calls a vote of no confidence against the current government!
 subtitle: We have angered our coalition partners too much...
 new-page: true
-view-if: psi_in_government = 1 and socialist_catholic_coalition and coalition_dissent >= 4 and spd_r < 50
+view-if: psi_in_government = 1 and socialist_catholic_coalition and coalition_dissent >= 4 and psi_r < 50
 tags: event
 go-to: vonc_menu
 

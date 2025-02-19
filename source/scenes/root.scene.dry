@@ -358,7 +358,7 @@ Q.soviet_recovery_timer = 0;
 // did the PSI vote against the previous government in a vote of no confidence?
 Q.psi_no_confidence = 0;
 // was the last PSI government taken down in a vote of no confidence by our coalition partners?
-Q.no_confidence_against_spd = 0;
+Q.no_confidence_against_psi = 0;
 
 // Advisors/Leaders
 Q.n_advisors = 3;
