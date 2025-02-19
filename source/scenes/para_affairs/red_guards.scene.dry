@@ -8,14 +8,13 @@ on-arrival: month_actions += 1; red_guards_timer = 3; rg_militarization_cost = 2
 
 = Red Guards
 
-The *Guardie Rosse*, also known as the Red Guards is a paramilitary organization affiliated with our party. We have historically supported the party, having seen it as the *de facto* paramilitary wing of the party and utilising the organisation to advance our goals.
+The *Guardie Rosse*, also known as the Red Guards is a paramilitary organisation affiliated with our party. We have historically supported the party, having seen it as the *de facto* paramilitary wing of the party and utilising the organisation to advance our goals.
 
 - @militant: Fund more military-style training and equipment for the Red Guards.
 - @militant_2: Use our existing resources to support more training for the Red Guards.
 - @same: Keep the Red Guards as it is.
 - @cut_rg: Cut funding for the Red Guards.
 - @easy_discard
-- @cancel_advisor_action
 
 @militant
 choose-if: para_resources >= rg_militarization_cost

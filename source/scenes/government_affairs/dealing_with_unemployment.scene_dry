@@ -24,7 +24,6 @@ There are various ways we are able to tackle this problem now that we are in gov
 - @tax_breaks: Increase tax breaks and loans given to businesses and cooperatives.
 - @no_aid: Our budget limits our ability to aid the unemployed.
 - @easy_discard
-- @cancel_advisor_action
 
 @public_works_program
 subtitle: -1 Budget - Expand our current infrastructural commitments further. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]

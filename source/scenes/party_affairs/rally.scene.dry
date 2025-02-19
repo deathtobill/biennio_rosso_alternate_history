@@ -15,6 +15,7 @@ Mass rallies are a common feature of social democratic life, especially in the l
 - @economic: Ending this economic crisis and inaction of the government.
 - @local: A mixture of various local and national concerns that resonate most with the audience.
 - @easy_discard
+- @cancel_advisor_action
 
 @class_struggle
 on-arrival: workers_psi += 4*(1-dissent); veterans_psi += 3*(1-dissent) if communist_strength > reformist_strength; workers_psi += 4*(1-dissent) if nationalization_progress > 0; veterans_psi += 3*(1-dissent) if nationalization_progress > 0; communist_strength += 5; communist_dissent -= 5; middle_class_psi -= 3; industrialists_psi -= 2;

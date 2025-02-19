@@ -20,7 +20,6 @@ Now that we are in control of the Foreign Ministry, we can alter Italy's relatio
 - @improve_vatican_relations: Improve ties with the Papacy.
 - @reopen_negotiations: Perhaps it is time to resolve the Roman Question?
 - @easy_discard
-- @cancel_advisor_action
 
 @aid_soviet_union
 subtitle: -1 Budget - We will provide support to the Soviets. [? if liberal_aid_accepted : This will violate our agreement with the Liberals! ?][? if liberal_budget_accepted and budget < 1 : This will put us into a deficit! ?][? if liberal_foreign_accepted and soviet_relations <= entente_relations : This will disrupt our alignment with the Entente! ?]

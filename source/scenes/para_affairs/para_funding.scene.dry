@@ -17,6 +17,7 @@ For better or for worse, both the party and the paramilitaries cannot exist with
 - @big_decrease: Siphon a large amount back into our coffers.
 - @maintain: Maintain current funds.
 - @easy_discard
+- @cancel_advisor_action
 
 @big_fund
 subtitle: -2 Party Resources, + 2 Paramilitary Resources

@@ -11,7 +11,7 @@ Lazzari is a long-time member of the PSI, founding the party back in 1892. A mem
 
 - @party_disunity
 - @party_rally
-- @labour_rights
+- @fiscal_policy
 - @root: Return to main
 
 @party_disunity
@@ -28,12 +28,12 @@ subtitle: We should go rally our voters and spread our message further.
 choose-if: advisor_action_timer == 0 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
-go-to: party_rally
+go-to: rally
 
-@labour_rights
-title: Labour Rights
-subtitle: Now that we are in government, we can reform labour laws to help out our main support base, the workers.
-choose-if: advisor_action_timer <= 0 and (centre_left_coalition or in_minority_government or in_psi_majority)
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not (centre_left_coalition or in_minority_government or in_psi_majority) : The PSI is not in government to influence policy. ?]
-on-arrival: advisor_action_timer = 6; last_advisor_action = 1
-go-to: labour_rights
+@fiscal_policy
+title: Fiscal Policy
+subtitle: Having control of the Financial Ministry, we can adjust taxes and tariffs.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not currently in government. ?][? if not finance_minister_party = "PSI" : The PSI does not control the Financial Ministry. ?]
+choose-if: psi_in_government and finance_minister_party = "PSI"
+on-arrival: advisor_action_timer = 6; fiscal_policy_timer -= 5; last_advisor_action = 1;
+go-to: fiscal_policy

@@ -23,13 +23,13 @@ on-arrival: advisor_action_timer = 6; coalition_dissent -= 1; ldr_relation += 10
 
 We have improved our relations with our coalition partners and reduced tensions with the coalition.
 
-@labour_rights
-title: Labour Rights
-subtitle: Now that we are in government, we can reform labour laws to help out our main support base, the workers.
-choose-if: advisor_action_timer <= 0 and (centre_left_coalition or in_minority_government or in_psi_majority)
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not (centre_left_coalition or in_minority_government or in_psi_majority) : The PSI is not in government to influence policy. ?]
+@interior_policy
+title: Interior Policy
+subtitle: Now that we are in control of the Interior Ministry, we can quell internal violence across the nation.
+choose-if: advisor_action_timer <= 0 and psi_in_government and interior_minister_party = "PSI"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not in government to influence policy. ?][? if not interior_minister_party = "PSI" : The PSI does not control the Interior Ministry. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
-go-to: labour_rights
+go-to: interior_policy
 
 @snap_election
 title: Snap Election

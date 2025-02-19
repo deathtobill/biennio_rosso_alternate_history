@@ -13,7 +13,6 @@ Our relationship with the King can be described as wary as best, due to our diam
 - @king_ul: Utilise our influence with the [+ ul_name +] to sway the King.
 - @king_return: Let's not do this for now.
 - @easy_discard
-- @cancel_advisor_action
 
 @king_funds
 subtitle: -1 resources

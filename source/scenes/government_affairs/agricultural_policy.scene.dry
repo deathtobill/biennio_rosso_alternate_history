@@ -20,7 +20,6 @@ With control of the Agricultural Ministry in the hands of the PSI, it seems ther
 - @agricultural_finance: Agricultural Financing
 - @root: Do not enact any policies for now.
 - @easy_discard
-- @cancel_advisor_action
 
 @land_seize
 subtitle: Conduct small seizures of land from large estates to give redistribute to peasants and cooperatives, mainly situated in the central and northern regions. [? if liberal_reform_accepted : This will break our agreement with the Liberals! ?]

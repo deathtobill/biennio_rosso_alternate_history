@@ -36,4 +36,4 @@ subtitle: There are a number of ideologues from each faction which seek to direc
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1; ideology_timer -= 9;
-go-to: question_of_ideology
+go-to: ideology

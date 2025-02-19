@@ -126,7 +126,7 @@ Red Guard Militarization: [+ rg_militancy : militancy +]
 
 [? if arditi_formed: Arditi del Popolo Militarization: [+ adp_militancy : militancy +]?]
 
-{!<span class="tooltip-text" title="The Fasci is a right-wing organization of war veterans associated with the BN.">Fasci</span>!} Strength: [+ fdc_strength_2 +] thousand
+{!<span class="tooltip-text" title="The Fasci is a right-wing organisation of war veterans associated with the BN.">Fasci</span>!} Strength: [+ fdc_strength_2 +] thousand
 
 Fasci Militarization: [+ fdc_militancy : militancy +]
 

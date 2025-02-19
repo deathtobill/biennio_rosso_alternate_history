@@ -26,7 +26,7 @@ Something must be done to reinforce party unity.
 - @concessions_left
 - @concessions_labour
 - @do_nothing
-
+- @cancel_advisor_action
 
 @enforce_unity
 title: Enforce party discipline.

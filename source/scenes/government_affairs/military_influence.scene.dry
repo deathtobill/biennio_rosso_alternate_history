@@ -18,7 +18,6 @@ The Military has been historically anti-socialist and unfavourable towards us. T
 - @purge_loyalty: Utilise the legal system to remove anti-socialist officers.
 - @no_military: Do nothing for now.
 - @easy_discard
-- @cancel_advisor_action
 
 @buy_loyalty
 view-if: not bribes_caught
