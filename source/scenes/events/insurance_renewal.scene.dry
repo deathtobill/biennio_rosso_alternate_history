@@ -6,7 +6,6 @@ on-arrival: {!
 Q.current_budget = 0;
 Q.current_budget += budget;
 !}
-face-image: img/schutzbund.png
 tags: event
 
 = Unemployment Insurance Funding

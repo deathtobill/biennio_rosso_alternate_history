@@ -5,10 +5,14 @@ priority: 3
 view-if: prime_minister != "Mussolini" and year = 1923 and month = 1
 max-visits: 1
 new-page: true
-go-to: game_over
 
 = A New Day in Italy
 
 With the failure of the March on Rome by Mussolini, it seems the Fasci's momentum has stalled. Our forces are overwhelming theirs, as it seems nothing is in our way now. 
 
 Only time will tell how we go from here.
+
+- @end_game: Game over.
+
+@end_game
+go-to: game_over

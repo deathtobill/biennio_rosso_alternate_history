@@ -2,7 +2,6 @@ title: Government bans the Red Guards!
 subtitle: The reactionary judicial system has banned the Red Guards.
 view-if: not psi_in_government and radicalisation > 8 and parliamentary = 0 and judicial_reform < 2
 new-page: true
-face-image: img/Kollwitz_Weavers.jpg
 on-arrival: rg_banned = 1; rg_strength -= 20; rg_militancy -= 0.01
 tags: event
 
