@@ -3,13 +3,8 @@ new-page: true
 is-card: true
 view-if: psi_in_government and finance_minister_party = "PSI" and fiscal_policy_timer <= 0
 frequency: 500
-on-arrival: {!
-Q.month_actions += 1;
-Q.current_budget = 0;
-Q.current_budget += budget;
-Q.fiscal_policy_timer = 5;
-!}
-card-image: img/portraits/ConstantintoLazzari.jpg
+on-arrival: month_actions += 1; current_budget = 0; current_budget += budget; fiscal_policy_timer = 5;
+card-image: img/portraits/CostantinoLazzari.jpg
 go-to: fiscal_menu
 tags: govt_affairs
 

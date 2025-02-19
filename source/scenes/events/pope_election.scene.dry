@@ -7,7 +7,6 @@ on-arrival: delval_votes += 1 if radicalisation > 7; delval_votes += 1 if papal_
 tags: event
 face-image: img/PopeElection.jpg
 
-
 = 1922 Papal Conclave
 
 We have received news from Papacy; Pope Benedict XV has passed away. A new Pope is to be elected in the Sistine Chapel, and though historically, Benedict XV held a rather conciliatory attitude towards us, it is unclear the new Pope will keep with him.
@@ -19,7 +18,7 @@ Though we cannot obviously influence the conclave directly, our role and actions
 - @pope_result: Let's hope the new Pope is more accommodating...
 
 @pope_result
-go-to: delval_elected if ((delval_votes > gasparri_votes) and (delval_votes > ratti_votes)); gasparri_elected if ((gasparri_votes > delval_votes) and (gasparri_votes > ratti_votes)); ratti_elected if ((ratti_votes >= gasparri_votes) and (gasparri_votes >= delval_votes))
+go-to: delval_elected if ((delval_votes > gasparri_votes) and (delval_votes > ratti_votes)); gasparri_elected if ((gasparri_votes > delval_votes) and (gasparri_votes > ratti_votes)); ratti_elected if (((ratti_votes >= gasparri_votes) and (ratti_votes >= delval_votes)) or gasparri_votes == delval_votes)
 
 @delval_elected
 on-arrival: pope = "Del Val"

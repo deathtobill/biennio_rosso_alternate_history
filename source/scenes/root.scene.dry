@@ -109,15 +109,19 @@ Q.king_relation = 20;
 Q.rg_strength = 100;
 Q.rg_militancy = 0.20;
 Q.rg_banned = 0;
+
 Q.fdc_strength = 30;
 Q.fdc_militancy = 0.30;
-Q.fdc_banned = 15;
+Q.fdc_banned = 0;
+
 Q.ard_strength = 15;
 Q.ard_militancy = 0.50;
 Q.ard_banned = 0;
+
 Q.adp_strength = 0;
 Q.adp_militancy = 0.25;
 Q.adp_banned = 0;
+
 Q.abl_strength = 10;
 Q.abl_militancy = 0.15;
 Q.abl_banned = 0;

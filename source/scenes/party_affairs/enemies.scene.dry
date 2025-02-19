@@ -27,9 +27,9 @@ on-arrival: enemies = "anti-democratic parties"; maximalist_strength += 5; refor
 Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties.
 
 @bn
-on-arrival: enemies = "BN"; nazi_urgency += 1; workers_bn -= 4;
+on-arrival: enemies = "BN"; fasci_urgency += 1; workers_bn -= 4;
 
-[? if fasci_urgency == 0 or bn_r < 10 : The BN is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if fasci_urgency > 0 and bn_r >= 10 : The Nazis are the most urgent problem for us to deal with. ?]
+[? if fasci_urgency == 0 or bn_r < 10 : The BN is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if fasci_urgency > 0 and bn_r >= 10 : The Fascists are the most urgent problem for us to deal with. ?]
 
 @religious
 on-arrival: enemies = "religious parties"; communist_strength += 5; reformist_dissent += 8; communist_dissent -= 5; ppi_relation -= 15; workers_ppi -= 4;

@@ -302,17 +302,17 @@ if (Q.month_actions >= 1) {
             if (Q.industrialists_ul_normalized < 40) {
                 Q.industrialists_ul += 6/12;
             }
-            if (Q.industrialists_dvp_normalized < 25) {
-                Q.industrialists_dvp += 3/12;
+            if (Q.industrialists_ldr_normalized < 25) {
+                Q.industrialists_ldr += 3/12;
             }
-            if (Q.middle_class_dvp_normalized < 40) {
-                Q.middle_class_dvp += 6/12;
+            if (Q.middle_class_ppi_normalized < 40) {
+                Q.middle_class_ppi += 6/12;
             }
             if (Q.rural_ds_normalized < 40) {
                 Q.rural_ds += 6/12;
             }
-            if (Q.catholics_z_normalized < 40) {
-                Q.catholics_ul += 6/12;
+            if (Q.catholics_ppi_normalized < 40) {
+                Q.catholics_ppi += 6/12;
             }
         }
         if (Q.unemployment > 20) {

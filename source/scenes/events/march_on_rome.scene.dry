@@ -1,6 +1,6 @@
 title: March on Rome
 subtitle: The fascists are making their move!
-view-if: ((year = 1922 and month = 10) or (fasci_coup_progress >= 10 and year = 1922 and month < 10)) and not fdc_banned and not ard_banned
+view-if: ((year == 1922 and month == 10) or (fasci_coup_progress >= 10 and year == 1922 and month <= 10)) and (fdc_banned == 0 and ard_banned == 0 and abl_banned == 0)
 max-visits: 1
 tags: event
 new-page: true

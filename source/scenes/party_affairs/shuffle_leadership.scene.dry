@@ -238,7 +238,7 @@ subtitle: Enrico Ferri is a criminologist, sociologist, and member of the Maxima
 is-card: true
 card-image: img/portraits/EnricoFerri.jpg
 tags: maximalist_advisor
-view-if: ferri_advisor = 0 and n_advisors < 3 and maximalists_resign = 0 and sympathy_expelled = 0
+view-if: ferri_advisor = 0 and n_advisors < 3 and maximalists_resign = 0 and sympathiser_expelled = 0
 on-arrival: ferri_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
@@ -250,7 +250,7 @@ subtitle: Nicola Bombacci is a prominent leader of the Maximalist faction.
 is-card: true
 card-image: img/portraits/NicolaBombacci.jpg
 tags: maximalist_advisor
-view-if: bombacci_advisor = 0 and n_advisors < 3 and maximalists_resign = 0 and sympathy_expelled = 0
+view-if: bombacci_advisor = 0 and n_advisors < 3 and maximalists_resign = 0 and sympathiser_expelled = 0
 on-arrival: bombacci_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 

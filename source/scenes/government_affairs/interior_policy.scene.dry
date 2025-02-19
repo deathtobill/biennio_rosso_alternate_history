@@ -60,7 +60,7 @@ Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumo
 go-to: crackdown_far_left_success if interior_police_loyalty >= 0.5; crackdown_far_left_failure if interior_police_loyalty < 0.5
 
 @crackdown_far_left_success
-on-arrival: crackdown_far_left += 1 if liberal_crackdown_accepted; rg_strength -= 5; communist_dissent += 10;
+on-arrival: crackdown_far_left += 1 if liberal_crackdown_accepted; rg_strength -= 5; communist_dissent += 10*(dissent);
 
 A number of coordinated raids and arrests have slightly paralysed the far-left paramilitaries, as well as orders from party leadership to downsize the Red Guards. The left-wing of the party isn't exactly enthused about our decision, to say the least.
 
