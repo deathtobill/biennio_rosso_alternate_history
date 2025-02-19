@@ -172,6 +172,7 @@ Q.pcdi_formed = 0;
 Q.psu_formed = 0
 Q.psri_reconciled = 0;
 Q.arditi_formed = 0;
+Q.sympathiser_expelled = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -300,8 +301,6 @@ Q.catholic_centre_coalition = 0;
 Q.centre_left_coalition = 0;
 Q.in_psi_majority = 0;
 Q.catholic_centre_failed = 0;
-// if the SPD is ruling as part of a minority government
-Q.in_minority_government = 0;
 Q.anti_socialist_coalition = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from your partners.
@@ -449,9 +448,11 @@ Q.gramsci_advisor = 0; // Antonio Gramsci
 // Maximalist advisors
 Q.lazzari_advisor = 0; // Constantinto Lazzari
 Q.ferri_advisor = 0; // Enrico Ferri
+Q.bombacci_advisor = 0; // Nicola Bombacci
 
 // Reformist advisors
 Q.kuliscioff_advisor = 0; // Anna Kuliscioff
+Q.salvemini_advisor = 0; // Gaetano Salvemini
 
 // Trade Unionist advisors
 Q.treves_advisor = 0; // Claudio Treves

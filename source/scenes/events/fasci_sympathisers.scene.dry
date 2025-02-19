@@ -1,0 +1,25 @@
+title: Fascist Sympathisers in the Party
+subtitle: We have caught wind of some interesting information...
+new-page: true
+view-if: fasci_urgency > 5
+tags: event
+max-visits: 1
+
+= Fascist Sympathisers in the PSI
+
+We have caught wind of some information that some PSI leaders are sympathetic to Mussolini and his Fasci, even regardless of their threat. Should we expel them from the party?
+
+- @expel: Expel the Sympathisers!
+- @no_expel: Allow the sympathisers to remain.
+
+@expel
+subtitle: Enrico Ferri & Nicola Bombacci will be expelled!
+on-arrival: sympathiser_expelled = 1; ferri_advisor = 0 if ferri_advisor = 1; bombacci_advisor = 0 if bombacci_advisor = 1; maximalist_strength -= 6*(1-dissent)
+
+We expel the sympathisers, who turn out to be prominent members of the Maximalist faction, weakening them.
+
+@no_expel
+subtitle: Why act on baseless rumors?
+on-arrival: maximalist_strength += 5*(1-dissent); workers_psi -= 3*(1-dissent); workers_bn += 5*(1-dissent); middle_class_bn += 3*(1-dissent); reformist_dissent += 5*(1-dissent); communist_dissent += 5*(1-dissent);
+
+We keep the sympathisers in the party, though hopefully they won't cause too much problems within the party.

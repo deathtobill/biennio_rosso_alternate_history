@@ -60,6 +60,15 @@ go-to: rm_main
 
 Ferri has been removed as an advisor. The Maximalist faction disapproves.
 
+@remove_bombacci
+title: Remove Bombacci
+view-if: bombacci_advisor = 1
+tags: remove_advisor
+on-arrival: bombacci_advisor = 0; maximalist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Bombacci has been removed as an advisor. The Maximalist faction disapproves.
+
 
 # reformists
 
@@ -79,7 +88,16 @@ tags: remove_advisor
 on-arrival: turati_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Braun has been removed as an advisor. The Reformist faction disapproves.
+Turati has been removed as an advisor. The Reformist faction disapproves.
+
+@remove_salvemini
+title: Remove Salvemini
+view-if: salvemini_advisor = 1
+tags: remove_advisor
+on-arrival: salvemini_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Salvemini has been removed as an advisor. The Reformist faction disapproves.
 
 # labour
 
@@ -220,11 +238,23 @@ subtitle: Enrico Ferri is a criminologist, sociologist, and member of the Maxima
 is-card: true
 card-image: img/portraits/EnricoFerri.jpg
 tags: maximalist_advisor
-view-if: ferri_advisor = 0 and n_advisors < 3 and maximalists_resign = 0
+view-if: ferri_advisor = 0 and n_advisors < 3 and maximalists_resign = 0 and sympathy_expelled = 0
 on-arrival: ferri_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
 Enrico Ferri is now an advisor.
+
+@add_bombacci
+title: Nicola Bombacci
+subtitle: Nicola Bombacci is a prominent leader of the Maximalist faction.
+is-card: true
+card-image: img/portraits/NicolaBombacci.jpg
+tags: maximalist_advisor
+view-if: bombacci_advisor = 0 and n_advisors < 3 and maximalists_resign = 0 and sympathy_expelled = 0
+on-arrival: bombacci_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Nicola Bombacci is now an advisor.
 
 # reformist
 
@@ -251,6 +281,18 @@ on-arrival: turati_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
 Filippo Turati is now an advisor.
+
+@add_salvemini
+title: Gaetano Salvemini
+subtitle: Gaetano Salvemini is a reformist member who advocates for Southern Italy.
+is-card: true
+card-image: img/portraits/GaetanoSalvemini.jpg
+tags: reformist_advisor
+view-if: salvemini_advisor = 0 and n_advisors < 3 and reformists_defect = 0
+on-arrival: salvemini_advisor = 1; n_advisors += 1; reformist_strength += 5
+go-to: advisor_menu
+
+Gaetano Salvemini is now an advisor.
 
 # left
 

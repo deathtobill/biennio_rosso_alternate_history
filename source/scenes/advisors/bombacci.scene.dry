@@ -1,0 +1,41 @@
+title: Nicola Bombacci
+is-pinned-card: true
+tags: advisor, maximalist
+card-image: img/portraits/NicolaBombacci.jpg
+view-if: bombacci_advisor = 1
+new-page: true 
+
+= Nicola Bombacci
+
+Bombacci is one of the prominent figures of the Maximalist faction of the PSI.
+
+- @armed_uprising
+- @question_of_ideology
+- @party_rally
+- @root: Return to main
+
+@armed_uprising
+title: Armed Uprising
+subtitle: Order factory workers to seize control of their workplaces!
+choose-if: advisor_action_timer = 0 and rg_strength > 19 and rg_banned = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rg_strength < 20 : The Red Guards don't have enough members to act. ?][? if rg_banned = 1 : The Red Guard are banned, they cannot act. ?]
+on-arrival: advisor_action_timer = 6; revolutionary_fervor += 5; rg_strength -= 10; reformist_dissent += 10; last_advisor_action = 1;
+
+We have seized control of more factories and kicked the bourgeois industrialists out!
+
+@question_of_ideology
+title: Question of Ideology
+subtitle: There are a number of ideologues from each faction which seek to direct the path of the party.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; ideology_timer -= 9;
+go-to: ideology
+
+
+@party_rally
+title: Party Rally
+subtitle: We should go rally our voters and spread our message further.
+choose-if: advisor_action_timer == 0 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+go-to: rally

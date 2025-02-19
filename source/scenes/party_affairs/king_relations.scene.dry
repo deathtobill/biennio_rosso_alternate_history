@@ -6,6 +6,8 @@ view-if: king_relations_timer <= 0
 on-arrival: month_actions += 1; king_relations_timer = 6;
 card-image: img/portraits/VitorioEmanuel.jpg
 
+= Royal Relations
+
 Our relationship with the King can be described as wary as best, due to our diametrically opposed ideals. However, if we are to make any solid reforms, we will need to have the King on our side.
 
 - @king_funds: Arrange some meetings with the King.

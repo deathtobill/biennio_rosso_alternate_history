@@ -6,6 +6,8 @@ view-if: rally_timer <= 0
 on-arrival: month_actions += 1; rally_timer = 6
 card-image: img/Rally.jpg
 
+= Political Rally
+
 Mass rallies are a common feature of social democratic life, especially in the lead-up to an election. What is the primary theme of this rally?
 
 - @class_struggle: The class struggle of the proletariat against the bourgeoisie.
