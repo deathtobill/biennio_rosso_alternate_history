@@ -9,12 +9,12 @@ view-if: tasca_advisor = 1
 
 Tasca is a member of the Communist faction of the PSI. A writer and historian, Tasca is a writer of *Avanti!*
 
-- @media_tasca_tasca
+- @media_tasca
 - @inter_party_relationships_tasca
 - @para_funding_tasca
 - @root: Return to main
 
-@media
+@media_tasca
 title: Media
 subtitle: Organise our media to spread our message further.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
