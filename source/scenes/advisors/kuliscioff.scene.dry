@@ -9,12 +9,12 @@ new-page: true
 
 Kuliscioff is a Russian-born member of the Reformist faction of the PSI. She is an influential member of the Reformists, alongside Turati and an editor for *Critica Sociale*, a socialist newspaper.
 
-- @womens_rights
+- @womens_rights_kuliscioff
 - @dealing_with_welfare
-- @labour_rights
+- @labour_rights_kuliscioff
 - @root: Return to main
 
-@womens_rights
+@womens_rights_kuliscioff
 title: Women's Rights
 subtitle: Now that we are in government, we can now reform the laws to improve the status of women.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not currently in government. ?]
@@ -30,7 +30,7 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: welfare_gov
 
-@labour_rights
+@labour_rights_kuliscioff
 title: Labour Rights
 subtitle: Now that we are in government, we can reform labour laws to help out our main support base, the workers.
 choose-if: advisor_action_timer <= 0 and psi_in_government and labour_minister_party = "PSI"

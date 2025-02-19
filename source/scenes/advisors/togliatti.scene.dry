@@ -11,7 +11,7 @@ Togliatti is a member of the Communist faction of the PSI. A popular figure on t
 
 - @togliatti_coalition
 - @public_education
-- @shuffle_cabinet
+- @shuffle_cabinet_togliatti
 - @root: Return to main
 
 @togliatti_coalition
@@ -31,7 +31,7 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; foreign_policy_timer -= 5; last_advisor_action = 1
 go-to: education_policy
 
-@shuffle_cabinet
+@shuffle_cabinet_togliatti
 title: Shuffle Cabinet 
 subtitle: Perhaps it is time we renegotiate the terms of the coalition with our partners.
 choose-if: advisor_action_timer = 0 and (centre_left_coalition or socialist_catholic_coalition or left_wing_coalition) and coalition_dissent < 3

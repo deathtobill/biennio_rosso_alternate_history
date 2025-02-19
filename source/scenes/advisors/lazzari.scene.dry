@@ -9,12 +9,12 @@ new-page: true
 
 Lazzari is a long-time member of the PSI, founding the party back in 1892. A member of the Maximalist faction, he holds significant influence in the party, being the current Secretary of the Party.
 
-- @party_disunity
+- @party_disunity_lazzari
 - @party_rally
-- @fiscal_policy
+- @fiscal_policy_lazzari
 - @root: Return to main
 
-@party_disunity
+@party_disunity_lazzari
 title: Party Disunity
 subtitle: The current state of the party is disunited; factions are quarreling as every side pushes its own ideas.
 choose-if: advisor_action_timer == 0 and communist_dissent > 0 and reformist_dissent > 0 and syndicalist_dissent > 0 and maximalist_dissent > 0
@@ -30,7 +30,7 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: rally
 
-@fiscal_policy
+@fiscal_policy_lazzari
 title: Fiscal Policy
 subtitle: Having control of the Financial Ministry, we can adjust taxes and tariffs.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not currently in government. ?][? if not finance_minister_party = "PSI" : The PSI does not control the Financial Ministry. ?]

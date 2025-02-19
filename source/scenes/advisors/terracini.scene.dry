@@ -10,7 +10,7 @@ new-page: true
 Terracini is a member of the Communist faction of the PSI. A lawyer and writer, he is one of the founders of *L'Ordine Nuovo*, a communist newspaper.
 
 - @comintern_relations
-- @constitutional_reform
+- @constitutional_reform_terracini
 - @fasci_urgency
 - @root: Return to main
 
@@ -22,7 +22,7 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; international_relations_timer -= 8; last_advisor_action = 1
 go-to: international_relations
 
-@constitutional_reform
+@constitutional_reform_terracini
 title: Constitutional Reform
 subtitle: Having gathered enough support in the Chamber, it is time to reform the Italian Constitution into one more suited to our likeness.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not psi_in_government : The PSI is not in government. ?] [? if psi_in_government and coalition_dissent > 3 : Coalition dissent is too high for us to even suggest reforming the Constitution. ?]

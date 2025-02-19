@@ -9,9 +9,9 @@ view-if: tasca_advisor = 1
 
 Tasca is a member of the Communist faction of the PSI. A writer and historian, Tasca is a writer of *Avanti!*
 
-- @media
-- @inter_party_relationships
-- @para_funding
+- @media_tasca_tasca
+- @inter_party_relationships_tasca
+- @para_funding_tasca
 - @root: Return to main
 
 @media
@@ -22,7 +22,7 @@ choose-if: advisor_action_timer == 0
 on-arrival: advisor_action_timer = 6; media_timer -= 6; last_advisor_action = 1
 go-to: media
 
-@inter_party_relationships
+@inter_party_relationships_tasca
 title: Inter-Party Relationships
 subtitle: Improve our relations with the different parties of Italy.
 choose-if: advisor_action_timer <= 0
@@ -30,7 +30,7 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; inter_party_relationships_timer -= 6; last_advisor_action = 1
 go-to: inter_party_relationships
 
-@para_funding
+@para_funding_tasca
 title: Paramilitary Funding
 subtitle: From our party coffers, we can continue funding the Red Guards to expand their reach.
 choose-if: advisor_action_timer = 0 and resources > 0
