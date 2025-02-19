@@ -1,15 +1,15 @@
 title: Preparing our Revolution
 new-page: true
 is-card: true
-on-arrival: rev_timer = 3; month_actions += 1
-view-if: not participating and preparation_done != 1 and rev_timer <= 0
+on-arrival: preparing_revolution_timer = 3; month_actions += 1
+view-if: preparation_done != 1 and preparing_revolution_timer <= 0
 card-image: img/PreparingRevolution.jpg
 frequency: 300
 tags: para_affairs
 
 = Preparing the Revolution
 
-Though we have evidently decided to overthrow the corrupt bourgeois government via extraparliamentary ways, actually going through with this plan will require extensive planning, from securing allies to weaponry.
+Though our end goal is to achieve a soviet state like the Bolshevik's in Russia, actually going through with this plan will require extensive planning, from securing allies to weaponry.
 
 - @rev_weapons: Infiltrate and secure weaponry for the Red Guards.
 - @rev_loyalty: Infiltrate and secure loyalties of government forces.
@@ -17,6 +17,7 @@ Though we have evidently decided to overthrow the corrupt bourgeois government v
 - @rev_finish: Finish up the last of the plans.
 - @rev_none: Do nothing for now.
 - @easy_discard
+- @cancel_advisor_action
 
 @rev_weapons
 subtitle: -1 Paramilitary Budget

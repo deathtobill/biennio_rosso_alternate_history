@@ -365,7 +365,7 @@ Q.n_advisors = 3;
 // timer - this decrements by 1 every turn, and is set to 5 whenever an advisor action is used, so that you can only use one advisor action every 5 months.
 // let's just put all of the timers here...
 // most party affairs and government affairs cards are on a timer.
-Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary', 'party_organisations', 
+Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_organisations', 
             'womens_rights', 'fiscal_policy', 'inter_party_relationships', 
             'international_relations', 'shuffle_leadership', 'para_funding', 
             'constitutional_reform', 'urgency', 'foreign_policy', 'shuffle_cabinet', 
@@ -373,18 +373,19 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary', 'party_organisat
             'fdc_ban', 'ard_ban', 'abl_ban', 'demobilise', 'soviet_end', 
             'agricultural_policy', 'coalition_affairs', 'unemployment_gov', 'welfare_gov', 
             'economic_democracy', 'education_policy', 'fiscal_policy', 'labour_rights', 
-            'army', 'roman_question', 'southern_gov', 'arditi', 'para_rally', 'rev', 
+            'military_influence', 'roman_question', 'southern_question', 'arditi', 'para_rally', 'preparing_revolution', 
             'red_guards', 'targeting', 'enemies', 'fundraising', 'king_relations', 
-            'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party'];
+            'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy'];
 
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
 Q.media_timer = 0;
-Q.judiciary_timer = 0;
+Q.judiciary_reform_timer = 0;
 Q.party_organisations_timer = 0;
 Q.womens_rights_timer = 0;
 Q.fiscal_policy_timer = 0;
 Q.inter_party_relationships_timer = 0;
+Q.interior_policy_timer = 0;
 Q.international_relations_timer = 0;
 Q.shuffle_leadership_timer = 0;
 Q.para_funding_timer = 0;
@@ -406,12 +407,12 @@ Q.welfare_gov_timer = 0;
 Q.economic_democracy_timer = 0;
 Q.education_policy_timer = 0;
 Q.labour_rights_timer = 0;
-Q.army_timer = 0;
+Q.military_influence_timer = 0;
 Q.roman_question_timer = 0; 
-Q.southern_gov_timer = 0;
+Q.southern_question_timer = 0;
 Q.arditi_timer = 0;
 Q.para_rally_timer = 0;
-Q.rev_timer = 0;
+Q.preparing_revolution_timer = 0;
 Q.red_guards_timer = 0;
 Q.targeting_timer = 0;
 Q.enemies_timer = 0;

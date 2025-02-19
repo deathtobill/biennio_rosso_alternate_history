@@ -28,7 +28,7 @@ subtitle: Now that we are in government, we can help out with welfare for our ne
 choose-if: advisor_action_timer <= 0 and psi_in_government and labour_minister_party = "PSI"
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not in government to affect policy. ?][? if not labour_minister_party = "PSI" : The PSI does not control the Labour and Social Security Ministry. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
-go-to: dealing_with_welfare_gov
+go-to: welfare_gov
 
 @labour_rights
 title: Labour Rights

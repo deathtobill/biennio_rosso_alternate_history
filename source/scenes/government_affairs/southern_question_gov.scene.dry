@@ -1,8 +1,8 @@
 title: Southern Question
 new-page: true
 is-card: true
-view-if: psi_in_government = 1 and justice_minister_party = "PSI" and southern_gov_timer <= 0
-on-arrival: month_actions += 1; southern_gov_timer += 5; current_budget = 0; current_budget += budget;
+view-if: psi_in_government = 1 and justice_minister_party = "PSI" and southern_question_timer <= 0
+on-arrival: month_actions += 1; southern_question_timer += 5; current_budget = 0; current_budget += budget;
 card-image: img/portraits/SouthernQuestion.jpg
 tags: govt_affairs
 
