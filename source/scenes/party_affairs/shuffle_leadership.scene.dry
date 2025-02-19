@@ -271,7 +271,7 @@ title: Umberto Terracini
 subtitle: Umberto Terracini is a member of the Left-wing of the party, affiliated with Grasmci and his *L'Ordine Nuovo*.
 is-card: true
 card-image: img/portraits/UmbertoTerracini.jpg
-view-if: terracini_advisor = 0 and n_advisors < 3
+view-if: terracini_advisor = 0 and n_advisors < 3 and communist_split = 0
 on-arrival: terracini_advisor = 1; n_advisors += 1; communist_strength += 5
 go-to: advisor_menu
 tags: communist_advisor

@@ -127,7 +127,7 @@ Q.interior_police_militancy = 1;
 Q.interior_police_loyalty = 0.45;
 
 // strength includes actual military and de facto reserves?
-Q.army_strength = 3800;
+Q.army_strength = 3100;
 Q.army_militancy = 5;
 Q.army_loyalty = 0.2;
 
@@ -399,7 +399,7 @@ Q.insurance_payments_timer = 0;
 Q.fdc_ban_timer = 0;
 Q.ard_ban_timer = 0;
 Q.abl_ban_timer = 0;
-Q.demobilise_timer = 0;
+Q.demobilise_timer = 6;
 Q.agricultural_policy_timer = 0;
 Q.coalition_affairs_timer = 0;
 Q.unemployment_gov_timer = 0; 
