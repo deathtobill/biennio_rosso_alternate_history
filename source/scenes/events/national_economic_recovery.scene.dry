@@ -1,6 +1,6 @@
 title: Italian Economic Recovery!
 tags: event
-view-if: economic_growth > 0 and inflation < 5 and inflation > 2 and unemployment < 8 and budget > -1 if psi_in_government
+view-if: economic_growth > 0 and inflation < 5 and inflation > 2 and unemployment < 8
 go-to: bank_deficit if budget < 0; bank_balanced if budget == 0; bank_surplus if budget > 0
 on-arrival: {!
 Q.workers_psi += 7*(1-dissent) if Q.psi_in_government == 1;
