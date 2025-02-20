@@ -60,6 +60,30 @@ Others: [+ other_r +]%
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
+[? if centre_left_coalition or socialist_catholic_coalition := Coalition Demands ?]
+
+[? if liberal_reform_accepted : Land Reforms disallowed ?]
+
+[? if liberal_crackdown_accepted : Crackdown on Paramilitaries: [+ liberal_crackdown_timer +] months left ?]
+
+[? if liberal_nationalisation_accepted : Nationalisations disallowed ?]
+
+[? if liberal_budget_accepted : Deficit spending disallowed ?]
+
+[? if liberal_foreign_accepted : Continue Entente alignment ?]
+
+[? if liberal_aid_accepted : Soviet Aid disallowed ?]
+
+[? if catholic_papacy_accepted : Roman Question resolved: [+ catholic_papacy_timer +] months left ?]
+
+[? if catholic_education_accepted : Catholic Education Reforms disallowed ?]
+
+[? if catholic_women_accepted : Women's Reforms disallowed ?]
+
+[? if catholic_charity_accepted : Non-Catholic Charity funding disallowed ?]
+
+[? if catholic_nationalisation_accepted : Anti-Catholic Nationalisations disallowed ?]
+
 = Economics
 
 Inflation: [+ inflation_2 +]%
@@ -183,15 +207,15 @@ Others: [+ other_votes +]%
 
 Urban Workers: [? if pcdi_formed : PCd'I: [+ workers_pcdi_display +]%, ?] PSI: [+ workers_psi_display +]%, [? if psu_formed : PSU: [+ workers_psu_display +]%, ?] PPI: [+ workers_ppi_display +]%, [+ ldr_name +]: [+ workers_ldr_display +]%, DS: [+ workers_ds_display +]%, [+ ul_name +]: [+ workers_ul_display +]%; BN: [+ workers_bn_display +]%, PSRI: [+ workers_psri_display +]%, Others: [+ workers_other_display +]%
 
-Small Business Owners: [? if pcdi_formed : PCd'I: [+ middle_class_pcdi_display +]%, ?] PSI: [+ middle_class_psi_display +]%, [? if psu_formed : PSU: [+ middle_class_psu_display +]%, ?] PPI: [+ middle_class_ppi_display +]%, [+ ldr_name +]: [+ middle_class_ldr_display +]%, DS: [+ middle_class_ddp_display +]%, [+ ul_name +]: [+ middle_class_ul_display +]%; BN: [+ middle_class_bn_display +]%, PSRI: [+ middle_class_psri_display +]%, Others: [+ middle_class_other_display +]%
+Small Business Owners: [? if pcdi_formed : PCd'I: [+ middle_class_pcdi_display +]%, ?] PSI: [+ middle_class_psi_display +]%, [? if psu_formed : PSU: [+ middle_class_psu_display +]%, ?] PPI: [+ middle_class_ppi_display +]%, [+ ldr_name +]: [+ middle_class_ldr_display +]%, DS: [+ middle_class_ds_display +]%, [+ ul_name +]: [+ middle_class_ul_display +]%; BN: [+ middle_class_bn_display +]%, PSRI: [+ middle_class_psri_display +]%, Others: [+ middle_class_other_display +]%
 
-Rural Workers & Farmers: [? if pcdi_formed : PCd'I: [+ rural_pcdi_display +]%, ?] PSI: [+ rural_psi_display +]%, [? if psu_formed : PSU: [+ rural_psu_display +]%, ?] PPI: [+ rural_ppi_display +]%, [+ ldr_name +]: [+ rural_ldr_display +]%, DS: [+ rural_ddp_display +]%, [+ ul_name +]: [+ rural_ul_display +]%; BN: [+ rural_bn_display +]%, PSRI: [+ rural_psri_display +]%, Others: [+ rural_other_display +]%
+Rural Workers & Farmers: [? if pcdi_formed : PCd'I: [+ rural_pcdi_display +]%, ?] PSI: [+ rural_psi_display +]%, [? if psu_formed : PSU: [+ rural_psu_display +]%, ?] PPI: [+ rural_ppi_display +]%, [+ ldr_name +]: [+ rural_ldr_display +]%, DS: [+ rural_ds_display +]%, [+ ul_name +]: [+ rural_ul_display +]%; BN: [+ rural_bn_display +]%, PSRI: [+ rural_psri_display +]%, Others: [+ rural_other_display +]%
 
-Industrialists & Landowners: [? if pcdi_formed : PCd'I: [+ industrialists_pcdi_display +]%, ?] PSI: [+ industrialists_psi_display +]%, [? if psu_formed : PSU: [+ industrialists_psu_display +]%, ?] PPI: [+ industrialists_ppi_display +]%, [+ ldr_name +]: [+ industrialists_ldr_display +]%, DS: [+ industrialists_ddp_display +]%, [+ ul_name +]: [+ industrialists_ul_display +]%; BN: [+ industrialists_bn_display +]%, PSRI: [+ industrialists_psri_display +]%, Others: [+ industrialists_other_display +]%
+Industrialists & Landowners: [? if pcdi_formed : PCd'I: [+ industrialists_pcdi_display +]%, ?] PSI: [+ industrialists_psi_display +]%, [? if psu_formed : PSU: [+ industrialists_psu_display +]%, ?] PPI: [+ industrialists_ppi_display +]%, [+ ldr_name +]: [+ industrialists_ldr_display +]%, DS: [+ industrialists_ds_display +]%, [+ ul_name +]: [+ industrialists_ul_display +]%; BN: [+ industrialists_bn_display +]%, PSRI: [+ industrialists_psri_display +]%, Others: [+ industrialists_other_display +]%
 
-Veterans & Unemployed: [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] PSI: [+ veterans_psi_display +]%, [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, DS: [+ veterans_ddp_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%; BN: [+ veterans_bn_display +]%, PSRI: [+ veterans_psri_display +]%, Others: [+ veterans_other_display +]%
+Veterans & Unemployed: [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] PSI: [+ veterans_psi_display +]%, [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, DS: [+ veterans_ds_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%; BN: [+ veterans_bn_display +]%, PSRI: [+ veterans_psri_display +]%, Others: [+ veterans_other_display +]%
 
-Catholics: [? if pcdi_formed : PCd'I: [+ catholics_pcdi_display +]%, ?] PSI: [+ catholics_psi_display +]%, [? if psu_formed : PSU: [+ catholics_psu_display +]%, ?] PPI: [+ catholics_ppi_display +]%, [+ ldr_name +]: [+ catholics_ldr_display +]%, DS: [+ catholics_ddp_display +]%, [+ ul_name +]: [+ catholics_ul_display +]%; BN: [+ catholics_bn_display +]%, PSRI: [+ catholics_psri_display +]%, Others: [+ catholics_other_display +]%
+Catholics: [? if pcdi_formed : PCd'I: [+ catholics_pcdi_display +]%, ?] PSI: [+ catholics_psi_display +]%, [? if psu_formed : PSU: [+ catholics_psu_display +]%, ?] PPI: [+ catholics_ppi_display +]%, [+ ldr_name +]: [+ catholics_ldr_display +]%, DS: [+ catholics_ds_display +]%, [+ ul_name +]: [+ catholics_ul_display +]%; BN: [+ catholics_bn_display +]%, PSRI: [+ catholics_psri_display +]%, Others: [+ catholics_other_display +]%
 
 Support for Republicanism: [+ republican_sentiment_disp +]%
 Support for Socialism: [+ socialist_sentiment_disp +]%

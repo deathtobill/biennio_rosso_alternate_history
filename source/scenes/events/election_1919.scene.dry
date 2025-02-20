@@ -102,6 +102,22 @@ Q.socialist_catholic_coalition_r = Q.psi_r + Q.psri_r + Q.ppi_r + Q.other_r + Q.
 Q.catholic_liberal_coalition_r = Q.ppi_r + Q.ul_r + Q.ldr_r + Q.ds_r + Q.other_r;
 Q.anti_socialist_coalition_r = Q.bn_r + Q.ldr_r + Q.ds_r;
 
+// reset parties
+Q.centre_left_coalition = 0;
+Q.left_wing_coalition = 0;
+Q.socialist_catholic_coalition = 0;
+Q.catholic_liberal_coalition = 0;
+
+// based on starting coalition
+Q.foreign_minister_party = 'UL';
+Q.interior_minister_party = 'LDR';
+Q.justice_minister_party = 'DS';
+Q.labour_minister_party = 'UL';
+Q.public_works_minister_party = 'UL';
+Q.treasury_minister_party = 'DS';
+Q.finance_minister_party = 'PPI';
+Q.agriculture_minister_party = 'LDR';
+
 Q.leverage = Q.psi_r;
 
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
@@ -432,7 +448,7 @@ go-to: l_demands_menu
 title: Drop our promise to crack down on street violence.
 tags: drop_libdem_major
 view-if: liberal_crackdown_accepted = 1
-on-arrival: liberal_crackdown_accepted = 0; liberal_negotiations -= 20;
+on-arrival: liberal_crackdown_accepted = 0; liberal_negotiations -= 20; liberal_crackdown_timer = 0;
 go-to: l_demands_menu
 
 @drop_liberal_nationalisation
@@ -489,9 +505,9 @@ While it seems do have a bit of wiggle room to negotiate, we certainly cannot ou
 
 **We will have one year to complete the Roman Question if demanded to us.**
 
-Some major ones include: the Roman Question, Catholic Schools and Family Structure.
+Some major ones include the Roman Question, Catholic Schools and Family Structure.
 
-While some minor ones are: Charity and Nationalisations.
+While some minor ones are Charity and Nationalisations.
 
 @c_demands_menu
 
@@ -556,7 +572,7 @@ This is a minor point of conjecture for the Catholics, and secures us some progr
 title: Drop our promise to resolve the Roman Question.
 tags: drop_catholic_major
 view-if: catholic_papacy_accepted = 1
-on-arrival: catholic_papacy_accepted = 0; catholic_negotiations -= 20;
+on-arrival: catholic_papacy_accepted = 0; catholic_negotiations -= 20; catholic_papacy_timer = 0;
 go-to: c_demands_menu
 
 @drop_catholic_education

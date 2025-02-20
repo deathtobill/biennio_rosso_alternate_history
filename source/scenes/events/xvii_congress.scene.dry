@@ -16,9 +16,9 @@ The Maximalists are caught in the centre, as the Communists and Reformists argue
 - @accept_comintern: The PSI must toe the Communist International line. The Reformists will be expelled.
 
 @refuse_comintern
-subtitle: It is likely the Communists will split from the party.
-choose-if: participating = 1
-unavailable-subtitle: [? if participating = 0 : The Bologna Congress has already forced us to adopt a revolutionary stance. ?]
+subtitle: It is likely the [? if pcdi_formed : remaining ?] Communists will split from the party.
+choose-if: participating = 1 or pcdi_formed
+unavailable-subtitle: [? if participating = 0 : The XVI Congress has already forced us to adopt a revolutionary stance. ?]
 on-arrival: communist_strength -= 100; communist_dissent += 100; pcdi_formed = 1; revolutionary_fervor -= 10; soviet_relations -= 3;
 
 [? if communists_split = 1 : Even as the communist faction remains minimal after the founding of the Italian Communist Party, ?] The communist faction has resigned, with the majority [? if communists_split = 1 : joining the existing PCI. ?][? if communists_split = 0 : creating a new party called the Italian Communist Party. ?] 
@@ -26,9 +26,9 @@ on-arrival: communist_strength -= 100; communist_dissent += 100; pcdi_formed = 1
 The Communist International has also expelled us, supporting the new PCI instead; it seems we can no longer rely on them for aid.
 
 @accept_comintern
-subtitle: It is likely we will experience an exodus to the PSRI.
-choose-if: participating = 0
-unavailable-subtitle: [? if participating = 1 : The Bologna Congress has already forced us to adopt a parliamentary stance. ?]
+subtitle: It is likely the [? if psu_formed : remaining ?] Reformists will split from the party.
+choose-if: participating = 0 or psu_formed
+unavailable-subtitle: [? if participating = 1 : The XVI Congress has already forced us to adopt a parliamentary stance. ?]
 on-arrival: reformist_strength -= 100; reformist_dissent += 100; reformists_expelled = 1; revolutionary_fervor += 10; psu_formed = 1;
 
 [? if reformists_defect = 1 : Even as the reformist faction remains minimal after its defection to the PSRI, ?] The reformist faction has been expelled, with the majority joining the PSRI.

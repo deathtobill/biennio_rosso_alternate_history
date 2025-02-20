@@ -29,6 +29,8 @@ go-to: caught_army if bought_loyalty > 2
 
 Through a couple of 'meetings' with some officers, we are able to convince them of our cause and make them friendlier towards us.
 
+Current Army loyalty: [+ army_loyalty : loyalty ?]
+
 @caught_army
 new-page: true
 on-arrival: bribes_caught = 1; coalition_dissent += 3; workers_psi -= 8*(1-dissent); workers_bn += 5*(1-dissent); workers_ldr += 3*(1-dissent) if socialist_catholic_coalition; workers_ldr += 3*(1-dissent) if centre_left_coalition; reformist_dissent += 10; ldr_relation -= 5; ds_relation -= 5; ul_relation -= 5; ppi_relation -= 5; psri_relation -= 5;
@@ -43,6 +45,8 @@ unavailable-subtitle: [? if judicial_reform < 2 : The reactionary judiciary woul
 on-arrival: army_loyalty += 0.09 if army_loyalty < 1; ldr_relation -= 5; ds_relation -= 5; army_strength -= 20 if army_strength > 0; unemployment += 0.3;
 
 Through some careful movement and reassignment of officers, we are able to remove anti-socialist officers from positions of power, slowly but surely getting rid of anti-socialist sentiment within the army.
+
+Current Army loyalty: [+ army_loyalty : loyalty ?]
 
 @no_military
 
