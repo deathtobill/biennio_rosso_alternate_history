@@ -36,7 +36,7 @@ These policies aim to ensure that women have equal rights within a marriage, inc
 
 @welfare
 subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted : This will put us into a deficit! ?]
-on-arrival: welfare += 1; workers_psi += 5*(1-dissent); unemployed_psi += 5*(1-dissent); budget -= 1; womens_rights += 1; coalition_dissent += 1; if (welfare >= 1 and unemployed >= 15); unemployed -= 0.4; inflation += 0.2; economic_growth += 0.3; ldr_promise_failed = 1 if (current_budget >= 0 and Q.budget < 0 and liberal_budget_accepted == 1)
+on-arrival: welfare += 1; workers_psi += 5*(1-dissent); unemployed_psi += 5*(1-dissent); budget -= 1; womens_rights += 1; coalition_dissent += 1 if (welfare >= 1 and unemployed >= 15); unemployed -= 0.4; inflation += 0.2; economic_growth += 0.3; ldr_promise_failed = 1 if (current_budget >= 0 and Q.budget < 0 and liberal_budget_accepted == 1)
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We have increased welfare spending on women and children. [? if welfare >= 1 and unemployed >= 15 : Some of our coalition partners consider increased welfare spending profligate at this time. ?]

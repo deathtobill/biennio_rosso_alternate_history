@@ -29,7 +29,7 @@ go-to: caught_army if bought_loyalty > 2
 
 Through a couple of 'meetings' with some officers, we are able to convince them of our cause and make them friendlier towards us.
 
-Current Army loyalty: [+ army_loyalty : loyalty ?]
+Current Army loyalty: [+ army_loyalty : loyalty +]
 
 @caught_army
 new-page: true
@@ -46,7 +46,7 @@ on-arrival: army_loyalty += 0.09 if army_loyalty < 1; ldr_relation -= 5; ds_rela
 
 Through some careful movement and reassignment of officers, we are able to remove anti-socialist officers from positions of power, slowly but surely getting rid of anti-socialist sentiment within the army.
 
-Current Army loyalty: [+ army_loyalty : loyalty ?]
+Current Army loyalty: [+ army_loyalty : loyalty +]
 
 @no_military
 
