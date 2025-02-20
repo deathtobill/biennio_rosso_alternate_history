@@ -1,7 +1,7 @@
 title: Banca d'Italia reports on our Finances.
-on-departure: election_seen = 0;
+on-departure: election_seen = 1;
 tags: event
-view-if: election_seen == 0
+view-if: election_seen == 1
 go-to: bank_deficit if budget < 0; bank_balanced if budget == 0; bank_surplus if budget > 0
 
 @bank_deficit

@@ -34,7 +34,6 @@ Q.veterans_ppi += 7*(1-dissent);
 Q.catholics_ppi += 7*(1-dissent);
 }
 !}
-
 max-visits: 1
 
 = Economic Economic Recovery 
