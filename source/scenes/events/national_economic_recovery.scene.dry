@@ -3,12 +3,14 @@ tags: event
 view-if: economic_growth > 0 and inflation < 5 and inflation > 2 and unemployment < 8
 go-to: bank_deficit if budget < 0; bank_balanced if budget == 0; bank_surplus if budget > 0
 on-arrival: {!
-Q.workers_psi += 7*(1-dissent) if Q.psi_in_government == 1;
-Q.middle_class_psi += 7*(1-dissent) if Q.psi_in_government == 1;
-Q.industrialists_psi += 7*(1-dissent) if Q.psi_in_government == 1;
-Q.rural_psi += 7*(1-dissent) if Q.psi_in_government == 1;
-Q.veterans_psi += 7*(1-dissent) if Q.psi_in_government == 1;
-Q.catholics_psi += 7*(1-dissent) if Q.psi_in_government == 1;
+if (Q.psi_in_government) {
+Q.workers_psi += 7*(1-dissent);
+Q.middle_class_psi += 7*(1-dissent);
+Q.industrialists_psi += 7*(1-dissent);
+Q.rural_psi += 7*(1-dissent);
+Q.veterans_psi += 7*(1-dissent);
+Q.catholics_psi += 7*(1-dissent);
+}
 
 Q.workers_bn -= 7*(1-dissent);
 Q.middle_class_bn -= 7*(1-dissent);
@@ -17,19 +19,21 @@ Q.rural_bn -= 7*(1-dissent);
 Q.veterans_bn -= 7*(1-dissent);
 Q.catholics_bn -= 7*(1-dissent);
 
-Q.workers_ldr += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
-Q.middle_class_ldr += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
-Q.industrialists_ldr += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
-Q.rural_ldr += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
-Q.veterans_ldr += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
-Q.catholics_ldr += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
+if (Q.catholic_liberal_coalition) {
+Q.workers_ldr += 7*(1-dissent);
+Q.middle_class_ldr += 7*(1-dissent);
+Q.industrialists_ldr += 7*(1-dissent);
+Q.rural_ldr += 7*(1-dissent);
+Q.veterans_ldr += 7*(1-dissent);
+Q.catholics_ldr += 7*(1-dissent);
 
-Q.workers_ppi += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
-Q.middle_class_ppi += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
-Q.industrialists_ppi += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
-Q.rural_ppi += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
-Q.veterans_ppi += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
-Q.catholics_ppi += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
+Q.workers_ppi += 7*(1-dissent);
+Q.middle_class_ppi += 7*(1-dissent);
+Q.industrialists_ppi += 7*(1-dissent);
+Q.rural_ppi += 7*(1-dissent);
+Q.veterans_ppi += 7*(1-dissent);
+Q.catholics_ppi += 7*(1-dissent);
+}
 !}
 
 max-visits: 1
