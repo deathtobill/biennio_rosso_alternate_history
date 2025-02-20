@@ -60,7 +60,13 @@ Others: [+ other_r +]%
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
-[? if centre_left_coalition or socialist_catholic_coalition := Coalition Demands ?]
+= Coalition Demands
+
+[? if left_wing_coalition : We are in a coalition without demands. ?]
+
+[? if not psi_in_government : We are not in government. ?]
+
+[? if psi_majority : The PSI holds a majority. ?]
 
 [? if liberal_reform_accepted : Land Reforms disallowed ?]
 
