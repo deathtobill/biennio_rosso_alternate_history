@@ -1,12 +1,7 @@
 title: Agricultural Policy
 new-page: true
 is-card: true
-on-arrival: {!
-Q.month_actions += 1;
-Q.agricultural_policy_timer = 5;
-Q.current_budget = 0;
-Q.current_budget += budget;
-!}
+on-arrival: month_actions += 1; agricultural_policy_timer = 5; current_budget = 0; current_budget += budget;
 view-if: psi_in_government and agriculture_minister_party = "PSI" and agricultural_policy_timer <= 0
 frequency: 500
 card-image: img/portraits/AntonioGraziadei.jpg
@@ -32,7 +27,7 @@ Q.coalition_dissent += 1;
 Q.rural_bn += 5*(1-dissent); 
 Q.rural_bn -= 4*(1-dissent); 
 if (Q.unemployed >= 5) {
-    unemployed -= 1
+    Q.unemployed -= 1
 }
 Q.ldr_relation -= 5; 
 Q.ds_relation -= 4; 
@@ -40,7 +35,7 @@ Q.communist_strength += 8;
 Q.communist_dissent -= 5; 
 Q.rural_policy += 1; 
 if (Q.liberal_reform_accepted = 1) {
-    ldr_promise_failed = 1;
+    Q.ldr_promise_failed = 1;
 }
 Q.industrialists_bn += 3; 
 Q.psri_relation += 3*(1-dissent);

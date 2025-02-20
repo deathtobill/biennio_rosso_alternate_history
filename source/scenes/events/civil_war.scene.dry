@@ -1,11 +1,10 @@
 title: Civil War
-audio: music/communist/A_las_barricadas.ogg
 new-page: true
 on-arrival: {!
 Q.rg_strength = Math.round(Q.rg_strength);
 Q.adp_strength = Math.round(Q.adp_strength);
-Q.fdc_strength = Math.round(Q.ard_strength);
-Q.ard_strength = Math.round(Q.fdc_strength);
+Q.fdc_strength = Math.round(Q.fdc_strength);
+Q.ard_strength = Math.round(Q.ard_strength);
 Q.abl_strength = Math.round(Q.abl_strength);
 
 var total_strength = Q.communist_strength + Q.maximalist_strength + Q.syndicalist_strength + Q.reformist_strength;
@@ -30,7 +29,7 @@ Q.rg_power = Q.rg_strength*Q.rg_militancy;
 if (Q.dissent > 0.15) {
     Q.rg_power *= (1 - Q.dissent/1.5);
 }
-if (preparation_done == 1) {
+if (Q.preparation_done == 1) {
     Q.rg_power*1.2;
 }
 Q.total_power += Q.rg_power;
@@ -59,21 +58,21 @@ if (rcw_over && soviet_recovery_timer < 1) {
 
 Q.adp_power = Q.adp_strength*Q.adp_militancy
 
-if (arditi_cooperation == 1) {
+if (Q.arditi_cooperation == 1) {
     Q.total_power += Q.adp_power;
 }
 
 Q.soviet_power *= Q.soviet_multiplier;
-if (Q.soviet_relations < 3) {
+if (Q.soviet_relation < 3) {
     Q.soviet_multiplier = 0.3;
 }
-if (Q.soviet_relations > 2 && Q.soviet_relations < 6) {
+if (Q.soviet_relation > 2 && Q.soviet_relation < 6) {
     Q.soviet_multiplier = 0.6;
 }
-if (Q.soviet_relations > 5 && Q.soviet_relations < 8) {
+if (Q.soviet_relation > 5 && Q.soviet_relation < 8) {
     Q.soviet_multiplier = 0.9;
 }
-if (Q.soviet_relations >= 8) {
+if (Q.soviet_relation >= 8) {
     Q.soviet_multiplier = 1.2;
 }
 Q.total_power += Q.soviet_power;
@@ -151,7 +150,7 @@ on-arrival: war_choices += 1;
 
 We have request aid from the Soviet Union to fight against the far-right groups, [? if participating = 0 : as well as the bourgeois parties,?] [? if not rcw_over : though not much can be sent as they are in their own civil war as well. ?]
 
-[? if soviet_relations < 3 : The Soviet Union sends refuses to send us any aid owing to our terrible relations, though international forces flock to our aid. ?][? if (soviet_relations > 2 and soviet_relations < 6) : The Soviet Union sends us the bare minimum, owing to our strained relations. ?][? if (soviet_relations > 5 and soviet_relations < 8) : The Soviet Union sends us a force of willing volunteers, aiding our cause. ?][? if soviet_relations >= 8 : Owing to our good relations, the Soviet Union has sent us substantial aid, giving us a massive advantage. ?]
+[? if soviet_relation < 3 : The Soviet Union sends refuses to send us any aid owing to our terrible relations, though international forces flock to our aid. ?][? if (soviet_relation > 2 and soviet_relation < 6) : The Soviet Union sends us the bare minimum, owing to our strained relations. ?][? if (soviet_relation > 5 and soviet_relation < 8) : The Soviet Union sends us a force of willing volunteers, aiding our cause. ?][? if soviet_relation >= 8 : Owing to our good relations, the Soviet Union has sent us substantial aid, giving us a massive advantage. ?]
 
 @general_strike
 max-visits: 1

@@ -3,13 +3,8 @@ new-page: true
 is-card: true
 view-if: psi_in_government and labour_minister_party = "PSI" and economic_democracy_timer <= 0
 frequency: 500
-on-arrival: {!
-Q.month_actions += 1;
-Q.current_budget = 0
-Q.current_budget += budget
-Q.economic_democracy_timer = 5
-!}
-card-image: img/portraits/RinaldoRigola.jpg
+on-arrival: month_actions += 1; current_budget = 0; current_budget += budget; economic_democracy_timer = 5;
+card-image: img/portraits/RinaldoRigola.png
 tags: govt_affairs
 
 = Economic Democracy

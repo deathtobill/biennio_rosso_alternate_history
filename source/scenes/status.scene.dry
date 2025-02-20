@@ -182,7 +182,7 @@ Regio Esercito Loyalty: [+ army_loyalty : loyalty +]
 on-arrival: {!
 Q.republican_sentiment_disp = Math.round(Q.republican_sentiment);
 Q.socialist_sentiment_disp = Math.round(Q.republican_sentiment);
-Q.nationalism_sentiment_disp = Math.round(Q.nationalist_sentiment);
+Q.nationalist_sentiment_disp = Math.round(Q.nationalist_sentiment);
 !}
 
 = Projected election results
@@ -225,4 +225,4 @@ Catholics: [? if pcdi_formed : PCd'I: [+ catholics_pcdi_display +]%, ?] PSI: [+ 
 
 Support for Republicanism: [+ republican_sentiment_disp +]%
 Support for Socialism: [+ socialist_sentiment_disp +]%
-Support for Nationalism: [+ nationalism_sentiment_disp +]%
+Support for Nationalism: [+ nationalist_sentiment_disp +]%

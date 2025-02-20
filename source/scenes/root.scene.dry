@@ -69,7 +69,7 @@ Q.reformists_expelled = 0;
 Q.congress_communist_split = 0;
 
 // fasci_urgency indicates how seriously the PSI takes the fasci - scale from 0 to 10.
-Q.fasci_urgency = 1;
+Q.fasci_urgency = 0;
 // radicalisation indicates how radical the PSI's rhetoric is - scale from 0 to 10.
 Q.radicalisation = 5;
 // have we formed the Arditi del popolo?
@@ -146,6 +146,8 @@ Q.anti_monarchist_sentiment = Q.republican_sentiment+Q.socialist_sentiment;
 
 // revolution vs radicalism
 Q.revolutionary_fervor = 60;
+
+Q.mafia_strength = 3;
 
 // capital strikes happen when you upset the industrialists & landowners too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
 // coup progress happens when you piss off the fasci too much too quickly + if they have enough troops
@@ -342,7 +344,7 @@ Q.welfare = 0;
 Q.agricultural_policy = 0;
 Q.land_reform = 0;
 // Relations with the Soviet Union
-Q.soviet_relations = 0;
+Q.soviet_relation = 0;
 // have there been any factory takeovers?
 Q.factory_takeovers = 0;
 Q.unemployment_insurance_founded = 0;
@@ -378,7 +380,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'economic_democracy', 'education_policy', 'fiscal_policy', 'labour_rights', 
             'military_influence', 'roman_question', 'southern_question', 'arditi', 'para_rally', 'preparing_revolution', 
             'red_guards', 'targeting', 'enemies', 'fundraising', 'king_relations', 
-            'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy'];
+            'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit'];
 
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
@@ -426,6 +428,7 @@ Q.rally_timer = 0;
 Q.revolutionary_timer = 0;
 Q.urgency_timer = 0;
 Q.welfare_party_timer = 0;
+Q.deficit_timer = 0;
 
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;

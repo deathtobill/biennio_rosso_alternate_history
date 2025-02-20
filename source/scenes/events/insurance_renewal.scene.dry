@@ -2,10 +2,7 @@ title: Unemployment Insurance Funding
 new-page: true
 subtitle: It's time to fund the program once more...
 view-if: insurance_payments_timer = 0 and unemployment_insurance_founded == 1
-on-arrival: {!
-Q.current_budget = 0;
-Q.current_budget += budget;
-!}
+on-arrival: current_budget = 0; current_budget += budget;
 tags: event
 
 = Unemployment Insurance Funding

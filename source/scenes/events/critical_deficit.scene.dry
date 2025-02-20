@@ -1,0 +1,60 @@
+title: Banca d'Italia reports critical deficit!
+new-page: true
+tags: event
+view-if: (budget <= -5 and psi_in_government) or (budget <= -5 and psi_in_government and deficit_timer <= 0 and deficit_extension == 1)
+
+= Banca d'Italia reports critical deficit!
+
+The Banca d'Italia, our National Bank, has informed us that our debt has reached a critical amount. We have to do something **now**.
+
+- @deficit_austerity: Cut funding to welfare in general.
+- @deficit_insurance: Cut funding to the Unemployment Insurance Program.
+- @deficit_taxes: Increase taxes across the board.
+- @deficit_relations: Can we convince our Entente allies to give us more time?
+- @deficit_renege: Declare bankruptcy; void our debts with our international debtors.
+
+@deficit_austerity
+subtitle: +2 Budget - Our voters won't be happy about this...
+view-if: unemployment_insurance_founded == 0
+choose-if: welfare > 0
+unavailable-subtitle: There is no welfare left to cut.
+on-arrival: budget += 2; welfare -= 2; veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_bn += 7; 
+
+@deficit_insurance
+subtitle: +2 Budget - Our voters won't be happy about this,,,
+view-if: unemployment_insurance_founded == 1
+on-arrival: budget += 2; veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_bn += 7; unemployment_insurance_founded = 0;
+
+@deficit_taxes
+subtitle: +3 Budget - We should be prepared for a support hit...
+choose-if: upper_tax_rates <= 5 and lower_tax_rates <= 5
+unavailable-subtitle: Tax Rates are already too high.
+on-arrival: budget += 3; middle_class_psi -= 4; industrialists_psi -= 4; workers_psi -= 3; rural_psi -= 3; unemployed += 2; lower_tax_rates += 1; upper_tax_rates += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 2; workers_psi -= 5 if lower_tax_rates > 1; inflation -= 1.1; economic_growth -= 0.6; psri_relation -= 5*(1-dissent);
+
+@deficit_relations
+subtitle: Thankfully, they seem receptive, at least...
+choose-if: entente_relation > 6 and deficit_extension == 0
+unavailable-subtitle: [? if entente_relation <= 5: Our relations are too low. ?][? if deficit_extension == 1: We have already asked them for an extension. ?]
+on-arrival: deficit_timer = 6; deficit_extension = 1; 
+
+@deficit_renege
+subtitle: This won't end well...
+on-arrival: {!
+Q.budget = 0;
+
+Q.capital_strike_progress += 5;
+Q.fasci_coup_progress += 3;
+Q.coalition_dissent += 5;
+Q.in_default = 0;
+
+Q.workers_psi -= 10;
+Q.middle_class_psi -= 10;
+Q.industrialists_psi -= 10;
+Q.rural_psi -= 10;
+Q.veterans_psi -= 10;
+Q.catholics -= 10;
+
+Q.unemployment += 9.5;
+Q.economic_growth -= 12.7;
+Q.inflation += 50;
+!}

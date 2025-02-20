@@ -2,6 +2,7 @@ title: March on Rome
 subtitle: The fascists are making their move!
 view-if: ((year == 1922 and month == 10) or (fasci_coup_progress >= 10 and year == 1922 and month <= 10)) and (fdc_banned == 0 and ard_banned == 0 and abl_banned == 0)
 max-visits: 1
+priority: -1
 tags: event
 new-page: true
 face-image: img/MarchOnRome.jpg
@@ -10,6 +11,7 @@ Q.rg_strength = Math.round(Q.rg_strength);
 Q.fdc_strength = Math.round(Q.fdc_strength);
 Q.ard_strength = Math.round(Q.ard_strength);
 Q.army_strength = Math.round(Q.rg_strength);
+Q.adp_strength = Math.round(Q.adp_strength);
 
 Q.rome_total_power = 0;
 Q.rg_power = Q.rg_militancy * (Q.rg_strength * (100 - Q.dissent));
@@ -17,16 +19,16 @@ Q.police_power = Q.interior_police_strength * Q.interior_police_militancy * Q.in
 Q.army_power = Q.army_strength * Q.army_loyalty * Q.army_militancy;
 Q.adp_power = Q.adp_strength * Q.adp_militancy
 
-if (rome_rg_mobilise == 1) {
+if (Q.rome_rg_mobilise == 1) {
     Q.rome_total_power += Q.rg_power;
 }
-if (rome_police_king == 1) {
+if (Q.rome_police_king == 1) {
     Q.rome_total_power += Q.police_power;
 }
-if (rome_army_king == 1) {
+if (Q.rome_army_king == 1) {
     Q.rome_total_power += Q.army_power;
 }
-if (rome_army_bypass == 1) {
+if (Q.rome_army_bypass == 1) {
     Q.rome_total_power += Q.army_power * 0.75;
 }
 if (rome_police_bypass == 1) {
@@ -39,7 +41,7 @@ Q.ard_power = Q.ard_strength * Q.ard_militancy;
 if (Q.ard_banned === 0) {
     Q.rome_enemy_power += Q.ard_power;
 }
-if (Q.fdc_banned === 0) {
+if (Q.fdc_banned == 0) {
     Q.rome_enemy_power += Q.fdc_power;
 }
 
@@ -136,14 +138,14 @@ subtitle: Our forces will begin to March on Rome as well, [? if participating = 
 choose-if: rg_banned = 0 or (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and syndicalist_dissent > 50)
 unavailable-subtitle: [? if rg_banned = 1 : The Red Guards are banned. ?][? if (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and syndicalist_dissent > 50) : The party is too disunited to act. ?]
 on-arrival: rome_rg_visited = 1
-go-to: rome_menu if participating = 1; civil_war if participating = 0
+go-to: rome_menu if participating == 1; civil_war if not_participating == 1
 
 @rome_adp_mobilise
 max-visits: 1
 subtitle: Our allies will begin to March on Rome as well, in support of the government. the bourgeois may see this as a threat as well, however.
-choose-if: (communist_dissent < 50 and maximalist_dissent < 50 and reformist_dissent < 50 and syndicalist_dissent < 50)
+choose-if: communist_dissent < 50 and maximalist_dissent < 50 and reformist_dissent < 50 and syndicalist_dissent < 50
 view-if: arditi_cooperation = 1
-unavailable-subtitle: [? if (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and syndicalist_dissent > 50) : The party is too disunited to act. ?]
+unavailable-subtitle: [? if (communist_dissent >= 50 and maximalist_dissent >= 50 and reformist_dissent >= 50 and syndicalist_dissent >= 50) : The party is too disunited to act. ?]
 on-arrival: rome_adp_visited = 1
 
 @rome_done

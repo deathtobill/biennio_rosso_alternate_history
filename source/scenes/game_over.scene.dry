@@ -69,21 +69,21 @@ Italy is currently in the grip of a civil war, a brutal affair that has no obvio
 [? if soviet_aid >= 1 : The Soviet Union has sent limited aid to us, still in the midst of its own civil war. ?][? if entente_relation < 3 : Anti-communist sentiment has gripped our former allies, as they are aiding the fascists. ?]
 
 
-@communist_civil_war_wom
-title: We have achieved revolution!
+@italy_government_won
+title: We have toppled the Monarchy!
 view-if: soviet_victory == 1
 tags: endings
 go-to: eg_menu
 
 We have won the war against the bourgeois forces and fascists, establishing a Soviet Republic, the first of its kind in the Mediterranean.
 
-@communist_civil_war_lost
-title: We have failed revolution...
+@italy_government_lost
+title: We have failed to topple the Monarchy.
 view-if: soviet_victory == 0
 tags: endings
 go-to: eg_menu
 
-We have failed to achieve revolution in Italy, as the last remaining socialist resistance is stamped out by the bourgeois and fasci.
+Italy remains a Kingdom, gripped by the autocrat Vittorio Emanuele III, his cabinet of corrupt Liberals, and under threat of the fascist Mussolini and his far-right bloc.
 
 @psi_victorious
 title: PSI still in government

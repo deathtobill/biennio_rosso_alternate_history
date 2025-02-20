@@ -376,7 +376,7 @@ Claudio Treves is now an advisor.
 title: Rinaldo Rigola
 subtitle: Rinaldo Rigola is the leader of the Italian CGIL, General Confederation of Labour.
 is-card: true
-card-image: img/portraits/RinaldoRigola.jpg
+card-image: img/portraits/RinaldoRigola.png
 tags: labour_advisor
 view-if: rigola_advisor = 0 and n_advisors < 3
 on-arrival: rigola_advisor = 1; n_advisors += 1; syndicalist_strength += 5

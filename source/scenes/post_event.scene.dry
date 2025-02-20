@@ -367,25 +367,25 @@ if (this.ui && this.ui.show_portraits) {
     }
 }
 
-fasci_post_time += 1;
-abl_post_time += 1;
-arditi_post_time += 1;
+Q.fasci_post_time -= 1;
+Q.abl_post_time -= 1;
+Q.arditi_post_time -= 1;
 Q.coalition_dissent = Math.round(Q.coalition_dissent);
 
-if (Q.fasci_rg_active == 0 && Q.fasci_adp_active == 0 && Q.fasci_post_time == 0) {
-    veterans_bn += 5*(1-dissent);
-    veterans_psi -= 5*(1-dissent);
-    fasci_post_time = 6; 
+if (Q.fasci_rg_active == 0 && Q.fasci_adp_active == 0 && Q.fasci_post_time == 0 && Q.fasci_banned == 0) {
+    Q.veterans_bn += 5*(1-dissent);
+    Q.veterans_psi -= 5*(1-dissent);
+    Q.fasci_post_time = 6; 
 }
-if (Q.arditi_rg_active == 0 && Q.arditi_adp_active == 0 && Q.arditi_post_time == 0) {
-    rural_bn += 5*(1-dissent);
-    rural_psi -= 5*(1-dissent);
-    arditi_post_time = 6;
+if (Q.arditi_rg_active == 0 && Q.arditi_adp_active == 0 && Q.arditi_post_time == 0 && Q.arditi_banned == 0) {
+    Q.rural_bn += 5*(1-dissent);
+    Q.rural_psi -= 5*(1-dissent);
+    Q.arditi_post_time = 6;
 }
-if (Q.abl_rg_active == 0 && Q.abl_adp_active == 0 && Q.abl_post_time == 0) {
-    middle_class_bn += 5*(1-dissent);
-    middle_class_psi -= 5*(1-dissent);
-    abl_post_time = 6;
+if (Q.abl_rg_active == 0 && Q.abl_adp_active == 0 && Q.abl_post_time == 0 && Q.abl_banned == 0) {
+    Q.middle_class_bn += 5*(1-dissent);
+    Q.middle_class_psi -= 5*(1-dissent);
+    Q.abl_post_time = 6;
 }
 
 if (typeof window !== "undefined" && window.generateBar) {

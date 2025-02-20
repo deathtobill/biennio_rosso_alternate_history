@@ -1,9 +1,9 @@
 title: Roman Question
 new-page: true
 is-card: true
-view-if: psi_in_government and roman_question_timer <= 0 and roman_question_answered = 0
+view-if: psi_in_government and roman_question_timer <= 0 and roman_question_answered == 0
 frequency: 250
-on-arrival: month_actions += 1; vatican_appeased = 0; roman_question_timer = 8; negotiating_power = 4 if ((vatican_relations <= 4 and pope == "Ratti") or pope == "Del Val"); negotiating_power = 3 if ((vatican_relations >= 5 and vatican_relations <= 7 and pope == "Ratti") or pope == "Della Chiesa"); negotiating_power = 2 if (vatican_relations >= 7 or pope == "Gasparri"); current_budget += budget; vatican_compensation_offered = 0; vatican_state_offered = 0; vatican_defence_offered = 0; vatican_education_offered = 0;
+on-arrival: month_actions += 1; vatican_appeased = 0; roman_question_timer = 8; negotiating_power = 4 if ((vatican_relations <= 4 and pope == "Ratti") or pope == "Del Val"); negotiating_power = 3 if ((vatican_relation >= 5 and vatican_relation <= 7 and pope == "Ratti") or pope == "Della Chiesa"); negotiating_power = 2 if (vatican_relation >= 7 or pope == "Gasparri"); current_budget += budget; vatican_compensation_offered = 0; vatican_state_offered = 0; vatican_defence_offered = 0; vatican_education_offered = 0;
 card-image: img/RomanQuestion.jpg
 go-to: vatican_menu
 tags: govt_affairs
@@ -14,7 +14,7 @@ Following the Risorgimento, the newly formed Kingdom of Italy seized Rome from t
 
 Now that we are in power, we might be able to resolve this issue with the Holy See.
 
-# list of demands you have to fufill, relations good less demands to fufill, relations bad more demands to fufill, etc
+# list of demands you have to fufill, relation good less demands to fufill, relation bad more demands to fufill, etc
 @vatican_menu
 
 - @vatican_negotiations: Let us begin negotiations with the Holy See.

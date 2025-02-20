@@ -40,6 +40,7 @@ The Red Guard focuses its targets on the *Anti-Bolshevik Leagues*.
 
 @rg_keep
 view-if: abl_rg_active = 1 or arditi_rg_active = 1 or fasci_rg_active = 1
+go-to: adp_menu if arditi_formed  
 
 @adp_menu
 

@@ -68,17 +68,4 @@ A number of coordinated raids and arrests have slightly paralysed the far-left p
 
 Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
 
-@investigate_mafia
-view-if: interior_minister_party = "PSI"
-go-to: investigate_mafia_success if interior_police_loyalty >= 0.5 and judicial_reform > 1; investigate_mafia_failure if interior_police_loyalty < 0.5 or judicial_reform < 2
-
-@investigate_mafia_success
-on-arrival: mafia_investigation += 1; rural_psi += 3*(1-dissent)
-
-The Carabinieri are able to uncover files regarding illegal activity among a number of high-value individuals, and we are able to conduct raids and arrests the following day.
-
-@investigate_mafia_failure
-
-Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
-
 

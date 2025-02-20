@@ -1,0 +1,39 @@
+title: Italian Economic Recovery!
+tags: event
+view-if: economic_growth > 0 and inflation < 5 and inflation > 2 and unemployment < 8 and budget > -1 if psi_in_government
+go-to: bank_deficit if budget < 0; bank_balanced if budget == 0; bank_surplus if budget > 0
+on-arrival: {!
+Q.workers_psi += 7*(1-dissent) if Q.psi_in_government == 1;
+Q.middle_class_psi += 7*(1-dissent) if Q.psi_in_government == 1;
+Q.industrialists_psi += 7*(1-dissent) if Q.psi_in_government == 1;
+Q.rural_psi += 7*(1-dissent) if Q.psi_in_government == 1;
+Q.veterans_psi += 7*(1-dissent) if Q.psi_in_government == 1;
+Q.catholics_psi += 7*(1-dissent) if Q.psi_in_government == 1;
+
+Q.workers_bn -= 7*(1-dissent);
+Q.middle_class_bn -= 7*(1-dissent);
+Q.industrialists_bn -= 7*(1-dissent);
+Q.rural_bn -= 7*(1-dissent);
+Q.veterans_bn -= 7*(1-dissent);
+Q.catholics_bn -= 7*(1-dissent);
+
+Q.workers_ldr += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
+Q.middle_class_ldr += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
+Q.industrialists_ldr += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
+Q.rural_ldr += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
+Q.veterans_ldr += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
+Q.catholics_ldr += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
+
+Q.workers_ppi += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
+Q.middle_class_ppi += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
+Q.industrialists_ppi += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
+Q.rural_ppi += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
+Q.veterans_ppi += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
+Q.catholics_ppi += 7*(1-dissent) if Q.catholic_liberal_coalition == 1;
+!}
+
+max-visits: 1
+
+= Economic Economic Recovery 
+
+It seems the economy is finally recovering. People are heading back to work, inflation is down to single digits, and our economic forecasts show a positive growth for the first time in months. Regardless of the efforts taken, it seems most of the credit will be given to the current governing coalition, which [? if psi_in_government :fortunately, means us. ?][? if not psi_in_government :unfortunately, does not include us. ?]

@@ -13,7 +13,7 @@ max-visits: 4
 At the Labour and Socialist International, we can forge contacts with our fraternal socialist parties in Europe and across the world.
 
 - @fr_uk: Build relationships with the French SFIO and British Labour Party to keep their governments aligned with Italy.
-- @austria: Learn organisation and street fighting from the German communists.
+- @germany: Learn organisation and street fighting from the German communists.
 - @comintern: Expand our contacts and influence with the Soviets through the Comintern.
 - @america: Contact the Socialist party of America.
 - @return: We do not need international contacts at the moment.
@@ -28,11 +28,10 @@ on-arrival: resources -= 1; entente_relation += 1; reformist_strength += 5;
 
 The socialists of France and Britain can influence their governments to be friendlier towards Italy.
 
-@austria
+@germany
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-audio: shuffle music/communist/workers_of_vienna_normalized.mp3
 on-arrival: communist_strength += 5; radicalisation += 0.5; rb_militancy += 0.07; resources -= 1;
 
 The Spartacist Uprising has failed. Though not officially persecuted, with its leaders dead, the Spartacus League higher command certainly aren't living peacefully. Fortunately, we should be able to offer them refuge, welcoming them as exiles to Italy and training our forces with their experiences in the Spartakusbund.

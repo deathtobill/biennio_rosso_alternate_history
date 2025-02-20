@@ -14,7 +14,7 @@ tags: event
 
 = PSRI seeks reconciliation
 
-The PSRI has offered us a meeting, seeing a movement from Maximalist leadership like the ones that expelled them in 1912, have offered to reconcile and reunite the parties into a single group once more.
+The PSRI has offered us a meeting, seeing a movement from Maximalist leadership like the ones that expelled them in 1912, have offered to reconcile and reunite into a single party once more.
 
 What do we do?
 
@@ -37,8 +37,8 @@ Q.veterans_psri -= Q.psri_veterans_movement;
 Q.catholics_psri -= Q.psri_catholics_movement;
 
 Q.reformist_strength += 10;
-Q.communist_dissent += 10
-Q.maximalist_dissent += 10
+Q.communist_dissent += 10;
+Q.maximalist_dissent += 10;
 
 Q.psri_reconciled = 1;
 !}

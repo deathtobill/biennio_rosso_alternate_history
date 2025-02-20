@@ -22,5 +22,5 @@ ConstantinoLazzari.jpg: Camera dei deputati, unknown date. Costantino Lazzari. -
 EnricoFerri.jpg: Fratelli D’Alessandri, 1870s. Portret Enrico Ferri. - https://commons.wikimedia.org/wiki/File:Portret_Enrico_Ferri_(cropped).jpg
 AnnaKuliscioff.jpg: Mario Nunes Vais, 1908. "Anna Kuliscioff a Firenze". - https://commons.wikimedia.org/wiki/File:Nunes_Vais,_Mario_(1856-1932)_-_Anna_Kuliscioff_a_Firenze_(1908).jpg
 ClaudioTreves.jpg: Unknown, unknown date. Claudio Treves prima del 1933. - https://commons.wikimedia.org/wiki/File:CLAUDIO_TREVES.jpg
-RinaldoRigola.jpg: Camera del deputati, 1920s. sindacalista e politico italiano. - https://commons.wikimedia.org/wiki/File:Rinaldo_RIgola_daticamera.jpg
+RinaldoRigola.png: Camera del deputati, 1920s. sindacalista e politico italiano. - https://commons.wikimedia.org/wiki/File:Rinaldo_RIgola_daticamera.jpg
 
