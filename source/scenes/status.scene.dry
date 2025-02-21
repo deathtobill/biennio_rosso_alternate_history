@@ -44,10 +44,10 @@ Prime Minister: [+ prime_minister +] ([+ prime_minister_party +])
 Chamber of Deputies composition:
 
 
-{!<span class="tooltip-text" title="Italian Socialist Party">**PSI**</span>!}: **[+ psi_r +]%**
+{!<span class="tooltip-text" title="Italian Socialist Party">PSI</span>!}: **[+ psi_r +]%**
 [? if pcdi_formed = 1: {!<span class="tooltip-text" title="Communist Party of Italy">PCd'I</span>!}: [+ pcdi_r +]% ?]
 [? if psu_formed = 1: {!<span class="tooltip-text" title="Unitary Socialist Party">PSU</span>!}: [+ psu_r +]% ?]
-{!<span class="tooltip-text" title="Italian Reformist Socialist Party">PSRI</span>!}: [+ psri_r +]
+{!<span class="tooltip-text" title="Italian Reformist Socialist Party">PSRI</span>!}: [+ psri_r +]%
 {!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_r +]%
 {!<span class="tooltip-text" title="Italian People's Party">PPI</span>!}: [+ ppi_r +]%
 [? if not pldi_formed : {!<span class="tooltip-text" title="Liberals, Democrats & Radicals">LDR</span>!}: [+ ldr_r +]% ?]

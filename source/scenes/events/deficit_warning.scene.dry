@@ -5,18 +5,21 @@ view-if: election_seen == 1
 go-to: bank_deficit if budget < 0; bank_balanced if budget == 0; bank_surplus if budget > 0
 
 @bank_deficit
+on-arrival: election_seen = 0;
 
 = Banca d'Italia warns of deficit
 
 It seems we have inherited a deficit from the previous government. We should be cautious not to continue borrowing significantly, else we end up in a fiscal crisis.
 
 @bank_balanced
+on-arrival: election_seen = 0;
 
 = Banca d'Italia informs on balanced budget
 
 It seems the previous government has managed to balance the budget, even in the current economic situation. Nevertheless, we inherit a stable budget, though it might be encouraged to allow some deficit spending to resolve our economy.
 
 @bank_surplus
+on-arrival: election_seen = 0;
 
 = Banca d'Italia informs of surplus
 
