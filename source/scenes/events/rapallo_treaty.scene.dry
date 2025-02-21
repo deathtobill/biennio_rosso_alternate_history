@@ -19,7 +19,7 @@ Following the end of the war, however, the *Paris Peace Conference* saw the Ente
 - @adriatic_historical: Concede the Snežnik Plateau and Dalmatia, but keep Zara.
 - @adriatic_yugoslavia: Concede Dalmatia, the Snežnik Plateau and Zara to the Yugoslavs.
 - @adriatic_delay: Could we delay the negotiations later?
-- @adriatic_not_gov: We'll see how the government resolves this issue...
+- @adriatic_not_gov: We'll see how the Foreign Minister resolves this issue...
 
 @adriatic_italy
 subtitle: The Entente won't be happy about this, even if our relations are good.
@@ -115,7 +115,7 @@ Next up on the list is Fiume. Occupied recently by Gabriele D'Annunzio, it is of
 
 - @fiume_italy: Demand full control of Fiume.
 - @fiume_free: Let Fiume become a Free City.
-- @fiume_not_gov
+- @fiume_not_gov: We'll see how the Foreign Minister resolves this issue...
 
 @fiume_italy 
 subtitle: Thankfully, they seem willing to accommodate.
