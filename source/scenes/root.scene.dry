@@ -380,7 +380,8 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'economic_democracy', 'education_policy', 'fiscal_policy', 'labour_rights', 
             'military_influence', 'roman_question', 'southern_question', 'arditi', 'para_rally', 'preparing_revolution', 
             'red_guards', 'targeting', 'enemies', 'fundraising', 'king_relations', 
-            'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit'];
+            'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit',
+            'adriatic'];
 
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
@@ -429,6 +430,7 @@ Q.revolutionary_timer = 0;
 Q.urgency_timer = 0;
 Q.welfare_party_timer = 0;
 Q.deficit_timer = 0;
+Q.adriatic_timer = 22;
 
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;

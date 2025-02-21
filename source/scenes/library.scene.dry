@@ -62,10 +62,12 @@ Prime Minister: [+ prime_minister +] ([+ prime_minister_party +])
 Chamber of Deputies composition:
 
 PSI: [+ psi_r +]%
-PPI: [+ ppi_r +]%
-[+ ldr_name +]: [+ ldr_r +]%
+[? if pcdi_formed : PCd'I: [+ pcdi_r +] ?]
+[? if psu_formed : PSU: [+ psu_r +] ?]
 PSRI: [+ psri_r +]%
 DS: [+ ds_r +]%
+PPI: [+ ppi_r +]%
+[+ ldr_name +]: [+ ldr_r +]%
 [+ ul_name +]: [+ ul_r +]%
 BN: [+ bn_r +]%
 Others: [+ other_r +]%
@@ -136,13 +138,17 @@ go-to: menu
 
 PSI: [+ psi_votes +]%
 
-[+ ldr_name +]: [+ ldr_votes +]%
+[? if pcdi_formed : PCd'I: [+ pcdi_votes +]% ?]
+
+[? if psu_formed : PSU: [+ psu_votes +]% ?]
+
+PSRI : [+ psri_votes +]%
 
 DS: [+ ds_votes +]%
 
-[? if not psri_reconciled: PSRI ?][? if psri_in_government != 0 and pci_formed : [+ psri_name +]?]: [+ psri_votes +]%
-
 PPI: [+ ppi_votes +]%
+
+[+ ldr_name +]: [+ ldr_votes +]%
 
 [+ ul_name +]: [+ ul_votes +]%
 
@@ -173,9 +179,9 @@ go-to: menu
 
 [? if psu_formed : *Partito Socialista Unitario* (Unitary Socialist Party) - A splinter party of the PSI, formed after the reformist wing of the party and its leaders split. ?]
 
-**[+ ldr_name +]** - *[+ ldr_full_italian +]* ([+ ldr_full_name +]) - A recently formed centre party under the merger of the Liberal Union and the Italian Radical Party. They get their support mainly from the industrialists & Landowners under the leader of Prime Minister who ended the First World War.
+**PSRI** - *Partito Socialista Riformista Italiano* (Italian Reformist Socialist Party) - A splinter of reformists from the PSI, the PRSI are a centre-left party, advocating for socialism through the parliamentary system. 
 
-Current relations: [+ ldr_relation : relationships +]
+Current relations: [+ psri_relation : relationships +]
 
 **DS** - *Democrazia Sociale* (Social Democracy) - A newly formed centre-left party under the merger of the Constitutional Democratic Party, the Democratic Party and parts of the Italian Radical Party. The party is supported mainly by the the Southern regions of Italy.
 
@@ -185,19 +191,19 @@ Current relations: [+ ds_relation : relationships +]
 
 Current relations: [+ ppi_relation : relationships +]
 
+**[+ ldr_name +]** - *[+ ldr_full_italian +]* ([+ ldr_full_name +]) - A recently formed centre party under the merger of the Liberal Union and the Italian Radical Party. They get their support mainly from the industrialists & Landowners under the leader of Prime Minister who ended the First World War.
+
+Current relations: [+ ldr_relation : relationships +]
+
 **[+ ul_name +]** - *[+ ul_full_italian +]* ([+ ul_full_name +]) - A centre-right party that remained as the remaining members that weren't merged into the [+ ldr_name +]. 
 
 Current relations: [+ ul_relation : relationships +]
-
-**PSRI** - *Partito Socialista Riformista Italiano* (Italian Reformist Socialist Party) - A splinter of reformists from the PSI, the PRSI are a centre-left party, advocating for socialism through the parliamentary system. 
-
-Current relations: [+ psri_relation : relationships +]
 
 **BN** - *Blocco Nazionale* - (National Bloc) - A newly formed coalition of right-wing parties opposed to socialism, headed by Giovanni Giolitti, Benito Mussolini and Enrico Corradini.
 
 Current relations: [+ bn_relation : relationships +]
 
-**Other parties** - There is a multitude of small parties, such as the Economic Party, the Italian Republican Party, Independent Socialists, and others. Their political position usually lies in the middle. 
+**Other parties** - There is a multitude of small parties, such as the Economic Party, the Italian Republican Party, Independent Socialists, and others. Their political position usually lies on the left. 
 
 @paramilitaries
 on-arrival: {!
@@ -328,6 +334,12 @@ data = data.concat([
         "seats": Math.round(Q.psri_r*5),
     },
     {
+        "id": "ds",
+        "legend": "DS",
+        "name": "DS",
+        "seats": Math.round(Q.ds_r*5),
+    },
+    {
         "id": "ppi",
         "legend": "PPI",
         "name": "PPI",
@@ -340,28 +352,22 @@ data = data.concat([
         "seats": Math.round(Q.ldr_r*5),
     },
     {
-        "id": "ds",
-        "legend": "DS",
-        "name": "DS",
-        "seats": Math.round(Q.ds_r*5),
-    },
-    {
         "id": "ul",
         "legend": "UL",
         "name": Q.ul_name,
         "seats": Math.round(Q.ul_r*5),
     },
     {
-        "id": "other",
-        "legend": "Other",
-        "name": "Other",
-        "seats": Math.round(Q.other_r*5),
-    },
-    {
         "id": "bn",
         "legend": "BN",
         "name": "BN",
         "seats": Math.round(Q.bn_r*5),
+    },
+    {
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_r*5),
     },
 ]);
 
@@ -406,7 +412,7 @@ data = data.concat([
         var minInflation = d3.min(Q.economic_records, d => d.inflation);
         var maxUnemployment = d3.max(Q.economic_records, d => d.unemployment);
         var lines_3 = d3.linegraph(true, true, ['inflation', 'unemployment', 'economicgrowth'],
-                {'inflation': '#0000FF', 'unemployment': '1E99C5', '#economicgrowth': '#FFD700'},
+                {'inflation': '#0000FF', 'unemployment': '1E99C5', 'economicgrowth': '#FFD700'},
                 {'inflation': 'Inflation', 'unemployment': 'Unemployment', 'economicgrowth': 'Economic Growth'},
                 minInflation - 5, 21);
         lines_3.width(width).height(300);
@@ -427,17 +433,17 @@ data = data.concat([
 
 {!<tr><td><div class="box" style='background-color:#FFC0CB'> </div></td> <td>!}PSRI: {!</td><td>!} [+ psri_r +]% {!</td></tr>!}
 
+{!<tr><td><div class="box" style='background-color:#1E99C5'> </div></td><td>!} DS: {!</td><td>!} [+ ds_r +]% {!</td></tr>!}
+
 {!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} [+ ldr_name +]: {!</td><td>!} [+ ldr_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#87CEFA'> </div></td><td>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#00008B'> </div></td><td>!} [+ ul_name +]: {!</td><td>!} [+ ul_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#1E99C5'> </div></td><td>!} DS: {!</td><td>!} [+ ds_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#000000'> </div></td><td>!} BN: {!</td><td>!} [+ bn_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
-
-{!<tr><td><div class="box" style='background-color:#000000'> </div></td><td>!} BN: {!</td><td>!} [+ bn_r +]% {!</td></tr>!}
 {!</table>!}
 
 = Election history

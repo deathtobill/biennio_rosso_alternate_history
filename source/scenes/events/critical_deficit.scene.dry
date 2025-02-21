@@ -20,10 +20,14 @@ choose-if: welfare > 0
 unavailable-subtitle: There is no welfare left to cut.
 on-arrival: budget += 2; welfare -= 2; veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_bn += 7; 
 
+We are forced to cut welfare, with workers seeing this as a betrayal.
+
 @deficit_insurance
 subtitle: +2 Budget - Our voters won't be happy about this,,,
 view-if: unemployment_insurance_founded == 1
 on-arrival: budget += 2; veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_bn += 7; unemployment_insurance_founded = 0;
+
+We are forced to end the Unemployment Insurance Program early, regaining the injected funds, with veterans seeing this as a betrayal.
 
 @deficit_taxes
 subtitle: +3 Budget - We should be prepared for a support hit...
@@ -31,13 +35,16 @@ choose-if: upper_tax_rates <= 5 and lower_tax_rates <= 5
 unavailable-subtitle: Tax Rates are already too high.
 on-arrival: budget += 3; middle_class_psi -= 4; industrialists_psi -= 4; workers_psi -= 3; rural_psi -= 3; unemployed += 2; lower_tax_rates += 1; upper_tax_rates += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 2; workers_psi -= 5 if lower_tax_rates > 1; inflation -= 1.1; economic_growth -= 0.6; psri_relation -= 5*(1-dissent);
 
+Raising taxes hurts our support among all those who pay taxes. [? if centre_left_coalition : However, our coalition partners are more supportive of the idea of "shared sacrifice" than simply taxing the rich. ?] Increasing taxes also decreases economic demand, which may lead to more unemployment.
+
 @deficit_relations
 subtitle: Thankfully, they seem receptive, at least...
-choose-if: entente_relation > 6 and deficit_extension == 0
+choose-if: entente_relation >= 6 and deficit_extension == 0
 unavailable-subtitle: [? if entente_relation <= 5: Our relations are too low. ?][? if deficit_extension == 1: We have already asked them for an extension. ?]
 on-arrival: deficit_timer = 6; deficit_extension = 1; 
 
 @deficit_renege
+view-if: welfare < 1 and unemployment_insurance_founded == 0 and upper_tax_rates <= 5 and lower_tax_rates <= 5 and ((entente_relation < 6 and deficit_extension == 0) or deficit_extension == 1)
 subtitle: This won't end well...
 on-arrival: {!
 Q.budget = 0;
@@ -52,9 +59,11 @@ Q.middle_class_psi -= 10;
 Q.industrialists_psi -= 10;
 Q.rural_psi -= 10;
 Q.veterans_psi -= 10;
-Q.catholics -= 10;
+Q.catholics_psi -= 10;
 
 Q.unemployment += 9.5;
 Q.economic_growth -= 12.7;
 Q.inflation += 50;
 !}
+
+We are immediately plunged into a deeper financial crisis, as businesses and banks pull out of the country. We are forced to print excessive amounts of money, resulting in hyperinflation. There is no telling how we will be able to get out of this.

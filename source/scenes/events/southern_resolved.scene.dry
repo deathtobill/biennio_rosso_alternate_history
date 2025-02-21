@@ -1,0 +1,14 @@
+title: Southern Question Ameliorated
+new-page: true 
+subtitle: Our policies seem to have borne fruit.
+tags: event
+view-if: mafia_strength == 0 and southern_education_funded > 1 and southern_infrastructure_funded > 1 
+on-arrival: rural_psi += 12*(1-dissent); rural_ldr -= 6*(1-dissent); rural_ul -= 3*(1-dissent); rural_ds -= 3*(1-dissent);
+max-visits: 1
+
+= Mezzogiorno Ameliorated
+
+It seems our policies within the South has borne fruit. The various bickering Mafia groups have been quelled by the Interior, Public Education, as well as general literacy has improved amongst the population, and infrastructural projects directed by the Public Works Ministry has allowed the South to catch up with the North.
+
+There is still much to be done. The Mafia still remains relevant, albeit weaker, and the economic output of the South still lacks compared to the North. Regardless, our success seems to have swayed many rural voters over to our party, and away from the historically liberal parties.
+

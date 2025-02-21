@@ -25,6 +25,9 @@ Q.liberal_coalition_failed = 0;
 Q.catholic_coalition_failed = 0;
 Q.coalition_dissent = 0;
 
+Q.crackdown_far_left = 0;
+Q.crackdown_far_right = 0;
+
 // prevents insta dismissal
 Q.king_dismissed_cooldown = 6;
 !}
@@ -160,6 +163,12 @@ data = data.concat([
         "seats": Math.round(Q.psri_r*5),
     },
     {
+        "id": "ds",
+        "legend": "DS",
+        "name": "DS",
+        "seats": Math.round(Q.ds_r*5),
+    },
+    {
         "id": "ppi",
         "legend": "PPI",
         "name": "PPI",
@@ -170,12 +179,6 @@ data = data.concat([
         "legend": "LDR",
         "name": Q.ldr_name,
         "seats": Math.round(Q.ldr_r*5),
-    },
-    {
-        "id": "ds",
-        "legend": "DS",
-        "name": "DS",
-        "seats": Math.round(Q.ds_r*5),
     },
     {
         "id": "ul",
@@ -230,13 +233,13 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#FFC0CB'> </div>!} PSRI: {!</td><td>!} [+ psri_r +]% {!</td><td>!} [+ str_change_psri +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#FFD700'> </div>!} [+ ldr_name +]: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#1E99C5'> </div>!} DS: {!</td><td>!} [+ ds_r +]% {!</td><td>!} [+ str_change_ds +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#87CEFA'> </div>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td><td>!} [+ str_change_ppi +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} [+ ul_name +]: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#FFD700'> </div>!} [+ ldr_name +]: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#1E99C5'> </div>!} DS: {!</td><td>!} [+ ds_r +]% {!</td><td>!} [+ str_change_ds +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} [+ ul_name +]: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#000000'> </div>!} BN: {!</td><td>!} [+ bn_r +]% {!</td><td>!} [+ str_change_bn +]% {!</td></tr>!}
 
@@ -250,7 +253,7 @@ Left-Wing Coalition (PSI + PSRI[? if psu_formed : + PSU?]): [+ left_wing_coaliti
 Centre-Left Coalition (PSI + [+ ldr_name +] + DS + PSRI [? if psu_formed :+ PSU ?]+ Others): [+ centre_left_coalition_r +]%
 
 Socialist-Catholic Coalition (PSI + PPI + PSRI [? if psu_formed :+ PSU ?]+ Others): [+ socialist_catholic_coalition_r +]%
-
+ 
 Catholic-Liberal Coalition (PPI + [+ ldr_name +] + [+ ul_name +] + DS + Others): [+ catholic_liberal_coalition_r +]%
 
 Anti-Socialist Coalition (BN + [+ ldr_name +] + DS): [+ anti_socialist_coalition_r +]%
@@ -522,7 +525,7 @@ While some minor ones are Charity and Nationalisations.
 title: Resolve the Roman Question with the Papacy.
 subtitle: This will benefit our Catholic bloc as well if we can form a compromise in time.
 tags: catholic_major
-view-if: catholic_papacy_accepted = 0
+view-if: catholic_papacy_accepted = 0 and roman_question_answered = 0
 on-arrival: catholic_papacy_accepted = 1; catholic_negotiations += 20; catholic_papacy_timer = 12;
 go-to: c_demands_menu
 
@@ -571,7 +574,7 @@ This is a minor point of conjecture for the Catholics, and secures us some progr
 @drop_catholic_papacy
 title: Drop our promise to resolve the Roman Question.
 tags: drop_catholic_major
-view-if: catholic_papacy_accepted = 1
+view-if: catholic_papacy_accepted = 1 and roman_question_answered = 0
 on-arrival: catholic_papacy_accepted = 0; catholic_negotiations -= 20; catholic_papacy_timer = 0;
 go-to: c_demands_menu
 

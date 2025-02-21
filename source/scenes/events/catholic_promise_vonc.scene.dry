@@ -1,5 +1,5 @@
 title: Meeting with the Catholics
-view-if: psi_in_government and socialist_catholic_coalition and ppi_promise_failed
+view-if: psi_in_government and socialist_catholic_coalition and ppi_promise_failed or (catholic_papacy_accepted and catholic_papacy_timer == 0 and roman_question_answered == 0)
 new-page: true
 tags: event
 
@@ -10,9 +10,11 @@ The Italian People's Party is, understandably upset at our failure to maintain t
 - @catholic_promise_results: And...
 
 @catholic_promise_results 
-on-arrival: ppi_relation -= 5; ppi_total_broken += 1; ppi_promise_failed = 0; coalition_dissent += 1 if (ppi_relation >= 50 and ppi_total_broken < 2)
+on-arrival: ppi_relation -= 5; ppi_total_broken += 1; ppi_promise_failed = 0; coalition_dissent += 1 if (ppi_relation >= 50 and ppi_total_broken < 2); catholic_papacy_timer += 6 if (ppi_relation >= 50 and ppi_total_broken < 2 and catholic_papacy_timer == 0 and roman_question_answered == 0)
 go-to: catholic_vote_of_no_confidence if (ppi_relation < 50 or ppi_total_broken >= 2)
 
 [? if ppi_relation < 50 or ppi_total_broken >= 2 : Unfortunately, the PPI have decided to call a Vote of No Confidence against us. ?]
 
 [? if ppi_relation >= 50 and ppi_total_broken < 2 : Fortunately, owing to our good relations, the PPI have decided against a vote, though our relations have taken a hit. ?]
+
+[? if catholic_papacy_accepted : We have been given an extra 6 months to negotiate an agreement with the Holy See. ?]

@@ -1,7 +1,7 @@
 title: Further Military demobilisation set to occur
 subtitle: The Military will continue its post-war demobilisation.
 new-page: true
-view-if: demobilise_timer = 0 and army_strength > 300 and stopped_mobilisation = 0
+view-if: demobilise_timer = 0 and army_strength > 300 and stopped_mobilisation == 0
 tags: event
 
 = Military Demobilisation to Continue
@@ -29,7 +29,7 @@ subtitle: [? if army_strength > 3000 : -7 Budget ?][? if army_strength > 2000 an
 view-if: psi_in_government
 choose-if: army_loyalty > 0.71
 unavailable-subtitle: Our influence within the army is too low.
-on-arrival: stopped_mobilisation = 1; budget -= 7 if army_strength > 3000; budget -= 5 if army_strength > 2000 and army_strength < 300; budget -= 3 if army_strength < 2000 and army_strength > 1000; dissent += 0.3;
+on-arrival: stopped_mobilisation = 1; budget -= 7 if army_strength > 3000; budget -= 5 if army_strength > 2000 and army_strength < 300; budget -= 3 if army_strength < 2000 and army_strength > 1000; dissent += 0.1;
 
 We are able to convince the army to end its demobilisation, the budget will be balanced some other way. Many in the party decry our seemingly pro-war stance, however.
 
@@ -42,4 +42,6 @@ on-arrival: para_resources -= 1; rg_strength += 15; rg_militancy += 0.02; demobi
 @allow_demobilise
 title: Let them demobilise.
 subtitle: +1 Budget
-on-arrival: army_strength -= 692; unemployment += 1.9; budget += 1; demobilise_timer += 6;
+on-arrival: army_strength -= 692; unemployment += 1.9; budget += 1; demobilise_timer += 6; fdc_strength += 15; ard_strength += 10; abl_strength += 5;
+
+
