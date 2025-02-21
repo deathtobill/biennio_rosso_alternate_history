@@ -73,7 +73,7 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 [? if liberal_crackdown_accepted and liberal_crackdown_timer == 0 : Crackdown on Paramilitaries: [+ liberal_crackdown_timer +] months left ?]
 
-[? if liberal_crackdown_accepted liberal_crackdown_complete == 1: Crackdown on Paramilitaries: Completed ?]
+[? if liberal_crackdown_accepted and liberal_crackdown_complete == 1: Crackdown on Paramilitaries: Completed ?]
 
 [? if liberal_nationalisation_accepted : Nationalisations disallowed ?]
 
