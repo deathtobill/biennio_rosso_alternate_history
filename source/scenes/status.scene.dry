@@ -248,9 +248,9 @@ Tarrifs: [+ tarrifs : taxation +]
 
 = Reforms
 
-Work Councils: [? if work_councils < 1 and not councils_empowered: Non-existent ?][? work_councils > 1 and not councils_empowered: Influential ?][? if councils_empowered : Empowered ?]
+Work Councils: [? if work_councils = 0 and not councils_empowered: Non-existent ?][? work_councils >= 1 and not councils_empowered: Influential ?][? if councils_empowered : Empowered ?]
 
-Economic Nationalisation: [? if nationalisation_progress == 0: Non-existent ?][? if nationalisation_progress == 1: Minor ?][? if nationalisation_progress == 2: Moderate ?][? if nationalisation_progress == 3: Major ?]
+Economic Nationalisation: [? if nationalisation_progress = 0: Non-existent ?][? if nationalisation_progress = 1: Minor ?][? if nationalisation_progress = 2: Moderate ?][? if nationalisation_progress = 3: Major ?]
 
 @education
 
@@ -258,11 +258,11 @@ Economic Nationalisation: [? if nationalisation_progress == 0: Non-existent ?][?
 
 [? if secularised_education : Education: Secularised ?]
 
-Funding: [? if education_funded == 0 : Decrepit ?][? if education_funded == 1 : Minimal ?][? if education_funded == 2 : Adequate ?][? if education_funded == 3 : Generous ?]
+Funding: [? if education_funded = 0 : Decrepit ?][? if education_funded = 1 : Minimal ?][? if education_funded = 2 : Adequate ?][? if education_funded = 3 : Generous ?]
 
-Curriculum: [? if education_reformed == 0 : Decrepit ?][? if education_reformed == 1 : Traditional ?][? if education_reformed == 2 : Standardised ?][? if education_reformed == 3 : Modernised ?]
+Curriculum: [? if education_reformed = 0 : Decrepit ?][? if education_reformed = 1 : Traditional ?][? if education_reformed = 2 : Standardised ?][? if education_reformed = 3 : Modernised ?]
 
-Trade Schools: [? if trade_school_funded == 0 : Unfunded ?][? if trade_school_funded == 1 : Minimal ?][? if trade_school_funded == 2 : Adequate ?][? if trade_school_funded == 3 : Numerous ?]
+Trade Schools: [? if trade_school_funded = 0 : Unfunded ?][? if trade_school_funded = 1 : Minimal ?][? if trade_school_funded = 2 : Adequate ?][? if trade_school_funded = 3 : Numerous ?]
 
 @foreign
 
@@ -290,15 +290,15 @@ Roman Question: [? if roman_question_answered : Complete ?][? if not roman_quest
 
 Unemployment Insurance Program: [? if not unemployment_insurance_founded : Not yet founded ?][? if unemployment_insurance_founded : [+ insurance_payments_timer +] Months left before renewal ?]
 
-Working Hours: [? if working_hours == 0 : Undeveloped ?][? if working_hours == 1 : Developed ?][? if working_hours == 2 : Unenforced ?][? if working_hours >= 3 : Enforced ?]
+Working Hours: [? if working_hours = 0 : Undeveloped ?][? if working_hours = 1 : Developed ?][? if working_hours = 2 : Unenforced ?][? if working_hours >= 3 : Enforced ?]
 
-Workplace Safety: [? if workers_safety == 0 : Dangerous ?][? if workers_safety == 1 : Safe ?][? if workers_safety >= 2 : Monitored ?]
+Workplace Safety: [? if workers_safety = 0 : Dangerous ?][? if workers_safety = 1 : Safe ?][? if workers_safety >= 2 : Monitored ?]
 
 @judicial
 
 = Judicial Reforms
 
-Judiciary: [? if judicial_reform <= 0 : Reactionary ?][? if judicial_reform == 1: Corrupt ?][? if judicial_reform == 2: Reformed ?]
+Judiciary: [? if judicial_reform <= 0 : Reactionary ?][? if judicial_reform = 1: Corrupt ?][? if judicial_reform = 2: Reformed ?]
 
 = Paramilitaries
 
@@ -318,24 +318,24 @@ Red Guards: [? if not rg_banned : Legal, Operating ?][? if rg_banned : Banned ?]
 
 Southern Question: [? if not southern_resolved : Ongoing ?][? if southern_resolved : Ameliorated ?]
 
-Land Reform: [? if southern_land_reformed == 0 : Unreformed ?][? if southern_land_reformed == 1 : Ongoing ?]
+Land Reform: [? if southern_land_reformed = 0 : Unreformed ?][? if southern_land_reformed = 1 : Ongoing ?]
 
 Infrastructure: [? if southern_infrastructure_funded < 1 : Poor ?][? if southern_infrastructure_funded > 0 and southern_infrastructure_funded < 2 : Lackluster ?][? if southern_infrastructure_funded > 1 : Recovering ?]
 
 Education: [? if southern_education_funded < 1 : Poor ?][? if southern_education_funded > 0 and southern_education_funded < 2 : Lackluster ?][? if southern_education_funded > 1 : Recovering ?]
 
-Mafia: [? if mafia_strength < 1 : Neutralised ?][? if mafia_strength > 2: Strong ?][? if mafia_strength == 1 : Drained ?][? if mafia_strength == 2 : Weakened ?]
+Mafia: [? if mafia_strength < 1 : Neutralised ?][? if mafia_strength > 2: Strong ?][? if mafia_strength = 1 : Drained ?][? if mafia_strength = 2 : Weakened ?]
 
 = Women's Rights
 
 Voting Rights: Disenfranchised
 
-Women's Rights: [? if womens_rights == 0 : Reactionary ?][? if womens_rights == 1 : Regressive ?][? if womens_rights == 2 : Conservative ?][? if womens_rights >= 3 : Fair ?]
+Women's Rights: [? if womens_rights = 0 : Reactionary ?][? if womens_rights = 1 : Regressive ?][? if womens_rights = 2 : Conservative ?][? if womens_rights >= 3 : Fair ?]
 
-Workplace Status: [? if womens_work == 0 : Discriminated ?][? if womens_work == 1 : Reactionary ?][? if womens_work == 2 : Biased ?][? if womens_work >= 3 : Fair ?]
+Workplace Status: [? if womens_work = 0 : Discriminated ?][? if womens_work = 1 : Reactionary ?][? if womens_work = 2 : Biased ?][? if womens_work >= 3 : Fair ?]
 
-Legal Status: [? if family_law == 0 : Patriarchal ?][? if family_law == 1 : Biased ?][? if family_law >= 2 : Progressive ?]
+Legal Status: [? if family_law = 0 : Patriarchal ?][? if family_law = 1 : Biased ?][? if family_law >= 2 : Progressive ?]
 
-Abortion Rights: [? if abortion_rights == 0 : Regressive ?][? if abortion_rights >= 1 : Liberalised ?]
+Abortion Rights: [? if abortion_rights = 0 : Regressive ?][? if abortion_rights >= 1 : Liberalised ?]
 
 
