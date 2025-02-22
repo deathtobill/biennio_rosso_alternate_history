@@ -39,7 +39,7 @@ view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50) a
 choose-if: king_relation > 70
 on-arrival: fasci_coup_progress += 1; democratisation += 2; pm_appointed = 1;
 
-@article_33
+@article_33_2
 subtitle: Remove the King's ability to veto bills.
 view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50) and pm_appointed = 1
 choose-if: king_relation > 80

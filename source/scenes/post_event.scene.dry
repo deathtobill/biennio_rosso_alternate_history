@@ -444,15 +444,15 @@ if (Q.month_actions >= 1) {
     Q.abl_post_time = 6;
     }
 
-    if (Q.radicalism > 6 and Q.radicalism_timer == 0) {
-        Q,middle_class_psi -= 4*(1-dissent);
-    `   Q.industrialists_psi -= 4*(1-dissent);
+    if (Q.radicalism > 6 && Q.radicalism_timer == 0) {
+        Q.middle_class_psi -= 4*(1-dissent);
+        Q.industrialists_psi -= 4*(1-dissent);
         Q.catholics_psi -= 4*(1-dissent);
         Q.radicalism_timer = 6;
     }
-    if (Q.radicalism > 8 and Q.radicalism_timer == 0) {
-        Q,middle_class_psi -= 4*(1-dissent);
-    `   Q.industrialists_psi -= 4*(1-dissent);
+    if (Q.radicalism > 8 && Q.radicalism_timer == 0) {
+        Q.middle_class_psi -= 4*(1-dissent);
+        Q.industrialists_psi -= 4*(1-dissent);
         Q.catholics_psi -= 4*(1-dissent);
         Q.radicalism_timer = 6;
     }

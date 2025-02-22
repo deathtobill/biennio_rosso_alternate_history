@@ -370,7 +370,7 @@ Q.factory_takeovers = 0;
 
 // education_policy 
 Q.secularised_education = 0;
-Q,trade_school_funded = 0;
+Q.trade_school_funded = 0;
 Q.wage_increase = 0;
 Q.working_hours = 0;
 Q.education_reformed = 0;
