@@ -225,7 +225,6 @@ if (Q.economic_growth) {
 if (Q.unemployment) {
     Q.unemployment_2 = Q.unemployment.toFixed(1);
 }
-Q.dissent_percent = Math.round(Q.dissent_percent);
 !}
 
 = Economics
@@ -235,8 +234,6 @@ Inflation: [+ inflation_2 +]%
 Economic Growth: [+ economic_growth_2 +]%
 
 Unemployment: [+ unemployment_2 +]%
-
-[? if in_default == 1: In Debt Default ?]
 
 = Taxation
 
@@ -248,7 +245,7 @@ Tarrifs: [+ tarrifs : taxation +]
 
 = Reforms
 
-Work Councils: [? if work_councils = 0 and not councils_empowered: Non-existent ?][? work_councils >= 1 and not councils_empowered: Influential ?][? if councils_empowered : Empowered ?]
+Work Councils: [? if work_councils = 0 and councils_empowered = 0: Non-existent ?][? work_councils >= 1 and not councils_empowered = 0: Influential ?][? if councils_empowered = 1 : Empowered ?]
 
 Economic Nationalisation: [? if nationalisation_progress = 0: Non-existent ?][? if nationalisation_progress = 1: Minor ?][? if nationalisation_progress = 2: Moderate ?][? if nationalisation_progress = 3: Major ?]
 
