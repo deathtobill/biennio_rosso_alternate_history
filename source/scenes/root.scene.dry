@@ -79,8 +79,8 @@ Q.arditi_formed = 0;
 // inter-party relations
 Q.ul_relation = 35;
 Q.ldr_relation = 35;
-Q.ds_relation = 35;
-Q.ppi_relation = 40;
+Q.ds_relation = 40;
+Q.ppi_relation = 35;
 Q.psri_relation = 60;
 // BN relations are invariably hostile
 Q.bn_relation = 0;
