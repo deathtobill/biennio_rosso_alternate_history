@@ -428,7 +428,6 @@ if (Q.week_actions >= 1) {
     Q.abl_post_time -= 1;
     Q.arditi_post_time -= 1;
     Q.radicalism_timer -= 1;
-    Q.coalition_dissent = Math.round(Q.coalition_dissent);
 
     if (Q.fasci_rg_active == 0 && Q.fasci_adp_active == 0 && Q.fasci_post_time == 0 && Q.fasci_banned == 0) {
     Q.veterans_bn += 5*(1-Q.dissent);
