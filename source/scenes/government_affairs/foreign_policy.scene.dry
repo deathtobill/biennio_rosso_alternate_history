@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 view-if: psi_in_government and foreign_minister_party = "PSI" and foreign_policy_timer <= 0
 frequency: 500
-on-arrival: month_actions += 1; current_budget = 0; current_budget += budget; foreign_policy_timer = 5;
+on-arrival: week_actions += 1; current_budget = 0; current_budget += budget; foreign_policy_timer = 5;
 card-image: img/portraits/GiacomoMatteotti.jpg
 tags: govt_affairs
 

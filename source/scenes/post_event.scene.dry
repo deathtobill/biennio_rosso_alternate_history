@@ -110,10 +110,14 @@ if (Q.dissent < 0) {
 }
 
 // 1. update dates
-if (Q.month_actions >= 1) {
+if (Q.week_actions >= 1) {
     Q.time += 1;
-    Q.month_actions = 0;
-    Q.month += 1;
+    Q.week_actions = 0;
+    Q.week += 2;
+    if (Q.week >= 5) {
+        Q.week = 1;
+        Q.month += 1;
+    }
     if (Q.month >= 13) {
         Q.month = 1;
         Q.year += 1;

@@ -1,7 +1,7 @@
 title: Fascist Urgency
 new-page: true
 view-if: urgency_timer = 0 and (fasci_urgency > 0 or bn_r > 10)
-on-arrival: urgency_timer = 9; month_actions += 1
+on-arrival: urgency_timer = 9; week_actions += 1
 frequency: 150
 is-card: true
 card-image: img/FasciUrgency.jpg

@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs
 frequency: 500
-on-arrival: month_actions += 1; coalition_affairs_timer = 5
+on-arrival: week_actions += 1; coalition_affairs_timer = 5
 view-if: (centre_left_coalition or socialist_catholic_coalition) and coalition_dissent >= 1 and coalition_affairs_timer <= 0
 card-image: img/CoalitionAffairs.jpg
 

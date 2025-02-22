@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 view-if: psi_in_government and (finance_minister_party = "PSI" or labour_minister_party = "PSI" or treasury_minister_party = "PSI") and welfare_gov_timer <= 0
 frequency: 500
-on-arrival: month_actions += 1; current_budget = 0; current_budget += budget; welfare_gov_timer = 3;
+on-arrival: week_actions += 1; current_budget = 0; current_budget += budget; welfare_gov_timer = 3;
 card-image: img/WelfareGov.jpg
 tags: govt_affairs
 

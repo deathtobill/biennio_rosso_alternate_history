@@ -17,7 +17,7 @@ Q.radicalisation = Math.round(Q.radicalisation);
 
 = Status
 
-[+ month : month +] [+ year +]
+Week [+ week +], [+ month : month +] [+ year +]
 
 Party: [+ resources +]
 

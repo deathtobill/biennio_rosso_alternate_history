@@ -1,7 +1,7 @@
 title: Arditi del Popolo
 new-page: true
 is-card: true
-on-arrival: arditi_timer = 3; month_actions += 1; 
+on-arrival: arditi_timer = 3; week_actions += 1; 
 view-if: arditi_formed and arditi_timer <= 0 and arditi_cooperation
 frequency: 300
 card-image: img/Arditi.png

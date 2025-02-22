@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 view-if: psi_in_government and roman_question_timer <= 0 and roman_question_answered == 0
 frequency: 250
-on-arrival: month_actions += 1; papal_appeased = 0; roman_question_timer = 8; negotiating_power = 4 if ((papal_relations <= 4 and pope == "Ratti") or pope == "Del Val"); negotiating_power = 3 if ((papal_relation >= 5 and papal_relation <= 7 and pope == "Ratti") or pope == "Della Chiesa"); negotiating_power = 2 if (papal_relation >= 7 or pope == "Gasparri"); current_budget += budget; papal_compensation_offered = 0; papal_state_offered = 0; papal_defence_offered = 0; papal_education_offered = 0;
+on-arrival: week_actions += 1; papal_appeased = 0; roman_question_timer = 8; negotiating_power = 4 if ((papal_relations <= 4 and pope == "Ratti") or pope == "Del Val"); negotiating_power = 3 if ((papal_relation >= 5 and papal_relation <= 7 and pope == "Ratti") or pope == "Della Chiesa"); negotiating_power = 2 if (papal_relation >= 7 or pope == "Gasparri"); current_budget += budget; papal_compensation_offered = 0; papal_state_offered = 0; papal_defence_offered = 0; papal_education_offered = 0;
 card-image: img/RomanQuestion.jpg
 go-to: papal_menu
 tags: govt_affairs

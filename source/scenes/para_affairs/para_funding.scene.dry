@@ -1,7 +1,7 @@
 title: Paramilitary Funding
 new-page: true
 view-if: para_funding_timer <= 0 and (not historical_mode)
-on-arrival: para_funding_timer = 3; month_actions += 1
+on-arrival: para_funding_timer = 3; week_actions += 1
 frequency: 300
 is-card: true
 card-image: img/ParaFunding.jpg
