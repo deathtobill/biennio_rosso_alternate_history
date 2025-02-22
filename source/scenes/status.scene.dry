@@ -248,7 +248,7 @@ Tarrifs: [+ tarrifs : taxation +]
 
 = Reforms
 
-Work Councils: [? if work_councils < 1 and not councils_empowered: Non-existent ?][? work_councils > 1 and not councils_empowered: Influential ?][? if councils_empowered : Empowered]
+Work Councils: [? if work_councils < 1 and not councils_empowered: Non-existent ?][? work_councils > 1 and not councils_empowered: Influential ?][? if councils_empowered : Empowered ?]
 
 Economic Nationalisation: [? if nationalisation_progress == 1 : Non-existent ?][? if nationalisation_progress == 1: Minor ?][? if nationalisation_progress == 2: Moderate ?][? if nationalisation_progress == 3: Major ?]
 
@@ -288,7 +288,7 @@ Roman Question: [? if roman_question_answered : Complete ?][? if not roman_quest
 
 @labour
 
-Unemployment Insurance Program: [? if not unemployment_insurance_founded : Not yet founded][? if unemployment_insurance_founded : [+ insurance_payments_timer +] Months left before renewal ?]
+Unemployment Insurance Program: [? if not unemployment_insurance_founded : Not yet founded ?][? if unemployment_insurance_founded : [+ insurance_payments_timer +] Months left before renewal ?]
 
 Working Hours: [? if working_hours == 0 : Undeveloped ?][? if working_hours == 1 : Developed ?][? if working_hours == 2 : Unenforced ?][? if working_hours >= 3 : Enforced ?]
 
@@ -310,7 +310,7 @@ Anti-Bolshevik Leagues: [? if not abl_banned : Legal, Operating ?][? if abl_bann
 
 Red Guards: [? if not rg_banned : Legal, Operating ?][? if rg_banned : Banned ?]
 
-[? if arditi_formed : Arditi del Popolo: Legal, Operating  ]
+[? if arditi_formed : Arditi del Popolo: Legal, Operating ?]
 
 @situations
 
@@ -336,6 +336,6 @@ Workplace Status: [? if womens_work == 0 : Discriminated ?][? if womens_work == 
 
 Legal Status: [? if family_law == 0 : Patriarchal ?][? if family_law == 1 : Biased ?][? if family_law >= 2 : Progressive ?]
 
-Abortion Rights: [? if abortion_rights == 0 : Regressive ?][? if abortion_rights >= 1 : Liberalised]
+Abortion Rights: [? if abortion_rights == 0 : Regressive ?][? if abortion_rights >= 1 : Liberalised ?]
 
 
