@@ -254,7 +254,7 @@ Fiume: [? if not resolved_adriatic : Negotiating ?][? if fiume_free : Free City 
 
 Adriatic Question: [? if resolved_adriatic : Complete ?][? if not resolved_adriatic : Negotiating ?]
 
-@internal
+@interior
 
 = Taxation
 
