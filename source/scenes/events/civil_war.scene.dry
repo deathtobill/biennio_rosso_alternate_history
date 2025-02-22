@@ -180,6 +180,9 @@ Our resistance will be recorded in the history books, and in the future, our nam
 
 - @game_over: Game over.
 
+@game_over
+go-to: game_over
+
 @long_war
 
 = Long War

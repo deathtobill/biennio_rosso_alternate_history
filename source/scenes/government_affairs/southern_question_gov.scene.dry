@@ -34,7 +34,7 @@ unavailable-subtitle: [? if centre_left_coalition : The Liberals are threatening
 on-arrival: southern_land_reformed = 1; budget -= 2; ldr_relation -= 30; rural_psi += 17*(1-dissent); industrialists_ldr -= 27*(1-dissent); industrialists_bn += 20*(1-dissent); middle_class_bn += 4*(1-dissent); unemployment -= 4.3; inflation += 2.8; economic_growth += 2.7; fasci_coup_progress += 1; capital_strike_progress += 1;
 go-to: liberal_vote_of_no_confidence.let_it_happen if ldr_r >= 50
 
-The bill is barely able to pass the floor, and the Liberals are in an uproar. Already, our contacts within the [+ ldr_name +] have informed us of an exodus of their landowner backers from the party, instead seeking to align further with the far-right. Orlando and the [+ ldr_name +] vow never to work with us again, as the Fascists use this opportunity to paint us as property-seizing radicals to the middle class.
+The bill is barely able to pass the floor, and the Liberals are in an uproar. Already, our contacts within the [+ ldr_name +] have informed us of an exodus of their landowner backers from the party, instead seeking to align further with the far-right. Orlando and the [+ ldr_name +] vow never to work with us in future coalitions, as the Fascists use this opportunity to paint us as property-seizing radicals to the middle class.
 
 [? if anti_socialist_coalition_r > 50: The Liberals are able to rally a majority to call a vote of no-confidence against us, and are able to succeed. ?]
 

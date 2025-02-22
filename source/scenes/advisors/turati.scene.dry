@@ -34,8 +34,8 @@ go-to: interior_policy
 @snap_election
 title: Snap Election
 subtitle: Advise the King to dissolve the Chamber and have an election.
-unavailable-subtitle: [? if prime_minister != "Turati": Turati must be the Prime Minister. ?][? if not psi_in_government : The PSI is not in government. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if king_relation < 20 : The King detests us, and would not heed our advice. ?]
-choose-if: advisor_action_timer == 0 and prime_minister = "Turati" and king_relation >= 20 and psi_in_government
+unavailable-subtitle: [? if prime_minister != "Filippo Turati": Turati must be the Prime Minister. ?][? if not psi_in_government : The PSI is not in government. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if king_relation < 20 : The King detests us, and would not heed our advice. ?]
+choose-if: advisor_action_timer == 0 and prime_minister = "Filippo Turati" and king_relation >= 20 and psi_in_government
 on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
 
 The King, under advice, has dissolved the Chamber and called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].

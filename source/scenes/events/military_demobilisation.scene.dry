@@ -1,7 +1,7 @@
 title: Further Military demobilisation set to occur
 subtitle: The Military will continue its post-war demobilisation.
 new-page: true
-view-if: demobilise_timer = 0 and army_strength > 300 and stopped_mobilisation == 0
+view-if: demobilise_timer = 0 and army_strength > 692 and stopped_mobilisation == 0
 tags: event
 
 = Military Demobilisation to Continue
@@ -34,10 +34,10 @@ on-arrival: stopped_mobilisation = 1; budget -= 7 if army_strength > 3000; budge
 We are able to convince the army to end its demobilisation, the budget will be balanced some other way. Many in the party decry our seemingly pro-war stance, however.
 
 @sway_demobilise
-subtitle: -1 Paramilitary Resource
+subtitle: +1 Budget, -1 Paramilitary Resource
 choose-if: para_resources > 0
 unavailable-subtitle: Not enough paramilitary resources. (Need 1).
-on-arrival: para_resources -= 1; rg_strength += 15; rg_militancy += 0.02; demobilise_timer += 6; army_strength -= 692; veterans += 2;
+on-arrival: para_resources -= 1; rg_strength += 15; rg_militancy += 0.02; demobilise_timer += 6; army_strength -= 692; veterans += 2; budget += 1;
 
 @allow_demobilise
 title: Let them demobilise.
