@@ -24,7 +24,7 @@ Now that we are in control of the Public Education Ministry, we will be able to
 
 @education_secularise
 subtitle: This will **irreversibly** harm our relations with the PPI. 
-on-arrival: secularised_education = 1; ppi_relation -= 8*(1-dissent); catholics_psi -= 15; economic_growth += 0.3 if economic_growth < 0; workers_psi += 3*(1-dissent); middle_class_psi += 2*(1-dissent); rural_psi += 1*(1-dissent); vatican_relation -= 3; psri_relation += 5*(1-dissent);
+on-arrival: secularised_education = 1; ppi_relation -= 8*(1-dissent); catholics_psi -= 15; economic_growth += 0.3 if economic_growth < 0; workers_psi += 3*(1-dissent); middle_class_psi += 2*(1-dissent); rural_psi += 1*(1-dissent); papal_relation -= 3; psri_relation += 5*(1-dissent);
 choose-if: not socialist_catholic_coalition
 unavailable-subtitle: The PPI are threatening a pre-emptive Vote-of-No-Confidence if we go through with this.
 max-visits: 1
@@ -50,7 +50,7 @@ on-arrival: {!
 Q.education_reformed += 1; 
 Q.workers_psi += 2*(1-dissent); 
 Q.catholic_psi -= 3*(1-dissent); 
-Q.vatican_relation -= 1; 
+Q.papal_relation -= 1; 
 Q.ppi_relation -= 5*(1-dissent); 
 if (Q.catholic_education_accepted == 1) {
     Q.ppi_promise_failed = 1;

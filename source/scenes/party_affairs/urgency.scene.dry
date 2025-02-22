@@ -39,5 +39,5 @@ on-arrival: fasci_urgency += 1; veterans_psi += 2*(1-dissent); rg_strength -= 10
 We focus on their voters, campaigning towards them hard, sometimes clashing with the Fasci.
 
 @fascist_ignore
-subtitle: There is no threat; this is merely a post-war reaction that will die down sooner or later.
+subtitle: This is merely a post-war reaction that will die down sooner or later, after all.
 on-arrival: fasci_urgency -= 1;

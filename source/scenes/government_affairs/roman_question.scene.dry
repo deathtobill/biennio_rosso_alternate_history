@@ -3,9 +3,9 @@ new-page: true
 is-card: true
 view-if: psi_in_government and roman_question_timer <= 0 and roman_question_answered == 0
 frequency: 250
-on-arrival: month_actions += 1; vatican_appeased = 0; roman_question_timer = 8; negotiating_power = 4 if ((vatican_relations <= 4 and pope == "Ratti") or pope == "Del Val"); negotiating_power = 3 if ((vatican_relation >= 5 and vatican_relation <= 7 and pope == "Ratti") or pope == "Della Chiesa"); negotiating_power = 2 if (vatican_relation >= 7 or pope == "Gasparri"); current_budget += budget; vatican_compensation_offered = 0; vatican_state_offered = 0; vatican_defence_offered = 0; vatican_education_offered = 0;
+on-arrival: month_actions += 1; papal_appeased = 0; roman_question_timer = 8; negotiating_power = 4 if ((papal_relations <= 4 and pope == "Ratti") or pope == "Del Val"); negotiating_power = 3 if ((papal_relation >= 5 and papal_relation <= 7 and pope == "Ratti") or pope == "Della Chiesa"); negotiating_power = 2 if (papal_relation >= 7 or pope == "Gasparri"); current_budget += budget; papal_compensation_offered = 0; papal_state_offered = 0; papal_defence_offered = 0; papal_education_offered = 0;
 card-image: img/RomanQuestion.jpg
-go-to: vatican_menu
+go-to: papal_menu
 tags: govt_affairs
 
 = The Roman Question
@@ -15,69 +15,69 @@ Following the Risorgimento, the newly formed Kingdom of Italy seized Rome from t
 Now that we are in power, we might be able to resolve this issue with the Holy See.
 
 # list of demands you have to fufill, relation good less demands to fufill, relation bad more demands to fufill, etc
-@vatican_menu
+@papal_menu
 
-- @vatican_negotiations: Let us begin negotiations with the Holy See.
-- @no_vatican: Let us open negotiations another time.
+- @papal_negotiations: Let us begin negotiations with the Holy See.
+- @no_papal: Let us open negotiations another time.
 - @easy_discard
 
-@vatican_negotiations
+@papal_negotiations
 
-- @vatican_compensation: Offer compensation to the Papacy for its loss of territories.
-- @vatican_state: Offer recognition of the sovereignty of the Holy See in Vatican City.
-- @vatican_defence: Offer the Holy See a commitment to defend its borders.
-- @vatican_education: Offer the Holy See unfettered authority over religious schools.
-- @vatican_sign: Sign the Lateran Treaty with the Holy See.
-- @vatican_return: Let's recall our delegates for now.
+- @papal_compensation: Offer compensation to the Papacy for its loss of territories.
+- @papal_state: Offer recognition of the sovereignty of the Holy See in Vatican City.
+- @papal_defence: Offer the Holy See a commitment to defend its borders.
+- @papal_education: Offer the Holy See unfettered authority over religious schools.
+- @papal_sign: Sign the Lateran Treaty with the Holy See.
+- @papal_return: Let's recall our delegates for now.
 
-@vatican_compensation
+@papal_compensation
 subtitle: -3 Budget [? if liberal_budget_accepted and budget <= 3 : This will put us into a deficit! ?]
-view-if: vatican_compensation_offered = 0
-on-arrival: vatican_compensation_offered = 1; vatican_appeased += 1
-go-to: vatican_negotiations
+view-if: papal_compensation_offered = 0
+on-arrival: papal_compensation_offered = 1; papal_appeased += 1
+go-to: papal_negotiations
 
-@vatican_state
+@papal_state
 subtitle: This is expected of us.
-view-if: vatican_state_offered = 0
-on-arrival: vatican_state_offered = 1; vatican_appeased += 1;
-go-to: vatican_negotiations
+view-if: papal_state_offered = 0
+on-arrival: papal_state_offered = 1; papal_appeased += 1;
+go-to: papal_negotiations
 
-@vatican_defence
+@papal_defence
 subtitle: This is expected of us.
-view-if: vatican_defence_offered = 0
-on-arrival: vatican_defence_offered = 1; vatican_appeased += 1;
-go-to: vatican_negotiations
+view-if: papal_defence_offered = 0
+on-arrival: papal_defence_offered = 1; papal_appeased += 1;
+go-to: papal_negotiations
 
-@vatican_education
+@papal_education
 subtitle: This is a controversial move within the party.
-view-if: vatican_education_offered == 0
-on-arrival: vatican_education_offered = 1; vatican_appeased += 1;
-go-to: vatican_negotiations
+view-if: papal_education_offered == 0
+on-arrival: papal_education_offered = 1; papal_appeased += 1;
+go-to: papal_negotiations
 
-@vatican_sign
-choose-if: vatican_appeased >= negotiating_power
+@papal_sign
+choose-if: papal_appeased >= negotiating_power
 unavailable-subtitle: The Holy See would refuse this offer.
 on-arrival: {!
 Q.roman_question_answered = 1;
 Q.ppi_relation += 15;
 Q.catholic_psi += 7*(1-dissent);
 
-if (Q.vatican_compensation_offered == 1) {
+if (Q.papal_compensation_offered == 1) {
     Q.budget -= 3;
 }
 if ((Q.current_budget > 0 && Q.budget < 0) && Q.liberal_budget_accepted == 1) {
     Q.ldr_promise_failed = 1;
 }
 
-if (Q.vatican_defence_offered == 1) {
+if (Q.papal_defence_offered == 1) {
     Q.army_strength -= 50;
     Q.army_loyalty -= 0.05;
 }
 
-if (Q.vatican_education_offered == 1 && Q.secularised_education == 1) {
+if (Q.papal_education_offered == 1 && Q.secularised_education == 1) {
     Q.secularised_education = 0;
 }
-if (Q.vatican_education_offered == 1) {
+if (Q.papal_education_offered == 1) {
     Q.communist_dissent += 10;
     Q.maximalist_dissent += 10;
 }
@@ -86,8 +86,8 @@ go-to: ldr_promise_vonc if ldr_promise_failed
 
 The Lateran Treaty of [+ year +] is signed, finally ending the Roman Question.
 
-@vatican_return
-on-arrival: vatican_appeased = 0; vatican_compensation_offered = 0; vatican_state_offered = 0; vatican_defence_offered = 0; vatican_education_offered = 0;
-go-to: vatican_menu
+@papal_return
+on-arrival: papal_appeased = 0; papal_compensation_offered = 0; papal_state_offered = 0; papal_defence_offered = 0; papal_education_offered = 0;
+go-to: papal_menu
 
-@no_vatican
+@no_papal

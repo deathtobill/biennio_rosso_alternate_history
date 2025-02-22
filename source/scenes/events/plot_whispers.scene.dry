@@ -17,8 +17,8 @@ How should we react to these claims?
 
 @expand_paramilitaries
 subtitle: Perhaps an injection of funds to the Red Guard would help in the event of anything.
-unavailable-subtitle: [? if resources < 1 : Requires 1 Party Resource. ?][? if revolutionary_fervor < 60 : The majority of the party refuses to support this based on mere rumors. ?]
-choose-if: resources > 0 and revolutionary_fervor > 59
+unavailable-subtitle: [? if resources < 1 : Requires 1 Party Resource. ?][? if revolutionary_fervor < 40 : The majority of the party refuses to support this based on mere rumors. ?]
+choose-if: resources > 0 and revolutionary_fervor > 39
 on-arrival: resources -= 1; rg_strength += 20;
 
 The expansion of the Red Guards is accepted by most of the factions as a necessity, especially seeing the violence occurring daily within Italy.

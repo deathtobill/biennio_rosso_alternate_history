@@ -17,14 +17,14 @@ Now that we are in control of the Foreign Ministry, we can alter Italy's relatio
 - @improve_balkan_ties: Establish diplomatic ties with our Yugoslav neighbour.
 - @improve_allied_relations: Improve ties with our Entente allies.
 - @improve_soviet_relations: Establish diplomatic ties with the Russian SFSR.
-- @improve_vatican_relations: Improve ties with the Papacy.
+- @improve_papal_relations: Improve ties with the Papacy.
 - @reopen_negotiations: Perhaps it is time to resolve the Roman Question?
 - @easy_discard
 
 @aid_soviet_union
 subtitle: -1 Budget - We will provide support to the Soviets. [? if liberal_aid_accepted : This will violate our agreement with the Liberals! ?][? if liberal_budget_accepted and budget < 1 : This will put us into a deficit! ?][? if liberal_foreign_accepted and soviet_relation <= entente_relation : This will disrupt our alignment with the Entente! ?]
-view-if: not rcw_over and soviet_recovery_timer > 0
-on-arrival: budget -= 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if soviet_recovery_timer > 0; soviet_relation += 1; ldr_relation -= 7*(1-dissent); ds_relation -= 4*(1-dissent); pci_relation += 3*(1-dissent); psri_relation += 3*(1-dissent); ldr_promise_failed = 1 if ((budget < 0 and liberal_budget_accepted and current_budget > -1) or liberal_aid_accepted or (liberal_foreign_accepted and soviet_relation > entente_relation));
+view-if: not rcw_over or soviet_recovery_timer > 0
+on-arrival: budget -= 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if soviet_recovery_timer > 0; soviet_relation += 1; ldr_relation -= 7*(1-dissent); ds_relation -= 4*(1-dissent); psri_relation += 3*(1-dissent); ldr_promise_failed = 1 if ((budget < 0 and liberal_budget_accepted and current_budget > -1) or liberal_aid_accepted or (liberal_foreign_accepted and soviet_relation > entente_relation));
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We are able to send aid to the Red Army via our diplomatic channels, and the Soviets thank us for the aid. [? if centre_left_coalition : Our coalition partners, however, are less than happy, calling our aid a 'waste of funds'. ?]
@@ -42,7 +42,7 @@ on-arrival: entente_relation += 1; ldr_relation += 4*(1-dissent); ds_relation +=
 We continue improving our relations with our former allies in the Entente. [? if centre_left_coalition : Our coalition partners are pleased at our continued alignment. ?]
 
 @improve_soviet_relations
-subtitle: [? if liberal_foreign_accepted and soviet_relation <= entente_relation : This will disrupt our alignment with the Entente! ?]
+subtitle: [? if liberal_foreign_accepted and soviet_relation + 1 >= entente_relation : This will disrupt our alignment with the Entente! ?]
 on-arrival: {! 
 Q.soviet_relation += 1; 
 Q.ldr_relation -= 4*(1-dissent); 
@@ -57,13 +57,13 @@ Our overtures to the Russian SFSR are noticed, and welcomed with open arms by ou
 
 [? if ldr_promise_failed : Unfortunately, our recent attempts to turn Italy away from the Entente have angered our coalition partners, who have called a meeting with us. ?]
 
-@improve_vatican_relations
-view-if: not roman_question_answered
-on-arrival: vatican_relation += 1; ppi_relation += 4*(1-dissent)
+@improve_papal_relations
+on-arrival: papal_relation += 1; ppi_relation += 4*(1-dissent)
 
 We begin slowly mending diplomatic ties between both of our countries[? if not resolved_roman_question :, though the Roman Question still hangs above us.?][? if resolved_roman_question :. ?]
 
 The PPI appreciates our efforts, regardless.
 
 @reopen_negotiations
+view-if: not roman_question_answered
 go-to: roman_question

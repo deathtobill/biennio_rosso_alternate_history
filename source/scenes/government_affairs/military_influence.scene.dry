@@ -33,7 +33,7 @@ Current Army loyalty: [+ army_loyalty : loyalty +]
 
 @caught_army
 new-page: true
-on-arrival: bribes_caught = 1; coalition_dissent += 3; workers_psi -= 8*(1-dissent); workers_bn += 5*(1-dissent); workers_ldr += 3*(1-dissent) if socialist_catholic_coalition; workers_ldr += 3*(1-dissent) if centre_left_coalition; reformist_dissent += 10; ldr_relation -= 5; ds_relation -= 5; ul_relation -= 5; ppi_relation -= 5; psri_relation -= 5;
+on-arrival: bribes_caught = 1; coalition_dissent += 3 if centre_left_coalition or socialist_catholic_coalition; workers_psi -= 8*(1-dissent); workers_bn += 5*(1-dissent); workers_ldr += 3*(1-dissent) if socialist_catholic_coalition; workers_ppi += 3*(1-dissent) if centre_left_coalition; reformist_dissent += 10; ldr_relation -= 5; ds_relation -= 5; ul_relation -= 5; ppi_relation -= 5; psri_relation -= 5;
 
 = Il Popolo d'Italia publishes damning article!
 

@@ -27,4 +27,4 @@ The Ariti respond warmly to our efforts, and are willing to entertain further co
 @adp_event_refuse
 choose-if: reformist_strength < 60
 unavailable-subtitle: The Reformists are able to sway the party against this.
-on-arrival: arditi_cooperation = 1; reformist_dissent += 7*(1-dissent); adp_strength += 20; 
+on-arrival: reformist_dissent += 7*(1-dissent); adp_strength += 20; 

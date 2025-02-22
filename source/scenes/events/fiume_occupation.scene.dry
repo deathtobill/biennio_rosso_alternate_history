@@ -12,16 +12,18 @@ Gabriele D'Annunzio, a poet and officer of the Regio Esercito, along with his "l
 
 This has caused quite a stir internationally, and will certainly delay the resolution of our negotiations with Yugoslavia.
 
-- @condemn_fiume: Condemn D'Annunzio and his nationalist march! 
+- @support_fiume: Support D'Annunzio and his revolutionary march!
 - @no_comment: Do not release a comment.
+- @condemn_fiume: Condemn D'Annunzio and his nationalist march! 
 
 @condemn_fiume 
-on-arrival: veterans_psi -= 5; veterans_bn += 5; dissent -= 0.01; communist_dissent -= 5; maximalist_dissent -= 5; syndicalist_dissent -= 5; reformist_dissent -= 5;
+on-arrival: veterans_psi -= 3; nationalist_sentiment += 5; communist_dissent -= 5; syndicalist_dissent += 5; reformist_dissent -= 5;
 
-Unsurprisingly, we issue a condemnation of D'Annunzio's actions, decreasing dissent at the cost of alienating some of our veteran supporters.
+We issue a letter of condemnation of D'Annunzio, even as not much of the party agrees.
 
 @no_comment
 
-The lack of a condemnation doesn't catch anybody's attention, which is good for keeping support in the voting bloc of the veterans.
+@support_fiume
+on-arrival: veterans_psi += 3; nationalist_sentiment += 5; communist_dissent -= 5; syndicalist_dissent -= 5; reformist_dissent += 5;
 
-
+We issue a letter of support for D'Annunzio, even as not much of the party agrees.

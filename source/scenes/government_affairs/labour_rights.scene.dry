@@ -33,7 +33,7 @@ Now, with the force of the Labour Ministry, we are able to implement this work w
 @shorten_hours
 view-if: working_hours >= 2
 subtitle: Could we induce more hiring and reduce unemployment by reducing work hours?
-on-arrival: working_hours += 1; syndicalist_dissent -= 8; communist_dissent -= 5; syndicalist_strength += 5; workers_psi += 7*(1-dissent); ldr_relation -= 4; ds_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1; unemployed -= 0.3; economic_growth -= 0.2;
+on-arrival: working_hours += 1; syndicalist_dissent -= 8; communist_dissent -= 5; syndicalist_strength += 5; workers_psi += 7*(1-dissent); ldr_relation -= 4; ds_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1; unemployment -= 0.3; economic_growth -= 0.2;
 
 Some in the labour movement argue that by reducing the maximum number of hours worked, employers would be induced to hire more workers, reducing unemployment. The argument also goes that this would be complementary to deflation, maintaining the same purchasing power for workers by cutting hours without cutting wages. Employers, however, resist this policy, arguing for more flexibility in hiring and firing.
 

@@ -1,6 +1,6 @@
 title: Inter-Party Relationships
 new-page: true
-view-if: year <= 1932 and inter_party_relationships_timer <= 0
+view-if: year <= 1922 and inter_party_relationships_timer <= 0
 tags: party_affairs
 is-card: true
 on-arrival: month_actions += 1; inter_party_relationships_timer = 6;
@@ -11,20 +11,20 @@ max-visits: 12
 
 The PSI cannot govern by itself yet. Though we have not historically been any coalitions or in government, if we are to change that or take a more reformist turn, improving our relations with the bourgeois parties is certainly necessary to do so, or we could continue going alone.
 
-- @liberals: Strengthen our bonds with the [+ ldr_full_name +]
+- @liberals: Strengthen our bonds with the Liberal [+ ldr_full_name +] and [+ ul_full_name +] parties.
 - @catholic_party: Strengthen our bonds with the Catholic People's Party.
-- @minor_parties: Strengthen our bonds with the minor parties of the [+ ul_full_name +] and the Democrazia Sociale.
+- @leftists: Strengthen our bonds with our ideological allies in the Italian Socialist Reformist and Social Democracy parties.
 - @psi_alone: The PSI can stand alone for now.
 - @easy_discard
 - @cancel_advisor_action
 
-@minor_parties
+@leftists
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; ul_relation += 5*(1-dissent); ds_relation += 5*(1-dissent); communist_dissent += 7*(1-dissent);
+on-arrival: resources -= 1; psri_relation += 5; ds_relation += 5; communist_dissent += 4*(1-dissent);
 
-We strengthen our contacts with the [+ ul_full_name +] and the Democrazia Sociale, improving relations.
+We strengthen our contacts with the PSRI and the Democrazia Sociale, improving relations.
 
 @catholic_party
 subtitle: -1 resources
@@ -34,12 +34,12 @@ on-arrival: resources -= 1;
 go-to: catholic_op if psi_in_government == 0; catholic_coalition if socialist_catholic_coalition == 1
 
 @catholic_op
-on-arrival: ppi_relation += 5*(1 - dissent)
+on-arrival: ppi_relation += 5
 
 We are currently in opposition to their governing coalition, but that does not preclude the general building of feelings of good will.
 
 @catholic_coalition
-on-arrival: ppi_relation += 8*(1 - dissent)
+on-arrival: ppi_relation += 8
 
 We are currently coalition partners with them, so improving relations comes naturally.
 
@@ -47,9 +47,9 @@ We are currently coalition partners with them, so improving relations comes natu
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; ldr_relation += 5*(1 - dissent)
+on-arrival: resources -= 1; ldr_relation += 5; ul_relation += 5;
 
-The [+ ldr_name +] have historically been wary of us, though we can help smooth out relations.
+The [+ ldr_name +] and [+ ul_full_name +] parties have historically been wary of us, though we can help smooth out relations.
 
 @psi_alone
 

@@ -1,6 +1,6 @@
 title: Election
 on-arrival: {!
-// calculate normalized class voting amounts (0 to 100)
+// calculate normalised class voting amounts (0 to 100)
 for (var c of Q.classes) {
     var class_votes = 0;
     for (var party of Q.parties) {
@@ -10,7 +10,7 @@ for (var c of Q.classes) {
         class_votes += Q[c+'_'+party];
     }
     for (var party of Q.parties) {
-        Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
+        Q[c + '_' + party + '_normalised'] = 100*Q[c+'_'+party]/class_votes;
         Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
     }
 }
@@ -29,7 +29,7 @@ for (var party of Q.parties) {
             party_support += Q[c]*Q[c+'_'+party];
             // However, there should be a cap on how much party support you can get in a certain demo.
         } else  {
-            party_support += Q[c]*Q[c+'_'+party+'_normalized'];
+            party_support += Q[c]*Q[c+'_'+party+'_normalised'];
         }
     }
     Q[party + '_support'] = party_support;
@@ -38,15 +38,15 @@ for (var party of Q.parties) {
 // 2. normalize support (fraction)
 // 3. Round to integers
 // TODO: round to 1 decimal instead of rounding to integers
-// to do that, we multiply party_normalized*1000 and divide the rounded number by 10.
+// to do that, we multiply party_normalised*1000 and divide the rounded number by 10.
 for (var party of Q.parties) {
-    Q[party+'_normalized'] = Q[party + '_support']/total_support;
-    Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized']*1000)/10;
+    Q[party+'_normalised'] = Q[party + '_support']/total_support;
+    Q[party+'_votes_dec'] = Math.round(Q[party+'_normalised']*1000)/10;
     if (Q.use_decimals) {
         Q[party+'_votes'] = Q[party+'_votes_dec'];
         Q[party + '_votes_disp'] = Q[party+'_votes'];
     } else {
-        Q[party+'_votes'] = Math.round(Q[party+'_normalized']*100);
+        Q[party+'_votes'] = Math.round(Q[party+'_normalised']*100);
         Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
     }
     //Q[party+'_votes'] = Q[party+'_votes_dec'];

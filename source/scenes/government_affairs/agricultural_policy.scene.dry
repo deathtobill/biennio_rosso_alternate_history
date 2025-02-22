@@ -26,8 +26,8 @@ Q.rural_policy += 1
 Q.coalition_dissent += 1; 
 Q.rural_bn += 5*(1-dissent); 
 Q.rural_bn -= 4*(1-dissent); 
-if (Q.unemployed >= 5) {
-    Q.unemployed -= 1
+if (Q.unemployment >= 5) {
+    Q.unemployment -= 1
 }
 Q.ldr_relation -= 5; 
 Q.ds_relation -= 4; 
@@ -48,7 +48,7 @@ We are able to seize land form large estate, mostly uncultivated land and hand t
 
 @agricultural_finance
 subtitle: -1 Budget - Increase financing for agricultural credit and insurance. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
-on-arrival: budget -= 1; rural_policy += 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); rural_bn += 5*(1-dissent); rural_bn -= 4*(1-dissent); unemployed -= 1 if unemployed >= 5; communist_strength += 8; communist_dissent -= 5; maximalist_strength += 8; maximalist_dissent -= 5; rural_policy += 1 
+on-arrival: budget -= 1; rural_policy += 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); rural_bn += 5*(1-dissent); rural_bn -= 4*(1-dissent); unemployment -= 1 if unemployment >= 5; communist_strength += 8; communist_dissent -= 5; maximalist_strength += 8; maximalist_dissent -= 5; rural_policy += 1 
 go-to: ldr_promise_vonc if ldr_promise_failed == 1
 
 We have increased financial support for small farmers, providing aid through credit and insurance. The left and maximalists are unsurprisingly opposed to our policies, seeing them as handouts to petite-bourgeois farmers.

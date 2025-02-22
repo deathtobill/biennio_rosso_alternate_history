@@ -233,3 +233,49 @@ Support for Republicanism: [+ republican_sentiment_disp +]%
 Support for Socialism: [+ socialist_sentiment_disp +]%
 
 Support for Nationalism: [+ nationalist_sentiment_disp +]%
+
+@foreign
+
+= Foreign Relations
+
+Holy See: [+ papal_relation : radicalisation +]
+
+Entente: [+ entente_relation : radicalisation +]
+
+Russian SFSR: [+ soviet_relation : radicalisation +]
+
+Yugoslavia: [+ balkan_relation : radicalisation +]
+
+= International Situations
+
+Russian Civil War: [? if not rcw_over : Ongoing, Estimated [+ soviet_end_timer +] Months Remaining ?][? if rcw_over : Soviet Victory ?]
+
+Fiume: [? if not resolved_adriatic : Negotiating ?][? if fiume_free : Free City ?][? if fiume_italian : Italian ?]
+
+Adriatic Question: [? if resolved_adriatic : Complete ?][? if not resolved_adriatic : Negotiating ?]
+
+@internal
+
+= Taxation
+
+Upper-Class: [+ upper_tax_rates : taxation +]
+
+Lower-Class: [+ lower_tax_rates : taxation +]
+
+Tarrifs: [+ tarrifs : taxation +]
+
+= Mezzogiorno 
+
+Southern Question: [? if not southern_resolved : Ongoing ?][? if southern_resolved : Ameliorated ?]
+
+Infrastructure: [? if southern_infrastructure_funded < 1 : Poor ?][? if southern_infrastructure_funded > 0 and southern_infrastructure_funded < 2 : Lackluster ?][? if southern_infrastructure_funded > 1 : Recovering ?]
+
+Education: [? if southern_education_funded < 1 : Poor ?][? if southern_education_funded > 0 and southern_education_funded < 2 : Lackluster ?][? if southern_education_funded > 1 : Recovering ?]
+
+Mafia: [? if mafia_strength < 1 : Neutralised ?][? if mafia_strength > 2: Strong ?][? if mafia_strength == 1 : Drained ?][? if mafia_strength == 2 : Weakened ?]
+
+= Reforms
+
+King: [+ king_relation : radicalisation +]
+
+Senate: [? if veto_removed == 0: Empowered ?][? if veto_removed == 1: Weakened ?]

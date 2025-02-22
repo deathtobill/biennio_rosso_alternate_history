@@ -15,7 +15,7 @@ The party is being torn apart by internal dissent. Upset at the leadership and g
 
 [? if reformist_dissent > 30 : The reformists are upset at our direction.  ?]
 [? if maximalist_dissent > 30 : The maximalists are displeased with the direction of our party. ?]
-[? if syndicalist_dissent > 30 : The trade unions disagree with our present course of action. ?]
+[? if syndicalist_dissent > 30 : The unions disagree with our present course of action. ?]
 [? if communist_dissent > 30: Communists are making noises about a party split. ?]
 
 Something must be done to reinforce party unity.

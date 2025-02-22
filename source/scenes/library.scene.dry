@@ -94,7 +94,11 @@ Justice: [+ justice_minister_party +]
 
 Foreign: [+ foreign_minister_party +]
 
+Agriculture: [+ agriculture_minister_party +]
+
 Public Works: [+ public_works_minister_party +]
+
+Public Education: [+ public_education_minister_party +]
 
 @demographics
 go-to: menu
@@ -175,9 +179,9 @@ go-to: menu
 
 **PSI** - *Partito Socialista Italiano* (Italian Socialist Party) - This is you. You are the major socialist party of the working class, founded by labour movements and socialist ideas. Currently, the party is split between those who wish to preserve the parliamentary system and those who wish to achieve socialism through a revolution.
 
-[? if pcdi_formed : *Partito Comunista d'Italia* (Communist Party of Italy) - A splinter party of the PSI, formed after the left wing of the party and its leaders split. ?]
+[? if pcdi_formed : **PCd'I** - *Partito Comunista d'Italia* (Communist Party of Italy) - A splinter party of the PSI, formed after the left wing of the party and its leaders split. ?]
 
-[? if psu_formed : *Partito Socialista Unitario* (Unitary Socialist Party) - A splinter party of the PSI, formed after the reformist wing of the party and its leaders split. ?]
+[? if psu_formed : **PSU** - *Partito Socialista Unitario* (Unitary Socialist Party) - A splinter party of the PSI, formed after the reformist wing of the party and its leaders split. ?]
 
 **PSRI** - *Partito Socialista Riformista Italiano* (Italian Reformist Socialist Party) - A splinter of reformists from the PSI, the PRSI are a centre-left party, advocating for socialism through the parliamentary system. 
 
@@ -427,11 +431,11 @@ data = data.concat([
 {!<table>!}
 {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div></td><td>!} **PSI:** {!</td><td>!} **[+ psi_r +]%** {!</td></tr>!}
 
-[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div></td> <td>!}PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td></tr>!} ?]
+[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div></td> <td>!} PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td></tr>!} ?]
 
-[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div></td> <td>!}PSU: {!</td><td>!} [+ psu_r +]% {!</td></tr>!} ?]
+[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div></td> <td>!} PSU: {!</td><td>!} [+ psu_r +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#FFC0CB'> </div></td> <td>!}PSRI: {!</td><td>!} [+ psri_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#FFC0CB'> </div></td> <td>!} PSRI: {!</td><td>!} [+ psri_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#1E99C5'> </div></td><td>!} DS: {!</td><td>!} [+ ds_r +]% {!</td></tr>!}
 

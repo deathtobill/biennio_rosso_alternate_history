@@ -23,7 +23,7 @@ Now that we control a sizeable bloc in the Chamber of Deputies, we are able to a
 
 @article_33
 subtitle: Remove the appointed Senate's ability to reject bills.
-view-if: centre_left_coalition_r > 50 or socialist_catholic_coalition > 50
+view-if: centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50
 choose-if: king_relation > 70
 on-arrival: veto_removed = 1; fasci_coup_progress += 1;
 

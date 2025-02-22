@@ -48,7 +48,7 @@ Q.party_approach = "Unclear";
 
 // factions
 Q.factions = ['communist', 'maximalist', 'syndicalist', 'reformist'];
-// should this be normalized to 100%?
+// should this be normalised to 100%?
 Q.communist_strength = 15;
 Q.communist_dissent = 20;
 Q.maximalist_strength = 35;
@@ -181,7 +181,7 @@ Q.arditi_formed = 0;
 Q.sympathiser_expelled = 0;
 
 // Support for party by social group
-// they don't have to sum to 100 since the electoral calculations will be normalized.
+// they don't have to sum to 100 since the electoral calculations will be normalised.
 Q.workers_pcdi = 0;
 Q.workers_psi = 76;
 Q.workers_psu = 0;

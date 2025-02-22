@@ -41,7 +41,7 @@ Making the tax system more progressive is popular among our base, but it upsets 
 subtitle: +2 Budget
 unavailable-subtitle: Tax rates are already too high.
 choose-if: upper_tax_rates <= 5
-on-arrival: upper_tax_rates += 1; capital_strike_progress += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 3; workers_psi += 4*(1-dissent); industrialists_psi -= 4; middle_class_psi -= 4; coalition_dissent += 1 if centre_left_coalition; coalition_dissent += 1 if capital_strike_progress >= 5; budget += 2; ldr_relation -= 4; unemployed += 1; inflation -= 0.6; economic_growth -= 0.4; psri_relation += 5*(1-dissent);
+on-arrival: upper_tax_rates += 1; capital_strike_progress += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 3; workers_psi += 4*(1-dissent); industrialists_psi -= 4; middle_class_psi -= 4; coalition_dissent += 1 if centre_left_coalition; coalition_dissent += 1 if capital_strike_progress >= 5; budget += 2; ldr_relation -= 4; unemployment += 1; inflation -= 0.6; economic_growth -= 0.4; psri_relation += 5*(1-dissent);
 
 Raising taxes on the rich is popular among our base, but it alienates the bourgeoisie. Increasing taxes also decreases economic demand, which may lead to more unemployment.
 
@@ -49,7 +49,7 @@ Raising taxes on the rich is popular among our base, but it alienates the bourge
 subtitle: -2 Budget [? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?]
 unavailable-subtitle: -2 budget - [? if upper_tax_rates < -5 or lower_tax_rates < -5 : Tax rates are already too low. ?]
 choose-if: upper_tax_rates >= -5 and lower_tax_rates >= -5
-on-arrival: budget -= 2; upper_tax_rates -= 1; lower_tax_rates -= 1; middle_class_psi += 5*(1-dissent); industrialists_psi += 4*(1-dissent); workers_psi += 3*(1-dissent); ldr_relation += 5*(1-dissent); ds_relation += 5*(1-dissent); unemployed -= 1 if unemployed >= 5; capital_strike_progress -= 1 if upper_tax_rates < 0; inflation += 0.4; economic_growth += 0.4; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); psri_relation += 3*(1-dissent);
+on-arrival: budget -= 2; upper_tax_rates -= 1; lower_tax_rates -= 1; middle_class_psi += 5*(1-dissent); industrialists_psi += 4*(1-dissent); workers_psi += 3*(1-dissent); ldr_relation += 5*(1-dissent); ds_relation += 5*(1-dissent); unemployment -= 1 if unemployment >= 5; capital_strike_progress -= 1 if upper_tax_rates < 0; inflation += 0.4; economic_growth += 0.4; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); psri_relation += 3*(1-dissent);
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 Cutting taxes benefits most the rich and middle-class, who pay more taxes than the working class. Our coalition partners are happy at our orthodox economic course.
@@ -60,7 +60,7 @@ Cutting taxes benefits most the rich and middle-class, who pay more taxes than t
 subtitle: +3 budget
 unavailable-subtitle: Tax rates are already too high.
 choose-if: upper_tax_rates <= 5 and lower_tax_rates <= 5
-on-arrival: budget += 3; middle_class_psi -= 4; industrialists_psi -= 4; workers_psi -= 3; rural_psi -= 3; unemployed += 2; lower_tax_rates += 1; upper_tax_rates += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 2; workers_psi -= 5 if lower_tax_rates > 1; inflation -= 1.1; economic_growth -= 0.6; psri_relation -= 5*(1-dissent);
+on-arrival: budget += 3; middle_class_psi -= 4; industrialists_psi -= 4; workers_psi -= 3; rural_psi -= 3; unemployment += 2; lower_tax_rates += 1; upper_tax_rates += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 2; workers_psi -= 5 if lower_tax_rates > 1; inflation -= 1.1; economic_growth -= 0.6; psri_relation -= 5*(1-dissent);
 
 Raising taxes hurts our support among all those who pay taxes. [? if centre_left_coalition : However, our coalition partners are more supportive of the idea of "shared sacrifice" than simply taxing the rich. ?] Increasing taxes also decreases economic demand, which may lead to more unemployment.
 
@@ -92,7 +92,7 @@ Current tariff level: [+ tariffs : taxation +]
 title: Raise tariffs on imports.
 subtitle: +2 Budget. Other countries will retaliate by increasing tariffs of their own. [? if tariffs > 5 : Further increases in tariffs will not raise revenue, as we have already nearly reached economic autarky. ?]
 choose-if: tariffs <= 5
-on-arrival: tariffs += 1; inflation += 1 if inflation > 0; inflation += 0.5 if inflation <= 0; unemployed += 1.5; budget += 2; workers_psi -= 5; veterans_psi -= 5; rural_psi += 4*(1-dissent); middle_class_psi += 3*(1-dissent); ldr_relation -= 5; ul_relation -= 2; economic_growth -= 0.4; capital_strike_progress += 1 if tariffs >= 3; entente_relation -= 1; soviet_relation -= 1;
+on-arrival: tariffs += 1; inflation += 1 if inflation > 0; inflation += 0.5 if inflation <= 0; unemployment += 1.5; budget += 2; workers_psi -= 5; veterans_psi -= 5; rural_psi += 4*(1-dissent); middle_class_psi += 3*(1-dissent); ldr_relation -= 5; ul_relation -= 2; economic_growth -= 0.4; capital_strike_progress += 1 if tariffs >= 3; entente_relation -= 1; soviet_relation -= 1;
 
 Increasing tariffs leads to higher prices for basic goods, increasing inflation and hurting consumption among the working class. Retaliatory tariffs reduce the competitiveness of German exports, raising unemployment among workers. They also lead to an atmosphere of international suspicion, reducing our ability to negotiate with other countries.
 

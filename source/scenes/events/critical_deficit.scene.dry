@@ -33,7 +33,7 @@ We are forced to end the Unemployment Insurance Program early, regaining the inj
 subtitle: +3 Budget - We should be prepared for a support hit...
 choose-if: upper_tax_rates <= 5 and lower_tax_rates <= 5
 unavailable-subtitle: Tax Rates are already too high.
-on-arrival: budget += 3; middle_class_psi -= 4; industrialists_psi -= 4; workers_psi -= 3; rural_psi -= 3; unemployed += 2; lower_tax_rates += 1; upper_tax_rates += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 2; workers_psi -= 5 if lower_tax_rates > 1; inflation -= 1.1; economic_growth -= 0.6; psri_relation -= 5*(1-dissent);
+on-arrival: budget += 3; middle_class_psi -= 4; industrialists_psi -= 4; workers_psi -= 3; rural_psi -= 3; unemployment += 2; lower_tax_rates += 1; upper_tax_rates += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 2; workers_psi -= 5 if lower_tax_rates > 1; inflation -= 1.1; economic_growth -= 0.6; psri_relation -= 5*(1-dissent);
 
 Raising taxes hurts our support among all those who pay taxes. [? if centre_left_coalition : However, our coalition partners are more supportive of the idea of "shared sacrifice" than simply taxing the rich. ?] Increasing taxes also decreases economic demand, which may lead to more unemployment.
 
@@ -52,7 +52,7 @@ Q.budget = 0;
 Q.capital_strike_progress += 5;
 Q.fasci_coup_progress += 3;
 Q.coalition_dissent += 5;
-Q.in_default = 0;
+Q.in_default = 1;
 
 Q.workers_psi -= 10;
 Q.middle_class_psi -= 10;
@@ -63,7 +63,7 @@ Q.catholics_psi -= 10;
 
 Q.unemployment += 9.5;
 Q.economic_growth -= 12.7;
-Q.inflation += 50;
+Q.inflation += 27;
 !}
 
 We are immediately plunged into a deeper financial crisis, as businesses and banks pull out of the country. We are forced to print excessive amounts of money, resulting in hyperinflation. There is no telling how we will be able to get out of this.

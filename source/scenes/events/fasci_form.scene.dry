@@ -22,7 +22,7 @@ Regardless, it seems the organisation is catching fire amongst the population, e
 
 @trust_watch_closely
 subtitle: We should give Mussolini and his 'Fasci' the benefit of the doubt.
-on-arrival: veterans_bn += 5; distrusted_fasci = 0; fdc_strength += 10;
+on-arrival: veterans_bn += 5; fdc_strength += 10;
 
 Regardless, it seems the organisation is catching fire amongst the population, especially the veterans.
 

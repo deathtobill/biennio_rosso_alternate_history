@@ -16,7 +16,7 @@ The Maximalists are caught in the centre, as the Communists and Reformists argue
 - @accept_comintern: The PSI must toe the Communist International line. The Reformists will be expelled.
 
 @refuse_comintern
-subtitle: It is likely the [? if pcdi_formed : remaining ?] Communists will split from the party.
+subtitle: It is likely the [? if pcdi_formed :remaining ?] Communists will split from the party.
 choose-if: participating = 1 or pcdi_formed
 unavailable-subtitle: [? if participating = 0 : The XVI Congress has already forced us to adopt a revolutionary stance. ?]
 on-arrival: communist_strength -= 100; communist_dissent += 100; pcdi_formed = 1; revolutionary_fervor -= 10; soviet_relations -= 3;
@@ -26,7 +26,7 @@ on-arrival: communist_strength -= 100; communist_dissent += 100; pcdi_formed = 1
 The Communist International has also expelled us, supporting the new PCI instead; it seems we can no longer rely on them for aid.
 
 @accept_comintern
-subtitle: It is likely the [? if psu_formed : remaining ?] Reformists will split from the party.
+subtitle: It is likely the [? if psu_formed :remaining ?] Reformists will split from the party.
 choose-if: participating = 0 or psu_formed
 unavailable-subtitle: [? if participating = 1 : The XVI Congress has already forced us to adopt a parliamentary stance. ?]
 on-arrival: reformist_strength -= 100; reformist_dissent += 100; reformists_expelled = 1; revolutionary_fervor += 10; psu_formed = 1;

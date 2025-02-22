@@ -38,11 +38,15 @@ if (rome_police_bypass == 1) {
 Q.rome_enemy_power = 0;
 Q.fdc_power = Q.fdc_strength * Q.fdc_militancy;
 Q.ard_power = Q.ard_strength * Q.ard_militancy;
+Q.abl_power = Q.abl_strength * Q.abl_militancy;
 if (Q.ard_banned === 0) {
     Q.rome_enemy_power += Q.ard_power;
 }
 if (Q.fdc_banned == 0) {
     Q.rome_enemy_power += Q.fdc_power;
+}
+if (Q.fdc_banned == 0) {
+    Q.rome_enemy_power += Q.abl_power;
 }
 
 if (Q.rome_adp_mobilise == 1) {
@@ -171,7 +175,7 @@ Against all odds, Mussolini has succeeded in his goals. [+ king +] has already a
 
 What happens now?
 
-- @game_over: Game over.
+- @mussolini_takes_power: Mussolini assumes power.
 
 @rome_long_war
 title: Long War

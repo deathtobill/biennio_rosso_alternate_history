@@ -4,7 +4,7 @@ is-card: true
 tags: para_affairs
 view-if: red_guards_timer <= 0
 card-image: img/RedGuards.jpg
-on-arrival: month_actions += 1; red_guards_timer = 3; rg_militarization_cost = 2 if rg_militancy > 0.5 else rg_militarization_cost = 1; rg_militarization_cost = 3 if rg_militancy > 0.75
+on-arrival: month_actions += 1; red_guards_timer = 3; rg_militarisation_cost = 2 if rg_militancy > 0.5 else rg_militarisation_cost = 1; rg_militarisation_cost = 3 if rg_militancy > 0.75
 
 = Red Guards
 
@@ -17,17 +17,17 @@ The *Guardie Rosse*, also known as the Red Guards is a paramilitary organisation
 - @easy_discard
 
 @militant
-choose-if: para_resources >= rg_militarization_cost
-unavailable-subtitle: Not enough paramilitary resources ([+ rg_militarization_cost +] needed).
-subtitle: -[+ rg_militarization_cost +] paramilitary resources
-on-arrival: para_resources -= rg_militarization_cost; rg_investment += 1; rg_strength += 15; rg_militancy += 0.05; communist_strength += 2; communist_dissent -= 2; reformist_dissent += 5; radicalisation += 0.1; workers_psi += 2*(1-dissent); unemployed_psi += 2*(1-dissent);
+choose-if: para_resources >= rg_militarisation_cost
+unavailable-subtitle: Not enough paramilitary resources ([+ rg_militarisation_cost +] needed).
+subtitle: -[+ rg_militarisation_cost +] paramilitary resources
+on-arrival: para_resources -= rg_militarisation_cost; rg_investment += 1; rg_strength += 15; rg_militancy += 0.05; communist_strength += 2; communist_dissent -= 2; reformist_dissent += 5; radicalisation += 0.1; workers_psi += 2*(1-dissent); veterans_psi += 2*(1-dissent);
 
 We continue funding the Red Guards, who begin recruitment of more members and are able to acquire more effective weaponry.
 
 
 @militant_2
 view-if: rg_investment >= 1
-on-arrival: rg_militancy += 0.02; funded_rg -= 1
+on-arrival: rg_militancy += 0.02; rg_investment -= 1
 
 As we have already funded resources towards the Red Guards, we can invest in building up their militancy.
 
@@ -40,6 +40,6 @@ The Red Guards is already serving the purpose it needs to serve. There is no rea
 
 @cut_rg
 subtitle: +1 paramilitary resources
-on-arrival: para_resources += 1; rg_strength -= 15; rg_militancy -= 0.05; communist_strength -= 2; communist_dissent -= 2; radicalisation -= 0.05; workers_bn += 2; unemployed_psri += 2
+on-arrival: para_resources += 1; rg_strength -= 15; rg_militancy -= 0.05; communist_strength -= 2; communist_dissent -= 2; radicalisation -= 0.05; workers_bn += 2; veterans_psri += 2
 
 Cutting resources to the Red Guards causes a drop in the membership, and leads some would-be members to join the PSRI or the National Bloc instead.

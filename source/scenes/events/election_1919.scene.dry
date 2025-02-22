@@ -21,8 +21,6 @@ Q.catholic_nationalisation_accepted = 0;
 Q.catholic_papacy_accepted = 0;
 Q.catholic_women_accepted = 0;
 
-Q.liberal_coalition_failed = 0; 
-Q.catholic_coalition_failed = 0;
 Q.coalition_dissent = 0;
 
 Q.crackdown_far_left = 0;
@@ -117,6 +115,7 @@ Q.interior_minister_party = 'LDR';
 Q.justice_minister_party = 'DS';
 Q.labour_minister_party = 'UL';
 Q.public_works_minister_party = 'UL';
+Q.public_education_minister_party = 'LDR';
 Q.treasury_minister_party = 'DS';
 Q.finance_minister_party = 'PPI';
 Q.agriculture_minister_party = 'LDR';
@@ -274,7 +273,7 @@ There are some potential coalition arrangements.
 @anti_socialist_coalition
 title: Anti-Socialist coalition
 subtitle: BN + [+ ldr_name +] + DS ([+ anti_socialist_coalition_r +]%)..
-view-if: anti_socialist_coalition > 49 and radicalisation > 8 and participating = 0
+view-if: anti_socialist_coalition_r > 49 and radicalisation > 8 and participating = 0
 priority: 2
 
 It seems our radicalism and abstentionism has pushed the Liberals to ally with the National Bloc. [+ bn_leader +] has made himself crucial to this coalition, and has already been appointed Prime Minister by the King.
@@ -336,7 +335,7 @@ Finally, the PSI can govern alone! Our long campaign of electioneering has paid 
 @turati
 title: Filippo Turati for Prime Minister
 subtitle: Turati leads the reformist wing, and is an acceptable candidate for Prime Minister.
-on-arrival: psi_in_government = 1; prime_minister = "Turati"; prime_minister_party = "PSI";
+on-arrival: psi_in_government = 1; prime_minister = "Filippo Turati"; prime_minister_party = "PSI";
 go-to: ministries
 
 Filippo Turati's appointment as Prime Minister is approved by all our potential allies.
@@ -344,7 +343,7 @@ Filippo Turati's appointment as Prime Minister is approved by all our potential 
 @orlando
 title: Let the [+ ldr_name +] have their Prime Minister. This will improve our leverage.
 subtitle: Vittorio Emanuele Orlando will be reappointed Prime Minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ldr_relation += 10; ds_relation += 5; chancellor = "Orlando"; chancellor_party = "LDR"; psi_in_government = 1; leverage += 5
+on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ldr_relation += 10; ds_relation += 5; prime_minister = "Vittorio Emanuele Orlando"; prime_minister_party = "LDR"; psi_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the centre and even the reformists of our party are criticizing this decision.
@@ -352,7 +351,7 @@ This is highly unexpected, and many in the centre and even the reformists of our
 @sturzo
 title: Let the People's Party have their Prime Minister. This will improve over leverage.
 subtitle: Luigi Sturzo will be appointed Prime Minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ppi_relation += 10; chancellor = "Sturzo"; chancellor_party = "PPI"; psi_in_government = 1; leverage += 5
+on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ppi_relation += 10; prime_minister = "Luigi Sturzo"; prime_minister_party = "PPI"; psi_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the centre and even the reformists of our party are criticizing this decision.
@@ -410,10 +409,8 @@ This is a major point of conjecture for the Liberals, and secures us significant
 
 @liberal_budget
 title: Maintain a budget surplus.
-subtitle: This will limit our ability to conduct government policy.
+subtitle: This will limit our ability to conduct government policy. [? if budget < 0 : We will be inheriting a deficit, so we will have to implement temporary austerity. ?]
 tags: libdem_minor
-choose-if: budget > -1
-unavailable-subtitle: We are already in a budget deficit.
 view-if: liberal_budget_accepted = 0
 on-arrival: liberal_budget_accepted = 1; liberal_negotiations += 10;
 go-to: l_demands_menu

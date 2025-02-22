@@ -17,6 +17,9 @@ As we have control over the Interior Ministry, we can direct police and intellig
 - @ban_ard: Ban the Arditi.
 - @unban_ard: Unban the Arditi.
 - @persecute_ard
+- @ban_abl: Ban the Anti-Bolshevik Leagues.
+- @unban_abl: Unban the Anti-Bolshevik Leagues.
+- @persecute_abl
 - @root: Take no action for now. [? if fasci_urgency < 3 : It's not like the far-right pose a threat. ?]
 
 @ban_fdc

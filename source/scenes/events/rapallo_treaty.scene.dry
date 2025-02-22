@@ -41,6 +41,7 @@ Q.communist_dissent += 10;
 Q.maximalist_dissent += 7;
 
 Q.resolved_adriatic = 1;
+Q.fiume_italian = 1;
 !}
 
 We force Yugoslavia to respect the Treaty of London, and without Entente backing, they acquiesce. The Entente responds by pulling credit from us, forcing us to print even more funds and exacerbating the economic crisis.
@@ -135,6 +136,7 @@ Q.communist_dissent += 5;
 Q.maximalist_dissent += 3;
 
 Q.resolved_adriatic = 1;
+Q.fiume_italian = 1;
 !}
 
 Yugoslavia agrees to hand over Fiume to us, as D'Annunzio and his forces celebrate as our troops enter the city. [? if ceded_territories == 1: The popularity at home isn't as happy to hear this, considering what they lost to earn Fiume. ?]
@@ -147,9 +149,10 @@ Q.veterans_psi -= 6*(1-dissent);
 Q.veterans_bn += 8*(1-dissent);
 Q.nationalist_sentiment += 4;
 Q.resolved_adriatic = 1;
+Q.fiume_free = 1;
 !}
 
-This is a sensible comprise for many, forming the Free City of Fiume, though this only inflames the far-right, calling Fiume rightfully Italian. D'Annunzio refuses to honour the agreement as well, continuing his occupation.
+This is a sensible comprise for many, forming the Free City of Fiume, though this only inflames the far-right, calling Fiume rightfully Italian. D'Annunzio refuses to honour the agreement as well, continuing his occupation, though the army makes quick work of his forces.
 
 @fiume_not_gov
 subtitle: [? if not psi_in_government : We are not in government. ?][? if not foreign_minister_party == "PSI" : We do not control the Foreign Ministry. ?]
@@ -159,6 +162,7 @@ Q.veterans_ldr -= 6*(1-dissent);
 Q.veterans_bn += 8*(1-dissent);
 Q.nationalist_sentiment += 4;
 Q.resolved_adriatic = 1;
+Q.fiume_free = 1;
 !}
 
 The Foreign Minister agrees upon a relatively expected peace deal, forming the Free City of Fiume.
