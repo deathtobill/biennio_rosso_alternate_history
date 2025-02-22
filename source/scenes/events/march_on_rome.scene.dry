@@ -185,6 +185,9 @@ What happens now?
 
 - @mussolini_takes_power: Mussolini assumes power.
 
+@mussolini_takes_power 
+go-to: mussolini_takes_power
+
 @rome_long_war
 title: Long War
 new-page: false
