@@ -353,13 +353,13 @@ Filippo Turati's appointment as Prime Minister is approved by all our potential 
 @orlando
 title: Let the [+ ldr_name +] have their Prime Minister. This will improve our leverage.
 subtitle: Vittorio Emanuele Orlando will be reappointed Prime Minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ldr_relation += 10; ds_relation += 5; prime_minister = "Vittorio Emanuele Orlando"; prime_minister_party = [+ ul_name +]; psi_in_government = 1; leverage += 5
+on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ldr_relation += 10; ds_relation += 5; prime_minister = "Vittorio Emanuele Orlando"; prime_minister_party = ldr_name; psi_in_government = 1; leverage += 5
 go-to: ministries
 
 @giolitti
 title: Let the [+ ul_name +] have their Prime Minister. This will improve our leverage.
 subtitle: Giovanni Giolitti will be reappointed Prime Minister. Allowing Giolitti to become Prime Minister is unexpected, and controversial within the party.
-on-arrival: reformist_dissent += 7; maximalist_dissent += 9; communist_dissent += 12; ldr_relation += 5; ul_relation += 10; prime_minister = "Giovanni Giolitti"; prime_minister_party = [+ ul_name +]; psi_in_government = 1; leverage += 5
+on-arrival: reformist_dissent += 7; maximalist_dissent += 9; communist_dissent += 12; ldr_relation += 5; ul_relation += 10; prime_minister = "Giovanni Giolitti"; prime_minister_party = ul_name; psi_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the centre and even the reformists of our party are criticizing this decision.
