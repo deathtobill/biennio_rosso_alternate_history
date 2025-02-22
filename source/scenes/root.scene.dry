@@ -345,7 +345,7 @@ Q.agricultural_policy = 0;
 Q.land_reform = 0;
 // Relations with the Soviet Union
 Q.soviet_relation = 2;
-Q.entente_relaton = 4;
+Q.entente_relation = 4;
 Q.balkan_relation = 2;
 Q.papal_relation = 3
 // have there been any factory takeovers?
