@@ -1,9 +1,9 @@
 title: Capital Strike
-subtitle: Germany's industries are idling...
-view-if: (capital_strike_progress >= 10 or budget <= -5) and psi_in_government
+subtitle: Italy's industries are idling...
+view-if: capital_strike_progress >= 10 and psi_in_government
 new-page: true
 max-visits: 1
-on-arrival: unemployment += 5; workers_psi*= 0.7; middle_class_psi -= 15; industrialists_psi -= 15; veterans_psi*=0.7; rural_psi -= 15; republican_sentiment -= 15; capital_strike_seen = 1; ldr_relation -= 10; ul_relation -= 10; workers_bn += 8; veterans_bn += 10; middle_class_bn += 15; industrialists_bn += 15; rural_bn += 15; economic_growth -= 4;
+on-arrival: unemployment += 5; workers_psi*= 0.7; middle_class_psi -= 15; industrialists_psi -= 15; veterans_psi*=0.7; rural_psi -= 15; republican_sentiment -= 15; ldr_relation -= 10; ul_relation -= 10; workers_bn += 8; veterans_bn += 10; middle_class_bn += 15; industrialists_bn += 15; rural_bn += 15; economic_growth -= 4;
 tags: event
 
 = Capital Strike

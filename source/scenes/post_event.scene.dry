@@ -14,6 +14,7 @@ for (var c of Q.classes) {
 Q.republican_sentiment = Math.round(Q.republican_sentiment);
 Q.socialist_sentiment = Math.round(Q.socialist_sentiment);
 Q.nationalist_sentiment = Math.round(Q.nationalist_sentiment);
+Q.anti_monarchist_sentiment = Q.republican_sentiment + Q.socialist_sentiment
 
 if (Q.republican_sentiment < 0) {
     Q.republican_sentiment = 0;
@@ -197,31 +198,80 @@ if (Q.month_actions >= 1) {
     }
 
 
-    /////////////////////////////// update opinions based on economy
+    /////////////////////////////// update opinions based on economy, lets the other parties gain support if you're incompetent
     if (Q.unemployment > 15 && Q.republican_sentiment > 40 && Q.psi_in_government == 0) {
         Q.republican_sentiment -= 1;
         Q.socialist_sentiment += 1;
+        Q.workers_psi += 4/12;
+        Q.workers_ds -= 4/12;
+        if (Q.pcdi_formed == 1) {
+            Q.workers_pcdi += 6/12
+        }
+        if (Q.psu_formed == 1) {
+            Q.workers_psu += 6/12
+        }
+
     }
     if (Q.unemployment > 30 && Q.republican_sentiment > 20 && Q.psi_in_government == 0) {
         Q.republican_sentiment -= 1;
         Q.socialist_sentiment += 1;
+        Q.workers_psi += 4/12;
+        Q.workers_ds -= 4/12;
+        if (Q.pcdi_formed == 1) {
+            Q.workers_pcdi += 6/12
+        }
+        if (Q.psu_formed == 1) {
+            Q.workers_psu += 6/12
+        }
     }
     if (Q.inflation >= 8 && Q.republican_sentiment > 40 && Q.psi_in_government == 0) {
         Q.republican_sentiment -= 1;
         Q.socialist_sentiment += 1;
+        Q.workers_psi -= 4/12;
+        Q.workers_ds += 4/12;
+        if (Q.pcdi_formed == 1) {
+            Q.workers_pcdi += 6/12
+        }
+        if (Q.psu_formed == 1) {
+            Q.workers_psu += 6/12
+        }
     }
 
     if (Q.unemployment > 15 && Q.republican_sentiment > 40 && Q.psi_in_government == 1) {
         Q.socialist_sentiment -= 1;
         Q.nationalist_sentiment += 1;
+        Q.workers_psi -= 4/12;
+        Q.workers_bn += 4/12;
+        if (Q.pcdi_formed == 1) {
+            Q.workers_pcdi += 6/12
+        }
+        if (Q.psu_formed == 1) {
+            Q.workers_psu += 6/12
+        }
     }
     if (Q.unemployment > 30 && Q.republican_sentiment > 20 && Q.psi_in_government == 1) {
         Q.socialist_sentiment -= 1;
         Q.nationalist_sentiment += 1;
+        Q.workers_psi -= 4/12;
+        Q.workers_bn += 4/12;
+        if (Q.pcdi_formed == 1) {
+            Q.workers_pcdi += 6/12
+        }
+        if (Q.psu_formed == 1) {
+            Q.workers_psu += 6/12
+        }
     }
     if (Q.inflation >= 8 && Q.republican_sentiment > 40 && Q.psi_in_government == 1) {
         Q.socialist_sentiment -= 1;
         Q.nationalist_sentiment += 1;
+        Q.workers_psi -= 4/12;
+        Q.workers_bn += 4/12;
+        if (Q.pcdi_formed == 1) {
+            Q.workers_pcdi += 6/12
+        }
+        if (Q.psu_formed == 1) {
+            Q.workers_psu += 6/12
+        }
     }
 
     ///////////////////////////// change party support based on anti_monarchist_sentiment
@@ -346,6 +396,66 @@ if (Q.month_actions >= 1) {
             Q.catholics_psi -= 6/12;
         }
     }
+
+    if (Q.psi_in_government) {
+        if (Q.economic_growth > 0) {
+            Q.economic_progress += 10;
+        }
+        if (Q.economic_growth > 5) {
+            Q.economic_progress += 10;
+        }
+        if (Q.economic_growth > 10) {
+            Q.economic_progress += 10;
+        }
+        if (Q.inflation < 10) {
+            Q.economic_progress += 5;
+        }
+        if (Q.inflation < 5) {
+            Q.economic_progress += 5;
+        }
+        if (Q.unemployment < 10) {
+            Q.economic_progress += 5;
+        }       
+        if (Q.unemployment < 5) {
+            Q.economic_progress += 5;
+        } 
+    }
+    Q.fasci_post_time -= 1;
+    Q.abl_post_time -= 1;
+    Q.arditi_post_time -= 1;
+    Q.radicalism_timer -= 1;
+    Q.coalition_dissent = Math.round(Q.coalition_dissent);
+
+    if (Q.fasci_rg_active == 0 && Q.fasci_adp_active == 0 && Q.fasci_post_time == 0 && Q.fasci_banned == 0) {
+    Q.veterans_bn += 5*(1-dissent);
+    Q.veterans_psi -= 5*(1-dissent);
+    Q.fasci_post_time = 6; 
+    }
+
+    if (Q.arditi_rg_active == 0 && Q.arditi_adp_active == 0 && Q.arditi_post_time == 0 && Q.arditi_banned == 0) {
+    Q.rural_bn += 5*(1-dissent);
+    Q.rural_psi -= 5*(1-dissent);
+    Q.arditi_post_time = 6;
+    }
+
+    if (Q.abl_rg_active == 0 && Q.abl_adp_active == 0 && Q.abl_post_time == 0 && Q.abl_banned == 0) {
+    Q.middle_class_bn += 5*(1-dissent);
+    Q.middle_class_psi -= 5*(1-dissent);
+    Q.abl_post_time = 6;
+    }
+
+    if (Q.radicalism > 6 and Q.radicalism_timer == 0) {
+        Q,middle_class_psi -= 4*(1-dissent);
+    `   Q.industrialists_psi -= 4*(1-dissent);
+        Q.catholics_psi -= 4*(1-dissent);
+        Q.radicalism_timer = 6;
+    }
+    if (Q.radicalism > 8 and Q.radicalism_timer == 0) {
+        Q,middle_class_psi -= 4*(1-dissent);
+    `   Q.industrialists_psi -= 4*(1-dissent);
+        Q.catholics_psi -= 4*(1-dissent);
+        Q.radicalism_timer = 6;
+    }
 }
 Q.has_event = 0;
 // check if there are any cards in #event, and then go to main if not.
@@ -367,26 +477,7 @@ if (this.ui && this.ui.show_portraits) {
     }
 }
 
-Q.fasci_post_time -= 1;
-Q.abl_post_time -= 1;
-Q.arditi_post_time -= 1;
-Q.coalition_dissent = Math.round(Q.coalition_dissent);
 
-if (Q.fasci_rg_active == 0 && Q.fasci_adp_active == 0 && Q.fasci_post_time == 0 && Q.fasci_banned == 0) {
-    Q.veterans_bn += 5*(1-dissent);
-    Q.veterans_psi -= 5*(1-dissent);
-    Q.fasci_post_time = 6; 
-}
-if (Q.arditi_rg_active == 0 && Q.arditi_adp_active == 0 && Q.arditi_post_time == 0 && Q.arditi_banned == 0) {
-    Q.rural_bn += 5*(1-dissent);
-    Q.rural_psi -= 5*(1-dissent);
-    Q.arditi_post_time = 6;
-}
-if (Q.abl_rg_active == 0 && Q.abl_adp_active == 0 && Q.abl_post_time == 0 && Q.abl_banned == 0) {
-    Q.middle_class_bn += 5*(1-dissent);
-    Q.middle_class_psi -= 5*(1-dissent);
-    Q.abl_post_time = 6;
-}
 
 if (typeof window !== "undefined" && window.generateBar) {
 }

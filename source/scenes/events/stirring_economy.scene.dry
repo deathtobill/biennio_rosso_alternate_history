@@ -1,0 +1,12 @@
+title: Economic Improvements
+new-page: true 
+subtitle: Our policies seem to have borne fruit.
+tags: event
+view-if: economic_progress >= 100
+on-arrival: budget += 1; economic_progress -= 100; economic_growth += 0.4; inflation -= 0.7; unemployment -= 0.3;
+max-visits: 1
+
+= Economic Improvements
+
+[? if national_economic_recovery = 0 : Even though we are still in a recession, ?]It seems our policies have been able to bring the economy slightly on track, gaining us some funds we might be able to use someplace else, as well as boosting the general economy as a whole.
+

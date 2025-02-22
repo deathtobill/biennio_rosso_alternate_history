@@ -1,6 +1,6 @@
 title: 1922
 subtitle: A new year 
-on-arrival: inflation -= 3.4; economic_growth += 1.3; unemployment -= 1.4; nationalist_sentiment += 4*(dissent)
+on-arrival: inflation -= 3.4; economic_growth += 1.3; unemployment -= 1.4; nationalist_sentiment += 4*(1-dissent)
 tags: event
 view-if: year = 1922 and month = 1
 priority: 2

@@ -210,7 +210,7 @@ view-if: n_advisors < 3
 
 @add_serrati
 title: Giacinto Menotti Serrati
-subtitle: Giacinto Menotti Serrati leads the Maximalist faction of the party.
+subtitle: Giacinto Menotti Serrati leads the Maximalist faction of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Revolution or Reformist, Inter-Party Relationships, Comintern Relations ?]
 is-card: true
 card-image: img/portraits/GiacintoMenottiSerrati.png
 tags: maximalist_advisor
@@ -222,7 +222,7 @@ Giacinto Menotti Serrati is now an advisor.
 
 @add_lazzari
 title: Constantinto Lazzari
-subtitle: Constantinto Lazzari is a pacifist leader of the party, and member of the Maximalist faction.
+subtitle: Constantinto Lazzari is a pacifist leader of the party, and member of the Maximalist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Party Disunity, Rally, Fiscal Policy ?]
 is-card: true
 card-image: img/portraits/ConstantintoLazzari.jpg
 tags: maximalist_advisor
@@ -234,7 +234,7 @@ Constantinto Lazzari is now an advisor.
 
 @add_ferri
 title: Enrico Ferri
-subtitle: Enrico Ferri is a criminologist, sociologist, and member of the Maximalist faction.
+subtitle: Enrico Ferri is a criminologist, sociologist, and member of the Maximalist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Fundraising, Ideology, Media ?]
 is-card: true
 card-image: img/portraits/EnricoFerri.jpg
 tags: maximalist_advisor
@@ -246,7 +246,7 @@ Enrico Ferri is now an advisor.
 
 @add_bombacci
 title: Nicola Bombacci
-subtitle: Nicola Bombacci is a prominent leader of the Maximalist faction.
+subtitle: Nicola Bombacci is a prominent leader of the Maximalist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Armed Uprising, Ideology, Rally ?]
 is-card: true
 card-image: img/portraits/NicolaBombacci.jpg
 tags: maximalist_advisor
@@ -260,7 +260,7 @@ Nicola Bombacci is now an advisor.
 
 @add_kuliscioff
 title: Anna Kuliscioff
-subtitle: Anna Kuliscioff is a Russian-born feminist, intellectual, and member of the Reformist faction.
+subtitle: Anna Kuliscioff is a Russian-born feminist, intellectual, and member of the Reformist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Women's Rights, Veteran's Welfare, Labour Rights ?]
 is-card: true
 card-image: img/portraits/AnnaKuliscioff.jpg
 tags: reformist_advisor
@@ -272,7 +272,7 @@ Anna Kuliscioff is now an advisor.
 
 @add_turati
 title: Filippo Turati
-subtitle: Filippo Turati leads the reformist faction of the party.
+subtitle: Filippo Turati leads the reformist faction of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Interior Policy, Snap Election ?]
 is-card: true
 card-image: img/portraits/FilippoTurati.jpg
 tags: reformist_advisor
@@ -284,7 +284,7 @@ Filippo Turati is now an advisor.
 
 @add_salvemini
 title: Gaetano Salvemini
-subtitle: Gaetano Salvemini is a reformist member who advocates for Southern Italy.
+subtitle: Gaetano Salvemini is a reformist member who advocates for Southern Italy. {!<br><br>!}[? if difficulty < 0 : Actions - Southern Question, Public Education, Comintern Relations ?]
 is-card: true
 card-image: img/portraits/GaetanoSalvemini.jpg
 tags: reformist_advisor
@@ -298,7 +298,7 @@ Gaetano Salvemini is now an advisor.
 
 @add_tasca
 title: Angelo Tasca
-subtitle: Angelo Tasca is a member of the Left-wing of the party, affiliated with Grasmci and his *L'Ordine Nuovo*.
+subtitle: Angelo Tasca is a member of the Left-wing of the party, affiliated with Grasmci and his *L'Ordine Nuovo*. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Inter-Party Relationships, Paramilitary Funding ?]
 is-card: true
 card-image: img/portraits/AngeloTasca.jpg
 view-if: tasca_advisor = 0 and n_advisors < 3 and communist_split = 0
@@ -310,7 +310,7 @@ Angelo Tasca is now an advisor.
 
 @add_terracini
 title: Umberto Terracini
-subtitle: Umberto Terracini is a member of the Left-wing of the party, affiliated with Grasmci and his *L'Ordine Nuovo*.
+subtitle: Umberto Terracini is a member of the Left-wing of the party, affiliated with Grasmci and his *L'Ordine Nuovo*. {!<br><br>!}[? if difficulty < 0 : Actions - Comintern Relations, Constitutional Reform, Fasci Urgency ?]
 is-card: true
 card-image: img/portraits/UmbertoTerracini.jpg
 view-if: terracini_advisor = 0 and n_advisors < 3 and communist_split = 0
@@ -322,7 +322,7 @@ Umberto Terracini is now an advisor.
 
 @add_togliatti
 title: Palmiro Togliatti
-subtitle: Palmiro Togliatti is affiliated with the Left-wing of the party, advocating for class struggle.
+subtitle: Palmiro Togliatti is affiliated with the Left-wing of the party, advocating for class struggle. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Public Education, Shuffle Cabinet ?]
 is-card: true
 card-image: img/portraits/PalmiroTogliatti.jpg
 view-if: togliatti_advisor = 0 and n_advisors < 3 and communist_split = 0
@@ -334,7 +334,7 @@ Palmiro Togliatti is now an advisor.
 
 @add_gramsci
 title: Antonio Gramsci
-subtitle: Antonio Gramsci leads the *L'Ordine Nuovo* bloc, advocating for differing ideals than the rest of the party.
+subtitle: Antonio Gramsci leads the *L'Ordine Nuovo* bloc, advocating for differing ideals than the rest of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Party Organisations, Ideology ?]
 is-card: true
 card-image: img/portraits/AntonioGramsci.png
 view-if: gramsci_advisor = 0 and n_advisors < 3 and communist_split = 0
@@ -346,7 +346,7 @@ Antonio Gramsci is now an advisor.
 
 @add_bordiga
 title: Amadeo Bordiga
-subtitle: Amadeo Bordiga leads the Left-wing faction of the party.
+subtitle: Amadeo Bordiga leads the Left-wing faction of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Armed Uprising, Revolutionary Planning, Choosing our Targets ?]
 is-card: true
 card-image: img/portraits/AmadeoBordiga.png
 view-if: bordiga_advisor = 0 and n_advisors < 3 and communist_split = 0
@@ -362,7 +362,7 @@ Amadeo Bordiga is now an advisor.
 
 @add_treves
 title: Claudio Treves
-subtitle: Claudio Treves is a socialist journalist, affiliated with the Trade Unions.
+subtitle: Claudio Treves is a socialist journalist, affiliated with the Trade Unions. {!<br><br>!}[? if difficulty < 0 : Actions - Judicial Reform, Media, Labour Rights ?]
 is-card: true
 card-image: img/portraits/ClaudioTreves.jpg
 tags: labour_advisor
@@ -374,7 +374,7 @@ Claudio Treves is now an advisor.
 
 @add_rigola
 title: Rinaldo Rigola
-subtitle: Rinaldo Rigola is the leader of the Italian CGIL, General Confederation of Labour.
+subtitle: Rinaldo Rigola is the leader of the Italian CGIL, General Confederation of Labour. {!<br><br>!}[? if difficulty < 0 : Actions - Fundraising, Fiscal Policy, Veterans Welfare ?]
 is-card: true
 card-image: img/portraits/RinaldoRigola.png
 tags: labour_advisor

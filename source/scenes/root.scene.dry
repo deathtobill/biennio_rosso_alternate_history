@@ -66,7 +66,6 @@ Q.reformists_defect = 0;
 
 // Depending on how the Congress goes
 Q.reformists_expelled = 0;
-Q.congress_communist_split = 0;
 
 // fasci_urgency indicates how seriously the PSI takes the fasci - scale from 0 to 10.
 Q.fasci_urgency = 0;
@@ -143,6 +142,7 @@ Q.republican_sentiment = 10;
 Q.socialist_sentiment = 13;
 Q.nationalist_sentiment = 37;
 Q.anti_monarchist_sentiment = Q.republican_sentiment+Q.socialist_sentiment;
+Q.democratisation = 0;
 
 // revolution vs radicalism
 Q.revolutionary_fervor = 60;
@@ -299,7 +299,7 @@ Q.ldr_in_government = 1;
 Q.ds_in_government = 1;
 Q.ul_in_government = 1;
 Q.psri_in_government = 0;
-Q.bn_in_government = 0;
+Q.bn_in_government = 0; 
 
 // Left-Wing Coalition = PSI + PSRI
 Q.left_wing_coalition = 0
@@ -309,7 +309,7 @@ Q.catholic_centre_coalition = 0;
 Q.centre_left_coalition = 0;
 Q.in_psi_majority = 0;
 Q.catholic_centre_failed = 0;
-Q.anti_socialist_coalition = 0;
+Q.anti_socialist_coalition = 0; 
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from your partners.
 Q.coalition_dissent = 0;
@@ -334,12 +334,13 @@ Q.finance_minister = 'Meda';
 Q.finance_minister_party = 'PPI';
 Q.agriculture_minister = 'Miliani';
 Q.agriculture_minister_party = 'LDR';
+Q.public_education_minister = 'Berenini';
+Q.public_education_minister_party = 'PSRI';
 
 // have we reformed these institutions to be more democratic?
 Q.judicial_reform = 0;
-Q.bureaucratic_reform = 0;
-Q.military_influence = 0;
 Q.womens_rights = 0;
+Q.womens_work = 0;
 Q.nationalisation_progress = 0;
 Q.councils_empowered = 0;
 

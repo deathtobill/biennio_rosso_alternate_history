@@ -29,7 +29,7 @@ This result only seems to exacerbate the friction within the party, as Reformist
 
 @maximalist_approach
 subtitle: The party will stay the course of revolution via extraparliamentary ways, but will not fully abandon parliamentary means.
-on-arrival: reformist_dissent += 10; reformist_strength -= 5; communist_strength -= 5; maximalist_strength += 5; communist_dissent += 10; maximalist_dissent -= 20;
+on-arrival: reformist_dissent += 10; reformist_strength -= 5; communist_strength -= 5; maximalist_strength += 5; communist_dissent += 10; maximalist_dissent -= 10;
 go-to: @election_agenda
 
 The less radical members of the Communists and Reformists accept the result, whilst the more radical members express their outrage over this effective 'appeasement' to keep the party together.

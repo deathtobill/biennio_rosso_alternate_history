@@ -8,6 +8,8 @@ card-image: img/portraits/VitorioEmanuel.jpg
 go-to: reforms_menu
 tags: govt_affairs
 
+# cosmetic stuff for now, except the veto thing
+
 = Constitutional Reform
 
 The Statuto Albertino, the constitution of the current Kingdom of Italy and the Kingdom of Sardinia preceding it, has often been changed to keep up with modern times. The 1919 amendment to give all men the right to vote and alter the electoral system to a proportional representation system are the most recent examples.
@@ -17,6 +19,8 @@ Now that we control a sizeable bloc in the Chamber of Deputies, we are able to a
 @reforms_menu
 
 - @article_33: Alter Article 33.
+- @article_65: Alter Article 65.
+- @article_33_2: Alter Article 33 again.
 - @as_is: Do not pursue constitutional reform.
 - @easy_discard
 - @cancel_advisor_action
@@ -25,9 +29,23 @@ Now that we control a sizeable bloc in the Chamber of Deputies, we are able to a
 subtitle: Remove the appointed Senate's ability to reject bills.
 view-if: centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50
 choose-if: king_relation > 70
-on-arrival: veto_removed = 1; fasci_coup_progress += 1;
+on-arrival: veto_removed = 1; fasci_coup_progress += 1; democratisation += 2;
 
 The Constitutional Amendment makes it to the King, who is convinced to approve the measure, limiting the powers of the Senate and further democratising the Kingdom.
+
+@article_65
+subtitle: Make the Prime Minister choose and appoint his own ministers.
+view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50) and veto_removed = 1
+choose-if: king_relation > 70
+on-arrival: fasci_coup_progress += 1; democratisation += 2; pm_appointed = 1;
+
+@article_33
+subtitle: Remove the King's ability to veto bills.
+view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50) and pm_appointed = 1
+choose-if: king_relation > 80
+on-arrival: fasci_coup_progress += 2; democratisation += 2; king_veto_removed = 1;
+
+The Constitutional Amendment makes it to the King, who is convinced to approve the measure, limiting his own powers and further democratising the Kingdom.
 
 @as_is
 

@@ -1,0 +1,24 @@
+title: Bonomi I Government Collapses!
+subtitle: The current coalition has fallen...
+view-if: year = 1922 and month = 2 and (not psi_in_government or not_participating = 1)
+new-page: true
+max-visits: 1
+on-arrival: {!
+Q.prime_minister = "Luigi Facta";
+Q.prime_minister_party = "PLI";
+
+Q.republican_sentiment -= 6;
+Q.nationalist_sentiment += 6;
+Q.socialist_sentiment += 3;
+
+Q.workers_psi += 6;
+Q.middle_class_psi += 3;
+Q.workers_bn += 6;
+Q.middle_class_bn += 4;
+Q.veterans_bn += 7;
+!}
+tags: event
+
+= Bonomi I Government Collapses!
+
+The current governing coalition has collapsed, failing to secure a majority in a Vote-of-No-Confidence. He is succeeded by Luigi Facta of the PLI, joining the coalition is the minority party of the Agrarians.

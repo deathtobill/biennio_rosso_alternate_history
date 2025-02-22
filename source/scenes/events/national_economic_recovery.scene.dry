@@ -33,6 +33,8 @@ Q.rural_ppi += 7*(1-dissent);
 Q.veterans_ppi += 7*(1-dissent);
 Q.catholics_ppi += 7*(1-dissent);
 }
+
+Q.national_economic_recovery = 1;
 !}
 max-visits: 1
 

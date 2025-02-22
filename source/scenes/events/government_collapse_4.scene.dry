@@ -1,0 +1,25 @@
+title: Giolitti V Government Collapses!
+subtitle: The current coalition has fallen...
+view-if: year = 1921 and month = 7 and (not psi_in_government or not_participating = 1)
+new-page: true
+max-visits: 1
+on-arrival: {!
+Q.prime_minister = "Ivanoe Bonomi";
+Q.prime_minister_party = "PSRI";
+
+Q.republican_sentiment -= 5;
+Q.nationalist_sentiment += 5;
+Q.socialist_sentiment += 2;
+
+Q.workers_psi += 5;
+Q.middle_class_psi += 2;
+Q.workers_bn += 5;
+Q.middle_class_bn += 2;
+Q.veterans_bn += 4;
+Q.industrialists_ul -= 4;
+!}
+tags: event
+
+= Giolitti V Government Collapses!
+
+The current governing coalition has collapsed, failing to secure a majority in a Vote-of-No-Confidence. He is succeeded by Ivanoe Bonomi of the PSRI, removing the UL from the coalition.

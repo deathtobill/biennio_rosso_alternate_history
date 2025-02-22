@@ -65,7 +65,7 @@ We are able to negotiate a fair deal for both sides, establishing zones of co-oc
 
 @adriatic_historical
 subtitle: This will leave us with Trieste, Istria and Zadar, leaving the outer borders to Yugoslavia.
-view-if: psi_in_government
+view-if: psi_in_government and foreign_minister_party == "PSI"
 
 This is a relatively expected peace deal, though the time comes now for our negotiations regarding Fiume.
 
@@ -150,6 +150,7 @@ Q.veterans_bn += 8*(1-dissent);
 Q.nationalist_sentiment += 4;
 Q.resolved_adriatic = 1;
 Q.fiume_free = 1;
+Q.fasci_coup_progress += 1;
 !}
 
 This is a sensible comprise for many, forming the Free City of Fiume, though this only inflames the far-right, calling Fiume rightfully Italian. D'Annunzio refuses to honour the agreement as well, continuing his occupation, though the army makes quick work of his forces.

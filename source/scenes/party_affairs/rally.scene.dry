@@ -49,7 +49,7 @@ Our speakers denounce the military establishment and all the spending entering t
 view-if: not psi_in_government 
 choose-if: return_to_normalcy = 0
 unavailable-subtitle: The economic crisis is largely over now, and the public is no longer interested in hearing about it.
-on-arrival: workers_psi += 3*(1-dissent); veterans_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); ppi_relation -= 6*(dissent); ldr_relation -= 6*(dissent); ul_relation -= 6*(dissent); ds_relation -= 6*(dissent);
+on-arrival: workers_psi += 3*(1-dissent); veterans_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); ppi_relation -= 6*(1-dissent); ldr_relation -= 6*(1-dissent); ul_relation -= 6*(1-dissent); ds_relation -= 6*(1-dissent);
 
 Our anti-government sentiment resonates with the workers and veterans, though the governing coalition doesn't seem the fondest of our message.
 
