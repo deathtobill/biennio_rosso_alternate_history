@@ -95,14 +95,6 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 [? if catholic_nationalisation_accepted : Anti-Catholic Nationalisations disallowed ?]
 
-= Economics
-
-Inflation: [+ inflation_2 +]%
-
-Economic Growth: [+ economic_growth_2 +]%
-
-Unemployment: [+ unemployment_2 +]%
-
 @politics
 
 = Inter-party Relations
@@ -234,6 +226,44 @@ Support for Socialism: [+ socialist_sentiment_disp +]%
 
 Support for Nationalism: [+ nationalist_sentiment_disp +]%
 
+@economic
+
+= Economics
+
+Inflation: [+ inflation_2 +]%
+
+Economic Growth: [+ economic_growth_2 +]%
+
+Unemployment: [+ unemployment_2 +]%
+
+[? if in_default == 1: Debt: Defaulted ?]
+
+= Taxation
+
+Upper-Class: [+ upper_tax_rates : taxation +]
+
+Lower-Class: [+ lower_tax_rates : taxation +]
+
+Tarrifs: [+ tarrifs : taxation +]
+
+= Reforms
+
+Work Councils: [? if work_councils < 1 and not councils_empowered: Non-existent ?][? work_councils > 1 and not councils_empowered: Influential ?][? if councils_empowered : Empowered]
+
+Economic Nationalisation: [? if nationalisation_progress == 1 : Non-existent ?][? if nationalisation_progress == 1: Minor ?][? if nationalisation_progress == 2: Moderate ?][? if nationalisation_progress == 3: Major ?]
+
+@education
+
+= Education
+
+[? if secularised_education : Education: Secularied ?]
+
+Funding: [? if education_funded == 0 : Decrepit ?][? if education_funded == 1 : Minimal ?][? if education_funded == 2 : Adequate ?][? if education_funded == 3 : Generous ?]
+
+Curriculum: [? if education_reformed == 0 : Decrepit ?][? if education_reformed == 1 : Traditional ?][? if education_reformed == 2 : Standardised ?][? if education_reformed == 3 : Modernised ?]
+
+Trade Schools: [? if trade_school_funded == 0 : Unfunded ?][? if trade_school_funded == 1 : Minimal ?][? if trade_school_funded == 2 : Adequate ?][? if trade_school_funded == 3 : Numerous ?]
+
 @foreign
 
 = Foreign Relations
@@ -252,21 +282,39 @@ Russian Civil War: [? if not rcw_over : Ongoing, Estimated [+ soviet_end_timer +
 
 Fiume: [? if not resolved_adriatic : Negotiating ?][? if fiume_free : Free City ?][? if fiume_italian : Italian ?]
 
-Adriatic Question: [? if resolved_adriatic : Complete ?][? if not resolved_adriatic : Negotiating ?]
+Adriatic Question: [? if resolved_adriatic : Complete ?][? if not resolved_adriatic : Negotiating ?]%
 
 Roman Question: [? if roman_question_answered : Complete ?][? if not roman_question_answered : Negotiating ?]
 
-@interior
+@labour
 
-= Taxation
+Unemployment Insurance Program: [? if not unemployment_insurance_founded : Not yet founded][? if unemployment_insurance_founded : [+ insurance_payments_timer ] Months left before renewal ?]
 
-Upper-Class: [+ upper_tax_rates : taxation +]
+Working Hours: [? if working_hours == 0 : Undeveloped ?][? if working_hours == 1 : Developed ?][? if working_hours == 2 : Unenforced ?][? if working_hours >= 3 : Enforced ?]
 
-Lower-Class: [+ lower_tax_rates : taxation +]
+Workplace Safety: [? if workers_safety == 0 : Dangerous ?][? if workers_safety == 1 : Safe ?][? if workers_safety >= 2 : Monitored ?]
 
-Tarrifs: [+ tarrifs : taxation +]
+@judicial
 
-= Mezzogiorno 
+= Judicial Reforms
+
+Judiciary: [? if judicial_reform <= 0 : Reactionary ?][? if judicial_reform == 1: Corrupt ?][? if judicial_reform == 2: Reformed ?]
+
+= Paramilitaries
+
+Fasci: [? if not fdc_banned : Legal, Operating, ?][? if fdc_banned : Banned, ?][? if fasci_adp_active or fasci_rg_active :Under Attack ?]
+
+Arditismo: [? if not ard_banned : Legal, Operating ?][? if ard_banned : Banned ?][? if arditi_adp_active or arditi_rg_active :Under Attack ?]
+
+Anti-Bolshevik Leagues: [? if not abl_banned : Legal, Operating ?][? if abl_banned : Banned ?][? if abl_adp_active or abl_rg_active :Under Attack ?]
+
+Red Guards: [? if not rg_banned : Legal, Operating ?][? if rg_banned : Banned ?]
+
+[? if arditi_formed : Arditi del Popolo: Legal, Operating  ]
+
+@situations
+
+= Mezzogiorno
 
 Southern Question: [? if not southern_resolved : Ongoing ?][? if southern_resolved : Ameliorated ?]
 
@@ -278,8 +326,16 @@ Education: [? if southern_education_funded < 1 : Poor ?][? if southern_education
 
 Mafia: [? if mafia_strength < 1 : Neutralised ?][? if mafia_strength > 2: Strong ?][? if mafia_strength == 1 : Drained ?][? if mafia_strength == 2 : Weakened ?]
 
-= Reforms
+= Women's Rights
 
-King Relations: [+ king_relation : relationships +]
+Voting Rights: Disenfranchised
 
-Senate: [? if veto_removed == 0: Empowered ?][? if veto_removed == 1: Weakened ?]
+Women's Rights: [? if womens_rights == 0 : Reactionary ?][? if womens_rights == 1 : Regressive ?][? if womens_rights == 2 : Conservative ?][? if womens_rights >= 3 : Fair ?]
+
+Workplace Status: [? if womens_work == 0 : Discriminated ?][? if womens_work == 1 : Reactionary ?][? if womens_work == 2 : Biased ?][? if womens_work >= 3 : Fair ?]
+
+Legal Status: [? if family_law == 0 : Patriarchal ?][? if family_law == 1 : Biased ?][? if family_law >= 2 : Progressive ?]
+
+Abortion Rights: [? if abortion_rights == 0 : Regressive ?][? if abortion_rights >= 1 : Liberalised]
+
+

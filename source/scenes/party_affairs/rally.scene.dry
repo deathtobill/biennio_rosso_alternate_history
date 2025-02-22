@@ -20,9 +20,9 @@ Mass rallies are a common feature of social democratic life, especially in the l
 - @cancel_advisor_action
 
 @class_struggle
-on-arrival: workers_psi += 4*(1-dissent); veterans_psi += 3*(1-dissent) if communist_strength > reformist_strength; workers_psi += 4*(1-dissent) if nationalization_progress > 0; veterans_psi += 3*(1-dissent) if nationalization_progress > 0; communist_strength += 5; communist_dissent -= 5; middle_class_psi -= 3; industrialists_psi -= 2;
+on-arrival: workers_psi += 4*(1-dissent); veterans_psi += 3*(1-dissent) if communist_strength > reformist_strength; workers_psi += 4*(1-dissent) if nationalisation_progress > 0; veterans_psi += 3*(1-dissent) if nationalisation_progress > 0; communist_strength += 5; communist_dissent -= 5; middle_class_psi -= 3; industrialists_psi -= 2;
 
-Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
+Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalisation_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
 
 @welfare
 on-arrival: veterans_psi += 3*(1-dissent); workers_psi += 3*(1-dissent) if welfare > 0; veterans_psi += 3*(1-dissent) if welfare > 0; veterans_psi += 4*(1-dissent) if welfare > 1; reformist_strength += 3; syndicalist_strength += 4; reformist_dissent -= 3; syndicalist_dissent -= 3;

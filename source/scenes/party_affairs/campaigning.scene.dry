@@ -24,7 +24,7 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: workers_psi += 6*(1-dissent); workers_psi -= 2 if radicalisation > 8; workers_psi -= 2 if unemployment >= 15 and psi_in_government; workers_psi -= 2 if unemployment >= 25 and psi_in_government; resources -= 1; workers_psi += 3*(1-dissent) if nationalization_progress >= 1;
+on-arrival: workers_psi += 6*(1-dissent); workers_psi -= 2 if radicalisation > 8; workers_psi -= 2 if unemployment >= 15 and psi_in_government; workers_psi -= 2 if unemployment >= 25 and psi_in_government; resources -= 1; workers_psi += 3*(1-dissent) if nationalisation_progress >= 1;
 
 We have increased our campaigning among the workers. [? if unemployment >= 15: The high levels of unemployment make our campaign more difficult. ?]
 

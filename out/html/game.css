@@ -176,6 +176,7 @@ blockquote + blockquote.attribution {
   color: #431;
   background-color: #f3f3f3;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  top: 0;
 }
 .tools.left {
   float: left;
@@ -204,16 +205,17 @@ blockquote + blockquote.attribution {
 #qualities h1 + p:first-line {
   font-weight: normal;
 }
-
+#stats_sidebar_right {
+  margin-top: -2.8em;
+}
 
 /* tabs */
 .tab_container {
     background-color: #dedede;
-    margin-top: -0.6em;
     margin-left: -0.6em;
     margin-right: -0.6em;
 }
-.tab_button {
+.left_tab_button, .right_tab_button {
     font-family: "Minion Pro", Georgia, serif;
     background-color: #ddd;
     /*float: left;*/
@@ -221,17 +223,13 @@ blockquote + blockquote.attribution {
     outline: none;
     padding: 10px;
 }
-#foreign_tab {
-  width: 49%;
+.right_tab_button {
+  width: 32%
 }
-#interior_tab {
-  width: 49%;
-}
-
-.tab_button.active {
+.left_tab_button.active, .right_tab_button.active {
     background-color: #f3f3f3;
 }
-.tab_button:hover {
+.left_tab_button:hover, .right_tab_button:hover {
     background-color: #ececec;
 }
 
