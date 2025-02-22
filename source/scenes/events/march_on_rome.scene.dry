@@ -177,6 +177,7 @@ go-to: mussolini_takes_power
 title: Total Defeat
 new-page: false
 view-if: rome_total_defeat = 1
+on-arrival: mussolini_success = 1;
 
 Against all odds, Mussolini has succeeded in his goals. [+ king +] has already appointed him Prime Minister, as it seems the tide has turned against us. 
 

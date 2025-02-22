@@ -48,7 +48,7 @@ Through some carefully placed information and contacts, the Carabinieri 'discove
 
 @rev_finish
 choose-if: weaponry_rg == 3 and loyalty_rg == 3 and sabotage_rg == 3
-on-arrival: preparation_done = 1;
+on-arrival: preparation_done = 1; interior_police_loyalty += 0.2; army_loyalty += 0.2; rg_militancy += 0.1;
 
 Our preparations seem to have borne fruit, as it seems will be have an advantage if we ever have to utilise our preparations in the near future.
 

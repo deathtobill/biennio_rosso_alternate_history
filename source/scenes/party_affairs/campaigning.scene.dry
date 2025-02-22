@@ -14,7 +14,7 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 - @workers: The urban working class, our traditional support base.
 - @middle_class: The middle class of small independent businessmen and artisans.
 - @industrialists: The industrialists and landowners who traditionally oppose us.
-- @rural: Rural workers and small farmers, who have felt neglected by us in the past.
+- @rural: Rural workers and small farmers.
 - @veterans: Newly unemployed veterans discharged from the army.
 - @catholics: Catholics, who typically support the People's Party.
 - @root: We either don't want to or cannot campaign right now.
@@ -32,7 +32,7 @@ We have increased our campaigning among the workers. [? if unemployment >= 15: T
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: middle_class_psi += 6*(1-dissent); middle_class_psi -= 4 if socialist_sentiment <= 49; resources -= 1;
+on-arrival: middle_class_psi += 6*(1-dissent); middle_class_psi -= 4 if anti_monarchist_sentiment <= 49; resources -= 1;
 
 We have increased our campaigning among the middle class. [? if socialist_sentiment <= 49: Our campaign is worsened by their wariness of our ideals. ?]
 
@@ -48,7 +48,7 @@ We have increased our campaigning among the industrialists. Our ideals are diame
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: rural_psi += 5*(1-dissent); rural_psi -= 3*(1-dissent) if socialist_sentiment > 49; resources -= 1; rural_psi += 3*(1-dissent) if agricultural_policy >= 2
+on-arrival: rural_psi += 6*(1-dissent); rural_psi -= 3*(1-dissent) if socialist_sentiment > 49; resources -= 1; rural_psi += 3*(1-dissent) if agricultural_policy >= 2
 
 We have increased our campaigning among farmers. [? if agricultural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
 

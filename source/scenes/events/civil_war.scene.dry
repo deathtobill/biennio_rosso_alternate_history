@@ -33,8 +33,8 @@ if (Q.preparation_done == 1) {
     Q.rg_power*1.2;
 }
 Q.total_power += Q.rg_power;
-Q.internal_police_power = Q.internal_police_strength*Q.internal_police_militancy*Q.internal_police_loyalty;
-Q.total_power += Q.internal_police_power;
+Q.interior_police_power = Q.interior_police_strength*Q.interior_police_militancy*Q.interior_police_loyalty;
+Q.total_power += Q.interior_police_power;
 
 if (Q.army_loyalty < 0) {
     Q.army_loyalty = 0;
@@ -118,7 +118,7 @@ go-to: war_menu
 
 = The Array of Forces
 
-Our enemies are the paramilitary Arditi, with [+ ard_strength +] thousand troops, and the Far-right Fasci, with [+ fdc_strength +] thousand troops. The loyalties of the Regio Esercito, with its [+ army_strength +] thousand regular soldiers, and Carabinieri, with [+ internal_police_strength +] thousand members, are unclear.
+Our enemies are the paramilitary Arditi, with [+ ard_strength +] thousand troops, and the Far-right Fasci, with [+ fdc_strength +] thousand troops. The loyalties of the Regio Esercito, with its [+ army_strength +] thousand regular soldiers, and Carabinieri, with [+ interior_police_strength +] thousand members, are unclear.
 
 On our side, we have the Red Guards, at [+ rg_strength +] thousand members. [? if dissent > 0.15 and dissent <= 0.25: It is somewhat weakened by dissent within the party, and some members choose not to fight. ?][? if dissent > 0.25 and dissent < 0.5: It is weakened by dissent within the party, and many members choose not to fight. ?][? if dissent >= 0.5: It is heavily weakened by dissent within the party, and a substantial portion of members choose not to fight. ?]
 
@@ -164,7 +164,7 @@ max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1
 
-We urge the Carabinieri, the force of the Interior police, to join our cause. [? if internal_police_loyalty < 0.4 : Unfortunately, the Carabinieri are politically unreliable at best. ?][? if internal_police_loyalty >= 0.4 and internal_police_loyalty < 0.65 : In this crucial hour, the Carabinieri are split, with about half actively supporting our efforts. ?][? if internal_police_loyalty >= 0.65 : Most join in supporting our efforts. Our efforts in cultivating socialist loyalties in the Carabinieri have proven their worth. ?]
+We urge the Carabinieri, the force of the Interior police, to join our cause. [? if interior_police_loyalty < 0.4 : Unfortunately, the Carabinieri are politically unreliable at best. ?][? if interior_police_loyalty >= 0.4 and interior_police_loyalty < 0.65 : In this crucial hour, the Carabinieri are split, with about half actively supporting our efforts. ?][? if interior_police_loyalty >= 0.65 : Most join in supporting our efforts. Our efforts in cultivating socialist loyalties in the Carabinieri have proven their worth. ?]
 
 @war_outcome
 view-if: war_choices >= 2
