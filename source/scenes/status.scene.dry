@@ -276,6 +276,6 @@ Mafia: [? if mafia_strength < 1 : Neutralised ?][? if mafia_strength > 2: Strong
 
 = Reforms
 
-King Relations: [+ king_relation : radicalisation +]
+King Relations: [+ king_relation : relationships +]
 
 Senate: [? if veto_removed == 0: Empowered ?][? if veto_removed == 1: Weakened ?]
