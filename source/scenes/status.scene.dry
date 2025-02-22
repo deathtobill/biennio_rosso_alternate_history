@@ -1,6 +1,18 @@
 title: Status
 new-page: true
 is-special: true
+on-arrival: {!
+if (Q.inflation) {
+    Q.inflation_2 = Q.inflation.toFixed(1);
+}
+if (Q.economic_growth) {
+    Q.economic_growth_2 = Q.economic_growth.toFixed(1);
+}
+if (Q.unemployment) {
+    Q.unemployment_2 = Q.unemployment.toFixed(1);
+}
+Q.dissent_percent = Math.round(Q.dissent_percent);
+!}
 
 = Status
 
