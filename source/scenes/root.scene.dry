@@ -147,7 +147,8 @@ Q.anti_monarchist_sentiment = Q.republican_sentiment+Q.socialist_sentiment;
 // revolution vs radicalism
 Q.revolutionary_fervor = 60;
 
-Q.mafia_strength = 3;
+// pacifism vs war
+Q.pacifism = 0;
 
 // capital strikes happen when you upset the industrialists & landowners too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
 // coup progress happens when you piss off the fasci too much too quickly + if they have enough troops
@@ -338,20 +339,42 @@ Q.judicial_reform = 0;
 Q.bureaucratic_reform = 0;
 Q.military_influence = 0;
 Q.womens_rights = 0;
+Q.nationalization_progress = 0;
+
 // level of welfare relative to 1919 (can go negative)
 Q.welfare = 0;
+Q.unemployment_insurance_founded = 0;
+Q.work_councils = 0;
+Q.workers_safety = 0;
+Q.works_program = 0;
+
 // level of support for farmers
 Q.agricultural_policy = 0;
-Q.land_reform = 0;
-// Relations with the Soviet Union
+Q.land_seizures = 0;
+
+
+// International Relations
 Q.soviet_relation = 2;
 Q.entente_relation = 4;
 Q.balkan_relation = 2;
 Q.papal_relation = 3
+Q.pope = "Della Chiesa";
+
 // have there been any factory takeovers?
 Q.factory_takeovers = 0;
-Q.unemployment_insurance_founded = 0;
-Q.pope = "Della Chiesa";
+
+// education_policy 
+Q.secularised_education = 0;
+Q,trade_school_funded = 0;
+Q.wage_increase = 0;
+Q.working_hours = 0;
+
+// southern Question
+Q.southern_resolved = 0;
+Q.mafia_strength = 3;
+Q.southern_education_funded = 0;
+Q.southern_infrastructure_funded = 0;
+Q.southern_land_reformed = 0;
 
 // Tax rates relative to 1919 baseline
 Q.lower_tax_rates = 0;
@@ -385,7 +408,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'red_guards', 'targeting', 'enemies', 'fundraising', 'king_relations', 
             'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit',
             'adriatic'];
-
+// all timers
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
 Q.media_timer = 0;
