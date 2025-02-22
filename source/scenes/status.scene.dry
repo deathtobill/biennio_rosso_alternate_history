@@ -288,7 +288,7 @@ Roman Question: [? if roman_question_answered : Complete ?][? if not roman_quest
 
 @labour
 
-Unemployment Insurance Program: [? if not unemployment_insurance_founded : Not yet founded][? if unemployment_insurance_founded : [+ insurance_payments_timer ] Months left before renewal ?]
+Unemployment Insurance Program: [? if not unemployment_insurance_founded : Not yet founded][? if unemployment_insurance_founded : [+ insurance_payments_timer +] Months left before renewal ?]
 
 Working Hours: [? if working_hours == 0 : Undeveloped ?][? if working_hours == 1 : Developed ?][? if working_hours == 2 : Unenforced ?][? if working_hours >= 3 : Enforced ?]
 
