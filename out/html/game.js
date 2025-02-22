@@ -173,13 +173,13 @@
       $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
   };
 
-  window.LeftchangeTab = function(newTab, tabId) {
+  window.changeTab = function(newTab, tabId) {
       if (tabId == 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
           window.alert('Polls are not available in historical mode.');
           return;
       }
       var tabButton = document.getElementById(tabId);
-      var tabButtons = document.getElementsByClassName('left_tab_button');
+      var tabButtons = document.getElementsByClassName('tab_button');
       for (i = 0; i < tabButtons.length; i++) {
         tabButtons[i].className = tabButtons[i].className.replace(' active', '');
       }
@@ -187,17 +187,6 @@
       window.statusTab = newTab;
       window.updateSidebar();
   };
-
-  window.RightchangeTab = function(newTab, tabId) {
-    var tabButton = document.getElementById(tabId);
-    var tabButtons = document.getElementsByClassName('right_tab_button');
-    for (i = 0; i < tabButtons.length; i++) {
-      tabButtons[i].className = tabButtons[i].className.replace(' active', '');
-    }
-    tabButton.className += ' active';
-    window.statusTab = newTab;
-    window.updateSidebar();
-};
 
   window.onDisplayContent = function() {
       window.updateSidebar();

@@ -340,7 +340,7 @@ Q.judicial_reform = 0;
 Q.bureaucratic_reform = 0;
 Q.military_influence = 0;
 Q.womens_rights = 0;
-Q.nationalisation_progress = 0; 
+Q.nationalisation_progress = 0;
 Q.councils_empowered = 0;
 
 // level of welfare relative to 1919 (can go negative)
