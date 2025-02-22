@@ -250,7 +250,7 @@ Tarrifs: [+ tarrifs : taxation +]
 
 Work Councils: [? if work_councils < 1 and not councils_empowered: Non-existent ?][? work_councils > 1 and not councils_empowered: Influential ?][? if councils_empowered : Empowered ?]
 
-Economic Nationalisation: [? if nationalisation_progress == 1: Non-existent ?][? if nationalisation_progress == 1: Minor ?][? if nationalisation_progress == 2: Moderate ?][? if nationalisation_progress == 3: Major ?]
+Economic Nationalisation: [? if nationalisation_progress == 0: Non-existent ?][? if nationalisation_progress == 1: Minor ?][? if nationalisation_progress == 2: Moderate ?][? if nationalisation_progress == 3: Major ?]
 
 @education
 
