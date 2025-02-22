@@ -127,8 +127,8 @@ view-if: psi_in_government and foreign_minister_party == "PSI"
 choose-if: entente_relation >= 8 and balkan_relation >= 8 or ceded_territories == 1
 unavailable-subtitle: The British and French are already placing immense pressure on us to settle.
 on-arrival: {!
-Q.veterans_psi += 4*(1-dissent);
-Q.veterans_bn -= 6*(1-dissent);
+Q.veterans_psi += 4;
+Q.veterans_bn -= 6;
 Q.nationalist_sentiment -= 7;
 Q.socialist_sentiment += 2;
 
@@ -145,8 +145,8 @@ Yugoslavia agrees to hand over Fiume to us, as D'Annunzio and his forces celebra
 subtitle: Thankfully, they seem willing to compromise.
 view-if: psi_in_government and foreign_minister_party == "PSI"
 on-arrival: {!
-Q.veterans_psi -= 6*(1-dissent);
-Q.veterans_bn += 8*(1-dissent);
+Q.veterans_psi -= 6*(1-Q.dissent);
+Q.veterans_bn += 8*(1-Q.dissent);
 Q.nationalist_sentiment += 4;
 Q.resolved_adriatic = 1;
 Q.fiume_free = 1;
@@ -159,8 +159,8 @@ This is a sensible comprise for many, forming the Free City of Fiume, though thi
 subtitle: [? if not psi_in_government : We are not in government. ?][? if not foreign_minister_party == "PSI" : We do not control the Foreign Ministry. ?]
 view-if: not psi_in_government or not foreign_minister_party == "PSI"
 on-arrival: {!
-Q.veterans_ldr -= 6*(1-dissent);
-Q.veterans_bn += 8*(1-dissent);
+Q.veterans_psi -= 6*(1-Q.dissent);
+Q.veterans_bn += 8*(1-Q.dissent);
 Q.nationalist_sentiment += 4;
 Q.resolved_adriatic = 1;
 Q.fiume_free = 1;

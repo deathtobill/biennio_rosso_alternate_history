@@ -6,67 +6,6 @@ priority: -1
 tags: event
 new-page: true
 face-image: img/MarchOnRome.jpg
-on-arrival: {!
-Q.rg_strength = Math.round(Q.rg_strength);
-Q.fdc_strength = Math.round(Q.fdc_strength);
-Q.ard_strength = Math.round(Q.ard_strength);
-Q.army_strength = Math.round(Q.rg_strength);
-Q.adp_strength = Math.round(Q.adp_strength);
-
-Q.rome_total_power = 0;
-Q.rg_power = Q.rg_militancy * (Q.rg_strength * (100 - Q.dissent));
-Q.police_power = Q.interior_police_strength * Q.interior_police_militancy * Q.interior_police_loyalty;
-Q.army_power = Q.army_strength * Q.army_loyalty * Q.army_militancy;
-Q.adp_power = Q.adp_strength * Q.adp_militancy
-
-if (Q.rome_rg_mobilise == 1) {
-    Q.rome_total_power += Q.rg_power;
-}
-if (Q.rome_police_king == 1) {
-    Q.rome_total_power += Q.police_power;
-}
-if (Q.rome_army_king == 1) {
-    Q.rome_total_power += Q.army_power;
-}
-if (Q.rome_army_bypassed == 1) {
-    Q.rome_total_power += Q.army_power * 0.75;
-}
-if (Q.rome_police_bypassed == 1) {
-    Q.rome_total_power += Q.police_power * 0.75;
-}
-
-Q.rome_enemy_power = 0;
-Q.fdc_power = Q.fdc_strength * Q.fdc_militancy;
-Q.ard_power = Q.ard_strength * Q.ard_militancy;
-Q.abl_power = Q.abl_strength * Q.abl_militancy;
-if (Q.ard_banned === 0) {
-    Q.rome_enemy_power += Q.ard_power;
-}
-if (Q.fdc_banned == 0) {
-    Q.rome_enemy_power += Q.fdc_power;
-}
-if (Q.abl_banned == 0) {
-    Q.rome_enemy_power += Q.abl_power;
-}
-
-if (Q.rome_adp_mobilise == 1) {
-    Q.rome_total_power += Q.adp_power;
-}
-
-Q.rome_results = Q.rome_total_power / Q.rome_enemy_power;
-if (Q.rome_results >= 0.75) {
-    Q.rome_total_defeat = 1;
-}
-if (Q.rome_results > 0.76 && Q.rome_results < 1.26) {
-    Q.rome_civil_war = 1;
-}
-if (Q.rome_results >= 1.25) {
-    Q.rome_victory = 1;
-}
-
-console.log('Our strength:', Q.rome_total_power)
-console.log('Enemy strength:', Q.rome_enemy_power)
-!}
 go-to: rome_menu
 
 = March on Rome
@@ -151,11 +90,73 @@ choose-if: communist_dissent < 50 or maximalist_dissent < 50 or reformist_dissen
 view-if: arditi_cooperation = 1
 unavailable-subtitle: [? if (communist_dissent >= 50 and maximalist_dissent >= 50 and reformist_dissent >= 50 and syndicalist_dissent >= 50) : The party is too disunited to act. ?]
 on-arrival: rome_adp_visited = 1
+go-to: rome_menu
 
 @rome_done
 max-visits: 1
 subtitle: Now we just have to hope it works.
 view-if: rome_army_visited = 1 or rome_police_visited = 1 or rome_rg_visited = 1
+on-arrival: {!
+Q.rg_strength = Math.round(Q.rg_strength);
+Q.fdc_strength = Math.round(Q.fdc_strength);
+Q.ard_strength = Math.round(Q.ard_strength);
+Q.army_strength = Math.round(Q.rg_strength);
+Q.adp_strength = Math.round(Q.adp_strength);
+
+Q.rome_total_power = 0;
+Q.rg_power = Q.rg_militancy * (Q.rg_strength * (100 - Q.dissent));
+Q.police_power = Q.interior_police_strength * Q.interior_police_militancy * Q.interior_police_loyalty;
+Q.army_power = Q.army_strength * Q.army_loyalty * Q.army_militancy;
+Q.adp_power = Q.adp_strength * Q.adp_militancy
+
+if (Q.rome_rg_mobilise == 1) {
+    Q.rome_total_power += Q.rg_power;
+}
+if (Q.rome_police_king == 1) {
+    Q.rome_total_power += Q.police_power;
+}
+if (Q.rome_army_king == 1) {
+    Q.rome_total_power += Q.army_power;
+}
+if (Q.rome_army_bypassed == 1) {
+    Q.rome_total_power += Q.army_power * 0.75;
+}
+if (Q.rome_police_bypassed == 1) {
+    Q.rome_total_power += Q.police_power * 0.75;
+}
+
+Q.rome_enemy_power = 0;
+Q.fdc_power = Q.fdc_strength * Q.fdc_militancy;
+Q.ard_power = Q.ard_strength * Q.ard_militancy;
+Q.abl_power = Q.abl_strength * Q.abl_militancy;
+if (Q.ard_banned === 0) {
+    Q.rome_enemy_power += Q.ard_power;
+}
+if (Q.fdc_banned == 0) {
+    Q.rome_enemy_power += Q.fdc_power;
+}
+if (Q.abl_banned == 0) {
+    Q.rome_enemy_power += Q.abl_power;
+}
+
+if (Q.rome_adp_mobilise == 1) {
+    Q.rome_total_power += Q.adp_power;
+}
+
+Q.rome_results = Q.rome_total_power / Q.rome_enemy_power;
+if (Q.rome_results >= 0.75) {
+    Q.rome_total_defeat = 1;
+}
+if (Q.rome_results > 0.76 && Q.rome_results < 1.26) {
+    Q.rome_civil_war = 1;
+}
+if (Q.rome_results >= 1.25) {
+    Q.rome_victory = 1;
+}
+
+console.log('Our strength:', Q.rome_total_power)
+console.log('Enemy strength:', Q.rome_enemy_power)
+!}
 go-to: total_defeat if rome_total_defeat = 1; rome_long_war if rome_civil_war = 1; rome_victory if rome_victory = 1
 
 @rome_nothing

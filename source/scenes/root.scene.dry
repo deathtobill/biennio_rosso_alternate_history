@@ -406,7 +406,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'womens_rights', 'fiscal_policy', 'inter_party_relationships', 
             'international_relations', 'shuffle_leadership', 'para_funding', 
             'constitutional_reform', 'urgency', 'foreign_policy', 'shuffle_cabinet', 
-            'soviet_recovery', 'liberal_crackdown', 'cathoic_papacy', 'insurance_payments', 
+            'soviet_recovery', 'liberal_crackdown', 'catholic_papacy', 'insurance_payments', 
             'fdc_ban', 'ard_ban', 'abl_ban', 'demobilise', 'soviet_end', 
             'agricultural_policy', 'coalition_affairs', 'unemployment_gov', 'welfare_gov', 
             'economic_democracy', 'education_policy', 'fiscal_policy', 'labour_rights', 
