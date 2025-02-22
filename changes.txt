@@ -29,7 +29,7 @@ Minor changes:
 Future changes:
 
 - Move end date to later in 1933.
-- Government Affairs: Economic Democracy (labor + economy ministries), Left-wing economic crisis response (pursue nationalizations), Further investigate SA/SH/RFB after banning.
+- Government Affairs: Economic Democracy (labor + economy ministries), Left-wing economic crisis response (pursue nationalisations), Further investigate SA/SH/RFB after banning.
 - More tax/tariff policy options
 - A history page, showing a history of your actions.
 - Increase hand size to 4 (at least for easy difficulty)
@@ -60,7 +60,7 @@ Major changes:
 
 - New government affairs card: Economic Democracy (labor + economy/finance ministries). New advisor action for Hilferding.
 - New events: March on Berlin, Capital Strike.
-- New options: Left economic plan for the transformation of the economy (mass nationalizations), advisor actions to support the Left economic plan (Sender, Aufhäuser)
+- New options: Left economic plan for the transformation of the economy (mass nationalisations), advisor actions to support the Left economic plan (Sender, Aufhäuser)
 - New achievements: Räterepublik, Polykrise
 - Ending of the game is set to May 1933.
 - Changed the demographic system somewhat - previously, raising support in one demographic could increase total support beyond that demographic's numbers. This made working-class support more powerful compared to its actual proportion of the population. This is no longer possible. To compensate, it is now easier to increase support among the unemployed and other demographics.
