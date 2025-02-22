@@ -104,7 +104,7 @@ Q.army_strength = Math.round(Q.rg_strength);
 Q.adp_strength = Math.round(Q.adp_strength);
 
 Q.rome_total_power = 0;
-Q.rg_power = Q.rg_militancy * (Q.rg_strength * (100 - Q.dissent));
+Q.rg_power = Q.rg_militancy * (Q.rg_strength * (1 - Q.dissent));
 Q.police_power = Q.interior_police_strength * Q.interior_police_militancy * Q.interior_police_loyalty;
 Q.army_power = Q.army_strength * Q.army_loyalty * Q.army_militancy;
 Q.adp_power = Q.adp_strength * Q.adp_militancy
@@ -131,12 +131,18 @@ Q.ard_power = Q.ard_strength * Q.ard_militancy;
 Q.abl_power = Q.abl_strength * Q.abl_militancy;
 if (Q.ard_banned === 0) {
     Q.rome_enemy_power += Q.ard_power;
+} else {
+    Q.rome_enemy_power += Q.ard_power/4;
 }
 if (Q.fdc_banned == 0) {
     Q.rome_enemy_power += Q.fdc_power;
+} else {
+    Q.rome_enemy_power += Q.fdc_power/4;
 }
 if (Q.abl_banned == 0) {
     Q.rome_enemy_power += Q.abl_power;
+} else {
+    Q.rome_enemy_power += Q.abl_power/4;
 }
 
 if (Q.rome_adp_visited == 1) {

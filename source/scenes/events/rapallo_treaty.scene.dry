@@ -66,6 +66,7 @@ We are able to negotiate a fair deal for both sides, establishing zones of co-oc
 @adriatic_historical
 subtitle: This will leave us with Trieste, Istria and Zadar, leaving the outer borders to Yugoslavia.
 view-if: psi_in_government and foreign_minister_party == "PSI"
+go-to: fiume_question
 
 This is a relatively expected peace deal, though the time comes now for our negotiations regarding Fiume.
 

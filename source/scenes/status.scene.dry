@@ -12,6 +12,7 @@ if (Q.unemployment) {
     Q.unemployment_2 = Q.unemployment.toFixed(1);
 }
 Q.dissent_percent = Math.round(Q.dissent_percent);
+Q.radicalisation = Math.round(Q.radicalisation);
 !}
 
 = Status
