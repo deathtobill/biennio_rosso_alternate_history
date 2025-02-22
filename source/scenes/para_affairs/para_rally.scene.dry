@@ -26,7 +26,7 @@ on-arrival: para_resources -= rg_militarisation_cost; rg_strength += 15*(1-disse
 The Red Guards rallies against the fascists, urging members of the party to be weary of this new threat and recruiting members to our cause. The Left wing of the party is critical of our silence towards the bourgeois parties, however.
 
 @revolution
-subtitle: -[+ rg_militarisation_cost +] resources
+subtitle: -[+ rg_militarisation_cost +] paramilitary resources
 choose-if: para_resources >= rg_militarisation_cost
 on-arrival: para_resources -= rg_militarisation_cost; rg_strength += 15*(1-dissent); rg_militancy += 0.05*(1-dissent); reformist_dissent += 4*(1-dissent); ldr_relation -= 4; ul_relation -= 4; ds_relation -= 4; king_relation -= 5; workers_psi += 5*(1-dissent); radicalisation += 0.1; socialist_sentiment += 3*(1-dissent);
 
