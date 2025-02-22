@@ -58,7 +58,6 @@ go-to: papal_negotiations
 choose-if: papal_appeased >= negotiating_power
 unavailable-subtitle: The Holy See would refuse this offer.
 on-arrival: roman_question_answered = 1; ppi_relation += 15; catholic_psi += 7*(1-dissent); budget -= 3 if papal_compensation_offered = 1; ldr_promise_failed = 1 if ((current_budget > 0 and budget < 0) and liberal_budget_accepted = 1); army_loyalty -= 0.05 if papal_defence_offered = 1; army_strength -= 50 if papal_defence_offered = 1; secularised_education = 0 if (papal_education_offered = 1 and secularised_education = 1); communist_dissent += 10 if papal_education_offered = 1; maximalist_dissent += 10 if papal_education_offered = 1;
-
 go-to: ldr_promise_vonc if ldr_promise_failed
 
 The Lateran Treaty of [+ year +] is signed, finally ending the Roman Question.

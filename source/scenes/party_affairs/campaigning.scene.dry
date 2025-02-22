@@ -15,7 +15,7 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 - @middle_class: The middle class of small independent businessmen and artisans.
 - @industrialists: The industrialists and landowners who traditionally oppose us.
 - @rural: Rural workers and small farmers, who have felt neglected by us in the past.
-- @veterans: Newly unemployment veterans discharged from the army.
+- @veterans: Newly unemployed veterans discharged from the army.
 - @catholics: Catholics, who typically support the People's Party.
 - @root: We either don't want to or cannot campaign right now.
 - @easy_discard

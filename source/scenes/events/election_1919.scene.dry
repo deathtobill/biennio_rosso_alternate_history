@@ -321,7 +321,6 @@ go-to: catholic_demands
 @catholic_liberal_coalition
 title: Refuse to form a government, and let the other parties assume responsibility.
 subtitle: PPI + [+ ldr_name +] + [+ ul_name +] + DS + Others ([+ catholic_liberal_coalition_r +]%). [? if participating = 1 : The results of the Bologna Congress and our subsequent refusal to form a government is confusing to many. ?]
-view-if: catholic_liberal_coalition_r >= 50 or (centre_left_coalition_r > 50 and not_participating == 1) or (centre_left_coalition_r < 50 and not_participating == 1)
 
 Are we sure we wish to give up our opportunity to form the government?
 
