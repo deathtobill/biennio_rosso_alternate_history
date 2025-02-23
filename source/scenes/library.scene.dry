@@ -413,12 +413,15 @@ data = data.concat([
         }
 
         // economic stats
-        var minInflation = d3.min(Q.economic_records, d => d.inflation);
+        var maxInflation = d3.max(Q.economic_records, d => d.inflation);
         var maxUnemployment = d3.max(Q.economic_records, d => d.unemployment);
+        var minEconomicGrowth = d3.min(Q.economic_records, d => d.economicgrowth);
+        var upperBound = Math.max(maxUnemployment, maxInflation) + 5;
         var lines_3 = d3.linegraph(true, true, ['inflation', 'unemployment', 'economicgrowth'],
-                {'inflation': '#0000FF', 'unemployment': '1E99C5', 'economicgrowth': '#FFD700'},
+                {'inflation': '#0000FF', 'unemployment': '#1E99C5', 'economicgrowth': '#FFD700'},
                 {'inflation': 'Inflation', 'unemployment': 'Unemployment', 'economicgrowth': 'Economic Growth'},
-                minInflation - 5, 21);
+                upperBound,
+                minEconomicGrowth - 5, 21);
         lines_3.width(width).height(300);
         d3.select("#economic_history").datum(Q.economic_records).call(lines_3);
     }
