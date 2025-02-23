@@ -30,7 +30,7 @@ view-if: not unemployment_insurance_founded and psi_in_government
 unavailable-subtitle: The PSI does not control the Financial Ministry.
 on-arrival: {!
 Q.unemployment_insurance_founded = 1; 
-Q.insurance_payments_timer += 12; 
+Q.insurance_payments_timer = 24; 
 Q.budget -= 2; 
 if (Q.budget < 0 && Q.liberal_budget_accepted == 1 && Q.current_budget >= 0) {
     Q.ldr_promise_failed = 1;

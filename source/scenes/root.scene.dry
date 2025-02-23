@@ -389,7 +389,7 @@ Q.upper_tax_rates = 0;
 Q.tariffs = 0;
 
 // timers for the russian civil war
-Q.soviet_end_timer = 45;
+Q.soviet_end_timer = 90;
 Q.soviet_recovery_timer = 0;
 
 // our conduct in the government, and the conduct of our coalition opponents.
@@ -463,7 +463,7 @@ Q.revolutionary_timer = 0;
 Q.urgency_timer = 0;
 Q.welfare_party_timer = 0;
 Q.deficit_timer = 0;
-Q.adriatic_timer = 22;
+Q.adriatic_timer = 44;
 
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;

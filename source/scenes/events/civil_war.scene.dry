@@ -53,13 +53,13 @@ if (Q.psi_in_government) {
     Q.total_power += Q.loyal_army_power/4;
 }
 
-if (!Q.rcw_over) {
+if (Q.rcw_over == 0) {
     Q.soviet_power = 50;
 }
-if (Q.rcw_over && Q.soviet_recovery_timer > 0) {
+if (Q.rcw_over == 1 && Q.soviet_recovery_timer > 0) {
     Q.soviet_power = 75;
 }
-if (Q.rcw_over && Q.soviet_recovery_timer < 1) {
+if (Q.rcw_over == 1 && Q.soviet_recovery_timer < 1) {
     Q.soviet_power = 100;
 }
 
