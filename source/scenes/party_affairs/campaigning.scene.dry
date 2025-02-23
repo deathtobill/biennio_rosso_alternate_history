@@ -1,7 +1,7 @@
 title: Campaigning
 new-page: true
 on-arrival: week_actions += 1
-max-visits: 36
+view-if: not_participating = 0
 is-card: true
 card-image: img/Campaigning.jpg
 frequency: 100

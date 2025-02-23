@@ -2,7 +2,7 @@ title: King Relations
 new-page: true
 is-card: true
 tags: party_affairs
-view-if: king_relations_timer <= 0
+view-if: king_relations_timer <= 0 and not_participating = 0
 on-arrival: week_actions += 1; king_relations_timer = 6;
 card-image: img/portraits/VitorioEmanuel.jpg
 

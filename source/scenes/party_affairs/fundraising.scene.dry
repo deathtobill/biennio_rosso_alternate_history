@@ -2,7 +2,7 @@ title: Fundraising
 new-page: true
 view-if: fundraising_timer <= 0 and (not historical_mode)
 on-arrival: fundraising_timer = 6; week_actions += 1
-frequency: 300
+frequency: 500
 is-card: true
 card-image: img/Fundraising.jpg
 tags: party_affairs
