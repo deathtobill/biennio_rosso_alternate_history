@@ -58,8 +58,8 @@ view-if: industries_nationalised = 0
 on-arrival: {!
 Q.budget -= 1; 
 Q.industries_nationalised += 1; 
-Q.workers_psi += 3*(1-dissent); 
-Q.industrialists_psi -= 4*(1-dissent); 
+Q.workers_psi += 3*(1-Q.dissent); 
+Q.industrialists_psi -= 4*(1-Q.dissent); 
 Q.industrialists_bn += 3; 
 Q.ldr_relation -= 7; 
 Q.ds_relation -= 7; 
@@ -72,7 +72,7 @@ if (Q.budget < 0 && Q.liberal_budget_accepted == 1 && Q.current_budget > -1) {
     Q.ldr_promise_failed = 1;
 } 
 Q.capital_strike_progress += 1; 
-Q.psri_relation += 5*(1-dissent);
+Q.psri_relation += 5*(1-Q.dissent);
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 max-visits: 3

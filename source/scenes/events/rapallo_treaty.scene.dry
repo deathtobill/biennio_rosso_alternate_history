@@ -32,8 +32,8 @@ Q.economic_growth -= 3.4;
 Q.inflation += 9.6;
 
 Q.entente_relation -= 3;
-Q.veterans_psi += 17*(1-dissent);
-Q.veterans_bn -= 19*(1-dissent);
+Q.veterans_psi += 17*(1-Q.dissent);
+Q.veterans_bn -= 19*(1-Q.dissent);
 Q.nationalist_sentiment -= 10;
 Q.socialist_sentiment += 4;
 

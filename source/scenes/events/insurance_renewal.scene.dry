@@ -11,7 +11,7 @@ Funding for the Unemployment Insurance Program has once again dried up, and sche
 
 - @fund_insurance: Continue funding the Program.
 - @end_insurance: End funding for the Program.
-- @await_government: There is not much else we can do.
+- @await_government: We have to await the Finance Minister's decision.
 
 @fund_insurance
 subtitle: -2 Budget - Keep the Program running for another year. [? if catholic_charity_accepted = 1: The funding of any non-Catholic welfare program would violate our agreement! ?][? if (budget < 2 and liberal_budget_accepted = 1) : This will put us into a deficit! ?]
@@ -24,8 +24,8 @@ The Program is set to continue for another year, our appeal to veterans increase
 
 @end_insurance
 view-if: finance_minister_party = "PSI"
-subtitle: We cannot afford another year.
-on-arrival: veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_bn += 7; unemployment_insurance_founded = 0;
+subtitle: Our veterans on this program will see this as a betrayal.
+on-arrival: veterans_psi -= 4*(1-dissent) if psi_in_government; veterans_ldr -= 3 if centre_left_coalition or catholic_liberal_coalition; veterans_ppi -= 3 if socialist_catholic_coalition or catholic_liberal_coalition; veterans_bn += 7; unemployment_insurance_founded = 0;
 
 The short-lived Program comes to an end, as veterans now without government support flock to the fascists, bitter regarding our betrayal.
 

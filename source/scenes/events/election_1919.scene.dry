@@ -371,10 +371,10 @@ go-to: ministries
 
 This is highly unexpected, and many in the centre and even the reformists of our party are criticizing this decision.
 
-@sturzo
+@gasperi
 title: Let the People's Party have their Prime Minister. This will improve over leverage.
-subtitle: Luigi Sturzo will be appointed Prime Minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ppi_relation += 10; prime_minister = "Luigi Sturzo"; prime_minister_party = "PPI"; psi_in_government = 1; leverage += 5
+subtitle: Alcide De Gasperi will be appointed Prime Minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
+on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ppi_relation += 10; prime_minister = "Alcide De Gasperi"; prime_minister_party = "PPI"; psi_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the centre and even the reformists of our party are criticizing this decision.
@@ -644,7 +644,7 @@ on-departure: socialist_catholic_coalition = 1; liberal_coalition_failed = 0; fo
 With the coalition agreed upon, it is time to choose a Prime Minister.
 
 - @turati
-- @sturzo
+- @gasperi
 
 @ministries
 

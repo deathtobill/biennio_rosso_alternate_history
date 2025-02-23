@@ -25,9 +25,9 @@ What should we do?
 @turin_revolution
 subtitle: Authorise the strikes past the Piedmont region into the entire nation and mobilise the Red Guards; now is the time to strike!
 view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or syndicalist_dissent < 50
-choose-if: participating = 0 and revolutionary_fervor > 74 and not_participating = 1
-unavailable-subtitle: [? if participating = 1 : We have already decided to achieve socialism through parliamentary means. ?][? if revolutionary_fervor < 75 : The bulk of the party refuses to begin the process of revolution. ?]
-go-to: turin_revolution
+choose-if: participating = 0 and revolutionary_fervor > 69 and not_participating = 1
+unavailable-subtitle: [? if participating = 1 : We have already decided to achieve socialism through parliamentary means. ?][? if revolutionary_fervor < 70 : The bulk of the party refuses to begin the process of revolution. ?]
+go-to: civil_war
 
 @turin_red_guards
 subtitle: *-30k Red Guards* - The Red Guards will defend the Councils from violent bourgeois action.

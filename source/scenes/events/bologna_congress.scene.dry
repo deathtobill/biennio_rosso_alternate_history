@@ -37,7 +37,7 @@ The less radical members of the Communists and Reformists accept the result, whi
 @reformist_approach
 choose-if: communist_strength < reformist_strength
 unavailable-subtitle: The bulk of the party are opposed to this.
-subtitle: The party will abandon extraparliamentary means and pursue a policy of parliamentary reform.
+subtitle: The party will fully abandon extraparliamentary means and pursue a policy of parliamentary reform.
 on-arrival: reformist_dissent -= 20; reformist_strength += 10; communist_strength -= 15; maximalist_strength -= 10; communist_dissent += 20; maximalist_dissent += 15; participating = 1; revolutionary_fervor -= 10; king_relation += 5; party_approach = "Parliamentary";
 go-to: @election_agenda
 
@@ -61,7 +61,7 @@ on-arrival: reformist_dissent += 20; reformist_strength -= 10; communist_strengt
 The Communists are able to convince the Maximalists that wasting time on participating is a futile use of time, as the party votes for full abstention in the upcoming elections.
 
 @maximalist_arguments
-subtitle: The party will participate, but not form coalitions.
+subtitle: The party will participate, but not form coalitions with the bourgeois parties.
 choose-if: not_participating = 0
 unavailable-subtitle: [? if not_participating = 1: We have already chosen to abandon the reformist approach. ?]
 on-arrival: reformist_dissent += 10; reformist_strength -= 5; communist_strength -= 5; maximalist_strength += 5; communist_dissent += 10; maximalist_dissent -= 20; maximalist_participating = 1;

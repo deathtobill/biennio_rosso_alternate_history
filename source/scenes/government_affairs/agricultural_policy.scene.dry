@@ -24,8 +24,8 @@ on-arrival: {!
 Q.land_seizures += 1; 
 Q.agricultural_policy += 1
 Q.coalition_dissent += 1; 
-Q.rural_bn += 5*(1-dissent); 
-Q.rural_bn -= 4*(1-dissent); 
+Q.rural_bn += 5*(1-Q.dissent); 
+Q.rural_bn -= 4*(1-Q.dissent); 
 if (Q.unemployment >= 5) {
     Q.unemployment -= 1
 }
@@ -34,11 +34,11 @@ Q.ds_relation -= 4;
 Q.communist_strength += 8; 
 Q.communist_dissent -= 5; 
 Q.agricultural_policy += 1; 
-if (Q.liberal_reform_accepted = 1) {
+if (Q.liberal_reform_accepted == 1) {
     Q.ldr_promise_failed = 1;
 }
 Q.industrialists_bn += 3; 
-Q.psri_relation += 3*(1-dissent);
+Q.psri_relation += 3*(1-Q.dissent);
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed == 1
 

@@ -2,12 +2,12 @@ title: Avanti Burns!
 new-page: true
 subtitle: The Milan branch of *Avanti!* has been attacked!
 tags: event
-view-if: year == 1919 and month == 4
+view-if: year == 1921 and month == 2
 max-visits: 1
 
 = *Avanti!* burns!
 
-The Milan branch of *Avanti!* has been attacked and burned to the ground, and responsibility points to Mussolini and his "Fasci". This will severely impact our ability to spread our message in Milan.
+The Milan branch of *Avanti!* has been attacked and burned to the ground, and responsibility points to Mussolini and his Fasces of Combat. This will severely impact our ability to spread our message in Milan.
 
 - @burning_reaction: It has been made clear what their stance is.
 

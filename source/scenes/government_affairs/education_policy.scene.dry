@@ -48,14 +48,14 @@ We begin a new round of funding for the public education system, allowing school
 subtitle: This will affect both public and religious schools. [? if catholic_education_accepted : This will violate our agreement with the Catholics! ?]
 on-arrival: {!
 Q.education_reformed += 1; 
-Q.workers_psi += 2*(1-dissent); 
-Q.catholic_psi -= 3*(1-dissent); 
+Q.workers_psi += 2*(1-Q.dissent); 
+Q.catholic_psi -= 3*(1-Q.dissent); 
 Q.papal_relation -= 1; 
-Q.ppi_relation -= 5*(1-dissent); 
+Q.ppi_relation -= 5*(1-Q.dissent); 
 if (Q.catholic_education_accepted == 1) {
     Q.ppi_promise_failed = 1;
 } 
-Q.psri_relation += 5*(1-dissent);
+Q.psri_relation += 5*(1-Q.dissent);
 !}
 max-visits: 3
 go-to: catholic_promise_vonc if ppi_promise_failed == 1

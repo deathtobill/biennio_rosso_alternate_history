@@ -2,7 +2,7 @@ title: Southern Question Ameliorated
 new-page: true 
 subtitle: Our policies seem to have borne fruit.
 tags: event
-view-if: mafia_strength == 0 and southern_education_funded > 1 and southern_infrastructure_funded > 1 
+view-if: mafia_strength == 0 and southern_education_funded > 1 and southern_infrastructure_funded > 1 and psi_in_government
 on-arrival: rural_psi += 12*(1-dissent); rural_ldr -= 6*(1-dissent); rural_ul -= 3*(1-dissent); rural_ds -= 3*(1-dissent); southern_resolved = 1
 max-visits: 1
 

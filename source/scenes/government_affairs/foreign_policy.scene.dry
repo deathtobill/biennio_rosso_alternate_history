@@ -45,8 +45,8 @@ We continue improving our relations with our former allies in the Entente. [? if
 subtitle: [? if liberal_foreign_accepted and soviet_relation + 1 >= entente_relation : This will disrupt our alignment with the Entente! ?]
 on-arrival: {! 
 Q.soviet_relation += 1; 
-Q.ldr_relation -= 4*(1-dissent); 
-Q.ds_relation -= 4*(1-dissent);  
+Q.ldr_relation -= 4*(1-Q.dissent); 
+Q.ds_relation -= 4*(1-Q.dissent);  
 if (Q.soviet_relation > Q.entente_relation) {
     Q.ldr_promise_failed = 1;
 }

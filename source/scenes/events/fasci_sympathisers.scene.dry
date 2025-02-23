@@ -7,7 +7,7 @@ max-visits: 1
 
 = Fascist Sympathisers in the PSI
 
-We have caught wind of some information that some PSI leaders are sympathetic to Mussolini and his Fasci, even regardless of their threat. Should we expel them from the party?
+We have caught wind of some information that some PSI leaders are sympathetic to Mussolini and his Fasces of Combat, even regardless of their threat. Should we expel them from the party?
 
 - @expel: Expel the Sympathisers!
 - @no_expel: Allow the sympathisers to remain.
@@ -22,4 +22,4 @@ We expel the sympathisers, who turn out to be prominent members of the Maximalis
 subtitle: Why act on baseless rumors?
 on-arrival: maximalist_strength += 5*(1-dissent); workers_psi -= 3*(1-dissent); workers_bn += 5*(1-dissent); middle_class_bn += 3*(1-dissent); reformist_dissent += 5*(1-dissent); communist_dissent += 5*(1-dissent);
 
-We keep the sympathisers in the party, though hopefully they won't cause too much problems within the party.
+We allow the sympathisers in the party, though we do see our party base shrink slightly in the coming weeks.

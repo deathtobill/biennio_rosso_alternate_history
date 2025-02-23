@@ -1,6 +1,6 @@
 title: Nitti I Government Collapses!
 subtitle: The current coalition has fallen...
-view-if: year = 1920 and month = 5 and (not psi_in_government or not_participating = 1)
+view-if: year = 1920 and month = 5 and (not psi_in_government or not_participating = 1) and week = 1
 new-page: true
 max-visits: 1
 on-arrival: {!

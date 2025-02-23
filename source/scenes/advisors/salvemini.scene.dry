@@ -19,7 +19,8 @@ title: Southern Question
 subtitle: Now that we are in government, we will be able to deal with the Mezzogiorno, plagued by economic stagnation.
 choose-if: advisor_action_timer = 0 and psi_in_government
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not in government. ?]
-on-arrival: communist_dissent -= 7*(1-dissent); reformist_dissent += 7*(1-dissent); radicalisation += 0.5; revolutionary_fervor += 5; communist_strength += 5*(1-dissent); maximalist_strength -= 5*(1-dissent);
+on-arrival: advisor_action_timer = 6; southern_question_timer -= 5; last_advisor_action = 1
+go-to: southern_question
 
 We are able to sway some of the more left-wing members of the party to our cause, advocating for a more revolutionary approach. This only further exacerbates the split within the party, however.
 

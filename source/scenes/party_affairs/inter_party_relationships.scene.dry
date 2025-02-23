@@ -34,12 +34,12 @@ on-arrival: resources -= 1;
 go-to: catholic_op if psi_in_government == 0; catholic_coalition if socialist_catholic_coalition == 1
 
 @catholic_op
-on-arrival: ppi_relation += 5
+on-arrival: ppi_relation += 5; communist_dissent += 4*(1-dissent);
 
 We are currently in opposition to their governing coalition, but that does not preclude the general building of feelings of good will.
 
 @catholic_coalition
-on-arrival: ppi_relation += 8
+on-arrival: ppi_relation += 8; communist_dissent += 4*(1-dissent);
 
 We are currently coalition partners with them, so improving relations comes naturally.
 
@@ -47,7 +47,7 @@ We are currently coalition partners with them, so improving relations comes natu
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; ldr_relation += 5; ul_relation += 5;
+on-arrival: resources -= 1; ldr_relation += 5; ul_relation += 5; communist_dissent += 4*(1-dissent);
 
 The [+ ldr_name +] and [+ ul_full_name +] parties have historically been wary of us, though we can help smooth out relations.
 
