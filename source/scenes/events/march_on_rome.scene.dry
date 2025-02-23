@@ -137,16 +137,16 @@ if (Q.rome_rg_visited == 1 && Q.rg_banned == 0) {
 if (Q.rome_rg_visited == 1 && Q.rg_banned == 1) {
     Q.rome_total_power += Q.rg_power * 0.75;
 } 
-if (Q.rome_police_king == 1) {
+if (Q.police_king_successful == 1) {
     Q.rome_total_power += Q.police_power;
 }
-if (Q.rome_army_king == 1) {
+if (Q.army_king_successful == 1) {
     Q.rome_total_power += Q.army_power;
 }
-if (Q.rome_army_bypassed == 1) {
+if (Q.army_king_bypassed == 1) {
     Q.rome_total_power += Q.army_power * 0.75;
 }
-if (Q.rome_police_bypassed == 1) {
+if (Q.police_king_bypassed == 1) {
     Q.rome_total_power += Q.police_power * 0.75;
 }
 
