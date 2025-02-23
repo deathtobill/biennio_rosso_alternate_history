@@ -116,7 +116,7 @@ on-arrival: {!
 Q.rg_strength = Math.round(Q.rg_strength);
 Q.fdc_strength = Math.round(Q.fdc_strength);
 Q.ard_strength = Math.round(Q.ard_strength);
-Q.army_strength = Math.round(Q.rg_strength);
+Q.army_strength = Math.round(Q.army_strength);
 Q.adp_strength = Math.round(Q.adp_strength);
 
 Q.rome_total_power = 0;

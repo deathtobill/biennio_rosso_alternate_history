@@ -69,7 +69,6 @@ if (Q.arditi_cooperation == 1) {
     Q.total_power += Q.adp_power;
 }
 
-Q.soviet_power *= Q.soviet_multiplier;
 if (Q.soviet_relation < 3) {
     Q.soviet_multiplier = 0.6;
 }
@@ -82,6 +81,7 @@ if (Q.soviet_relation > 5 && Q.soviet_relation < 8) {
 if (Q.soviet_relation >= 8) {
     Q.soviet_multiplier = 1.2;
 }
+Q.soviet_power *= Q.soviet_multiplier;
 Q.total_power += Q.soviet_power;
 
 // use normalised workers_psi instead of syndicalist_strength?
