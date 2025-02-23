@@ -125,7 +125,7 @@ if (Q.interior_police_loyalty < 0) {
     Q.interior_police_loyalty = 0;
 }
 Q.police_power = Q.interior_police_strength * Q.interior_police_militancy * Q.interior_police_loyalty;
-f (Q.army_loyalty < 0) {
+if (Q.army_loyalty < 0) {
     Q.army_loyalty = 0;
 }
 Q.army_power = Q.army_strength * Q.army_loyalty * Q.army_militancy;
