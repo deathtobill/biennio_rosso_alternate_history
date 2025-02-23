@@ -93,7 +93,7 @@ if (Q.psri_relation >= 50) {
 } else if (Q.psri_relation >= 45) {
     Q.normalised_workers_total += Q.normalised_workers_psri*0.5;
 }
-Q.total_power += (2 - Q.syndicalist_dissent/100)*Q.normalised_workers_total*(2 - Q.unemployment/100)*2.5*Q.total_fervor;
+Q.total_power += (2 - Q.syndicalist_dissent/100)*Q.normalised_workers_total*(2 - Q.unemployment/100)*2.5*total_fervor;
 console.log("Supporter strength:", Q.total_power);
 
 // our enemies
