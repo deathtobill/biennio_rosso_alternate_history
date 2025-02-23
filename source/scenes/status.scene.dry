@@ -166,9 +166,9 @@ Red Guard Militarization: [+ rg_militancy : militancy +]
 
 Fasci Militarization: [+ fdc_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The Arditi are an organisation associated with the Fasci, comprised of former members of the 'Arditi' in the Italian Army.">Arditi</span>!} Strength: [+ ard_strength_2 +] thousand
+{!<span class="tooltip-text" title="The Arditismo are an organisation associated with the Fasci, comprised of former members of the 'Arditi' in the Italian Army.">Arditismo</span>!} Strength: [+ ard_strength_2 +] thousand
 
-Arditi Militarization: [+ ard_militancy : militancy +]
+Arditismo Militarization: [+ ard_militancy : militancy +]
 
 {!<span class="tooltip-text" title="The Anti-Bolshevik Leagues are local organisations across Italy formed to combat socialist ideologies, funded by landowners and industrialists. ">Anti-Bolshevik Leagues</span>!} Strength: [+ abl_strength_2 +] thousand
 

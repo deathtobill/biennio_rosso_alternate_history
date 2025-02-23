@@ -32,7 +32,14 @@ if (Q.dissent > 0.15) {
 if (Q.preparation_done == 1) {
     Q.rg_power*1.2;
 }
-Q.total_power += Q.rg_power;
+if (Q.rg_banned == 1) {
+    Q.total_power += Q.rg_power * 0.75;
+} else {
+    Q.total_power += Q.rg_power;
+}
+if (Q.interior_police_loyalty < 0) {
+    Q.interior_police_loyalty = 0;
+}
 Q.interior_police_power = Q.interior_police_strength*Q.interior_police_militancy*Q.interior_police_loyalty;
 Q.total_power += Q.interior_police_power;
 
@@ -64,13 +71,13 @@ if (Q.arditi_cooperation == 1) {
 
 Q.soviet_power *= Q.soviet_multiplier;
 if (Q.soviet_relation < 3) {
-    Q.soviet_multiplier = 0.3;
-}
-if (Q.soviet_relation > 2 && Q.soviet_relation < 6) {
     Q.soviet_multiplier = 0.6;
 }
+if (Q.soviet_relation > 2 && Q.soviet_relation < 6) {
+    Q.soviet_multiplier = 0.8;
+}
 if (Q.soviet_relation > 5 && Q.soviet_relation < 8) {
-    Q.soviet_multiplier = 0.9;
+    Q.soviet_multiplier = 1;
 }
 if (Q.soviet_relation >= 8) {
     Q.soviet_multiplier = 1.2;
@@ -81,7 +88,7 @@ Q.total_power += Q.soviet_power;
 Q.normalised_workers_psi = 100*Q.workers_psi/(Q.workers_psi + Q.workers_psri + Q.workers_ppi + Q.workers_other + Q.workers_bn + Q.workers_ds + Q.workers_ul + Q.workers_ldr + Q.workers_pcdi + Q.workers_psu);
 Q.normalised_workers_psri = 100*Q.workers_psri/(Q.workers_psi + Q.workers_psri + Q.workers_ppi + Q.workers_other + Q.workers_bn + Q.workers_ds + Q.workers_ul + Q.workers_ldr + Q.workers_pcdi + Q.workers_psu);
 Q.normalised_workers_total = Q.normalised_workers_psi;
-if (Q.psri_relation >= 60) {
+if (Q.psri_relation >= 50) {
     Q.normalised_workers_total += Q.normalised_workers_psri;
 } else if (Q.psri_relation >= 45) {
     Q.normalised_workers_total += Q.normalised_workers_psri*0.5;
@@ -92,11 +99,24 @@ console.log("Supporter strength:", Q.total_power);
 // our enemies
 Q.enemy_power = 0;
 Q.fdc_power = Q.fdc_strength*Q.fdc_militancy;
-Q.enemy_power += Q.fdc_power;
 Q.ard_power = Q.ard_strength*Q.ard_militancy;
-Q.enemy_power += Q.ard_power;
 Q.abl_power = Q.abl_strength*Q.abl_militancy;
-Q.enemy_power += Q.abl_power
+
+if (Q.fdc_banned == 1) {
+    Q.enemy_power += Q.fdc_power * 0.75;
+} else {
+    Q.enemy_power += Q.fdc_power;
+}
+if (Q.ard_banned == 1) {
+    Q.enemy_power += Q.ard_power * 0.75;
+} else {
+    Q.enemy_power += Q.ard_power;
+}
+if (Q.abl_banned == 1) {
+    Q.enemy_power += Q.abl_power * 0.75;
+} else {
+    Q.enemy_power += Q.abl_power;
+}
 Q.hostile_army_power = Q.army_strength*Q.army_militancy*(1-Q.army_loyalty);
 Q.enemy_power += Q.hostile_army_power;
 console.log("Enemy strength:", Q.enemy_power);
@@ -118,7 +138,7 @@ go-to: war_menu
 
 = The Array of Forces
 
-Our enemies are the paramilitary Arditi, with [+ ard_strength +] thousand troops, and the Far-right Fasci, with [+ fdc_strength +] thousand troops. The loyalties of the Regio Esercito, with its [+ army_strength +] thousand regular soldiers, and Carabinieri, with [+ interior_police_strength +] thousand members, are unclear.
+Our enemies are the paramilitary Arditismo, with [+ ard_strength +] thousand troops, and the Far-right Fasci, with [+ fdc_strength +] thousand troops. The loyalties of the Regio Esercito, with its [+ army_strength +] thousand regular soldiers, and Carabinieri, with [+ interior_police_strength +] thousand members, are unclear.
 
 On our side, we have the Red Guards, at [+ rg_strength +] thousand members. [? if dissent > 0.15 and dissent <= 0.25: It is somewhat weakened by dissent within the party, and some members choose not to fight. ?][? if dissent > 0.25 and dissent < 0.5: It is weakened by dissent within the party, and many members choose not to fight. ?][? if dissent >= 0.5: It is heavily weakened by dissent within the party, and a substantial portion of members choose not to fight. ?]
 
@@ -174,7 +194,7 @@ go-to: defeat if total_defeat = 1; long_war if long_war = 1; socialist_victory i
 
 = Total Defeat
 
-Our forces are no match for those of the reactionaries. Red Guard forces are quickly overpowered by the forces of the Arditi, Fasci, and Regio Esercito. Many are killed before the rest surrender. Our remaining leaders flee the country or face execution, as the reactionaries take absolute power over Italy.
+Our forces are no match for those of the reactionaries. Red Guard forces are quickly overpowered by the forces of the Arditismo, Fasci, and Regio Esercito. Many are killed before the rest surrender. Our remaining leaders flee the country or face execution, as the reactionaries take absolute power over Italy.
 
 Our resistance will be recorded in the history books, and in the future, our names will be honored. But for now, all is lost.
 
@@ -197,7 +217,7 @@ The war settles into fixed battle lines. This will not be a quick coup, but a lo
 
 = Victory for the Kingdom
 
-The battle lines hold, and the Fasci, Arditi, and pro-coup Regio Esercito forces are defeated. Today, the forces of the kingdom prevail over the fascists. It will be tough to recover once more before we have even recovered from our involvement in the First World War, but we are confident.
+The battle lines hold, and the Fasci, Arditismo, and pro-coup Regio Esercito forces are defeated. Today, the forces of the kingdom prevail over the fascists. It will be tough to recover once more before we have even recovered from our involvement in the First World War, but we are confident.
 
 Italy holds strong, against fascism.
 

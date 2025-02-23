@@ -34,6 +34,41 @@ if (Q.nationalist_sentiment < 0) {
 if (Q.nationalist_sentiment >= 100) {
     Q.nationalist_sentiment = 99;
 }
+
+if (Q.rg_strength < 0) {
+    Q.rg_strength = 0;
+}
+if (Q.rg_militancy < 0) {
+    Q.rg_militancy = 0;
+}
+
+if (Q.abl_strength < 0) {
+    Q.abl_strength = 0;
+}
+if (Q.abl_militancy < 0) {
+    Q.abl_militancy = 0;
+}
+
+if (Q.ard_strength < 0) {
+    Q.ard_strength = 0;
+}
+if (Q.ard_militancy < 0) {
+    Q.ard_militancy = 0;
+}
+
+if (Q.fdc_strength < 0) {
+    Q.fdc_strength = 0;
+}
+if (Q.fdc_militancy < 0) {
+    Q.fdc_militancy = 0;
+}
+
+if (Q.interior_police_loyalty < 0) {
+    Q.interior_police_loyalty = 0;
+}
+if (Q.army_loyalty < 0) {
+    Q.army_loyalty = 0;
+}
 // re-calculate party support
 // calculate normalised class voting for the achievements
 for (var c of Q.classes) {
@@ -429,13 +464,13 @@ if (Q.week_actions >= 1) {
     Q.arditi_post_time -= 1;
     Q.radicalism_timer -= 1;
 
-    if (Q.fasci_rg_active == 0 && Q.fasci_adp_active == 0 && Q.fasci_post_time == 0 && Q.fasci_banned == 0) {
+    if (Q.fasci_rg_active == 0 && Q.fasci_adp_active == 0 && Q.fasci_post_time == 0 && Q.fdc_banned == 0) {
     Q.veterans_bn += 5*(1-Q.dissent);
     Q.veterans_psi -= 5*(1-Q.dissent);
     Q.fasci_post_time = 6; 
     }
 
-    if (Q.arditi_rg_active == 0 && Q.arditi_adp_active == 0 && Q.arditi_post_time == 0 && Q.arditi_banned == 0) {
+    if (Q.arditi_rg_active == 0 && Q.arditi_adp_active == 0 && Q.arditi_post_time == 0 && Q.ard_banned == 0) {
     Q.rural_bn += 5*(1-Q.dissent);
     Q.rural_psi -= 5*(1-Q.dissent);
     Q.arditi_post_time = 6;

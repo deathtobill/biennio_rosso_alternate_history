@@ -32,6 +32,8 @@ unavailable-subtitle: [? if army_loyalty < 0.72 : Army loyalty is too low, they 
 on-arrival: army_convinced = 1; rome_army_visited = 1
 go-to: rome_army_checks
 
+We send out the order to mobilise the army, but it will require the King's authorisation.
+
 @rome_army_checks
 
 - @rome_army_king: Request the King formally mobilise the army.
@@ -44,19 +46,25 @@ unavailable-subtitle: [? if king_relation < 60: Our relations with the King are 
 on-arrival: army_king_successful = 1; army_king_bypassed = 0
 go-to: rome_menu
 
+The King authorises the order, and the entirely of the army is mobilised.
+
 @rome_army_bypass
 subtitle: Bypassing the King's authorisation will result in many refusing to heed our call.
 on-arrival: army_king_bypassed = 1; army_king_successful = 0
 go-to: rome_menu
 
+The King refuses to authorise the order, but a number of our loyal forces within the army mobilise regardless.
+
 @rome_police_mobilise
 max-visits: 1
-subtitle: The police themselves seem to be willing to cooperate, now we have to convince the King...
+subtitle: The Carabinieri themselves seem to be willing to cooperate, now we have to convince the King...
 view-if: psi_in_government
 choose-if: interior_police_loyalty > 0.71 
-unavailable-subtitle: [? if army_loyalty < 0.72 : Police loyalty is too low. ?]
+unavailable-subtitle: [? if army_loyalty < 0.72 : Carabinieri loyalty is too low. ?]
 on-arrival: police_convinced = 1; rome_police_visited = 1
 go-to: rome_police_checks
+
+We send out the order to mobilise the Carabinieri, but it will require the King's authorisation.
 
 @rome_police_checks
 
@@ -70,18 +78,24 @@ unavailable-subtitle: [? if king_relation < 60: Our relations with the King are 
 on-arrival: police_king_successful = 1; police_king_bypassed = 0
 go-to: rome_menu
 
+The King authorises the order, and the entirely of the Carabinieri is mobilised.
+
 @rome_police_bypass
 subtitle: Bypassing the King's authorisation will result in many refusing to heed our call.
 on-arrival: police_king_bypassed = 1; police_king_successful = 0
 go-to: rome_menu
 
+The King refuses to authorise the order, but a number of our loyal forces within the Carabinieri mobilise regardless.
+
 @rome_rg_mobilise
 max-visits: 1
-subtitle: Our forces will begin to March on Rome as well, [? if participating = 1 : in support of the government. ?][? if not_participating = 1: the bourgeois may see this as a threat as well, however. ?]
-choose-if: rg_banned = 0 or (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and syndicalist_dissent > 50)
-unavailable-subtitle: [? if rg_banned = 1 : The Red Guards are banned. ?][? if (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and syndicalist_dissent > 50) : The party is too disunited to act. ?]
+subtitle: Our forces will begin to March on Rome as well, [? if participating = 1 : in support of the government. ?][? if not_participating = 1: the bourgeois may see this as a threat as well, however. ?][? if rg_banned = 1 : The Red Guards are banned, and will be weakened. ?]
+choose-if: (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and syndicalist_dissent > 50)
+unavailable-subtitle: [? if (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and syndicalist_dissent > 50) : The party is too disunited to act. ?]
 on-arrival: rome_rg_visited = 1
 go-to: rome_menu if participating == 1; civil_war if not_participating == 1
+
+The Red Guards mobilise upon our order, beginning the March to Rome to confront Mussolini.
 
 @rome_adp_mobilise
 max-visits: 1
@@ -91,6 +105,8 @@ view-if: arditi_cooperation = 1
 unavailable-subtitle: [? if (communist_dissent >= 50 and maximalist_dissent >= 50 and reformist_dissent >= 50 and syndicalist_dissent >= 50) : The party is too disunited to act. ?]
 on-arrival: rome_adp_visited = 1
 go-to: rome_menu
+
+The Anti-Fascist Arditi del Popolo mobilise to stop the far-right.
 
 @rome_done
 max-visits: 1
@@ -105,13 +121,22 @@ Q.adp_strength = Math.round(Q.adp_strength);
 
 Q.rome_total_power = 0;
 Q.rg_power = Q.rg_militancy * (Q.rg_strength * (1 - Q.dissent));
+if (Q.interior_police_loyalty < 0) {
+    Q.interior_police_loyalty = 0;
+}
 Q.police_power = Q.interior_police_strength * Q.interior_police_militancy * Q.interior_police_loyalty;
+f (Q.army_loyalty < 0) {
+    Q.army_loyalty = 0;
+}
 Q.army_power = Q.army_strength * Q.army_loyalty * Q.army_militancy;
 Q.adp_power = Q.adp_strength * Q.adp_militancy
 
-if (Q.rome_rg_visited == 1) {
+if (Q.rome_rg_visited == 1 && Q.rg_banned == 0) {
     Q.rome_total_power += Q.rg_power;
-}
+} 
+if (Q.rome_rg_visited == 1 && Q.rg_banned == 1) {
+    Q.rome_total_power += Q.rg_power * 0.75;
+} 
 if (Q.rome_police_king == 1) {
     Q.rome_total_power += Q.police_power;
 }
@@ -132,17 +157,17 @@ Q.abl_power = Q.abl_strength * Q.abl_militancy;
 if (Q.ard_banned === 0) {
     Q.rome_enemy_power += Q.ard_power;
 } else {
-    Q.rome_enemy_power += Q.ard_power/4;
+    Q.rome_enemy_power += Q.ard_power * 0.75;
 }
 if (Q.fdc_banned == 0) {
     Q.rome_enemy_power += Q.fdc_power;
 } else {
-    Q.rome_enemy_power += Q.fdc_power/4;
+    Q.rome_enemy_power += Q.fdc_power * 0.75;
 }
 if (Q.abl_banned == 0) {
     Q.rome_enemy_power += Q.abl_power;
 } else {
-    Q.rome_enemy_power += Q.abl_power/4;
+    Q.rome_enemy_power += Q.abl_power * 0.75;
 }
 
 if (Q.rome_adp_visited == 1) {
