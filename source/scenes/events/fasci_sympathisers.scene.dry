@@ -14,7 +14,7 @@ We have caught wind of some information that some PSI leaders are sympathetic to
 
 @expel
 subtitle: Enrico Ferri & Nicola Bombacci will be expelled!
-on-arrival: sympathiser_expelled = 1; n_advisors -= 1 if ferri_advisor = 1; n_advisors -= 1 if bombacci_advisor = 1; maximalist_strength -= 6*(1-dissent) bombacci_advisor = 0; ferri_advisor;
+on-arrival: sympathiser_expelled = 1; n_advisors -= 1 if ferri_advisor = 1; n_advisors -= 1 if bombacci_advisor = 1; maximalist_strength -= 6*(1-dissent) bombacci_advisor = 0; ferri_advisor = 0;
 
 We expel the sympathisers, who turn out to be prominent members of the Maximalist faction, weakening them.
 
