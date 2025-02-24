@@ -83,7 +83,7 @@ We begin buying out now-defunct or bankrupt companies, repurposing and organisin
 [? if ldr_promise_failed and budget < 0 : Unfortunately, our spending has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
 [? if ldr_promise_failed and liberal_nationalisation_accepted: Unfortunately, our decision to nationalise has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
 
-@nationalisation_progress
+@nationalise_more
 subtitle: -1 Budget - We can continue buying out businesses and empower the workers and consumers to govern. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?][? if liberal_nationalisation_accepted : This will break our agreement with the Liberals! ?]
 on-arrival: {!
 Q.budget -= 1; 
