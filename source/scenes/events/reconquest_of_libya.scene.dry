@@ -15,7 +15,7 @@ Our sources in the Army and Navy Ministries has informed us that the High Comman
 - @libya_majority: Refuse the military's recommendation for war.
 - @libya_coalition_influence: Utilise our government influence to delay the war.
 - @libya_military_influence: Utilise our military influence and coffers to delay the war.
-- @libya_nothing: Issue a letter of condemnation, but nothing else.
+- @libya_nothing: Issue a letter of condemnation.
 
 @libya_majority
 subtitle: We're in control of the government after all, aren't we?
@@ -32,7 +32,7 @@ on-arrival: maximalist_dissent -= 5; reformist_dissent -= 5; communist_dissent -
 Our coalition members are able to see reason, at least temporarily, and decide to delay the war until the internal situation improves. Our veteran supporters, however, aren't happy, and the BN seizes the opportunity to increase their support.
 
 @libya_military_influence
-subtitle: *-1 Resource* Thankfully, we can use to influence as well as our coffers to 'delay' the war.
+subtitle: -1 Resource - Thankfully, we can use to influence as well as our coffers to 'delay' the war.
 choose-if: army_loyalty > 0.53 and resources > 0
 unavailable-subtitle: [? if army_loyalty < 0.54 : Our influence in the military is too low to even attempt this. ?][? if resources < 1 : Requires 1 Party Resource. ?]
 on-arrival: resources -= 1; veterans_psi -= 1;

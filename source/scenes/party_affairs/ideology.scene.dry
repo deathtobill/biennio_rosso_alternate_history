@@ -60,7 +60,7 @@ if (Q.ideology && Q.ideology != "reformist") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "reformist"; reformist_strength += 10; democratisation += 1; reformist_dissent -= 5; ldr_relation += 5; ul_relation += 5; 
+on-departure: ideology = "reformist"; reformist_strength += 10; democratisation += 1; reformist_dissent -= 5; ldr_relation += 5; ul_relation += 5; republican_sentiment += 2*(1-dissent);
 
 The reformist wing of the party seeks to preserve continued participation in government, and is most supportive of coalitions with the other pro-democracy parties.
 

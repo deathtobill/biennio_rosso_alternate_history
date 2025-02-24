@@ -19,7 +19,7 @@ title: Negotiating with the Coalition
 subtitle: Turati can improve our relationships with our centrist and centre-left coalition partners in the Chamber of Deputies.
 choose-if: advisor_action_timer <= 0 and (centre_left_coalition or socialist_catholic_coalition or left_wing_coalition)
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition : The PSI is not currently in a coalition. ?]
-on-arrival: advisor_action_timer = 6; coalition_dissent -= 1; ldr_relation += 10 if centre_left_coalition; ds_relation += 5 if centre_left_coalition; psri_relation += 10; ppi_relation += 10 if socialist_catholic_coalition;
+on-arrival: advisor_action_timer = 9; coalition_dissent -= 1; ldr_relation += 7 if centre_left_coalition; ds_relation += 3 if centre_left_coalition; psri_relation += 9; ppi_relation += 7 if socialist_catholic_coalition;
 
 We have improved our relations with our coalition partners and reduced tensions with the coalition.
 
@@ -28,7 +28,7 @@ title: Interior Policy
 subtitle: Now that we are in control of the Interior Ministry, we can quell internal violence across the nation.
 choose-if: advisor_action_timer <= 0 and psi_in_government and (interior_minister_party = "PSI" or liberal_crackdown_accepted)
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not in government to influence policy. ?][? if not interior_minister_party = "PSI" : The PSI does not control the Interior Ministry. ?]
-on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+on-arrival: advisor_action_timer = 9; last_advisor_action = 1
 go-to: interior_policy
 
 @snap_election
@@ -36,6 +36,6 @@ title: Snap Election
 subtitle: Advise the King to dissolve the Chamber and have an election.
 unavailable-subtitle: [? if prime_minister != "Filippo Turati": Turati must be the Prime Minister. ?][? if not psi_in_government : The PSI is not in government. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if king_relation < 20 : The King detests us, and would not heed our advice. ?]
 choose-if: advisor_action_timer == 0 and prime_minister = "Filippo Turati" and king_relation >= 20 and psi_in_government
-on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
+on-arrival: advisor_action_timer = 9; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
 
 The King, under advice, has dissolved the Chamber and called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].

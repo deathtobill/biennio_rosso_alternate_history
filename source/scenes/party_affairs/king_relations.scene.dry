@@ -20,21 +20,21 @@ Our relationship with the King can be described as wary as best, due to our diam
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; king_relation += 7; king_relation += 2*(1-dissent) if radicalisation < 2; king_relation -= 2*(1-dissent) if radicalisation < 7
+on-arrival: resources -= 1; king_relation += 7; king_relation += 3*(1-dissent) if radicalisation < 3; king_relation -= 2*(1-dissent) if radicalisation > 7
 
 We are received with wariness, though the King does not turn us away outright.
 
 @king_ldr
 choose-if: ldr_relation >= 65
 unavailable-subtitle: Our relationship with the [+ ldr_name +] isn't high enough.
-on-arrival: ldr_relation -= 10; king_relation += 5
+on-arrival: ldr_relation -= 5; king_relation += 5
 
 With some meetings and agreements, they agree to put a good word for us with the King.
 
 @king_ul
 choose-if: ul_relation >= 65
 unavailable-subtitle: Our relationship with the [+ ul_name +] isn't high enough.
-on-arrival: ul_relation -= 10; king_relation += 5
+on-arrival: ul_relation -= 5; king_relation += 5
 
 With some meetings and agreements, they agree to sway some of their Senate-aligned members towards us, which in turn sways the King.
 

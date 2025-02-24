@@ -32,7 +32,7 @@ The socialists of France and Britain can influence their governments to be frien
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: communist_strength += 5; radicalisation += 0.5; rg_militancy += 0.07; resources -= 1;
+on-arrival: communist_strength += 5; radicalisation += 0.3; rg_militancy += 0.04; resources -= 1;
 
 The Spartacist Uprising has failed. Though not officially persecuted, with its leaders dead, the Spartacus League higher command certainly aren't living peacefully. Fortunately, we should be able to offer them refuge, welcoming them as exiles to Italy and training our forces with their experiences in the Spartakusbund.
 

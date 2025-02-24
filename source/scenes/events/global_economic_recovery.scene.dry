@@ -1,7 +1,7 @@
 title: Global Economic Recovery
 subtitle: Finally, the world economy is leaving the worst throes of the depression.
 view-if: year = 1920 and month >= 6
-on-arrival: unemployment -= 3 if unemployment > 20; unemployment -= 2 if unemployment > 15; unemployment -= 1 if unemployment > 8; workers_bn -= 5; veterans_bn -= 5; inflation -= 1.5 if inflation > 0
+on-arrival: unemployment -= 3 if unemployment > 20; unemployment -= 2 if unemployment > 15; unemployment -= 1 if unemployment > 8; workers_bn -= 3; veterans_bn -= 3; inflation -= 1.5 if inflation > 0
 new-page: true
 max-visits: 1
 tags: event

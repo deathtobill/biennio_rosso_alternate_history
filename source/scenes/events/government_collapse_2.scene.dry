@@ -1,15 +1,16 @@
 title: Nitti I Government Collapses!
 subtitle: The current coalition has fallen...
-view-if: year = 1920 and month = 5 and (not psi_in_government or not_participating = 1) and week = 1
+view-if: year = 1920 and month = 5 and (not psi_in_government or not_participating = 1) and week = 1 and prime_minister = "Francesco Saverio Nitti"
 new-page: true
 max-visits: 1
 on-arrival: {!
-Q.republican_sentiment -= 3;
-Q.nationalist_sentiment += 3;
+Q.republican_sentiment -= 2;
+Q.nationalist_sentiment += 1;
+Q.socialist_sentiment += 1;
 
-Q.workers_psi += 3;
+Q.workers_psi += 1;
 Q.workers_psri -= 1;
-Q.workers_bn += 3;
+Q.workers_bn += 1;
 !}
 tags: event
 

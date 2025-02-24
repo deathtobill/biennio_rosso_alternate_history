@@ -18,7 +18,7 @@ This has caused quite a stir internationally, and will certainly delay the resol
 
 @condemn_fiume 
 subtitle: This might discourage our veteran supporters away.
-on-arrival: veterans_psi -= 3; nationalist_sentiment += 5; communist_dissent -= 5; syndicalist_dissent += 5; reformist_dissent -= 5;
+on-arrival: veterans_psi -= 3; nationalist_sentiment -= 3; communist_dissent -= 5; syndicalist_dissent += 5; reformist_dissent -= 5;
 
 We issue a letter of condemnation of D'Annunzio, even as not much of the party agrees.
 
@@ -26,6 +26,6 @@ We issue a letter of condemnation of D'Annunzio, even as not much of the party a
 
 @support_fiume
 subtitle: De Ambris' participation certainly makes this move popular among labour.
-on-arrival: veterans_psi += 3; nationalist_sentiment += 5; communist_dissent -= 5; syndicalist_dissent -= 5; reformist_dissent += 5;
+on-arrival: veterans_psi += 3; nationalist_sentiment += 3; communist_dissent -= 5; syndicalist_dissent -= 5; reformist_dissent += 5;
 
 We issue a letter of support for D'Annunzio, even as not much of the party agrees.

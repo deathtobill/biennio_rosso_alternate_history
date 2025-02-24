@@ -39,9 +39,9 @@ Q.rural_psri -= Q.psri_rural_movement;
 Q.veterans_psri -= Q.psri_veterans_movement;
 Q.catholics_psri -= Q.psri_catholics_movement;
 
-Q.reformist_strength += 10;
-Q.communist_dissent += 10;
-Q.maximalist_dissent += 10;
+Q.reformist_strength += 12;
+Q.communist_dissent += 12;
+Q.maximalist_dissent += 12;
 
 Q.psri_reconciled = 1;
 !}

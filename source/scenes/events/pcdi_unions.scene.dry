@@ -1,0 +1,10 @@
+title: PCd'I consolidates support base
+new-page: true 
+tags: event
+view-if: pcdi_formed and unions_break
+on-arrival: workers_pcdi += 9; workers_pcdi += 7 if psu_formed = 0; veterans_pcdi += 9; veterans_pcdi += 7 if psu_formed = 0; socialist_sentiment += 4; republican_sentiment += 2;
+max-visits: 1
+
+= PCd'I Consolidates support base 
+
+Though the recent split of the Left faction to form the *Partito Comunista d'Italia* as a splinter party was originally thought to be moribund, our Labour faction breaking with us as well has resulted in the syndicalist *Unione Sindacale Italiana* to defect to the party, as the PCd'I seems to have consolidated and become a competitor to our party.  

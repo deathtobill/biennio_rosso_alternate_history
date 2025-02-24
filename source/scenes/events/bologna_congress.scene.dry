@@ -22,7 +22,7 @@ The first thing on the agenda is to decide between a reformist or revolutionary 
 subtitle: The party will fully abandon parliamentary means and pursue a policy of violent revolution.
 choose-if: communist_strength > reformist_strength
 unavailable-subtitle: The bulk of the party are opposed to this.
-on-arrival: reformist_dissent += 20; reformist_strength -= 10; communist_strength += 15; maximalist_strength += 10; communist_dissent -= 20; maximalist_dissent -= 15; not_participating = 1; revolutionary_fervor += 5; king_relation -= 5; party_approach = "Revolutionary";
+on-arrival: reformist_dissent += 20; reformist_strength -= 12; communist_strength += 17; maximalist_strength += 8; communist_dissent -= 17; maximalist_dissent -= 8; not_participating = 1; revolutionary_fervor += 5; king_relation -= 7; party_approach = "Revolutionary";
 go-to: @election_agenda
 
 This result only seems to exacerbate the friction within the party, as Reformist members storm out of the Congress as the results of the votes is announced.
@@ -38,7 +38,7 @@ The less radical members of the Communists and Reformists accept the result, whi
 choose-if: communist_strength < reformist_strength
 unavailable-subtitle: The bulk of the party are opposed to this.
 subtitle: The party will fully abandon extraparliamentary means and pursue a policy of parliamentary reform.
-on-arrival: reformist_dissent -= 20; reformist_strength += 10; communist_strength -= 15; maximalist_strength -= 10; communist_dissent += 20; maximalist_dissent += 15; participating = 1; revolutionary_fervor -= 10; king_relation += 5; party_approach = "Parliamentary";
+on-arrival: reformist_dissent -= 20; reformist_strength += 12; communist_strength -= 17; maximalist_strength -= 8; communist_dissent += 17; maximalist_dissent += 8; participating = 1; revolutionary_fervor -= 7; king_relation += 7; party_approach = "Parliamentary";
 go-to: @election_agenda
 
 The Reformists, having lost leadership in 1912, are able to achieve a plurality through the vote, stunning many who saw the Reformists as having lost most of its support within the party. Already, as the vote is announced, Many Communist and Maximalist members storm out of the Congress, leaving the Reformists to continue the Congress.
@@ -56,7 +56,7 @@ The second and final thing on the agenda is whether or not the PSI should partic
 subtitle: The party will fully refuse to participate in the upcoming election.
 choose-if: participating = 0
 unavailable-subtitle: [? if participating = 1 : We have already chosen to achieve socialism via parliamentary means. ?]
-on-arrival: reformist_dissent += 20; reformist_strength -= 10; communist_strength += 15; maximalist_strength += 10; communist_dissent -= 20; maximalist_dissent -= 15; not_participating = 1;
+on-arrival: reformist_dissent += 20; reformist_strength -= 12; communist_strength += 17; maximalist_strength += 8; communist_dissent -= 17; maximalist_dissent -= 8; not_participating = 1;
 
 The Communists are able to convince the Maximalists that wasting time on participating is a futile use of time, as the party votes for full abstention in the upcoming elections.
 
@@ -64,7 +64,7 @@ The Communists are able to convince the Maximalists that wasting time on partici
 subtitle: The party will participate, but not form coalitions with the bourgeois parties.
 choose-if: not_participating = 0
 unavailable-subtitle: [? if not_participating = 1: We have already chosen to abandon the reformist approach. ?]
-on-arrival: reformist_dissent += 10; reformist_strength -= 5; communist_strength -= 5; maximalist_strength += 5; communist_dissent += 10; maximalist_dissent -= 20; maximalist_participating = 1;
+on-arrival: reformist_dissent += 10; reformist_strength -= 5; communist_strength -= 5; maximalist_strength += 5; communist_dissent += 10; maximalist_dissent -= 10; maximalist_participating = 1;
 
 The Maximalist majority secures a compromise solution, agreeing to participate in the upcoming elections but refusing any sort of coalition with the bourgeois parties. 
 
@@ -72,6 +72,6 @@ The Maximalist majority secures a compromise solution, agreeing to participate i
 choose-if: not_participating = 0
 unavailable-subtitle: [? if not_participating = 1 : We have already chosen to achieve socialism via extraparliamentary ways. ?]
 subtitle: The party will fully participate in the upcoming election.
-on-arrival: reformist_dissent -= 20; reformist_strength += 10; communist_strength -= 15; maximalist_strength -= 10; communist_dissent += 20; maximalist_dissent += 15; participating = 1;
+on-arrival: reformist_dissent -= 20; reformist_strength += 12; communist_strength -= 17; maximalist_strength -= 8; communist_dissent += 17; maximalist_dissent += 8; participating = 1;
 
 The Reformists are able to convince sympathetic Maximalist members to support their endeavour to participate in the November elections and form a coalition with the bourgeois parties. The Communists and remaining Maximalists are unsurprisingly, outraged.

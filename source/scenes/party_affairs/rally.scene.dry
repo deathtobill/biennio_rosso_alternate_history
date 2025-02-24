@@ -30,7 +30,7 @@ on-arrival: veterans_psi += 3*(1-dissent); workers_psi += 3*(1-dissent) if welfa
 The reformist message appeals to the organized workers, whose benefits are the accomplishments of social democracy. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?]
 
 @democracy
-on-arrival: democratisation += 1; republican_sentiment += 2*(1 - dissent); workers_psi += 4*(1-dissent) if democratisation >= 3; veterans_psi += 3*(1-dissent) if democratisation >= 3; socialist_sentiment += 4*(1 - dissent) if democratisation >= 3; middle_class_psi += 4*(1-dissent) if democratisation >= 3 
+on-arrival: democratisation += 1; republican_sentiment += 2*(1 - dissent); workers_psi += 4*(1-dissent) if democratisation >= 3; veterans_psi += 3*(1-dissent) if democratisation >= 3; socialist_sentiment += 4*(1 - dissent) if democratisation >= 3; middle_class_psi += 4*(1-dissent) if democratisation >= 3; republican_sentiment += 4*(1 - dissent) if democratisation >= 3
 
 Our speakers rally against the corrupt system and rail against the monarchists and authoritarians who prop up its existence.
 
@@ -47,7 +47,7 @@ Our speakers denounce the military establishment and all the spending entering t
 
 @economic
 view-if: not psi_in_government 
-choose-if: return_to_normalcy = 0
+choose-if: national_economic_recovery = 0
 unavailable-subtitle: The economic crisis is largely over now, and the public is no longer interested in hearing about it.
 on-arrival: workers_psi += 3*(1-dissent); veterans_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); ppi_relation -= 6*(1-dissent); ldr_relation -= 6*(1-dissent); ul_relation -= 6*(1-dissent); ds_relation -= 6*(1-dissent);
 

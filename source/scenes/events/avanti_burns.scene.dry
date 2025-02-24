@@ -13,5 +13,5 @@ The Milan branch of *Avanti!* has been attacked and burned to the ground, and re
 
 @burning_reaction
 subtitle: Our forces are already preparing to strike the Fasci back.
-on-arrival: workers_psi -= 2; rural_psi -= 1; middle_class_psi -= 1; fasci_urgency += 1
+on-arrival: workers_psi -= 1; rural_psi -= 2; middle_class_psi -= 1; fasci_urgency += 1
 

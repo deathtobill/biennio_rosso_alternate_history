@@ -32,7 +32,7 @@ We continue arming the Red Guards, turning them into a true fighting force.
 subtitle: -1 Paramilitary Budget
 choose-if: para_resources > 0
 unavailable-subtitle: We do not have enough Paramilitary Resources for this. (Need 1)
-on-arrival: loyalty_rg += 1; para_resources -= 1; army_loyalty += 0.1*(1-dissent); interior_police_loyalty += 0.1*(1-dissent);
+on-arrival: loyalty_rg += 1; para_resources -= 1; army_loyalty += 0.1*(1-dissent); interior_police_loyalty += 0.1*(1-dissent); socialist_sentiment += 2*(1-dissent)
 max-visits: 3
 
 Via some...unconventional means, we are able to sway some of the Regio Esercito and Carabinieri to our side.

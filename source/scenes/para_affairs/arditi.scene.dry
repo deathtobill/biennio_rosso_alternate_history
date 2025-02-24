@@ -22,7 +22,7 @@ Though its broad reach has allowed it to remain non-sectarian to any party, they
 subtitle: -1 Paramilitary Resource
 choose-if: para_resources > 0
 unavailable-subtitle: We do not have enough funds to do this. (-1 Paramilitary Resource)
-on-arrival: para_resources -= 1; adp_strength += 20; adp_militancy += 0.1;
+on-arrival: para_resources -= 1; adp_strength += 20; adp_militancy += 0.1; socialist_sentiment += 2;
 
 Our funding allows the Arditi to grow in number, strengthening our relations with them in the process.
 
@@ -32,6 +32,6 @@ on-arrival: rg_strength += adp_strength*0.2; rg_militancy += adp_militancy*0.1
 The more experienced Arditi offer to help train the Red Guards, growing our strength and making our members more proficient.
 
 @arditi_fasci
-on-arrival: adp_strength -= 10; adp_militancy += 0.1*(1-dissent); rg_militancy += 0.05*(1-dissent); fdc_militancy -= 0.1*(1-dissent); fdc_strength += 20; ard_militancy -= 0.05*(1*dissent); ard_strength += 5; abl_strength += 7; radicalisation += 0.1; communist_strength += 7*(1-dissent); communist_dissent -= 5*(1-dissent);
+on-arrival: adp_strength -= 10; adp_militancy += 0.1*(1-dissent); rg_militancy += 0.05*(1-dissent); fdc_militancy -= 0.1*(1-dissent); fdc_strength += 20; ard_militancy -= 0.05*(1*dissent); ard_strength += 5; abl_strength += 7; radicalisation += 0.1; communist_strength += 7*(1-dissent); communist_dissent -= 5*(1-dissent); nationalist_sentiment -= 1;
 
 The Arditi, under our guidance, are able to carry out raids against far-right forces, seizing weapons and equipment. Our move secures weaponry for the Arditi and our own Red Guards, though the right take the opportunity to paint us as aggressive radicals to their backers, securing funding.

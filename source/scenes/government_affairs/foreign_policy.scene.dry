@@ -19,12 +19,13 @@ Now that we are in control of the Foreign Ministry, we can alter Italy's relatio
 - @improve_soviet_relations: Establish diplomatic ties with the Russian SFSR.
 - @improve_papal_relations: Improve ties with the Papacy.
 - @reopen_negotiations: Perhaps it is time to resolve the Roman Question?
+- @root: Keep the Foreign Ministry neutral.
 - @easy_discard
 
 @aid_soviet_union
 subtitle: -1 Budget - We will provide support to the Soviets. [? if liberal_aid_accepted : This will violate our agreement with the Liberals! ?][? if liberal_budget_accepted and budget < 1 : This will put us into a deficit! ?][? if liberal_foreign_accepted and soviet_relation <= entente_relation : This will disrupt our alignment with the Entente! ?]
 view-if: not rcw_over or soviet_recovery_timer > 0
-on-arrival: budget -= 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if soviet_recovery_timer > 0; soviet_relation += 1; ldr_relation -= 7*(1-dissent); ds_relation -= 4*(1-dissent); psri_relation += 3*(1-dissent); ldr_promise_failed = 1 if ((budget < 0 and liberal_budget_accepted and current_budget > -1) or liberal_aid_accepted or (liberal_foreign_accepted and soviet_relation > entente_relation));
+on-arrival: budget -= 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if soviet_recovery_timer > 0; soviet_relation += 2; ldr_relation -= 7*(1-dissent); ul_relation -= 4*(1-dissent); psri_relation += 3*(1-dissent); ldr_promise_failed = 1 if ((budget < 0 and liberal_budget_accepted and current_budget > -1) or liberal_aid_accepted or (liberal_foreign_accepted and soviet_relation > entente_relation));
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We are able to send aid to the Red Army via our diplomatic channels, and the Soviets thank us for the aid. [? if centre_left_coalition : Our coalition partners, however, are less than happy, calling our aid a 'waste of funds'. ?]
@@ -37,7 +38,7 @@ on-arrival: balkan_relation += 1;
 We begin improving our relations with the newly established state of Yugoslavia, with our relations strained over the issue of Fiume.
 
 @improve_allied_relations 
-on-arrival: entente_relation += 1; ldr_relation += 4*(1-dissent); ds_relation += 4*(1-dissent);
+on-arrival: entente_relation += 1; ldr_relation += 4*(1-dissent); ul_relation += 4*(1-dissent);
 
 We continue improving our relations with our former allies in the Entente. [? if centre_left_coalition : Our coalition partners are pleased at our continued alignment. ?]
 

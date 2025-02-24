@@ -63,6 +63,7 @@ if (Q.budget < 0 && Q.current_budget > 0) {
 Q.economic_growth += 0.6; 
 Q.unemployment -= 0.7; 
 Q.rural_psi += 2*(1-Q.dissent); 
+Q.nationalist_sentiment -= 3;
 Q.industrialists_psi -= 3*(1-Q.dissent);
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
@@ -87,6 +88,7 @@ Q.rural_psi += 4*(1-dissent);
 Q.middle_class_psi += 3*(1-dissent); 
 Q.industrialists_psi -= 3*(1-dissent); 
 Q.catholics_psi -= 4*(1-dissent); 
+Q.nationalist_sentiment -= 3;
 Q.ppi_relation -= 7;
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
@@ -97,7 +99,7 @@ We expand education institutes, targeting the South, hiring teachers, building s
 
 @southern_mafia
 choose-if: interior_minister_party = "PSI" and mafia_strength > 0
-unavailable-subtitle: [? if not interior_minister_party = "PSI": The PSI does not control the Interior Ministry. ?][? if mafia_strength < 1 : The various forces of the mafia are no longer a threat to us. ?]
+unavailable-subtitle: [? if not interior_minister_party = "PSI": The PSI does not control the Interior Ministry. ?][? if mafia_strength < 1 : The various forces of the mafia are too disorganised to be a threat to us. ?]
 go-to: investigate_mafia_success if interior_police_loyalty >= 0.5 and judicial_reform > 1; investigate_mafia_failure if interior_police_loyalty < 0.5 or judicial_reform < 2
 
 @investigate_mafia_success

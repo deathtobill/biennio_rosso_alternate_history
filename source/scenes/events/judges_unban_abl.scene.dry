@@ -2,7 +2,7 @@ title: Anti-Bolshevik Leagues unbanned
 subtitle: The judges have re-legalized the Anti-Bolshevik Leagues.
 new-page: true
 view-if: abl_banned == 1 and abl_ban_timer == 0 and judicial_reform < 2
-on-arrival: abl_banned = 0; abl_strength += 15; abl_militancy += 0.04
+on-arrival: abl_banned = 0; abl_strength += 20; abl_militancy += 0.04; nationalist_sentiment += 6;
 tags: event
 
 Judges have ordered the Anti-Bolshevik Leagues to be re-legalized. They immediately return to mass recruiting and arming.

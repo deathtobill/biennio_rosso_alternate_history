@@ -19,7 +19,7 @@ title: Armed Uprising
 subtitle: Order factory workers to seize control of their workplaces!
 choose-if: advisor_action_timer = 0 and rg_strength > 19 and rg_banned = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rg_strength < 20 : The Red Guards don't have enough members to act. ?][? if rg_banned = 1 : The Red Guard are banned, they cannot act. ?]
-on-arrival: advisor_action_timer = 6; revolutionary_fervor += 5; rg_strength -= 10; reformist_dissent += 10; last_advisor_action = 1;
+on-arrival: advisor_action_timer = 9; revolutionary_fervor += 3; rg_strength -= 15; reformist_dissent += 13; last_advisor_action = 1;
 
 We have seized control of more factories and kicked the bourgeois industrialists out!
 
@@ -27,7 +27,7 @@ We have seized control of more factories and kicked the bourgeois industrialists
 title: Revolutionary Preparations
 subtitle: Continue our revolutionary planning.
 choose-if: advisor_action_timer = 0 
-on-arrival: last_advisor_action = 1; advisor_action_timer = 6; preparing_revolution_timer = 5; 
+on-arrival: last_advisor_action = 1; advisor_action_timer = 9; preparing_revolution_timer = 5; 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 go-to: preparing_revolution
 
@@ -37,6 +37,6 @@ title: Choosing Our Targets
 subtitle: We need to choose who we are mainly aiming for.
 choose-if: advisor_action_timer <= 0 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; last_advisor_action = 1; 
+on-arrival: advisor_action_timer = 9; last_advisor_action = 1; 
 go-to: enemies
 

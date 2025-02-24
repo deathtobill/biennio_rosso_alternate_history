@@ -19,7 +19,7 @@ title: Revolution or Reformist?
 subtitle: Debate our path forward. For Serrati, it is in favour of revolution.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: communist_dissent -= 7*(1-dissent); reformist_dissent += 7*(1-dissent); radicalisation += 0.5; revolutionary_fervor += 5; communist_strength += 5*(1-dissent); maximalist_strength -= 5*(1-dissent); advisor_action_timer = 6;
+on-arrival: communist_dissent -= 7*(1-dissent); reformist_dissent += 7*(1-dissent); radicalisation += 0.5; revolutionary_fervor += 3; communist_strength += 5*(1-dissent); maximalist_strength -= 5*(1-dissent); advisor_action_timer = 9;
 
 We are able to sway some of the more left-wing members of the party to our cause, advocating for a more revolutionary approach. This only further exacerbates the split within the party, however.
 
@@ -28,7 +28,7 @@ title: Inter-Party Relationships
 subtitle: Improve our relations with the different parties of Italy.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; inter_party_relationships_timer -= 6; last_advisor_action = 1
+on-arrival: advisor_action_timer = 9; inter_party_relationships_timer -= 6; last_advisor_action = 1
 go-to: inter_party_relationships
 
 @comintern_relations
@@ -36,5 +36,5 @@ title: Comintern Relations
 subtitle: Improve our standing with the our international allies.
 choose-if: advisor_action_timer = 0 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; international_relations_timer -= 8; last_advisor_action = 1
+on-arrival: advisor_action_timer = 9; international_relations_timer -= 8; last_advisor_action = 1
 go-to: international_relations

@@ -11,14 +11,14 @@ The Banca d'Italia, our National Bank, has informed us that our debt has reached
 - @deficit_insurance: Cut funding to the Unemployment Insurance Program.
 - @deficit_taxes: Increase taxes across the board.
 - @deficit_relations: Can we convince our Entente allies to give us more time?
-- @deficit_renege: Declare bankruptcy; void our debts with our international debtors.
+- @deficit_renege: Void our debts with our international debtors.
 
 @deficit_austerity
 subtitle: +2 Budget - Our voters won't be happy about this...
 view-if: unemployment_insurance_founded == 0
 choose-if: welfare > 0
 unavailable-subtitle: There is no welfare left to cut.
-on-arrival: budget += 2; welfare -= 2; veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_bn += 7; 
+on-arrival: budget += 2; welfare -= 1; veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_bn += 7; 
 
 We are forced to cut welfare, with workers seeing this as a betrayal.
 

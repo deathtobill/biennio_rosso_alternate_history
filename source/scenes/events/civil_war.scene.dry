@@ -168,7 +168,7 @@ max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1;
 
-We have request aid from the Soviet Union to fight against the far-right groups, [? if participating = 0 : as well as the bourgeois parties,?] [? if not rcw_over : though not much can be sent as they are in their own civil war as well. ?]
+We have request aid from the Soviet Union to fight against the far-right groups, [? if participating = 0 :as well as the bourgeois parties,?] [? if not rcw_over : though not much can be sent as they are in their own civil war as well. ?]
 
 [? if soviet_relation < 3 : The Soviet Union sends refuses to send us any aid owing to our terrible relations, though international forces flock to our aid. ?][? if (soviet_relation > 2 and soviet_relation < 6) : The Soviet Union sends us the bare minimum, owing to our strained relations. ?][? if (soviet_relation > 5 and soviet_relation < 8) : The Soviet Union sends us a force of willing volunteers, aiding our cause. ?][? if soviet_relation >= 8 : Owing to our good relations, the Soviet Union has sent us substantial aid, giving us a massive advantage. ?]
 
@@ -221,6 +221,7 @@ Italy holds strong, against fascism.
 - @game_over: Game over.
 
 @communist_victory
+on-arrival: soviet_victory = 1
 
 = Victory for the Socialists
 

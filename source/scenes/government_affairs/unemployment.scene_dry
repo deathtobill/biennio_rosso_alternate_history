@@ -24,7 +24,7 @@ There are various ways we are able to tackle this problem now that we are in gov
 subtitle: -1 Budget - Expand our current infrastructural commitments further. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
 choose-if: public_works_minister_party = "PSI"
 unavailable-subtitle: The PSI does not control the Public Works Ministry.
-on-arrival: public_works_funded = 1; budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); unemployment -= 2 if unemployment >= 8; unemployment -= 1 if (unemployment > 4 and unemployment < 7); unemployment -= 0.5 if unemployment < 4; veterans_bn -= 3*(1-dissent); veterans_psi += 3*(1-dissent); rural_bn -= 2*(1-dissent); 
+on-arrival: public_works_funded = 1; budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); unemployment -= 2 if unemployment >= 8; unemployment -= 1 if (unemployment > 4 and unemployment < 7); unemployment -= 0.5 if unemployment < 4; veterans_bn -= 3*(1-dissent); veterans_psi += 3*(1-dissent); rural_bn -= 2*(1-dissent); socialist_sentiment += 2; nationalist_sentiment -= 2;
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We have increased funding to the Public Works Ministry, who have begun drafting up plans and hiring workers for further infrastructure projects.

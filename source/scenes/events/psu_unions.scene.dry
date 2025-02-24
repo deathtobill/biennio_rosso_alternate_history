@@ -1,0 +1,10 @@
+title: PSU consolidates support base
+new-page: true 
+tags: event
+view-if: psu_formed and unions_break
+on-arrival: workers_psu += 9; workers_psu += 7 if pcdi_formed = 0; veterans_psu += 9; veterans_psu += 7 if pcdi = 0; middle_class_psu += 5; socialist_sentiment += 2; republican_sentiment += 4;
+max-visits: 1
+
+= PSU Consolidates support base 
+
+Though the recent split of the Reformist faction to form the *Partito Socialista Unitario* as a splinter party was originally thought to be moribund, our Labour faction breaking with us as well has resulted in the labour union *Confederazione Generale del Lavoro* to defect to the party, as the PSU seems to have consolidated and become a competitor to our party.  

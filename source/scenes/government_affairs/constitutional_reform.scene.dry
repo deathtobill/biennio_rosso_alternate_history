@@ -1,7 +1,7 @@
 title: Constitutional Reform
 new-page: true
 is-card: true
-view-if: psi_in_government and ((ldr_relation > 65 and ds_relation > 65) or ppi_relation > 65) and constitutional_reform_timer <= 0 and anti_monarchist_sentiment >= 20
+view-if: psi_in_government and ((ldr_relation > 65 and ds_relation > 65) or ppi_relation > 65) and constitutional_reform_timer <= 0 and anti_monarchist_sentiment >= 30
 frequency: 500
 on-arrival: week_actions += 1; constitutional_reform_timer = 9
 card-image: img/portraits/VitorioEmanuel.jpg
@@ -21,7 +21,7 @@ Now that we control a sizeable bloc in the Chamber of Deputies, we are able to a
 - @article_33: Alter Article 33.
 - @article_65: Alter Article 65.
 - @article_33_2: Alter Article 33 again.
-- @as_is: Do not pursue constitutional reform.
+- @root: Do not pursue constitutional reform.
 - @easy_discard
 - @cancel_advisor_action
 
@@ -46,7 +46,3 @@ choose-if: king_relation > 80
 on-arrival: fasci_coup_progress += 2; democratisation += 2; king_veto_removed = 1;
 
 The Constitutional Amendment makes it to the King, who is convinced to approve the measure, limiting his own powers and further democratising the Kingdom.
-
-@as_is
-
-We should not do this, for now.

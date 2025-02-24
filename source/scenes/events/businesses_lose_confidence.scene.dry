@@ -3,7 +3,7 @@ subtitle: Big businesses are losing confidence in our government's policies.
 view-if: (capital_strike_progress >= 6 and capital_strike_progress < 10 and budget > -5) and psi_in_government
 new-page: true
 max-visits: 1
-on-arrival: unemployment += 2; middle_class_psi -= 6; industrialists_psi -= 6; rural_psi -= 5; workers_psi -= 4; veterans_psi -= 4; ldr_relation -= 6; economic_growth -= 1
+on-arrival: unemployment += 2; middle_class_psi -= 6; industrialists_psi -= 6; rural_psi -= 5; workers_psi -= 4; veterans_psi -= 4; ldr_relation -= 6; ul_relation -= 6; economic_growth -= 1
 tags: event
 
 = Businesses Lose Confidence

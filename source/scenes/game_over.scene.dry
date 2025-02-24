@@ -95,7 +95,7 @@ The PSI is in government, under Prime Minister [+ prime_minister +]. Given the c
 
 @economic_crisis_resolved
 title: Economic crisis resolved!
-view-if: inflation < 8
+view-if: national_economic_recovery = 1
 tags: endings
 go-to: eg_menu
 

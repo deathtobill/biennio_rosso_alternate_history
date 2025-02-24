@@ -23,13 +23,13 @@ Our actions have earned us new supporters in our usual bases, thanking us for ou
 
 @solidarity_protest
 subtitle: Our actions will only exacerbate the situation.
-on-arrival: workers_psi += 2; rural_psi += 3; ldr_relation -= 5; ul_relation -= 5; ldr_relation -= 5; radicalisation += 0.5;
+on-arrival: workers_psi += 2*(1-dissent); rural_psi += 3*(1-dissent); middle_class_psi -= 2*(1-dissent); ldr_relation -= 5; ul_relation -= 5; ds_relation -= 5; radicalisation += 0.5;
 
-Our actions are appreciated by the protestors, but less so by the ruling government, seeing our actions as only exacerbating the situation further.
+Our actions are appreciated by the protestors, but less so by the governing coalition, seeing our actions as only exacerbating the situation further.
 
 @condemn_protest
 subtitle: Our voting base won't be happy about this.
-on-arrival: workers_psi -= 1; rural_psi -= 2; communist_dissent += 10; maximalist_dissent += 10; syndicalist_dissent += 10; reformist_dissent += 5; ldr_relation += 10; ul_relation += 5; ppi_relation += 10; radicalisation -= 0.5;
+on-arrival: workers_psi -= 1*(1-dissent); rural_psi -= 2*(1-dissent); middle_class_psi += 2*(1-dissent); communist_dissent += 10; maximalist_dissent += 10; syndicalist_dissent += 10; reformist_dissent += 5; ldr_relation += 10; ul_relation += 5; ppi_relation += 10; radicalisation -= 0.5;
 
 Our actions are criticised by every faction. Though the ruling government certainly appreciates your condemnation, it comes at a loss of our voters.
 

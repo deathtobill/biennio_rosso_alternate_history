@@ -1,6 +1,6 @@
 title: Nitti II Government Collapses!
 subtitle: The current coalition has fallen...
-view-if: year = 1920 and month = 5 and (not psi_in_government or not_participating = 1) and week = 3
+view-if: year = 1920 and month = 5 and (not psi_in_government or not_participating = 1) and week = 3 and prime_minister = "Francesco Saverio Nitti"
 new-page: true
 priority: -1
 max-visits: 1
@@ -8,15 +8,15 @@ on-arrival: {!
 Q.prime_minister = "Giovanni Giolitti";
 Q.prime_minister_party = "UL";
 
-Q.republican_sentiment -= 4;
-Q.nationalist_sentiment += 4;
-Q.socialist_sentiment += 1;
+Q.republican_sentiment -= 6;
+Q.nationalist_sentiment += 2;
+Q.socialist_sentiment += 4;
 
-Q.workers_psi += 4;
+Q.workers_psi += 3;
 Q.middle_class_psi += 1;
-Q.workers_bn += 4;
+Q.workers_bn += 2;
 Q.middle_class_bn += 1;
-Q.veterans_bn += 2;
+Q.veterans_bn += 3;
 Q.middle_class_ds += 2;
 Q.workers_psri += 2;
 !}

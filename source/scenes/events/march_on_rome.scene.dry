@@ -12,7 +12,7 @@ go-to: rome_menu
 
 Benito Mussolini, alongside his militants, have marched upon Rome, demanding the resignation of the current government. The party is in crisis, as factions scramble to assemble a coherent response to the threat. [? if centre_left_coalition or left_wing_coalition or socialist_catholic_coalition : Our coalition partners not responded to Mussolini's demands, as frantic calls are made to them to organise meetings. ?][? if king_relation < 50 : The King has not responded to the demands as well, but we are pessimistic on his response, considering our strained relations. ?][? if king_relation > 49 : The King has not responded to the demands as well, but we are optimistic on his response, considering our warm relations. ?]
 
-[? if psi_in_government : We could utilise our government influence to bring down Mussolini and fascism once and for all. ?][if parliamentary = 0 : We cannot rely on the bourgeois parties to defend this nation from fascism. ?] What do we do?
+[? if psi_in_government : We could utilise our government influence to bring down Mussolini and fascism once and for all. ?][if not_participating = 1 : We cannot rely on the bourgeois parties to defend this nation from fascism. ?] What do we do?
 
 @rome_menu
 
@@ -99,7 +99,7 @@ The Red Guards mobilise upon our order, beginning the March to Rome to confront 
 
 @rome_adp_mobilise
 max-visits: 1
-subtitle: Our allies will begin to March on Rome as well, in support of the government. the bourgeois may see this as a threat as well, however.
+subtitle: Our forces will begin to March on Rome as well, [? if participating = 1 : in support of the government. ?][? if not_participating = 1: the bourgeois may see this as a threat as well, however. ?]
 choose-if: communist_dissent < 50 or maximalist_dissent < 50 or reformist_dissent < 50 or syndicalist_dissent < 50
 view-if: arditi_cooperation = 1
 unavailable-subtitle: [? if (communist_dissent >= 50 and maximalist_dissent >= 50 and reformist_dissent >= 50 and syndicalist_dissent >= 50) : The party is too disunited to act. ?]

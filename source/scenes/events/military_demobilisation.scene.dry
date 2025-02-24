@@ -37,11 +37,11 @@ We are able to convince the army to end its demobilisation, the budget will be b
 subtitle: +1 Budget, -1 Paramilitary Resource
 choose-if: para_resources > 0
 unavailable-subtitle: Not enough paramilitary resources. (Need 1).
-on-arrival: para_resources -= 1; rg_strength += 15; rg_militancy += 0.02; army_strength -= 692; unemployment += 1.9; budget += 1; demobilise_timer += 6; fdc_strength += 15; ard_strength += 10; abl_strength += 5; veterans += 2;
+on-arrival: para_resources -= 1; rg_strength += 15; rg_militancy += 0.02; army_strength -= 692; unemployment += 1.9; budget += 1; demobilise_timer += 12; fdc_strength += 15; ard_strength += 10; abl_strength += 5; veterans += 2;
 
 @allow_demobilise
 title: Let them demobilise.
 subtitle: +1 Budget
-on-arrival: army_strength -= 692; unemployment += 1.9; budget += 1; demobilise_timer += 6; fdc_strength += 15; ard_strength += 10; abl_strength += 5; veterans += 2;
+on-arrival: army_strength -= 692; unemployment += 1.9; budget += 1; demobilise_timer += 12; fdc_strength += 15; ard_strength += 10; abl_strength += 5; veterans += 2;
 
 

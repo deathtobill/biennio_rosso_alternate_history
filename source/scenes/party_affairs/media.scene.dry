@@ -25,7 +25,7 @@ The PSI runs a veritable media empire, with many newspapers throughout every Ita
 @commercial
 title: Make our newspapers more commercialized by broadening their appeal beyond party supporters.
 subtitle: This might upset ideological purists, but it may bring in more funds and perhaps expose the middle class to socialist views.
-on-arrival: resources += 1; middle_class_psi += 4*(1 - dissent); communist_dissent += 10; syndicalist_dissent += 10
+on-arrival: resources += 1; middle_class_psi += 4*(1 - dissent); communist_dissent += 7; syndicalist_dissent += 7
 
 Our commercialized newspapers are able to bring in more funds. However, the left and labour factions express their displeasure.
 

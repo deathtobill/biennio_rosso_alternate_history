@@ -30,13 +30,13 @@ unavailable-subtitle: [? if participating = 1 : We have already decided to achie
 go-to: civil_war
 
 @turin_red_guards
-subtitle: *-30k Red Guards* - The Red Guards will defend the Councils from violent bourgeois action.
+subtitle: -30k Red Guards - The Red Guards will defend the Councils from violent bourgeois action.
 view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or syndicalist_dissent < 50
 choose-if: rg_strength > 30
-unavailable-subtitle: [? if rg_strength < 30 : The Red Guards do not have enough troops to defend the Councils. ?]
-on-arrival: rg_strength -= 30; communist_dissent -= 5; syndicalist_dissent -= 10; workers_psi += 2; work_councils += 1;
+unavailable-subtitle: [? if rg_strength < 30 : The Red Guards do not have enough forces to defend the Councils. ?]
+on-arrival: rg_strength -= 30; communist_dissent -= 7; syndicalist_dissent -= 7; workers_psi += 2; work_councils += 1; middle_class_psi -= 3; ul_relation -= 5; ldr_relation -= 5;
 
-The Red Guards are able to defend the Councils, and its continued existence encourage popular sentiment within the nation. 
+The Red Guards are able to defend the Councils, and its continued existence encourage popular sentiment within the nation, though our violent actions aren't welcomed by the other parties.
 
 @turin_popularity
 subtitle: *-1 Resources* - The Party will fund the Councils to defend themselves.
@@ -60,20 +60,20 @@ Our status both controlling the Councils and in government places us in a unique
 - @negotiate_business_oriented: Favour the industrialists in our negotiations.
 
 @negotiate_labour_oriented
-subtitle: Some goodwill for the Councils wouldn't hurt, would it?
-on-arrival: ds_relation -= 5; ppi_relation -= 5; communist_dissent -= 5; unemployment -= 2.3; councils_empowered = 1; coalition_dissent += 1; worker_psi += 2;
+subtitle: This might anger our coalition allies and the industrialists.
+on-arrival: ds_relation -= 5; ppi_relation -= 5; communist_dissent -= 5; unemployment += 0.6; councils_empowered = 1; coalition_dissent += 1; worker_psi += 6;
 
 The *Factory Control Act* is signed, granting the Councils greater control over the factories and giving them direct input into control of the factories. The industrialists are unsurprisingly fuming, refusing to hire workers and worsening the unemployment situation somewhat [? if centre_left_coalition :, while our coalition partners with the exception of the PSRI are also disatisfied. ?][? if not centre_left_coalition :. ?]
 
 @negotiate_balance
 subtitle: We need this to be a fair agreement.
-on-arrival: communist_dissent += 5;
+on-arrival: communist_dissent += 7; workers_psi += 1; industrialists_psi += 1; 
 
 The *Turin Accord* is signed, negotiating Council control within the factories to include Worker welfare and improved negotiating rights, as the state acts as an arbitrator in any disputes. Both sides seem to be satisfied with the agreement, and the factories continue working once more.
 
 @negotiate_business_oriented
 subtitle: We can't afford to upset the industrialists in the economic crisis, can we?
-on-arrival: dissent += 0.1; councils_decreased = 1; workers_psi -= 5; ds_relation += 5; ppi_relation += 10; coalition_dissent -= 1; unemployment -= 1.7; industrialists_psi += 2; short_hours_reform += 1; wage_increase += 1;
+on-arrival: dissent += 0.1; councils_decreased = 1; workers_psi -= 5; ul_relation += 5; ldr_relation += 7; coalition_dissent -= 1; unemployment -= 0.7; industrialists_psi += 6; working_hours += 1;
 
 The *Productivity Agreement* is signed, promising wage increases, shorter hours in exchange for decreased Council control over the factories. The Communists and Trade Unionists give us hell for our decision to bend over backwards to appease the industrialists [? if centre_left_coalition :, while our coalition members seem to be satisfied. ?][if not centre_left_coalition :. ?]
 
