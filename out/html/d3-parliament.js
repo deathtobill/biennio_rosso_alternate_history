@@ -43,8 +43,7 @@ d3.parliament = function() {
 
             /***
              * compute number of seats and rows of the parliament */
-            var nSeats = 0;
-            d.forEach(function(p) { nSeats += (typeof p.seats === 'number') ? Math.floor(p.seats) : p.seats.length; });
+            var nSeats = 508;
 
             var nRows = 0;
             var maxSeatNumber = 0;
