@@ -180,7 +180,7 @@ if (Q.week_actions >= 1) {
     // we're basically implicity drawing a Philips curve
     // budget deficits lead to some inflation
     // make all the effects be monthly still :3
-    if (Q.week = 1) {
+    if (Q.week == 1) {
         if (Q.budget <= 0 && Q.budget > -2 && Q.inflation < 2.5) {
             Q.inflation += 0.1;
         }
