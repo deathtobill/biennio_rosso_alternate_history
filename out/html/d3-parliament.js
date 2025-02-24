@@ -45,9 +45,20 @@ d3.parliament = function() {
              * compute number of seats and rows of the parliament */
             var nSeats = 508;
 
-            var nRows = 12;
-            var maxSeatNumber = nSeats; 
-            
+            var nRows = 0;
+            var maxSeatNumber = 0;
+            var b = 0.5;
+            (function() {
+                var a = innerRadiusCoef / (1 - innerRadiusCoef);
+                while (maxSeatNumber < nSeats) {
+                    nRows++;
+                    b += a;
+                    /* NOTE: the number of seats available in each row depends on the total number
+                    of rows and floor() is needed because a row can only contain entire seats. So,
+                    it is not possible to increment the total number of seats adding a row. */
+                    maxSeatNumber = series(function(i) { return Math.floor(Math.PI * (b + i)); }, nRows-1);
+                }
+            })();
 
 
             /***
@@ -56,11 +67,10 @@ d3.parliament = function() {
             var rowWidth = (outerParliamentRadius - innerParliementRadius) / nRows;
             var seats = [];
             (function() {
-                var seatsPerRow = Math.floor(nSeats / nRows);
-                var extraSeats = nSeats % nRows; // Remaining seats to distribute
+                var seatsToRemove = maxSeatNumber - nSeats;
                 for (var i = 0; i < nRows; i++) {
                     var rowRadius = innerParliementRadius + rowWidth * (i + 0.5);
-                    var rowSeats = seatsPerRow + (i < extraSeats ? 1 : 0); // Distribute extra seats evenly
+                    var rowSeats = Math.floor(Math.PI * (b + i)) - Math.floor(seatsToRemove / nRows) - (seatsToRemove % nRows > i ? 1 : 0);
                     var anglePerSeat = Math.PI / rowSeats;
                     for (var j = 0; j < rowSeats; j++) {
                         var s = {};
@@ -74,7 +84,7 @@ d3.parliament = function() {
                         };
                         seats.push(s);
                     }
-                }                
+                };
             })();
 
             /* sort the seats by angle */
