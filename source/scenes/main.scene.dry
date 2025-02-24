@@ -4,9 +4,9 @@ on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
     Q.pinnedCardsDescription = 'Advisors - an action is available.';
 } else if (Q.advisor_action_timer == 1) {
-    Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
+    Q.pinnedCardsDescription = 'Advisors - next action available in 2 weeks.';
 } else {
-    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' weeks.';
+    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer * 2 + ' weeks.';
 }
 !}
 max-cards: 3
@@ -91,9 +91,9 @@ on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
     Q.pinnedCardsDescription = 'Advisors - an action is available.';
 } else if (Q.advisor_action_timer == 1) {
-    Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
+    Q.pinnedCardsDescription = 'Advisors - next action available in 2 weeks.';
 } else {
-    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' weeks.';
+    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer * 2 + ' weeks.';
 }
 !}
 max-cards: 4

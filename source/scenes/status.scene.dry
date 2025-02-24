@@ -249,7 +249,7 @@ Yugoslavia: [+ balkan_relation : radicalisation +]
 
 = International Situations
 
-Russian Civil War: [? if not rcw_over : Ongoing, Estimated [+ soviet_end_timer +] Months Remaining ?][? if rcw_over : Soviet Victory ?]
+Russian Civil War: [? if not rcw_over : Ongoing, Estimated [+ soviet_end_timer +] Weeks Remaining ?][? if rcw_over : Soviet Victory ?]
 
 Fiume: [? if not resolved_adriatic : Negotiating ?][? if fiume_free : Free City ?][? if fiume_italian : Italian ?]
 
