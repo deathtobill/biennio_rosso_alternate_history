@@ -170,7 +170,7 @@ Q.veterans = 4;
 Q.catholics = 6;
 
 Q.inflation = 19.2;
-Q.economic_growth = -2.1;
+Q.economic_growth = -3.7;
 Q.unemployment = 13.5;
 
 Q.classes = ['workers', 'middle_class', 'industrialists', 'rural', 'veterans', 'catholics'];
@@ -225,7 +225,7 @@ Q.rural_ppi = 44;
 Q.rural_ldr = 2;
 Q.rural_ds = 13;
 Q.rural_ul = 3;
-Q.rural_bn = 7;
+Q.rural_bn = 4;
 Q.rural_psri = 2;
 Q.rural_other = 2;
 
@@ -236,7 +236,7 @@ Q.veterans_ppi = 3;
 Q.veterans_ldr = 2;
 Q.veterans_ds = 1;
 Q.veterans_ul = 3;
-Q.veterans_bn = 73;
+Q.veterans_bn = 36;
 Q.veterans_psri = 2;
 Q.veterans_other = 2;
 

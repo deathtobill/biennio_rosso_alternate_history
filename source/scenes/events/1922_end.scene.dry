@@ -12,7 +12,4 @@ With the failure of the March on Rome by Mussolini, it seems the Fasci's momentu
 
 Only time will tell how we go from here.
 
-- @end_game: Game over.
-
-@end_game
-go-to: game_over
+- @game_over: Game over.

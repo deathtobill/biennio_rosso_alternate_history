@@ -30,7 +30,7 @@ on-arrival: veterans_psi += 3*(1-dissent); workers_psi += 3*(1-dissent) if welfa
 The reformist message appeals to the organized workers, whose benefits are the accomplishments of social democracy. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?]
 
 @democracy
-on-arrival: democratisation += 1; republican_sentiment += 2*(1 - dissent); workers_psi += 4*(1-dissent) if democratisation >= 3; veterans_psi += 3*(1-dissent) if democratisation >= 3; socialist_sentiment += 4*(1 - dissent) if democratisation >= 3; middle_class_psi += 4*(1-dissent) if democratisation >= 3; republican_sentiment += 4*(1 - dissent) if democratisation >= 3
+on-arrival: democratisation += 1; republican_sentiment += 2*(1 - dissent); workers_psi += 4*(1-dissent) if democratisation >= 3; veterans_psi += 3*(1-dissent) if democratisation >= 3; socialist_sentiment += 1*(1 - dissent) if democratisation >= 3; middle_class_psi += 4*(1-dissent) if democratisation >= 3; republican_sentiment += 4*(1 - dissent) if democratisation >= 3
 
 Our speakers rally against the corrupt system and rail against the monarchists and authoritarians who prop up its existence.
 
