@@ -496,7 +496,7 @@ if (Q.week_actions >= 1) {
             } 
         }
  
-        if (Q.socialist_catholic_coalition = 1 && Q.coalition_dissent < 3 || Q.centre_left_coalition == 1 && Q.coalition_dissent < 3) {
+        if (Q.socialist_catholic_coalition == 1 && Q.coalition_dissent < 3 || Q.centre_left_coalition == 1 && Q.coalition_dissent < 3) {
             Q.king_relation += 2/6;
         }
 
