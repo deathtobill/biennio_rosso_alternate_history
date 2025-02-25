@@ -220,6 +220,14 @@ BN: [+ bn_votes +]%
 
 Others: [+ other_votes +]%
 
+= Public Opinion
+
+Support for Republicanism: [+ republican_sentiment_disp +]%
+
+Support for Socialism: [+ socialist_sentiment_disp +]%
+
+Support for Nationalism: [+ nationalist_sentiment_disp +]%
+
 **Detailed results for each demographic**
 
 Urban Workers: PSI: [+ workers_psi_display +]%, [? if pcdi_formed : PCd'I: [+ workers_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ workers_psu_display +]%, ?] PSRI: [+ workers_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ workers_pri_display +]%, ?] DS: [+ workers_ds_display +]%, PPI: [+ workers_ppi_display +]%, [+ ldr_name +]: [+ workers_ldr_display +]%, [+ ul_name +]: [+ workers_ul_display +]%; BN: [+ workers_bn_display +]%, Others: [+ workers_other_display +]%
@@ -233,12 +241,6 @@ Industrialists & Landowners: PSI: [+ industrialists_psi_display +]%, [? if pcdi_
 Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PSRI: [+ veterans_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ veterans_pri_display +]%, ?] DS: [+ veterans_ds_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%; BN: [+ veterans_bn_display +]%, Others: [+ veterans_other_display +]%
 
 Catholics: PSI: [+ catholics_psi_display +]%, [? if pcdi_formed : PCd'I: [+ catholics_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ catholics_psu_display +]%, ?] PSRI: [+ catholics_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ catholics_pri_display +]%, ?] DS: [+ catholics_ds_display +]%, PPI: [+ catholics_ppi_display +]%, [+ ldr_name +]: [+ catholics_ldr_display +]%, [+ ul_name +]: [+ catholics_ul_display +]%; BN: [+ catholics_bn_display +]%, Others: [+ catholics_other_display +]%
-
-Support for Republicanism: [+ republican_sentiment_disp +]%
-
-Support for Socialism: [+ socialist_sentiment_disp +]%
-
-Support for Nationalism: [+ nationalist_sentiment_disp +]%
 
 @foreign
 on-arrival: soviet_end_display = soviet_end_timer * 2
