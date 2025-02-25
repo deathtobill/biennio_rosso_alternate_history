@@ -23,7 +23,7 @@ Our actions have earned us new supporters in our usual bases, thanking us for ou
 
 @solidarity_protest
 subtitle: Our actions will only exacerbate the situation.
-on-arrival: workers_psi += 2*(1-dissent); rural_psi += 3*(1-dissent); middle_class_psi -= 2*(1-dissent); ldr_relation -= 5; ul_relation -= 5; ds_relation -= 5; radicalisation += 0.5;
+on-arrival: workers_psi += 2*(1-dissent); rural_psi += 3*(1-dissent); middle_class_psi -= 2*(1-dissent); ldr_relation -= 3; ul_relation -= 5; ds_relation -= 3; radicalisation += 0.5;
 
 Our actions are appreciated by the protestors, but less so by the governing coalition, seeing our actions as only exacerbating the situation further.
 

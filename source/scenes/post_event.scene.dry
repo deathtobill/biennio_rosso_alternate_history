@@ -375,7 +375,7 @@ if (Q.week_actions >= 1) {
 
         // fast boost for the bn for veterans
         if (Q.year == 1919) {
-            Q.veterans_bn += 30/12;
+            Q.veterans_bn += 20/12;
         }
         if (Q.year == 1920) {
             Q.catholics_ppi += 2/12;

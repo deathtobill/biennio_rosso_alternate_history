@@ -22,19 +22,19 @@ Though initially thought to be moribund, it seems we have been proven wrong, and
 
 @fascist_paramilitary
 subtitle: The threat comes from their violent means, after all.
-on-arrival: fasci_urgency += 1; veterans_psi -= 2*(1-dissent); rg_strength += 10*(1-dissent); ul_relation -= 5*(1-dissent);
+on-arrival: fasci_urgency += 1; rg_strength += 10*(1-dissent); 
 
 We focus on their paramilitaries, strengthening our own forces to combat them.
 
 @fascist_parties
 subtitle: The threat comes from any potential coalitions including the Bloc, after all.
-on-arrival: fasci_urgency += 1; veterans_psi -= 2*(1-dissent); rg_strength -= 10*(1-dissent); ul_relation += 5*(1-dissent)
+on-arrival: fasci_urgency += 1; ul_relation += 5*(1-dissent)
 
 We focus on our relations with the other parties, ensuring they do not find themselves forced to ally against us.
 
 @fascist_votes
 subtitle: The threat comes from their seats in the Chamber, after all.
-on-arrival: fasci_urgency += 1; veterans_psi += 2*(1-dissent); rg_strength -= 10*(1-dissent); ul_relation -= 5*(1-dissent)
+on-arrival: fasci_urgency += 1; veterans_psi += 2*(1-dissent);
 
 We focus on their voters, campaigning towards them hard, sometimes clashing with the Fasci.
 

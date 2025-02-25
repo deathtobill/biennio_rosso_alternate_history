@@ -78,10 +78,10 @@ Q.arditi_formed = 0;
 // organisations
 
 // inter-party relations
-Q.ul_relation = 35;
-Q.ldr_relation = 35;
-Q.ds_relation = 40;
-Q.ppi_relation = 35;
+Q.ul_relation = 37;
+Q.ldr_relation = 37;
+Q.ds_relation = 37;
+Q.ppi_relation = 40;
 Q.psri_relation = 60;
 Q.pri_relation = 60;
 // BN relations are invariably hostile
@@ -265,16 +265,16 @@ Q.catholics_other = 2;
 // source: wikipedia
 // Had to do some early forming of BN and other parties to make this easier for me + gameplay wise 
 Q.pcdi_r = 0;
-Q.psi_r = 18;
+Q.psi_r = 17.6;
 Q.psu_r = 0;
-Q.ppi_r = 6;
+Q.ppi_r = 7.0;
 Q.pri_r = 0;
-Q.ldr_r = 49;
-Q.ds_r = 20;
-Q.ul_r = 4;
+Q.ldr_r = 47.6;
+Q.ds_r = 18.6;
+Q.ul_r = 0;
 Q.bn_r = 0;
-Q.psri_r = 2;
-Q.other_r = 1;
+Q.psri_r = 3.9;
+Q.other_r = 5.3;
 
 // diff from prev
 Q.old_pcdi_r = 0;
