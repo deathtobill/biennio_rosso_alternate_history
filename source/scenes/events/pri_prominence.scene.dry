@@ -1,0 +1,35 @@
+title: PRI rises in prominence
+subtitle: The Republicans rise from obscurity.
+new-page: true
+view-if: republican_sentiment > 40 and (workers_other > 10 or middle_class_other > 10 or rural_other > 5 or industrialists_other > 10 or veterans_other > 10 or catholics_other > 10)
+on-arrival: {!
+Q.workers_pri += Q.workers_other * 0.8;
+Q.middle_class_pri += Q.middle_class_other * 0.8;
+Q.industrialists_pri = Q.industrialists_other * 0.8;
+Q.rural_pri = Q.rural_other * 0.8;
+Q.veterans_pri = Q.veterans_other * 0.8;
+Q.catholics_pri = Q.catholics_other * 0.8;
+
+Q.workers_other -= Q.workers_other * 0.8;
+Q.middle_class_other -= Q.middle_class_other * 0.8;
+Q.industrialists_other -= Q.industrialists_other * 0.8;
+Q.rural_other -= Q.rural_other * 0.8;
+Q.veterans_other -= Q.veterans_other * 0.8;
+Q.catholics_other -= Q.catholics_other * 0.8;
+
+if (Q.not_participating == 1) {
+    Q.pri_relation -= 30;
+}
+
+Q.pri_prominent = 1;
+!}
+max-visits: 1
+tags: event
+
+= PRI regains Prominence
+
+The *Partito Repubblicano Italiano*, known also as the Italian Republican Party, was a formidable force following the end of the 19th and early 20th century, reaching over 5% in the Chamber of Deputies, before falling into obscurity. However, it seems the party has made a comeback, primarily due to the increased support for Republicanism throughout the last couple months.
+
+Whatever the case, the PRI have been our historic allies, [? if participating = 1:and we are optimistic to renew the bonds between our parties to be a strong force in politics. ?][? if not_participating = 1:it seems it will have to come to an end. ?]
+
+- @root: Time will tell what this new force will do.

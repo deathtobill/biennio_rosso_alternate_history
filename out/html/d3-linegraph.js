@@ -16,13 +16,13 @@ function addMonths(date, months) {
 d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataMax, dataMin, additionalMonths) {
     /* params */
     if (!parties) {
-        parties = ['psri', 'psi', 'ldr', 'ds', 'ul', 'ppi', 'bn', 'other', 'pcdi', 'psu'];
+        parties = ['psri', 'psi', 'ldr', 'ds', 'ul', 'ppi', 'bn', 'other', 'pcdi', 'psu', 'pri'];
     }
     if (!partyColors) {
-        partyColors = {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '##87CEFA', 'bn': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A'};
+        partyColors = {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '##87CEFA', 'bn': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A', 'pri': '#3CB371'};
     }
     if (!partyNames) {
-        partyNames = {'psri': 'PSRI', 'psi': 'PSI', 'ldr': 'LDR', 'ds': 'DS', 'ul': 'UL', 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others'};
+        partyNames = {'psri': 'PSRI', 'psi': 'PSI', 'ldr': 'LDR', 'ds': 'DS', 'ul': 'UL', 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pcdi': 'PCDI', 'psu': 'PSU', 'pri': 'PRI'};
     }
     if (!additionalMonths) {
         additionalMonths = 10;

@@ -50,7 +50,7 @@ on-arrival: {!
 Q.education_reformed += 1; 
 Q.workers_psi += 3*(1-Q.dissent); 
 Q.middle_class_psi += 6*(1-Q.dissent); 
-Q.catholic_psi -= 3*(1-Q.dissent); 
+Q.catholics_psi -= 3*(1-Q.dissent); 
 Q.papal_relation -= 1; 
 Q.ppi_relation -= 5*(1-Q.dissent); 
 if (Q.catholic_education_accepted == 1) {

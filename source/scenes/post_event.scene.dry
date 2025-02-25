@@ -533,20 +533,36 @@ if (Q.week_actions >= 1) {
         }
 
         // italian republican party 
-        if (Q.anti_monarchist_sentiment > 30) {
+        if (Q.anti_monarchist_sentiment > 30 && Q.pri_prominent == 0) {
             Q.middle_class_other += 2/12;
             Q.rural_other += 1/12;
             Q.veterans_other += 2/12;
         }
-        if (Q.anti_monarchist_sentiment > 50) {
-            Q.middle_class_other += 2/12;
-            Q.rural_other += 1/12;
-            Q.veterans_other += 2/12;
+        if (Q.anti_monarchist_sentiment > 50 && Q.pri_prominent == 0) {
+            Q.middle_class_other += 4/12;
+            Q.rural_other += 2/12;
+            Q.veterans_other += 4/12;
         }
-        if (Q.anti_monarchist_sentiment > 70) {
-            Q.middle_class_other += 2/12;
-            Q.rural_other += 1/12;
-            Q.veterans_other += 2/12;
+        if (Q.anti_monarchist_sentiment > 70 && Q.pri_prominent == 0) {
+            Q.middle_class_other += 6/12;
+            Q.rural_other += 3/12;
+            Q.veterans_other += 6/12;
+        }
+
+        if (Q.anti_monarchist_sentiment > 30 && Q.pri_prominent == 1) {
+            Q.middle_class_pri += 2/12;
+            Q.rural_pri += 1/12;
+            Q.veterans_pri += 2/12;
+        }
+        if (Q.anti_monarchist_sentiment > 50 && Q.pri_prominent == 1) {
+            Q.middle_class_pri += 4/12;
+            Q.rural_pri += 2/12;
+            Q.veterans_pri += 4/12;
+        }
+        if (Q.anti_monarchist_sentiment > 70 && Q.pri_prominent == 1) {
+            Q.middle_class_pri += 6/12;
+            Q.rural_pri += 3/12;
+            Q.veterans_pri += 6/12;
         }
 
         // makes traditional voting blocs less susceptible to the bn if nationalism is low

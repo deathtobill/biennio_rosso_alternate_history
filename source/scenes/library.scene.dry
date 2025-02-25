@@ -330,6 +330,15 @@ if (Q.psu_formed && Q.psu_r) {
         "seats": Math.round(Q.psu_r*5),
     });
 }
+
+if (Q.pri_prominent && Q.pri_r) {
+    data.push({
+        "id": "pri",
+        "legend": "PRI",
+        "name": "PRI",
+        "seats": Math.round(Q.pri_r*5),
+    });
+}
 data = data.concat([
     {
         "id": "psri",
@@ -393,8 +402,8 @@ data = data.concat([
 
         var lines = d3.linegraph(false, false,
                 Q.parties,
-                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'bn': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A'},
-                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': Q.ldr_name, 'ds': 'DS', 'ul': Q.ul_name, 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pcdi': 'PCdI', 'psu': 'PSU'});
+                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'bn': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A', 'pri': '#3CB371'},
+                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': Q.ldr_name, 'ds': 'DS', 'ul': Q.ul_name, 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pcdi': 'PCdI', 'psu': 'PSU', 'pri': 'PRI'});
         lines.width(width).height(400);
         //var svg = lines(Q.election_records);
         if (Q.election_records.length > 0) {
@@ -406,8 +415,8 @@ data = data.concat([
         if (!Q.historical_mode || Q.game_over) {
             var lines_2 = d3.linegraph(true, true,
                 Q.parties,
-                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'bn': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A'},
-                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': Q.ldr_name, 'ds': 'DS', 'ul': Q.ul_name, 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pcdi': 'PCdI', 'psu': 'PSU'});
+                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'bn': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A', 'pri': '#3CB371'},
+                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': Q.ldr_name, 'ds': 'DS', 'ul': Q.ul_name, 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pcdi': 'PCdI', 'psu': 'PSU', 'pri': 'PRI'});
             lines_2.width(width).height(400);
             d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
         }
@@ -439,6 +448,8 @@ data = data.concat([
 [? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div></td> <td>!} PSU: {!</td><td>!} [+ psu_r +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#FFC0CB'> </div></td> <td>!} PSRI: {!</td><td>!} [+ psri_r +]% {!</td></tr>!}
+
+[? if pri_prominent : {!<tr><td><div class="box" style='background-color:#3CB371'> </div></td> <td>!} PRI: {!</td><td>!} [+ pri_r +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#1E99C5'> </div></td><td>!} DS: {!</td><td>!} [+ ds_r +]% {!</td></tr>!}
 

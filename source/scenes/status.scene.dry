@@ -23,18 +23,18 @@ Party: [+ resources +]
 
 Paramilitary: [+ para_resources +]
 
-PSI position: [? if psi_in_government : in government - ?][? if psi_in_government == 0 : opposition ?]
+PSI Position: [? if psi_in_government : In Government - ?][? if psi_in_government == 0 : Opposition ?]
 [? if centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if socialist_catholic_coalition and psi_in_government: Catholic-Socialist Coalition ?][? if left_wing_coalition and psi_in_government: Left-Wing Coalition ?]
 
-[? if psi_in_government and not in_psi_majority: Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+[? if psi_in_government and not in_psi_majority: Coalition Dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
-Internal dissent: [+ dissent_percent : dissent +]
+Internal Dissent: [+ dissent_percent : dissent +]
 
-Revolutionary fervor: [+ revolutionary_fervor +]%
+Revolutionary Fervour: [+ revolutionary_fervor +]%
 
 Radicalism : [+ radicalisation : radicalisation +]
 
-Our approach: [+ party_approach +]
+Our Approach: [+ party_approach +]
 
 = Government
 
@@ -49,6 +49,7 @@ Chamber of Deputies composition:
 [? if pcdi_formed = 1: {!<span class="tooltip-text" title="Communist Party of Italy">PCd'I</span>!}: [+ pcdi_r +]% ?]
 [? if psu_formed = 1: {!<span class="tooltip-text" title="Unitary Socialist Party">PSU</span>!}: [+ psu_r +]% ?]
 {!<span class="tooltip-text" title="Italian Reformist Socialist Party">PSRI</span>!}: [+ psri_r +]%
+[? if pri_prominent = 1: {!<span class="tooltip-text" title="Italian Republican Party">PRI</span>!}: [+ pri_r +]% ?]
 {!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_r +]%
 {!<span class="tooltip-text" title="Italian People's Party">PPI</span>!}: [+ ppi_r +]%
 [? if not pldi_formed : {!<span class="tooltip-text" title="Liberals, Democrats & Radicals">LDR</span>!}: [+ ldr_r +]% ?]
@@ -109,6 +110,8 @@ Unemployment: [+ unemployment_2 +]%
 = Inter-party Relations
 
 {!<span class="tooltip-text" title="Italian Reformist Socialist Party">PSRI</span>!}: [+ psri_relation : relationships +]
+
+[? if pri_prominent = 1: {!<span class="tooltip-text" title="Italian Republican Party">PRI</span>!}: [+ pri_relation : relationships +]% ?]
 
 {!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_relation : relationships +]
 
@@ -203,6 +206,8 @@ PSI: [+ psi_votes +]%
 
 PSRI : [+ psri_votes +]%
 
+[? if pri_prominent = 1: PRI: [+ pri_votes +]% ?]
+
 DS: [+ ds_votes +]%
 
 PPI: [+ ppi_votes +]%
@@ -217,17 +222,17 @@ Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Urban Workers: PSI: [+ workers_psi_display +]%, [? if pcdi_formed : PCd'I: [+ workers_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ workers_psu_display +]%, ?] PSRI: [+ workers_psri_display +]%, DS: [+ workers_ds_display +]%, PPI: [+ workers_ppi_display +]%, [+ ldr_name +]: [+ workers_ldr_display +]%, [+ ul_name +]: [+ workers_ul_display +]%; BN: [+ workers_bn_display +]%, Others: [+ workers_other_display +]%
+Urban Workers: PSI: [+ workers_psi_display +]%, [? if pcdi_formed : PCd'I: [+ workers_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ workers_psu_display +]%, ?] PSRI: [+ workers_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ workers_pri_display +]%, ?] DS: [+ workers_ds_display +]%, PPI: [+ workers_ppi_display +]%, [+ ldr_name +]: [+ workers_ldr_display +]%, [+ ul_name +]: [+ workers_ul_display +]%; BN: [+ workers_bn_display +]%, Others: [+ workers_other_display +]%
 
-Middle Class: PSI: [+ middle_class_psi_display +]%, [? if pcdi_formed : PCd'I: [+ middle_class_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ middle_class_psu_display +]%, ?] PSRI: [+ middle_class_psri_display +]%, DS: [+ middle_class_ds_display +]%, PPI: [+ middle_class_ppi_display +]%, [+ ldr_name +]: [+ middle_class_ldr_display +]%, [+ ul_name +]: [+ middle_class_ul_display +]%; BN: [+ middle_class_bn_display +]%, Others: [+ middle_class_other_display +]%
+Middle Class: PSI: [+ middle_class_psi_display +]%, [? if pcdi_formed : PCd'I: [+ middle_class_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ middle_class_psu_display +]%, ?] PSRI: [+ middle_class_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ middle_class_pri_display +]%, ?] DS: [+ middle_class_ds_display +]%, PPI: [+ middle_class_ppi_display +]%, [+ ldr_name +]: [+ middle_class_ldr_display +]%, [+ ul_name +]: [+ middle_class_ul_display +]%; BN: [+ middle_class_bn_display +]%, Others: [+ middle_class_other_display +]%
 
-Rural Workers & Farmers: PSI: [+ rural_psi_display +]%, [? if pcdi_formed : PCd'I: [+ rural_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ rural_psu_display +]%, ?] PSRI: [+ rural_psri_display +]%, DS: [+ rural_ds_display +]%, PPI: [+ rural_ppi_display +]%, [+ ldr_name +]: [+ rural_ldr_display +]%, [+ ul_name +]: [+ rural_ul_display +]%; BN: [+ rural_bn_display +]%, Others: [+ rural_other_display +]%
+Rural Workers & Farmers: PSI: [+ rural_psi_display +]%, [? if pcdi_formed : PCd'I: [+ rural_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ rural_psu_display +]%, ?] PSRI: [+ rural_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ rural_pri_display +]%, ?] DS: [+ rural_ds_display +]%, PPI: [+ rural_ppi_display +]%, [+ ldr_name +]: [+ rural_ldr_display +]%, [+ ul_name +]: [+ rural_ul_display +]%; BN: [+ rural_bn_display +]%, Others: [+ rural_other_display +]%
 
-Industrialists & Landowners: PSI: [+ industrialists_psi_display +]%, [? if pcdi_formed : PCd'I: [+ industrialists_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ industrialists_psu_display +]%, ?] PSRI: [+ industrialists_psri_display +]%, DS: [+ industrialists_ds_display +]%, PPI: [+ industrialists_ppi_display +]%, [+ ldr_name +]: [+ industrialists_ldr_display +]%, [+ ul_name +]: [+ industrialists_ul_display +]%; BN: [+ industrialists_bn_display +]%, Others: [+ industrialists_other_display +]%
+Industrialists & Landowners: PSI: [+ industrialists_psi_display +]%, [? if pcdi_formed : PCd'I: [+ industrialists_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ industrialists_psu_display +]%, ?] PSRI: [+ industrialists_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ industrialists_pri_display +]%, ?] DS: [+ industrialists_ds_display +]%, PPI: [+ industrialists_ppi_display +]%, [+ ldr_name +]: [+ industrialists_ldr_display +]%, [+ ul_name +]: [+ industrialists_ul_display +]%; BN: [+ industrialists_bn_display +]%, Others: [+ industrialists_other_display +]%
 
-Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PSRI: [+ veterans_psri_display +]%, DS: [+ veterans_ds_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%; BN: [+ veterans_bn_display +]%, Others: [+ veterans_other_display +]%
+Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PSRI: [+ veterans_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ veterans_pri_display +]%, ?] DS: [+ veterans_ds_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%; BN: [+ veterans_bn_display +]%, Others: [+ veterans_other_display +]%
 
-Catholics: PSI: [+ catholics_psi_display +]%, [? if pcdi_formed : PCd'I: [+ catholics_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ catholics_psu_display +]%, ?] PSRI: [+ catholics_psri_display +]%, DS: [+ catholics_ds_display +]%, PPI: [+ catholics_ppi_display +]%, [+ ldr_name +]: [+ catholics_ldr_display +]%, [+ ul_name +]: [+ catholics_ul_display +]%; BN: [+ catholics_bn_display +]%, Others: [+ catholics_other_display +]%
+Catholics: PSI: [+ catholics_psi_display +]%, [? if pcdi_formed : PCd'I: [+ catholics_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ catholics_psu_display +]%, ?] PSRI: [+ catholics_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ catholics_pri_display +]%, ?] DS: [+ catholics_ds_display +]%, PPI: [+ catholics_ppi_display +]%, [+ ldr_name +]: [+ catholics_ldr_display +]%, [+ ul_name +]: [+ catholics_ul_display +]%; BN: [+ catholics_bn_display +]%, Others: [+ catholics_other_display +]%
 
 Support for Republicanism: [+ republican_sentiment_disp +]%
 
@@ -236,6 +241,7 @@ Support for Socialism: [+ socialist_sentiment_disp +]%
 Support for Nationalism: [+ nationalist_sentiment_disp +]%
 
 @foreign
+on-arrival: soviet_end_display = soviet_end_timer * 2
 
 = Foreign Relations
 
@@ -249,7 +255,7 @@ Yugoslavia: [+ balkan_relation : radicalisation +]
 
 = International Situations
 
-Russian Civil War: [? if not rcw_over : Ongoing, Estimated [+ soviet_end_timer +] Weeks Remaining ?][? if rcw_over : Soviet Victory ?]
+Russian Civil War: [? if not rcw_over : Ongoing, Estimated [+ soviet_end_display +] Weeks Remaining ?][? if rcw_over : Soviet Victory ?]
 
 Fiume: [? if not resolved_adriatic : Negotiating ?][? if fiume_free : Free City ?][? if fiume_italian : Italian ?]
 
@@ -281,6 +287,6 @@ Mafia: [? if mafia_strength < 1 : Neutralised ?][? if mafia_strength > 2: Strong
 
 = Reforms
 
-King Relations: [+ king_relation : relationships +]
+King Approval: [+ king_relation : relationships +]
 
 Senate: [? if veto_removed == 0: Empowered ?][? if veto_removed == 1: Weakened ?]

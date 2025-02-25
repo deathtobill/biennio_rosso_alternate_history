@@ -97,7 +97,7 @@ if (Q.bn_r >= Q.psi_r && Q.bn_r >= Q.psri_r && Q.bn_r >= Q.pci_r) {
 }
 
 // coalitions
-Q.left_wing_coalition_r = Q.psi_r + Q.psri_r + Q.psu_r;
+Q.left_wing_coalition_r = Q.psi_r + Q.psri_r + Q.psu_r + Q.pri_r;
 Q.centre_left_coalition_r = Q.psi_r + Q.ldr_r + Q.psri_r + Q.other_r + Q.psu_r + Q.ds_r;
 Q.socialist_catholic_coalition_r = Q.psi_r + Q.psri_r + Q.ppi_r + Q.other_r + Q.psu_r;
 Q.catholic_liberal_coalition_r = Q.ppi_r + Q.ul_r + Q.ldr_r + Q.ds_r + Q.other_r;
@@ -162,6 +162,15 @@ if (Q.psu_formed && Q.psu_r) {
         "legend": "PSU",
         "name": "PSU",
         "seats": Math.round(Q.psu_r*5),
+    });
+}
+
+if (Q.pri_prominent && Q.pri_r) {
+    data.push({
+        "id": "pri",
+        "legend": "PRI",
+        "name": "PRI",
+        "seats": Math.round(Q.pri_r*5),
     });
 }
 data = data.concat([
@@ -242,6 +251,8 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#FFC0CB'> </div>!} PSRI: {!</td><td>!} [+ psri_r +]% {!</td><td>!} [+ str_change_psri +]% {!</td></tr>!}
 
+[? if pri_prominent : {!<tr><td><div class="box" style='background-color:#3CB371'> </div>!} PRI: {!</td><td>!} [+ pri_r +]% {!</td><td>!} [+ str_change_pri +]% {!</td></tr>!} ?]
+
 {!<tr><td><div class="box" style='background-color:#1E99C5'> </div>!} DS: {!</td><td>!} [+ ds_r +]% {!</td><td>!} [+ str_change_ds +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#87CEFA'> </div>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td><td>!} [+ str_change_ppi +]% {!</td></tr>!}
@@ -257,7 +268,7 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
-Left-Wing Coalition (PSI + PSRI[? if psu_formed : + PSU?]): [+ left_wing_coalition_r +]%
+Left-Wing Coalition (PSI + PSRI[? if psu_formed : + PSU?][? if pri_prominent : + PRI?]): [+ left_wing_coalition_r +]%
 
 Centre-Left Coalition (PSI + [+ ldr_name +] + DS + PSRI [? if psu_formed :+ PSU ?]+ Others): [+ centre_left_coalition_r +]%
 
@@ -283,7 +294,7 @@ There are some potential coalition arrangements.
 @anti_socialist_coalition
 title: Anti-Socialist coalition
 subtitle: BN + [+ ldr_name +] + DS ([+ anti_socialist_coalition_r +]%)..
-view-if: anti_socialist_coalition_r > 49 and radicalisation > 8 and participating = 0
+view-if: anti_socialist_coalition_r > 49 and radicalisation > 7 and not_participating = 1
 priority: 2
 
 It seems our radicalism and abstentionism has pushed the Liberals to ally with the National Bloc. [+ bn_leader +] has made himself crucial to this coalition, and has already been appointed Prime Minister by the King.
