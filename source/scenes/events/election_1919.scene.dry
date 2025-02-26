@@ -83,7 +83,7 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
         }
         Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
         var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
-        Q['str_change_' + party] = sign + Q['change_' + party + '_r'];//.toFixed(1);
+        Q['str_change_' + party] = sign + Q['change_' + party + '_r'].toFixed(1);
     }
 }
 
@@ -102,6 +102,12 @@ Q.centre_left_coalition_r = Q.psi_r + Q.ldr_r + Q.psri_r + Q.other_r + Q.psu_r +
 Q.socialist_catholic_coalition_r = Q.psi_r + Q.psri_r + Q.ppi_r + Q.other_r + Q.psu_r;
 Q.catholic_liberal_coalition_r = Q.ppi_r + Q.ul_r + Q.ldr_r + Q.ds_r + Q.other_r;
 Q.anti_socialist_coalition_r = Q.bn_r + Q.ldr_r + Q.ul_r;
+
+Q.left_wing_coalition_r = Q.left_wing_coalition_r.toFixed(1);
+Q.centre_left_coalition_r = Q.centre_left_coalition_r.toFixed(1);
+Q.socialist_catholic_coalition_r = Q.socialist_catholic_coalition_r.toFixed(1);
+Q.catholic_liberal_coalition_r = Q.catholic_liberal_coalition_r.toFixed(1);
+Q.anti_socialist_coalition_r = Q.anti_socialist_coalition_r.toFixed(1);
 
 // reset parties
 Q.centre_left_coalition = 0;
@@ -140,14 +146,8 @@ Q.election_records.push(election_result);
 !}
 on-departure: fasci_urgency = 1 if (fasci_urgency == 0 and bn_r >= 15)
 on-display: {!
-data = [
-    {
-        "id": "psi",
-        "legend": "PSI",
-        "name": "PSI",
-        "seats": Math.round(Q.psi_r*5),
-    },
-]
+data = []
+
 if (Q.pcdi_formed && Q.pcdi_r) {
     data.push({
         "id": "pcdi",
@@ -156,6 +156,14 @@ if (Q.pcdi_formed && Q.pcdi_r) {
         "seats": Math.round(Q.pcdi_r*5),
     });
 }
+
+data.push({
+    "id": "psi",
+    "legend": "PSI",
+    "name": "PSI",
+    "seats": Math.round(Q.psi_r*5),
+});
+
 if (Q.psu_formed && Q.psu_r) {
     data.push({
         "id": "psu",
@@ -266,7 +274,7 @@ go-to: coalition_menu
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div>!} Others: {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +]% {!</td></tr>!}
 {!</table>!}
 
-**Potential coalitions:**
+**Potential Coalitions:**
 
 Left-Wing Coalition (PSI + PSRI[? if psu_formed : + PSU?][? if pri_prominent : + PRI?]): [+ left_wing_coalition_r +]%
 
@@ -274,7 +282,7 @@ Centre-Left Coalition (PSI + [+ ldr_name +] + DS + PSRI [? if psu_formed :+ PSU 
 
 Socialist-Catholic Coalition (PSI + PPI + PSRI [? if psu_formed :+ PSU ?]+ Others): [+ socialist_catholic_coalition_r +]%
  
-Catholic-Liberal Coalition (PPI + [+ ldr_name +] + [+ ul_name +] + DS + Others): [+ catholic_liberal_coalition_r +]%
+Grand Coalition (PPI + [+ ldr_name +] + [+ ul_name +] + DS + Others): [+ catholic_liberal_coalition_r +]%
 
 Anti-Socialist Coalition (BN + [+ ldr_name +] + UL): [+ anti_socialist_coalition_r +]%
 
@@ -340,7 +348,7 @@ Are we sure we wish to give up our opportunity to form the government?
 
 @catholic_liberal_coalition_yes
 subtitle: This is extremely unpopular with the reformists.
-on-arrival: reformist_dissent += 15 if participating = 1; psi_in_government = 0; prime_minister = "Francesco Saverio Nitti"; prime_minister_party = "LDR"; interior_minister_party = "DS"; foreign_minister_party = "UL"; justice_minister_party = "Independent"; treasury_minister_party = "LDR"; finance_minister_party = "LDR"; public_works_minister_party = "DS"; public_education_minister_party = "LDR"; agriculture_minister_party = "LDR"; labour_minister_party = "UL";
+on-arrival: reformist_dissent += 15 if participating = 1; psi_in_government = 0; prime_minister = "Nitti"; prime_minister_party = ldr_name; interior_minister_party = "DS"; foreign_minister_party = "UL"; justice_minister_party = "Independent"; treasury_minister_party = "LDR"; finance_minister_party = "LDR"; public_works_minister_party = "DS"; public_education_minister_party = "LDR"; agriculture_minister_party = "LDR"; labour_minister_party = "UL";
 
 Though tense negotiations between the Liberals and newly formed Catholic parties, the coalition of the PPI, [+ ldr_name +], [+ ul_name +] and DS is established.
 
@@ -348,14 +356,14 @@ Though tense negotiations between the Liberals and newly formed Catholic parties
 title: PSI majority alone
 subtitle: PSI: [+ psi_r +]%
 view-if: psi_r >= 50
-on-arrival: prime_minister = "Filippo Turati"; prime_minister_party = "PSI"; psi_in_government = 1; in_psi_majority = 1; foreign_minister_party = "PSI"; interior_minister_party = "PSI"; justice_minister_party = "PSI"; labour_minister_party = "PSI"; finance_minister_party = "PSI"; treasury_minister_party = "PSI"; agriculture_minister_party = "PSI"; public_education_minister_party = "PSI"; public_works_minister_party = "PSI";
+on-arrival: prime_minister = "Turati"; prime_minister_party = "PSI"; psi_in_government = 1; in_psi_majority = 1; foreign_minister_party = "PSI"; interior_minister_party = "PSI"; justice_minister_party = "PSI"; labour_minister_party = "PSI"; finance_minister_party = "PSI"; treasury_minister_party = "PSI"; agriculture_minister_party = "PSI"; public_education_minister_party = "PSI"; public_works_minister_party = "PSI";
 
 Finally, the PSI can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
 
 @turati
 title: Filippo Turati for Prime Minister
 subtitle: Turati leads the reformist wing, and is an acceptable candidate for Prime Minister.
-on-arrival: psi_in_government = 1; prime_minister = "Filippo Turati"; prime_minister_party = "PSI";
+on-arrival: psi_in_government = 1; prime_minister = "Turati"; prime_minister_party = "PSI";
 go-to: ministries
 
 Filippo Turati's appointment as Prime Minister is approved by all our potential allies.
@@ -363,21 +371,21 @@ Filippo Turati's appointment as Prime Minister is approved by all our potential 
 @orlando
 title: Let the [+ ldr_name +] have their Prime Minister. This will improve our leverage.
 subtitle: Vittorio Emanuele Orlando will be reappointed Prime Minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ldr_relation += 10; ds_relation += 5; prime_minister = "Vittorio Emanuele Orlando"; prime_minister_party = ldr_name; psi_in_government = 1; leverage += 10
+on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ldr_relation += 10; ds_relation += 5; prime_minister = "Orlando"; prime_minister_party = ldr_name; psi_in_government = 1; leverage += 10
 go-to: ministries
 
 @giolitti
 title: Let the [+ ul_name +] have their Prime Minister. This will improve our leverage.
 subtitle: Giovanni Giolitti will be reappointed Prime Minister. Allowing Giolitti to become Prime Minister is unexpected, and controversial within the party.
-on-arrival: reformist_dissent += 7; maximalist_dissent += 9; communist_dissent += 12; ldr_relation += 5; ul_relation += 10; prime_minister = "Giovanni Giolitti"; prime_minister_party = ul_name; psi_in_government = 1; leverage += 10
+on-arrival: reformist_dissent += 7; maximalist_dissent += 9; communist_dissent += 12; ldr_relation += 5; ul_relation += 10; prime_minister = "Giolitti"; prime_minister_party = ul_name; psi_in_government = 1; leverage += 10
 go-to: ministries
 
 This is highly unexpected, and many in the centre and even the reformists of our party are criticizing this decision.
 
 @bonomi
 title: Appoint a compromise candidate as Prime Minister. This will improve our leverage, but less so.
-subtitle: Ivanoe Bonomi will be reappointed Prime Minister. Allowing Bonomi to become Prime Minister is unexpected, but less controversial
-on-arrival: maximalist_dissent += 3; communist_dissent += 5; ds_relation += 5; psri_relation += 10; prime_minister = "Ivanoe Bonomi"; prime_minister_party = "PSRI"; psi_in_government = 1; leverage += 5
+subtitle: Ivanoe Bonomi will be reappointed Prime Minister. Allowing Bonomi to become Prime Minister is unexpected, but less controversial.
+on-arrival: maximalist_dissent += 3; communist_dissent += 5; ds_relation += 5; psri_relation += 10; prime_minister = "Bonomi"; prime_minister_party = "PSRI"; psi_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the centre and even the reformists of our party are criticizing this decision.
@@ -385,7 +393,7 @@ This is highly unexpected, and many in the centre and even the reformists of our
 @gasperi
 title: Let the People's Party have their Prime Minister. This will improve over leverage.
 subtitle: Alcide De Gasperi will be appointed Prime Minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ppi_relation += 10; prime_minister = "Alcide De Gasperi"; prime_minister_party = "PPI"; psi_in_government = 1; leverage += 5
+on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ppi_relation += 10; prime_minister = "De Gasperi"; prime_minister_party = "PPI"; psi_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the centre and even the reformists of our party are criticizing this decision.

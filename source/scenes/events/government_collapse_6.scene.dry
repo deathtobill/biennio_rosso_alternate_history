@@ -1,6 +1,6 @@
 title: Facta I Government Collapses!
 subtitle: The current coalition has fallen...
-view-if: year = 1922 and month = 8 and (not psi_in_government or not_participating = 1) and prime_minister = "Luigi Facta"
+view-if: year = 1922 and month = 8 and (not psi_in_government or not_participating = 1) and prime_minister = "Facta"
 new-page: true
 max-visits: 1
 on-arrival: {!

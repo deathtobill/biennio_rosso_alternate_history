@@ -1,11 +1,11 @@
 title: Nitti II Government Collapses!
 subtitle: The current coalition has fallen...
-view-if: year = 1920 and month = 5 and (not psi_in_government or not_participating = 1) and week = 3 and prime_minister = "Francesco Saverio Nitti"
+view-if: year = 1920 and month = 5 and (not psi_in_government or not_participating = 1) and week = 3 and prime_minister = "Nitti"
 new-page: true
 priority: -1
 max-visits: 1
 on-arrival: {!
-Q.prime_minister = "Giovanni Giolitti";
+Q.prime_minister = "Giolitti";
 Q.prime_minister_party = "UL";
 
 Q.republican_sentiment -= 6;
@@ -24,4 +24,4 @@ tags: event
 
 = Nitti II Government Collapses!
 
-The current governing coalition has collapsed in less than a month, primarily due to Nitti's inability to control the dissent of the coalition. He is succeeded by Giovanni Giolitti of the Liberal Union, and is joined by the PSRI once more, alongside the DS.
+The current governing coalition has collapsed once more in less than a month, primarily due to Nitti's inability to control the dissent of the coalition. He is succeeded by Giovanni Giolitti of the Liberal Union, and is joined by the PSRI once more, alongside the DS.

@@ -1,10 +1,10 @@
 title: Orlando Government Collapses!
 subtitle: The current coalition has fallen...
-view-if: year = 1919 and month = 6 and prime_minister = "Vittorio Emanuele Orlando"
+view-if: year = 1919 and month = 6 and prime_minister = "Orlando"
 new-page: true
 max-visits: 1
 on-arrival: {!
-Q.prime_minister = "Francesco Saverio Nitti"
+Q.prime_minister = "Nitti"
 Q.prime_minister_party = "LDR"
 
 Q.republican_sentiment -= 1;

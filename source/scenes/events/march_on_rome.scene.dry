@@ -60,7 +60,7 @@ max-visits: 1
 subtitle: The Carabinieri themselves seem to be willing to cooperate, now we have to convince the King...
 view-if: psi_in_government
 choose-if: interior_police_loyalty > 0.71 
-unavailable-subtitle: [? if army_loyalty < 0.72 : Carabinieri loyalty is too low. ?]
+unavailable-subtitle: [? if interior_police_loyalty < 0.72 : Carabinieri loyalty is too low. ?]
 on-arrival: police_convinced = 1; rome_police_visited = 1
 go-to: rome_police_checks
 
@@ -188,35 +188,52 @@ if (Q.rome_results >= 1.25) {
 console.log('Our strength:', Q.rome_total_power)
 console.log('Enemy strength:', Q.rome_enemy_power)
 !}
-go-to: total_defeat if rome_total_defeat = 1; rome_long_war if rome_civil_war = 1; rome_victory if rome_victory = 1
+go-to: total_defeat_accede if (rome_total_defeat = 1 and king_relation < 60); total_defeat_refuse if (rome_total_defeat = 1 and king_relation > 59); rome_long_war if rome_civil_war = 1; rome_victory if rome_victory = 1
 
 @rome_nothing
-max-visits: 1
 subtitle: We must prepare for the worst.
 view-if: rome_army_visited = 0 and rome_police_visited = 0 and rome_rg_visited = 0
 on-arrival: mussolini_unopposed = 1
 go-to: mussolini_takes_power 
 
 
-@total_defeat
+@total_defeat_accede
 title: Total Defeat
 new-page: false
-view-if: rome_total_defeat = 1
+view-if: rome_total_defeat = 1 and king_relation < 60
 on-arrival: mussolini_success = 1;
 
-Against all odds, Mussolini has succeeded in his goals. [+ king +] has already appointed him Prime Minister, as it seems the tide has turned against us. 
+= Total Defeat
+
+Our forces have engaged in fierce combat with the Fasci, Arditismo and Anti-Bolshevik Leagues.
+
+Whatever the case, our initial force has been defeated and forced to retreat, as Mussolini threatens further violence to bring 'order' to the Kingdom. Violence and blood is painted in the streets of Rome, as men across Italy are ordered to take up arms, either in defence of the Kingdom against fascism or socialism.
 
 What happens now?
 
-- @mussolini_takes_power: Mussolini assumes power.
+- @mussolini_takes_power: The King accedes to Mussolini's demands and appoints him Prime Minister.
 
-@mussolini_takes_power 
-go-to: mussolini_takes_power
+@total_defeat_refuse
+title: Total Defeat
+new-page: false
+view-if: rome_total_defeat and and king_relation > 59
+
+= Total Defeat
+
+Our forces have engaged in fierce combat with the Fasci, Arditismo and Anti-Bolshevik Leagues.
+
+Whatever the case, our initial force has been defeated and forced to retreat, as Mussolini threatens further violence to bring 'order' to the Kingdom. Violence and blood is painted in the streets of Rome, as men across Italy are ordered to take up arms, either in defence of the Kingdom against fascism or socialism.
+
+What happens now?
+
+- @civil_war: The King refuses to acquiesce. It is a civil war.
 
 @rome_long_war
 title: Long War
 new-page: false
 view-if: rome_civil_war = 1
+
+= Long War
 
 It seems the March on Rome has erupted into chaos, as forces across the nation take up arms, pledging support to one side or the other. 
 
@@ -229,6 +246,8 @@ title: Victory
 new-page: false
 view-if: rome_victory = 1
 on-arrival: march_failed = 1;
+
+= Victory
 
 Our forces easily overwhelm Mussolini's, as the Fasci are routed and forced to retreat. 
 

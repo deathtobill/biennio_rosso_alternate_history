@@ -306,14 +306,8 @@ Dissent: [+ reformist_dissent : dissent +]
 title: Figures and Charts
 go-to: menu
 on-display: {!
-data = [
-    {
-        "id": "psi",
-        "legend": "PSI",
-        "name": "PSI",
-        "seats": Math.round(Q.psi_r*5),
-    },
-]
+data = []
+
 if (Q.pcdi_formed && Q.pcdi_r) {
     data.push({
         "id": "pcdi",
@@ -322,6 +316,14 @@ if (Q.pcdi_formed && Q.pcdi_r) {
         "seats": Math.round(Q.pcdi_r*5),
     });
 }
+
+data.push({
+    "id": "psi",
+    "legend": "PSI",
+    "name": "PSI",
+    "seats": Math.round(Q.psi_r*5),
+});
+
 if (Q.psu_formed && Q.psu_r) {
     data.push({
         "id": "psu",
