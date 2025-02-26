@@ -11,7 +11,7 @@ The [+ ldr_full_name +] are, understandably upset at our failure to maintain the
 
 @lib_promise_results 
 on-arrival: ldr_relation -= 5; ldr_total_broken += 1; ldr_promise_failed = 0; coalition_dissent += 1 if (ldr_relation >= 50 and ldr_total_broken < 2); liberal_crackdown_timer += 6 if (ldr_relation >= 50 and ldr_total_broken < 2 and liberal_crackdown_accepted and liberal_crackdown_complete == 0);
-go-to: liberal_vote_of_no_confidence if (ldr_relation < 50 or ldr_total_broken >= 2 or or coalition_dissent >= 3)
+go-to: liberal_vote_of_no_confidence if (ldr_relation < 50 or ldr_total_broken >= 2 or coalition_dissent >= 3)
 
 [? if ldr_relation < 50 or ldr_total_broken >= 2 or coalition_dissent >= 3 : Unfortunately, the [+ ldr_name +] have decided to call a Vote of No Confidence against us. ?]
 

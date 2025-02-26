@@ -216,7 +216,7 @@ What happens now?
 @total_defeat_refuse
 title: Total Defeat
 new-page: false
-view-if: rome_total_defeat and and king_relation > 59
+view-if: rome_total_defeat and king_relation > 59
 
 = Total Defeat
 
