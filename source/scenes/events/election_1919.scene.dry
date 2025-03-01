@@ -657,7 +657,7 @@ Q.psi_in_government = 0;
 if (Q.year == 1919) {
     Q.prime_minister = "Nitti"; 
     Q.prime_minister_party = Q.ldr_name;
-!} 
+} 
 if (Q.year == 1920 || Q.year == 1921) {
     Q.prime_minister = "Giolitti";
     Q.prime_minister_party = Q.ul_name;

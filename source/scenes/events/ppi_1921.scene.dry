@@ -44,7 +44,7 @@ While Sturzo commands the support of the Christian Democrats and the 'White' Pea
 - @ppi_1921: The party votes...
 
 @ppi_1921
-go-to: sturzo_1920 if ppi_left > ppi_moderates; gasperi_1920 if ppi_moderates > ppi_left; triumvirate_1921 if ppi_left == ppi_moderates
+go-to: sturzo_1921 if ppi_left > ppi_moderates; gasperi_1921 if ppi_moderates > ppi_left; triumvirate_1921 if ppi_left == ppi_moderates
 
 @sturzo_1921
 face-image: img/portraits/LuigiSturzo.jpg
