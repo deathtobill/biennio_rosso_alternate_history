@@ -11,10 +11,10 @@ The PLI has been formed, and with it the first Congress has begun to elect the p
 
 On the other end is Antonio Salandra, a Right-wing Liberal and former Prime Minister, as well as the man responsible for bring Italy into the war. He represents the right-wing of the faction, and seems to be somewhat favourable to Mussolini and his ragtag gang of Fascists. Caught in the middle is Vittorio Emanuele Orlando, a 'Liberal Democrat' and former Prime Minister once more, and the man who led Italy out of the war. He represents the moderate wing of the party, in between the two other candidates.
 
-- @pli_congress: The party votes...
+- @pli_congress_vote: The party votes...
 - @pli_resources: Utilise our funds to campaign in favour of Nitti.
 
-@pli_congress
+@pli_congress_vote
 go-to: nitti_elected_1921 if ldr_left > ldr_moderates and ldr_left > ldr_moderates; orlando_elected_1921 if ldr_moderates > ldr_left and ldr_moderates > ldr_right; salandra_elected_1921 if ldr_right > ldr_left and ldr_right > ldr_moderates
 
 @pli_resources
