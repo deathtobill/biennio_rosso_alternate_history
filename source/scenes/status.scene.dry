@@ -105,7 +105,7 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 [? if catholic_nationalisation_accepted : Anti-Catholic Nationalisations disallowed ?]
 
-= [? if if mussolini_jailed and not mussolini_convicted : Mussolini's Trial ?]
+= Justice
 
 [? if mussolini_jailed and not mussolini_convicted: Trial Date: [+ mussolini_trial_timer_disp +] Weeks remaining ?]
 

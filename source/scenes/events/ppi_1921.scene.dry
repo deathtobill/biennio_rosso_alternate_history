@@ -59,6 +59,6 @@ on-arrival: ppi_relation -= 7; ppi_leader = "De Gasperi"; ppi_moderates += 2;
 Alcide De Gasperi, with his support base, has been elected the third Secretary General of the Party. Representing a turn from the left, the PPI will cooperate further with the liberal parties.
 
 @triumvirate_1921
-on-arrival: ppi_left -= 2; ppi_moderates -= 1; ppi_leader = "Triumvirate"; Q.ppi_right += 2;
+on-arrival: ppi_left -= 2; ppi_moderates -= 1; ppi_leader = "Triumvirate"; ppi_right += 2;
 
 Surprisingly, neither Sturzo nor De Gasperi have been able to acquire a majority to be elected, and have acceded to a compromise non-partisan Triumvirate of Gronchi, Spataro and Rodinò.

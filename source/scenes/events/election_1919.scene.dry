@@ -652,7 +652,9 @@ It seems our radicalism and abstentionism has pushed the Liberals to ally with t
 @grand_coalition_yes
 subtitle: This is extremely unpopular with the reformists.
 on-arrival: {!
-Q.reformist_dissent += 15 if Q.participating = 1; 
+if (Q.participating == 1) {
+    Q.reformist_dissent += 15;
+}
 Q.psi_in_government = 0; 
 if (Q.year == 1919) {
     Q.prime_minister = "Nitti"; 
