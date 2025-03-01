@@ -16,8 +16,8 @@ The *Partito Nazionale Fascista*, known also as the PNF has been formed official
 
 - @pnf_1921: The organisation votes...
 
-@fdc_1920
-go-to: mussolini_1920 if not mussolini_jailed and (pnf_r >= 10 or fiume_italian = 0); council_1920 if mussolini_jailed and fiume_italian = 0; dannunzio_1921 if fiume_italian and (mussolini_jailed or pnf_r < 10)
+@pnf_1921
+go-to: mussolini_1921 if not mussolini_jailed and (pnf_r >= 10 or fiume_italian = 0); council_1921 if mussolini_jailed and fiume_italian = 0; dannunzio_1921 if fiume_italian and (mussolini_jailed or pnf_r < 10)
 
 @mussolini_1921
 on-arrival: pnf_leader = "Mussolini"

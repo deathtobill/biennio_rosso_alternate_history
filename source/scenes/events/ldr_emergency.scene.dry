@@ -17,7 +17,7 @@ On the other end is Antonio Salandra, a Right-wing Liberal and former Prime Mini
 @ldr_congress
 go-to: nitti_elected if ldr_left > ldr_moderates and ldr_left > ldr_moderates; orlando_elected if ldr_moderates > ldr_left and ldr_moderates > ldr_right; salandra_elected if ldr_right > ldr_left and ldr_right > ldr_moderates
 
-@ul_resources
+@ldr_resources
 view-if: ldr_leader = "Nitti" and ((ldr_left + 2 > ldr_right) and (ldr_left + 2 > ldr_moderates))
 choose-if: resources > 1
 unavailable-subtitle: Not enough resources. (Need 2)
