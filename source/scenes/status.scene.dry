@@ -13,6 +13,9 @@ if (Q.unemployment) {
 }
 Q.dissent_percent = Math.round(Q.dissent_percent);
 Q.radicalisation = Math.round(Q.radicalisation);
+Q.liberal_crackdown_timer_disp = Q.liberal_crackdown_timer * 2;
+Q.catholic_papacy_timer_disp = Q.cathoic_papacy_timer * 2;
+Q.sonnino_southern_timer_disp = Q.sonnino_southern_timer * 2;
 !}
 
 = Status
@@ -74,7 +77,7 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 [? if liberal_reform_accepted : Land Reforms disallowed ?]
 
-[? if liberal_crackdown_accepted and liberal_crackdown_complete == 0 : Crackdown on Paramilitaries: [+ liberal_crackdown_timer * 2 +] weeks left ?]
+[? if liberal_crackdown_accepted and liberal_crackdown_complete == 0 : Crackdown on Paramilitaries: [+ liberal_crackdown_timer_disp +] weeks left ?]
 
 [? if liberal_crackdown_accepted and liberal_crackdown_complete == 1: Crackdown on Paramilitaries: Completed ?]
 
@@ -86,11 +89,11 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 [? if liberal_aid_accepted : Soviet Aid disallowed ?]
 
-[? if sonnino_southern_accepted and southern_development == 0 : Improve the Southern Question: [+ sonnino_southern_timer * 2 +] weeks left ?]
+[? if sonnino_southern_accepted and southern_development == 0 : Improve the Southern Question: [+ sonnino_southern_timer_disp +] weeks left ?]
 
 [? if sonnino_southern_accepted and southern_development >= 1 : Improve the Southern Question: Complete ?]
 
-[? if catholic_papacy_accepted and roman_question_answered == 0 : Roman Question resolved: [+ catholic_papacy_timer * 2 +] weeks left ?]
+[? if catholic_papacy_accepted and roman_question_answered == 0 : Roman Question resolved: [+ catholic_papacy_timer_disp +] weeks left ?]
 
 [? if catholic_papacy_accepted and roman_question_answered == 1 : Roman Question resolved: Completed ?]
 
@@ -102,7 +105,7 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 [? if catholic_nationalisation_accepted : Anti-Catholic Nationalisations disallowed ?]
 
-= Justice
+= [? if if mussolini_jailed and not mussolini_convicted : Mussolini's Trial ?]
 
 [? if mussolini_jailed and not mussolini_convicted: Trial Date: [+ mussolini_trial_timer_disp +] Weeks remaining ?]
 

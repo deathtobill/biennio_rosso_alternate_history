@@ -41,9 +41,9 @@ The *Partito Popolare Italiano*, known also as the PPI or the Italian People's P
 
 While Sturzo commands the support of the Christian Democrats and the 'White' Peasant Leagues, De Gasperi is supported by Moderate Clericalists and the Clergy.
 
-- @ppi_1920: The party votes...
+- @ppi_first: The party votes...
 
-@ppi_1920
+@ppi_first
 go-to: sturzo_1920 if ppi_left >= ppi_moderates; gasperi_1920 if ppi_moderates > ppi_left
 
 @sturzo_1920

@@ -709,14 +709,6 @@ go-to: ministries
 
 This is highly unexpected, and many in the centre and even the reformists of our party are criticizing this decision.
 
-@bonomi
-title: Appoint a compromise candidate as Prime Minister. This will improve our leverage, but less so.
-subtitle: Ivanoe Bonomi will be reappointed Prime Minister. Allowing Bonomi to become Prime Minister is unexpected, but less controversial.
-on-arrival: maximalist_dissent += 3; communist_dissent += 5; ds_relation += 5; psri_relation += 10; prime_minister = "Bonomi"; prime_minister_party = "PSRI"; psi_in_government = 1; leverage += 5
-go-to: ministries
-
-This is highly unexpected, and many in the centre and even the reformists of our party are criticizing this decision.
-
 @gasperi
 title: Let the People's Party have their Prime Minister. This will improve over leverage.
 subtitle: Alcide De Gasperi will be appointed Prime Minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
