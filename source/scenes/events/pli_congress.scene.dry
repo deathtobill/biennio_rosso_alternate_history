@@ -23,7 +23,7 @@ choose-if: resources > 1
 unavailable-subtitle: Not enough resources. (Need 2)
 subtitle: -2 Party Resource - It'll be unpopular to fund the liberals.
 on-arrival: ldr_left += 2; resources -= 2; ldr_relation += 10;
-go-to: nitti_elected
+go-to: nitti_elected_1921
 
 @nitti_elected_1921
 on-arrival: ldr_leader = "Nitti"; ldr_moderates -= 2; ldr_right -= 2; ldr_relation += 5;
