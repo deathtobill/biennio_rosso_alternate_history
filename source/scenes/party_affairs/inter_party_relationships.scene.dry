@@ -13,7 +13,7 @@ The PSI cannot govern by itself yet. Though we have not historically been any co
 
 - @liberals: Strengthen our bonds with the Liberal [+ ldr_full_name +] and [+ ul_full_name +] parties.
 - @catholic_party: Strengthen our bonds with the Catholic People's Party.
-- @leftists: Strengthen our bonds with our ideological allies in the Italian Socialist Reformist and Social Democracy parties.
+- @leftists: Strengthen our bonds with our ideological allies in the Italian Socialist Reformist and Social Democracy parties[? if not pri_prominent:. ?][? if pri_prominent:, as well as the Republican party. ?]
 - @psi_alone: The PSI can stand alone for now.
 - @easy_discard
 - @cancel_advisor_action
@@ -22,9 +22,11 @@ The PSI cannot govern by itself yet. Though we have not historically been any co
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; psri_relation += 5; ds_relation += 5; communist_dissent += 4*(1-dissent);
+on-arrival: resources -= 1; psri_relation += 5; ds_relation += 5; communist_dissent += 4*(1-dissent); pri_relation += 5 if pri_prominent; ds_left += 0.5; 
 
 We strengthen our contacts with the PSRI and the Democrazia Sociale, improving relations.
+
+[? if pri_prominent: We also reach out to the PRI, which respond warmly. ?]
 
 @catholic_party
 subtitle: -1 resources
@@ -34,12 +36,12 @@ on-arrival: resources -= 1;
 go-to: catholic_op if psi_in_government == 0; catholic_coalition if socialist_catholic_coalition == 1
 
 @catholic_op
-on-arrival: ppi_relation += 5; communist_dissent += 4*(1-dissent);
+on-arrival: ppi_relation += 5; communist_dissent += 4*(1-dissent); ppi_left += 0.25
 
 We are currently in opposition to their governing coalition, but that does not preclude the general building of feelings of good will.
 
 @catholic_coalition
-on-arrival: ppi_relation += 8; communist_dissent += 4*(1-dissent);
+on-arrival: ppi_relation += 8; communist_dissent += 4*(1-dissent); ppi_left += 0.5
 
 We are currently coalition partners with them, so improving relations comes naturally.
 
@@ -47,7 +49,7 @@ We are currently coalition partners with them, so improving relations comes natu
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; ldr_relation += 5; ul_relation += 5; communist_dissent += 4*(1-dissent);
+on-arrival: resources -= 1; ldr_relation += 5; ul_relation += 5; communist_dissent += 4*(1-dissent); ldr_left += 0.25; ul_sonnino -= 0.25;
 
 The [+ ldr_name +] and [+ ul_full_name +] parties have historically been wary of us, though we can help smooth out relations.
 

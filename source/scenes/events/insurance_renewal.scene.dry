@@ -17,7 +17,7 @@ Funding for the Unemployment Insurance Program has once again dried up, and sche
 subtitle: -2 Budget - Keep the Program running for another year. [? if catholic_charity_accepted = 1: The funding of any non-Catholic welfare program would violate our agreement! ?][? if (budget < 2 and liberal_budget_accepted = 1) : This will put us into a deficit! ?]
 choose-if: finance_minister_party = "PSI"
 unavailable-subtitle: The PSI does not control the Finance Ministry.
-on-arrival: unemployment_insurance_funded += 1; insurance_payments_timer = 24; budget -= 2; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ppi_promise_failed = 1 if catholic_charity_accepted; veterans_ppi += 4*(1-dissent)*unemployment_insurance_funded; veterans_bn -= 4*(1-dissent)*unemployment_insurance_funded; economic_growth += 0.7; inflation += 0.3; inflation += 0.5 if budget < 0;
+on-arrival: unemployment_insurance_funded += 1; insurance_payments_timer = 24; budget -= 2; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ppi_promise_failed = 1 if catholic_charity_accepted; veterans_ppi += 4*(1-dissent)*unemployment_insurance_funded; veterans_pnf -= 4*(1-dissent)*unemployment_insurance_funded; economic_growth += 0.7; inflation += 0.3; inflation += 0.5 if budget < 0;
 go-to: ldr_promise_vonc if ldr_promise_failed == 1; catholic_promise_vonc if ppi_promise_failed == 1
 
 The Program is set to continue for another year, our appeal to veterans increase alongside it.
@@ -25,7 +25,7 @@ The Program is set to continue for another year, our appeal to veterans increase
 @end_insurance
 view-if: finance_minister_party = "PSI"
 subtitle: Our veterans on this program will see this as a betrayal.
-on-arrival: veterans_psi -= 4*(1-dissent) if psi_in_government; veterans_ldr -= 3 if centre_left_coalition or catholic_liberal_coalition; veterans_ppi -= 3 if socialist_catholic_coalition or catholic_liberal_coalition; veterans_bn += 7; unemployment_insurance_founded = 0;
+on-arrival: veterans_psi -= 4*(1-dissent) if psi_in_government; veterans_ldr -= 3 if centre_left_coalition or grand_coalition; veterans_ppi -= 3 if socialist_catholic_coalition or grand_coalition; veterans_pnf += 7; unemployment_insurance_founded = 0;
 
 The short-lived Program comes to an end, as veterans now without government support flock to the fascists, bitter regarding our betrayal.
 

@@ -1,0 +1,64 @@
+title: 1921 Congress of the Partito Popolare Italiano
+subtitle: The PPI elects its Secretary General.
+new-page: true
+view-if: year = 1921 and month = 4 and week = 1
+on-arrival: {!
+
+if (Q.socialist_catholic_coalition == 1) {
+    Q.ppi_left += 1;
+}
+if (Q.ppi_relation >= 40) {
+    Q.ppi_left += 1;
+}
+if (Q.pope === "Gasparri") {
+    Q.ppi_left += 1;
+}
+if (Q.roman_question_answered == 1) {
+    Q.ppi_left += 2;
+}
+if (Q.ppi_relation < 40) {
+    Q.ppi_moderates += 1;
+}
+if (Q.not_participating == 1) {
+    Q.ppi_moderates += 1;
+}
+if (Q.secularised_education == 1) {
+    Q.ppi_moderates += 4;
+}
+if (Q.abortion_rights > 0) {
+    Q.ppi_moderates += 2;
+}
+if (Q.pope === "Del Val") {
+    Q.ppi_moderates += 1;
+}
+!}
+max-visits: 1
+tags: event
+
+= 1921 PPI Congress
+
+The *Partito Popolare Italiano*, known also as the PPI or the Italian People's Party have begun their third Congress. The party continues its two factional bloc, with Sturzo on the left-wing of the party and De Gasperi representing moderate wing of the party.
+
+While Sturzo commands the support of the Christian Democrats and the 'White' Peasant Leagues, De Gasperi is supported by Moderate Clericalists and the Clergy.
+
+- @ppi_1920: The party votes...
+
+@ppi_1920
+go-to: sturzo_1920 if ppi_left > ppi_moderates; gasperi_1920 if ppi_moderates > ppi_left; triumvirate_1921 if ppi_left == ppi_moderates
+
+@sturzo_1921
+face-image: img/portraits/LuigiSturzo.jpg
+on-arrival: ppi_left += 2; ppi_relation += 2; ppi_leader = "Sturzo"
+
+It seems the progressives have managed to sway the party, as Luigi Sturzo is elected Secretary General of the party once again, re-continuing the party's collaborative policies with the left.
+
+@gasperi_1921
+face-image: img/portraits/DeGasperi.jpg
+on-arrival: ppi_relation -= 7; ppi_leader = "De Gasperi"; ppi_moderates += 2;
+
+Alcide De Gasperi, with his support base, has been elected the third Secretary General of the Party. Representing a turn from the left, the PPI will cooperate further with the liberal parties.
+
+@triumvirate_1921
+on-arrival: ppi_left -= 2; ppi_moderates -= 1; ppi_leader = "Triumvirate"; Q.ppi_right += 2;
+
+Surprisingly, neither Sturzo nor De Gasperi have been able to acquire a majority to be elected, and have acceded to a compromise non-partisan Triumvirate of Gronchi, Spataro and Rodinò.

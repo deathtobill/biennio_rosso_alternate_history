@@ -40,6 +40,6 @@ The Red Guards is already serving the purpose it needs to serve. There is no rea
 
 @cut_rg
 subtitle: +1 paramilitary resources
-on-arrival: para_resources += 1; rg_strength -= 15; rg_militancy -= 0.05; communist_strength -= 2; communist_dissent -= 2; radicalisation -= 0.05; workers_bn += 2; veterans_psri += 2
+on-arrival: para_resources += 1; rg_strength -= 15; rg_militancy -= 0.05; communist_strength -= 2; communist_dissent -= 2; radicalisation -= 0.05; workers_pnf += 2; veterans_psri += 2
 
-Cutting resources to the Red Guards causes a drop in the membership, and leads some would-be members to join the PSRI or the National Bloc instead.
+Cutting resources to the Red Guards causes a drop in the membership, and leads some would-be members to join the PSRI or the PNF instead.

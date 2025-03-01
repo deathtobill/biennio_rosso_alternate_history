@@ -1,0 +1,24 @@
+title: Formation of the National Bloc
+view-if: year == 1921 and month == 3 and week == 3
+on-arrival: bn_formed = 1; ds_in_bn = 1; ul_in_bn = 1; pnf_in_bn = 1;
+max-visits: 1
+tags: event
+new-page: true
+
+= Formation of the National Bloc
+
+[? if prime_minister_party = "UL" : Following [+ prime_minister +]'s recent appointment and snap election, he has formed the National Bloc, consisting of his *Liberal Union*, the *Social Democracy* party, and more importantly, the *National Fascist Party*. ?]
+
+[? if not prime_minister_party = "UL" : Following recent developments in the political sphere, [+ ul_leader +] has formed the National Bloc, consisting of his *Liberal Union*, the *Social Democracy* party, and more importantly, the *National Fascist Party*. ?]
+
+- @root: Interesting.
+- @bn_convince: Campaign against the PNF's inclusion in the Bloc.
+
+@bn_convince
+subtitle: -1 Party Resource
+choose-if: resources > 0
+unavailable-subtitle: Not enough resources. (Need 1)
+view-if: ul_relation >= 65
+on-arrival: pnf_in_bn = 0;
+
+Our campaign is successful, as internal support against Giolitti mounts, forcing him to expel the PNF from the Bloc and continuing their political isolation.

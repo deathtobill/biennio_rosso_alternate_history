@@ -20,16 +20,16 @@ Our sources in the Army and Navy Ministries has informed us that the High Comman
 @libya_majority
 subtitle: We're in control of the government after all, aren't we?
 view-if: in_psi_majority = 1
-on-arrival: maximalist_dissent -= 10; reformist_dissent -= 10; communist_dissent -= 10; syndicalist_dissent -= 10; veterans_psi -= 7; veterans_bn += 7; army_loyalty -= 0.1; workers_psi -= 3
+on-arrival: maximalist_dissent -= 10; reformist_dissent -= 10; communist_dissent -= 10; syndicalist_dissent -= 10; veterans_psi -= 7; veterans_pnf += 7; army_loyalty -= 0.1; workers_psi -= 3
 
 Being in control of the government, we force the military to drop their plans, as the factions laud our decisive action. The military, however, is less than enthused by the news, and our veteran support base is in an uproar.
 
 @libya_coalition_influence
 subtitle: Thankfully, we can persuade our coalition to heed our concerns.
 view-if: centre_left_coalition or socialist_catholic_coalition or left_wing_coalition
-on-arrival: maximalist_dissent -= 5; reformist_dissent -= 5; communist_dissent -= 5; syndicalist_dissent -= 5; coalition_dissent += 1; veterans_psi -= 4; veterans_bn += 4; army_loyalty -= 0.05;
+on-arrival: maximalist_dissent -= 5; reformist_dissent -= 5; communist_dissent -= 5; syndicalist_dissent -= 5; coalition_dissent += 1; veterans_psi -= 4; veterans_pnf += 4; army_loyalty -= 0.05;
 
-Our coalition members are able to see reason, at least temporarily, and decide to delay the war until the internal situation improves. Our veteran supporters, however, aren't happy, and the BN seizes the opportunity to increase their support.
+Our coalition members are able to see reason, at least temporarily, and decide to delay the war until the internal situation improves. Our veteran supporters, however, aren't happy, and the PNF seizes the opportunity to increase their support.
 
 @libya_military_influence
 subtitle: -1 Resource - Thankfully, we can use to influence as well as our coffers to 'delay' the war.

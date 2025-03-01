@@ -39,7 +39,7 @@ title: Further persecute the Fasci.
 view-if: fdc_banned == 1
 choose-if: judicial_reform >= 3 and interior_police_loyalty >= 0.7
 unavailable-subtitle: [? if judicial_reform < 3 : The judiciary would not allow this. ?] [? if interior_police_loyalty < 0.7 : The Carabinieri are too disloyal to be trusted with this. ?]
-on-arrival: fdc_strength *= 0.7; fdc_militancy -= 0.03; nationalist_sentiment -= 2;
+on-arrival: fdc_strength *= 0.7; fdc_militancy -= 0.03; nationalist_sentiment -= 2; ds_right -= 0.1; ldr_right -= 0.1;
 
 We have arrested more of the Fasci's leaders and confiscated their weapons.
 
@@ -60,12 +60,12 @@ title: Further persecute the Arditismo.
 view-if: ard_banned == 1
 choose-if: judicial_reform >= 4 and interior_police_loyalty >= 0.7
 unavailable-subtitle: [? if judicial_reform < 4 : The judiciary would not allow this. ?] [? if interior_police_loyalty < 0.7 : The police are too disloyal to be trusted with this. ?]
-on-arrival: ard_strength *= 0.7; ard_militancy -= 0.03; ul_relation -= 5; interior_police_loyalty -= 0.05; nationalist_sentiment -= 2;
+on-arrival: ard_strength *= 0.7; ard_militancy -= 0.03; ul_relation -= 5; interior_police_loyalty -= 0.05; nationalist_sentiment -= 2; ds_right -= 0.1; ldr_right -= 0.1;
 
 We have arrested more of the Arditismo's leaders and confiscated their weapons.
 
 @ban_abl
-on-arrival: abl_strength *= 0.85; abl_strength *= 0.7 if interior_police_loyalty >= 0.7; abl_banned = 1; industrialists_bn += 5*(1-dissent); interior_police_loyalty -= 0.05; abl_ban_timer = 6; abl_militancy -= 0.04; nationalist_sentiment -= 4;
+on-arrival: abl_strength *= 0.85; abl_strength *= 0.7 if interior_police_loyalty >= 0.7; abl_banned = 1; industrialists_pnf += 5*(1-dissent); interior_police_loyalty -= 0.05; abl_ban_timer = 6; abl_militancy -= 0.04; nationalist_sentiment -= 4;
 view-if: fasci_urgency >= 3 and abl_banned == 0
 
 Banning the Anti-Bolshevik League's weakens our relationship with the landowners and industrialists.
@@ -81,6 +81,6 @@ title: Further persecute the Anti-Bolshevik Leagues.
 view-if: abl_banned == 1
 choose-if: judicial_reform >= 4 and interior_police_loyalty >= 0.7
 unavailable-subtitle: [? if judicial_reform < 4 : The judiciary would not allow this. ?] [? if interior_police_loyalty < 0.7 : The police are too disloyal to be trusted with this. ?]
-on-arrival: abl_strength *= 0.7; abl_militancy -= 0.03; industrialists_bn += 5*(1-dissent); interior_police_loyalty -= 0.05; nationalist_sentiment -= 2;
+on-arrival: abl_strength *= 0.7; abl_militancy -= 0.03; industrialists_pnf += 5*(1-dissent); interior_police_loyalty -= 0.05; nationalist_sentiment -= 2; ds_right -= 0.1; ldr_right -= 0.1;
 
 We have arrested more of the Anti-Bolshevik League's leaders and confiscated their weapons.

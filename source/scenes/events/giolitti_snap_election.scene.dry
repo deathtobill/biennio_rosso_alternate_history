@@ -1,0 +1,12 @@
+title: [+ prime_minister +] calls snap elections
+view-if: year == 1921 and month == 3 and week == 1 and prime_minister_party = "UL"
+on-arrival: next_election_year = 1921; next_election_month = 5
+max-visits: 1
+tags: event
+new-page: true
+
+= [+ prime_minister +] announce snap elections
+
+Expectedly, Prime Minister [+ prime_minister +] has announced snap elections to occur on the 15th of May following his recent appointment. Though short tenure, [+ prime_minister +] has done fairly well in quelling unrest, and it seems he plans to use this election to strengthen his political base.
+
+Whatever the case, we should begin campaigning.

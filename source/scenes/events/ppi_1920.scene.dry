@@ -1,0 +1,59 @@
+title: 1920 Congress of the Partito Popolare Italiano
+subtitle: The PPI elects its Secretary General.
+new-page: true
+view-if: year = 1920 and month = 4 and week = 1
+on-arrival: {!
+
+if (Q.socialist_catholic_coalition == 1) {
+    Q.ppi_left += 1;
+}
+if (Q.ppi_relation >= 40) {
+    Q.ppi_left += 1;
+}
+if (Q.pope === "Gasparri") {
+    Q.ppi_left += 1;
+}
+if (Q.roman_question_answered == 1) {
+    Q.ppi_left += 2;
+}
+if (Q.ppi_relation < 40) {
+    Q.ppi_moderates += 1;
+}
+if (Q.not_participating == 1) {
+    Q.ppi_moderates += 1;
+}
+if (Q.secularised_education == 1) {
+    Q.ppi_moderates += 4;
+}
+if (Q.abortion_rights > 0) {
+    Q.ppi_moderates += 2;
+}
+if (Q.pope === "Del Val") {
+    Q.ppi_moderates += 1;
+}
+!}
+max-visits: 1
+tags: event
+
+= 1920 PPI Congress
+
+The *Partito Popolare Italiano*, known also as the PPI or the Italian People's Party have begun their second Congress. The party has developed significantly over the past year, and a new face has emerged within the party: Alcide De Gasperi.
+
+While Sturzo commands the support of the Christian Democrats and the 'White' Peasant Leagues, De Gasperi is supported by Moderate Clericalists and the Clergy.
+
+- @ppi_1920: The party votes...
+
+@ppi_1920
+go-to: sturzo_1920 if ppi_left >= ppi_moderates; gasperi_1920 if ppi_moderates > ppi_left
+
+@sturzo_1920
+face-image: img/portraits/LuigiSturzo.jpg
+on-arrival: ppi_left += 2;
+
+Unsurprisingly, Luigi Sturzo continues his leadership over the party, continuing the party's collaborative policies with the left.
+
+@gasperi_1920
+face-image: img/portraits/DeGasperi.jpg
+on-arrival: ppi_relation -= 7; ppi_leader = "De Gasperi"; ppi_moderates += 2;
+
+Surprisingly, Alcide De Gasperi, with his support base, has been elected the second Secretary General of the Party. He represents a turn from the left, seeking further cooperation with the liberal parties.

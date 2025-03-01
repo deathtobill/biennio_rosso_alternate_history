@@ -24,7 +24,7 @@ Now that we are in control of the Public Education Ministry, we will be able to
 
 @education_secularise
 subtitle: This will **irreversibly** harm our relations with the PPI. 
-on-arrival: secularised_education = 1; ppi_relation -= 8*(1-dissent); catholics_psi -= 15; economic_growth += 0.3 if economic_growth < 0; workers_psi += 3*(1-dissent); middle_class_psi += 5*(1-dissent); rural_psi += 1*(1-dissent); papal_relation -= 3; psri_relation += 5*(1-dissent);
+on-arrival: secularised_education = 1; ppi_relation -= 8*(1-dissent); catholics_psi -= 15; economic_growth += 0.3 if economic_growth < 0; workers_psi += 3*(1-dissent); middle_class_psi += 5*(1-dissent); rural_psi += 1*(1-dissent); papal_relation -= 3; psri_relation += 5*(1-dissent); ppi_moderates += 4;
 choose-if: not socialist_catholic_coalition and not papal_education_offered
 unavailable-subtitle: [? if socialist_catholic_coalition : The PPI are threatening a pre-emptive Vote-of-No-Confidence if we go through with this. ?][? if papal_education_offered : This is violate the current agreement with have with the Holy See. ?]
 max-visits: 1
@@ -36,7 +36,7 @@ Our decision to secularise education is met with immense backlash from Sturzo an
 
 @education_funding 
 subtitle: -1 Budget - This has broad popular support across the workers and middle class. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
-on-arrival: budget -= 1; education_funded += 1; workers_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); industrialists_bn += 3*(1-dissent); economic_growth += 0.4 if economic_growth < 0; unemployment -= 0.4; unemployment -= 0.2 if unemployment >= 8; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1);
+on-arrival: budget -= 1; education_funded += 1; workers_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); industrialists_pnf += 3*(1-dissent); economic_growth += 0.4 if economic_growth < 0; unemployment -= 0.4; unemployment -= 0.2 if unemployment >= 8; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1);
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 max-visits: 3
 
@@ -65,7 +65,7 @@ Our efforts to reform the curriculum is opposed every step of the way by the Cat
 
 @trade_schools
 subtitle: -1 Budget - Our voter base is fond of this policy.  [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
-on-arrival: trade_school_funded += 1; workers_psi += 4*(1-dissent); rural_psi += 2*(1-dissent); middle_class_psi += 3*(1-dissent); rural_bn -= 2*(1-dissent); workers_ppi -= 3*(1-dissent); ppi_relation -= 4*(1-dissent); catholic_psi -= 2*(1-dissent); ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1);
+on-arrival: trade_school_funded += 1; workers_psi += 4*(1-dissent); rural_psi += 2*(1-dissent); middle_class_psi += 3*(1-dissent); rural_pnf -= 2*(1-dissent); workers_ppi -= 3*(1-dissent); ppi_relation -= 4*(1-dissent); catholic_psi -= 2*(1-dissent); ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); Q.ds_left += 0.1;
 max-visits: 3
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 

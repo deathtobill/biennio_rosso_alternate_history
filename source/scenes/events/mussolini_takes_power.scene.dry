@@ -1,7 +1,7 @@
 title: Mussolini takes power!
 subtitle: The beginning of the end...
 view-if: mussolini_success = 1
-on-arrival: psi_in_government = 0; prime_minister_party = "BN"; prime_minister = "Mussolini"
+on-arrival: psi_in_government = 0; prime_minister_party = "PNF"; prime_minister = "Mussolini"
 tags: event
 new-page: true
 

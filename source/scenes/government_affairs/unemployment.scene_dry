@@ -24,7 +24,7 @@ There are various ways we are able to tackle this problem now that we are in gov
 subtitle: -1 Budget - Expand our current infrastructural commitments further. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
 choose-if: public_works_minister_party = "PSI"
 unavailable-subtitle: The PSI does not control the Public Works Ministry.
-on-arrival: public_works_funded = 1; budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); unemployment -= 2 if unemployment >= 8; unemployment -= 1 if (unemployment > 4 and unemployment < 7); unemployment -= 0.5 if unemployment < 4; veterans_bn -= 3*(1-dissent); veterans_psi += 3*(1-dissent); rural_bn -= 2*(1-dissent); socialist_sentiment += 2; nationalist_sentiment -= 2;
+on-arrival: public_works_funded = 1; budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); unemployment -= 2 if unemployment >= 8; unemployment -= 1 if (unemployment > 4 and unemployment < 7); unemployment -= 0.5 if unemployment < 4; veterans_pnf -= 3*(1-dissent); veterans_psi += 3*(1-dissent); rural_pnf -= 2*(1-dissent); socialist_sentiment += 2; nationalist_sentiment -= 2;
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We have increased funding to the Public Works Ministry, who have begun drafting up plans and hiring workers for further infrastructure projects.
@@ -35,7 +35,7 @@ We have increased funding to the Public Works Ministry, who have begun drafting 
 subtitle: -1 Budget - Offer financial aid to small businesses and the like to alleviate their economic burden. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
 choose-if: finance_minister_party = "PSI"
 unavailable-subtitle: The PSI does not control the Financial Ministry.
-on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ldr_relation += 5; ds_relation += 5; syndicalist_dissent += 10; communist_dissent += 10; maximalist_dissent += 10; unemployment -= 2 if unemployment >= 8; unemployment -= 1 if (unemployment > 4 and unemployment < 7); unemployment -= 0.5 if unemployment < 4; middle_class_psi += 3*(1-dissent); middle_class_bn -= 3(1*dissent); workers_psi -= 4; capital_strike_progress -= 1; psri_relation -= 3*(1-dissent);
+on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ldr_relation += 5; ds_relation += 5; syndicalist_dissent += 10; communist_dissent += 10; maximalist_dissent += 10; unemployment -= 2 if unemployment >= 8; unemployment -= 1 if (unemployment > 4 and unemployment < 7); unemployment -= 0.5 if unemployment < 4; middle_class_psi += 3*(1-dissent); middle_class_pnf -= 3(1*dissent); workers_psi -= 4; capital_strike_progress -= 1; psri_relation -= 3*(1-dissent);
 go-to: ldr_promise_vonc if ldr_promise_failed = 1; 
 
 This is an unpopular move within the party, and is seen handouts to petite-bourgeois voters. The loans however, are able to keep businesses afloat temporarily[? if centre_left_coalition : and our coalition partners seem satisfied. ?] [? if not centre_left_coalition:. ?]

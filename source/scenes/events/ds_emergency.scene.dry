@@ -1,0 +1,55 @@
+title: [+ year +] DS Emergency Congress
+subtitle: The [+ ldr_name +] is having a leadership struggle...
+new-page: true
+view-if: ds_leader = "Colonna" and (ds_left > ds_moderates or ds_right > ds_moderates) and ds_emergency_timer <= 0 and ds_split = 1;
+on-arrival: ds_emergency_timer = 18; ds_congresses += 1; industrialists_ds -= 1*ldr_congresses; middle_class_ds -= 1*ldr_congresses;
+tags: event
+
+= [+ year +] DS Emergency Congress
+
+Since it's founding, the DS has held a wide range of political factions, ranging from socialism to liberalism to fascism. Tied together is one man: Giovanni Antonio Colonna di Cesarò, the *Anthroposophist Duke*. However, his leadership is contested by two men.
+
+On one end of the spectrum lies Vincenzo Giuffrida, elected on a Liberal-Socialist List, and one of the men behind the *INA Italia*, our national insurance company, representing the left-wing of the party. One the other end is Gabriello Carnazza, liberal, and a friend of Mussolini's *[+ pnf_full_name +]*
+
+And in the middle of it all lies Colonna, whose ideological position can be best described as 'opportunistic'.
+
+- @ds_congress: The party votes...
+- @ds_colonna: Campaign in favour of Colonna to prevent Carnazza from taking power.
+- @ds_giuffrida: Campaign in favour of Giuffrida for the leadership position.
+
+@ds_congress
+go-to: giuffrida_elected if ds_left > ds_moderates and ds_left > ds_right; carnazza_elected if ds_right > ds_left and ds_right > ds_moderates
+
+@ds_colonna
+view-if: ds_right <= ds_moderates + 1 and ds_left + 1 <= ds_right
+choose-if: resources > 0
+unavailable-subtitle: Not enough resources. (Need 1)
+subtitle: -1 Party Resource
+on-arrival: ds_moderates += 1; resources -= 1; ds_relation += 5;
+go-to: colonna_elected
+
+@ds_giuffrida
+view-if: ds_left < ds_right and ds_left + 1 >= ds_right
+choose-if: resources > 0
+unavailable-subtitle: Not enough resources. (Need 1)
+on-arrival: ds_left += 1; resources -= 1; ds_relation += 5;
+go-to: giuffrida_elected
+
+@colonna_elected
+on-arrival: ds_leader = "Colonna"; ds_left -= 1; ds_right -= 2; ds_relation += 2;
+
+It seems like Colonna has been able to succeed in retaining the leadership against the Carnazza and the Right-Wing, who have exhausted their influence, along with the Left-wing of the party, who have utilised some influence to make sure the party did not fall to Carnazza,
+
+@giuffrida_elected
+on-arrival: ds_leader = "Giuffrida"; ds_split = 1; ds_relation += 10; middle_class_pnf += middle_class_ds * 0.4; middle_class_ds *= 0.4; industrialists_pnf += industrialists_ds * 0.4; industrialists_ds *= 0.4; 
+
+Surprisingly, it seems Giuffrida has been elected leader of the DS. Already, our delegates have experienced a positive change in tone, and we can expect our relations with the new DS to deepen further.
+
+However, the only thing keeping the party from splintering, Colonna, has fallen as a result. Reports have noted mass defections to the [+ pnf_name +], as the right-wing of the party breaks from the DS, weakening them significantly.
+
+@carnazza_elected
+on-arrival: ds_leader = "Carnazza"; ds_split = 1; ds_relation -= 10; workers_psi += workers_ds * 0.4; workers_ds *= 0.4; rural_psi += rural_ds * 0.4; rural_ds *= 0.4; 
+
+Gabriello Carnazza, unfortunately, has won the leadership struggle. He represents a significant turn in the party's politics, actively reaching out to the Fascists and co-operating with them.
+
+Already, we are seeing the party break apart, as defections to our own party from the DS has increased significantly, not the least of which includes Giuffrida, who have seemingly broken from the DS.

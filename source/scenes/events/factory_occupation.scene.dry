@@ -61,7 +61,7 @@ Our status both controlling the Councils and in government places us in a unique
 
 @negotiate_labour_oriented
 subtitle: This might anger our coalition allies and the industrialists.
-on-arrival: ds_relation -= 5; ppi_relation -= 5; communist_dissent -= 5; unemployment += 0.6; councils_empowered = 1; coalition_dissent += 1; worker_psi += 6;
+on-arrival: ds_relation -= 5; ppi_relation -= 5; communist_dissent -= 5; unemployment += 0.6; councils_empowered = 1; coalition_dissent += 1; worker_psi += 6; ds_left += 0.2; ldr_left += 0.2;
 
 The *Factory Control Act* is signed, granting the Councils greater control over the factories and giving them direct input into control of the factories. The industrialists are unsurprisingly fuming, refusing to hire workers and worsening the unemployment situation somewhat [? if centre_left_coalition :, while our coalition partners with the exception of the PSRI are also disatisfied. ?][? if not centre_left_coalition :. ?]
 
@@ -73,7 +73,7 @@ The *Turin Accord* is signed, negotiating Council control within the factories t
 
 @negotiate_business_oriented
 subtitle: We can't afford to upset the industrialists in the economic crisis, can we?
-on-arrival: dissent += 0.1; councils_decreased = 1; workers_psi -= 5; ul_relation += 5; ldr_relation += 7; coalition_dissent -= 1; unemployment -= 0.7; industrialists_psi += 6; working_hours += 1;
+on-arrival: dissent += 0.1; councils_decreased = 1; workers_psi -= 5; ul_relation += 5; ldr_relation += 7; coalition_dissent -= 1; unemployment -= 0.7; industrialists_psi += 6; working_hours += 1; ds_moderates += 0.2; ldr_moderates += 0.2;
 
 The *Productivity Agreement* is signed, promising wage increases, shorter hours in exchange for decreased Council control over the factories. The Communists and Trade Unionists give us hell for our decision to bend over backwards to appease the industrialists [? if centre_left_coalition :, while our coalition members seem to be satisfied. ?][if not centre_left_coalition :. ?]
 

@@ -17,7 +17,7 @@ Riots have begun, mostly in Northern Italy, as strikes regarding food prices occ
 subtitle: -1 Party Resource - We can take the opportunity to grow our popularity.
 choose-if: resources > 0
 unavailable-subtitle: Not enough party resources (Need 1)
-on-arrival: workers_psi += 3*(1-dissent); rural_psi += 4*(1-dissent); veterans_psi += 3*(1-dissent); resources -= 1;
+on-arrival: workers_psi += 3*(1-dissent); rural_psi += 4*(1-dissent); veterans_psi += 3*(1-dissent); resources -= 1; ds_left += 0.1
 
 Our actions have earned us new supporters in our usual bases, thanking us for our aid.
 

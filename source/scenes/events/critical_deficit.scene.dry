@@ -18,14 +18,14 @@ subtitle: +2 Budget - Our voters won't be happy about this...
 view-if: unemployment_insurance_founded == 0
 choose-if: welfare > 0
 unavailable-subtitle: There is no welfare left to cut.
-on-arrival: budget += 2; welfare -= 1; veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_bn += 7; 
+on-arrival: budget += 2; welfare -= 1; veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_pnf += 7; 
 
 We are forced to cut welfare, with workers seeing this as a betrayal.
 
 @deficit_insurance
 subtitle: +2 Budget - Our voters won't be happy about this,,,
 view-if: unemployment_insurance_founded == 1
-on-arrival: budget += 2; veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_bn += 7; unemployment_insurance_founded = 0;
+on-arrival: budget += 2; veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_pnf += 7; unemployment_insurance_founded = 0;
 
 We are forced to end the Unemployment Insurance Program early, regaining the injected funds, with veterans seeing this as a betrayal.
 

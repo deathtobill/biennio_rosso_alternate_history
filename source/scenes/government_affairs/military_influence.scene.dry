@@ -33,11 +33,11 @@ Current Army loyalty: [+ army_loyalty : loyalty +]
 
 @caught_army
 new-page: true
-on-arrival: bribes_caught = 1; coalition_dissent += 3 if centre_left_coalition or socialist_catholic_coalition; workers_psi -= 8*(1-dissent); workers_bn += 5*(1-dissent); workers_ldr += 3*(1-dissent) if socialist_catholic_coalition; workers_ppi += 3*(1-dissent) if centre_left_coalition; reformist_dissent += 10; ldr_relation -= 5; ds_relation -= 5; ul_relation -= 5; ppi_relation -= 5; psri_relation -= 5;
+on-arrival: bribes_caught = 1; coalition_dissent += 3 if centre_left_coalition or socialist_catholic_coalition; workers_psi -= 8*(1-dissent); workers_pnf += 5*(1-dissent); workers_ldr += 3*(1-dissent) if socialist_catholic_coalition; workers_ppi += 3*(1-dissent) if centre_left_coalition; reformist_dissent += 10; ldr_relation -= 5; ds_relation -= 5; ul_relation -= 5; ppi_relation -= 5; psri_relation -= 5; ldr_right += 2; ds_right += 1;
 
 = Il Popolo d'Italia publishes damning article!
 
-It seems news of our...shady dealings have come to light. [? if centre_left_coalition or socialist_catholic_coalition : Our coalition partners are understandably outraged. ?] Our supporters have lost faith in us, and the National Bloc has seized the opportunity to further smear our image.
+It seems news of our...shady dealings have come to light. [? if centre_left_coalition or socialist_catholic_coalition : Our coalition partners are understandably outraged. ?] Our supporters have lost faith in us, and the National Fascist Party has seized the opportunity to further smear our image.
 
 @purge_loyalty
 choose-if: judicial_reform >= 2 and justice_minister_party = "PSI"

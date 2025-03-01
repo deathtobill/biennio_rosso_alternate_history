@@ -10,7 +10,7 @@ The Italian People's Party is, understandably upset at our failure to maintain t
 - @catholic_promise_results: And...
 
 @catholic_promise_results 
-on-arrival: ppi_relation -= 5; ppi_total_broken += 1; ppi_promise_failed = 0; coalition_dissent += 1 if (ppi_relation >= 50 and ppi_total_broken < 2); catholic_papacy_timer += 6 if (ppi_relation >= 50 and ppi_total_broken < 2 and catholic_papacy_timer == 0 and roman_question_answered == 0)
+on-arrival: ppi_relation -= 5; ppi_total_broken += 1; ppi_promise_failed = 0; coalition_dissent += 1 if (ppi_relation >= 50 and ppi_total_broken < 2); catholic_papacy_timer += 12 if (ppi_relation >= 50 and ppi_total_broken < 2 and catholic_papacy_timer == 0 and roman_question_answered == 0)
 go-to: catholic_vote_of_no_confidence if (ppi_relation < 50 or ppi_total_broken >= 2 or coalition_dissent >= 3)
 
 [? if ppi_relation < 50 or ppi_total_broken >= 2 or coalition_dissent >= 3: Unfortunately, the PPI have decided to call a Vote of No Confidence against us. ?]

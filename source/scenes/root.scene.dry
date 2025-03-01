@@ -84,21 +84,27 @@ Q.ds_relation = 37;
 Q.ppi_relation = 40;
 Q.psri_relation = 60;
 Q.pri_relation = 60;
-// BN relations are invariably hostile
-Q.bn_relation = 0;
+// PNF relations are invariably hostile
+Q.pnf_relation = 0;
 
 Q.ul_leader = "Giolitti";
 Q.ldr_leader = "Orlando";
 Q.ds_leader = "Colonna";
 Q.ppi_leader = "Sturzo";
 Q.psri_leader = "Ciotti";
-Q.bn_leader = "Mussolini";
+Q.pnf_leader = "Mussolini";
+Q.pri_leader = "Chisea"
+Q.psu_leader = "Turati"
+Q.pcdi_leader = "Bordiga"
 Q.ldr_name = "LDR";
 Q.ldr_full_name = "Liberals, Democrats and Radicals";
 Q.ldr_full_italian = "Liberali, democratici e radicali";
 Q.ul_name = "UL";
 Q.ul_full_name = "Liberal Union";
 Q.ul_full_italian = "Liberale Unione";
+Q.pnf_name = "FdC";
+Q.pnf_full_name = "Italian Fasces of Combat";
+Q.pnf_full_italian = "Fasci Italiani di Combattimento";
 Q.pli_formed = 0;
 Q.pldi_formed = 0;
 Q.pri_prominent = 0;
@@ -164,19 +170,19 @@ Q.budget = -2;
 Q.in_default = 0;
 
 // Proportion of different social groups
-Q.workers = 24; // industry and trade
-Q.middle_class = 13; // small business owners
-Q.industrialists = 7; // industrialists & landowners
-Q.rural = 46; // farmers & the like, many in the south
+Q.workers = 25; // industry and trade
+Q.middle_class = 14; // small business owners
+Q.industrialists = 8; // industrialists & landowners
+Q.rural = 42; // farmers & the like, many in the south
 Q.veterans = 4;
-Q.catholics = 6;
+Q.catholics = 7;
 
 Q.inflation = 19.2;
 Q.economic_growth = -3.7;
 Q.unemployment = 13.5;
 
 Q.classes = ['workers', 'middle_class', 'industrialists', 'rural', 'veterans', 'catholics'];
-Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'bn', 'other', 'pcdi', 'psu', 'pri'];
+Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'pnf', 'other', 'pcdi', 'psu', 'pri'];
 
 // Communist split from the party
 Q.pcdi_formed = 0;
@@ -195,7 +201,7 @@ Q.workers_ppi = 3;
 Q.workers_ldr = 2;
 Q.workers_ds = 3;
 Q.workers_ul = 4;
-Q.workers_bn = 7;
+Q.workers_pnf = 7;
 Q.workers_psri = 13;
 Q.workers_other = 5;
 
@@ -207,7 +213,7 @@ Q.middle_class_ppi = 33;
 Q.middle_class_ldr = 9;
 Q.middle_class_ds = 3;
 Q.middle_class_ul = 13;
-Q.middle_class_bn = 2;
+Q.middle_class_pnf = 2;
 Q.middle_class_psri = 2;
 Q.middle_class_other = 10;
 
@@ -219,7 +225,7 @@ Q.industrialists_ppi = 12;
 Q.industrialists_ldr = 54;
 Q.industrialists_ds = 3;
 Q.industrialists_ul = 28;
-Q.industrialists_bn = 1;
+Q.industrialists_pnf = 1;
 Q.industrialists_psri = 0;
 Q.industrialists_other = 1;
 
@@ -231,21 +237,21 @@ Q.rural_ppi = 44;
 Q.rural_ldr = 2;
 Q.rural_ds = 13;
 Q.rural_ul = 3;
-Q.rural_bn = 4;
+Q.rural_pnf = 4;
 Q.rural_psri = 2;
 Q.rural_other = 2;
 
 Q.veterans_pcdi = 0;
-Q.veterans_psi = 14;
+Q.veterans_psi = 20;
 Q.veterans_psu = 0;
 Q.veterans_ppi = 3;
-Q.veterans_ldr = 2;
+Q.veterans_ldr = 7;
 Q.veterans_pri = 0;
 Q.veterans_ds = 1;
-Q.veterans_ul = 3;
-Q.veterans_bn = 36;
-Q.veterans_psri = 2;
-Q.veterans_other = 2;
+Q.veterans_ul = 9;
+Q.veterans_pnf = 7;
+Q.veterans_psri = 4;
+Q.veterans_other = 12;
 
 Q.catholics_pcdi = 0;
 Q.catholics_psi = 6;
@@ -255,7 +261,7 @@ Q.catholics_ppi = 87;
 Q.catholics_ldr = 2;
 Q.catholics_ds = 3;
 Q.catholics_ul = 2;
-Q.catholics_bn = 2;
+Q.catholics_pnf = 2;
 Q.catholics_psri = 1;
 Q.catholics_other = 2;
 
@@ -263,7 +269,7 @@ Q.catholics_other = 2;
 // Current Chamber of Deputies composition
 // % of Chamber of Deputies in Jan 1919
 // source: wikipedia
-// Had to do some early forming of BN and other parties to make this easier for me + gameplay wise 
+// Had to do some early forming of PNF and other parties to make this easier for me + gameplay wise 
 Q.pcdi_r = 0;
 Q.psi_r = 17.6;
 Q.psu_r = 0;
@@ -272,7 +278,7 @@ Q.pri_r = 0;
 Q.ldr_r = 47.6;
 Q.ds_r = 18.6;
 Q.ul_r = 0;
-Q.bn_r = 0;
+Q.pnf_r = 0;
 Q.psri_r = 3.9;
 Q.other_r = 5.3;
 
@@ -285,7 +291,7 @@ Q.old_pri_r = 0;
 Q.old_ldr_r = 17;
 Q.old_ds_r = 15;
 Q.old_ul_r = 40;
-Q.old_bn_r = 0;
+Q.old_pnf_r = 0;
 Q.old_psri_r = 4;
 Q.old_other_r = 2;
 
@@ -311,7 +317,7 @@ Q.ldr_in_government = 1;
 Q.ds_in_government = 1;
 Q.ul_in_government = 1;
 Q.psri_in_government = 0;
-Q.bn_in_government = 0; 
+Q.pnf_in_government = 0; 
 
 // Left-Wing Coalition = PSI + PSRI
 Q.left_wing_coalition = 0
@@ -326,26 +332,26 @@ Q.anti_socialist_coalition = 0;
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from your partners.
 Q.coalition_dissent = 0;
 
-// is the current government a presidential minority government?
+// is the current government a liberal minority government?
 Q.minority_government = 0;
 
 // ministries - which parties control the ministries?
 Q.foreign_minister = 'Sonnino';
-Q.foreign_minister_party = 'UL';
+Q.foreign_minister_party = Q.ul_name;
 Q.interior_minister = 'Orlando';
-Q.interior_minister_party = 'LDR';
+Q.interior_minister_party = Q.ldr_name;
 Q.justice_minister = 'Sacchi';
 Q.justice_minister_party = 'DS';
 Q.labour_minister = 'Ferraris';
-Q.labour_minister_party = 'UL';
+Q.labour_minister_party = Q.ul_name;
 Q.public_works_minister = 'Dari';
-Q.public_works_minister_party = 'UL';
+Q.public_works_minister_party = Q.ul_name;
 Q.treasury_minister = 'Nitti';
 Q.treasury_minister_party = 'DS';
 Q.finance_minister = 'Meda';
 Q.finance_minister_party = 'PPI';
 Q.agriculture_minister = 'Miliani';
-Q.agriculture_minister_party = 'LDR';
+Q.agriculture_minister_party = Q.ldr_name;
 Q.public_education_minister = 'Berenini';
 Q.public_education_minister_party = 'PSRI';
 
@@ -367,6 +373,21 @@ Q.works_program = 0;
 Q.agricultural_policy = 0;
 Q.land_seizures = 0;
 
+// party congresses'
+Q.ppi_left = 2;
+Q.ppi_moderates = 0;
+Q.ppi_right = 0;
+
+Q.ul_giolitti = 4;
+Q.ul_sonnino = 2;
+
+Q.ldr_left = 3;
+Q.ldr_moderates = 5;
+Q.ldr_right = 1;
+
+Q.ds_left = 0;
+Q.ds_moderates = 5;
+Q.ds_right = 0;
 
 // International Relations
 Q.soviet_relation = 2;
@@ -425,7 +446,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'military_influence', 'roman_question', 'southern_question', 'arditi', 'para_rally', 'preparing_revolution', 
             'red_guards', 'targeting', 'enemies', 'fundraising', 'king_relations', 
             'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit',
-            'adriatic'];
+            'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'sonnino_southern'];
 // all timers
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
@@ -475,6 +496,11 @@ Q.urgency_timer = 0;
 Q.welfare_party_timer = 0;
 Q.deficit_timer = 0;
 Q.adriatic_timer = 44;
+Q.ul_emergency_timer = 18;
+Q.ldr_emergency_timer = 18;
+Q.ds_emergency_timer = 18;
+Q.mussolini_trial_timer = 0;
+Q.sonnino_southern_timer = 0;
 
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;
@@ -520,6 +546,8 @@ new-page: true
 This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
 
 For more information on the politics and government of the Italian Kingdom, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
+
+This is an **overhaul** mod for Autumn Chen's *Social Democracy: An Alternate History* mod, that you should check out <a href="https://red-autumn.itch.io/social-democracy">here</a> if you have not done so already.
 
 - @1919_easy: Begin (easy difficulty)
 - @1919_main: Begin (normal difficulty)

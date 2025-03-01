@@ -1,0 +1,36 @@
+title: Day of Trial
+subtitle: Let's see if we can convict him...
+view-if: mussolini_jailed = 1 and mussolini_trial_timer <= 0
+max-visits: 1
+priority: -1
+tags: event
+new-page: true
+
+= Day of Trial
+
+The day of Mussolini's trial is here. He is standing for his threat against the state, for operating a violent militia, a now notorious militia, alongside with gathering arms to defy the state.
+
+We have done all we can. Now we must see if will bare fruit.
+
+- @trial_results: We await the Judges' decision...
+
+@trial_results
+go-to: mussolini_sentenced if (evidence >= 3 and judicial_reform < 2) or (evidence >= 2 and judicial_reform >= 2); mussolini_exonerated if (evidence < 3 and judicial_reform < 2) or (evidence < 2 and judicial_reform >= 2)
+
+@mussolini_sentenced
+on-arrival: mussolini_convicted = 1; veterans_pnf *= 0.75; industrialists_pnf *= 0.75; fdc_militancy += 0.02; fdc_strength -= 20
+
+= Mussolini behind bars; Agitator convicted
+
+The Judge has ruled in favour of us. Mussolini is found guilty of his crimes, and sentenced to god knows how long in prison. Regardless, he will no longer lead the fascists, and existing supporters of the organisation leave, not wanting their own image tarnished by a criminal.
+
+In response, however, Mussolini's most loyal forces riot, inciting further violence and bloodshed across the nation in response, though we are able to quell the weakened forces easily.
+
+@mussolini_exonerated
+on-arrival: mussolini_jailed = 0; veterans_pnf *= 1.5; industrialists_pnf *= 1.25; fdc_strength += 20; fdc_militancy += 0.04;
+
+= Mussolini Acquitted; State unlawfully holds Innocent man for 12 months
+
+The Judge has ruled in favour of Mussolini, acquitting him of all charges we have placed against him due to 'insufficient evidence'. Regardless, our plan has backfired. Mussolini has turned into a martyr, celebrated by his men and the futurist and fascist movement, and has propelled the [+ pnf_name +] to a national stage.
+
+- @root: Damn it.

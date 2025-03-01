@@ -1,0 +1,14 @@
+title: Collapse of the National Bloc
+view-if: year == 1921 and month == 7 and week == 1 and bn_formed and pnf_in_bn
+on-arrival: ds_in_bn = 0; ul_in_bn = 0; pnf_in_bn = 0; bn_formed = 0; ul_giolitti -= 1;
+max-visits: 1
+tags: event
+new-page: true
+
+= Collapse of the National Bloc
+
+[? if giolitti_betrayed = 1 : Giolitti has fallen as Prime Minister, betrayed by Mussolini and his National Fascist Party and the Vote-of-No-Confidence. As such, the anti-socialist National Bloc has been dissolved. ?]
+
+[? if not giolitti_betrayed = 1 : Owing to recent political developments, the National Bloc has collapsed into infighting, as the National Fascist Party and the Social Democracts have both left the Liberal anti-socialist Bloc.. ?]
+
+- @root: Good riddance.

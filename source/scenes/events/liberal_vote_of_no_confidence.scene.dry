@@ -29,7 +29,7 @@ How do we assuage our partners?
 @austerity
 choose-if: welfare > 0
 unavailable-subtitle: There is no welfare left to cut.
-on-arrival: coalition_dissent = 0; workers_psi -= 10; veterans_psi -= 10; workers_ppi += 7; workers_bn += 3; veterans_ppi += 5; veterans_bn += 5; communist_dissent += 15; maximalist_dissent += 10; syndicalist_dissent += 15; reformist_dissent += 5; welfare -= 2; budget += 1; unemployment += 3; psri_relation -= 7; inflation -= 0.6; 
+on-arrival: coalition_dissent = 0; workers_psi -= 10; veterans_psi -= 10; workers_ppi += 7; workers_pnf += 3; veterans_ppi += 5; veterans_pnf += 5; communist_dissent += 15; maximalist_dissent += 10; syndicalist_dissent += 15; reformist_dissent += 5; welfare -= 2; budget += 1; unemployment += 3; psri_relation -= 7; inflation -= 0.6; 
 
 Fine. We enacted a massive austerity program to cut welfare, in order to maintain the stability of our coalition. The vote has been called off.
 
@@ -49,7 +49,7 @@ unavailable-subtitle: [? if psri_relation < 50 : The PSRI is not friendly enough
 Both our votes, alongside some defectors from the minor parties are enough for us to maintain control of the government. We owe a massive debt to the PSRI, which could lead to broader cooperation in the future, for better or for worse.
 
 @let_it_happen
-on-departure: coalition_dissent = 0; rural_psi -= 3; middle_class_psi -= 2; workers_psi -= 3; middle_class_bn += 2; psi_in_government = 0; centre_left_coalition = 0; ldr_relation -= 8; ds_relation -= 8; liberal_coalition_failed = 1; socialist_sentiment -= 3; republican_sentiment -= 2;
+on-departure: coalition_dissent = 0; rural_psi -= 3; middle_class_psi -= 2; workers_psi -= 3; middle_class_pnf += 2; psi_in_government = 0; centre_left_coalition = 0; ldr_relation -= 8; ds_relation -= 8; liberal_coalition_failed = 1; socialist_sentiment -= 3; republican_sentiment -= 2;
 go-to: election_1919.coalition_menu if next_election_time >= 4
 
 The vote succeeds, and our government has resigned. Prime Minister [+ prime_minister +] remains as the head of the government, but no longer has the power to enact new policies.

@@ -85,8 +85,8 @@ Q.soviet_power *= Q.soviet_multiplier;
 Q.total_power += Q.soviet_power;
 
 // use normalised workers_psi instead of syndicalist_strength?
-Q.normalised_workers_psi = 100*Q.workers_psi/(Q.workers_psi + Q.workers_psri + Q.workers_ppi + Q.workers_other + Q.workers_bn + Q.workers_ds + Q.workers_ul + Q.workers_ldr + Q.workers_pcdi + Q.workers_psu);
-Q.normalised_workers_psri = 100*Q.workers_psri/(Q.workers_psi + Q.workers_psri + Q.workers_ppi + Q.workers_other + Q.workers_bn + Q.workers_ds + Q.workers_ul + Q.workers_ldr + Q.workers_pcdi + Q.workers_psu);
+Q.normalised_workers_psi = 100*Q.workers_psi/(Q.workers_psi + Q.workers_psri + Q.workers_ppi + Q.workers_other + Q.workers_pnf + Q.workers_ds + Q.workers_ul + Q.workers_ldr + Q.workers_pcdi + Q.workers_psu);
+Q.normalised_workers_psri = 100*Q.workers_psri/(Q.workers_psi + Q.workers_psri + Q.workers_ppi + Q.workers_other + Q.workers_pnf + Q.workers_ds + Q.workers_ul + Q.workers_ldr + Q.workers_pcdi + Q.workers_psu);
 Q.normalised_workers_total = Q.normalised_workers_psi;
 if (Q.psri_relation >= 50) {
     Q.normalised_workers_total += Q.normalised_workers_psri;

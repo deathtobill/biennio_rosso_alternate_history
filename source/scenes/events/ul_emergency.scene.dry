@@ -1,0 +1,27 @@
+title: [+ year +] UL Emergency Congress
+subtitle: The UL is having a leadership struggle...
+new-page: true
+view-if: ((ul_sonnino > ul_giolitti and ul_leader = "Giolitti") or (ul_sonnino <= ul_giolitti and ul_leader = "Sonnino")) and ul_emergency_timer <= 0
+on-arrival: ul_emergency_timer = 18; ul_congresses += 1; industrialists_ul -= 1*ul_congresses; middle_class_ul -= 1*ul_congresses;
+tags: event
+
+= [+ year +] UL Emergency Congress
+
+It seems recent developments within the Italian political sphere has prompted a reorientation of the Liberal Union's internal politics, as it seems a strong opposition towards [+ ul_leader +]'s leadership has been challenged. On one end is Giovanni Giolitti, a 'Centrist Liberal' who to say is controversial within the party would be an understatement, having been Prime Minister for no less than a decade, holding significant influence within the party.
+
+On the other side, Sidney Sonnino represents the more right-wing of the party, being a 'Conservative Liberal' and historically a strong advocate of resolving the *Southern Question*.
+
+- @ul_congress: The party votes...
+
+@ul_congress
+go-to: giolitti_elected if ul_giolitti >= ul_sonnino; sonnino_elected if ul_sonnino > ul_giolitti
+
+@giolitti_elected
+on-arrival: ul_leader = "Giolitti"; ul_sonnino -= 2;
+
+It seems that Giovanni Giolitti has come out on top in the struggle, elected as the party's Secretary General. He continues the party's historical alignment.
+
+@sonnino_elected
+on-arrival: ul_leader = "Sonnino"; ul_giolitti -= 2; ul_relation -= 5;
+
+It seems that Sidney Sonnino has come out on top in the leadership struggle, elected as the party's Secretary General. He continues the party's alignment, albeit with a significant emphasis on the Mezzogiorno.

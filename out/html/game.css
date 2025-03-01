@@ -547,9 +547,9 @@ table {
     fill: #a0a0a0;
 }
 .seat.ds {
-    fill: #3F7BC1;
+    fill: #1E99C5;
 }
-.seat.bn {
+.seat.pnf {
     fill: #000000;
 }
 .seat.pcdi {
@@ -560,6 +560,10 @@ table {
 }
 .seat-pri {
   fill: #3CB371;
+}
+
+.seat.bn {
+  fill: #0047AB;
 }
 
 .tooltip-text {

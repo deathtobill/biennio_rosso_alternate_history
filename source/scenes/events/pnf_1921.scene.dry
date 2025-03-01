@@ -1,0 +1,39 @@
+title: 1921 Congress of the PNF
+subtitle: The PNF is established.
+new-page: true
+view-if: year = 1920 and month = 5 and week = 1
+on-arrival: pnf_formed = 1;
+max-visits: 1
+tags: event
+
+= 1921 Fasci Congress
+
+The *Partito Nazionale Fascista*, known also as the PNF has been formed officially as a political party, reorganising the existing *Fasces of Combat* into a new entity. The First Congress is to be held to determine the new leader of the Fasci.
+
+[? if pnf_leader = "Mussolini" : The signing of the *Pacification Pact* has led to a deep rift between the paramilitaries and Mussolini, and it is uncertain whether he will survive this challenge. ?]
+
+[? if pnf_leader = "Grand Council" : The Grand Council seems to be getting even more unstable as time passes, as members vie for more control and power. ?]
+
+- @pnf_1921: The organisation votes...
+
+@fdc_1920
+go-to: mussolini_1920 if not mussolini_jailed and (pnf_r >= 10 or fiume_italian = 0); council_1920 if mussolini_jailed and fiume_italian = 0; dannunzio_1921 if fiume_italian and (mussolini_jailed or pnf_r < 10)
+
+@mussolini_1921
+on-arrival: pnf_leader = "Mussolini"
+
+Partly due to his successes and partly due to there being no other leaders, Mussolini has been able to mediate the party split and come out on top, quelling the unrest of the paramilitaries, avowing the pacification pact as well.
+
+@council_1921
+on-arrival: pnf_leader = "Grand Council"; veterans_pnf -= 5; veterans_other += 5; fdc_strength -= 10;
+
+With the continued absence of Mussolini, alongside no other prominent leadership, the Grand Council continues to lead, while the Fascist movement continues to weaken, as other Futurist and Fascist parties appear to fill the political vacuum base the PNF have left.
+
+@dannunzio_1921
+on-arrival: pnf_leader = "D'Annunzio"; veterans_pnf += 17; middle_class_pnf += 6;
+
+[? if mussolini_jailed : Surprisingly, it seems Gabriele D'Annunzio has taken control of the party, dismissing the Grand Council and establishing his own group with overwhelming support. D'Annunzio's leadership has, unfortunately, revitalised the party, bring the organisation to the forefront of Futurist and Far-Right politics. ?]
+
+[? if not mussolini_jailed : Shockingly, it seems Mussolini has been ousted as *Duce*, and in his place, the triumphant Gabriele D'Annunzio has taken his mantle. D'Annunzio's leadership has sparked great popularity from veterans regarding his actions in Fiume, giving the PNF a boost in the polling. ?]
+
+

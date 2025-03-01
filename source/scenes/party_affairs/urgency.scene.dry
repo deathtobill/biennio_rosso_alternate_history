@@ -1,6 +1,6 @@
 title: Fascist Urgency
 new-page: true
-view-if: urgency_timer = 0 and (fasci_urgency > 0 or bn_r > 10)
+view-if: urgency_timer = 0 and (fasci_urgency > 0 or pnf_r > 10)
 on-arrival: urgency_timer = 9; week_actions += 1
 frequency: 150
 is-card: true
@@ -9,7 +9,7 @@ tags: party_affairs
 
 = Fascism in Italy
 
-Following the end of the First World War, it seems a new ideology has taken root in Italy, preying on the nationalistic sentiment of veterans, angered by our so-called 'mutilated victory' and promising revanchism, and that ideology is Fascism. Already, thousands are signing up in droves across the nation, from disgruntled veterans who have seen the horrors of war to youth who idolise our victory in the war, expanding the electorate of voters of the National Bloc and their paramilitary wing.
+Following the end of the First World War, it seems a new ideology has taken root in Italy, preying on the nationalistic sentiment of veterans, angered by our so-called 'mutilated victory' and promising revanchism, and that ideology is Fascism. Already, thousands are signing up in droves across the nation, from disgruntled veterans who have seen the horrors of war to youth who idolise our victory in the war, expanding the electorate of voters of the PNF and their paramilitary wing.
 
 Though initially thought to be moribund, it seems we have been proven wrong, and some within the party warn of its growing strength, especially as the *Biennio Rosso* continues on, and anti-socialist sentiment grows, it would not bode well for us if they are forced to turn to the fascists.
 

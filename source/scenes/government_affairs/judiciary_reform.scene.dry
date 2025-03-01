@@ -16,6 +16,7 @@ The Judiciary is one of the most reactionary components of the government, along
 
 - @reform: Carry out substantial judicial reforms,
 - @minor_reforms: Carry out minor judicial reforms.
+- @investigate_mussolini: Investigate Mussolini's crimes.
 - @as_is: Leave the judiciary as it is.
 - @easy_discard
 - @cancel_advisor_action
@@ -30,6 +31,11 @@ We investigate jurists who have shown themselves to have biased or corrupt behav
 on-arrival: democratisation += 1; workers_psi += 3*(1-dissent) if democratisation >= 3; judicial_reform += 1; republican_sentiment += 3*(1-dissent);
 
 We try to remove the most obviously biased and corrupt jurists, while leaving most of the system intact. It is slow work reforming the judiciary.
+
+@investigate_mussolini
+on-arrival: evidence += 1; 
+
+We are able to gain warrants, raiding hideouts and investigating Mussolini's closest confidants and interrogating them along the way.
 
 @as_is
 go-to: root

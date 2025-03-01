@@ -20,6 +20,6 @@ We expel the sympathisers, who turn out to be prominent members of the Maximalis
 
 @no_expel
 subtitle: Why act on baseless rumors?
-on-arrival: maximalist_strength += 5*(1-dissent); workers_psi -= 3*(1-dissent); workers_bn += 5*(1-dissent); middle_class_bn += 3*(1-dissent); reformist_dissent += 5*(1-dissent); communist_dissent += 5*(1-dissent);
+on-arrival: maximalist_strength += 5*(1-dissent); workers_psi -= 3*(1-dissent); workers_pnf += 5*(1-dissent); middle_class_pnf += 3*(1-dissent); reformist_dissent += 5*(1-dissent); communist_dissent += 5*(1-dissent);
 
 We allow the sympathisers in the party, though we do see our party base shrink slightly in the coming weeks.

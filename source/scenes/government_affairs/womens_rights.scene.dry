@@ -22,14 +22,14 @@ For better or for worse, the Socialists stand virtually alone in supporting incr
 
 @labour
 subtitle: Paid maternal leave policies, equal pay policies, and so on.
-on-arrival: womens_work += 1; womens_rights += 1; workers_psi -= 4 if unemployment > 15; middle_class_psi += 4*(1-dissent); workers_psi += 4*(1 - dissent); economic_growth += 0.1; coalition_dissent += 1 if socialist_catholic_coalition;
+on-arrival: womens_work += 1; womens_rights += 1; workers_psi -= 4 if unemployment > 15; middle_class_psi += 4*(1-dissent); workers_psi += 4*(1 - dissent); economic_growth += 0.1; coalition_dissent += 1 if socialist_catholic_coalition; ppi_moderates += 0.1
 max-visits: 3
 
 These policies mean that our party is increasing in popularity among the "new women" who work outside the home. [? if unemployment > 15 : However, many male workers develop a backlash towards women in the workplace, especially given the rising unemployment. ?]
 
 @family
 subtitle: Change family and inheritance law to treat women more equally.
-on-arrival: family_law += 1; womens_rights += 1; middle_class_psi += 2*(1-dissent); workers_psi += 3*(1-dissent); industrialists_psi -= 2; rural_psi -= 2; catholics_psi -= 4; coalition_dissent += 1 if socialist_catholic_coalition; ppi_relation -= 4;
+on-arrival: family_law += 1; womens_rights += 1; middle_class_psi += 2*(1-dissent); workers_psi += 3*(1-dissent); industrialists_psi -= 2; rural_psi -= 2; catholics_psi -= 4; coalition_dissent += 1 if socialist_catholic_coalition; ppi_relation -= 4; ppi_moderates += 0.1
 max-visits: 2
 
 These policies aim to ensure that women have equal rights within a marriage, including the right to divorce. The more conservative segments of society treat our reforms as deleterious to the social fabric.
@@ -47,11 +47,11 @@ subtitle: [? if left_wing_coalition_r < 50 : This is unlikely to succeed; we do 
 go-to: liberalize_fail if left_wing_coalition_r < 50; liberalize_success if left_wing_coalition_r >= 50
 
 @liberalize_fail
-on-arrival: ppi_relation -= 5; coalition_dissent += 1 if socialist_catholic_coalition; workers_psi += 3*(1-dissent); catholics_psi -= 5;
+on-arrival: ppi_relation -= 5; coalition_dissent += 1 if socialist_catholic_coalition; workers_psi += 3*(1-dissent); catholics_psi -= 5; ppi_moderates += 1;
 
 Unfortunately, our proposal is voted down in the Chamber of Deputies, with the Italian People's Party speaking in particularly vehement opposition, and some of our own members breaking party discipline. The activists, feeling demoralized from this attempt, have decided to bide their time.
 
 @liberalize_success
-on-arrival: abortion_rights += 1; womens_rights += 1; coalition_dissent += 1; ppi_relation -= 8; catholics_psi -= 10; ds_relation -= 5; workers_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); workers_ppi += 3; industrialists_ppi += 3; industrialists_ppi += 3; industrialists_ul += 3; rural_ul += 3; workers_bn -= 3; industrialists_bn -= 3; middle_class_bn -= 2; rural_bn -= 2; veterans_bn -= 2; veterans_ppi += 3; veterans_psi += 3*(1-dissent); socialist_sentiment += 7;
+on-arrival: abortion_rights += 1; womens_rights += 1; coalition_dissent += 1; ppi_relation -= 8; catholics_psi -= 10; ds_relation -= 5; workers_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); workers_ppi += 3; industrialists_ppi += 3; industrialists_ppi += 3; industrialists_ul += 3; rural_ul += 3; workers_pnf -= 3; industrialists_pnf -= 3; middle_class_pnf -= 2; rural_pnf -= 2; veterans_pnf -= 2; veterans_ppi += 3; veterans_psi += 3*(1-dissent); socialist_sentiment += 7; ppi_moderates += 2;
 
-With the support of the left including the PSI and PSRI, we have successfully passed a bill to legalize abortion in Italy! This has heartened our more progressive supporters, while hurting our relations with the People's Party. With the increasing political discourse around abortion, the religiously-oriented People's Party and [+ ul_full_name +] have gained conservative votes at the expense of the National Bloc.
+With the support of the left including the PSI and PSRI, we have successfully passed a bill to legalize abortion in Italy! This has heartened our more progressive supporters, while hurting our relations with the People's Party. With the increasing political discourse around abortion, the religiously-oriented People's Party and [+ ul_full_name +] have gained conservative votes at the expense of the PNF.

@@ -25,7 +25,7 @@ subtitle: +1 Budget
 view-if: centre_left_coalition
 choose-if: welfare > 0
 unavailable-subtitle: There is no welfare left to cut.
-on-arrival: workers_psi -= 5; veterans_psi -= 6; veterans_bn += 6; workers_bn += 3; syndicalist_dissent += 10; welfare -= 1; budget += 1; coalition_dissent = 0
+on-arrival: workers_psi -= 5; veterans_psi -= 6; veterans_pnf += 6; workers_pnf += 3; syndicalist_dissent += 10; welfare -= 1; budget += 1; coalition_dissent = 0
 
 This is a highly unpopular move, but smooth things over with our coalition partners.
 
@@ -47,7 +47,7 @@ By transferring campaign funds to our coalition partners, we can make our polici
 
 @bring_down
 subtitle: Bring down the coalition ourselves before our enemies do.
-on-arrival: psi_in_government = 0; centre_left_coalition = 0; socialist_catholic_coalition = 0; reformist_dissent += 6; rural_psi -= 3; middle_class_psi -= 2; workers_psi -= 3; middle_class_bn += 2; catholics_bn += 4; catholics_ppi -= 4 if socialist_catholic_coalition; industrialists_bn += 4; industrialists_ldr -= 4 if centre_left_coalition;
+on-arrival: psi_in_government = 0; centre_left_coalition = 0; socialist_catholic_coalition = 0; reformist_dissent += 6; rural_psi -= 3; middle_class_psi -= 2; workers_psi -= 3; middle_class_pnf += 2; catholics_pnf += 4; catholics_ppi -= 4 if socialist_catholic_coalition; industrialists_pnf += 4; industrialists_ldr -= 4 if centre_left_coalition;
 go-to: election_1919.coalition_menu if next_election_time >= 4
 
 The vote succeeds, and our government has resigned. Prime Minister [+ prime_minister +] remains as the head of the government, but no longer has the power to enact new policies.

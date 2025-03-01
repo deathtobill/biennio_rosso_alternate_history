@@ -33,7 +33,7 @@ Q.inflation += 9.6;
 
 Q.entente_relation -= 3;
 Q.veterans_psi += 17*(1-Q.dissent);
-Q.veterans_bn -= 19*(1-Q.dissent);
+Q.veterans_pnf -= 19*(1-Q.dissent);
 Q.nationalist_sentiment -= 10;
 Q.socialist_sentiment += 4;
 
@@ -55,7 +55,7 @@ choose-if: balkan_relation >= 8 and entente_relation > 2
 unavailable-subtitle: [? if balkan_relation < 8 : The Yugoslavian government is too wary of us. ?][? if entente_relation < 2: The Yugoslavian government knows they can get more from us. ?]
 on-arrival: {!
 Q.veterans_psi += 4*(1-dissent);
-Q.veterans_bn -= 2*(1-dissent);
+Q.veterans_pnf -= 2*(1-dissent);
 
 Q.nationalist_sentiment -= 3;
 !}
@@ -84,7 +84,7 @@ Q.ds_relation -= 7;
 Q.ul_relation -= 7;
 
 Q.veterans_psi -= 7;
-Q.veterans_bn += 7;
+Q.veterans_pnf += 7;
 
 Q.fasci_strength += 20;
 
@@ -103,7 +103,7 @@ It seems we might need to invest in more security for the Foreign Minister.
 
 @adriatic_delay
 view-if: psi_in_government and foreign_minister_party == "PSI"
-on-arrival: veterans_bn += 4; veterans_psi -= 7; adriatic_timer += 6;
+on-arrival: veterans_pnf += 4; veterans_psi -= 7; adriatic_timer += 6;
 
 We are able to buy another extra 6 months before renegotiations open back up.
 
@@ -129,7 +129,7 @@ choose-if: entente_relation >= 8 and balkan_relation >= 8 or ceded_territories =
 unavailable-subtitle: The British and French are already placing immense pressure on us to settle.
 on-arrival: {!
 Q.veterans_psi += 4;
-Q.veterans_bn -= 6;
+Q.veterans_pnf -= 6;
 Q.nationalist_sentiment -= 7;
 Q.socialist_sentiment += 2;
 
@@ -147,7 +147,7 @@ subtitle: Thankfully, they seem willing to compromise.
 view-if: psi_in_government and foreign_minister_party == "PSI"
 on-arrival: {!
 Q.veterans_psi -= 6*(1-Q.dissent);
-Q.veterans_bn += 8*(1-Q.dissent);
+Q.veterans_pnf += 8*(1-Q.dissent);
 Q.nationalist_sentiment += 4;
 Q.resolved_adriatic = 1;
 Q.fiume_free = 1;
@@ -161,7 +161,7 @@ subtitle: [? if not psi_in_government : We are not in government. ?][? if not fo
 view-if: not psi_in_government or not foreign_minister_party == "PSI"
 on-arrival: {!
 Q.veterans_psi -= 6*(1-Q.dissent);
-Q.veterans_bn += 8*(1-Q.dissent);
+Q.veterans_pnf += 8*(1-Q.dissent);
 Q.nationalist_sentiment += 4;
 Q.resolved_adriatic = 1;
 Q.fiume_free = 1;

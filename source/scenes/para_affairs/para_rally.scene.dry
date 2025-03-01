@@ -1,7 +1,7 @@
 title: Paramilitary Rally
 new-page: true
 is-card: true
-view-if: para_rally_timer <= 0
+view-if: para_rally_timer <= 0 and participating = 0;
 on-arrival: para_rally_timer = 3; week_actions += 1; rg_militarisation_cost = 2 if rg_militancy > 0.5 else rg_militarisation_cost = 1; rg_militarisation_cost = 3 if rg_militancy > 0.75
 card-image: img/ParaRally.jpg
 frequency: 250
@@ -21,7 +21,7 @@ Though not its usual tasks, the Red Guards are able to utilise its numbers to ra
 @defense
 subtitle: -[+ rg_militarisation_cost +] paramilitary resources
 choose-if: para_resources >= rg_militarisation_cost
-on-arrival: para_resources -= rg_militarisation_cost; rg_strength += 15*(1-dissent); rg_militancy += 0.05*(1-dissent); communist_dissent += 4*(1-dissent); fasci_urgency += 1; workers_bn -= 3*(1-dissent); nationalist_sentiment -= 2;
+on-arrival: para_resources -= rg_militarisation_cost; rg_strength += 15*(1-dissent); rg_militancy += 0.05*(1-dissent); communist_dissent += 4*(1-dissent); fasci_urgency += 1; workers_pnf -= 3*(1-dissent); nationalist_sentiment -= 2;
 
 The Red Guards rallies against the fascists, urging members of the party to be weary of this new threat and recruiting members to our cause. The Left wing of the party is critical of our silence towards the bourgeois parties, however.
 

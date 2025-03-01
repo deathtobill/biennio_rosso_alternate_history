@@ -13,7 +13,7 @@ There is a clear divide between the North and South of the nation. The rural sou
 Where should we begin?
 
 # if successful; major rural votes
-# first option pisses off the liberals massively; results in landowners flocking to bn; helps out eco crisis? needs labour ministry + judicial reform, or 
+# first option pisses off the liberals massively; results in landowners flocking to pnf; helps out eco crisis? needs labour ministry + judicial reform, or 
 # second is just empowered red guard for worse debuffs
 # third needs public works ministry
 # fourth needs education ministry; pisses of landowners + church since it'd be secular?
@@ -31,7 +31,7 @@ subtitle: -2 Budget - This will **irreversibly** damage our relations with the L
 choose-if: not centre_left_coalition and king_relation >= 60
 view-if: southern_land_reformed == 0
 unavailable-subtitle: [? if centre_left_coalition : The Liberals are threatening a pre-emptive Vote-of-No-Confidence if this bill hits the Chamber floor. ?][? if king_relation < 60 : This King has informed us he will veto this bill upon arrival regardless. ?]
-on-arrival: southern_land_reformed = 1; budget -= 2; ldr_relation -= 30; rural_psi += 17*(1-dissent); industrialists_ldr -= 27*(1-dissent); industrialists_bn += 20*(1-dissent); middle_class_bn += 4*(1-dissent); unemployment -= 4.3; inflation += 2.8; economic_growth += 2.7; fasci_coup_progress += 1; capital_strike_progress += 1;
+on-arrival: southern_land_reformed = 1; budget -= 2; ldr_relation -= 30; rural_psi += 17*(1-dissent); industrialists_ldr -= 7*(1-dissent); industrialists_pnf += 12*(1-dissent); middle_class_pnf += 4*(1-dissent); unemployment -= 4.3; inflation += 2.8; economic_growth += 2.7; fasci_coup_progress += 1; capital_strike_progress += 1; southern_development += 1 if sonnino_southern_accepted; ldr_right += 3;
 go-to: liberal_vote_of_no_confidence.let_it_happen if ldr_r >= 50
 
 The bill is barely able to pass the floor, and the Liberals are in an uproar. Already, our contacts within the [+ ldr_name +] have informed us of an exodus of their landowner backers from the party, instead seeking to align further with the far-right. Orlando and the [+ ldr_name +] vow never to work with us in future coalitions, as the Fascists use this opportunity to paint us as property-seizing radicals to the middle class.
@@ -42,7 +42,7 @@ The bill is barely able to pass the floor, and the Liberals are in an uproar. Al
 subtitle: -50k Red Guards - This will **irreversibly** damage our relations with the Liberals.
 choose-if: rg_strength >= 50
 view-if: southern_land_reformed == 0
-on-arrival: southern_land_reformed = 1; rg_strength -= 50; ldr_relation -= 35; rural_psi += 13*(1-dissent); industrialists_ldr -= 25*(1-dissent); industrialists_bn += 23*(1-dissent); middle_class_bn += 17*(1-dissent); unemployment -= 4.3; inflation += 2.8; economic_growth += 2.7; fasci_coup_progress += 2; capital_strike_progress += 2;
+on-arrival: southern_land_reformed = 1; rg_strength -= 50; ldr_relation -= 35; rural_psi += 13*(1-dissent); industrialists_ldr -= 25*(1-dissent); industrialists_pnf += 23*(1-dissent); middle_class_pnf += 17*(1-dissent); unemployment -= 4.3; inflation += 2.8; economic_growth += 2.7; fasci_coup_progress += 2; capital_strike_progress += 2; southern_development += 1 if sonnino_southern_accepted; ldr_right += 4;
 unavailable-subtitle: The Red Guards don't have enough manpower to do this.
 go-to: liberal_vote_of_no_confidence.let_it_happen if anti_socialist_coalition_r >= 50
 
@@ -65,6 +65,11 @@ Q.unemployment -= 0.7;
 Q.rural_psi += 2*(1-Q.dissent); 
 Q.nationalist_sentiment -= 3;
 Q.industrialists_psi -= 3*(1-Q.dissent);
+Q.ul_sonnino -= 0.1;
+
+if (Q.sonnino_southern_accepted == 1) {
+    Q.southern_development += 1;
+}
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
@@ -90,6 +95,11 @@ Q.industrialists_psi -= 3*(1-dissent);
 Q.catholics_psi -= 4*(1-dissent); 
 Q.nationalist_sentiment -= 3;
 Q.ppi_relation -= 7;
+Q.ul_sonnino -= 0.1;
+
+if (Q.sonnino_southern_accepted == 1) {
+    Q.southern_development += 1;
+}
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
@@ -103,7 +113,7 @@ unavailable-subtitle: [? if not interior_minister_party = "PSI": The PSI does no
 go-to: investigate_mafia_success if interior_police_loyalty >= 0.5 and judicial_reform > 1; investigate_mafia_failure if interior_police_loyalty < 0.5 or judicial_reform < 2
 
 @investigate_mafia_success
-on-arrival: mafia_investigation += 1; rural_psi += 3*(1-dissent); industrialists_psi -= 2*(1-dissent); industrialists_bn += 4*(1-dissent); mafia_strength -= 1;
+on-arrival: mafia_investigation += 1; rural_psi += 3*(1-dissent); industrialists_psi -= 2*(1-dissent); industrialists_pnf += 4*(1-dissent); mafia_strength -= 1; Q.ul_sonnino -= 0.1;
 
 The Carabinieri are able to uncover files regarding illegal activity among a number of high-value individuals, and we are able to conduct raids and arrests the following day.
 

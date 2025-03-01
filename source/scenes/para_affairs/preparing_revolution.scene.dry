@@ -2,7 +2,7 @@ title: Preparing our Revolution
 new-page: true
 is-card: true
 on-arrival: preparing_revolution_timer = 3; week_actions += 1
-view-if: preparation_done != 1 and preparing_revolution_timer <= 0
+view-if: preparation_done != 1 and preparing_revolution_timer <= 0 and participating = 0
 card-image: img/PreparingRevolution.jpg
 frequency: 300
 tags: para_affairs

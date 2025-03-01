@@ -1,0 +1,74 @@
+title: 1922 Congress of the Partito Popolare Italiano
+subtitle: The PPI elects its Secretary General.
+new-page: true
+view-if: year = 1922 and month = 4 and week = 1
+on-arrival: {!
+Q.ppi_left -= 2;
+Q.ppi_moderates -= 2;
+
+if (Q.socialist_catholic_coalition == 1) {
+    Q.ppi_left += 1;
+}
+if (Q.ppi_relation >= 40) {
+    Q.ppi_left += 1;
+}
+if (Q.pope === "Gasparri") {
+    Q.ppi_left += 1;
+}
+if (Q.roman_question_answered == 1) {
+    Q.ppi_left += 2;
+}
+if (Q.ppi_relation < 40) {
+    Q.ppi_moderates += 1;
+}
+if (Q.not_participating == 1) {
+    Q.ppi_moderates += 1;
+}
+if (Q.secularised_education == 1) {
+    Q.ppi_moderates += 4;
+}
+if (Q.pope === "Del Val") {
+    Q.ppi_right += 1;
+}
+if (Q.abortion_rights > 0) {
+    Q.ppi_right += 2;
+}
+if (Q.radicalism > 7) {
+    Q.ppi_right += 1;
+}
+if (Q.largest_party === "PNF") {
+    Q.ppi_right += 2;
+}
+!}
+max-visits: 1
+tags: event
+
+= 1922 PPI Congress
+
+The *Partito Popolare Italiano*, known also as the PPI or the Italian People's Party have begun their fourth Congress. It's two factional bloc, with Sturzo on the left-wing of the party and De Gasperi's moderate-wing of the party is still prominent, but it seems the the right-wing of the party, represented by the Triumvirate has gained significant power within the party as well.
+
+While Sturzo commands the support of the Christian Democrats and the 'White' Peasant Leagues, De Gasperi is supported by Moderate Clericalists and the Clergy. On the other hand, the Triumvirate is supported by Hardliner Clericalists & the National-Conservatives of the party.
+
+- @ppi_1920: The party votes...
+
+@ppi_1920
+go-to: sturzo_1920 if ppi_left >= ppi_moderates and ppi_left >= ppi_right; gasperi_1920 if ppi_moderates > ppi_left and ppi_moderates >= ppi_right; triumvirate_1921 if ppi_right > ppi_left and ppi_right > ppi_moderates
+
+@sturzo_1921
+face-image: img/portraits/LuigiSturzo.jpg
+on-arrival: ppi_left += 2; ppi_relation += 2; ppi_leader = "Sturzo"
+
+It seems the progressives have managed to sway the party, as Luigi Sturzo is elected Secretary General of the party once again, re-continuing the party's collaborative policies with the left.
+
+@gasperi_1921
+face-image: img/portraits/DeGasperi.jpg
+on-arrival: ppi_relation -= 7; ppi_leader = "De Gasperi"; ppi_moderates += 2;
+
+Alcide De Gasperi, with his support base, has been elected the fourth Secretary General of the Party. Representing a turn from the left, the PPI will cooperate further with the liberal parties.
+
+@triumvirate_1921
+on-arrival: ppi_right += 2; ppi_leader = "Triumvirate"; ppi_relation -= 10;
+
+Shockingly, the Triumvirate have been able to achieve a plurality, establishing a joint Vice-Secretariat Position of the three. This represents a sharp turn from the PPI's roots, and we should assume the PPI will be willing to cooperate with the Fascists.
+
+- @root: Damn it.

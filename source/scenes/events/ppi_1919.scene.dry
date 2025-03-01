@@ -1,0 +1,20 @@
+title: 1919 Congress of the Partito Popolare Italiano
+subtitle: The PPI elects its Secretary General.
+new-page: true
+view-if: year = 1919 and month = 4 and week = 1
+max-visits: 1
+tags: event
+
+= 1919 PPI Congress
+
+The *Partito Popolare Italiano*, known also as the PPI or the Italian People's Party was formed in January and are having their first congress to decide the leader of the party. It seems all but confirmed that Luigi Sturzo will come out on top to lead the party in its next elections.
+
+Whatever the case, the PPI represents a shift in the Holy See's stance on Italian politics, and will be pivotal to the nation's future outlook.
+
+- @sturzo_1919: The party votes...
+
+@sturzo_1919
+face-image: img/portraits/LuigiSturzo.jpg
+on-arrival: ppi_left += 2;
+
+As expected, Luigi Sturzo has been elected as the first Secretary General of the Italian People's Party. He represents the more progressive faction of the party, willing to cooperate with us, and we are optimistic we will be able to cooperate.

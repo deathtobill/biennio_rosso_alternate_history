@@ -69,7 +69,7 @@ DS: [+ ds_r +]%
 PPI: [+ ppi_r +]%
 [+ ldr_name +]: [+ ldr_r +]%
 [+ ul_name +]: [+ ul_r +]%
-BN: [+ bn_r +]%
+PNF: [+ pnf_r +]%
 Others: [+ other_r +]%
 
 PSI position: [? if psi_in_government : in government - ?][? if psi_in_government == 0 : opposition ?]
@@ -156,23 +156,23 @@ PPI: [+ ppi_votes +]%
 
 [+ ul_name +]: [+ ul_votes +]%
 
-BN: [+ bn_votes +]%
+PNF: [+ pnf_votes +]%
 
 Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Urban Workers: PSI: [+ workers_psi_display +]%, PPI: [+ workers_ppi_display +]%, [+ ldr_name +]: [+ workers_ldr_display +]%, DS: [+ workers_ds_display +]%, UL: [+ workers_ul_display +]%; BN: [+ workers_bn_display +]%, PSRI: [+ workers_psi_display +]%, Others: [+ workers_other_display +]%
+Urban Workers: PSI: [+ workers_psi_display +]%, PPI: [+ workers_ppi_display +]%, [+ ldr_name +]: [+ workers_ldr_display +]%, DS: [+ workers_ds_display +]%, UL: [+ workers_ul_display +]%; PNF: [+ workers_pnf_display +]%, PSRI: [+ workers_psi_display +]%, Others: [+ workers_other_display +]%
 
-Small Business Owners: PSI: [+ middle_class_psi_display +]%, PPI: [+ middle_class_ppi_display +]%, [+ ldr_name +]: [+ middle_class_ldr_display +]%, DS: [+ middle_class_ds_display +]%, UL: [+ middle_class_ul_display +]%; BN: [+ middle_class_bn_display +]%, PSRI: [+ middle_class_psri_display +]%, Others: [+ middle_class_other_display +]%  
+Small Business Owners: PSI: [+ middle_class_psi_display +]%, PPI: [+ middle_class_ppi_display +]%, [+ ldr_name +]: [+ middle_class_ldr_display +]%, DS: [+ middle_class_ds_display +]%, UL: [+ middle_class_ul_display +]%; PNF: [+ middle_class_pnf_display +]%, PSRI: [+ middle_class_psri_display +]%, Others: [+ middle_class_other_display +]%  
 
-Rural Workers & Farmers: PSI: PSI: [+ rural_psi_display +]%, PPI: [+ rural_ppi_display +]%, [+ ldr_name +]: [+ rural_ldr_display +]%, DS: [+ rural_ds_display +]%, UL: [+ rural_ul_display +]%; BN: [+ rural_bn_display +]%, PSRI: [+ rural_psri_display +]%, Others: [+ rural_other_display +]%
+Rural Workers & Farmers: PSI: PSI: [+ rural_psi_display +]%, PPI: [+ rural_ppi_display +]%, [+ ldr_name +]: [+ rural_ldr_display +]%, DS: [+ rural_ds_display +]%, UL: [+ rural_ul_display +]%; PNF: [+ rural_pnf_display +]%, PSRI: [+ rural_psri_display +]%, Others: [+ rural_other_display +]%
 
-Industrialists & Landowners: PSI: [+ industrialists_middle_psi_display +]%, PPI: [+ industrialists_middle_ppi_display +]%, [+ ldr_name +]: [+ industrialists_middle_ldr_display +]%, DS: [+ industrialists_middle_ds_display +]%, UL: [+ industrialists_middle_ul_display +]%; BN: [+ industrialists_middle_bn_display +]%, PSRI: [+ industrialists_middle_psri_display +]%, Others: [+ industrialists_middle_other_display +]% 
+Industrialists & Landowners: PSI: [+ industrialists_middle_psi_display +]%, PPI: [+ industrialists_middle_ppi_display +]%, [+ ldr_name +]: [+ industrialists_middle_ldr_display +]%, DS: [+ industrialists_middle_ds_display +]%, UL: [+ industrialists_middle_ul_display +]%; PNF: [+ industrialists_middle_pnf_display +]%, PSRI: [+ industrialists_middle_psri_display +]%, Others: [+ industrialists_middle_other_display +]% 
 
-Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, DS: [+ veterans_ds_display +]%, UL: [+ veterans_ul_display +]%; BN: [+ veterans_bn_display +]%, PSRI: [+ veterans_psri_display +]%, Others: [+ veterans_other_display +]% 
+Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, DS: [+ veterans_ds_display +]%, UL: [+ veterans_ul_display +]%; PNF: [+ veterans_pnf_display +]%, PSRI: [+ veterans_psri_display +]%, Others: [+ veterans_other_display +]% 
 
-Catholics: PSI: [+ catholics_psi_display +]%, PPI: [+ catholics_ppi_display +]%, [+ ldr_name +]: [+ catholics_ldr_display +]%, DS: [+ catholics_ds_display +]%, UL: [+ catholics_ul_display +]%; BN: [+ catholics_bn_display +]%, PSRI: [+ catholics_psri_display +]%, Others: [+ catholics_other_display +]% 
+Catholics: PSI: [+ catholics_psi_display +]%, PPI: [+ catholics_ppi_display +]%, [+ ldr_name +]: [+ catholics_ldr_display +]%, DS: [+ catholics_ds_display +]%, UL: [+ catholics_ul_display +]%; PNF: [+ catholics_pnf_display +]%, PSRI: [+ catholics_psri_display +]%, Others: [+ catholics_other_display +]% 
 
 @parties
 go-to: menu
@@ -186,6 +186,10 @@ go-to: menu
 **PSRI** - *Partito Socialista Riformista Italiano* (Italian Reformist Socialist Party) - A splinter of reformists from the PSI, the PRSI are a centre-left party, advocating for socialism through the parliamentary system. 
 
 Current relations: [+ psri_relation : relationships +]
+
+[? if pri_prominent : **PRI** - *Partito Repubblicano Italiano* (Italian Republican Party) - A centre-left party formed in 1895, the party holds its roots in Republicanism and the ideals of men such as Giuseppe Mazzini and Giuseppe Garibaldi. ?]
+
+[? if pri_prominent : Current relations: [+ pri_relation : relationships +] ?]
 
 **DS** - *Democrazia Sociale* (Social Democracy) - A newly formed centre-left party under the merger of the Constitutional Democratic Party, the Democratic Party and parts of the Italian Radical Party. The party is supported mainly by the the Southern regions of Italy.
 
@@ -203,9 +207,9 @@ Current relations: [+ ldr_relation : relationships +]
 
 Current relations: [+ ul_relation : relationships +]
 
-**BN** - *Blocco Nazionale* - (National Bloc) - A newly formed coalition of right-wing parties opposed to socialism, headed by Giovanni Giolitti, Benito Mussolini and Enrico Corradini.
+**[+ pnf_name +]** - *[+ pnf_full_italian +]* - ([+ pnf_full_name +]) - A newly formed party, operating essentially as the political expression of Benito Mussolini's *Fasces of Combat*.
 
-Current relations: [+ bn_relation : relationships +]
+Current relations: [+ pnf_relation : relationships +]
 
 **Other parties** - There is a multitude of small parties, such as the Economic Party, the Italian Republican Party, Independent Socialists, and others. Their political position usually lies on the left. 
 
@@ -233,7 +237,7 @@ Militarization: [+ rg_militancy : militancy +]
 
 [? if arditi_formed : Militarization: [+ adp_militancy : militancy +]?]
 
-**Fasci Italiano di Combattimento**: The Fasci are a paramilitary group headed by Benito Mussolini, and frequently come into conflict with the Red Guards.
+**Fasci Italiani di Combattimento**: The Fasci are a paramilitary group headed by Benito Mussolini, and frequently come into conflict with the Red Guards.
 
 Strength: [+ fdc_strength +] thousand
 
@@ -341,19 +345,24 @@ if (Q.pri_prominent && Q.pri_r) {
         "seats": Math.round(Q.pri_r*5),
     });
 }
-data = data.concat([
-    {
+
+data.push({
         "id": "psri",
         "legend": "PSRI",
         "name": "PSRI",
         "seats": Math.round(Q.psri_r*5),
-    },
-    {
+});
+
+if (Q.ds_in_bn == 0) {
+    data.push({
         "id": "ds",
         "legend": "DS",
         "name": "DS",
         "seats": Math.round(Q.ds_r*5),
-    },
+    });
+}
+
+data = data.concat([
     {
         "id": "ppi",
         "legend": "PPI",
@@ -366,25 +375,41 @@ data = data.concat([
         "name": Q.ldr_name,
         "seats": Math.round(Q.ldr_r*5),
     },
-    {
+]);
+
+if (Q.bn_formed == 1) {
+    data.push({
+        "id": "bn",
+        "legend": "BN",
+        "name": BN,
+        "seats": Math.round(Q.bn_r*5), 
+    })
+}
+
+if (Q.ul_in_bn == 0) {
+    data.push({
         "id": "ul",
         "legend": "UL",
         "name": Q.ul_name,
         "seats": Math.round(Q.ul_r*5),
-    },
-    {
-        "id": "bn",
-        "legend": "BN",
-        "name": "BN",
-        "seats": Math.round(Q.bn_r*5),
-    },
-    {
+    });
+}
+
+if (Q.pnf_in_bn == 0) {
+    data.push({
+        "id": "pnf",
+        "legend": "PNF",
+        "name": Q.pnf_name,
+        "seats": Math.round(Q.pnf_r*5),
+    });
+}
+
+data.push({
         "id": "other",
         "legend": "Other",
         "name": "Other",
         "seats": Math.round(Q.other_r*5),
-    },
-]);
+});
 
     if (d3 && window) {
         // get screen width
@@ -404,8 +429,8 @@ data = data.concat([
 
         var lines = d3.linegraph(false, false,
                 Q.parties,
-                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'bn': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A', 'pri': '#3CB371'},
-                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': Q.ldr_name, 'ds': 'DS', 'ul': Q.ul_name, 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pcdi': 'PCdI', 'psu': 'PSU', 'pri': 'PRI'});
+                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'pnf': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A', 'pri': '#3CB371', 'bn': '#0047AB'},
+                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': Q.ldr_name, 'ds': 'DS', 'ul': Q.ul_name, 'ppi': 'PPI', 'pnf': Q.pnf_name, 'other': 'Others', 'pcdi': 'PCdI', 'psu': 'PSU', 'pri': 'PRI', 'bn': 'BN'});
         lines.width(width).height(400);
         //var svg = lines(Q.election_records);
         if (Q.election_records.length > 0) {
@@ -417,8 +442,8 @@ data = data.concat([
         if (!Q.historical_mode || Q.game_over) {
             var lines_2 = d3.linegraph(true, true,
                 Q.parties,
-                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'bn': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A', 'pri': '#3CB371'},
-                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': Q.ldr_name, 'ds': 'DS', 'ul': Q.ul_name, 'ppi': 'PPI', 'bn': 'BN', 'other': 'Others', 'pcdi': 'PCdI', 'psu': 'PSU', 'pri': 'PRI'});
+                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'pnf': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A', 'pri': '#3CB371', 'bn': '#0047AB'},
+                {'psri': 'PSRI', 'psi': 'PSI', 'ldr': Q.ldr_name, 'ds': 'DS', 'ul': Q.ul_name, 'ppi': 'PPI', 'pnf': Q.pnf_name, 'other': 'Others', 'pcdi': 'PCdI', 'psu': 'PSU', 'pri': 'PRI', 'bn': 'BN'});
             lines_2.width(width).height(400);
             d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
         }
@@ -461,7 +486,7 @@ data = data.concat([
 
 {!<tr><td><div class="box" style='background-color:#00008B'> </div></td><td>!} [+ ul_name +]: {!</td><td>!} [+ ul_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#000000'> </div></td><td>!} BN: {!</td><td>!} [+ bn_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#000000'> </div></td><td>!} [+ pnf_name +]: {!</td><td>!} [+ pnf_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
 {!</table>!}

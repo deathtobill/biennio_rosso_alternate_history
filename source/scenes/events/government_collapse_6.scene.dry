@@ -10,9 +10,9 @@ Q.socialist_sentiment += 3;
 
 Q.workers_psi += 4;
 Q.middle_class_psi += 3;
-Q.workers_bn += 6;
-Q.middle_class_bn += 4;
-Q.veterans_bn += 7;
+Q.workers_pnf += 6;
+Q.middle_class_pnf += 4;
+Q.veterans_pnf += 7;
 !}
 tags: event
 

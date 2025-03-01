@@ -1,0 +1,13 @@
+title: PNF Collapses!
+view-if: year == 1922 and month == 11 and march_failed = 1
+max-visits: 1
+tags: event
+new-page: true
+
+= PNF Collapses!
+
+Following the March on Rome, the National Fascist Party, known also as the PNF, has collapsed. [+ pnf_leader +] has fled to Switzerland in exile, while his subordinates have been arrested and are being trialed. The Fasces of Combat have collapsed, as Italo Balbo, Dino Grandi and other prominent paramilitary leaders have fallen in the wake of their march.
+
+Fascism is dead, at least in Italy.
+
+- @root: Thus falls the failed experiment.

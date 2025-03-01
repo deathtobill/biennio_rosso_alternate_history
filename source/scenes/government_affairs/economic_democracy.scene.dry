@@ -26,7 +26,7 @@ Now that we are in control of the Labour and Social Security Ministry, we can ap
 
 @support_work_councils
 subtitle: Give factory worker's councils greater influence in their workplace.
-on-arrival: coalition_dissent += 1 if not left_wing_coalition; workers_psi += 7*(1-dissent); syndicalist_dissent -= 6; ldr_relation -= 9; ul_relation -= 7; syndicalist_strength += 10; work_councils += 1; industrialists_bn += 4; industrialists_psi -= 4*(1-dissent); psri_relation += 5*(1-dissent); socialist_sentiment += 4;
+on-arrival: coalition_dissent += 1 if not left_wing_coalition; workers_psi += 7*(1-dissent); syndicalist_dissent -= 6; ldr_relation -= 9; ul_relation -= 7; syndicalist_strength += 10; work_councils += 1; industrialists_pnf += 4; industrialists_psi -= 4*(1-dissent); psri_relation += 5*(1-dissent); socialist_sentiment += 4;
 view-if: work_councils = 0 and councils_empowered = 0
 
 The Turin Factory Councils, a small group of unionised factories under worker-led governments, have received official support from the PSI-led government, granting them legitimacy across Italy. Already, demonstrations are occuring throughout Italy, as workers have begun establish workers councils in their workplaces.
@@ -35,7 +35,7 @@ The Liberals, with their industrialist backers, are unsurprisingly outraged by t
 
 @support_work_councils_2
 subtitle: Continue the expansion of influence for worker's councils.
-on-arrival: coalition_dissent += 1 if not left_wing_coalition; workers_psi += 7*(1-dissent); syndicalist_dissent -= 10; ldr_relation -= 15; ds_relation -= 15; ppi_relation -= 5; syndicalist_strength += 17; work_councils += 1; radicalisation += 0.5; industrialists_bn += 6; industrialists_psi -= 6*(1-dissent); industrialists_ldr -= 3 if centre_left_coalition; psri_relation += 5*(1-dissent); socialist_sentiment += 7;
+on-arrival: coalition_dissent += 1 if not left_wing_coalition; workers_psi += 7*(1-dissent); syndicalist_dissent -= 10; ldr_relation -= 15; ds_relation -= 15; ppi_relation -= 5; syndicalist_strength += 17; work_councils += 1; radicalisation += 0.5; industrialists_pnf += 6; industrialists_psi -= 6*(1-dissent); industrialists_ldr -= 3 if centre_left_coalition; psri_relation += 5*(1-dissent); socialist_sentiment += 7;
 view-if: work_councils >= 1 and councils_empowered = 0
 
 Worker's councils are now given official recognition and further control of their factories, giving workers more of a voice as they are now able to have direct input into the operations. 
@@ -47,7 +47,7 @@ subtitle: This will ruin our relations with the Liberals.
 view-if: councils_empowered = 1 
 choose-if: (king_relation >= 50 or veto_removed) and not centre_left_coalition
 unavailable-subtitle: [? if king_relation < 50 : The Senate and King would kill the bill the moment it reaches them. ?][? if centre_left_coalition : The Liberals are threatening a pre-emptive Vote-of-No-Confidence if this is proposed. ?]
-on-arrival: coalition_dissent += 1 if centre_left_coalition; workers_psi += 12*(1-dissent); ldr_relation -= 20; ds_relation -= 20; syndicalist_strength += 25; syndicalist_dissent -= 25; radicalisation += 1; industrialists_bn += 18; industrialists_ldr -= 10; industrialists_psi -= 8*(1-dissent); psri_relation += 9*(1-dissent); socialist_sentiment += 9; 
+on-arrival: coalition_dissent += 1 if centre_left_coalition; workers_psi += 12*(1-dissent); ldr_relation -= 20; ds_relation -= 20; syndicalist_strength += 25; syndicalist_dissent -= 25; radicalisation += 1; industrialists_pnf += 18; industrialists_ldr -= 10; industrialists_psi -= 8*(1-dissent); psri_relation += 9*(1-dissent); socialist_sentiment += 9; ldr_left -= 2; ds_left -= 2;
 
 The *Factory Control Act*, signed in 1922 as an agreement to end the Turin workers conflict, has made its way onto the Chamber's floor once more, proposed now to be expanded across the country, giving the worker's councils extensive power within their workplace to act against the bourgeois businessmen and the industrialists.
 
@@ -61,7 +61,7 @@ Q.budget -= 1;
 Q.nationalisation_progress += 1; 
 Q.workers_psi += 3*(1-Q.dissent); 
 Q.industrialists_psi -= 4*(1-Q.dissent); 
-Q.industrialists_bn += 3; 
+Q.industrialists_pnf += 3; 
 Q.ldr_relation -= 7; 
 Q.ds_relation -= 7; 
 Q.communist_strength += 5; 
@@ -90,7 +90,7 @@ Q.budget -= 1;
 Q.nationalisation_progress += 1; 
 Q.workers_psi += 5*(1-Q.dissent); 
 Q.industrialists_psi -= 5*(1-Q.dissent); 
-Q.industrialists_bn += 4; 
+Q.industrialists_pnf += 4; 
 Q.ldr_relation -= 4; 
 Q.ul_relation -= 4; 
 Q.communist_strength += 7; 

@@ -50,6 +50,8 @@ Q.ldr_relation -= 4*(1-Q.dissent);
 Q.ds_relation -= 4*(1-Q.dissent);  
 if (Q.soviet_relation > Q.entente_relation) {
     Q.ldr_promise_failed = 1;
+Q.ds_right += 0.1;
+Q.ldr_right += 0.1;
 }
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
@@ -59,7 +61,7 @@ Our overtures to the Russian SFSR are noticed, and welcomed with open arms by ou
 [? if ldr_promise_failed : Unfortunately, our recent attempts to turn Italy away from the Entente have angered our coalition partners, who have called a meeting with us. ?]
 
 @improve_papal_relations
-on-arrival: papal_relation += 1; ppi_relation += 4*(1-dissent)
+on-arrival: papal_relation += 1; ppi_relation += 4*(1-dissent); ppi_left += 0.1;
 
 We begin slowly mending diplomatic ties between both of our countries[? if not resolved_roman_question :, though the Roman Question still hangs above us.?][? if resolved_roman_question :. ?]
 

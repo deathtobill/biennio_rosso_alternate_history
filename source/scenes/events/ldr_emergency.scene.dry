@@ -1,0 +1,41 @@
+title: [+ year +] [+ ldr_name +] Emergency Congress
+subtitle: The [+ ldr_name +] is having a leadership struggle...
+new-page: true
+view-if: ((ldr_left > ldr_right and ldr_left > ldr_moderates and not ldr_leader = "Nitti") or (ldr_moderates > ldr_right and ldr_moderates > ldr_left and not ldr_leader = "Orlando") or (ldr_right > ldr_left and ldr_right > ldr_moderates and not ldr_leader = "Salandra")) and ldr_emergency_timer <= 0
+on-arrival: ldr_emergency_timer = 18; ldr_congresses += 1; industrialists_ldr -= 1*ldr_congresses; middle_class_ldr -= 1*ldr_congresses;
+tags: event
+
+= [+ year +] [+ ldr_Name +] Emergency Congress
+
+It seems recent developments within the Italian political sphere has prompted a reorientation of the [+ ldr_full_name]'s internal politics, as it seems a strong opposition towards [+ ldr_leader +]'s leadership has been challenged. On one end is Francesco Saverio Nitti, a Centrist Liberal[? if not prime_minister = "Nitti": and former Prime Minister.?][? if prime_minister = "Nitti" : who currently is the Prime Minister.?] He aligns with the moderate to left-wing of the party, though that isn't to say he'd be willing to work with us in the slightest.
+
+On the other end is Antonio Salandra, a Right-wing Liberal and former Prime Minister, as well as the man responsible for bring Italy into the war. He represents the right-wing of the faction, and seems to be somewhat favourable to Mussolini and his ragtag gang of Fascists. Caught in the middle is Vittorio Emanuele Orlando, a 'Liberal Democrat' and former Prime Minister once more, and the man who led Italy out of the war. He represents the moderate wing of the party, in between the two other candidates.
+
+- @ldr_congress: The party votes...
+- @ldr_resources: Utilise our funds to campaign in favour of Nitti.
+
+@ldr_congress
+go-to: nitti_elected if ldr_left > ldr_moderates and ldr_left > ldr_moderates; orlando_elected if ldr_moderates > ldr_left and ldr_moderates > ldr_right; salandra_elected if ldr_right > ldr_left and ldr_right > ldr_moderates
+
+@ul_resources
+view-if: ldr_leader = "Nitti" and ((ldr_left + 2 > ldr_right) and (ldr_left + 2 > ldr_moderates))
+choose-if: resources > 1
+unavailable-subtitle: Not enough resources. (Need 2)
+subtitle: -2 Party Resource - It'll be unpopular to fund the liberals.
+on-arrival: ldr_left += 2; resources -= 2; ldr_relation += 10;
+go-to: nitti_elected
+
+@nitti_elected
+on-arrival: ldr_leader = "Nitti"; ldr_moderates -= 2; ldr_right -= 2; ldr_relation += 5;
+
+It seems that, fortunately, Nitti has come out on top in the struggle, elected as the party's Secretary General. He is expected to continue the party's liberal's alignment, though he seems at the very least willing to negotiate with us.
+
+@orlando_elected
+on-arrival: ldr_leader = "Orlando"; ldr_left -= 2; ldr_right -= 2;
+
+It seems that Vittorio Emanuele Orlando has come out on top in the leadership struggle, elected as the party's Secretary General. He continues the party's historic alignment and the status-quo.
+
+@salandra_elected
+on-arrival: ldr_leader = "Salandra"; ldr_left -= 2; ldr_moderates -= 2; ldr_relation -= 5;
+
+Antonio Salandra, unfortunately, has won the leadership struggle. He will continue the party's ideological alignment with liberalism, albeit with a willingness to be friendly to the right against us.
