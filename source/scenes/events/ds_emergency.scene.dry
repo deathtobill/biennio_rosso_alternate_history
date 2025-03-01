@@ -1,7 +1,7 @@
 title: [+ year +] DS Emergency Congress
 subtitle: The [+ ldr_name +] is having a leadership struggle...
 new-page: true
-view-if: ds_leader = "Colonna" and (ds_left > ds_moderates or ds_right > ds_moderates) and ds_emergency_timer <= 0 and ds_split = 1;
+view-if: ds_leader = "Colonna" and (ds_left > ds_moderates or ds_right > ds_moderates) and ds_emergency_timer <= 0 and ds_split = 1
 on-arrival: ds_emergency_timer = 18; ds_congresses += 1; industrialists_ds -= 1*ldr_congresses; middle_class_ds -= 1*ldr_congresses;
 tags: event
 

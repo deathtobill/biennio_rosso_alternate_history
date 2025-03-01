@@ -49,9 +49,9 @@ The *Partito Popolare Italiano*, known also as the PPI or the Italian People's P
 
 While Sturzo commands the support of the Christian Democrats and the 'White' Peasant Leagues, De Gasperi is supported by Moderate Clericalists and the Clergy. On the other hand, the Triumvirate is supported by Hardliner Clericalists & the National-Conservatives of the party.
 
-- @ppi_1920: The party votes...
+- @ppi_1922: The party votes...
 
-@ppi_1920
+@ppi_1922
 go-to: sturzo_1920 if ppi_left >= ppi_moderates and ppi_left >= ppi_right; gasperi_1920 if ppi_moderates > ppi_left and ppi_moderates >= ppi_right; triumvirate_1921 if ppi_right > ppi_left and ppi_right > ppi_moderates
 
 @sturzo_1921

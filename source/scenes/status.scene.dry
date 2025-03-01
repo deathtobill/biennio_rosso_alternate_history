@@ -104,11 +104,11 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 = [? if mussolini_jailed and not mussolini_convicted: Mussolini's Trial ?]
 
-[? if mussolini_jailed and not mussolini_convicted: Trial Date: [+ mussolini_trial_timer +] Weeks remaining ?]
+[? if mussolini_jailed and not mussolini_convicted: Trial Date: [+ mussolini_trial_timer_disp +] Weeks remaining ?]
 
-[? if mussolini_jailed and not mussolini_convicted and judicial_reform < 2: Evidence: [? if evidence < 3 : Insufficient ?][? if evidence >= 3 : Sufficient] ?]
+[? if mussolini_jailed and not mussolini_convicted and judicial_reform < 2: Evidence: [? if evidence < 3 : Insufficient ?][? if evidence >= 3 : Sufficient ?] ?]
 
-[? if mussolini_jailed and not mussolini_convicted and judicial_reform >= 2: Evidence: [? if evidence < 2 : Insufficient ?][? if evidence >= 2 : Sufficient] ?]
+[? if mussolini_jailed and not mussolini_convicted and judicial_reform >= 2: Evidence: [? if evidence < 2 : Insufficient ?][? if evidence >= 2 : Sufficient ?] ?]
 
 = Economics
 

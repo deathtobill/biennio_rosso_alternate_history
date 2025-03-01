@@ -72,7 +72,7 @@ subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted :- This will pu
 choose-if: treasury_minister_party = "PSI" 
 view-if: psi_in_government
 unavailable-subtitle: The PSI does not control the Treasury Ministry.
-on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); veterans_ppi += 1*(1-dissent); veterans_psi += 1*(1-dissent); veterans_pnf -= 2*(1-dissent); economic_growth += 0.7; Q.ppi_left += 0.1
+on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); veterans_ppi += 1*(1-dissent); veterans_psi += 1*(1-dissent); veterans_pnf -= 2*(1-dissent); economic_growth += 0.7; ppi_left += 0.1
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We begin distributing funds to Catholic-aligned organisations such as Churches, and the funds are reallocated to aid veterans immediately.

@@ -276,7 +276,7 @@ if (Q.week_actions >= 1) {
                 Q.workers_psu += 6/12
             }
             Q.ppi_left += 1/12;
-`           Q.ppi_moderates -= 1/12;
+            Q.ppi_moderates -= 1/12;
         }
         if (Q.unemployment > 30 && Q.republican_sentiment > 20 && Q.psi_in_government == 0) {
             Q.republican_sentiment -= 1;
@@ -319,7 +319,7 @@ if (Q.week_actions >= 1) {
                 Q.workers_psu += 6/12
             }
             Q.ppi_left -= 1/12;
-`           Q.ppi_moderates += 1/12;
+            Q.ppi_moderates += 1/12;
         }
         if (Q.unemployment > 30 && Q.republican_sentiment > 20 && Q.psi_in_government == 1) {
             Q.socialist_sentiment -= 1;

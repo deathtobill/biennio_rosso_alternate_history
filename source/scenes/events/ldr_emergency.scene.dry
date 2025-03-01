@@ -7,7 +7,7 @@ tags: event
 
 = [+ year +] [+ ldr_Name +] Emergency Congress
 
-It seems recent developments within the Italian political sphere has prompted a reorientation of the [+ ldr_full_name]'s internal politics, as it seems a strong opposition towards [+ ldr_leader +]'s leadership has been challenged. On one end is Francesco Saverio Nitti, a Centrist Liberal[? if not prime_minister = "Nitti": and former Prime Minister.?][? if prime_minister = "Nitti" : who currently is the Prime Minister.?] He aligns with the moderate to left-wing of the party, though that isn't to say he'd be willing to work with us in the slightest.
+It seems recent developments within the Italian political sphere has prompted a reorientation of the [+ ldr_full_name +]'s internal politics, as it seems a strong opposition towards [+ ldr_leader +]'s leadership has been challenged. On one end is Francesco Saverio Nitti, a Centrist Liberal[? if not prime_minister = "Nitti": and former Prime Minister.?][? if prime_minister = "Nitti" : who currently is the Prime Minister.?] He aligns with the moderate to left-wing of the party, though that isn't to say he'd be willing to work with us in the slightest.
 
 On the other end is Antonio Salandra, a Right-wing Liberal and former Prime Minister, as well as the man responsible for bring Italy into the war. He represents the right-wing of the faction, and seems to be somewhat favourable to Mussolini and his ragtag gang of Fascists. Caught in the middle is Vittorio Emanuele Orlando, a 'Liberal Democrat' and former Prime Minister once more, and the man who led Italy out of the war. He represents the moderate wing of the party, in between the two other candidates.
 

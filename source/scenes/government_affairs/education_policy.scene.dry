@@ -65,7 +65,7 @@ Our efforts to reform the curriculum is opposed every step of the way by the Cat
 
 @trade_schools
 subtitle: -1 Budget - Our voter base is fond of this policy.  [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
-on-arrival: trade_school_funded += 1; workers_psi += 4*(1-dissent); rural_psi += 2*(1-dissent); middle_class_psi += 3*(1-dissent); rural_pnf -= 2*(1-dissent); workers_ppi -= 3*(1-dissent); ppi_relation -= 4*(1-dissent); catholic_psi -= 2*(1-dissent); ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); Q.ds_left += 0.1;
+on-arrival: trade_school_funded += 1; workers_psi += 4*(1-dissent); rural_psi += 2*(1-dissent); middle_class_psi += 3*(1-dissent); rural_pnf -= 2*(1-dissent); workers_ppi -= 3*(1-dissent); ppi_relation -= 4*(1-dissent); catholic_psi -= 2*(1-dissent); ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ds_left += 0.1;
 max-visits: 3
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 

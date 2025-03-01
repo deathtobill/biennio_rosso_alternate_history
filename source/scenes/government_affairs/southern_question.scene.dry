@@ -113,7 +113,7 @@ unavailable-subtitle: [? if not interior_minister_party = "PSI": The PSI does no
 go-to: investigate_mafia_success if interior_police_loyalty >= 0.5 and judicial_reform > 1; investigate_mafia_failure if interior_police_loyalty < 0.5 or judicial_reform < 2
 
 @investigate_mafia_success
-on-arrival: mafia_investigation += 1; rural_psi += 3*(1-dissent); industrialists_psi -= 2*(1-dissent); industrialists_pnf += 4*(1-dissent); mafia_strength -= 1; Q.ul_sonnino -= 0.1;
+on-arrival: mafia_investigation += 1; rural_psi += 3*(1-dissent); industrialists_psi -= 2*(1-dissent); industrialists_pnf += 4*(1-dissent); mafia_strength -= 1; ul_sonnino -= 0.1;
 
 The Carabinieri are able to uncover files regarding illegal activity among a number of high-value individuals, and we are able to conduct raids and arrests the following day.
 
