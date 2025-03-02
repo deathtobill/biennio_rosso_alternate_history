@@ -1,6 +1,7 @@
 title: March on Rome
 subtitle: The fascists are making their move!
-view-if: ((year == 1922 and month == 10) or (fasci_coup_progress >= 10 and year == 1922 and month <= 10)) and (fdc_banned == 0 and ard_banned == 0 and abl_banned == 0)
+view-if: ((year == 1922 and month == 10) or (fasci_coup_progress >= 10 and year == 1922 and month <= 10)) and (fdc_banned == 0 and ard_banned == 0 and abl_banned == 0) and pnf_in_government = 0
+on-arrival: pnf_leader = "Balbo" if pnf_leader == "Grand Council"
 max-visits: 1
 priority: -1
 tags: event
@@ -10,16 +11,16 @@ go-to: rome_menu
 
 = March on Rome
 
-Benito Mussolini, alongside his militants, have marched upon Rome, demanding the resignation of the current government. The party is in crisis, as factions scramble to assemble a coherent response to the threat. [? if centre_left_coalition or left_wing_coalition or socialist_catholic_coalition : Our coalition partners not responded to Mussolini's demands, as frantic calls are made to them to organise meetings. ?][? if king_relation < 50 : The King has not responded to the demands as well, but we are pessimistic on his response, considering our strained relations. ?][? if king_relation > 49 : The King has not responded to the demands as well, but we are optimistic on his response, considering our warm relations. ?]
+[+ pnf_leader +], alongside his militants, have marched upon Rome, demanding the resignation of the current government. The party is in crisis, as factions scramble to assemble a coherent response to the threat. [? if centre_left_coalition or left_wing_coalition or socialist_catholic_coalition : Our coalition partners not responded to [+ pnf_leader +]'s demands, as frantic calls are made to them to organise meetings. ?][? if king_relation < 50 : The King has not responded to the demands as well, but we are pessimistic on his response, considering our strained relations. ?][? if king_relation > 49 : The King has not responded to the demands as well, but we are optimistic on his response, considering our warm relations. ?]
 
-[? if psi_in_government : We could utilise our government influence to bring down Mussolini and fascism once and for all. ?][if not_participating = 1 : We cannot rely on the bourgeois parties to defend this nation from fascism. ?] What do we do?
+[? if psi_in_government : We could utilise our government influence to bring down [+ pnf_leader +] and fascism once and for all. ?][if not_participating = 1 : We cannot rely on the bourgeois parties to defend this nation from fascism. ?] What do we do?
 
 @rome_menu
 
-- @rome_army_mobilise: Mobilise the Army to stop Mussolini!
-- @rome_police_mobilise: Mobilise the Carabinieri to stop Mussolini!
-- @rome_rg_mobilise: Mobilise the Red Guards to stop Mussolini!
-- @rome_adp_mobilise: Mobilise the Arditi del Popolo to stop Mussolini!
+- @rome_army_mobilise: Mobilise the Army to stop [+ pnf_leader +]!
+- @rome_police_mobilise: Mobilise the Carabinieri to stop [+ pnf_leader +]!
+- @rome_rg_mobilise: Mobilise the Red Guards to stop [+ pnf_leader +]!
+- @rome_adp_mobilise: Mobilise the Arditi del Popolo to stop [+ pnf_leader +]!
 - @rome_done: We have done all we can.
 - @rome_nothing: There is nothing we can do.
 
@@ -95,7 +96,7 @@ unavailable-subtitle: [? if (communist_dissent > 50 and maximalist_dissent > 50 
 on-arrival: rome_rg_visited = 1
 go-to: rome_menu if participating == 1; civil_war if not_participating == 1
 
-The Red Guards mobilise upon our order, beginning the March to Rome to confront Mussolini.
+The Red Guards mobilise upon our order, beginning the March to Rome to confront [+ pnf_leader +].
 
 @rome_adp_mobilise
 max-visits: 1
@@ -194,7 +195,7 @@ go-to: total_defeat_accede if (rome_total_defeat = 1 and king_relation < 60); to
 subtitle: We must prepare for the worst.
 view-if: rome_army_visited = 0 and rome_police_visited = 0 and rome_rg_visited = 0
 on-arrival: mussolini_unopposed = 1
-go-to: mussolini_takes_power 
+go-to: pnf_takes_power 
 
 
 @total_defeat_accede
@@ -207,11 +208,11 @@ on-arrival: mussolini_success = 1;
 
 Our forces have engaged in fierce combat with the Fasci, Arditismo and Anti-Bolshevik Leagues.
 
-Whatever the case, our initial force has been defeated and forced to retreat, as Mussolini threatens further violence to bring 'order' to the Kingdom. Violence and blood is painted on the streets of Rome, as men across Italy are ordered to take up arms, either in defence of the Kingdom against fascism or socialism.
+Whatever the case, our initial force has been defeated and forced to retreat, as [+ pnf_leader +] threatens further violence to bring 'order' to the Kingdom. Violence and blood is painted on the streets of Rome, as men across Italy are ordered to take up arms, either in defence of the Kingdom against fascism or socialism.
 
 What happens now?
 
-- @mussolini_takes_power: The King accedes to Mussolini's demands and appoints him Prime Minister.
+- @pnf_takes_power: The King accedes to [+ pnf_leader +]'s demands and appoints him Prime Minister.
 
 @total_defeat_refuse
 title: Total Defeat
@@ -222,7 +223,7 @@ view-if: rome_total_defeat and king_relation > 59
 
 Our forces have engaged in fierce combat with the Fasci, Arditismo and Anti-Bolshevik Leagues.
 
-Whatever the case, our initial force has been defeated and forced to retreat, as Mussolini threatens further violence to bring 'order' to the Kingdom. Violence and blood is painted on the streets of Rome, as men across Italy are ordered to take up arms, either in defence of the Kingdom against fascism or socialism.
+Whatever the case, our initial force has been defeated and forced to retreat, as [+ pnf_leader +] threatens further violence to bring 'order' to the Kingdom. Violence and blood is painted on the streets of Rome, as men across Italy are ordered to take up arms, either in defence of the Kingdom against fascism or socialism.
 
 What happens now?
 
@@ -249,7 +250,7 @@ on-arrival: march_failed = 1;
 
 = Victory
 
-Our forces easily overwhelm Mussolini's, as the Fasci are routed and forced to retreat. 
+Our forces easily overwhelm [+ pnf_leader +]'s, as the Fasci are routed and forced to retreat. 
 
 Victory is achieved, and fascism is staved off for yet another day.
 

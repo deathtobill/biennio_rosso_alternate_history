@@ -207,7 +207,7 @@ Current relations: [+ ldr_relation : relationships +]
 
 Current relations: [+ ul_relation : relationships +]
 
-**[+ pnf_name +]** - *[+ pnf_full_italian +]* - ([+ pnf_full_name +]) - A newly formed party, operating essentially as the political expression of Benito Mussolini's *Fasces of Combat*.
+**[+ pnf_name +]** - *[+ pnf_full_italian +]* - ([+ pnf_full_name +]) - A newly formed party, operating essentially as the political expression of [+ pnf_leader +]'s *Fasces of Combat*.
 
 Current relations: [+ pnf_relation : relationships +]
 
@@ -237,7 +237,7 @@ Militarization: [+ rg_militancy : militancy +]
 
 [? if arditi_formed : Militarization: [+ adp_militancy : militancy +]?]
 
-**Fasci Italiani di Combattimento**: The Fasci are a paramilitary group headed by Benito Mussolini, and frequently come into conflict with the Red Guards.
+**Fasci Italiani di Combattimento**: The Fasci are a paramilitary group headed by [+ pnf_leader +], and frequently come into conflict with the Red Guards.
 
 Strength: [+ fdc_strength +] thousand
 

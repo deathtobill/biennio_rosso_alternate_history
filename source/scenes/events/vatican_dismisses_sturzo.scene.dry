@@ -1,0 +1,10 @@
+title: Sturzo Dismissed!
+view-if: year == 1923 and month = 7 and week = 1 and (roman_question_answered = 0 or pope = "Del Val")
+frequency: 1000
+max-visits: 1
+on-arrival: ppi_leader = "De Gasperi" if ppi_leader == "Sturzo";
+tags: event
+
+Luigi Sturzo, head of the PPI, has suddenly and shockingly resigned as party leader after a meeting with Pope Pius XI, though our sources indicate that [+ prime_minister +] had negotiated an agreement with the Holy See to do so. Alcide De Gasparri takes his place as party leader.
+
+- @root: Concerning.

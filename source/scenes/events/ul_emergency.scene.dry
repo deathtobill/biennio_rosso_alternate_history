@@ -1,7 +1,7 @@
 title: [+ year +] UL Emergency Congress
 subtitle: The UL is having a leadership struggle...
 new-page: true
-view-if: ((ul_sonnino > ul_giolitti and ul_leader = "Giolitti") or (ul_sonnino <= ul_giolitti and ul_leader = "Sonnino")) and ul_emergency_timer <= 0
+view-if: ((ul_sonnino > ul_giolitti and ul_leader = "Giolitti") or (ul_sonnino <= ul_giolitti and ul_leader = "Sonnino")) and ul_emergency_timer <= 0 and sonnino_dead = 0
 on-arrival: ul_emergency_timer = 18; ul_congresses += 1; industrialists_ul -= 1*ul_congresses; middle_class_ul -= 1*ul_congresses;
 tags: event
 

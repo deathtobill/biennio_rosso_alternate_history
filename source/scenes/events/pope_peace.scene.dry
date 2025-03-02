@@ -1,0 +1,13 @@
+title: [? if conclave_happened = 0: Pope Benedict XV calls for peace ?][? if conclave_happened = 1: Pope Pius XI calls for peace ?]
+subtitle: The Pope has expressed his concern on our situation.
+view-if: roman_question_answered and (conclave_happened = 0 or pope = 'Gasparri")
+new-page: true
+max-visits: 1 
+on-arrival: fdc_strength *= 0.85; fdc_militancy *= 0.85; abl_strength *= 0.8; abl_militancy *= 0.8; ard_strength *= 0.9; ard_militancy *= 0.9; rg_strength *= 0.9; rg_militancy *= 0.9;
+tags: event
+
+= Pope [? if conclave_happened :Pius XI?][? if not conclave_happened:Benedict XV?] calls for peace
+
+Following the recent end of the Roman Question and the normalisation of relations between the Holy See and the Kingdom of Italy, the Pope, in a recent allocution, has called for peace within Italy.
+
+He has expressed his want for pacifism, alongside the calls to end the unnecessary bloodshed plaguing the streets of Italy from the violent paramilitaries. The effects have been quick, as we have witnessed a slight decrease in membership of the Arditismo, Fasci and Anti-Bolshevik Leagues, alongside our own, albeit in a lower amount than the far-right paramilitaries

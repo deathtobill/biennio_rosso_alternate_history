@@ -1,0 +1,15 @@
+title: A New Year in Italy
+subtitle: Has fascism been defeated?
+tags: event
+priority: 3
+view-if: year = 1928 and month = 1
+max-visits: 1
+new-page: true
+
+= A New Day in Italy
+
+We have come a long way from 1919. The March on Rome, the relentless strife of streetfights, the economic crisis, alongside the instability of the government is over.
+
+Only time will tell how we go from here.
+
+- @game_over: Game over.

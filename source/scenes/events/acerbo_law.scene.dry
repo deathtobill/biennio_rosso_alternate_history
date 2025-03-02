@@ -1,0 +1,78 @@
+title: Introduction of the Acerbo Law
+view-if: year = 1923 and month = 7 and week = 3 and prime_minister_party = "PNF"
+max-visits: 1
+on-arrival: anti_acerbo_coalition = psi_r + psri_r + psri_r 
+new-page: true
+tags: event
+
+= Introduction of the Acerbo Law
+
+The Acerbo Law, an amendment to electoral law, has reached the floor of the Chamber of Deputies, introduced by one of the PNF's members. The change in law would result in which gained at least 25 per cent of the votes – gained two-thirds of the seats in parliament. The remaining third was to be shared amongst the other parties proportionally.
+
+This is an obvious power grab by [+ pnf_leader +], who seeks to consolidate power, and we must oppose this bill, considering the rampant violence and voter intimidation we have seen throughout the country. Already, the left-wing parties stand united in our opposition to this bill, but we have to convince the rest to do so as well. 
+
+What should we do?
+
+@acerbo_menu
+
+- @ppi_convince: Contact the People's Party.
+- @ldr_convince: Contact the Democratic Liberal Party.
+- @ul_convince: Contact the Liberal Party.
+- @ds_convince: Contact the Social Democrats.
+- @acerbo_results: We have done all we can.
+
+@ppi_convince 
+subtitle: [? if not ppi_leader = "Sturzo": The PPI is disorganised following Sturzo's recent dismissal. ?]
+on-arrival: anti_acerbo_coalition += ppi_r if ppi_leader = "Sturzo"
+go-to: acerbo_menu
+
+[? if ppi_leader = "Sturzo" : Our contacts to Sturzo are mildly successful, and he informs us his party will, at the very least, abstain. ?]
+[? if not ppi_leader = "Sturzo": Unfortunately, the PPI is disorganised without Sturzo's help, and is seems there will be many dissident members voting in favour of the Law. ?]
+
+@ldr_convince
+subtitle: [? if ldr_leader = "Salandra" : We shouldn't be optimistic about their response. ?]
+on-arrival: {!
+if (Q.ldr_leader == "Nitti" && Q.ldr_relation > 65) {
+    Q.anti_acerbo_coalition += Q.ldr_r;
+    Q.ldr_convinced = 1;
+}
+if (Q.ldr_leader == "Orlando" && Q.ldr_relation > 75) {
+    Q.anti_acerbo_coalition += Q.ldr_r;
+    Q.ldr_convinced = 1;
+}
+!}
+go-to: acerbo_menu
+
+[? if not ldr_convinced = 1: Unfortunately, and maybe Unsurprisingly, the [+ ldr_full_name +] and [+ ldr_leader +] refuse to support us. ?]
+
+[? if ldr_convinced = 1: Thankfully, and maybe surprisingly, the [+ ldr_full_name +] and [+ ldr_leader +] have agreed to support us, refusing to vote in favour of the Acerbo Law. ?]
+
+@ul_convince
+on-arrival: ul_convinced if ul_relation >= 75; anti_acerbo_coalition += ul_r if ul_relation >= 75;
+go-to: acerbo_menu
+
+[? if not ul_convinced = 1: Unfortunately, and maybe Unsurprisingly, the [+ ul_full_name +] and Giolitti refuse to support us. ?]
+
+[? if ul_convinced = 1: Thankfully, and maybe surprisingly, the [+ ul_full_name +] and Giolitti have agreed to support us, refusing to vote in favour of the Acerbo Law. ?]
+
+@ds_convince
+subtitle: [? if ds_leader = "Carnazza" or ds_leader = "Colonna" : We shouldn't be optimistic about their response. ?]
+on-arrival: {!
+if (Q.ds_leader == "Giuffrida") {
+    Q.anti_acerbo_coalition += Q.ds_r;
+    Q.ds_convinced = 1;
+}
+!}
+go-to: acerbo_menu
+
+[? if not ds_convinced = 1: Unfortunately, and maybe Unsurprisingly, the DS and [+ ds_leader +] refuse to support us. ?]
+
+[? if ldr_convinced = 1: Thankfully, the DS and [+ ds_leader +] have agreed to support us, refusing to vote in favour of the Acerbo Law. ?]
+
+@acerbo_results
+subtitle: [? if anti_acerbo_coalition < 50 : It seems the law will pass. ?][? if anti_acerbo_coalition >= 50: It seems we have been able to secure enough votes to force the bill to fail. ?]
+on-arrival: acerbo_law_passed = 1 if anti_acerbo_coalition < 50; acerbo_law_failed = 1 if anti_acerbo_coalition >= 50; 
+
+[? if acerbo_law_passed : The worst has come. The Acerbo Law has been able to reach a majority in parliament, and is promptly signed off by the King. We will merely have to wait for the next elections to see the fallout. ?]
+
+[? if acerbo_law_passed : It's a miracle; the bill dies in the Chamber of Deputes, as we are able to form a united front against fascism. [+ prime_minister +] is outraged, but we have managed to stem fascist takeover, even slightly. ?]

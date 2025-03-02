@@ -1,0 +1,9 @@
+title: 1923
+subtitle: A new year 
+on-arrival: inflation -= 3.4; economic_growth += 1.3; unemployment -= 1.4; nationalist_sentiment -= 4*(1-dissent); nationalist_sentiment += 10 if prime_minister_party = "PNF"
+tags: event
+view-if: year = 1923 and month = 1
+priority: 2
+max-visits: 1
+
+A new year has come to Italy. [? if not national_economic_recovery :The economy continues to struggle following the end of the war. ?][? if prime_minister_party == "PNF": The ascendence of [+ prime_minister +] to the position of Prime Minister is concerning. ?]

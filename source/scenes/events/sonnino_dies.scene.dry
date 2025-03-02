@@ -1,0 +1,8 @@
+title: The Death of Sidney Sonnino
+view-if: year == 1922 and month = 11 
+frequency: 1000
+max-visits: 1
+on-arrival: sonnino_dead = 1; ul_leader = "Giolitti" if ul_leader == "Sonnino";
+tags: event
+
+Sidney Sonnino, a prominent leader of the [+ ul_name +], has passed away. He will be missed.

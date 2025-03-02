@@ -1,0 +1,9 @@
+title: 1925
+subtitle: A new year 
+on-arrival: inflation -= 3.4; economic_growth += 1.3; unemployment -= 1.4; nationalist_sentiment -= 4*(1-dissent); nationalist_sentiment += 10 if prime_minister_party = "PNF"
+tags: event
+view-if: year = 1925 and month = 1
+priority: 2
+max-visits: 1
+
+A new year has come to Italy. [? if prime_minister_party == "PNF": [+ prime_minister +]'s failure following the Acerbo Law has weakened his position continues to consolidate his rule, and our resistance against his rule intensifies further.?]

@@ -1,0 +1,13 @@
+title: Formation of the Blackshirts
+view-if: year = 1923 and month = 3 and week = 3 and prime_minister_party = "PNF"
+on-arrival: blackshirts_formed = 1; fdc_strength *= 2; fdc_militancy += 0.1;
+max-visits: 1
+new-page: true
+tags: event
+face-image: img/ArditidelPopolo.jpg
+
+= Formation of the Voluntary Militia for National Security
+
+The *Squadrismo*, paramilitary wing of the [+ pnf_full_name +], has been reorganised into the MVSN, or *Milizia Volontaria per la Sicurezza Nazionale*, integrating the organisation into the Regio Esercito under [+ pnf_leader +]'s orders. 
+
+This has given a significant boost to the strength of the paramilitary, as well as given it access to a larger bulk of weaponry that can begin using against us.

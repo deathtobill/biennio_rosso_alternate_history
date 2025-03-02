@@ -11,6 +11,7 @@ go-to: start_menu_2
 @start_menu_2
 
 - @start: Start game
+- @election_simulation: Election Simulation (Acerbo Law)
 - @mod_info: Mod Info
 - @credits: Credits
 
@@ -158,6 +159,7 @@ Q.revolutionary_fervor = 60;
 
 // pacifism vs war
 Q.pacifism = 0;
+acerbo_law_passed = 0;
 
 // capital strikes happen when you upset the industrialists & landowners too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
 // coup progress happens when you piss off the fasci too much too quickly + if they have enough troops
@@ -170,18 +172,19 @@ Q.budget = -2;
 Q.in_default = 0;
 
 // Proportion of different social groups
-Q.workers = 25; // industry and trade
-Q.middle_class = 14; // small business owners
-Q.industrialists = 8; // industrialists & landowners
-Q.rural = 42; // farmers & the like, many in the south
-Q.veterans = 4;
-Q.catholics = 7;
+Q.workers = 27; // industry and trade
+Q.middle_class = 17; // small business owners
+Q.industrialists = 6; // industrialists & landowners
+Q.rural = 37; // farmers & the like, many in the south
+Q.veterans = 6;
+Q.catholics = 9;
+Q.women = 0;
 
 Q.inflation = 19.2;
 Q.economic_growth = -3.7;
 Q.unemployment = 13.5;
 
-Q.classes = ['workers', 'middle_class', 'industrialists', 'rural', 'veterans', 'catholics'];
+Q.classes = ['workers', 'middle_class', 'industrialists', 'rural', 'veterans', 'catholics', 'women'];
 Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'pnf', 'other', 'pcdi', 'psu', 'pri'];
 
 // Communist split from the party
@@ -264,6 +267,18 @@ Q.catholics_ul = 2;
 Q.catholics_pnf = 2;
 Q.catholics_psri = 1;
 Q.catholics_other = 2;
+
+Q.women_pcdi = 0;
+Q.women_psi = 14;
+Q.women_psu = 0;
+Q.women_pri = 0;
+Q.women_ppi = 34;
+Q.women_ldr = 18;
+Q.women_ds = 10;
+Q.women_ul = 17;
+Q.women_pnf = 6;
+Q.women_psri = 8;
+Q.women_other = 14;
 
 
 // Current Chamber of Deputies composition

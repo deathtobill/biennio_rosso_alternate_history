@@ -1,0 +1,60 @@
+title: [+ pnf_leader +] appointed Prime Minister
+on-arrival: {!
+
+Q.centre_left_coalition = 0;
+Q.left_wing_coalition = 0;
+Q.socialist_catholic_coalition = 0;
+Q.grand_coalition = 0;
+Q.centre_right_coalition = 0;
+
+Q.pcdi_in_government = 0;
+Q.psi_in_government = 0;
+Q.psu_in_government = 0;
+Q.ldr_in_government = 0;
+Q.psri_in_government = 0;
+
+Q.anti_socialist_coalition = 1;
+Q.pnf_in_government = 1;
+Q.ul_in_government = 1;
+Q.ds_in_government = 1;
+Q.ppi_in_government = 1;
+
+Q.prime_minister = Q.pnf_leader;
+Q.prime_minister_party = "PNF";
+
+Q.foreign_minister_party = "PNF"; 
+Q.interior_minister_party = "PNF";
+Q.justice_minister_party = "PNF";
+Q.labour_minister_party = "PPI"; 
+Q.finance_minister_party = "PNF";
+Q.treasury_minister_party = "PPI"; 
+Q.agriculture_minister_party = "PLI"; 
+Q.public_education_minister_party = "I"; 
+Q.public_works_minister_party = "DS";
+!}
+tags: event
+new-page: true
+
+= Mussolini Appointed Prime Minister!
+
+The March on Rome has succeeded, as the threat of violence and outright civil war forces the King to give in to [+ pnf_leader +]'s demands. Vittorio Emanuele III has officially appointed [+ pnf_leader +] as Prime Minister, as many fear he will quickly consolidate power and bring the full force of the government towards us.
+
+[+ pnf_leader +] has already formed a governing coalition of the PNF, PPI, PLI and DS.
+
+What are we to do now?
+
+- @fight: Mobilise the Red Guards and authorise workers to begin taking up arms against [+ pnf_leader +]'s rule!
+- @keep_on: Await our opportunity to strike.
+
+
+@fight
+
+Do we realize that this means civil war, against the full force of the state?
+
+- @civil_war: Yes.
+- @keep_on: We are not ready for war. Instead, we will continue to struggle and await our opportunity.
+
+@keep_on
+subtitle: This will not end the game.
+
+We will continue onwards, biding our time. We are facing an extremely uphill battle, and will have to act fast.

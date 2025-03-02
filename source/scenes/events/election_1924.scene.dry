@@ -2,7 +2,7 @@ title: Chamber of Deputies Elections
 new-page: true
 tags: event
 priority: -1
-view-if: ((year = next_election_year and month >= next_election_month) or (year > next_election_year)) and acerbo_law_passed = 0
+view-if: ((year = next_election_year and month >= next_election_month) or (year > next_election_year)) and acerbo_law_passed = 1
 on-arrival: {!
 // resetting coalition stuff
 Q.ldr_promise_failed = 0;
@@ -158,6 +158,35 @@ if (Q.ul_leader === "Giolitti") {
     Q.centre_left_coalition_r += Q.ul_r;
     Q.ul_allies = 1;
 }
+
+// acerbo law
+
+var remaining_seats = 0;
+var party_majority = "";
+var party_majority_num = 0;
+
+for (let party of Q.parties) {
+    if (Q[party + '_r'] >= 25 && Q[party + '_r'] > party_majority_num) {
+        party_majority = party;
+        party_majority_num = Q[party + '_r'];
+    }
+}
+
+if (party_majority_num >= 25) {
+    let majority_seats = (100 / 3) * 2;
+    let remaining_seats = 100 - majority_seats;
+    let remaining_votes = 100 - party_majority_num;
+
+    for (let party of Q.parties) {
+        if (party !== party_majority) {
+            // Scale remaining parties' seats proportionally
+            Q[party + '_r'] = (Q[party + '_r'] / remaining_votes) * remaining_seats;
+            Q[party + '_r'] = Number(Q[party + '_r'].toFixed(1));
+        }
+    }
+    Q[party_majority + '_r'] = majority_seats;
+}
+
 
 Q.left_wing_coalition_r = Q.left_wing_coalition_r.toFixed(1);
 Q.centre_left_coalition_r = Q.centre_left_coalition_r.toFixed(1);
@@ -400,6 +429,32 @@ There are some potential coalition arrangements.
 - @grand_coalition
 - @centre_right_coalition
 - @anti_socialist_coalition
+- @pnf_majority
+
+@pnf_majority
+title: PNF majority alone
+subtitle: PNF: [+ pnf_r +]%
+view-if: pnf_r >= 50
+on-arrival: {!
+Q.prime_minister_party = "PNF";
+Q.prime_minister = Q.pnf_leader;
+!}
+
+Our worst fears have come true. The PNF have managed to gain a majority in the elections, and secure a two-thirds majority in the Chamber of Deputies.
+
+What now?
+
+- @civil_war: We cannot wait any longer. Mobilise the Red Guards!
+- @nothing: Bide our time further.
+
+@nothing
+subtitle: This will end the game.
+
+[+ pnf_leader +] acts fast, establishing a dictatorship and outlawing all other political parties. 
+
+Italy is lost.
+
+- @game_over: Game over.
 
 @psi_majority
 title: PSI majority alone

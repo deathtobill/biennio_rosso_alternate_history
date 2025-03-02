@@ -1,0 +1,33 @@
+title: Repeal of the Acerbo Law
+view-if: acerbo_law_passed and psi_in_government
+max-visits: 1
+new-page: true
+tags: event
+
+= Repeal of the Acerbo Law
+
+The Acerbo Law, passed in June 1924, has backfired immensely, giving rise to the PSI rather than the PNF. Now that we are in power, however, we can remove this corrupt law and restore fair democracy to Italy. 
+
+What should we do?
+
+- @remove_acerbo: Get rid of the Law.
+- @keep_acerbo: Actually...
+
+@remove_acerbo
+subtitle: Such an unconstitutional law needs to go.
+on-arrival: acerbo_law_passed = 0
+
+The Acerbo Law is easily repealed, reinstating the previous system of the D'Hondt Method.
+
+- @root: Good riddance.
+
+@keep_acerbo
+view-if: psi_r >= 50
+subtitle: We need a strong mandate to form a socialist state, don't we?
+on-arrival: psri_relation -= 10; ppi_relation -= 10; ldr_relation -= 10; ul_relation -= 10; pri_relation -= 10; reformist_dissent += 10;
+
+The other parties in the Chamber of Deputies are unsurprisingly outraged by our blatant power grab, calling us no better than the fascists. 
+
+But hey, they're the ones who voted for it, aren't they?
+
+- @root: Exactly.

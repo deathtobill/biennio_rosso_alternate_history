@@ -127,7 +127,7 @@ Unemployment: [+ unemployment_2 +]%
 
 {!<span class="tooltip-text" title="Italian Reformist Socialist Party">PSRI</span>!}: [+ psri_relation : relationships +]
 
-[? if pri_prominent = 1: {!<span class="tooltip-text" title="Italian Republican Party">PRI</span>!}: [+ pri_relation : relationships +]% ?]
+[? if pri_prominent = 1: {!<span class="tooltip-text" title="Italian Republican Party">PRI</span>!}: [+ pri_relation : relationships +] ?]
 
 {!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_relation : relationships +]
 

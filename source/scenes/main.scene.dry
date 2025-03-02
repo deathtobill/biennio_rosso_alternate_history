@@ -15,25 +15,27 @@ max-cards: 3
 
 [? if year = 1919 and month = 1 and week = 3: The *Spartacist Uprising* in Berlin has fallen, suppressed forcefully by the government and *Freikorps*. It's leaders are slaughtered under command of Friedrich Ebert and Gustav Noske. The League of Nations is founded. ?]
 
-[? if year = 1919 and month = 2 and week = 1: Friedrich Erbert is elected as the First President of Germany. The Weimar Republic is founded. ?]
+[? if year = 1919 and month = 2 and week = 1: Friedrich Erbert is elected as the First President of Germany, with the founding of the Weimar Republic. ?]
 
-[? if year = 1919 and month = 2 and week = 3: The Republic of Poland invades the Russian SFSR and begins the *Soviet-Polish War*. ?]
+[? if year = 1919 and month = 2 and week = 3: The Republic of Poland invades the Russian SFSR in the middle of its civil war and begins the *Soviet-Polish War*, with Polish intentions to regain its Eastern territories held under control of the Russian SFSR. ?]
 
-[? if year = 1919 and month = 3 and week = 1: The Communist International is founded. ?]
+[? if year = 1919 and month = 3 and week = 1: The Communist International is founded, and it's first Congress is held in Moscow. The Congress establishes the *Executive Committee*, as Grigory Zinoview is elected as Secretary. We are not invited to attend. ?]
 
-[? if year = 1919 and month = 4 and week = 1: The Bavarian Soviet Republic is established. ?]
+[? if year = 1919 and month = 3 and week = 3: Béla Kun establishes the *Hungarian Soviet Republic*, succeeding the *First Hungarian Republic*. ?]
+
+[? if year = 1919 and month = 4 and week = 1: Ernst Toller establishes the *Bavarian Soviet Republic*, weeks after the Hungarian Soviets and succeeding the short-lived *People's State of Bavaria*. ?]
 
 [? if year = 1919 and month = 5 and week = 1: Weimar Republic forces, alongside the Freikorps occupy Munich and dissolve the Bavarian Soviet Republic. ?]
 
-[? if year = 1919 and month = 5 and week = 3: Mustafa Kemal Pasha lands at Samsun on the Black Sea coast, refusing to surrender to Entente forces. ?]
+[? if year = 1919 and month = 5 and week = 3: Mustafa Kemal Pasha, Brigadier-General of the Ottoman Empire lands at Samsun on the Black Sea coast, refusing to surrender to Entente forces. ?]
 
 [? if year = 1919 and month = 6 and week = 1: The *Treaty of Versailles* is signed, ending the state of war between the Weimar Republic and the Entente. ?]
 
-[? if year = 1919 and month = 8 and week = 1: The Hungarian Soviet Republic collapses after Romanian intervention, leading to a power vacuum. ?]
+[? if year = 1919 and month = 8 and week = 1: The *Hungarian Soviet Republic* collapses after Romanian forces intervene, leading to a power vacuum. ?]
 
 [? if year = 1919 and month = 9 and week = 1: The *Treaty of Saint-Germain-en-Laye* is signed, ceding Austrian Littoral, South Tyrol alongside various Dalmatian islands to Italy. The remainder goes to the newly established Kingdom of Serbs, Croats and Slovenes, in violation of the 1915 *Treaty of London*. ?]
 
-[? if year = 1919 and month = 9 and week = 3: The current bourgeois-right government has fallen after D'Annunzio's march to Fiume. The next elections are slated for November of this year. ?]
+[? if year = 1919 and month = 9 and week = 3: The current bourgeois-right government has fallen after D'Annunzio's controversial march to Fiume. The next elections are slated for November of this year. ?]
 
 [? if year = 1919 and month = 11 and week = 3: The *Treaty of Neuilly-sur-Seine* is signed, ending the state of war between the Tsardom of Bulgaria and the Entente. ?]
 
@@ -73,7 +75,7 @@ max-cards: 3
 
 [? if year = 1921 and month = 7 and week = 3: Adolf Hitler assumes power of the *National Socialist German Workers' Party*, becoming *Führer*. ?]
 
-[? if year = 1921 and month = 11 and week = 1: Benito Mussolini forms the *Partito Nazionale Fascista*. ?]
+[? if year = 1921 and month = 11 and week = 1: [+ pnf_leader +] forms the *Partito Nazionale Fascista*. ?]
 
 [? if year = 1921 and month = 12 and week = 3: The Banca Italiana di Sconto goes bankrupt and is given one year of moratorium to resolve its financial problems. It's impact on banking and the economy in Italy is minimal. ?]
 
@@ -160,7 +162,7 @@ max-cards: 4
 
 [? if year = 1921 and month = 7 and week = 3: Adolf Hitler assumes power of the *National Socialist German Workers' Party*, becoming *Führer*. ?]
 
-[? if year = 1921 and month = 11 and week = 1: Benito Mussolini forms the *Partito Nazionale Fascista*. ?]
+[? if year = 1921 and month = 11 and week = 1: [+ pnf_leader +] forms the *Partito Nazionale Fascista*. ?]
 
 [? if year = 1921 and month = 12 and week = 3: The Banca Italiana di Sconto goes bankrupt and is given one year of moratorium to resolve its financial problems. It's impact on banking and the economy in Italy is minimal. ?]
 

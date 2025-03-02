@@ -16,6 +16,12 @@ Q.socialist_sentiment = Math.round(Q.socialist_sentiment);
 Q.nationalist_sentiment = Math.round(Q.nationalist_sentiment);
 Q.anti_monarchist_sentiment = Q.republican_sentiment + Q.socialist_sentiment
 
+// endgame election
+if ((Q.next_election_year >= 1925 || Q.next_election_year == 1924 && Q.next_election_month != 4) && Q.prime_minister_party == "PNF" && (Q.year <= 1924 && Q.month <= 4) ) {
+    Q.next_election_year = 1924;
+    Q.next_election_month = 4;
+}
+
 if (Q.republican_sentiment < 0) {
     Q.republican_sentiment = 0;
 }
@@ -595,6 +601,21 @@ if (Q.week_actions >= 1) {
             Q.middle_class_pnf += 2/12;
             Q.fdc_strength += 10/12;
             Q.fdc_militancy += 0.05/12;
+        }
+
+        if (Q.pnf_in_government == 1 && Q.blackshirts_formed == 1) {
+            Q.fdc_strength += 50/12;
+            Q.fdc_militancy += 0.1/12;
+        }
+
+        // voter intimidation
+        if (Q.prime_minister_party == "PNF") {
+            Q.workers_pnf += 10/12;
+            Q.middle_class_pnf += 10/12;
+            Q.industrialists_pnf += 10/12;
+            Q.rural_pnf += 10/12;
+            Q.veterans_pnf += 10/12;
+            Q.women_pnf += 10/12;
         }
     }
 }

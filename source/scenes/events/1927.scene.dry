@@ -1,0 +1,8 @@
+title: 1927
+subtitle: A new year 
+tags: event
+view-if: year = 1927 and month = 1
+priority: 2
+max-visits: 1
+
+A new year has come to Italy.
