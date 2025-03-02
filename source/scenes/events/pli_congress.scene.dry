@@ -3,6 +3,7 @@ subtitle: The [+ ldr_name +] elects its Secretary General.
 new-page: true
 view-if: year = 1921 and month = 4 and week = 3 and pldi_formed = 1
 on-arrival: ul_emergency_timer = 18
+max-visits: 1
 tags: event
 
 = [+ year +] [+ ldr_Name +] Emergency Congress
