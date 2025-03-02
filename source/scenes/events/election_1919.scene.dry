@@ -201,15 +201,15 @@ Q.str_change_bn = 0;
 
 if (Q.ul_in_bn == 1) {
     Q.bn_r += Q.ul_r;
-    Q.str_change_bn += Q.str_change_ul;
+    Q.str_change_bn += parseFloat(Q.str_change_ul);
 }
 if (Q.ds_in_bn == 1) {
     Q.bn_r += Q.ds_r;
-    Q.str_change_bn += Q.str_change_ds;
+    Q.str_change_bn += parseFloat(Q.str_change_ds);
 }
 if (Q.pnf_in_bn == 1) {
     Q.bn_r += Q.pnf_r;
-    Q.str_change_bn += Q.str_change_pnf;
+    Q.str_change_bn += parseFloat(Q.str_change_pnf);
 }
 
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
