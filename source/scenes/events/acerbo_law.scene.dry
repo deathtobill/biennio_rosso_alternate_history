@@ -48,7 +48,11 @@ go-to: acerbo_menu
 [? if ldr_convinced = 1: Thankfully, and maybe surprisingly, the [+ ldr_full_name +] and [+ ldr_leader +] have agreed to support us, refusing to vote in favour of the Acerbo Law. ?]
 
 @ul_convince
-on-arrival: ul_convinced if ul_relation >= 75; anti_acerbo_coalition += ul_r if ul_relation >= 75;
+on-arrival: {! 
+if (Q.ul_relation >= 75):
+    Q.ul_convinced = 1;
+    Q.anti_acerbo_coalition += ul_r;
+!}
 go-to: acerbo_menu
 
 [? if not ul_convinced = 1: Unfortunately, and maybe Unsurprisingly, the [+ ul_full_name +] and Giolitti refuse to support us. ?]
