@@ -272,20 +272,19 @@ if (Q.ds_in_bn == 0 && Q.ds_r) {
     });
 }
 
-data = data.concat([
-    {
+data.push({
         "id": "ppi",
         "legend": "PPI",
         "name": "PPI",
         "seats": Math.round(Q.ppi_r*5),
-    },
-    {
+});
+
+data.push({
         "id": "ldr",
         "legend": "LDR",
         "name": Q.ldr_name,
         "seats": Math.round(Q.ldr_r*5),
-    },
-]);
+});
 
 if (Q.bn_formed == 1 && Q.bn_r) {
     data.push({
