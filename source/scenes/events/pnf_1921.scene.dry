@@ -1,7 +1,7 @@
 title: 1921 Congress of the PNF
 subtitle: The PNF is established.
 new-page: true
-view-if: year = 1920 and month = 5 and week = 1
+view-if: year = 1921 and month = 5 and week = 1
 on-arrival: pnf_formed = 1;
 max-visits: 1
 tags: event

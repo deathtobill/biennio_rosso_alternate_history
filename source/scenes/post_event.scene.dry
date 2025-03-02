@@ -22,6 +22,8 @@ if ((Q.next_election_year >= 1925 || Q.next_election_year == 1924 && Q.next_elec
     Q.next_election_month = 4;
 }
 
+Q.mussolini_trial_timer_disp = Q.mussolini_trial_timer * 2;
+
 if (Q.republican_sentiment < 0) {
     Q.republican_sentiment = 0;
 }
