@@ -1,5 +1,5 @@
 title: [+ pnf_leader +] appointed Prime Minister
-view-if: march_succeeded = 1;
+view-if: march_succeeded = 1
 on-arrival: {!
 
 Q.centre_left_coalition = 0;
