@@ -43,13 +43,13 @@ if (Q.largest_party === "PNF") {
 max-visits: 1
 tags: event
 
-= 1922 PPI Congress
+= 1923 PPI Congress
 
 The *Partito Popolare Italiano*, known also as the PPI or the Italian People's Party have begun their fourth Congress. It's two factional bloc, with Sturzo on the left-wing of the party and De Gasperi's moderate-wing of the party is still prominent, but it seems the the right-wing of the party, represented by the Triumvirate has gained significant power within the party as well.
 
 While Sturzo commands the support of the Christian Democrats and the 'White' Peasant Leagues, De Gasperi is supported by Moderate Clericalists and the Clergy. On the other hand, the Triumvirate is supported by Hardliner Clericalists & the National-Conservatives of the party.
 
-- @ppi_third: The party votes...
+- @ppi_fourth: The party votes...
 
 @ppi_fourth
 go-to: sturzo_1923 if ppi_left >= ppi_moderates and ppi_left >= ppi_right; gasperi_1923 if ppi_moderates > ppi_left and ppi_moderates >= ppi_right; triumvirate_1923 if ppi_right > ppi_left and ppi_right > ppi_moderates
