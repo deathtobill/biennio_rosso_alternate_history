@@ -353,7 +353,7 @@ data.push({
         "seats": Math.round(Q.psri_r*5),
 });
 
-if (Q.ds_in_bn == 0 && Q.ds_r) {
+if (Q.ds_in_bn != 1 && Q.ds_r) {
     data.push({
         "id": "ds",
         "legend": "DS",
@@ -385,7 +385,7 @@ if (Q.bn_formed == 1 && Q.bn_r) {
     })
 }
 
-if (Q.ul_in_bn == 0 && Q.ul_r) {
+if (Q.ul_in_bn != 1 && Q.ul_r) {
     data.push({
         "id": "ul",
         "legend": "UL",
@@ -394,7 +394,7 @@ if (Q.ul_in_bn == 0 && Q.ul_r) {
     });
 }
 
-if (Q.pnf_in_bn == 0 && Q.pnf_r) {
+if (Q.pnf_in_bn != 1 && Q.pnf_r) {
     data.push({
         "id": "pnf",
         "legend": "PNF",
