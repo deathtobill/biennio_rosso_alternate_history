@@ -56,7 +56,7 @@ Chamber of Deputies composition:
 {!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_r +]%
 {!<span class="tooltip-text" title="Italian People's Party">PPI</span>!}: [+ ppi_r +]%
 [? if not pldi_formed : {!<span class="tooltip-text" title="Liberals, Democrats & Radicals">LDR</span>!}: [+ ldr_r +]% ?]
-[? if pldi_formed : {!<span class="tooltip-text" title="Italian Democratic Liberal Party">PDLI</span>!}: [+ ldr_r +]% ?]
+[? if pldi_formed : {!<span class="tooltip-text" title="Italian Democratic Liberal Party">PLDI</span>!}: [+ ldr_r +]% ?]
 [? if not pli_formed : {!<span class="tooltip-text" title="Liberal Union">UL</span>!}: [+ ul_r +]% ?]
 [? if pli_formed : {!<span class="tooltip-text" title="Italian Liberal Party">PLI</span>!}: [+ ul_r +]% ?]
 [? if not pnf_formed :{!<span class="tooltip-text" title="Italian Fasces of Combat">FdC</span>!}: [+ pnf_r +]% ?]

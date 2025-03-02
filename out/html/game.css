@@ -537,8 +537,14 @@ table {
 .seat.ldr {
     fill: #FFD700;
 }
+.seat.pldi {
+  fill: #FFD700;
+}
 .seat.ul {
     fill: #0047AB;
+}
+.seat.pli {
+  fill: #0047AB;
 }
 .seat.ppi {
     fill: #87CEFA;
@@ -551,6 +557,9 @@ table {
 }
 .seat.pnf {
     fill: #000000;
+}
+.seat.fdc {
+  fill: #000000;
 }
 .seat.pcdi {
   fill: #C72F35;
