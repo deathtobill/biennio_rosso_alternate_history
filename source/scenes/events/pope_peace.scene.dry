@@ -1,6 +1,6 @@
 title: [? if conclave_happened = 0: Pope Benedict XV calls for peace ?][? if conclave_happened = 1: Pope Pius XI calls for peace ?]
 subtitle: The Pope has expressed his concern on our situation.
-view-if: (conclave_happened = 0 or pope === "Gasparri") and roman_question_answered = 1
+view-if: (conclave_happened = 0 or pope = "Gasparri") and roman_question_answered = 1
 new-page: true
 max-visits: 1 
 on-arrival: fdc_strength *= 0.85; fdc_militancy *= 0.85; abl_strength *= 0.8; abl_militancy *= 0.8; ard_strength *= 0.9; ard_militancy *= 0.9; rg_strength *= 0.9; rg_militancy *= 0.9;
