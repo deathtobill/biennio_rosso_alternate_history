@@ -286,11 +286,11 @@ data.push({
         "seats": Math.round(Q.ldr_r*5),
 });
 
-if (Q.bn_formed == 1 && Q.bn_r) {
+if (Q.bn_formed === 1 && Q.bn_r) {
     data.push({
         "id": "bn",
         "legend": "BN",
-        "name": BN,
+        "name": "BN",
         "seats": Math.round(Q.bn_r*5), 
     })
 }
