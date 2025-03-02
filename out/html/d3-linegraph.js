@@ -19,7 +19,7 @@ d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataM
         parties = ['psri', 'psi', 'ldr', 'ds', 'ul', 'ppi', 'pnf', 'other', 'pcdi', 'psu', 'pri', 'bn'];
     }
     if (!partyColors) {
-        partyColors = {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '##87CEFA', 'pnf': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A', 'pri': '#3CB371', 'bn': '#3F7BC1'};
+        partyColors = {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '##87CEFA', 'pnf': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A', 'pri': '#3CB371', 'bn': '#002d6d'};
     }
     if (!partyNames) {
         partyNames = {'psri': 'PSRI', 'psi': 'PSI', 'ldr': 'LDR', 'ds': 'DS', 'ul': 'UL', 'ppi': 'PPI', 'pnf': 'PNF', 'other': 'Others', 'pcdi': 'PCDI', 'psu': 'PSU', 'pri': 'PRI', 'bn': 'BN'};

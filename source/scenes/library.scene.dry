@@ -353,7 +353,7 @@ data.push({
         "seats": Math.round(Q.psri_r*5),
 });
 
-if (Q.ds_in_bn == 0) {
+if (Q.ds_in_bn == 0 && Q.ds_r) {
     data.push({
         "id": "ds",
         "legend": "DS",
@@ -362,22 +362,21 @@ if (Q.ds_in_bn == 0) {
     });
 }
 
-data = data.concat([
-    {
+data.push({
         "id": "ppi",
         "legend": "PPI",
         "name": "PPI",
         "seats": Math.round(Q.ppi_r*5),
-    },
-    {
+});
+
+data.push({
         "id": "ldr",
         "legend": "LDR",
         "name": Q.ldr_name,
         "seats": Math.round(Q.ldr_r*5),
-    },
-]);
+});
 
-if (Q.bn_formed == 1) {
+if (Q.bn_formed == 1 && Q.bn_r) {
     data.push({
         "id": "bn",
         "legend": "BN",
@@ -386,7 +385,7 @@ if (Q.bn_formed == 1) {
     })
 }
 
-if (Q.ul_in_bn == 0) {
+if (Q.ul_in_bn == 0 && Q.ul_r) {
     data.push({
         "id": "ul",
         "legend": "UL",
@@ -395,7 +394,7 @@ if (Q.ul_in_bn == 0) {
     });
 }
 
-if (Q.pnf_in_bn == 0) {
+if (Q.pnf_in_bn == 0 && Q.pnf_r) {
     data.push({
         "id": "pnf",
         "legend": "PNF",
@@ -410,6 +409,7 @@ data.push({
         "name": "Other",
         "seats": Math.round(Q.other_r*5),
 });
+
 
     if (d3 && window) {
         // get screen width
@@ -429,7 +429,7 @@ data.push({
 
         var lines = d3.linegraph(false, false,
                 Q.parties,
-                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'pnf': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A', 'pri': '#3CB371', 'bn': '#0047AB'},
+                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'pnf': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A', 'pri': '#3CB371', 'bn': '#002d6d'},
                 {'psri': 'PSRI', 'psi': 'PSI', 'ldr': Q.ldr_name, 'ds': 'DS', 'ul': Q.ul_name, 'ppi': 'PPI', 'pnf': Q.pnf_name, 'other': 'Others', 'pcdi': 'PCdI', 'psu': 'PSU', 'pri': 'PRI', 'bn': 'BN'});
         lines.width(width).height(400);
         //var svg = lines(Q.election_records);
@@ -442,7 +442,7 @@ data.push({
         if (!Q.historical_mode || Q.game_over) {
             var lines_2 = d3.linegraph(true, true,
                 Q.parties,
-                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'pnf': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A', 'pri': '#3CB371', 'bn': '#0047AB'},
+                {'psri': '#FFC0CB', 'psi': '#ED2855', 'ldr': '#FFD700', 'ds': '#1E99C5', 'ul': '#0047AB', 'ppi': '#87CEFA', 'pnf': '#000000', 'other': '#a0a0a0', 'pcdi': '#C72F35', 'psu': '#E35A5A', 'pri': '#3CB371', 'bn': '#002d6d'},
                 {'psri': 'PSRI', 'psi': 'PSI', 'ldr': Q.ldr_name, 'ds': 'DS', 'ul': Q.ul_name, 'ppi': 'PPI', 'pnf': Q.pnf_name, 'other': 'Others', 'pcdi': 'PCdI', 'psu': 'PSU', 'pri': 'PRI', 'bn': 'BN'});
             lines_2.width(width).height(400);
             d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
