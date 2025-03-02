@@ -49,9 +49,10 @@ go-to: acerbo_menu
 
 @ul_convince
 on-arrival: {! 
-if (Q.ul_relation >= 75):
+if (Q.ul_relation >= 75) {
     Q.ul_convinced = 1;
     Q.anti_acerbo_coalition += ul_r;
+}
 !}
 go-to: acerbo_menu
 
