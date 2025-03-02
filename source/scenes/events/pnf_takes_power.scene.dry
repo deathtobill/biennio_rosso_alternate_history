@@ -1,4 +1,5 @@
 title: [+ pnf_leader +] appointed Prime Minister
+view-if: march_succeeded = 1;
 on-arrival: {!
 
 Q.centre_left_coalition = 0;
@@ -35,7 +36,7 @@ Q.public_works_minister_party = "DS";
 tags: event
 new-page: true
 
-= Mussolini Appointed Prime Minister!
+= [+ pnf_leader +] Appointed Prime Minister!
 
 The March on Rome has succeeded, as the threat of violence and outright civil war forces the King to give in to [+ pnf_leader +]'s demands. Vittorio Emanuele III has officially appointed [+ pnf_leader +] as Prime Minister, as many fear he will quickly consolidate power and bring the full force of the government towards us.
 
