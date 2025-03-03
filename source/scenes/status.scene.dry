@@ -259,6 +259,8 @@ Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, [? if pcdi_formed : PCd
 
 Catholics: PSI: [+ catholics_psi_display +]%, [? if pcdi_formed : PCd'I: [+ catholics_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ catholics_psu_display +]%, ?] PSRI: [+ catholics_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ catholics_pri_display +]%, ?] DS: [+ catholics_ds_display +]%, PPI: [+ catholics_ppi_display +]%, [+ ldr_name +]: [+ catholics_ldr_display +]%, [+ ul_name +]: [+ catholics_ul_display +]%; PNF: [+ catholics_pnf_display +]%, Others: [+ catholics_other_display +]%
 
+[? if womens_suffrage = 1: Women: PSI: [+ women_psi_display +]%, [? if pcdi_formed : PCd'I: [+ women_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ women_psu_display +]%, ?] PSRI: [+ women_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ women_pri_display +]%, ?] DS: [+ women_ds_display +]%, PPI: [+ women_ppi_display +]%, [+ ldr_name +]: [+ women_ldr_display +]%, [+ ul_name +]: [+ women_ul_display +]%; PNF: [+ women_pnf_display +]%, Others: [+ women_other_display +]% ?]
+
 @foreign
 on-arrival: soviet_end_display = soviet_end_timer * 2
 

@@ -174,6 +174,8 @@ Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, PPI: [+ veterans_ppi_di
 
 Catholics: PSI: [+ catholics_psi_display +]%, PPI: [+ catholics_ppi_display +]%, [+ ldr_name +]: [+ catholics_ldr_display +]%, DS: [+ catholics_ds_display +]%, UL: [+ catholics_ul_display +]%; PNF: [+ catholics_pnf_display +]%, PSRI: [+ catholics_psri_display +]%, Others: [+ catholics_other_display +]% 
 
+[? if womens_suffrage = 1: Women: PSI: [+ women_psi_display +]%, [? if pcdi_formed : PCd'I: [+ women_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ women_psu_display +]%, ?] PSRI: [+ women_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ women_pri_display +]%, ?] DS: [+ women_ds_display +]%, PPI: [+ women_ppi_display +]%, [+ ldr_name +]: [+ women_ldr_display +]%, [+ ul_name +]: [+ women_ul_display +]%; PNF: [+ women_pnf_display +]%, Others: [+ women_other_display +]% ?]
+
 @parties
 go-to: menu
 
