@@ -60,7 +60,7 @@ With the support of the left including the PSI and PSRI, we have successfully pa
 @suffrage
 max-visits: 1
 subtitle: [? if left_wing_coalition_r < 50 : This is unlikely to succeed; we do not have majority support. ?]
-go-to: suffrage_fail if left_wing_coalition_r < 50; suffrage_fail if left_wing_coalition_r >= 50
+go-to: suffrage_fail if left_wing_coalition_r < 50; suffrage_success if left_wing_coalition_r >= 50
 
 @suffrage_fail
 on-arrival: ldr_relation -= 5; coalition_dissent += 1 if not socialist_catholic_coalition; workers_psi += 3*(1-dissent); industrialists_psi -= 5; ppi_left += 1;
