@@ -170,7 +170,7 @@ if (Q.week_actions >= 1) {
     }
 
     // budget increase from taxation
-    if (Q.month = 1 and Q.week = 1) {
+    if (Q.month = 1 && Q.week = 1) {
         Q.budget += 2;
         if (Q.tax_reformed == 3) {
             Q.budget += 1;
