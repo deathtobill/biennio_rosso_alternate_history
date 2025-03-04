@@ -37,6 +37,9 @@ Q.ldr_enemies = 0;
 Q.ul_allies = 0;
 Q.in_coalition = 0;
 Q.southern_development = 0;
+
+Q.catholic_coalition_failed = 0;
+Q.liberal_coalition_failed = 0;
 !}
 on-departure: week_actions += 1; in_election = 0; next_election_year = next_election_year + 2; n_elections += 1; next_election_time = time + 24;
 set-jump: post_election_1919
@@ -964,7 +967,7 @@ title: It seems we have come to an agreement.
 subtitle: This is an unstable coalition, to say the least.
 choose-if: liberal_negotiations >= ldr_negotiations_min
 unavailable-subtitle: The Liberals are not satisfied with the current arrangement.
-on-departure: centre_left_coalition = 1; catholic_coalition_failed = 0; foreign_minister_party = "DS"; labour_minister_party = ldr_name; public_works_minister_party = "PSRI"; finance_minister_party = ldr_name;
+on-departure: centre_left_coalition = 1; catholic_coalition_failed = 0; 
 
 With the coalition agreed upon, it is time to choose a Prime Minister.
 
@@ -1090,7 +1093,7 @@ title: It seems we have come to an agreement.
 subtitle: This is an unstable coalition, to say the least.
 choose-if: catholic_negotiations >= ppi_negotiations_min
 unavailable-subtitle: The Catholics are not satisfied with the current arrangement.
-on-departure: socialist_catholic_coalition = 1; liberal_coalition_failed = 0; foreign_minister_party = "PPI"; interior_minister_party = "DS"; labour_minister_party = "PSRI"; public_works_minister_party = "PPI"; agriculture_minister_party = "DS"
+on-departure: socialist_catholic_coalition = 1; liberal_coalition_failed = 0;
 
 With the coalition agreed upon, it is time to choose a Prime Minister.
 

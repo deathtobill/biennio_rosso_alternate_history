@@ -1,9 +1,10 @@
 title: Fascist Urgency
 new-page: true
 view-if: urgency_timer = 0 and (fasci_urgency > 0 or pnf_r > 10)
-on-arrival: urgency_timer = 9; week_actions += 1
+on-arrival: urgency_timer = 8; week_actions += 1
 frequency: 150
 is-card: true
+max-visits: 6
 card-image: img/FasciUrgency.jpg
 tags: party_affairs
 

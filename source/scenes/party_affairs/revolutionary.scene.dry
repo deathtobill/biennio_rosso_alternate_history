@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 view-if: revolutionary_timer <= 0
 frequency: 200
-on-arrival: week_actions += 1; revolutionary_timer = 8;
+on-arrival: week_actions += 1; revolutionary_timer = 9;
 card-image: img/portraits/GiacintoMenottiSerrati.png
 tags: party_affairs
 

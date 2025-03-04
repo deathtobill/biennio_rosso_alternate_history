@@ -5,7 +5,7 @@ tags: party_affairs
 is-card: true
 on-arrival: week_actions += 1; inter_party_relationships_timer = 6;
 card-image: img/InterPartyRelationships.jpg
-max-visits: 12
+max-visits: 24
 
 = Inter-Party Relationships
 

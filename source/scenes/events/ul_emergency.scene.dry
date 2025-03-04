@@ -1,13 +1,13 @@
-title: [+ year +] UL Emergency Congress
-subtitle: The UL is having a leadership struggle...
+title: [+ year +] [+ ul_name +] Emergency Congress
+subtitle: The [+ ul_name +] is having a leadership struggle...
 new-page: true
 view-if: ((ul_sonnino > ul_giolitti and ul_leader = "Giolitti") or (ul_sonnino <= ul_giolitti and ul_leader = "Sonnino")) and ul_emergency_timer <= 0 and sonnino_dead = 0
 on-arrival: ul_emergency_timer = 18; ul_congresses += 1; industrialists_ul -= 1*ul_congresses; middle_class_ul -= 1*ul_congresses;
 tags: event
 
-= [+ year +] UL Emergency Congress
+= [+ year +] [+ ul_name +] Emergency Congress
 
-It seems recent developments within the Italian political sphere has prompted a reorientation of the Liberal Union's internal politics, as it seems a strong opposition towards [+ ul_leader +]'s leadership has been challenged. On one end is Giovanni Giolitti, a 'Centrist Liberal' who to say is controversial within the party would be an understatement, having been Prime Minister for no less than a decade, holding significant influence within the party.
+It seems recent developments within the Italian political sphere has prompted a reorientation of the [+ ul_full_name +]'s internal politics, as it seems a strong opposition towards [+ ul_leader +]'s leadership has been challenged. On one end is Giovanni Giolitti, a 'Centrist Liberal' who to say is controversial within the party would be an understatement, having been Prime Minister for no less than a decade, holding significant influence within the party.
 
 On the other side, Sidney Sonnino represents the more right-wing of the party, being a 'Conservative Liberal' and historically a strong advocate of resolving the *Southern Question*.
 

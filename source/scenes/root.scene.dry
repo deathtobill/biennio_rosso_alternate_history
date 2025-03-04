@@ -435,6 +435,10 @@ Q.lower_tax_rates = 0;
 Q.upper_tax_rates = 0;
 Q.tariffs = 0;
 
+// economic Plans
+Q.moderate_plan_support = 0;
+Q.nationalisation_support = 1;
+
 // timers for the russian civil war
 Q.soviet_end_timer = 90;
 Q.soviet_recovery_timer = 0;
@@ -461,7 +465,8 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'military_influence', 'roman_question', 'southern_question', 'arditi', 'para_rally', 'preparing_revolution', 
             'red_guards', 'targeting', 'enemies', 'fundraising', 'king_relations', 
             'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit',
-            'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'sonnino_southern'];
+            'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'sonnino_southern',
+            'crisis_program', 'maximum_program', 'minimum_program'];
 // all timers
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
@@ -516,6 +521,7 @@ Q.ldr_emergency_timer = 18;
 Q.ds_emergency_timer = 18;
 Q.mussolini_trial_timer = 0;
 Q.sonnino_southern_timer = 0;
+Q.crisis_program_timer = 0;
 
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;

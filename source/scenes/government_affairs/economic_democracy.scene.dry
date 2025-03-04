@@ -85,6 +85,7 @@ We begin buying out now-defunct or bankrupt companies, repurposing and organisin
 
 @nationalise_more
 subtitle: -1 Budget - We can continue buying out businesses and empower the workers and consumers to govern. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?][? if liberal_nationalisation_accepted : This will break our agreement with the Liberals! ?]
+view-if: nationalisation_progress > 0
 on-arrival: {!
 Q.budget -= 1; 
 Q.nationalisation_progress += 1; 

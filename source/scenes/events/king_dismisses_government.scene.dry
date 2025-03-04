@@ -1,6 +1,59 @@
 title: King dismisses government!
 view-if: king_relation < 20 and king_dismissed_cooldown <= 0 and psi_r < 50 and psi_in_government
-on-arrival: king_dismissed_cooldown = 24; psi_in_government = 0; centre_left_coalition = 0; socialist_catholic_coalition = 0; left_wing_coalition = 0; republican_sentiment -= 3;
+on-arrival: {!
+// resetting coalition stuff
+Q.ldr_promise_failed = 0;
+Q.ppi_promise_failed = 0;
+
+Q.liberal_aid_accepted = 0;
+Q.liberal_budget_accepted = 0;
+Q.liberal_crackdown_accepted = 0;
+Q.liberal_foreign_accepted = 0;
+Q.liberal_nationalisation_accepted = 0;
+Q.liberal_reform_accepted = 0;
+
+Q.catholic_charity_accepted = 0;
+Q.catholic_education_accepted = 0;
+Q.catholic_nationalisation_accepted = 0;
+Q.catholic_papacy_accepted = 0;
+Q.catholic_women_accepted = 0;
+
+Q.sonnino_southern_accepted = 0;
+
+Q.coalition_dissent = 0;
+
+Q.crackdown_far_left = 0;
+Q.crackdown_far_right = 0;
+
+// prevents insta dismissal
+Q.king_dismissed_cooldown = 12;
+
+Q.ds_enemies = 0;
+Q.ds_allies = 0;
+Q.ldr_enemies = 0;
+Q.ul_allies = 0;
+Q.in_coalition = 0;
+Q.southern_development = 0;
+
+// reset coalitions
+Q.centre_left_coalition = 0;
+Q.left_wing_coalition = 0;
+Q.socialist_catholic_coalition = 0;
+Q.grand_coalition = 0;
+Q.centre_right_coalition = 0;
+Q.anti_socialist_coalition = 0;
+
+Q.pcdi_in_government = 0;
+Q.psi_in_government = 0;
+Q.psu_in_government = 0;
+Q.ppi_in_government = 0;
+Q.ldr_in_government = 0;
+Q.ds_in_government = 0;
+Q.ul_in_government = 0;
+Q.psri_in_government = 0;
+Q.pnf_in_government = 0; 
+!}
+on-departure: king_dismissed_cooldown = 24; psi_in_government = 0; centre_left_coalition = 0; socialist_catholic_coalition = 0; left_wing_coalition = 0; republican_sentiment -= 3; leverage = psi_r
 go-to: election_1919.coalition_menu if next_election_time >= 4
 new-page: true
 tags: event

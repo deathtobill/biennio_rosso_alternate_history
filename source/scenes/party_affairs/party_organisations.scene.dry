@@ -5,7 +5,7 @@ tags: party_affairs
 view-if: party_organisations_timer <= 0
 on-arrival: week_actions += 1; party_organisations_timer = 6;
 card-image: img/PartyOrganisations.jpg
-max-visits: 5
+max-visits: 15
 
 = Party Organisations
 

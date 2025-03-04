@@ -168,6 +168,14 @@ if (Q.week_actions >= 1) {
             Q.resources += 2;
         }
     }
+
+    // budget increase from taxation
+    if (Q.month = 1 and Q.week = 1) {
+        Q.budget += 2;
+        if (Q.tax_reformed == 3) {
+            Q.budget += 1;
+        }
+    }
     // decrement timers
     for (timer of Q.timers) {
         if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
@@ -226,7 +234,13 @@ if (Q.week_actions >= 1) {
         }
         // assumes central bank isn't a complete idiot 
         if (Q.inflation > 17) {
-            Q.inflation -= 1;
+            Q.inflation -= 0.2;
+        }
+        if (Q.inflation > 25) {
+            Q.inflation -= 0.2;
+        }
+        if (Q.inflation > 30) {
+            Q.inflation -= 0.2;
         }
         // deflation is bad
         if (Q.inflation < -0.5 && Q.inflation > -5 && Q.unemployment < 15) {

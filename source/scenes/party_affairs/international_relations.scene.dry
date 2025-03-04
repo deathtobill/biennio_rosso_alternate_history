@@ -5,7 +5,7 @@ tags: party_affairs
 view-if: international_relations_timer <= 0
 on-arrival: week_actions += 1; international_relations_timer += 8;
 card-image: img/Comintern.jpg
-max-visits: 4
+max-visits: 12
 #subtitle: Building ties with our fraternal socialist parties.
 
 = Comintern Relations

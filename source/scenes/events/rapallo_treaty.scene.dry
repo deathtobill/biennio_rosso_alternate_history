@@ -3,7 +3,6 @@ new-page: true
 subtitle: It's time to address the Adriatic.
 view-if: adriatic_timer <= 0 and resolved_adriatic == 0
 tags: event
-max-visits: 1
 face-image: img/YugoslavCommittee.jpg
 
 = Adriatic Negotiations

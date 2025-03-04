@@ -7,3 +7,5 @@ priority: 2
 max-visits: 1
 
 A new year has come to Italy. [? if not national_economic_recovery :The economy continues to struggle following the end of the war. ?][? if prime_minister_party == "PNF": [+ prime_minister +] continues to consolidate his rule, and we are experiencing worse and worse violence against us each passing day.?]
+
+[? if psi_in_government : Our budget has increased due to the yearly tax. ?]

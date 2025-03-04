@@ -2,7 +2,7 @@ title: Choosing Our Enemies
 new-page: true
 view-if: year <= 1922 and enemies_timer <= 0
 on-arrival: week_actions += 1; enemies_timer = 12
-max-visits: 3
+max-visits: 8
 is-card: true
 card-image: img/Enemies.jpg
 tags: party_affairs

@@ -45,7 +45,7 @@ Corruption in big business is rampant, of course. We have uncovered a number of 
 Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
 
 @crackdown_far_right
-go-to: crackdown_far_right_success if interior_police_loyalty >= 0.5; crackdown_far_right_failure if interior_police_loyalty < 0.5
+go-to: crackdown_far_right_success if interior_police_loyalty >= 0.5 or (liberal_budget_accepted and not interior_minister_party = "PSI"); crackdown_far_right_failure if interior_police_loyalty < 0.5 and interior_minister_party = "PSI"
 
 @crackdown_far_right_success
 on-arrival: crackdown_far_right += 1 if liberal_crackdown_accepted; ard_strength -= 5; fdc_strength -= 7; abl_strength -= 3; liberal_crackdown_complete = 1 if crackdown_far_left > 0; democratisation += 1; nationalist_sentiment -= 3;
@@ -57,7 +57,7 @@ A number of coordinated raids and arrests have slightly paralysed the far-right 
 Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
 
 @crackdown_far_left
-go-to: crackdown_far_left_success if interior_police_loyalty >= 0.5; crackdown_far_left_failure if interior_police_loyalty < 0.5
+go-to: crackdown_far_left_success if interior_police_loyalty >= 0.5 or (liberal_budget_accepted and not interior_minister_party = "PSI"); crackdown_far_left_failure if interior_police_loyalty < 0.5 and interior_minister_party = "PSI"
 
 @crackdown_far_left_success
 on-arrival: crackdown_far_left += 1 if liberal_crackdown_accepted; rg_strength -= 5; communist_dissent += 7*(1-dissent); liberal_crackdown_complete = 1 if crackdown_far_right > 0; democratisation += 1; nationalist_sentiment -= 1; coalition_dissent -= 1

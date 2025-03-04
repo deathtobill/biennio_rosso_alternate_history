@@ -7,3 +7,5 @@ priority: 2
 max-visits: 1
 
 A new year has come to Italy. [? if prime_minister_party == "PNF": [+ prime_minister +]'s failure following the Acerbo Law has weakened his position continues to consolidate his rule, and our resistance against his rule intensifies further.?]
+
+[? if psi_in_government : Our budget has increased due to the yearly tax. ?]
