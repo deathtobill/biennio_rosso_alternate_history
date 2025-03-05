@@ -2,7 +2,7 @@ title: Post-War Party Programme
 new-page: true
 is-card: true
 view-if: crisis_program_timer = 0 and economic_plan = 0 and not national_economic_recovery and participating = 1
-frequency: 200
+frequency: 500
 on-arrival: month_actions += 1; crisis_program_timer = 6
 card-image: img/UnemploymentGov.jpg
 tags: party_affairs, govt_affairs
