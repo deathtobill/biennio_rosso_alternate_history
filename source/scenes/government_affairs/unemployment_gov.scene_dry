@@ -2,7 +2,7 @@ title: Dealing with Unemployment
 new-page: true
 is-card: true
 view-if: psi_in_government and (public_works_minister_party = "PSI" or finance_minister_party = "PSI") and unemployment_gov_timer <= 0
-frequency: 500
+frequency: 250
 on-arrival: week_actions += 1; current_budget = 0; current_budget += budget; unemployment_gov_timer = 3;
 card-image: img/UnemploymentGov.jpg
 tags: govt_affairs

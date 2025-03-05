@@ -51,14 +51,14 @@ Q.party_approach = "Unclear";
 // factions
 Q.factions = ['communist', 'maximalist', 'syndicalist', 'reformist'];
 // should this be normalised to 100%?
-Q.communist_strength = 15;
-Q.communist_dissent = 20;
+Q.communist_strength = 17;
+Q.communist_dissent = 30;
 Q.maximalist_strength = 35;
-Q.maximalist_dissent = 0;
-Q.syndicalist_strength = 10;
-Q.syndicalist_dissent = 10;
-Q.reformist_strength = 10;
-Q.reformist_dissent = 20;
+Q.maximalist_dissent = 10;
+Q.syndicalist_strength = 15;
+Q.syndicalist_dissent = 15;
+Q.reformist_strength = 12;
+Q.reformist_dissent = 25;
 
 // in the event dissent gets too high
 Q.unions_independent = 0;
@@ -149,7 +149,7 @@ Q.army_loyalty = 0.2;
 // popular opinion
 // pro-monarchy vs anti-monarchy
 Q.republican_sentiment = 10;
-Q.socialist_sentiment = 13;
+Q.socialist_sentiment = 14;
 Q.nationalist_sentiment = 37;
 Q.anti_monarchist_sentiment = Q.republican_sentiment+Q.socialist_sentiment;
 Q.democratisation = 0;
@@ -197,11 +197,11 @@ Q.sympathiser_expelled = 0;
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalised.
 Q.workers_pcdi = 0;
-Q.workers_psi = 76;
+Q.workers_psi = 69;
 Q.workers_psu = 0;
 Q.workers_pri = 0;
 Q.workers_ppi = 3;
-Q.workers_ldr = 2;
+Q.workers_ldr = 9;
 Q.workers_ds = 3;
 Q.workers_ul = 4;
 Q.workers_pnf = 7;
@@ -209,12 +209,12 @@ Q.workers_psri = 13;
 Q.workers_other = 5;
 
 Q.middle_class_pcdi = 0;
-Q.middle_class_psi = 27;
+Q.middle_class_psi = 25;
 Q.middle_class_psu = 0;
 Q.middle_class_pri = 0;
 Q.middle_class_ppi = 33;
 Q.middle_class_ldr = 9;
-Q.middle_class_ds = 3;
+Q.middle_class_ds = 5;
 Q.middle_class_ul = 13;
 Q.middle_class_pnf = 2;
 Q.middle_class_psri = 2;
@@ -225,36 +225,36 @@ Q.industrialists_psi = 1;
 Q.industrialists_psu = 0;
 Q.industrialists_pri = 0;
 Q.industrialists_ppi = 12;
-Q.industrialists_ldr = 54;
-Q.industrialists_ds = 3;
+Q.industrialists_ldr = 51;
+Q.industrialists_ds = 6;
 Q.industrialists_ul = 28;
 Q.industrialists_pnf = 1;
 Q.industrialists_psri = 0;
 Q.industrialists_other = 1;
 
 Q.rural_pcdi = 0;
-Q.rural_psi = 27;
+Q.rural_psi = 25;
 Q.rural_psu = 0;
 Q.rural_pri = 0;
-Q.rural_ppi = 44;
-Q.rural_ldr = 2;
+Q.rural_ppi = 40;
+Q.rural_ldr = 5;
 Q.rural_ds = 13;
 Q.rural_ul = 3;
 Q.rural_pnf = 4;
-Q.rural_psri = 2;
+Q.rural_psri = 4;
 Q.rural_other = 2;
 
 Q.veterans_pcdi = 0;
-Q.veterans_psi = 20;
+Q.veterans_psi = 14;
 Q.veterans_psu = 0;
-Q.veterans_ppi = 3;
-Q.veterans_ldr = 7;
+Q.veterans_ppi = 17;
+Q.veterans_ldr = 15;
 Q.veterans_pri = 0;
-Q.veterans_ds = 1;
-Q.veterans_ul = 9;
+Q.veterans_ds = 12;
+Q.veterans_ul = 10;
 Q.veterans_pnf = 7;
-Q.veterans_psri = 4;
-Q.veterans_other = 12;
+Q.veterans_psri = 7;
+Q.veterans_other = 18;
 
 Q.catholics_pcdi = 0;
 Q.catholics_psi = 6;

@@ -1,6 +1,7 @@
 title: [+ pnf_leader +] appointed Prime Minister!
 set-bg: MussoliniBg.jpg
 view-if: anti_socialist_coalition = 1
+max-visits: 1
 tags: event
 new-page: true
 
