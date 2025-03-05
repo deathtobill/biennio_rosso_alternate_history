@@ -23,7 +23,7 @@ Following the end of the war, however, the *Paris Peace Conference* saw the Ente
 @adriatic_italy
 subtitle: The Entente won't be happy about this, even if our relations are good.
 view-if: psi_in_government and foreign_minister_party == "PSI"
-choose-if: entente_relation >= 8
+choose-if: entente_relation >= 7
 unavailable-subtitle: The British and French are already placing immense pressure on us to settle.
 on-arrival: {!
 Q.unemployment += 5.7;
