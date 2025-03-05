@@ -120,8 +120,8 @@ on-arrival: rg_strength -= 25; max_seize_councils += 1; workers_psi += 7*(1-diss
 - @root: Excellent.
 
 @max_occupation_1
-subtitle: We can encourage and aid workers in seizing the means of production.
-view-if: not psi_in_government and max_seize_factories > 0
+subtitle: -30k Red Guards - We can encourage and aid workers in seizing the means of production.
+view-if: not psi_in_government and max_seize_factories = 0
 unavailable-subtitle: Not enough Red Guard strength.
 choose-if: rg_strength >= 30
 on-arrival: max_seize_factories += 1; unemployment -= 1.6 if unemployment >= 8; workers_psi += 7*(1-dissent); veterans_psi += 5*(1-dissent); middle_class_pnf += 6; radicalisation += 0.6; industrialists_pnf += 7; inflation += 0.2; fasci_coup_progress += 2; ldr_relation -= 15; ul_relation -= 15; ppi_relation -= 10;
@@ -129,8 +129,8 @@ on-arrival: max_seize_factories += 1; unemployment -= 1.6 if unemployment >= 8; 
 We begin forcefully seizing idle industries, arming and aiding workers in seizing their workplaces. Industrialists are, of course, outraged, and utilise their backings and support from the liberal parties. The [+ pnf_name +] use this as propaganda, fearmongering to the middle class and other industrialists who are swayed to support them.
 
 @max_occupation_2
-subtitle: This will deepen our conflict with the industrialists and the governing coalition.
-view-if: not psi_in_government and  max_seize_factories > 0
+subtitle: -30k Red Guards - This will deepen our conflict with the industrialists and the governing coalition.
+view-if: not psi_in_government and max_seize_factories > 0
 choose-if: rg_strength >= 30
 unavailable-subtitle: Not enough Red Guard strength.
 max-visits: 2

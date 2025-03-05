@@ -33,8 +33,8 @@ go-to: inter_party_relationships
 
 @implement_plan
 title: Implementing our Plan
-subtitle: We can being implementing the Erfurt Program.
-choose-if: advisor_action_timer = 0 and psi_in_government and economic_plan = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not in government. ?][? if economic_plan = 0 : We have not chosen a program yet. ?]
-on-arrival: advisor_action_timer = 9; international_relations_timer -= 8; last_advisor_action = 1
-go-to: maximum_program if nationalisation_adopted; minimum_program if moderate_plan_adopted
+subtitle: We can being implementing the Maximum Program.
+choose-if: advisor_action_timer = 0 and economic_plan = 1 and nationalisation_adopted = 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if economic_plan = 0 : We have not chosen a program yet. ?][? if economic_plan = 1 and moderate_plan_adopted : We have chosen a different plan. ?]
+on-arrival: advisor_action_timer = 9; economic_policy_timer -= 8; last_advisor_action = 1
+go-to: maximum_program
