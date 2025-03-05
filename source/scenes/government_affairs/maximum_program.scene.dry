@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs, party_affairs
 on-arrival: economic_policy_timer += 6; week_actions += 1;
-view-if: economic_policy_timer <= 0 and economic_plan = 1 and nationalisation_adopted = 1 and (psi_in_government or not_participating = 1)
+view-if: economic_policy_timer <= 0 and economic_plan = 1 and nationalisation_adopted = 1
 card-image: img/portraits/GiacintoMenottiSerrati.png
 #subtitle: Policies to address the economic crisis.
 
@@ -98,7 +98,7 @@ on-arrival: rg_strength -= 25; max_land_seize += 1; rural_psi += 7*(1-dissent); 
 
 @max_force_councils_1
 subtitle: -25k Red Guards - We can use our paramilitary forces to establish workers' councils.
-view-if: not_participating = 1 and max_seize_councils = 0
+view-if: not psi_in_government and max_seize_councils = 0
 unavailable-subtitle: Not enough Red Guard strength.
 choose-if: rg_strength >= 25
 on-arrival: rg_strength -= 25; max_seize_councils += 1; workers_psi += 7*(1-dissent); capital_strike_progress += 2; syndicalist_dissent -= 6; syndicalist_strength += 8; ldr_relation -= 10; fasci_coup_progress += 1
@@ -107,7 +107,7 @@ We order the Red Guards to support and establish new workers' councils, utilisin
 
 @max_force_councils_2
 subtitle: -25k Red Guards - We empower and strengthen workers councils utilising our paramilitary forces.
-view-if: not_participating = 1 and max_seize_councils > 0
+view-if:  not psi_in_government and  max_seize_councils > 0
 unavailable-subtitle: Not enough Red Guard strength.
 choose-if: rg_strength >= 25
 max-visits: 2
@@ -121,7 +121,7 @@ on-arrival: rg_strength -= 25; max_seize_councils += 1; workers_psi += 7*(1-diss
 
 @max_occupation_1
 subtitle: We can encourage and aid workers in seizing the means of production.
-view-if: not_participating = 1 and max_seize_factories > 0
+view-if: not psi_in_government and max_seize_factories > 0
 unavailable-subtitle: Not enough Red Guard strength.
 choose-if: rg_strength >= 30
 on-arrival: max_seize_factories += 1; unemployment -= 1.6 if unemployment >= 8; workers_psi += 7*(1-dissent); veterans_psi += 5*(1-dissent); middle_class_pnf += 6; radicalisation += 0.6; industrialists_pnf += 7; inflation += 0.2; fasci_coup_progress += 2; ldr_relation -= 15; ul_relation -= 15; ppi_relation -= 10;
@@ -130,7 +130,7 @@ We begin forcefully seizing idle industries, arming and aiding workers in seizin
 
 @max_occupation_2
 subtitle: This will deepen our conflict with the industrialists and the governing coalition.
-view-if: not_participating = 1 and max_seize_factories > 0
+view-if: not psi_in_government and  max_seize_factories > 0
 choose-if: rg_strength >= 30
 unavailable-subtitle: Not enough Red Guard strength.
 max-visits: 2
