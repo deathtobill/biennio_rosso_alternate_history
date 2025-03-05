@@ -210,7 +210,7 @@ view-if: n_advisors < 3
 
 @add_serrati
 title: Giacinto Menotti Serrati
-subtitle: Giacinto Menotti Serrati leads the Maximalist faction of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Revolution or Reformist, Inter-Party Relationships, Comintern Relations ?]
+subtitle: Giacinto Menotti Serrati leads the Maximalist faction of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Revolution or Reformist, Inter-Party Relationships, Implementing our Program ?]
 is-card: true
 card-image: img/portraits/GiacintoMenottiSerrati.png
 tags: maximalist_advisor

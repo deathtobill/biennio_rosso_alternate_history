@@ -11,7 +11,7 @@ Serrati is a leader of the Maximalists, one of the factions of the PSI.
 
 - @serrati_revolution_or_reformist
 - @inter_party_relationships_serrati
-- @comintern_relations
+- @implement_plan
 - @root: Return to main
 
 @serrati_revolution_or_reformist
@@ -31,10 +31,10 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 9; inter_party_relationships_timer -= 6; last_advisor_action = 1
 go-to: inter_party_relationships
 
-@comintern_relations
-title: Comintern Relations
-subtitle: Improve our standing with the our international allies.
-choose-if: advisor_action_timer = 0 
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+@implement_plan
+title: Implementing our Plan
+subtitle: We can being implementing the Erfurt Program.
+choose-if: advisor_action_timer = 0 and psi_in_government and economic_plan = 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not in government. ?][? if economic_plan = 0 : We have not chosen an program yet. ?]
 on-arrival: advisor_action_timer = 9; international_relations_timer -= 8; last_advisor_action = 1
-go-to: international_relations
+go-to: maximum_program if nationalisation_adopted; minimum_program if moderate_plan_adopted

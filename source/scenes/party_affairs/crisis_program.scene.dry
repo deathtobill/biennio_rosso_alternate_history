@@ -1,0 +1,62 @@
+title: Post-War Party Programme
+new-page: true
+is-card: true
+view-if: crisis_program_timer = 0 and economic_plan = 0 and not national_economic_recovery and participating = 1
+frequency: 200
+on-arrival: month_actions += 1; crisis_program_timer = 6
+card-image: img/UnemploymentGov.jpg
+tags: party_affairs, govt_affairs
+
+= Addressing the Post-War Economic Crisis & Party Program
+
+Our party is wracked as to how to deal with the economic crisis, as well as the reorient of our current party program. Post-war inflation has forced us to limit our spending, so we will have to take caution. The party in it of itself however, is divided into two distinct programs, both originating from Karl Kautsky and Eduard Bernstein's *Erfurt Program*.
+
+The Left-wing of the Party, alongside the Maximalists are in favour of the *Maximum Program*, believing this to be an opportunity for us to end capitalism and begin the mass socialisation of the economy, land redistributions and expanding the current work councils.
+
+On the other hand, the Reformists, alongside our Trade Unions, are in favour of the *Minimum Program*, instead advocating for more immediate social and economic reforms to improve the lives of its workers, such as Progressive Taxation, Labour laws, Social security or public works without incurring or worsening the current inflation and deficit. 
+
+- @support_left: Support the Maximum Program.
+- @support_moderate: Support the Minimum Program.
+- @defer: Defer making a decision until we have more information.
+
+@support_left
+subtitle: Support the call for mass nationalisations and the transformation of the economy.
+unavailable-subtitle: The Left and Maximalist faction is not strong enough.
+choose-if: historical_mode == 0 or (communist_strength + maximalist_strength >= syndicalist_strength + reformist_strength)
+on-arrival: communist_strength += 5; maximalist_strength += 5; reformist_dissent += 5; syndicalist_dissent += 5; nationalisation_support += 1
+go-to: support_left_progress if nationalisation_support < 2; adopt_left if nationalisation_support >= 2
+
+@support_left_progress
+
+We attempt to convince the party to support the Maximum Program. Leftists argue that this policy is in accordance with our long-standing socialist platform, while reformists and some trade unionists argue that the plan is unrealistic, and that we need to focus on more immediate improvements to workers' lives.
+
+We have not yet formally adopted the plan. More work needs to be done.
+
+@adopt_left
+on-arrival: communist_strength += 15; communist_dissent -= 10; reformist_dissent += 10; syndicalist_dissent += 6; nationalisation_adopted = 1; fasci_coup_progress += 1; economic_plan = 1;
+
+With our hard work, we have convinced the majority of the party to adopt the socialist economic plan! Bourgeois opposition is likely to be fierce. [? if psi_in_government == 0 : It might be difficult to enact the plan, given present conditions. ?]
+
+@support_moderate
+subtitle: Support the call for extensive economic and labour reforms - This will require participation in government.
+view-if: not_participating = 0
+unavailable-subtitle: The Reformist and Labour faction is not strong enough.
+choose-if: historical_mode == 0 or (reformist_strength + syndicalist_strength >= maximalist_strength + communist_strength)
+on-arrival: moderate_plan_support += 1; reformist_strength += 7; syndicalist_strength += 3; maximalist_dissent += 5; left_dissent += 5; 
+go-to: adopt_moderate if moderate_plan_support >= 2; support_moderate_progress if moderate_plan_support < 2
+
+@support_moderate_progress
+
+We attempt to convince the party to support the Minimum Plan. Advocates of the plan argue that this plan is most likely to receive support from the bourgeois parties, and most practical in the immediate term. Opponents in the left and labor factions criticize the plan for being inadequate in its ambition.
+
+We have not yet adopted the plan. More work needs to be done.
+
+@adopt_moderate
+on-arrival: reformist_strength += 10; reformist_dissent -= 10; left_dissent += 8; labor_dissent += 6; moderate_plan_adopted = 1; economic_plan = 1; coalition_dissent -= 1 if unemployed > 15; ldr_relation += 5; 
+
+With our hard work, we have convinced the majority of the party to adopt the economic and political reform plan! [? if psi_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Labour, Public Works, Agricultural or Finance ministries. ?]
+
+@defer
+on-arrival: reformist_dissent += 2; communist_dissent += 2; syndicalist_dissent += 2; maximalist_dissent += 2;
+
+We hold off on making a decision on economic policy, awaiting more information. Both sides argue that waiting any longer will only result in worsening crisis.

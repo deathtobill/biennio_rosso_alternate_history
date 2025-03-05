@@ -1,0 +1,116 @@
+title: Minimum Program
+new-page: true
+is-card: true
+tags: govt_affairs
+on-arrival: minimum_program_timer += 6; week_actions += 1; compensation_cost = 2 if min_compensation = 1; compensation_cost = 3 if min_compensation = 2;
+view-if: (psi_in_government = 1 and economic_policy_timer <= 0 and economic_plan = 1 and moderate_plan_adopted) and (tax_reformed < 3 or min_compensation < 3 or min_public_works < 3 or uncultivated_redistributed < 3)
+card-image: img/portraits/GiacintoMenottiSerrati.png
+#subtitle: Policies to address the economic crisis.
+
+= Minimum Program
+
+We have already formulated an economic plan. Now we have to implement it. Thankfully, our other coalition partners seem willing to aid us.
+
+- @min_tax_1: Begin overhauling the tax code.
+- @min_tax_2: Continue the overhaul the tax code.
+- @min_land_1: Take control of uncultivated land and redistribute it to cooperatives and peasants.
+- @min_land_2: Continue taking control of uncultivated land and redistribute it to cooperatives and peasants.
+- @min_works_1: Begin public works and infrastructure construction across Italy.
+- @min_works_2: Continue public works construction across Italy.
+- @min_nationalise_1: Begin nationalising key services with compensation.
+- @min_nationalise_2: Continue nationalising key services with compensation.
+- @root: Do not implement the economic plan.
+- @easy_discard
+- @cancel_advisor_action
+
+@min_tax_1
+subtitle: [? if finance_minister_party = "PPI": Thankfully, the PPI seems willing to aid us. ?][? if finance_minister_party = "PSI": We can make taxes more progressive and root out corruption. ?]
+view-if: tax_reformed = 0
+choose-if: finance_minister_party = "PSI" or finance_minister_party = "PPI"
+unavailable-subtitle: We do not control the Financial Ministry.
+on-arrival: tax_reformed += 1; workers_psi += 3*(1-dissent); middle_class_psi -= 1; industrialists_psi -= 1; ldr_relation -= 2; ul_relation -= 2; psri_relation += 5;
+
+We begin the slow and arduous process of reviewing and revising the tax code, removing loopholes and making it more progressive, albeit not our only goal.
+
+@min_tax_2
+subtitle: [? if finance_minister_party = "PPI": Thankfully, the PPI seems willing to aid us. ?][? if finance_minister_party = "PSI": We can continue making taxes more progressive and root out corruption. ?]
+view-if: tax_reformed > 0
+choose-if: finance_minister_party = "PSI" or finance_minister_party = "PPI"
+unavailable-subtitle: We do not control the Financial Ministry.
+max-visits: 2
+on-arrival: tax_reformed += 1; workers_psi += 3*(1-dissent); middle_class_psi -= 1; industrialists_psi -= 1; ldr_relation -= 2; ul_relation -= 2; psri_relation += 5; upper_tax_rates += 1 if tax_reformed = 3 and upper_tax_rates >= 5; lower_tax_rates if tax_reformed = 3 and lower_tax_rates <= 5
+
+[? if tax_reformed = 2: We continue reforming the tax code, slowly but surely bringing it to modern standards and improving the bureaucracy plaguing it. ?]
+
+[? if tax_reformed = 3: We finally finalise the overhaul of the tax code, whittling down corruption and loopholes within the system. Fortunately, and more surprisingly, the more efficient taxation system has allowed our yearly budget to increase without being forced to increase taxes. ?]
+
+- @root: Excellent.
+
+@min_land_1
+subtitle: We can redistribute unused and uncultivated land to keep the lower unemployment.
+view-if: uncultivated_redistributed = 0
+choose-if: agriculture_minister_party = "PSI" and judicial_reform > 0
+unavailable-subtitle: [? if not agriculture_minister_party = "PSI" : We do not control the Agricultural Ministry. ?][? if judicial_reform <= 0 : The judiciary would not support this. ?]
+on-arrival: uncultivated_redistributed += 1; unemployment -= 0.4 if unemployment >= 8; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent);
+
+We begin redistributions of uncultivated lands of large estates via legal means, decreasing unemployment and increasing the rural populace.
+
+@min_land_2
+subtitle: We can continue redistributing uncultivated land legally.
+view-if: uncultivated_redistributed > 0
+choose-if: agriculture_minister_party = "PSI" and judicial_reform > 1
+unavailable-subtitle: [? if not agriculture_minister_party = "PSI" : We do not control the Agricultural Ministry. ?][? if judicial_reform <= 1 : The judiciary would not support this. ?]
+max-visits: 2
+on-arrival: uncultivated_redistributed += 1; unemployment -= 0.2 if unemployment >= 8; unemployment -= 0.3 if uncultivated_redistributed = 3; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); rural += 2 if uncultivated_redistributed = 3;
+
+[? if uncultivated_redistributed = 2: We continue redistributing land via the judicial system, as people are able to work again, reducing unemployment. ?]
+
+[? if uncultivated_redistributed = 3: We have been able to redistribute a significant amount of uncultivated land to cooperatives, comprised of unemployed or veterans, increasing rural migration as well. ?]
+
+- @root: Excellent.
+
+@min_works_1
+subtitle: -1 Budget - We can utilise our surplus to continue economic development and reduce unemployment.
+view-if: min_public_works = 0
+choose-if: (public_works_minister_party = "PSI" or public_works_minister_party == ldr_name or public_education_minister_party = ul_name) and budget > 0
+unavailable-subtitle: [? if not public_works_minister_party = "PSI" or not public_works_minister_party == ldr_name or not public_education_minister_party = ul_name : We do not continue the Public Works Ministry. ?][? if budget <= 0 : We do not have a surplus. ?]
+on-arrival: budget -= 1; min_public_works += 1; unemployment -= 0.4 if unemployment >= 8; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); inflation += 1.2; economic_growth += 0.2; economic_growth += 0.1 if economic_growth < 0;
+
+We order the construction of railways, canals, streets and more, hiring unemployed workers to do so.
+
+@min_works_2
+subtitle: -[+ min_public_works +] - We can continue utilising our surplus to continue economic development and reduce unemployment.
+view-if: min_public_works > 0
+choose-if: (public_works_minister_party = "PSI" or public_works_minister_party == ldr_name or public_education_minister_party = ul_name) and budget >= min_public_works
+unavailable-subtitle: [? if not public_works_minister_party = "PSI" or not public_works_minister_party == ldr_name or not public_education_minister_party = ul_name : We do not continue the Public Works Ministry. ?][? if budget < min_public_works : We do not have a surplus. ?]
+max-visits: 2
+on-arrival: budget -= min_public_works; min_public_works += 1; unemployment -= 0.5 if unemployment >= 8; unemployment -= 0.1 if min_public_works > 1; veterans_psi += 3*(1-dissent)*min_public_works; rural_psi += 1*(1-dissent)*min_public_works; inflation += 1.2; inflation += 0.4 if min_public_works > 1; economic_growth += 0.3; economic_growth += 0.2 if economic_growth < 0;
+
+[? if uncultivated_redistributed = 2: We continue constructing public works, improving the transition from the post-war economy. ?]
+
+[? if uncultivated_redistributed = 3: We have constructed extensive public works across Italy, stimulating the economy, albeit causing some slight inflation. ?]
+
+- @root: Excellent.
+
+@min_nationalise_1
+subtitle: -2 Budget - We can buy out bankrupt or defunct companies and repurpose them.
+view-if: min_compensation = 0
+choose-if: labour_minister_party = "PSI" and budget > 1
+unavailable-subtitle: [? if not public_works_minister_party = "PSI" : We do not continue the Public Works Ministry. ?][? if budget <= 1 : We do not have a surplus. ?]
+on-arrival: budget -= 2; min_compensation += 1; unemployment -= 0.4 if unemployment >= 8; workers_psi += 3*(1-dissent); veterans_psi += 1*(1-dissent); inflation += 1.6; industrialists_pnf += 2;
+
+We begin buying up companies who have gone bankrupt or defunct due to the current economic crisis, expanding government control over the economy. Industrialists and landowners are not pleased at our intrusion.
+
+@min_nationalise_2
+subtitle: -[+ compensation_cost +] - We can continue buying up idling factories to repurpose them.
+view-if: min_compensation > 0
+choose-if: labour_minister_party = "PSI" and budget >= compensation_cost
+unavailable-subtitle: [? if not public_works_minister_party = "PSI" : We do not continue the Public Works Ministry. ?][? if budget < compensation_cost : We do not have a surplus. ?]
+max-visits: 2
+on-arrival: budget -= compensation_cost; min_compensation += 1; unemployment -= 0.5 if unemployment >= 8; unemployment -= 0.1 if min_public_works > 1; workers_psi += 3*(1-dissent)*min_compensation; veterans_psi += 1*(1-dissent)*min_compensation; inflation += 1.6; inflation += 0.4 if min_compensation > 1; industrialists_pnf += 2*min_compensation;
+
+[? if uncultivated_redistributed = 2: We continue buying up companies who have gone bankrupt or defunct due to the current economic crisis, expanding government control over the economy. Industrialists and landowners are not pleased at our intrusion. ?]
+
+[? if uncultivated_redistributed = 3: We expand our buyouts to idling factories and companies as well, drastically expanding government control over the economy. Industrialists and landowners are not pleased at our intrusion. ?]
+
+- @root: Excellent.

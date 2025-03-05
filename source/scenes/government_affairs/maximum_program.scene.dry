@@ -1,0 +1,143 @@
+title: Maximum Program
+new-page: true
+is-card: true
+tags: govt_affairs, party_affairs
+on-arrival: maximum_program_timer += 6; week_actions += 1;
+view-if: economic_policy_timer <= 0 and economic_plan = 1 and nationalisation_adopted = 1 and (psi_in_government or not_participating = 1)
+card-image: img/portraits/GiacintoMenottiSerrati.png
+#subtitle: Policies to address the economic crisis.
+
+= Maximum Program
+
+We have already formulated an economic plan. Now we have to implement it. [? if not left_wing_coalition and not psi_majority :Unfortunately, our coalition partners will resist us every step of the way. ?]
+
+# nationalisations & organisations of workers councils will be gov only, land redistributions will be both, forceful work councils and factory occupations will be non-gov only
+
+- @max_nationalise_1: Begin nationalising idle industries without compensation.
+- @max_nationalise_2: Continue nationalising idle industries without compensation.
+- @max_gov_councils_1: Begin organising workers' councils.
+- @max_gov_councils_2: Grant the workers' councils greater autonomy and decision-making power.
+- @max_land_1: Begin forceful land redistributions across Italy.
+- @max_land_2: Continue forceful land redistributions across Italy.
+- @max_force_councils_1: Begin forceful establishment of workers' councils.
+- @max_force_councils_2: Continue forceful establishment of workers' councils
+- @max_occupation_1: Empower and encourage workers to seize their factories.
+- @max_occupation_2: Continue arming workers to seize their factories.
+- @root: Do not implement the economic plan.
+- @easy_discard
+- @cancel_advisor_action
+
+@max_nationalise_1
+subtitle: Neither our allies in the Chamber of Deputies, nor the industrialists will like this.
+view-if: max_seize = 0 and psi_in_government
+unavailable-subtitle: [? if not labour_minister_party = "PSI": The PSI does not control the Labour & Social Security Ministry. ?][? if judicial_reform <= 2: The judiciary would oppose this action. ?]
+choose-if: judicial_reform > 2 and labour_minister_party = "PSI"
+on-arrival: max_seize += 1; unemployment -= 1.6 if unemployment >= 8; workers_psi += 6*(1-dissent); veterans_psi += 4*(1-dissent); middle_class_pnf += 3; radicalisation += 0.3; industrialists_pnf += 5; inflation += 0.3; industrialists_pnf += 8; capital_strike_progress += 3; fasci_coup_progress += 2; coalition_dissent += 2 if socialist_catholic_coalition or centre_left_coalition; ldr_relation -= 10; ul_relation -= 10; ppi_relation -= 5;
+
+We begin forcefully seizing idle industries, nationalising vast sums of the economy without compensating the greedy industrialists a single cent. They are, of course, outraged, and utilise their backings and support from the liberal parties. The [+ pnf_name +] use this as propaganda, fearmongering to the middle class and other industrialists who are swayed to support them.
+
+@max_nationalise_2
+subtitle: This will worsen our conflict with the industrialists.
+view-if: max_seize > 0 and psi_in_government
+choose-if: labour_minister_party = "PSI" and budget >= compensation_cost
+unavailable-subtitle: [? if not labour_minister_party = "PSI": The PSI does not control the Labour & Social Security Ministry. ?][? if judicial_reform <= 2: The judiciary would oppose this action. ?]
+max-visits: 2
+on-arrival: max_seize += 1; unemployment -= 1.8 if unemployment >= 8; unemployment -= 0.4 if max_seize > 1; workers_psi += 8*(1-dissent)*max_seize; veterans_psi += 2*(1-dissent)*max_seize; radicalisation += 0.4; inflation += 0.3; industrialists_pnf += 4*max_seize; middle_class_pnf += 2*max_seize; capital_strike_progress += 2; fasci_coup_progress += 1; coalition_dissent += 1 if socialist_catholic_coalition or centre_left_coalition; ldr_relation -= 5; ul_relation -= 5; ppi_relation -= 2;
+
+[? if max_seize = 2: We continue seizing factories from idling companies, being able to repurpose them and hand over the means of production to the workers. ?]
+
+[? if max_seize = 3: We expand our seizures with the help of the judiciary, keeping the factories running to stave off rising unemployment. A significant portion of the economy is under our control. ?]
+
+- @root: Excellent.
+
+@max_gov_councils_1
+subtitle: We can use our position to strengthen representative bodies of factory workers.
+view-if: max_councils = 0 and psi_in_government 
+unavailable-subtitle: [? if not labour_minister_party = "PSI": The PSI does not control the Labour & Social Security Ministry. ?][? if judicial_reform <= 2: The judiciary would oppose this action. ?]
+choose-if: judicial_reform > 1 and labour_minister_party = "PSI"
+on-arrival: max_councils += 1; workers_psi += 7*(1-dissent); capital_strike_progress += 1; syndicalist_dissent -= 6; syndicalist_strength += 8; ldr_relation -= 5; coalition_dissent += 1 if centre_left_coalition
+
+We encourage and allow workers' councils to develop, utilising Soviet-style and Turin-style councils as inspiration, giving workers a larger voice in their workplace.
+
+@max_gov_councils_2
+subtitle: We continue strengthening representative bodies of factory workers and empower them.
+view-if: max_councils > 0 and psi_in_government 
+unavailable-subtitle: [? if not labour_minister_party = "PSI": The PSI does not control the Labour & Social Security Ministry. ?][? if judicial_reform <= 2: The judiciary would oppose this action. ?]
+choose-if: judicial_reform > 1 and labour_minister_party = "PSI"
+max-visits: 2
+on-arrival: max_councils += 1; workers_psi += 7*(1-dissent); capital_strike_progress += 1; syndicalist_dissent -= 6; syndicalist_strength += 8; ldr_relation -= 5; coalition_dissent += 1 if centre_left_coalition; economic_growth += 0.1 if economic_growth < 3; unemployed -= 2 if unemployed > 5 and max_councils = 3; workers += 2 if max_councils = 3;
+
+[? if max_seize = 2: We grant workers further power over their workplaces, allowing them to pursue their demands to the fullest and decreasing the industrialists chokehold on the economy. ?]
+
+[? if max_seize = 3: We grant workers significant power over vast economic sectors, allowing them to negotiate price policies, wages, production and smoothing over the anarchy of the market. ?]
+
+- @root: Excellent.
+
+@max_land_1
+subtitle: -25k Red Guards - This is highly controversial, and could provoke a response from far-right paramilitaries.
+view-if: max_land_seize = 0
+unavailable-subtitle: Not enough Red Guard strength.
+choose-if: rg_strength >= 25
+on-arrival: rg_strength -= 25; max_land_seize += 1; rural_psi += 7*(1-dissent); fasci_coup_progress += 1; ldr_relation -= 5; coalition_dissent += 1; industrialists_pnf += 3*(dissent);
+
+We utilise our paramilitary organisation to occupy and hand out land to landless workers, lowering unemployment and expanding our support base in rural areas. The bourgeois and landowners, obviously, oppose our blatant actions.
+
+@max_land_2
+subtitle: -25k Red Guards - We can continue break up estates and hand out land to landless workers.
+view-if: max_land_seize > 0
+unavailable-subtitle: Not enough Red Guard strength.
+choose-if: rg_strength >= 25
+max-visits: 2
+on-arrival: rg_strength -= 25; max_land_seize += 1; rural_psi += 7*(1-dissent); fasci_coup_progress += 1; ldr_relation -= 5; coalition_dissent += 1; economic_growth += 0.1 if economic_growth < 3; unemployed -= 0.3 if unemployed > 5 and max_land_seize = 3; rural += 2; communist_strength += 5; communist_dissent -= 5; industrialists_pnf += 3*(dissent);
+
+[? if max_seize = 2: We continue seizing land and redistributing them to landless or unemployed workers, preventing poverty and stimulating economic growth. The bourgeois and landowners, protest this, using their influence in the [+ ldr_name +] and [+ ul_name +] to sway them against us. ?]
+
+[? if max_seize = 3: We seize vast sums of land from large estates, making many occupy these lands as landowners are in an uproar, all the while the left wing of the party applauds our decisive action. ?]
+
+- @root: Excellent.
+
+@max_force_councils_1
+subtitle: -25k Red Guards - We can use our paramilitary forces to establish workers' councils.
+view-if: not_participating = 1 and max_seize_councils = 0
+unavailable-subtitle: Not enough Red Guard strength.
+choose-if: rg_strength >= 25
+on-arrival: rg_strength -= 25; max_seize_councils += 1; workers_psi += 7*(1-dissent); capital_strike_progress += 2; syndicalist_dissent -= 6; syndicalist_strength += 8; ldr_relation -= 10; fasci_coup_progress += 1
+
+We order the Red Guards to support and establish new workers' councils, utilising Soviet-style and Turin-style councils as inspiration, giving workers a larger voice in their workplace.
+
+@max_force_councils_2
+subtitle: -25k Red Guards - We empower and strengthen workers councils utilising our paramilitary forces.
+view-if: not_participating = 1 and max_seize_councils > 0
+unavailable-subtitle: Not enough Red Guard strength.
+choose-if: rg_strength >= 25
+max-visits: 2
+on-arrival: rg_strength -= 25; max_seize_councils += 1; workers_psi += 7*(1-dissent); capital_strike_progress += 2; syndicalist_dissent -= 6; syndicalist_strength += 8; ldr_relation -= 10; economic_growth += 0.1 if economic_growth < 3; unemployed -= 2 if unemployed > 5 and max_seize_councils = 3; workers += 2 if max_seize_councils = 3; fasci_coup_progress += 1
+
+[? if max_seize = 2: We seize more factories and grant workers further power over their workplaces, allowing them to pursue their demands to the fullest and decreasing the industrialists chokehold on the economy. ?]
+
+[? if max_seize = 3: We are able to grant workers significant power over vast economic sectors, allowing them to determine price policies, wages, production and smoothing over the anarchy of the market. ?]
+
+- @root: Excellent.
+
+@max_occupation_1
+subtitle: We can encourage and aid workers in seizing the means of production.
+view-if: not_participating = 1 and max_seize_factories > 0
+unavailable-subtitle: Not enough Red Guard strength.
+choose-if: rg_strength >= 30
+on-arrival: max_seize_factories += 1; unemployment -= 1.6 if unemployment >= 8; workers_psi += 7*(1-dissent); veterans_psi += 5*(1-dissent); middle_class_pnf += 6; radicalisation += 0.6; industrialists_pnf += 7; inflation += 0.2; fasci_coup_progress += 2; ldr_relation -= 15; ul_relation -= 15; ppi_relation -= 10;
+
+We begin forcefully seizing idle industries, arming and aiding workers in seizing their workplaces. Industrialists are, of course, outraged, and utilise their backings and support from the liberal parties. The [+ pnf_name +] use this as propaganda, fearmongering to the middle class and other industrialists who are swayed to support them.
+
+@max_occupation_2
+subtitle: This will deepen our conflict with the industrialists and the governing coalition.
+view-if: not_participating = 1 and max_seize_factories > 0
+choose-if: rg_strength >= 30
+unavailable-subtitle: Not enough Red Guard strength.
+max-visits: 2
+on-arrival: max_seize_factories += 1; unemployment -= 1.8 if unemployment >= 8; unemployment -= 0.4 if max_seize_factories > 1; workers_psi += 10*(1-dissent)*max_seize_factories; veterans_psi += 4*(1-dissent)*max_seize_factories; radicalisation += 0.6; inflation += 0.3; industrialists_pnf += 6*max_seize_factories; middle_class_pnf += 3*max_seize_factories; fasci_coup_progress += 1; ldr_relation -= 10; ul_relation -= 10; ppi_relation -= 5;
+
+[? if max_seize = 2: We continue seizing factories from idling companies, being able to repurpose them and hand over the means of production to the workers. ?]
+
+[? if max_seize = 3: We expand our seizures with the help of our paramilitaries, keeping the factories running to stave off rising unemployment. A significant portion of the economy is under our control. ?]
+
+- @root: Excellent.
