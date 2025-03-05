@@ -38,7 +38,7 @@ view-if: tax_reformed > 0
 choose-if: finance_minister_party = "PSI" or finance_minister_party = "PPI"
 unavailable-subtitle: We do not control the Financial Ministry.
 max-visits: 2
-on-arrival: tax_reformed += 1; workers_psi += 3*(1-dissent); middle_class_psi -= 1; industrialists_psi -= 1; ldr_relation -= 2; ul_relation -= 2; psri_relation += 5; upper_tax_rates += 1 if tax_reformed = 3 and upper_tax_rates >= 5; lower_tax_rates if tax_reformed = 3 and lower_tax_rates <= 5
+on-arrival: tax_reformed += 1; workers_psi += 3*(1-dissent); middle_class_psi -= 1; industrialists_psi -= 1; ldr_relation -= 2; ul_relation -= 2; psri_relation += 5; upper_tax_rates += 1 if (tax_reformed = 3 and upper_tax_rates >= 5); lower_tax_rates += 1 if (tax_reformed = 3 and lower_tax_rates <= 5)
 
 [? if tax_reformed = 2: We continue reforming the tax code, slowly but surely bringing it to modern standards and improving the bureaucracy plaguing it. ?]
 
