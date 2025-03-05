@@ -2,7 +2,7 @@ title: Maximum Program
 new-page: true
 is-card: true
 tags: govt_affairs, party_affairs
-on-arrival: maximum_program_timer += 6; week_actions += 1;
+on-arrival: economic_policy_timer += 6; week_actions += 1;
 view-if: economic_policy_timer <= 0 and economic_plan = 1 and nationalisation_adopted = 1 and (psi_in_government or not_participating = 1)
 card-image: img/portraits/GiacintoMenottiSerrati.png
 #subtitle: Policies to address the economic crisis.

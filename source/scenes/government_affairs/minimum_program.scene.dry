@@ -2,7 +2,7 @@ title: Minimum Program
 new-page: true
 is-card: true
 tags: govt_affairs
-on-arrival: minimum_program_timer += 6; week_actions += 1; compensation_cost = 2 if min_compensation = 1; compensation_cost = 3 if min_compensation = 2;
+on-arrival: economic_policy_timer += 6; week_actions += 1; compensation_cost = 2 if min_compensation = 1; compensation_cost = 3 if min_compensation = 2;
 view-if: (psi_in_government = 1 and economic_policy_timer <= 0 and economic_plan = 1 and moderate_plan_adopted) and (tax_reformed < 3 or min_compensation < 3 or min_public_works < 3 or uncultivated_redistributed < 3)
 card-image: img/portraits/GiacintoMenottiSerrati.png
 #subtitle: Policies to address the economic crisis.

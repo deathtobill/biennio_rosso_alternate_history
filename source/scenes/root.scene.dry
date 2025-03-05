@@ -466,7 +466,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'red_guards', 'targeting', 'enemies', 'fundraising', 'king_relations', 
             'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit',
             'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'sonnino_southern',
-            'crisis_program', 'maximum_program', 'minimum_program'];
+            'crisis_program', 'economic_policy'];
 // all timers
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
@@ -522,6 +522,7 @@ Q.ds_emergency_timer = 18;
 Q.mussolini_trial_timer = 0;
 Q.sonnino_southern_timer = 0;
 Q.crisis_program_timer = 0;
+Q.economic_policy_timer = 0;
 
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;
