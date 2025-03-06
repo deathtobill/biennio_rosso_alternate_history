@@ -142,9 +142,9 @@ title: The Fascists have seized control.
 tags: endings
 go-to: eg_menu
 
-[+ pnf_leader +] is in control of the Prime Ministership. [if not march_failed : Considering his violent means to power,] There is no doubt he will lead this nation down a dark path.
+[+ pnf_leader +] is in control of the Prime Ministership. [if not march_failed: Considering his violent means to power,] There is no doubt he will lead this nation down a dark path.
 
-[? if civil_war_seen == 1 : At the very least, we fought back. Perhaps our resistance will be celebrated in an impossible-to-forsee future. ?]
+[? if civil_war_seen == 1: At the very least, we fought back. Perhaps our resistance will be celebrated in an impossible-to-forsee future. ?]
 
 @war_against_mussolini
 view-if: (prime_minister == pnf_leader) and (long_war == 1)
@@ -186,7 +186,7 @@ go-to: eg_menu
 
 Italy is currently in the grip of a civil war, a brutal affair that has no obvious end. Thousands of lives have already been extinguished, and it is likely that the war will not stop until Italy's cities are reduced to ruins. 
 
-[? if soviet_aid >= 1 : The Soviet Union has sent limited aid to us, still in the midst of its own civil war. ?][? if entente_relation < 3 : Anti-communist sentiment has gripped our former allies, as they are aiding the fascists. ?]
+[? if soviet_aid >= 1: The Soviet Union has sent limited aid to us, still in the midst of its own civil war. ?][? if entente_relation < 3: Anti-communist sentiment has gripped our former allies, as they are aiding the fascists. ?]
 
 @italy_government_won
 title: We have toppled the Monarchy!
@@ -218,7 +218,7 @@ view-if: national_economic_recovery = 1
 tags: endings
 go-to: eg_menu
 
-[? if psi_in_government : With our lead, the economic crisis has been brought to a slow, as both unemployment and inflation have reached acceptable levels. ?][? if not psi_in_government : Surprisingly, the bourgeois governments have been able to contain the crisis to a minimal amount. ?]
+[? if psi_in_government: With our lead, the economic crisis has been brought to a slow, as both unemployment and inflation have reached acceptable levels. ?][? if not psi_in_government: Surprisingly, the bourgeois governments have been able to contain the crisis to a minimal amount. ?]
 
 @achievements
 title: Achievements
@@ -228,249 +228,249 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 = Completed Achievements in this Playthrough
 
-[? if game_achievement_alleanza_ardita : **Allenza Ardita** - Cooperate with the Arditi del Popolo. ?]
+[? if game_achievement_alleanza_ardita: **Allenza Ardita** - Cooperate with the Arditi del Popolo. ?]
 
-[? if game_achievement_guerra_civile : **Guerra Civile** - Enter a long civil war. ?]
+[? if game_achievement_guerra_civile: **Guerra Civile** - Enter a long civil war. ?]
 
-[? if game_achievement_unita_e_legge : **Unità e Legge** - Reach the end of the game without a civil war on Easy. ?]
+[? if game_achievement_unita_e_legge: **Unità e Legge** - Reach the end of the game without a civil war on Easy. ?]
 
-[? if game_achievement_unita_e_giustizia : **Unità e Giustizia** - Reach the end of the game without a civil war on Normal. ?]
+[? if game_achievement_unita_e_giustizia: **Unità e Giustizia** - Reach the end of the game without a civil war on Normal. ?]
 
-[? if game_achievement_unita_e_liberta : **Unità e Libertà** - Reach the end of the game without a civil war on Hard. ?]
+[? if game_achievement_unita_e_liberta: **Unità e Libertà** - Reach the end of the game without a civil war on Hard. ?]
 
-[? if game_achievement_verde_bianco_rosso : **Verde-Bianco-Rosso** - Reach the end of the game without a civil war on Historical. ?]
+[? if game_achievement_verde_bianco_rosso: **Verde-Bianco-Rosso** - Reach the end of the game without a civil war on Historical. ?]
 
-[? if game_achievement_vittoria_sovietica : **Vittoria Sovietica** - Win the Civil War and establish a Soviet Republic. ?]
+[? if game_achievement_vittoria_sovietica: **Vittoria Sovietica** - Win the Civil War and establish a Soviet Republic. ?]
 
-[? if game_achievement_vittoria_monarchica : **Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
+[? if game_achievement_vittoria_monarchica: **Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
 
-[? if game_achievement_sinistra_ascendente : **Sinistra Ascendente** - Form a Left-Wing Coalition. ?]
+[? if game_achievement_sinistra_ascendente: **Sinistra Ascendente** - Form a Left-Wing Coalition. ?]
 
-[? if game_achievement_governo_monocolore : **Governo Monocolore** - Form a PSI-Only Government. ?]
+[? if game_achievement_governo_monocolore: **Governo Monocolore** - Form a PSI-Only Government. ?]
 
-[? if game_achievement_marciume_del_traditore : **Marciume del Traditore** - Imprison Mussolini. ?]
+[? if game_achievement_marciume_del_traditore: **Marciume del Traditore** - Imprison Mussolini. ?]
 
-[? if game_achievement_risorgimento_economico : **Risorgimento Economico** - Resolve the Economic Crisis. ?]
+[? if game_achievement_risorgimento_economico: **Risorgimento Economico** - Resolve the Economic Crisis. ?]
 
-[? if game_achievement_diritti_delle_donne : **Diritti delle Donne** - Pass reforms for women's rights. ?]
+[? if game_achievement_diritti_delle_donne: **Diritti delle Donne** - Pass reforms for women's rights. ?]
 
-[? if game_achievement_suffragio_universale : **Suffragio Universale** - Pass suffrage for women. ?]
+[? if game_achievement_suffragio_universale: **Suffragio Universale** - Pass suffrage for women. ?]
 
-[? if game_achievement_borghesia_rossa : **Borghesia Rossa** - Have Middle Class support over 50%. ?]
+[? if game_achievement_borghesia_rossa: **Borghesia Rossa** - Have Middle Class support over 50%. ?]
 
-[? if game_achievement_contadini_rivoluzionari : **Contadini Rivoluzionari** - Have Rural support over 50%. ?]
+[? if game_achievement_contadini_rivoluzionari: **Contadini Rivoluzionari** - Have Rural support over 50%. ?]
 
-[? if game_achievement_rivoluzione_industriale : **Rivoluzione Industriale** - Have Industrialist support over 50%. ?]
+[? if game_achievement_rivoluzione_industriale: **Rivoluzione Industriale** - Have Industrialist support over 50%. ?]
 
-[? if game_achievement_redenzione_dei_veterani : **Redenzione del Veterani** - Have Veteran support over 50%. ?]
+[? if game_achievement_redenzione_dei_veterani: **Redenzione del Veterani** - Have Veteran support over 50%. ?]
 
-[? if game_achievement_cattolici_in_rosa : **Cattolici in Rosa** - Have Catholic support over 50%. ?]
+[? if game_achievement_cattolici_in_rosa: **Cattolici in Rosa** - Have Catholic support over 50%. ?]
 
-[? if game_achievement_partito_del_popolo : **Partito del Popolo** - Have all demographic support over 40%. ?]
+[? if game_achievement_partito_del_popolo: **Partito del Popolo** - Have all demographic support over 40%. ?]
 
-[? if game_achievement_lotta_di_classe : **Lotta di Classe** - Have Worker support over 80&, Middle Class & Rural support below 40%. ?]
+[? if game_achievement_lotta_di_classe: **Lotta di Classe** - Have Worker support over 80&, Middle Class & Rural support below 40%. ?]
 
-[? if game_achievement_trasformazione_socialista : **Trasformazione Socialista** - Begin the transition to a socialist economy. ?]
+[? if game_achievement_trasformazione_socialista: **Trasformazione Socialista** - Begin the transition to a socialist economy. ?]
 
-[? if game_achievement_resistenza_duplice : **Resistenza Duplice** - Survive both a Capital Strike and the March on Rome. ?]
+[? if game_achievement_resistenza_duplice: **Resistenza Duplice** - Survive both a Capital Strike and the March on Rome. ?]
 
-[? if game_achievement_resistenza_a_Roma : **Resistenza a Roma** - Defeat the March on Rome without a Civil War. ?]
+[? if game_achievement_resistenza_a_Roma: **Resistenza a Roma** - Defeat the March on Rome without a Civil War. ?]
 
-[? if game_achievement_riforma_costituzionale : **Riforma Costituzionale** - Pass a Constitutional Amendment. ?]
+[? if game_achievement_riforma_costituzionale: **Riforma Costituzionale** - Pass a Constitutional Amendment. ?]
 
-[? if game_achievement_follia_di_acerbo : **Follia di Acerbo** - Win an election with the Acerbo Law in effect. ?]
+[? if game_achievement_follia_di_acerbo: **Follia di Acerbo** - Win an election with the Acerbo Law in effect. ?]
 
-[? if game_achievement_ritorno_trionfale : **Ritorno Trionfale** - Return back to power after the March on Rome. ?]
+[? if game_achievement_ritorno_trionfale: **Ritorno Trionfale** - Return back to power after the March on Rome. ?]
 
-[? if game_achievement_la_rivoluzione_torinese : **La Rivoluzione Torinese** - Begin the revolution in Turin and win. ?]
+[? if game_achievement_la_rivoluzione_torinese: **La Rivoluzione Torinese** - Begin the revolution in Turin and win. ?]
 
-[? if game_achievement_seconda_era_giolitti : **Seconda Era Giolitti** - Keep Giolitti as Prime Minister for the entire game. ?]
+[? if game_achievement_seconda_era_giolitti: **Seconda Era Giolitti** - Keep Giolitti as Prime Minister for the entire game. ?]
 
-[? if game_achievement_rivoluzione_permanente : **Rivoluzione Permanente** - Successfully establish a Soviet Republic while having full relatons with the RSFSR. ?]
+[? if game_achievement_rivoluzione_permanente: **Rivoluzione Permanente** - Successfully establish a Soviet Republic while having full relatons with the RSFSR. ?]
 
-[? if game_achievement_Far_viaggiare_i_treni_in_orario : **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
+[? if game_achievement_Far_viaggiare_i_treni_in_orario: **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
 
-[? if game_achievement_nemico_di_tutti : **Nemico di Tutti** - Antagonise every party's leadership. ?]
+[? if game_achievement_nemico_di_tutti: **Nemico di Tutti** - Antagonise every party's leadership. ?]
 
-[? if game_achievement_fronte_unito : **Fronte Unito** - Reconcile every party's leadership. ?]
+[? if game_achievement_fronte_unito: **Fronte Unito** - Reconcile every party's leadership. ?]
 
-[? if game_achievement_debiti_in_fumo : **Debiti in Fumo** - Default on foreign debts. ?]
+[? if game_achievement_debiti_in_fumo: **Debiti in Fumo** - Default on foreign debts. ?]
 
-[? if game_achievement_ascendente_repubblicano : **Ascendente Repubblicano** - Have the PRI become prominent. ?]
+[? if game_achievement_ascendente_repubblicano: **Ascendente Repubblicano** - Have the PRI become prominent. ?]
 
-[? if game_achievement_risveglio_del_sud : **Risveglio del Sud** - Ameliorate the Southern Question before Sonnino dies. ?]
+[? if game_achievement_risveglio_del_sud: **Risveglio del Sud** - Ameliorate the Southern Question before Sonnino dies. ?]
 
-[? if game_achievement_piano_massimo_completato : **Piano Massimo Completato** - Complete the objectives of the Maximum Plan. ?]
+[? if game_achievement_piano_massimo_completato: **Piano Massimo Completato** - Complete the objectives of the Maximum Plan. ?]
 
-[? if game_achievement_piano_minimo_completato : **Piano Minamo Completato** - Complete the objectives of the Minimum Plan. ?]
+[? if game_achievement_piano_minimo_completato: **Piano Minamo Completato** - Complete the objectives of the Minimum Plan. ?]
 
-[? if game_achievement_fronte_diviso : **Fronte Diviso** - Have all factions of the PSI break away. ?]
+[? if game_achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the PSI break away. ?]
 
-[? if game_achievement_follia_della_sinistra : **Follia della Sinistra** - Lose the Civil War. ?]
+[? if game_achievement_follia_della_sinistra: **Follia della Sinistra** - Lose the Civil War. ?]
 
 = Completed Achievements Overall
 
-[? if achievement_alleanza_ardita : **Allenza Ardita** - Cooperate with the Arditi del Popolo. ?]
+[? if achievement_alleanza_ardita: **Allenza Ardita** - Cooperate with the Arditi del Popolo. ?]
 
-[? if achievement_guerra_civile : **Guerra Civile** - Enter a long civil war. ?]
+[? if achievement_guerra_civile: **Guerra Civile** - Enter a long civil war. ?]
 
-[? if achievement_unita_e_legge : **Unità e Legge** - Reach the end of the game without a civil war on Easy. ?]
+[? if achievement_unita_e_legge: **Unità e Legge** - Reach the end of the game without a civil war on Easy. ?]
 
-[? if achievement_unita_e_giustizia : **Unità e Giustizia** - Reach the end of the game without a civil war on Normal. ?]
+[? if achievement_unita_e_giustizia: **Unità e Giustizia** - Reach the end of the game without a civil war on Normal. ?]
 
-[? if achievement_unita_e_liberta : **Unità e Libertà** - Reach the end of the game without a civil war on Hard. ?]
+[? if achievement_unita_e_liberta: **Unità e Libertà** - Reach the end of the game without a civil war on Hard. ?]
 
-[? if achievement_verde_bianco_rosso : : **Verde-Bianco-Rosso** - Reach the end of the game without a civil war on Historical. ?]
+[? if achievement_verde_bianco_rosso: **Verde-Bianco-Rosso** - Reach the end of the game without a civil war on Historical. ?]
 
-[? if achievement_vittoria_sovietica : **Vittoria Sovietica** - Win the Civil War and establish a Soviet Republic. ?]
+[? if achievement_vittoria_sovietica: **Vittoria Sovietica** - Win the Civil War and establish a Soviet Republic. ?]
 
-[? if achievement_vittoria_monarchica : *Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
+[? if achievement_vittoria_monarchica: *Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
 
-[? if achievement_sinistra_ascendente : **Sinistra Ascendente** - Form a Left-Wing Coalition. ?]
+[? if achievement_sinistra_ascendente: **Sinistra Ascendente** - Form a Left-Wing Coalition. ?]
 
-[? if achievement_governo_monocolore : **Governo Monocolore** - Form a PSI-Only Government. ?]
+[? if achievement_governo_monocolore: **Governo Monocolore** - Form a PSI-Only Government. ?]
 
-[? if achievement_marciume_del_traditore : **Maricume del Traditore** - Imprison Mussolini. ?]
+[? if achievement_marciume_del_traditore: **Maricume del Traditore** - Imprison Mussolini. ?]
 
-[? if achievement_risorgimento_economico : **Risorgimento Economico** - Resolve the Economic Crisis. ?]
+[? if achievement_risorgimento_economico: **Risorgimento Economico** - Resolve the Economic Crisis. ?]
 
-[? if achievement_diritti_delle_donne : **Diritti delle Donne** - Pass reforms for women's rights. ?]
+[? if achievement_diritti_delle_donne: **Diritti delle Donne** - Pass reforms for women's rights. ?]
 
-[? if achievement_suffragio_universale : **Suffragio Universale** - Pass suffrage for women. ?]
+[? if achievement_suffragio_universale: **Suffragio Universale** - Pass suffrage for women. ?]
 
-[? if achievement_borghesia_rossa : **Borghesia Rossa** - Have Middle Class support over 50%. ?]
+[? if achievement_borghesia_rossa: **Borghesia Rossa** - Have Middle Class support over 50%. ?]
 
-[? if achievement_contadini_rivoluzionari : **Contadini Rivoluzionari** - Have Rural support over 50%. ?]
+[? if achievement_contadini_rivoluzionari: **Contadini Rivoluzionari** - Have Rural support over 50%. ?]
 
-[? if achievement_rivoluzione_industriale : **Rivoluzione Industriale** - Have Industrialist support over 50%. ?]
+[? if achievement_rivoluzione_industriale: **Rivoluzione Industriale** - Have Industrialist support over 50%. ?]
 
-[? if achievement_redenzione_dei_veterani : **Redenzione del Veterani** - Have Veteran support over 50%. ?]
+[? if achievement_redenzione_dei_veterani: **Redenzione del Veterani** - Have Veteran support over 50%. ?]
 
-[? if achievement_cattolici_in_rosa : **Cattolici in Rosa** - Have Catholic support over 50%. ?]
+[? if achievement_cattolici_in_rosa: **Cattolici in Rosa** - Have Catholic support over 50%. ?]
 
-[? if achievement_partito_del_popolo : **Partito del Popolo** - Have all demographic support over 40%. ?]
+[? if achievement_partito_del_popolo: **Partito del Popolo** - Have all demographic support over 40%. ?]
 
-[? if achievement_lotta_di_classe : **Lotta di Classe** - Have Worker support over 80&, Middle Class & Rural support below 40%. ?]
+[? if achievement_lotta_di_classe: **Lotta di Classe** - Have Worker support over 80&, Middle Class & Rural support below 40%. ?]
 
-[? if achievement_trasformazione_socialista : **Trasformazione Socialista** - Begin the transition to a socialist economy. ?]
+[? if achievement_trasformazione_socialista: **Trasformazione Socialista** - Begin the transition to a socialist economy. ?]
 
-[? if achievement_resistenza_duplice : **Resistenza Duplice** - Survive both a Capital Strike and the March on Rome. ?]
+[? if achievement_resistenza_duplice: **Resistenza Duplice** - Survive both a Capital Strike and the March on Rome. ?]
 
-[? if achievement_resistenza_a_Roma : **Resistenza a Roma** - Defeat the March on Rome without a Civil War. ?]
+[? if achievement_resistenza_a_Roma: **Resistenza a Roma** - Defeat the March on Rome without a Civil War. ?]
 
-[? if achievement_riforma_costituzionale : **Riforma Costituzionale** - Pass a Constitutional Amendment. ?]
+[? if achievement_riforma_costituzionale: **Riforma Costituzionale** - Pass a Constitutional Amendment. ?]
 
-[? if achievement_follia_di_acerbo : **Follia di Acerbo** - Win an election with the Acerbo Law in effect. ?]
+[? if achievement_follia_di_acerbo: **Follia di Acerbo** - Win an election with the Acerbo Law in effect. ?]
 
-[? if achievement_ritorno_trionfale : **Ritorno Trionfale** - Return back to power after the March on Rome. ?]
+[? if achievement_ritorno_trionfale: **Ritorno Trionfale** - Return back to power after the March on Rome. ?]
 
-[? if achievement_la_rivoluzione_torinese : **La Rivoluzione Torinese** - Begin the revolution in Turin and win. ?]
+[? if achievement_la_rivoluzione_torinese: **La Rivoluzione Torinese** - Begin the revolution in Turin and win. ?]
 
-[? if achievement_seconda_era_giolitti : **Seconda Era Giolitti** - Keep Giolitti as Prime Minister for the entire game. ?]
+[? if achievement_seconda_era_giolitti: **Seconda Era Giolitti** - Keep Giolitti as Prime Minister for the entire game. ?]
 
-[? if achievement_rivoluzione_permanente : **Rivoluzione Permanente** - Successfully establish a Soviet Republic while having full relatons with the RSFSR. ?]
+[? if achievement_rivoluzione_permanente: **Rivoluzione Permanente** - Successfully establish a Soviet Republic while having full relatons with the RSFSR. ?]
 
-[? if achievement_Far_viaggiare_i_treni_in_orario : **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
+[? if achievement_Far_viaggiare_i_treni_in_orario: **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
 
-[? if achievement_nemico_di_tutti : **Nemico di Tutti** - Antagonise every party's leadership. ?]
+[? if achievement_nemico_di_tutti: **Nemico di Tutti** - Antagonise every party's leadership. ?]
 
-[? if achievement_fronte_unito : **Fronte Unito** - Reconcile every party's leadership. ?]
+[? if achievement_fronte_unito: **Fronte Unito** - Reconcile every party's leadership. ?]
 
-[? if achievement_debiti_in_fumo : **Debiti in Fumo** - Default on foreign debts. ?]
+[? if achievement_debiti_in_fumo: **Debiti in Fumo** - Default on foreign debts. ?]
 
-[? if achievement_ascendente_repubblicano : **Ascendente Repubblicano** - Have the PRI become prominent. ?]
+[? if achievement_ascendente_repubblicano: **Ascendente Repubblicano** - Have the PRI become prominent. ?]
 
-[? if achievement_risveglio_del_sud : **Risveglio del Sud** - Ameliorate the Southern Question before Sonnino dies. ?]
+[? if achievement_risveglio_del_sud: **Risveglio del Sud** - Ameliorate the Southern Question before Sonnino dies. ?]
 
-[? if achievement_piano_massimo_completato : **Piano Massimo Completato** - Complete the objectives of the Maximum Plan. ?]
+[? if achievement_piano_massimo_completato: **Piano Massimo Completato** - Complete the objectives of the Maximum Plan. ?]
 
-[? if achievement_piano_minimo_completato : **Piano Minamo Completato** - Complete the objectives of the Minimum Plan. ?]
+[? if achievement_piano_minimo_completato: **Piano Minamo Completato** - Complete the objectives of the Minimum Plan. ?]
 
-[? if achievement_fronte_diviso : **Fronte Diviso** - Have all factions of the PSI break away. ?]
+[? if achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the PSI break away. ?]
 
-[? if achievement_follia_della_sinistra : **Follia della Sinistra** - Lose the Civil War. ?]
+[? if achievement_follia_della_sinistra: **Follia della Sinistra** - Lose the Civil War. ?]
 
 = Incomplete Achievements
 
-[? if not achievement_alleanza_ardita : **Allenza Ardita** - Cooperate with the Arditi del Popolo. ?]
+[? if not achievement_alleanza_ardita: **Allenza Ardita** - Cooperate with the Arditi del Popolo. ?]
 
-[? if not achievement_guerra_civile : **Guerra Civile** - Enter a long civil war. ?]
+[? if not achievement_guerra_civile: **Guerra Civile** - Enter a long civil war. ?]
 
-[? if not achievement_unita_e_legge : **Unità e Legge** - Reach the end of the game without a civil war on Easy. ?]
+[? if not achievement_unita_e_legge: **Unità e Legge** - Reach the end of the game without a civil war on Easy. ?]
 
-[? if not achievement_unita_e_giustizia : **Unità e Giustizia** - Reach the end of the game without a civil war on Normal. ?]
+[? if not achievement_unita_e_giustizia: **Unità e Giustizia** - Reach the end of the game without a civil war on Normal. ?]
 
-[? if not achievement_unita_e_liberta : **Unità e Libertà** - Reach the end of the game without a civil war on Hard. ?]
+[? if not achievement_unita_e_liberta: **Unità e Libertà** - Reach the end of the game without a civil war on Hard. ?]
 
-[? if not achievement_verde_bianco_rosso : : **Verde-Bianco-Rosso** - Reach the end of the game without a civil war on Historical. ?]
+[? if not achievement_verde_bianco_rosso: **Verde-Bianco-Rosso** - Reach the end of the game without a civil war on Historical. ?]
 
-[? if not achievement_vittoria_sovietica : **Vittoria Sovietica** - Win the Civil War and establish a Soviet Republic. ?]
+[? if not achievement_vittoria_sovietica: **Vittoria Sovietica** - Win the Civil War and establish a Soviet Republic. ?]
 
-[? if not achievement_vittoria_monarchica : *Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
+[? if not achievement_vittoria_monarchica: *Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
 
-[? if not achievement_sinistra_ascendente : **Sinistra Ascendente** - Form a Left-Wing Coalition. ?]
+[? if not achievement_sinistra_ascendente: **Sinistra Ascendente** - Form a Left-Wing Coalition. ?]
 
-[? if not achievement_governo_monocolore : **Governo Monocolore** - Form a PSI-Only Government. ?]
+[? if not achievement_governo_monocolore: **Governo Monocolore** - Form a PSI-Only Government. ?]
 
-[? if not achievement_marciume_del_traditore : **Maricume del Traditore** - Imprison Mussolini. ?]
+[? if not achievement_marciume_del_traditore: **Maricume del Traditore** - Imprison Mussolini. ?]
 
-[? if not achievement_risorgimento_economico : **Risorgimento Economico** - Resolve the Economic Crisis. ?]
+[? if not achievement_risorgimento_economico: **Risorgimento Economico** - Resolve the Economic Crisis. ?]
 
-[? if not achievement_diritti_delle_donne : **Diritti delle Donne** - Pass reforms for women's rights. ?]
+[? if not achievement_diritti_delle_donne: **Diritti delle Donne** - Pass reforms for women's rights. ?]
 
-[? if not achievement_suffragio_universale : **Suffragio Universale** - Pass suffrage for women. ?]
+[? if not achievement_suffragio_universale: **Suffragio Universale** - Pass suffrage for women. ?]
 
-[? if not achievement_borghesia_rossa : **Borghesia Rossa** - Have Middle Class support over 50%. ?]
+[? if not achievement_borghesia_rossa: **Borghesia Rossa** - Have Middle Class support over 50%. ?]
 
-[? if not achievement_contadini_rivoluzionari : **Contadini Rivoluzionari** - Have Rural support over 50%. ?]
+[? if not achievement_contadini_rivoluzionari: **Contadini Rivoluzionari** - Have Rural support over 50%. ?]
 
-[? if not achievement_rivoluzione_industriale : **Rivoluzione Industriale** - Have Industrialist support over 50%. ?]
+[? if not achievement_rivoluzione_industriale: **Rivoluzione Industriale** - Have Industrialist support over 50%. ?]
 
-[? if not achievement_redenzione_dei_veterani : **Redenzione del Veterani** - Have Veteran support over 50%. ?]
+[? if not achievement_redenzione_dei_veterani: **Redenzione del Veterani** - Have Veteran support over 50%. ?]
 
-[? if not achievement_cattolici_in_rosa : **Cattolici in Rosa** - Have Catholic support over 50%. ?]
+[? if not achievement_cattolici_in_rosa: **Cattolici in Rosa** - Have Catholic support over 50%. ?]
 
-[? if not achievement_partito_del_popolo : **Partito del Popolo** - Have all demographic support over 40%. ?]
+[? if not achievement_partito_del_popolo: **Partito del Popolo** - Have all demographic support over 40%. ?]
 
-[? if not achievement_lotta_di_classe : **Lotta di Classe** - Have Worker support over 80&, Middle Class & Rural support below 40%. ?]
+[? if not achievement_lotta_di_classe: **Lotta di Classe** - Have Worker support over 80&, Middle Class & Rural support below 40%. ?]
 
-[? if not achievement_trasformazione_socialista : **Trasformazione Socialista** - Begin the transition to a socialist economy. ?]
+[? if not achievement_trasformazione_socialista: **Trasformazione Socialista** - Begin the transition to a socialist economy. ?]
 
-[? if not achievement_resistenza_duplice : **Resistenza Duplice** - Survive both a Capital Strike and the March on Rome. ?]
+[? if not achievement_resistenza_duplice: **Resistenza Duplice** - Survive both a Capital Strike and the March on Rome. ?]
 
-[? if not achievement_resistenza_a_Roma : **Resistenza a Roma** - Defeat the March on Rome without a Civil War. ?]
+[? if not achievement_resistenza_a_Roma: **Resistenza a Roma** - Defeat the March on Rome without a Civil War. ?]
 
-[? if not achievement_riforma_costituzionale : **Riforma Costituzionale** - Pass a Constitutional Amendment. ?]
+[? if not achievement_riforma_costituzionale: **Riforma Costituzionale** - Pass a Constitutional Amendment. ?]
 
-[? if not achievement_follia_di_acerbo : **Follia di Acerbo** - Win an election with the Acerbo Law in effect. ?]
+[? if not achievement_follia_di_acerbo: **Follia di Acerbo** - Win an election with the Acerbo Law in effect. ?]
 
-[? if not achievement_ritorno_trionfale : **Ritorno Trionfale** - Return back to power after the March on Rome. ?]
+[? if not achievement_ritorno_trionfale: **Ritorno Trionfale** - Return back to power after the March on Rome. ?]
 
-[? if not achievement_la_rivoluzione_torinese : **La Rivoluzione Torinese** - Begin the revolution in Turin and win. ?]
+[? if not achievement_la_rivoluzione_torinese: **La Rivoluzione Torinese** - Begin the revolution in Turin and win. ?]
 
-[? if not achievement_seconda_era_giolitti : **Seconda Era Giolitti** - Keep Giolitti as Prime Minister for the entire game. ?]
+[? if not achievement_seconda_era_giolitti: **Seconda Era Giolitti** - Keep Giolitti as Prime Minister for the entire game. ?]
 
-[? if not achievement_rivoluzione_permanente : **Rivoluzione Permanente** - Successfully establish a Soviet Republic while having full relations with the RSFSR. ?]
+[? if not achievement_rivoluzione_permanente: **Rivoluzione Permanente** - Successfully establish a Soviet Republic while having full relations with the RSFSR. ?]
 
-[? if not achievement_Far_viaggiare_i_treni_in_orario : **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
+[? if not achievement_Far_viaggiare_i_treni_in_orario: **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
 
-[? if not achievement_nemico_di_tutti : **Nemico di Tutti** - Antagonise every party's leadership. ?]
+[? if not achievement_nemico_di_tutti: **Nemico di Tutti** - Antagonise every party's leadership. ?]
 
-[? if not achievement_fronte_unito : **Fronte Unito** - Reconcile every party's leadership. ?]
+[? if not achievement_fronte_unito: **Fronte Unito** - Reconcile every party's leadership. ?]
 
-[? if not achievement_debiti_in_fumo : **Debiti in Fumo** - Default on foreign debts. ?]
+[? if not achievement_debiti_in_fumo: **Debiti in Fumo** - Default on foreign debts. ?]
 
-[? if not achievement_ascendente_repubblicano : **Ascendente Repubblicano** - Have the PRI become prominent. ?]
+[? if not achievement_ascendente_repubblicano: **Ascendente Repubblicano** - Have the PRI become prominent. ?]
 
-[? if not achievement_risveglio_del_sud : **Risveglio del Sud** - Ameliorate the Southern Question before Sonnino dies. ?]
+[? if not achievement_risveglio_del_sud: **Risveglio del Sud** - Ameliorate the Southern Question before Sonnino dies. ?]
 
-[? if not achievement_piano_massimo_completato : **Piano Massimo Completato** - Complete the objectives of the Maximum Plan. ?]
+[? if not achievement_piano_massimo_completato: **Piano Massimo Completato** - Complete the objectives of the Maximum Plan. ?]
 
-[? if not achievement_piano_minimo_completato : **Piano Minimo Completato** - Complete the objectives of the Minimum Plan. ?]
+[? if not achievement_piano_minimo_completato: **Piano Minimo Completato** - Complete the objectives of the Minimum Plan. ?]
 
-[? if not achievement_fronte_diviso : **Fronte Diviso** - Have all factions of the PSI break away. ?]
+[? if not achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the PSI break away. ?]
 
-[? if not achievement_follia_della_sinistra : **Follia della Sinistra** - Lose the Civil War. ?]
+[? if not achievement_follia_della_sinistra: **Follia della Sinistra** - Lose the Civil War. ?]
 
 @end_game
 game-over: true
