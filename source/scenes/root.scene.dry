@@ -14,8 +14,10 @@ go-to: start_menu_2
 - @election_simulation: Election Simulation (Acerbo Law)
 - @mod_info: Mod Info & Settings
 - @credits: Credits
-- @game_over.achievements
+- @achievements: Achievements
 
+@achievements
+go-to: game_over.achievements
 
 @start
 on-arrival: {!
