@@ -1,0 +1,17 @@
+title: Aid Cuts
+subtitle: Foreign Minister [+ foreign_minister +] authorises cuts to foreign aid.
+view-if: ((foreign_minister_party == ul_name and ul_relation <= 30) or (foreign_minister_party == ldr_name and ldr_relation <= 30)) and gov_foreign_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and soviet_aid_given > 0 and (not rcw_over or soviet_recovery_timer > 0)
+on-arrival: gov_cooldown_timer = 2; gov_foreign_timer = 9
+new-page: true
+tags: event
+
+= Foreign Minister [+ foreign_minister +] authorizes foreign aid cuts
+
+Foreign Minister [+ foreign_minister +] has authorised cuts to foreign aid, particularly to the Soviet Union that we have given during our party's previous tenure as Foreign Minister.
+
+- @fm_nothing: There is nothing we can do.
+
+@fm_nothing
+on-arrival: soviet_relation -= 2; budget += 1; soviet_aid_given -= 1; communist_dissent += 5; maximalist_dissent += 10; soviet_end_timer += 1 if not rcw_over; soviet_recovery_timer += 1 if soviet_recovery_timer > 0;
+
+The cuts easily pass, and the Foreign Ministry cuts off aid given to the Soviet Union, and we see notice Soviet attitudes with us have gotten colder, regardless whether or not it was us who cut the funding. The Left-wing of the party is furious at our inability to prevent this.

@@ -12,7 +12,7 @@ go-to: start_menu_2
 
 - @start: Start game
 - @election_simulation: Election Simulation (Acerbo Law)
-- @mod_info: Mod Info
+- @mod_info: Mod Info & Settings
 - @credits: Credits
 
 
@@ -412,6 +412,7 @@ Q.papal_relation = 3
 Q.pope = "Della Chiesa";
 Q.rcw_over = 0;
 Q.roman_question_answered = 0;
+Q.soviet_aid_given = 0;
 
 // have there been any factory takeovers?
 Q.factory_takeovers = 0;
@@ -466,7 +467,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'red_guards', 'targeting', 'enemies', 'fundraising', 'king_relations', 
             'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit',
             'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'sonnino_southern',
-            'crisis_program', 'economic_policy'];
+            'crisis_program', 'economic_policy', 'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_pm'];
 // all timers
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
@@ -523,6 +524,11 @@ Q.mussolini_trial_timer = 0;
 Q.sonnino_southern_timer = 0;
 Q.crisis_program_timer = 0;
 Q.economic_policy_timer = 0;
+Q.gov_cooldown_timer = 14;
+Q.gov_foreign_timer = 14;
+Q.gov_interior_timer = 14;
+Q.gov_justice_timer = 14;
+Q.gov_pm_timer = 14;
 
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;

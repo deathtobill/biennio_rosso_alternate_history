@@ -1,0 +1,12 @@
+title: [+ pnf_leader +] cracks down on the Red Guards
+subtitle: Interior Minister [+ interior_minister_party +] is utilising the Ministry against us.
+view-if: prime_minister_party == pnf_name and gov_interior_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1922
+on-arrival: gov_cooldown_timer = 2; gov_interior_timer = 12; rg_strength -= 10; rg_militancy -= 0.05
+new-page: true
+tags: event
+
+= [+ interior_minister +] declares war on the Guardie Rosse
+
+In a speech supported by Prime Minister [+ pnf_leader +], Interior Minister [+ interior_minister +] has declared war on us, declaring us 'violent and chaotic rebels' and proclaiming that the Interior Ministry restore order to Italy and eliminate us. Already we have seen our forces under attack, factories re-taken and headquarters raided, and it is unlikely these will end any time soon.
+
+- @root: There is nothing we can do.

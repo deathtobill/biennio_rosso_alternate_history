@@ -1,0 +1,14 @@
+title: Women's Rights rolled back
+subtitle: The PPI have begun rolling back women's rights.
+view-if: (ppi_relation == 1 and ppi_relation <= 30) or (justice_minister_party == ldr_name and ldr_relation <= 30) and gov_women_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and womens_rights > 0
+on-arrival: gov_cooldown_timer = 2; gov_justice_timer = 9; womens_rights -= 1; ppi_relation -= 5; middle_class_psi -= 2*(1-dissent); workers_psi -= 3*(1-dissent); catholics_psi -= 4;
+new-page: true
+tags: event
+
+= PPI Leader [+ ppi_leader +] criticises PSI policies
+
+In a recent speech to the assembly, [+ ppi_leader +] has issued a scathing criticism of our policies, particularly in regards to women's rights, deeming it as too radical.
+
+Already, we have seem PPI Ministers attempt to undermine our efforts, and we are facing considerable setback in regards to our policy.
+
+- @root: There is nothing we can do.

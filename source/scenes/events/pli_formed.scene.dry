@@ -1,5 +1,5 @@
 title: Formation of the Italian Liberal Party
-on-arrival: ul_name = "PLI"; ul_full_italian = "Partito Liberale Italiano"; ul_full_name = "Italian Liberal Party"; pli_formed = 1;
+on-arrival: ul_name = "PLI"; ul_full_italian = "Partito Liberale Italiano"; ul_full_name = "Italian Liberal Party"; pli_formed = 1; prime_minister_party = ul_name if prime_minister_party == "UL"
 view-if: year = 1922 and month = 10 and pli_formed = 0
 new-page: true
 max-visits: 1

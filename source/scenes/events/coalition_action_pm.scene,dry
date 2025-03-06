@@ -1,0 +1,42 @@
+title: Emergency Budget Cuts
+subtitle: Prime Minister [+ prime_minister +] authorises cuts to social spending.
+view-if: (prime_minister_party == ul_name or prime_minister_party == ldr_name) and gov_pm_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and welfare > 0 and (budget < 0 or inflation > unemployment)
+on-arrival: gov_cooldown_timer = 2; gov_pm_timer = 9
+new-page: true
+tags: event
+
+= Prime Minister [+ prime_minister +] authorizes Welfare Cuts
+
+Prime Minsiter [+ prime_minister +] has authorised cuts to welfare in reponse to the current economic crisis. Although it might be necessary for economic stability, the workers and unemployed, our main base, will bear the brunt of these cuts, worsening their situation.
+
+- @pm_convince: Can we convince the [+ prime_minister_party +] to delay these cuts?
+- @pm_nothing: There is nothing we can do.
+
+@pm_convince
+view-if: psi_in_government
+on-arrival: {! 
+if (Q.prime_minister_party == Q.ldr_name) {
+    Q.ldr_relation -= 3;
+}
+if (Q.prime_minister_party == Q.ul_name) {
+    Q.ul_relation -= 3;
+}
+
+Q.gov_pm_timer = 4; 
+
+if ((Q.prime_minister_party == Q.ldr_name && Q.ldr_relation >= 65) || (Q.prime_minister_party == Q.ul_name && Q.ul_relation >= 65)) {
+    Q.gov_pm_timer += 1;
+}
+if ((Q.prime_minister_party == Q.ldr_name && Q.ldr_relation < 30) || (Q.prime_minister_party == Q.ul_name && Q.ul_relation < 30)) {
+    Q.gov_pm_timer += 1;
+}
+!}
+
+We are able to convince the [+ prime_minister_party +] to delay the cuts by [+ gov_pm_timer +], or stop the cuts completely if we are able to lessen the economic crisis by then.
+
+@pm_nothing
+on-arrival: workers_psi -= 2 if psi_in_government; veterans_psi -= 2 if psi_in_government; workers_psi += 2 if not psi_in_government; veterans_psi -= 2 if not psi_in_government; workers_ldr -= 8 if prime_minister_party == ldr_name; workers_ul -= 8 if prime_minister_party == ul_name; veterans_ldr -= 8 if prime_minister_party == ldr_name; veterans_ul -= 8 if prime_minister_party == ul_name; workers_ppi += 7; workers_pnf += 3; veterans_ppi += 5; veterans_pnf += 5; welfare -= 1; budget += 1; unemployment += 3; inflation -= 0.6;
+
+[? if psi_in_government : We attempt to convince the workers and veterans that this is necessary for economic stability. Regardless, support for the [+ prime_minister_party +] from workers and veterans decreases notably, and as do we for tolerating the cuts. The [+ pnf_name + ] are able to use this policy to recruit more members. ?]
+
+[? if not psi_in_government : The cuts pass, and we utilise them to recruit workers who have lost faith in the Liberal parties, alongside the [+ pnf_name +]. ?]

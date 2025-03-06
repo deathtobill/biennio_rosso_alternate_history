@@ -25,7 +25,7 @@ Now that we are in control of the Foreign Ministry, we can alter Italy's relatio
 @aid_soviet_union
 subtitle: -1 Budget - We will provide support to the Soviets. [? if liberal_aid_accepted : This will violate our agreement with the Liberals! ?][? if liberal_budget_accepted and budget < 1 : This will put us into a deficit! ?][? if liberal_foreign_accepted and soviet_relation <= entente_relation : This will disrupt our alignment with the Entente! ?]
 view-if: not rcw_over or soviet_recovery_timer > 0
-on-arrival: budget -= 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if soviet_recovery_timer > 0; soviet_relation += 2; ldr_relation -= 7*(1-dissent); ul_relation -= 4*(1-dissent); psri_relation += 3*(1-dissent); ldr_promise_failed = 1 if ((budget < 0 and liberal_budget_accepted and current_budget > -1) or liberal_aid_accepted or (liberal_foreign_accepted and soviet_relation > entente_relation));
+on-arrival: soviet_aid_given += 1; budget -= 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if soviet_recovery_timer > 0; soviet_relation += 2; ldr_relation -= 7*(1-dissent); ul_relation -= 4*(1-dissent); psri_relation += 3*(1-dissent); ldr_promise_failed = 1 if ((budget < 0 and liberal_budget_accepted and current_budget > -1) or liberal_aid_accepted or (liberal_foreign_accepted and soviet_relation > entente_relation));
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We are able to send aid to the Red Army via our diplomatic channels, and the Soviets thank us for the aid. [? if centre_left_coalition : Our coalition partners, however, are less than happy, calling our aid a 'waste of funds'. ?]

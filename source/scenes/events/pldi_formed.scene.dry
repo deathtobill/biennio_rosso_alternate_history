@@ -1,5 +1,5 @@
 title: Formation of the Italian Democratic Liberal Party
-on-arrival: ldr_name = "PLDI"; ldr_full_italian = "Partito Liberale Democratico Italiano"; ldr_full_name = "Italian Democratic Liberal Party"; pldi_formed = 1; 
+on-arrival: ldr_name = "PLDI"; ldr_full_italian = "Partito Liberale Democratico Italiano"; ldr_full_name = "Italian Democratic Liberal Party"; pldi_formed = 1; prime_minister_party = ldr_name if prime_minister_party == "LDR"
 view-if: year = 1921 and month = 4 and week = 1 and pldi_formed = 0
 new-page: true
 max-visits: 1

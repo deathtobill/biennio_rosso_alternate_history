@@ -23,7 +23,7 @@ The Acerbo Law is easily repealed, reinstating the previous system of the D'Hond
 
 @keep_acerbo
 view-if: psi_r >= 50
-subtitle: We need a strong mandate to form a socialist state, don't we?
+subtitle: They voted for it anyways, right?
 on-arrival: psri_relation -= 10; ppi_relation -= 10; ldr_relation -= 10; ul_relation -= 10; pri_relation -= 10; reformist_dissent += 10;
 
 The other parties in the Chamber of Deputies are unsurprisingly outraged by our blatant power grab, calling us no better than the fascists. 
