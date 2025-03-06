@@ -268,7 +268,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_partito_del_popolo: **Partito del Popolo** - Have all demographic support over 40%. ?]
 
-[? if game_achievement_lotta_di_classe: **Lotta di Classe** - Have Worker support over 80&, Middle Class & Rural support below 40%. ?]
+[? if game_achievement_lotta_di_classe: **Lotta di Classe** - Have Worker support over 80%, Middle Class & Rural support below 40%. ?]
 
 [? if game_achievement_trasformazione_socialista: **Trasformazione Socialista** - Begin the transition to a socialist economy. ?]
 
@@ -324,7 +324,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_vittoria_sovietica: **Vittoria Sovietica** - Win the Civil War and establish a Soviet Republic. ?]
 
-[? if achievement_vittoria_monarchica: *Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
+[? if achievement_vittoria_monarchica: **Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
 
 [? if achievement_sinistra_ascendente: **Sinistra Ascendente** - Form a Left-Wing Coalition. ?]
 
@@ -350,7 +350,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_partito_del_popolo: **Partito del Popolo** - Have all demographic support over 40%. ?]
 
-[? if achievement_lotta_di_classe: **Lotta di Classe** - Have Worker support over 80&, Middle Class & Rural support below 40%. ?]
+[? if achievement_lotta_di_classe: **Lotta di Classe** - Have Worker support over 80%, Middle Class & Rural support below 40%. ?]
 
 [? if achievement_trasformazione_socialista: **Trasformazione Socialista** - Begin the transition to a socialist economy. ?]
 
@@ -406,7 +406,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_vittoria_sovietica: **Vittoria Sovietica** - Win the Civil War and establish a Soviet Republic. ?]
 
-[? if not achievement_vittoria_monarchica: *Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
+[? if not achievement_vittoria_monarchica: **Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
 
 [? if not achievement_sinistra_ascendente: **Sinistra Ascendente** - Form a Left-Wing Coalition. ?]
 
@@ -432,7 +432,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_partito_del_popolo: **Partito del Popolo** - Have all demographic support over 40%. ?]
 
-[? if not achievement_lotta_di_classe: **Lotta di Classe** - Have Worker support over 80&, Middle Class & Rural support below 40%. ?]
+[? if not achievement_lotta_di_classe: **Lotta di Classe** - Have Worker support over 80%, Middle Class & Rural support below 40%. ?]
 
 [? if not achievement_trasformazione_socialista: **Trasformazione Socialista** - Begin the transition to a socialist economy. ?]
 
