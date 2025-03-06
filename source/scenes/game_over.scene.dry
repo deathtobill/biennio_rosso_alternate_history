@@ -242,13 +242,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_vittoria_sovietica : **Vittoria Sovietica** - Win the Civil War and establish a Soviet Republic. ?]
 
-[? if game_achievement_vittoria_monarchica : *Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
+[? if game_achievement_vittoria_monarchica : **Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
 
 [? if game_achievement_sinistra_ascendente : **Sinistra Ascendente** - Form a Left-Wing Coalition. ?]
 
 [? if game_achievement_governo_monocolore : **Governo Monocolore** - Form a PSI-Only Government. ?]
 
-[? if game_achievement_marciume_del_traditore : **Maricume del Traditore** - Imprison Mussolini. ?]
+[? if game_achievement_marciume_del_traditore : **Marciume del Traditore** - Imprison Mussolini. ?]
 
 [? if game_achievement_risorgimento_economico : **Risorgimento Economico** - Resolve the Economic Crisis. ?]
 
@@ -450,7 +450,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_seconda_era_giolitti : **Seconda Era Giolitti** - Keep Giolitti as Prime Minister for the entire game. ?]
 
-[? if not achievement_rivoluzione_permanente : **Rivoluzione Permanente** - Successfully establish a Soviet Republic while having full relatons with the RSFSR. ?]
+[? if not achievement_rivoluzione_permanente : **Rivoluzione Permanente** - Successfully establish a Soviet Republic while having full relations with the RSFSR. ?]
 
 [? if not achievement_Far_viaggiare_i_treni_in_orario : **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
 
@@ -466,7 +466,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_piano_massimo_completato : **Piano Massimo Completato** - Complete the objectives of the Maximum Plan. ?]
 
-[? if not achievement_piano_minimo_completato : **Piano Minamo Completato** - Complete the objectives of the Minimum Plan. ?]
+[? if not achievement_piano_minimo_completato : **Piano Minimo Completato** - Complete the objectives of the Minimum Plan. ?]
 
 [? if not achievement_fronte_diviso : **Fronte Diviso** - Have all factions of the PSI break away. ?]
 
