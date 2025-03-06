@@ -212,6 +212,10 @@ if (Q.week_actions >= 1) {
                 Q.inflation -= 0.1;
             }
         }
+
+        if (Q.prime_minister == "Giolitti) {
+            Q.giolitti_tenure += 1;
+        }
         // economic loss leads to decreased inflation
         if (Q.economic_growth < 0 && Q.inflation >= 3) {
             Q.inflation -= 0.1;
@@ -409,7 +413,7 @@ if (Q.week_actions >= 1) {
         // fast boost for the pnf for veterans
         if (Q.year == 1920) {
             Q.veterans_pnf += 20/12;
-            Q.catholics_ppi += 2/12;
+            Q.catholic_ppi += 2/12;
             Q.rural_ldr -= 6/12;
             Q.middle_class_ldr -= 8/12;
             Q.industrialists_ldr -= 8/12;
@@ -467,8 +471,8 @@ if (Q.week_actions >= 1) {
                 if (Q.rural_ds_normalised < 40) {
                     Q.rural_ds += 6/12;
                 }
-                if (Q.catholics_ppi_normalised < 40) {
-                    Q.catholics_ppi += 9/12;
+                if (Q.catholic_ppi_normalised < 40) {
+                    Q.catholic_ppi += 9/12;
                 }
             }
             if (Q.unemployment > 20) {
@@ -498,8 +502,8 @@ if (Q.week_actions >= 1) {
             if (Q.rural_psi_normalised > 20) {
                 Q.rural_psi -= 6/12;
             }
-            if (Q.catholics_psi_normalised > 20) {
-                Q.catholics_psi -= 6/12;
+            if (Q.catholic_psi_normalised > 20) {
+                Q.catholic_psi -= 6/12;
             }
         }
 
@@ -553,13 +557,13 @@ if (Q.week_actions >= 1) {
         if (Q.radicalism > 7.5 && Q.radicalism_timer == 0) {
             Q.middle_class_psi -= 4*(1-Q.dissent);
             Q.industrialists_psi -= 4*(1-Q.dissent);
-            Q.catholics_psi -= 4*(1-Q.dissent);
+            Q.catholic_psi -= 4*(1-Q.dissent);
             Q.radicalism_timer = 6;
         }
         if (Q.radicalism > 8.5 && Q.radicalism_timer == 0) {
             Q.middle_class_psi -= 4*(1-Q.dissent);
             Q.industrialists_psi -= 4*(1-Q.dissent);
-            Q.catholics_psi -= 4*(1-Q.dissent);
+            Q.catholic_psi -= 4*(1-Q.dissent);
             Q.radicalism_timer = 6;
         }
 
@@ -600,7 +604,7 @@ if (Q.week_actions >= 1) {
         if (Q.nationalist_sentiment < 10) {
             Q.workers_pnf -= 1/12;
             Q.middle_class_pnf -= 2/12;
-            Q.catholics_pnf -= 1/12;
+            Q.catholic_pnf -= 1/12;
             Q.rural_pnf -= 1/12;
             Q.industrialists_pnf -= 1/12;
         }

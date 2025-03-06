@@ -233,6 +233,7 @@ What happens now?
 title: Long War
 new-page: false
 view-if: rome_civil_war = 1
+achievement: guerra_civile
 
 = Long War
 

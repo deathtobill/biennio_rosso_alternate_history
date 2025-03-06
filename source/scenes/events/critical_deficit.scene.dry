@@ -59,7 +59,7 @@ Q.middle_class_psi -= 10;
 Q.industrialists_psi -= 10;
 Q.rural_psi -= 10;
 Q.veterans_psi -= 10;
-Q.catholics_psi -= 10;
+Q.catholic_psi -= 10;
 
 Q.unemployment += 9.5;
 Q.economic_growth -= 12.7;

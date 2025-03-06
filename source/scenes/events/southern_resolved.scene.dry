@@ -3,7 +3,7 @@ new-page: true
 subtitle: Our policies seem to have borne fruit.
 tags: event
 view-if: mafia_strength == 0 and southern_education_funded > 1 and southern_infrastructure_funded > 1 and psi_in_government
-on-arrival: rural_psi += 12*(1-dissent); rural_ldr -= 6*(1-dissent); rural_ul -= 3*(1-dissent); rural_ds -= 3*(1-dissent); southern_resolved = 1
+on-arrival: rural_psi += 12*(1-dissent); rural_ldr -= 6*(1-dissent); rural_ul -= 3*(1-dissent); rural_ds -= 3*(1-dissent); southern_resolved = 1; sonnino_avenged = 1 if ((year < 1922) or year == 1922 and month < 11)
 max-visits: 1
 
 = Mezzogiorno Ameliorated

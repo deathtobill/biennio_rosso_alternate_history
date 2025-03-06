@@ -25,14 +25,23 @@ Q.prime_minister = Q.pnf_leader;
 Q.prime_minister_party = "PNF";
 
 Q.foreign_minister_party = "PNF"; 
+Q.foreign_minister = "Grandi";
 Q.interior_minister_party = "PNF";
+Q.interior_minister = "Federzoni";
 Q.justice_minister_party = "PNF";
+Q.justice_minister = "Oviglio"
 Q.labour_minister_party = "PPI"; 
+Q.labour_minister = "Cavazzoni";
 Q.finance_minister_party = "PNF";
-Q.treasury_minister_party = "PPI"; 
-Q.agriculture_minister_party = "PLI"; 
-Q.public_education_minister_party = "I"; 
+Q.finance_minister = "Stefani";
+Q.treasury_minister_party = "PPI";
+Q.treasury_minister = "Tangorra";
+Q.agriculture_minister_party = "PLI";
+Q.agriculture_minister = "Acerbo";
+Q.public_education_minister_party = "I";
+Q.public_education_minister = "Gentile";
 Q.public_works_minister_party = "DS";
+Q.public_works_minister = "Carnazza";
 !}
 tags: event
 max-visits: 1

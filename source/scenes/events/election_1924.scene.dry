@@ -478,6 +478,7 @@ Q.agriculture_minister_party = "PSI";
 Q.public_education_minister_party = "PSI"; 
 Q.public_works_minister_party = "PSI";
 !}
+achievement: governo_monocolore; follia_di_acerbo; ritorno_trionfale
 
 Finally, the PSI can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
 
@@ -525,6 +526,7 @@ if (Q.pri_prominent == 1) {
 }
 Q.public_works_minister_party = "PSRI";
 !}
+achievement: sinistra_ascendente; ritorno_trionfale
 
 Our negotiations with our coalition allies goes smoothly, and we form a stable coalition.
 
@@ -924,6 +926,7 @@ subtitle: This is an unstable coalition, to say the least.
 choose-if: liberal_negotiations >= ldr_negotiations_min
 unavailable-subtitle: The Liberals are not satisfied with the current arrangement.
 on-departure: centre_left_coalition = 1; catholic_coalition_failed = 0; foreign_minister_party = "DS"; labour_minister_party = ldr_name; public_works_minister_party = "PSRI"; finance_minister_party = ldr_name;
+achievement: ritorno_trionfale
 
 With the coalition agreed upon, it is time to choose a Prime Minister.
 
@@ -965,6 +968,7 @@ subtitle: This is an unstable coalition, to say the least.
 choose-if: catholic_negotiations >= ppi_negotiations_min
 unavailable-subtitle: The Catholics are not satisfied with the current arrangement.
 on-departure: socialist_catholic_coalition = 1; liberal_coalition_failed = 0; foreign_minister_party = "PPI"; interior_minister_party = "DS"; labour_minister_party = "PSRI"; public_works_minister_party = "PPI"; agriculture_minister_party = "DS"
+achievement: ritorno_trionfale
 
 With the coalition agreed upon, it is time to choose a Prime Minister.
 

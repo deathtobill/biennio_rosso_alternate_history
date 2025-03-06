@@ -22,6 +22,7 @@ subtitle: They will be a valuable ally against fascism.
 choose-if: communist_strength < 60
 unavailable-subtitle: The Communists are able to sway the party against this.
 on-arrival: arditi_cooperation = 1; communist_dissent += 7*(1-dissent); adp_strength += 20; 
+achievement: alleanza_ardita
 
 The Ariti respond warmly to our efforts, and are willing to entertain further cooperation with us and the Red Guards.
 

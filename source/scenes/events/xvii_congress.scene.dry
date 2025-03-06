@@ -21,7 +21,7 @@ choose-if: participating = 1 or pcdi_formed
 unavailable-subtitle: [? if participating = 0 : The XVI Congress has already forced us to adopt a revolutionary stance. ?]
 on-arrival: communist_strength -= 100; communist_dissent += 100; pcdi_formed = 1; revolutionary_fervor -= 10; soviet_relations -= 3;
 
-[? if communists_split = 1 : Even as the communist faction remains minimal after the founding of the Italian Communist Party, ?] The communist faction has resigned, with the majority [? if communists_split = 1 : joining the existing PCI. ?][? if communists_split = 0 : creating a new party called the Italian Communist Party. ?] 
+[? if communist_split = 1 : Even as the communist faction remains minimal after the founding of the Italian Communist Party, ?] The communist faction has resigned, with the majority [? if communist_split = 1 : joining the existing PCI. ?][? if communist_split = 0 : creating a new party called the Italian Communist Party. ?] 
 
 The Communist International has also expelled us, supporting the new PCI instead; it seems we can no longer rely on them for aid.
 

@@ -172,7 +172,7 @@ Industrialists & Landowners: PSI: [+ industrialists_middle_psi_display +]%, PPI:
 
 Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, DS: [+ veterans_ds_display +]%, UL: [+ veterans_ul_display +]%; PNF: [+ veterans_pnf_display +]%, PSRI: [+ veterans_psri_display +]%, Others: [+ veterans_other_display +]% 
 
-Catholics: PSI: [+ catholics_psi_display +]%, PPI: [+ catholics_ppi_display +]%, [+ ldr_name +]: [+ catholics_ldr_display +]%, DS: [+ catholics_ds_display +]%, UL: [+ catholics_ul_display +]%; PNF: [+ catholics_pnf_display +]%, PSRI: [+ catholics_psri_display +]%, Others: [+ catholics_other_display +]% 
+Catholics: PSI: [+ catholic_psi_display +]%, PPI: [+ catholic_ppi_display +]%, [+ ldr_name +]: [+ catholic_ldr_display +]%, DS: [+ catholic_ds_display +]%, UL: [+ catholic_ul_display +]%; PNF: [+ catholic_pnf_display +]%, PSRI: [+ catholic_psri_display +]%, Others: [+ catholic_other_display +]% 
 
 [? if womens_suffrage = 1: Women: PSI: [+ women_psi_display +]%, [? if pcdi_formed : PCd'I: [+ women_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ women_psu_display +]%, ?] PSRI: [+ women_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ women_pri_display +]%, ?] DS: [+ women_ds_display +]%, PPI: [+ women_ppi_display +]%, [+ ldr_name +]: [+ women_ldr_display +]%, [+ ul_name +]: [+ women_ul_display +]%; PNF: [+ women_pnf_display +]%, Others: [+ women_other_display +]% ?]
 

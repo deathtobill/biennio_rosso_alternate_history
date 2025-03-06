@@ -188,15 +188,24 @@ Q.psri_in_government = 0;
 Q.pnf_in_government = 0; 
 
 // based on starting coalition
-Q.foreign_minister_party = 'UL';
-Q.interior_minister_party = 'LDR';
+Q.foreign_minister = 'Sonnino';
+Q.foreign_minister_party = Q.ul_name;
+Q.interior_minister = 'Orlando';
+Q.interior_minister_party = Q.ldr_name;
+Q.justice_minister = 'Sacchi';
 Q.justice_minister_party = 'DS';
-Q.labour_minister_party = 'UL';
-Q.public_works_minister_party = 'UL';
-Q.public_education_minister_party = 'LDR';
+Q.labour_minister = 'Ferraris';
+Q.labour_minister_party = Q.ul_name;
+Q.public_works_minister = 'Dari';
+Q.public_works_minister_party = Q.ul_name;
+Q.treasury_minister = 'Nitti';
 Q.treasury_minister_party = 'DS';
+Q.finance_minister = 'Meda';
 Q.finance_minister_party = 'PPI';
-Q.agriculture_minister_party = 'LDR';
+Q.agriculture_minister = 'Miliani';
+Q.agriculture_minister_party = Q.ldr_name;
+Q.public_education_minister = 'Berenini';
+Q.public_education_minister_party = 'PSRI';
 
 Q.leverage = Q.psi_r;
 
@@ -416,15 +425,25 @@ Q.psi_in_government = 1;
 Q.in_psi_majority = 1; 
 
 Q.foreign_minister_party = "PSI"; 
-Q.interior_minister_party = "PSI"; 
-Q.justice_minister_party = "PSI"; 
+Q.foreign_minister = "Matteoti";
+Q.interior_minister_party = "PSI";
+Q.interior_minister = "Turati"; 
+Q.justice_minister_party = "PSI";
+Q.justice_minister = "Treves";
 Q.labour_minister_party = "PSI"; 
-Q.finance_minister_party = "PSI"; 
-Q.treasury_minister_party = "PSI"; 
-Q.agriculture_minister_party = "PSI"; 
+Q.labour_minister = "Rigola";
+Q.finance_minister_party = "PSI";
+Q.finance_minister = "Lazzari";
+Q.treasury_minister_party = "PSI";
+Q.treasury_minister = "Modigliani";
+Q.agriculture_minister_party = "PSI";
+Q.agriculture_minister = "Graziadei"; 
 Q.public_education_minister_party = "PSI"; 
+Q.public_education_minister = "Togliatti";
 Q.public_works_minister_party = "PSI";
+Q.public_works_minister = "Vella";
 !}
+achievement: governo_monocolore
 
 Finally, the PSI can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
 
@@ -471,6 +490,7 @@ if (Q.pri_prominent == 1) {
 }
 Q.public_works_minister_party = "PSRI";
 !}
+achievement: sinistra_ascendente
 
 Our negotiations with our coalition allies goes smoothly, and we form a stable coalition.
 

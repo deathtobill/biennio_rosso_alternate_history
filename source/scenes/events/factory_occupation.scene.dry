@@ -27,6 +27,7 @@ subtitle: Authorise the strikes past the Piedmont region into the entire nation 
 view-if: communist_dissent < 50 or reformist_dissent < 50 or maximalist_dissent < 50 or syndicalist_dissent < 50
 choose-if: participating = 0 and revolutionary_fervor > 69 and not_participating = 1
 unavailable-subtitle: [? if participating = 1 : We have already decided to achieve socialism through parliamentary means. ?][? if revolutionary_fervor < 70 : The bulk of the party refuses to begin the process of revolution. ?]
+on-arrival: turin_action = 1;
 go-to: civil_war
 
 @turin_red_guards

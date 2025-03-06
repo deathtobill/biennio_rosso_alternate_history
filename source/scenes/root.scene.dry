@@ -14,6 +14,7 @@ go-to: start_menu_2
 - @election_simulation: Election Simulation (Acerbo Law)
 - @mod_info: Mod Info & Settings
 - @credits: Credits
+- @game_over.achievements
 
 
 @start
@@ -61,9 +62,9 @@ Q.reformist_strength = 12;
 Q.reformist_dissent = 25;
 
 // in the event dissent gets too high
-Q.unions_independent = 0;
+Q.unions_break = 0;
 Q.maximalists_resign = 0;
-Q.communists_split = 0;
+Q.communist_split = 0;
 Q.reformists_defect = 0;
 
 // Depending on how the Congress goes
@@ -165,6 +166,9 @@ acerbo_law_passed = 0;
 // coup progress happens when you piss off the fasci too much too quickly + if they have enough troops
 // when capital_strike_progress reaches 10, there's a special event that launches the coup.
 Q.capital_strike_progress = 0;
+Q.capital_strike_seen = 0;
+Q.turin_action = 0;
+Q.sonnino_avenged = 0;
 // if fasci_coup_progress reaches 10 before historical, march on rome event is triggered
 Q.fasci_coup_progress = 0;
 
@@ -256,17 +260,17 @@ Q.veterans_pnf = 7;
 Q.veterans_psri = 7;
 Q.veterans_other = 18;
 
-Q.catholics_pcdi = 0;
-Q.catholics_psi = 6;
-Q.catholics_psu = 0;
-Q.catholics_pri = 0;
-Q.catholics_ppi = 87;
-Q.catholics_ldr = 2;
-Q.catholics_ds = 3;
-Q.catholics_ul = 2;
-Q.catholics_pnf = 2;
-Q.catholics_psri = 1;
-Q.catholics_other = 2;
+Q.catholic_pcdi = 0;
+Q.catholic_psi = 6;
+Q.catholic_psu = 0;
+Q.catholic_pri = 0;
+Q.catholic_ppi = 87;
+Q.catholic_ldr = 2;
+Q.catholic_ds = 3;
+Q.catholic_ul = 2;
+Q.catholic_pnf = 2;
+Q.catholic_psri = 1;
+Q.catholic_other = 2;
 
 Q.women_pcdi = 0;
 Q.women_psi = 14;
@@ -529,6 +533,7 @@ Q.gov_foreign_timer = 14;
 Q.gov_interior_timer = 14;
 Q.gov_justice_timer = 14;
 Q.gov_pm_timer = 14;
+Q.giolitti_tenure = 0;
 
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;
@@ -573,7 +578,7 @@ new-page: true
 
 This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
 
-For more information on the politics and government of the Italian Kingdom, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
+For more information on the politics and of the Italian Kingdom, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
 This is an **overhaul** mod for Autumn Chen's *Social Democracy: An Alternate History* mod, that you should check out <a href="https://red-autumn.itch.io/social-democracy">here</a> if you have not done so already.
 

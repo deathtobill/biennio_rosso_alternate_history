@@ -19,6 +19,7 @@ go-to: mussolini_sentenced if (evidence >= 3 and judicial_reform < 2) or (eviden
 
 @mussolini_sentenced
 on-arrival: mussolini_convicted = 1; veterans_pnf *= 0.75; industrialists_pnf *= 0.75; fdc_militancy += 0.02; fdc_strength -= 20
+achievement: marciume_del_traditore
 
 = Mussolini behind bars; Agitator convicted
 

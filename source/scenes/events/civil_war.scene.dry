@@ -193,6 +193,7 @@ go-to: defeat if total_defeat = 1; long_war if long_war = 1; socialist_victory i
 @defeat
 
 = Total Defeat
+achievement: follia_della_sinistra
 
 Our forces are no match for those of the reactionaries. Red Guard forces are quickly overpowered by the forces of the Arditismo, Fasci, and Regio Esercito. Many are killed before the rest surrender. Our remaining leaders flee the country or face execution, as the reactionaries take absolute power over Italy.
 
@@ -211,6 +212,7 @@ The war settles into fixed battle lines. This will not be a quick coup, but a lo
 - @game_over: Game over.
 
 @socialist_victory
+achievement: vittoria_monarchica
 
 = Victory for the Kingdom
 
@@ -222,6 +224,7 @@ Italy holds strong, against fascism.
 
 @communist_victory
 on-arrival: soviet_victory = 1
+achievement: vittoria_sovietica
 
 = Victory for the Socialists
 

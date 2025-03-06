@@ -8,7 +8,7 @@ Q.psri_middle_class_movement = (Q.middle_class_psri / 4) * 3;
 Q.psri_industrialists_movement = (Q.industrialists_psri / 4) * 3;
 Q.psri_rural_movement = (Q.rural_psri / 4) * 3;
 Q.psri_veterans_movement = (Q.veterans_psri / 4) * 3;
-Q.psri_catholics_movement = (Q.catholics_psri / 4) * 3;
+Q.psri_catholic_movement = (Q.catholic_psri / 4) * 3;
 !}
 max-visits: 1
 tags: event
@@ -30,14 +30,14 @@ Q.middle_class_psi += Q.psri_middle_class_movement;
 Q.industrialists_psi += Q.psri_industrialists_movement; 
 Q.rural_psi += Q.psri_rural_movement;
 Q.veterans_psi += Q.psri_veterans_movement; 
-Q.catholics_psi += Q.psri_catholics_movement;
+Q.catholic_psi += Q.psri_catholic_movement;
 
 Q.workers_psri -= Q.psri_workers_movement;
 Q.middle_class_psri -= Q.psri_middle_class_movement;
 Q.industrialists_psri -= Q.psri_industrialists_movement;
 Q.rural_psri -= Q.psri_rural_movement;
 Q.veterans_psri -= Q.psri_veterans_movement;
-Q.catholics_psri -= Q.psri_catholics_movement;
+Q.catholic_psri -= Q.psri_catholic_movement;
 
 Q.reformist_strength += 12;
 Q.communist_dissent += 12;

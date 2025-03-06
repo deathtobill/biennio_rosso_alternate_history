@@ -64,6 +64,6 @@ We have increased our campaigning among the unemployment. [? if welfare < 0: The
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: catholics_psi += 6*(1-dissent); resources -= 1; catholics_psi -= 5*(1-dissent) if secularised_education;
+on-arrival: catholic_psi += 6*(1-dissent); resources -= 1; catholic_psi -= 5*(1-dissent) if secularised_education;
 
 We have increased our campaigning among Catholics.
