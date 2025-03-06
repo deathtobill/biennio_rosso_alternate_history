@@ -37,6 +37,6 @@ We are able to convince the [+ prime_minister_party +] to delay the cuts by [+ g
 @pm_nothing
 on-arrival: workers_psi -= 2 if psi_in_government; veterans_psi -= 2 if psi_in_government; workers_psi += 2 if not psi_in_government; veterans_psi -= 2 if not psi_in_government; workers_ldr -= 8 if prime_minister_party == ldr_name; workers_ul -= 8 if prime_minister_party == ul_name; veterans_ldr -= 8 if prime_minister_party == ldr_name; veterans_ul -= 8 if prime_minister_party == ul_name; workers_ppi += 7; workers_pnf += 3; veterans_ppi += 5; veterans_pnf += 5; welfare -= 1; budget += 1; unemployment += 3; inflation -= 0.6;
 
-[? if psi_in_government : We attempt to convince the workers and veterans that this is necessary for economic stability. Regardless, support for the [+ prime_minister_party +] from workers and veterans decreases notably, and as do we for tolerating the cuts. The [+ pnf_name + ] are able to use this policy to recruit more members. ?]
+[? if psi_in_government : We attempt to convince the workers and veterans that this is necessary for economic stability. Regardless, support for the [+ prime_minister_party +] from workers and veterans decreases notably, and as do we for tolerating the cuts. The [+ pnf_name +] are able to use this policy to recruit more members. ?]
 
 [? if not psi_in_government : The cuts pass, and we utilise them to recruit workers who have lost faith in the Liberal parties, alongside the [+ pnf_name +]. ?]

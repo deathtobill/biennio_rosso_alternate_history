@@ -238,13 +238,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_unita_e_liberta : **Unità e Libertà** - Reach the end of the game without a civil war on Hard. ?]
 
-[? if game_achievement_verde_bianco_rosso : : **Verde-Bianco-Rosso** - Reach the end of the game without a civil war on Historical. ?]
+[? if game_achievement_verde_bianco_rosso : **Verde-Bianco-Rosso** - Reach the end of the game without a civil war on Historical. ?]
 
 [? if game_achievement_vittoria_sovietica : **Vittoria Sovietica** - Win the Civil War and establish a Soviet Republic. ?]
 
-[? if game_achievement_vittoria_monarchica : *Vittoria Monarchica** = Win the Civil War under the banner of the Kingdom. ?]
+[? if game_achievement_vittoria_monarchica : *Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
 
-[? if game_achievement_sinistra_ascendente : **Sinistra Ascendente** = Form a Left-Wing Coalition. ?]
+[? if game_achievement_sinistra_ascendente : **Sinistra Ascendente** - Form a Left-Wing Coalition. ?]
 
 [? if game_achievement_governo_monocolore : **Governo Monocolore** - Form a PSI-Only Government. ?]
 
@@ -260,11 +260,11 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_contadini_rivoluzionari : **Contadini Rivoluzionari** - Have Rural support over 50%. ?]
 
-[? if game_achievement_rivoluzione_industriale : **Rivoluzione Industriale** = Have Industrialist support over 50%. ?]
+[? if game_achievement_rivoluzione_industriale : **Rivoluzione Industriale** - Have Industrialist support over 50%. ?]
 
 [? if game_achievement_redenzione_dei_veterani : **Redenzione del Veterani** - Have Veteran support over 50%. ?]
 
-[? if game_achievement_cattolici_in_rosa : **Cattolici in Rosa** = Have Catholic support over 50%. ?]
+[? if game_achievement_cattolici_in_rosa : **Cattolici in Rosa** - Have Catholic support over 50%. ?]
 
 [? if game_achievement_partito_del_popolo : **Partito del Popolo** - Have all demographic support over 40%. ?]
 
@@ -324,9 +324,9 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_vittoria_sovietica : **Vittoria Sovietica** - Win the Civil War and establish a Soviet Republic. ?]
 
-[? if achievement_vittoria_monarchica : *Vittoria Monarchica** = Win the Civil War under the banner of the Kingdom. ?]
+[? if achievement_vittoria_monarchica : *Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
 
-[? if achievement_sinistra_ascendente : **Sinistra Ascendente** = Form a Left-Wing Coalition. ?]
+[? if achievement_sinistra_ascendente : **Sinistra Ascendente** - Form a Left-Wing Coalition. ?]
 
 [? if achievement_governo_monocolore : **Governo Monocolore** - Form a PSI-Only Government. ?]
 
@@ -342,11 +342,11 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_contadini_rivoluzionari : **Contadini Rivoluzionari** - Have Rural support over 50%. ?]
 
-[? if achievement_rivoluzione_industriale : **Rivoluzione Industriale** = Have Industrialist support over 50%. ?]
+[? if achievement_rivoluzione_industriale : **Rivoluzione Industriale** - Have Industrialist support over 50%. ?]
 
 [? if achievement_redenzione_dei_veterani : **Redenzione del Veterani** - Have Veteran support over 50%. ?]
 
-[? if achievement_cattolici_in_rosa : **Cattolici in Rosa** = Have Catholic support over 50%. ?]
+[? if achievement_cattolici_in_rosa : **Cattolici in Rosa** - Have Catholic support over 50%. ?]
 
 [? if achievement_partito_del_popolo : **Partito del Popolo** - Have all demographic support over 40%. ?]
 
@@ -406,9 +406,9 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_vittoria_sovietica : **Vittoria Sovietica** - Win the Civil War and establish a Soviet Republic. ?]
 
-[? if not achievement_vittoria_monarchica : *Vittoria Monarchica** = Win the Civil War under the banner of the Kingdom. ?]
+[? if not achievement_vittoria_monarchica : *Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
 
-[? if not achievement_sinistra_ascendente : **Sinistra Ascendente** = Form a Left-Wing Coalition. ?]
+[? if not achievement_sinistra_ascendente : **Sinistra Ascendente** - Form a Left-Wing Coalition. ?]
 
 [? if not achievement_governo_monocolore : **Governo Monocolore** - Form a PSI-Only Government. ?]
 
@@ -424,11 +424,11 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_contadini_rivoluzionari : **Contadini Rivoluzionari** - Have Rural support over 50%. ?]
 
-[? if not achievement_rivoluzione_industriale : **Rivoluzione Industriale** = Have Industrialist support over 50%. ?]
+[? if not achievement_rivoluzione_industriale : **Rivoluzione Industriale** - Have Industrialist support over 50%. ?]
 
 [? if not achievement_redenzione_dei_veterani : **Redenzione del Veterani** - Have Veteran support over 50%. ?]
 
-[? if not achievement_cattolici_in_rosa : **Cattolici in Rosa** = Have Catholic support over 50%. ?]
+[? if not achievement_cattolici_in_rosa : **Cattolici in Rosa** - Have Catholic support over 50%. ?]
 
 [? if not achievement_partito_del_popolo : **Partito del Popolo** - Have all demographic support over 40%. ?]
 

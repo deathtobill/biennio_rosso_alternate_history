@@ -213,7 +213,7 @@ if (Q.week_actions >= 1) {
             }
         }
 
-        if (Q.prime_minister == "Giolitti) {
+        if (Q.prime_minister == "Giolitti") {
             Q.giolitti_tenure += 1;
         }
         // economic loss leads to decreased inflation
