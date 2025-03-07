@@ -204,10 +204,10 @@ Q.veterans_psu = 0;
 Q.veterans_ppi = 10;
 Q.veterans_ldr = 20;
 Q.veterans_pri = 0;
-Q.veterans_ds = 14;
-Q.veterans_ul = 10;
-Q.veterans_pnf = 7;
-Q.veterans_psri = 7;
+Q.veterans_ds = 18;
+Q.veterans_ul = 14;
+Q.veterans_pnf = 3;
+Q.veterans_psri = 3;
 Q.veterans_other = 18;
 
 Q.catholic_pcdi = 0;
