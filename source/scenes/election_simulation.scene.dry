@@ -190,11 +190,11 @@ Q.rural_pcdi = 0;
 Q.rural_psi = 25;
 Q.rural_psu = 0;
 Q.rural_pri = 0;
-Q.rural_ppi = 32;
-Q.rural_ldr = 13;
-Q.rural_ds = 13;
-Q.rural_ul = 3;
-Q.rural_pnf = 4;
+Q.rural_ppi = 27;
+Q.rural_ldr = 17;
+Q.rural_ds = 16;
+Q.rural_ul = 4;
+Q.rural_pnf = 1;
 Q.rural_psri = 4;
 Q.rural_other = 2;
 
