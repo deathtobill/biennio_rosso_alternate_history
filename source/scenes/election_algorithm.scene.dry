@@ -60,7 +60,7 @@ var total_available_seats = 0;
 if (Q.year <= 1920) {
     total_available_seats = 508;
 }
-if (Q.year => 1921) {
+if (Q.year >= 1921) {
     total_available_seats = 535;
 }
 
