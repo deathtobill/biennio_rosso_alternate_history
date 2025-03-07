@@ -158,9 +158,9 @@ Q.workers_ppi = 3;
 Q.workers_ldr = 9;
 Q.workers_ds = 6;
 Q.workers_ul = 4;
-Q.workers_pnf = 4;
+Q.workers_pnf = 2;
 Q.workers_psri = 8;
-Q.workers_other = 10;
+Q.workers_other = 12;
 
 Q.middle_class_pcdi = 0;
 Q.middle_class_psi = 25;

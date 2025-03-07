@@ -208,23 +208,23 @@ Q.workers_psu = 0;
 Q.workers_pri = 0;
 Q.workers_ppi = 3;
 Q.workers_ldr = 9;
-Q.workers_ds = 3;
+Q.workers_ds = 6;
 Q.workers_ul = 4;
-Q.workers_pnf = 7;
-Q.workers_psri = 13;
-Q.workers_other = 5;
+Q.workers_pnf = 2;
+Q.workers_psri = 8;
+Q.workers_other = 12;
 
 Q.middle_class_pcdi = 0;
 Q.middle_class_psi = 25;
-Q.middle_class_psu = 0; 
+Q.middle_class_psu = 0;
 Q.middle_class_pri = 0;
-Q.middle_class_ppi = 33;
+Q.middle_class_ppi = 20;
 Q.middle_class_ldr = 9;
-Q.middle_class_ds = 5;
+Q.middle_class_ds = 10;
 Q.middle_class_ul = 13;
 Q.middle_class_pnf = 2;
 Q.middle_class_psri = 2;
-Q.middle_class_other = 10;
+Q.middle_class_other = 18;
 
 Q.industrialists_pcdi = 0;
 Q.industrialists_psi = 1;
@@ -239,40 +239,40 @@ Q.industrialists_psri = 0;
 Q.industrialists_other = 1;
 
 Q.rural_pcdi = 0;
-Q.rural_psi = 25;
+Q.rural_psi = 27;
 Q.rural_psu = 0;
 Q.rural_pri = 0;
-Q.rural_ppi = 40;
-Q.rural_ldr = 5;
-Q.rural_ds = 13;
-Q.rural_ul = 3;
-Q.rural_pnf = 4;
-Q.rural_psri = 4;
-Q.rural_other = 2;
+Q.rural_ppi = 25;
+Q.rural_ldr = 17;
+Q.rural_ds = 16;
+Q.rural_ul = 6;
+Q.rural_pnf = 0;
+Q.rural_psri = 0;
+Q.rural_other = 5;
 
 Q.veterans_pcdi = 0;
 Q.veterans_psi = 14;
 Q.veterans_psu = 0;
-Q.veterans_ppi = 17;
-Q.veterans_ldr = 15;
+Q.veterans_ppi = 10;
+Q.veterans_ldr = 20;
 Q.veterans_pri = 0;
-Q.veterans_ds = 12;
-Q.veterans_ul = 10;
-Q.veterans_pnf = 7;
-Q.veterans_psri = 7;
-Q.veterans_other = 18;
+Q.veterans_ds = 18;
+Q.veterans_ul = 14;
+Q.veterans_pnf = 2;
+Q.veterans_psri = 3;
+Q.veterans_other = 20;
 
 Q.catholic_pcdi = 0;
 Q.catholic_psi = 6;
 Q.catholic_psu = 0;
 Q.catholic_pri = 0;
-Q.catholic_ppi = 87;
-Q.catholic_ldr = 2;
+Q.catholic_ppi = 70;
+Q.catholic_ldr = 9;
 Q.catholic_ds = 3;
 Q.catholic_ul = 2;
-Q.catholic_pnf = 2;
+Q.catholic_pnf = 1;
 Q.catholic_psri = 1;
-Q.catholic_other = 2;
+Q.catholic_other = 13;
 
 Q.women_pcdi = 0;
 Q.women_psi = 14;
@@ -285,7 +285,6 @@ Q.women_ul = 17;
 Q.women_pnf = 6;
 Q.women_psri = 8;
 Q.women_other = 14;
-
 
 // Current Chamber of Deputies composition
 // % of Chamber of Deputies in Jan 1919
