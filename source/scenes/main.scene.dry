@@ -168,6 +168,32 @@ max-cards: 4
 
 [? if year = 1922 and month = 2 and week = 1: The *Five Power Naval Disarmament Treaty* is signed between the United Kingdom, United States, Japan, France and Italy. Foreign Minister [+ foreign_minister +] signs the treaty as a representative of Italy. ?]
 
+[? if year = 1922 and month = 2 and week = 3: The United Kingdom ends its protectorate and grants nominal independence to Egypt following the *Unilateral Declaration of Egyptian Independence* ?]
+
+[? if year = 1922 and month = 4 and week = 1: Joesph Stalin is appointed General Secretary of the Central Committee of the Soviet Communist Party. ?]
+
+[? if year = 1922 and month = 9 and week = 1: The Autodromo Nazionale di Monza motorsport race track officially opens in Monza. ?]
+
+[? if year = 1922 and month = 12 and week = 1: The *Irish Free State* is officially established after the Irish War of Independence and the following Irish Civil War. ?]
+
+[? if year = 1922 and month = 12 and week = 3: The Russian, Ukrainian, Belorussian, Transcaucasian Soviet Federative Socialist Republics sign the Declaration and Treaty on the Creation of the Union of Soviet Socialist Republics, uniting into one nation. ?]
+
+[? if year = 1923 and month = 1 and week = 1: French and Belgian troops occupy the Ruhr region of Germany after its numerous defaults on its war debts. The British oppose French and Belgian action. ?]
+
+[? if year = 1923 and month = 3 and week = 1: Vladimir Lenin, leader of the Union of Soviet Socialist Republics, suffers a stroke and becomes bedridden. ?]
+
+[? if year = 1923 and month = 3 and week = 3: The Italian Air Wing of the *Regio Esercito* and *Regia Marina* is established as an independent wing of the armed forces, called the *Regia Aeronautica*. ?]
+
+[? if year = 1923 and month = 6 and week = 3: Mount Etna erupts on the east cost of Sicily, resulting in an estimated 60,000 to go homeless. ?]
+
+[? if year = 1923 and month = 7 and week = 3: The *Treaty of Lausanne* is signed by Turkey, Greece, Bulgaria and the Entente, officially marking the end of the Ottoman Empire. Foreign Minister [+ foreign_minister +] is sent as our signatory. ?]
+
+[? if year = 1923 and month = 10 and week = 3: The *Hamburg Uprising*, organised by the KPD (Communist Party of Germany), has fallen, suppressed forcefully by the government within just one day. ?]
+
+[? if year = 1923 and month = 11 and week = 1: The *Beer Hall Putsch*, organised by Adolf Hitler and the Kampfbund in Munich, has fallen, suppressed forcefully by the government within just one day. ?]
+
+[? if year = 1923 and month = 11 and week = 3: Hyperinflation in the Weimar Republic reaches historic highs, worsening the economic crisis and collapses Gustav Streseman's governing coalition. ?]
+
 - @party
 - @paramilitary
 - @govt
