@@ -183,14 +183,14 @@ Q.middle_class = 17; // small business owners
 Q.industrialists = 6; // industrialists & landowners
 Q.rural = 37; // farmers & the like, many in the south
 Q.veterans = 6;
-Q.catholics = 9;
+Q.catholic = 9;
 Q.women = 0;
 
 Q.inflation = 19.2;
 Q.economic_growth = -3.7;
 Q.unemployment = 13.5;
 
-Q.classes = ['workers', 'middle_class', 'industrialists', 'rural', 'veterans', 'catholics', 'women'];
+Q.classes = ['workers', 'middle_class', 'industrialists', 'rural', 'veterans', 'catholic', 'women'];
 Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'pnf', 'other', 'pcdi', 'psu', 'pri'];
 
 // Communist split from the party
