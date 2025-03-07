@@ -55,7 +55,7 @@ for (var party of Q.parties) {
 
 
 var total_seats = 0;
-var total_available_seats = 100; 
+var total_available_seats = 512; 
 
 for (var party of Q.parties) {
     Q[party+'_seating'] = 0;

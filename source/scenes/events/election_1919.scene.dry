@@ -59,14 +59,14 @@ var new_party_sum = 0;
 for (var party of Q.parties) {
     Q['old_' + party + '_r'] = Q[party + '_r'];
     if (Q.constitutional_reform > 0) {
-        if (Q[party + '_seating'] < Q.electoral_threshold || (Q.electoral_threshold > 1 && party == 'other') || Q[party + '_banned']) {
+        if (Q[party + '_votes'] < Q.electoral_threshold || (Q.electoral_threshold > 1 && party == 'other') || Q[party + '_banned']) {
             Q[party + '_r'] = 0;
         } else {
-            Q[party + '_r'] = Q[party + '_seating'];
+            Q[party + '_r'] = Q[party + '_votes'];
         }
         new_party_sum += Q[party + '_r'];
     } else {
-        Q[party + '_r'] = Q[party + '_seating'];
+        Q[party + '_r'] = Q[party + '_votes'];
     }
     // if we use decimals, then we might want to truncate the numbers
     if (Q.use_decimals) {
@@ -242,7 +242,7 @@ if (Q.pcdi_formed && Q.pcdi_r) {
         "id": "pcdi",
         "legend": "PCD'I",
         "name": "PCd'I",
-        "seats": Math.round(Q.pcdi_r*5),
+        "seats": Math.round(Q.pcdi_seating),
     });
 }
 
@@ -250,7 +250,7 @@ data.push({
     "id": "psi",
     "legend": "PSI",
     "name": "PSI",
-    "seats": Math.round(Q.psi_r*5),
+    "seats": Math.round(Q.psi_seating),
 });
 
 if (Q.psu_formed && Q.psu_r) {
@@ -258,7 +258,7 @@ if (Q.psu_formed && Q.psu_r) {
         "id": "psu",
         "legend": "PSU",
         "name": "PSU",
-        "seats": Math.round(Q.psu_r*5),
+        "seats": Math.round(Q.psu_seating),
     });
 }
 
@@ -267,7 +267,7 @@ if (Q.pri_prominent && Q.pri_r) {
         "id": "pri",
         "legend": "PRI",
         "name": "PRI",
-        "seats": Math.round(Q.pri_r*5),
+        "seats": Math.round(Q.pri_seating),
     });
 }
 
@@ -275,7 +275,7 @@ data.push({
         "id": "psri",
         "legend": "PSRI",
         "name": "PSRI",
-        "seats": Math.round(Q.psri_r*5),
+        "seats": Math.round(Q.psri_seating),
 });
 
 if (Q.ds_in_bn != 1 && Q.ds_r) {
@@ -283,7 +283,7 @@ if (Q.ds_in_bn != 1 && Q.ds_r) {
         "id": "ds",
         "legend": "DS",
         "name": "DS",
-        "seats": Math.round(Q.ds_r*5),
+        "seats": Math.round(Q.ds_seating),
     });
 }
 
@@ -291,14 +291,14 @@ data.push({
         "id": "ppi",
         "legend": "PPI",
         "name": "PPI",
-        "seats": Math.round(Q.ppi_r*5),
+        "seats": Math.round(Q.ppi_seating),
 });
 
 data.push({
         "id": "ldr",
         "legend": "LDR",
         "name": Q.ldr_name,
-        "seats": Math.round(Q.ldr_r*5),
+        "seats": Math.round(Q.ldr_seating),
 });
 
 if (Q.bn_formed === 1 && Q.bn_r) {
@@ -306,7 +306,7 @@ if (Q.bn_formed === 1 && Q.bn_r) {
         "id": "bn",
         "legend": "BN",
         "name": "BN",
-        "seats": Math.round(Q.bn_r*5), 
+        "seats": Math.round(Q.bn_seating), 
     })
 }
 
@@ -315,7 +315,7 @@ if (Q.ul_in_bn != 1 && Q.ul_r) {
         "id": "ul",
         "legend": "UL",
         "name": Q.ul_name,
-        "seats": Math.round(Q.ul_r*5),
+        "seats": Math.round(Q.ul_seating),
     });
 }
 
@@ -324,7 +324,7 @@ if (Q.pnf_in_bn != 1 && Q.pnf_r) {
         "id": "pnf",
         "legend": "PNF",
         "name": Q.pnf_name,
-        "seats": Math.round(Q.pnf_r*5),
+        "seats": Math.round(Q.pnf_seating),
     });
 }
 
@@ -332,7 +332,7 @@ data.push({
         "id": "other",
         "legend": "Other",
         "name": "Other",
-        "seats": Math.round(Q.other_r*5),
+        "seats": Math.round(Q.other_seating),
 });
 
 if (window && d3) {
@@ -359,30 +359,30 @@ go-to: coalition_menu
 {!<svg id="chamber" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td>Parties/Groups</td><td>Vote share</td><td>% Change</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} PSI: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td></tr>!}
+{!<tr><td>Parties/Groups</td><td>Vote Share</td><td>% Change</td><td>Seats Given</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} PSI: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]% {!</td><td>!} [+ psi_seating +]** {!</td></tr>!}
 
-[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div>!} PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td></tr>!} ?]
+[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div>!} PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td><td>!} [+ pcdi_seating +] {!</td></tr>!} ?]
 
-[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div>!} PSU: {!</td><td>!} [+ psu_r +]% {!</td><td>!} [+ str_change_psu +]% {!</td></tr>!} ?]
+[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div>!} PSU: {!</td><td>!} [+ psu_r +]% {!</td><td>!} [+ str_change_psu +]% {!</td><td>!} [+ psu_seating +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#FFC0CB'> </div>!} PSRI: {!</td><td>!} [+ psri_r +]% {!</td><td>!} [+ str_change_psri +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#FFC0CB'> </div>!} PSRI: {!</td><td>!} [+ psri_r +]% {!</td><td>!} [+ str_change_psri +]% {!</td><td>!} [+ psri_seating +] {!</td></tr>!}
 
-[? if pri_prominent : {!<tr><td><div class="box" style='background-color:#3CB371'> </div>!} PRI: {!</td><td>!} [+ pri_r +]% {!</td><td>!} [+ str_change_pri +]% {!</td></tr>!} ?]
+[? if pri_prominent : {!<tr><td><div class="box" style='background-color:#3CB371'> </div>!} PRI: {!</td><td>!} [+ pri_r +]% {!</td><td>!} [+ str_change_pri +]% {!</td><td>!} [+ pri_seating +] {!</td></tr>!} ?]
 
-[? if not ds_in_bn : {!<tr><td><div class="box" style='background-color:#1E99C5'> </div>!} DS: {!</td><td>!} [+ ds_r +]% {!</td><td>!} [+ str_change_ds +]% {!</td></tr>!} ?]
+[? if not ds_in_bn : {!<tr><td><div class="box" style='background-color:#1E99C5'> </div>!} DS: {!</td><td>!} [+ ds_r +]% {!</td><td>!} [+ str_change_ds +]% {!</td><td>!} [+ ds_seating +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#87CEFA'> </div>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td><td>!} [+ str_change_ppi +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#87CEFA'> </div>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td><td>!} [+ str_change_ppi +]% {!</td><td>!} [+ ppi_seating +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#FFD700'> </div>!} [+ ldr_name +]: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#FFD700'> </div>!} [+ ldr_name +]: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td><td>!} [+ ldr_seating +] {!</td></tr>!}
 
-[? if bn_formed : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} BN: {!</td><td>!} [+ bn_r +]% {!</td><td>!} [+ str_change_bn +]% {!</td></tr>!} ?]
+[? if bn_formed : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} BN: {!</td><td>!} [+ bn_r +]% {!</td><td>!} [+ str_change_bn +]% {!</td><td>!} [+ bn_seating +] {!</td></tr>!} ?]
 
-[? if not ul_in_bn : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} [+ ul_name +]: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td></tr>!} ?]
+[? if not ul_in_bn : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} [+ ul_name +]: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td><td>!} [+ ul_seating +] {!</td></tr>!} ?]
 
-[? if not pnf_in_bn : {!<tr><td><div class="box" style='background-color:#000000'> </div>!} [+ pnf_name +]: {!</td><td>!} [+ pnf_r +]% {!</td><td>!} [+ str_change_pnf +]% {!</td></tr>!} ?]
+[? if not pnf_in_bn : {!<tr><td><div class="box" style='background-color:#000000'> </div>!} [+ pnf_name +]: {!</td><td>!} [+ pnf_r +]% {!</td><td>!} [+ str_change_pnf +]% {!</td><td>!} [+ pnf_seating +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div>!} Others: {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div>!} Others: {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +]% {!</td><td>!} [+ other_seating +] {!</td></tr>!}
 {!</table>!}
 
 **Potential Coalitions:**
