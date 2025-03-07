@@ -127,7 +127,7 @@ Q.psri_r = 3.9;
 Q.other_r = 6.3;
 !}
 
-@acerbo
+@1919
 on-arrival: {!
 
 Q.workers = 27; // industry and trade
