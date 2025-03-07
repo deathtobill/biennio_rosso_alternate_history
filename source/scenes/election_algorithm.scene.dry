@@ -52,6 +52,35 @@ for (var party of Q.parties) {
     //Q[party+'_votes'] = Q[party+'_votes_dec'];
     // display
 }
+
+
+var total_seats = 0;
+var total_available_seats = 100; 
+
+for (var party of Q.parties) {
+    Q[party+'seating'] = 0;
+}
+
+while (total_seats < total_available_seats) {
+    var highest_value = 0;
+    var winning_party = null;
+
+    
+    for (var party of Q.parties) {
+        var quotient = Q[party+'_votes'] / (Q[party+'seating'] + 1);
+        if (quotient > highest_value) {
+            highest_value = quotient;
+            winning_party = party;
+        }
+    }
+
+    
+    if (winning_party !== null) {
+        Q[winning_party+'_seating'] += 1;
+        total_seats += 1;
+    }
+}
+
 !}
 go-to: jumpScene
 
