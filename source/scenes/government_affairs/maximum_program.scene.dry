@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs, party_affairs
 on-arrival: economic_policy_timer += 6; week_actions += 1;
-view-if: economic_policy_timer <= 0 and economic_plan = 1 and nationalisation_adopted = 1 and ((max_seize < 3 && max_councils < 3 and max_land_seize < 3 and psi_in_government) or (max_seize_factories < 3 and max_seize_councils < 3 and max_land_seize > 3 and not psi_in_government))
+view-if: economic_policy_timer <= 0 and economic_plan = 1 and nationalisation_adopted = 1 and ((max_seize < 3 and max_councils < 3 and max_land_seize < 3 and psi_in_government) or (max_seize_factories < 3 and max_seize_councils < 3 and max_land_seize > 3 and not psi_in_government))
 card-image: img/portraits/GiacintoMenottiSerrati.png
 #subtitle: Policies to address the economic crisis.
 
