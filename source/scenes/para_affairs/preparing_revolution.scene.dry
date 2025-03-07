@@ -2,19 +2,20 @@ title: Preparing our Revolution
 new-page: true
 is-card: true
 on-arrival: preparing_revolution_timer = 3; week_actions += 1
-view-if: preparation_done != 1 and preparing_revolution_timer <= 0 and participating = 0
+view-if: (preparation_done != 1 or (year > 1922 or (year = 1922 and month > 11))) and preparing_revolution_timer <= 0 and participating = 0
 card-image: img/PreparingRevolution.jpg
 frequency: 300
 tags: para_affairs
 
 = Preparing the Revolution
 
-Though our end goal is to achieve a soviet state like the Bolshevik's in Russia, actually going through with this plan will require extensive planning, from securing allies to weaponry.
+Though our end goal is to achieve a soviet state like the Bolsheviks in Russia, actually going through with this plan will require extensive planning, from securing allies to weaponry.
 
 - @rev_weapons: Infiltrate and secure weaponry for the Red Guards.
 - @rev_loyalty: Infiltrate and secure loyalties of government forces.
 - @rev_sabotage: Infiltrate and sabotage the reactionaries.
 - @rev_finish: Finish up the last of the plans.
+- @rev_begin: Mobilise the Red Guards and the workers!
 - @rev_none: Do nothing for now.
 - @easy_discard
 - @cancel_advisor_action
@@ -53,3 +54,10 @@ on-arrival: preparation_done = 1; interior_police_loyalty += 0.2; army_loyalty +
 Our preparations seem to have borne fruit, as it seems will be have an advantage if we ever have to utilise our preparations in the near future.
 
 @rev_none
+
+@rev_begin
+subtitle: We can begin the revolution! - This will lead us into a civil war.
+view-if: year > 1922 or (year = 1922 and month > 11)
+choose-if: revolutionary_fervor > 69
+unavailable-subtitle: The bulk of the party does not support this.
+go-to: civil_war

@@ -1,14 +1,14 @@
 title: Election Simulation
-on-arrival: acerbo_law_passed = 1;
 on-departure: acerbo_law_passed = 0;
 set-jump: post_election
 
 
-- @1932: Guaranteed one of the parties go over 25%
+- @acerbo: Acerbo Law
+- @1919: 1919
 
-
-@1932
+@acerbo
 on-arrival: {!
+Q.acerbo_law_passed = 1;
 
 Q.workers = 27; // industry and trade
 Q.middle_class = 17; // small business owners
@@ -17,10 +17,6 @@ Q.rural = 37; // farmers & the like, many in the south
 Q.veterans = 6;
 Q.catholic = 9;
 Q.women = 0;
-
-Q.inflation = 19.2;
-Q.economic_growth = -3.7;
-Q.unemployment = 13.5;
 
 Q.classes = ['workers', 'middle_class', 'industrialists', 'rural', 'veterans', 'catholic', 'women'];
 Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'pnf', 'other', 'pcdi', 'psu', 'pri'];
@@ -35,64 +31,184 @@ Q.sympathiser_expelled = 0;
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalised.
 Q.workers_pcdi = 0;
-Q.workers_psi = 76;
+Q.workers_psi = 69;
 Q.workers_psu = 0;
 Q.workers_pri = 0;
 Q.workers_ppi = 3;
-Q.workers_ldr = 2;
-Q.workers_ds = 3;
+Q.workers_ldr = 9;
+Q.workers_ds = 6;
 Q.workers_ul = 4;
 Q.workers_pnf = 7;
-Q.workers_psri = 13;
+Q.workers_psri = 10;
 Q.workers_other = 5;
 
 Q.middle_class_pcdi = 0;
-Q.middle_class_psi = 27;
+Q.middle_class_psi = 25;
 Q.middle_class_psu = 0;
 Q.middle_class_pri = 0;
-Q.middle_class_ppi = 33;
+Q.middle_class_ppi = 20;
 Q.middle_class_ldr = 9;
-Q.middle_class_ds = 3;
+Q.middle_class_ds = 10;
 Q.middle_class_ul = 13;
 Q.middle_class_pnf = 2;
-Q.middle_class_psri = 2;
-Q.middle_class_other = 10;
+Q.middle_class_psri = 7;
+Q.middle_class_other = 13;
 
 Q.industrialists_pcdi = 0;
 Q.industrialists_psi = 1;
 Q.industrialists_psu = 0;
 Q.industrialists_pri = 0;
 Q.industrialists_ppi = 12;
-Q.industrialists_ldr = 54;
-Q.industrialists_ds = 3;
+Q.industrialists_ldr = 51;
+Q.industrialists_ds = 6;
 Q.industrialists_ul = 28;
 Q.industrialists_pnf = 1;
 Q.industrialists_psri = 0;
 Q.industrialists_other = 1;
 
 Q.rural_pcdi = 0;
-Q.rural_psi = 27;
+Q.rural_psi = 25;
 Q.rural_psu = 0;
 Q.rural_pri = 0;
-Q.rural_ppi = 44;
-Q.rural_ldr = 2;
+Q.rural_ppi = 40;
+Q.rural_ldr = 5;
 Q.rural_ds = 13;
 Q.rural_ul = 3;
 Q.rural_pnf = 4;
-Q.rural_psri = 2;
+Q.rural_psri = 4;
 Q.rural_other = 2;
 
 Q.veterans_pcdi = 0;
-Q.veterans_psi = 20;
+Q.veterans_psi = 14;
 Q.veterans_psu = 0;
-Q.veterans_ppi = 3;
-Q.veterans_ldr = 7;
+Q.veterans_ppi = 17;
+Q.veterans_ldr = 15;
 Q.veterans_pri = 0;
-Q.veterans_ds = 1;
-Q.veterans_ul = 9;
+Q.veterans_ds = 12;
+Q.veterans_ul = 10;
 Q.veterans_pnf = 7;
-Q.veterans_psri = 4;
-Q.veterans_other = 12;
+Q.veterans_psri = 7;
+Q.veterans_other = 18;
+
+Q.catholic_pcdi = 0;
+Q.catholic_psi = 6;
+Q.catholic_psu = 0;
+Q.catholic_pri = 0;
+Q.catholic_ppi = 87;
+Q.catholic_ldr = 2;
+Q.catholic_ds = 3;
+Q.catholic_ul = 2;
+Q.catholic_pnf = 2;
+Q.catholic_psri = 1;
+Q.catholic_other = 2;
+
+Q.women_pcdi = 0;
+Q.women_psi = 14;
+Q.women_psu = 0;
+Q.women_pri = 0;
+Q.women_ppi = 34;
+Q.women_ldr = 18;
+Q.women_ds = 10;
+Q.women_ul = 17;
+Q.women_pnf = 6;
+Q.women_psri = 8;
+Q.women_other = 14;
+
+Q.pcdi_r = 0;
+Q.psi_r = 17.6;
+Q.psu_r = 0;
+Q.ppi_r = 6.0;
+Q.pri_r = 0;
+Q.ldr_r = 10.4;
+Q.ds_r = 8.2;
+Q.ul_r = 47.6;
+Q.pnf_r = 0;
+Q.psri_r = 3.9;
+Q.other_r = 6.3;
+!}
+
+@acerbo
+on-arrival: {!
+
+Q.workers = 27; // industry and trade
+Q.middle_class = 17; // small business owners
+Q.industrialists = 6; // industrialists & landowners
+Q.rural = 37; // farmers & the like, many in the south
+Q.veterans = 6;
+Q.catholic = 9;
+Q.women = 0;
+
+Q.classes = ['workers', 'middle_class', 'industrialists', 'rural', 'veterans', 'catholic', 'women'];
+Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'pnf', 'other', 'pcdi', 'psu', 'pri'];
+
+// Communist split from the party
+Q.pcdi_formed = 0;
+Q.psu_formed = 0
+Q.psri_reconciled = 0;
+Q.arditi_formed = 0;
+Q.sympathiser_expelled = 0;
+
+// Support for party by social group
+// they don't have to sum to 100 since the electoral calculations will be normalised.
+Q.workers_pcdi = 0;
+Q.workers_psi = 69;
+Q.workers_psu = 0;
+Q.workers_pri = 0;
+Q.workers_ppi = 3;
+Q.workers_ldr = 9;
+Q.workers_ds = 6;
+Q.workers_ul = 4;
+Q.workers_pnf = 7;
+Q.workers_psri = 10;
+Q.workers_other = 5;
+
+Q.middle_class_pcdi = 0;
+Q.middle_class_psi = 25;
+Q.middle_class_psu = 0;
+Q.middle_class_pri = 0;
+Q.middle_class_ppi = 20;
+Q.middle_class_ldr = 9;
+Q.middle_class_ds = 10;
+Q.middle_class_ul = 13;
+Q.middle_class_pnf = 2;
+Q.middle_class_psri = 7;
+Q.middle_class_other = 13;
+
+Q.industrialists_pcdi = 0;
+Q.industrialists_psi = 1;
+Q.industrialists_psu = 0;
+Q.industrialists_pri = 0;
+Q.industrialists_ppi = 12;
+Q.industrialists_ldr = 51;
+Q.industrialists_ds = 6;
+Q.industrialists_ul = 28;
+Q.industrialists_pnf = 1;
+Q.industrialists_psri = 0;
+Q.industrialists_other = 1;
+
+Q.rural_pcdi = 0;
+Q.rural_psi = 25;
+Q.rural_psu = 0;
+Q.rural_pri = 0;
+Q.rural_ppi = 40;
+Q.rural_ldr = 5;
+Q.rural_ds = 13;
+Q.rural_ul = 3;
+Q.rural_pnf = 4;
+Q.rural_psri = 4;
+Q.rural_other = 2;
+
+Q.veterans_pcdi = 0;
+Q.veterans_psi = 14;
+Q.veterans_psu = 0;
+Q.veterans_ppi = 17;
+Q.veterans_ldr = 15;
+Q.veterans_pri = 0;
+Q.veterans_ds = 12;
+Q.veterans_ul = 10;
+Q.veterans_pnf = 7;
+Q.veterans_psri = 7;
+Q.veterans_other = 18;
 
 Q.catholic_pcdi = 0;
 Q.catholic_psi = 6;
@@ -148,30 +264,32 @@ Q.pnf_r = Q.pnf_votes;
 Q.psri_r = Q.psri_votes;
 Q.other_r = Q.other_votes;
 
-var remaining_seats = 0;
-var party_majority = "";
-var party_majority_num = 0;
-
-for (let party of Q.parties) {
-    if (Q[party + '_r'] >= 25 && Q[party + '_r'] > party_majority_num) {
-        party_majority = party;
-        party_majority_num = Q[party + '_r'];
-    }
-}
-
-if (party_majority_num >= 25) {
-    let majority_seats = (100 / 3) * 2;
-    let remaining_seats = 100 - majority_seats;
-    let remaining_votes = 100 - party_majority_num;
+if (Q.acerbo_law_passed == 1) {
+    var remaining_seats = 0;
+    var party_majority = "";
+    var party_majority_num = 0;
 
     for (let party of Q.parties) {
-        if (party !== party_majority) {
-            // Scale remaining parties' seats proportionally
-            Q[party + '_r'] = (Q[party + '_r'] / remaining_votes) * remaining_seats;
-            Q[party + '_r'] = Number(Q[party + '_r'].toFixed(1));
+        if (Q[party + '_r'] >= 25 && Q[party + '_r'] > party_majority_num) {
+            party_majority = party;
+            party_majority_num = Q[party + '_r'];
         }
     }
-    Q[party_majority + '_r'] = majority_seats;
+
+    if (party_majority_num >= 25) {
+        let majority_seats = (100 / 3) * 2;
+        let remaining_seats = 100 - majority_seats;
+        let remaining_votes = 100 - party_majority_num;
+
+        for (let party of Q.parties) {
+            if (party !== party_majority) {
+                // Scale remaining parties' seats proportionally
+                Q[party + '_r'] = (Q[party + '_r'] / remaining_votes) * remaining_seats;
+                Q[party + '_r'] = Number(Q[party + '_r'].toFixed(1));
+            }
+        }
+        Q[party_majority + '_r'] = majority_seats;
+    }
 }
 
 !}

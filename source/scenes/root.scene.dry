@@ -11,7 +11,7 @@ go-to: start_menu_2
 @start_menu_2
 
 - @start: Start game
-- @election_simulation: Election Simulation (Acerbo Law)
+- @election_simulation: Election Simulation
 - @mod_info: Mod Info & Settings
 - @credits: Credits
 - @achievements: Achievements
@@ -216,7 +216,7 @@ Q.workers_other = 5;
 
 Q.middle_class_pcdi = 0;
 Q.middle_class_psi = 25;
-Q.middle_class_psu = 0;
+Q.middle_class_psu = 0; 
 Q.middle_class_pri = 0;
 Q.middle_class_ppi = 33;
 Q.middle_class_ldr = 9;
