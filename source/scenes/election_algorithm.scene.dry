@@ -55,7 +55,14 @@ for (var party of Q.parties) {
 
 
 var total_seats = 0;
-var total_available_seats = 512; 
+var total_available_seats = 0;
+
+if (Q.year <= 1920) {
+    total_available_seats = 508;
+}
+if (Q.year => 1921) {
+    total_available_seats = 535;
+}
 
 for (var party of Q.parties) {
     Q[party+'_seating'] = 0;
