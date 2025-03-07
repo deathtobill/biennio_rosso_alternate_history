@@ -12,6 +12,7 @@ Gramsci is a member of the Communist faction of the PSI. Widely unpopular amongs
 - @media_gramsci
 - @party_organisations_gramsci
 - @question_of_ideology
+- @rev_begin_gramsci
 - @root: Return to main
 
 @media_gramsci
@@ -37,3 +38,10 @@ choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 9; last_advisor_action = 1; ideology_timer -= 9;
 go-to: ideology
+
+@rev_begin_grasmci
+subtitle: We can begin the revolution! - This will lead us into a civil war.
+view-if: year > 1922 or (year = 1922 and month > 11)
+choose-if: revolutionary_fervor > 69 and advisor_action_timer == 0 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if revolutionary_fervor < 70 : The bulk of the party does not support this. ?][? if ]
+go-to: civil_war

@@ -12,6 +12,7 @@ Bordiga is one of the prominent figures of the Communist faction of the PSI.
 - @armed_uprising
 - @bordiga_revolution
 - @choosing_our_targets
+- @rev_begin_bordiga
 - @root: Return to main
 
 @armed_uprising
@@ -40,3 +41,9 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 9; last_advisor_action = 1; 
 go-to: enemies
 
+@rev_begin_bordiga
+subtitle: We can begin the revolution! - This will lead us into a civil war.
+view-if: year > 1922 or (year = 1922 and month > 11)
+choose-if: revolutionary_fervor > 69 and advisor_action_timer == 0 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if revolutionary_fervor < 70 : The bulk of the party does not support this. ?][? if ]
+go-to: civil_war
