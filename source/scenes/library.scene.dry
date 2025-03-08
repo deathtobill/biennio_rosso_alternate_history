@@ -478,14 +478,13 @@ data.push({
 {!<svg id="chamber" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td>Parties/Groups</td><td>% Seats</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div></td><td>!} **PSI:** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!}
 
 [? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div></td> <td>!} PCd'I: {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
 
 [? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div></td> <td>!} PSU: {!</td><td>!} [+ psu_seating_disp +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#FFC0CB'> </div></td> <td>!} PSRI: {!</td><td>!} [+ psri_seating_disp +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#FFC0CB'> </div></td><td>!} PSRI: {!</td><td>!} [+ psri_seating_disp +]% {!</td></tr>!}
 
 [? if pri_prominent : {!<tr><td><div class="box" style='background-color:#3CB371'> </div></td> <td>!} PRI: {!</td><td>!} [+ pri_seating_disp +]% {!</td></tr>!} ?]
 
