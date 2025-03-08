@@ -110,6 +110,15 @@ if (Q.pnf_r >= Q.psi_r && Q.pnf_r >= Q.psri_r && Q.pnf_r >= Q.pcdi_r) {
 
 // seating percentage
 
+var total_available_seats = 0;
+
+if (Q.year <= 1920) {
+    total_available_seats = 508;
+}
+if (Q.year >= 1921) {
+    total_available_seats = 535;
+}
+
 for (var party of Q.parties) {
     Q[party + '_seating_disp'] = (Q[party + '_seating']/total_available_seats)*100
     Q[party + '_seating_disp'].toFixed(1);
@@ -366,7 +375,7 @@ go-to: coalition_menu
 {!<svg id="chamber" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td>Parties/Groups</td><td>Vote Share</td><td>% Change</td><td>Seats Given</td></td>% Seats</td></tr>!}
+{!<tr><td>Parties/Groups</td><td>Vote Share</td><td>% Change</td><td>Seats Given</td><td>% Seats</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} PSI: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]% {!</td><td>!} [+ psi_seating +]** {!</td><td>!} [+ psi_seating_disp +] {!</td></tr>!}
 
 [? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div>!} PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td><td>!} [+ pcdi_seating +] {!</td><td>!} [+ pcdi_seating_disp +] {!</td></tr>!} ?]
