@@ -17,7 +17,7 @@ What do we do?
 # place in party deck as well?
 
 - @veterans_organisations_party: Increase the funding of our own welfare organisations.
-- @no_aid_party: Our resources limits our ability to improve welfare.
+- @root: Our resources limits our ability to improve welfare.
 - @easy_discard
 
 @veterans_organisations_party
@@ -27,5 +27,3 @@ unavailable-subtitle: Not enough resources.
 on-arrival: party_welfare += 1; resources -= party_welfare_cost; veterans_psi += 2*(1-dissent)*party_welfare; veterans_pnf -= 2*(1-dissent)*party_welfare; economic_growth += 0.3*party_welfare; inflation += 0.1*party_welfare
 
 We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds are reallocated to aid veterans immediately.
-
-@no_aid_party

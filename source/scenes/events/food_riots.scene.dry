@@ -29,7 +29,7 @@ Our actions are appreciated by the protestors, but less so by the governing coal
 
 @condemn_protest
 subtitle: Our voting base won't be happy about this.
-on-arrival: workers_psi -= 1*(1-dissent); rural_psi -= 2*(1-dissent); middle_class_psi += 2*(1-dissent); communist_dissent += 10; maximalist_dissent += 10; syndicalist_dissent += 10; reformist_dissent += 5; ldr_relation += 10; ul_relation += 5; ppi_relation += 10; radicalisation -= 0.5;
+on-arrival: workers_psi -= 1*(1-dissent); rural_psi -= 2*(1-dissent); middle_class_psi += 2*(1-dissent); communist_dissent += 10; maximalist_dissent += 10; labour_dissent += 10; reformist_dissent += 5; ldr_relation += 10; ul_relation += 5; ppi_relation += 10; radicalisation -= 0.5;
 
 Our actions are criticised by every faction. Though the ruling government certainly appreciates your condemnation, it comes at a loss of our voters.
 

@@ -19,6 +19,7 @@ Q.veterans_pnf += 4;
 Q.industrialists_ul -= 3;
 
 Q.giolitti_betrayed = 1;
+Q.government_collapse += 1;
 !}
 tags: event
 

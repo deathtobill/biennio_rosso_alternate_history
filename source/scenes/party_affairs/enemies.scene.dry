@@ -15,8 +15,8 @@ In our media and campaign materials, who should we consider as our main opponent
 
 - @anti_dem: The anti-democratic parties of the far right and left - the PCd'I, and the PNF.
 - @pnf: The PNF alone.
-- @religious: The religious parties - the PPI.
-- @bourgeois: The bourgeois parties - the [+ ldr_name +] and [+ ul_name +].
+- @religious: The Religious parties - the PPI.
+- @bourgeois: The Bourgeois parties - the [+ ldr_name +] and [+ ul_name +].
 - @easy_discard
 - @cancel_advisor_action
 
@@ -29,7 +29,7 @@ Attacking the far right and left is popular among all but the left wing of our p
 @pnf
 on-arrival: enemies = "PNF"; fasci_urgency += 1; workers_pnf -= 4; nationalist_sentiment -= 3*(1-dissent);
 
-[? if fasci_urgency == 0 or pnf_r < 10 : The PNF is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if fasci_urgency > 0 and pnf_r >= 10 : The Fascists are the most urgent problem for us to deal with. ?]
+[? if fasci_urgency == 0 or pnf_seating_disp < 10 : The PNF is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if fasci_urgency > 0 and pnf_seating_disp >= 10 : The Fascists are the most urgent problem for us to deal with. ?]
 
 @religious
 on-arrival: enemies = "religious parties"; communist_strength += 5; reformist_dissent += 8; communist_dissent -= 5; ppi_relation -= 15; workers_ppi -= 4;

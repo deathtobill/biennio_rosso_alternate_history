@@ -25,14 +25,14 @@ subtitle: +1 Budget
 view-if: centre_left_coalition
 choose-if: welfare > 0
 unavailable-subtitle: There is no welfare left to cut.
-on-arrival: workers_psi -= 5; veterans_psi -= 6; veterans_pnf += 6; workers_pnf += 3; syndicalist_dissent += 10; welfare -= 1; budget += 1; coalition_dissent = 0
+on-arrival: workers_psi -= 5; veterans_psi -= 6; veterans_pnf += 6; workers_pnf += 3; labour_dissent += 10; welfare -= 1; budget += 1; coalition_dissent = 0
 
 This is a highly unpopular move, but smooth things over with our coalition partners.
 
 @promise_funds
 subtitle: -1 Budget 
 view-if: socialist_catholic_coalition
-on-arrival: budget -= 1; coalition_dissent = 0; syndicalist_dissent += 5; communist_dissent += 5; maximalist_dissent += 5; workers_ppi += 5; workers_psi -= 5; catholic_ppi += 4; veterans_ppi += 4; veterans_psi -= 4;
+on-arrival: budget -= 1; coalition_dissent = 0; labour_dissent += 5; communist_dissent += 5; maximalist_dissent += 5; workers_ppi += 5; workers_psi -= 5; catholic_ppi += 4; veterans_ppi += 4; veterans_psi -= 4;
 
 This is a controversial move within the party, with many criticising our anti-secular move as a betrayal of party ideals.
 

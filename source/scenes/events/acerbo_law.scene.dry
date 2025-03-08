@@ -1,7 +1,7 @@
 title: Introduction of the Acerbo Law
 view-if: year = 1923 and month = 7 and week = 3 and prime_minister_party = "PNF"
 max-visits: 1
-on-arrival: anti_acerbo_coalition = psi_r + psri_r + psri_r 
+on-arrival: anti_acerbo_coalition = psi_seating_disp + psri_seating_disp + psri_seating_disp 
 new-page: true
 tags: event
 
@@ -23,7 +23,7 @@ What should we do?
 
 @ppi_convince 
 subtitle: [? if not ppi_leader = "Sturzo": The PPI is disorganised following Sturzo's recent dismissal. ?]
-on-arrival: anti_acerbo_coalition += ppi_r if ppi_leader = "Sturzo"
+on-arrival: anti_acerbo_coalition += ppi_seating_disp if ppi_leader = "Sturzo"
 go-to: acerbo_menu
 
 [? if ppi_leader = "Sturzo" : Our contacts to Sturzo are mildly successful, and he informs us his party will, at the very least, abstain. ?]

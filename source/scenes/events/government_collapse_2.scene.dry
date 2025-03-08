@@ -11,6 +11,7 @@ Q.socialist_sentiment += 1;
 Q.workers_psi += 1;
 Q.workers_psri -= 1;
 Q.workers_pnf += 1;
+Q.government_collapse += 1;
 !}
 tags: event
 

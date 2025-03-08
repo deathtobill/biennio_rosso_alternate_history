@@ -1,0 +1,16 @@
+title: Syndicalist
+new-page: true 
+is-card: true
+tags: party_affairs
+view-if: (syndicalist_strength >= labour_strength*1.5) and unions_break = 0
+card-image: img/ItalianSyndicalistUnion.jpg
+on-arrival: shuffle_leadership_timer = 0; syndicalist_active = 1;
+max-visits: 1
+
+= Syndicalism rises into prominence
+
+The Unione Sindacale Italiana, also known as the Italian Syndicalist Union, splintered from the majority labour faction of the General Confederation of Labour in 1912, remaining more aligned with the left-wing of the party, retaining low influence amongst the party. However, it seems that recent actions have cause the USI to gain notable influence within the party.
+
+- @root: Interesting.
+- @easy_discard
+

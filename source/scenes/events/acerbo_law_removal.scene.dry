@@ -22,7 +22,7 @@ The Acerbo Law is easily repealed, reinstating the previous system of the D'Hond
 - @root: Good riddance.
 
 @keep_acerbo
-view-if: psi_r >= 50
+view-if: psi_seating_disp >= 50
 subtitle: They voted for it anyways, right?
 on-arrival: psri_relation -= 10; ppi_relation -= 10; ldr_relation -= 10; ul_relation -= 10; pri_relation -= 10; reformist_dissent += 10;
 

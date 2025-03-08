@@ -105,7 +105,7 @@ Salvemini has been removed as an advisor. The Reformist faction disapproves.
 title: Remove Treves
 view-if: treves_advisor = 1
 tags: remove_advisor
-on-arrival: treves_advisor = 0; syndicalist_dissent += 5; n_advisors -= 1
+on-arrival: treves_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
 Treves has been removed as an advisor. The Labour faction disapproves.
@@ -114,7 +114,7 @@ Treves has been removed as an advisor. The Labour faction disapproves.
 title: Remove Rigola
 view-if: rigola_advisor = 1
 tags: remove_advisor
-on-arrival: rigola_advisor = 0; syndicalist_dissent += 5; n_advisors -= 1
+on-arrival: rigola_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
 Rigola has been removed as an advisor. The Labour faction disapproves.
@@ -366,8 +366,8 @@ subtitle: Claudio Treves is a socialist journalist, affiliated with the Trade Un
 is-card: true
 card-image: img/portraits/ClaudioTreves.jpg
 tags: labour_advisor
-view-if: treves_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: treves_advisor = 1; n_advisors += 1; syndicalist_strength += 5
+view-if: treves_advisor = 0 and n_advisors < 3 and unions_break = 0
+on-arrival: treves_advisor = 1; n_advisors += 1; labour_strength += 5
 go-to: advisor_menu
 
 Claudio Treves is now an advisor.
@@ -378,8 +378,8 @@ subtitle: Rinaldo Rigola is the leader of the Italian CGIL, General Confederatio
 is-card: true
 card-image: img/portraits/RinaldoRigola.png
 tags: labour_advisor
-view-if: rigola_advisor = 0 and n_advisors < 3
-on-arrival: rigola_advisor = 1; n_advisors += 1; syndicalist_strength += 5
+view-if: rigola_advisor = 0 and n_advisors < 3 and unions_break = 0
+on-arrival: rigola_advisor = 1; n_advisors += 1; labour_strength += 5
 go-to: advisor_menu
 
 Rinaldo Rigola is now an advisor.

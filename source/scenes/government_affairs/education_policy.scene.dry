@@ -28,11 +28,11 @@ on-arrival: secularised_education = 1; ppi_relation -= 8*(1-dissent); catholic_p
 choose-if: not socialist_catholic_coalition and not papal_education_offered
 unavailable-subtitle: [? if socialist_catholic_coalition : The PPI are threatening a pre-emptive Vote-of-No-Confidence if we go through with this. ?][? if papal_education_offered : This is violate the current agreement with have with the Holy See. ?]
 max-visits: 1
-go-to: catholic_vote_of_no_confidence.let_it_happen if ppi_r > 50
+go-to: catholic_vote_of_no_confidence.let_it_happen if ppi_seating_disp > 50
 
 Our decision to secularise education is met with immense backlash from Sturzo and the People's Party alongside the Catholic Church, who denounce us and vow never to work with us again.
 
-[? if ppi_r > 50 : The PPI call a vote of no-confidence against us, and are able to succeed. ?]
+[? if ppi_seating_disp > 50 : The PPI call a vote of no-confidence against us, and are able to succeed. ?]
 
 @education_funding 
 subtitle: -1 Budget - This has broad popular support across the workers and middle class. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]

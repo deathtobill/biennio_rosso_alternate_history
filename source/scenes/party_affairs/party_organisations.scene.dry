@@ -38,7 +38,7 @@ We have increased funding to *Unione Nazionale fra Militari Cattolici Mutilati, 
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; maximalist_dissent -= 6; communist_dissent -= 6; syndicalist_dissent -= 6; reformist_dissent -= 6; socialist_sentiment += 1*(1-dissent);
+on-arrival: resources -= 1; maximalist_dissent -= 6; communist_dissent -= 6; labour_dissent -= 6; reformist_dissent -= 6; socialist_sentiment += 1*(1-dissent);
 
 It is not enough for the PSI to solely be a political party. Our schools, libraries, cultural events and initiatives are crucial to our members' lives. Funding these organisations makes our members more committed to the party, even when our policies might not be to their liking.
 

@@ -1,7 +1,7 @@
 title: The Liberals calls a vote of no confidence against the current government!
 subtitle: We have angered our coalition partners too much...
 new-page: true
-view-if: psi_in_government = 1 and centre_left_coalition and coalition_dissent >= 4 and psi_r < 50
+view-if: psi_in_government = 1 and centre_left_coalition and coalition_dissent >= 4 and psi_seating_disp < 50
 tags: event
 go-to: vonc_menu
 
@@ -29,7 +29,7 @@ How do we assuage our partners?
 @austerity
 choose-if: welfare > 0
 unavailable-subtitle: There is no welfare left to cut.
-on-arrival: coalition_dissent = 0; workers_psi -= 10; veterans_psi -= 10; workers_ppi += 7; workers_pnf += 3; veterans_ppi += 5; veterans_pnf += 5; communist_dissent += 15; maximalist_dissent += 10; syndicalist_dissent += 15; reformist_dissent += 5; welfare -= 2; budget += 1; unemployment += 3; psri_relation -= 7; inflation -= 0.6; 
+on-arrival: coalition_dissent = 0; workers_psi -= 10; veterans_psi -= 10; workers_ppi += 7; workers_pnf += 3; veterans_ppi += 5; veterans_pnf += 5; communist_dissent += 15; maximalist_dissent += 10; labour_dissent += 15; reformist_dissent += 5; welfare -= 2; budget += 1; unemployment += 3; psri_relation -= 7; inflation -= 0.6; 
 
 Fine. We enacted a massive austerity program to cut welfare, in order to maintain the stability of our coalition. The vote has been called off.
 
@@ -101,6 +101,8 @@ Q.ds_in_government = 0;
 Q.ul_in_government = 0;
 Q.psri_in_government = 0;
 Q.pnf_in_government = 0; 
+
+Q.government_collapse += 1;
 !}
 on-departure: coalition_dissent = 0; rural_psi -= 3; middle_class_psi -= 2; workers_psi -= 3; middle_class_pnf += 2; psi_in_government = 0; centre_left_coalition = 0; ldr_relation -= 8; ds_relation -= 8; liberal_coalition_failed = 1; socialist_sentiment -= 3; republican_sentiment -= 2; leverage = psi_r
 go-to: election_1919.coalition_menu if next_election_time >= 4

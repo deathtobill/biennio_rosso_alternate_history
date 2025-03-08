@@ -1,5 +1,5 @@
 title: King dismisses government!
-view-if: king_relation < 20 and king_dismissed_cooldown <= 0 and psi_r < 50 and psi_in_government
+view-if: king_relation < ((10*radicalisation)/government_collapse) and king_dismissed_cooldown <= 0 and psi_seating_disp < 50 and psi_in_government
 on-arrival: {!
 // resetting coalition stuff
 Q.ldr_promise_failed = 0;
@@ -52,6 +52,8 @@ Q.ds_in_government = 0;
 Q.ul_in_government = 0;
 Q.psri_in_government = 0;
 Q.pnf_in_government = 0; 
+
+Q.government_collapse += 1;
 !}
 on-departure: king_dismissed_cooldown = 24; psi_in_government = 0; centre_left_coalition = 0; socialist_catholic_coalition = 0; left_wing_coalition = 0; republican_sentiment -= 3; leverage = psi_r
 go-to: election_1919.coalition_menu if next_election_time >= 4

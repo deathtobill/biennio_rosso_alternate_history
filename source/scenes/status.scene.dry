@@ -43,25 +43,28 @@ Our Approach: [+ party_approach +]
 
 King: [+ king +]
 
+King Approval: [+ king_relation : relationships +]
+
 Prime Minister: [+ prime_minister +] ([+ prime_minister_party +])
+
+Senate: [? if veto_removed == 0: Empowered ?][? if veto_removed == 1: Weakened ?]
 
 Chamber of Deputies composition:
 
-
-{!<span class="tooltip-text" title="Italian Socialist Party">PSI</span>!}: [+ psi_r +]%
-[? if pcdi_formed = 1: {!<span class="tooltip-text" title="Communist Party of Italy">PCd'I</span>!}: [+ pcdi_r +]% ?]
-[? if psu_formed = 1: {!<span class="tooltip-text" title="Unitary Socialist Party">PSU</span>!}: [+ psu_r +]% ?]
-{!<span class="tooltip-text" title="Italian Reformist Socialist Party">PSRI</span>!}: [+ psri_r +]%
-[? if pri_prominent = 1: {!<span class="tooltip-text" title="Italian Republican Party">PRI</span>!}: [+ pri_r +]% ?]
-{!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_r +]%
-{!<span class="tooltip-text" title="Italian People's Party">PPI</span>!}: [+ ppi_r +]%
-[? if not pldi_formed : {!<span class="tooltip-text" title="Liberals, Democrats & Radicals">LDR</span>!}: [+ ldr_r +]% ?]
-[? if pldi_formed : {!<span class="tooltip-text" title="Italian Democratic Liberal Party">PLDI</span>!}: [+ ldr_r +]% ?]
-[? if not pli_formed : {!<span class="tooltip-text" title="Liberal Union">UL</span>!}: [+ ul_r +]% ?]
-[? if pli_formed : {!<span class="tooltip-text" title="Italian Liberal Party">PLI</span>!}: [+ ul_r +]% ?]
-[? if not pnf_formed :{!<span class="tooltip-text" title="Italian Fasces of Combat">FdC</span>!}: [+ pnf_r +]% ?]
-[? if pnf_formed :{!<span class="tooltip-text" title="National Fascist Party">PNF</span>!}: [+ pnf_r +]% ?]
-Others: [+ other_r +]%
+{!<span class="tooltip-text" title="Italian Socialist Party">PSI</span>!}: [+ psi_seating_disp +]%
+[? if pcdi_formed = 1: {!<span class="tooltip-text" title="Communist Party of Italy">PCd'I</span>!}: [+ pcdi_seating_disp +]% ?]
+[? if psu_formed = 1: {!<span class="tooltip-text" title="Unitary Socialist Party">PSU</span>!}: [+ psu_seating_disp +]% ?]
+{!<span class="tooltip-text" title="Italian Reformist Socialist Party">PSRI</span>!}: [+ psri_seating_disp +]%
+[? if pri_prominent = 1: {!<span class="tooltip-text" title="Italian Republican Party">PRI</span>!}: [+ pri_seating_disp +]% ?]
+{!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_seating_disp +]%
+{!<span class="tooltip-text" title="Italian People's Party">PPI</span>!}: [+ ppi_seating_disp +]%
+[? if not pldi_formed : {!<span class="tooltip-text" title="Liberals, Democrats & Radicals">LDR</span>!}: [+ ldr_seating_disp +]% ?]
+[? if pldi_formed : {!<span class="tooltip-text" title="Italian Democratic Liberal Party">PLDI</span>!}: [+ ldr_seating_disp +]% ?]
+[? if not pli_formed : {!<span class="tooltip-text" title="Liberal Union">UL</span>!}: [+ ul_seating_disp +]% ?]
+[? if pli_formed : {!<span class="tooltip-text" title="Italian Liberal Party">PLI</span>!}: [+ ul_seating_disp +]% ?]
+[? if not pnf_formed :{!<span class="tooltip-text" title="Italian Fasces of Combat">FdC</span>!}: [+ pnf_seating_disp +]% ?]
+[? if pnf_formed :{!<span class="tooltip-text" title="National Fascist Party">PNF</span>!}: [+ pnf_seating_disp +]% ?]
+Others: [+ other_seating_disp +]%
 
 [? if psi_in_government = 1 : Budget: [+ budget +] ?]
 
@@ -148,7 +151,9 @@ Unemployment: [+ unemployment_2 +]%
 
 {!<span class="tooltip-text" title="The Maximalists is a faction of Centre Marxists, between reform and revolution.">Maximalists</span>!} strength: [+ maximalist_strength : strength +], dissent: [+ maximalist_dissent : dissent +]
 
-{!<span class="tooltip-text" title="Labour's goal is economic reform and benefits for organized workers.">Labour</span>!} strength: [+ syndicalist_strength : strength +], dissent: [+ syndicalist_dissent : dissent +]
+{!<span class="tooltip-text" title="Labour's goal is economic reform and benefits for organized workers.">Labour</span>!} strength: [+ labour_strength : strength +], dissent: [+ labour_dissent : dissent +]
+
+[? if syndicalist_active : {!<span class="tooltip-text" title="Syndicalist's are a splinter faction of Labour, advocating for radical strikes and workers' councils.">Syndicalists</span>!} strength: [+ syndicalist_strength : strength +], dissent: [+ syndicalist_dissent : dissent +] ?]
 
 {!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">Reformists</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
 
@@ -305,9 +310,3 @@ Infrastructure: [? if southern_infrastructure_funded < 1 : Poor ?][? if southern
 Education: [? if southern_education_funded < 1 : Poor ?][? if southern_education_funded > 0 and southern_education_funded < 2 : Lackluster ?][? if southern_education_funded > 1 : Recovering ?]
 
 Mafia: [? if mafia_strength < 1 : Neutralised ?][? if mafia_strength > 2: Strong ?][? if mafia_strength = 1 : Drained ?][? if mafia_strength = 2 : Weakened ?]
-
-= Reforms
-
-King Approval: [+ king_relation : relationships +]
-
-Senate: [? if veto_removed == 0: Empowered ?][? if veto_removed == 1: Weakened ?]

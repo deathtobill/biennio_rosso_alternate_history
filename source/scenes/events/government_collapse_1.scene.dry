@@ -13,6 +13,7 @@ Q.nationalist_sentiment += 1;
 
 Q.workers_psi += 2;
 Q.workers_pnf += 2;
+Q.government_collapse = 1;
 !}
 tags: event
 

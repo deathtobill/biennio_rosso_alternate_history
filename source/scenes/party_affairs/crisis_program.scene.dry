@@ -22,8 +22,8 @@ On the other hand, the Reformists, alongside our Trade Unions, are in favour of 
 @support_left
 subtitle: Support the call for mass nationalisations and the transformation of the economy.
 unavailable-subtitle: The Left and Maximalist faction is not strong enough.
-choose-if: historical_mode == 0 or (communist_strength + maximalist_strength >= syndicalist_strength + reformist_strength)
-on-arrival: communist_strength += 5; maximalist_strength += 5; reformist_dissent += 5; syndicalist_dissent += 5; nationalisation_support += 1
+choose-if: historical_mode == 0 or (communist_strength + maximalist_strength >= labour_strength + reformist_strength)
+on-arrival: communist_strength += 5; maximalist_strength += 5; reformist_dissent += 5; labour_dissent += 5; nationalisation_support += 1
 go-to: support_left_progress if nationalisation_support < 2; adopt_left if nationalisation_support >= 2
 
 @support_left_progress
@@ -33,7 +33,7 @@ We attempt to convince the party to support the Maximum Program. Leftists argue 
 We have not yet formally adopted the plan. More work needs to be done.
 
 @adopt_left
-on-arrival: communist_strength += 15; communist_dissent -= 10; reformist_dissent += 10; syndicalist_dissent += 6; nationalisation_adopted = 1; fasci_coup_progress += 1; economic_plan = 1;
+on-arrival: communist_strength += 15; communist_dissent -= 10; reformist_dissent += 10; labour_dissent += 6; nationalisation_adopted = 1; fasci_coup_progress += 1; economic_plan = 1;
 
 With our hard work, we have convinced the majority of the party to adopt the socialist economic plan! Bourgeois opposition is likely to be fierce. [? if psi_in_government == 0 : It might be difficult to enact the plan, given present conditions. ?]
 
@@ -41,8 +41,8 @@ With our hard work, we have convinced the majority of the party to adopt the soc
 subtitle: Support the call for extensive economic and labour reforms - This will require participation in government.
 view-if: not_participating = 0
 unavailable-subtitle: The Reformist and Labour faction is not strong enough.
-choose-if: historical_mode == 0 or (reformist_strength + syndicalist_strength >= maximalist_strength + communist_strength)
-on-arrival: moderate_plan_support += 1; reformist_strength += 7; syndicalist_strength += 3; maximalist_dissent += 5; left_dissent += 5; 
+choose-if: historical_mode == 0 or (reformist_strength + labour_strength >= maximalist_strength + communist_strength)
+on-arrival: moderate_plan_support += 1; reformist_strength += 7; labour_strength += 3; maximalist_dissent += 5; left_dissent += 5; 
 go-to: adopt_moderate if moderate_plan_support >= 2; support_moderate_progress if moderate_plan_support < 2
 
 @support_moderate_progress
@@ -57,6 +57,6 @@ on-arrival: reformist_strength += 10; reformist_dissent -= 10; left_dissent += 8
 With our hard work, we have convinced the majority of the party to adopt the economic and political reform plan! [? if psi_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Labour, Public Works, Agricultural or Finance ministries. ?]
 
 @defer
-on-arrival: reformist_dissent += 2; communist_dissent += 2; syndicalist_dissent += 2; maximalist_dissent += 2;
+on-arrival: reformist_dissent += 2; communist_dissent += 2; labour_dissent += 2; maximalist_dissent += 2;
 
 We hold off on making a decision on economic policy, awaiting more information. Both sides argue that waiting any longer will only result in worsening crisis.

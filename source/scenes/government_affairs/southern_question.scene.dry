@@ -1,7 +1,7 @@
 title: Southern Question
 new-page: true
 is-card: true
-view-if: psi_in_government = 1 and justice_minister_party = "PSI" and southern_question_timer <= 0 
+view-if: psi_in_government = 1 and justice_minister_party = "PSI" and southern_question_timer <= 0 and southern_resolved = 0
 on-arrival: week_actions += 1; southern_question_timer += 5; current_budget = 0; current_budget += budget;
 card-image: img/SouthernQuestion.jpg
 tags: govt_affairs
@@ -32,7 +32,7 @@ choose-if: not centre_left_coalition and king_relation >= 60
 view-if: southern_land_reformed == 0
 unavailable-subtitle: [? if centre_left_coalition : The Liberals are threatening a pre-emptive Vote-of-No-Confidence if this bill hits the Chamber floor. ?][? if king_relation < 60 : This King has informed us he will veto this bill upon arrival regardless. ?]
 on-arrival: southern_land_reformed = 1; budget -= 2; ldr_relation -= 30; rural_psi += 17*(1-dissent); industrialists_ldr -= 7*(1-dissent); industrialists_pnf += 12*(1-dissent); middle_class_pnf += 4*(1-dissent); unemployment -= 4.3; inflation += 2.8; economic_growth += 2.7; fasci_coup_progress += 1; capital_strike_progress += 1; southern_development += 1 if sonnino_southern_accepted; ldr_right += 3;
-go-to: liberal_vote_of_no_confidence.let_it_happen if ldr_r >= 50
+go-to: liberal_vote_of_no_confidence.let_it_happen if ldr_seating_disp >= 50
 
 The bill is barely able to pass the floor, and the Liberals are in an uproar. Already, our contacts within the [+ ldr_name +] have informed us of an exodus of their landowner backers from the party, instead seeking to align further with the far-right. Orlando and the [+ ldr_name +] vow never to work with us in future coalitions, as the Fascists use this opportunity to paint us as property-seizing radicals to the middle class.
 

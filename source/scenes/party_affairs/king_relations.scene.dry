@@ -2,8 +2,8 @@ title: King Relations
 new-page: true
 is-card: true
 tags: party_affairs
-view-if: king_relations_timer <= 0 and not_participating = 0
-on-arrival: week_actions += 1; king_relations_timer = 6;
+view-if: king_relation_timer <= 0 and not_participating = 0
+on-arrival: week_actions += 1; king_relation_timer = 6;
 card-image: img/portraits/VitorioEmanuel.jpg
 
 = Royal Relations
@@ -13,7 +13,7 @@ Our relationship with the King can be described as wary as best, due to our diam
 - @king_funds: Arrange some meetings with the King.
 - @king_ldr: Utilise our influence with the [+ ldr_name +] to sway the King.
 - @king_ul: Utilise our influence with the [+ ul_name +] to sway the King.
-- @king_return: Let's not do this for now.
+- @return: Let's not do this for now.
 - @easy_discard
 
 @king_funds

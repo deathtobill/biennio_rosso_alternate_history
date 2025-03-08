@@ -23,7 +23,7 @@ on-arrival: upper_tax_rates -= 1; budget -= 1; capital_strike_progress -= 1; une
 Cutting taxes improves our relationship with the capitalists.
 
 @welfare
-on-arrival: welfare -= 1; budget += 1; capital_strike_progress -= 2; middle_class_psi += 4*(1-dissent); industrialists_psi += 4*(1-dissent); workers_psi -= 5; veterans_psi -= 5; unemployment -= 1; communist_dissent += 5; syndicalist_dissent += 5; maximalist_dissent += 5; reformist_dissent += 5; inflation -= 1;
+on-arrival: welfare -= 1; budget += 1; capital_strike_progress -= 2; middle_class_psi += 4*(1-dissent); industrialists_psi += 4*(1-dissent); workers_psi -= 5; veterans_psi -= 5; unemployment -= 1; communist_dissent += 5; labour_dissent += 5; maximalist_dissent += 5; reformist_dissent += 5; inflation -= 1;
 
 Cutting welfare improves our relationship with the capitalists, but it hurts our working-class base.
 

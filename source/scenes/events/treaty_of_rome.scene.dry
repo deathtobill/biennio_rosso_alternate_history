@@ -1,0 +1,11 @@
+title: Treaty of Rome
+new-page: true 
+subtitle: Fiume's Free City status has been dissolved.
+tags: event
+view-if: fiume_free = 1 and year = 1924 and month = 1 and week = 3 and prime_minister_party == pnf_name
+on-arrival: veterans_pnf += 7
+max-visits: 1
+
+= Prime Minister [+ prime_minister +] signs the Treaty of Rome
+
+Prime Minister [+ prime_minister +] has negotiated an agreement with the Kingdom of Serbs, Croats and Slovenes, dissolving the Free City of Fiume and integrating it into Italy. Already, we have seen a jump from the veteran bloc, who are in support of [+ prime_minister +]'s revanchist and nationalistic tendencies.

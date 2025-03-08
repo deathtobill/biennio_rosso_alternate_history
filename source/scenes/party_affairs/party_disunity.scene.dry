@@ -1,7 +1,7 @@
 title: Party Disunity
 new-page: true
 is-card: true
-view-if: party_disunity_timer = 0 and (dissent >= 0.3 or (reformist_dissent > 30 and not reformists_defect) or (maximalist_dissent > 30 and not maximalists_resign) or (communist_dissent > 30 and not pcdi_formed) or (syndicalist_dissent > 30 and not unions_independent))
+view-if: party_disunity_timer = 0 and (dissent >= 0.3 or (reformist_dissent > 30 and not reformists_defect) or (maximalist_dissent > 30 and not maximalists_resign) or (communist_dissent > 30 and not pcdi_formed) or (labour_dissent > 30 and not unions_break))
 on-arrival: week_actions += 1; party_disunity_timer = 4
 card-image: img/PartyDisunity.jpg
 frequency: 200
@@ -15,7 +15,7 @@ The party is being torn apart by internal dissent. Upset at the leadership and g
 
 [? if reformist_dissent > 30 : The reformists are upset at our direction.  ?]
 [? if maximalist_dissent > 30 : The maximalists are displeased with the direction of our party. ?]
-[? if syndicalist_dissent > 30 : The unions disagree with our present course of action. ?]
+[? if labour_dissent > 30 : The unions disagree with our present course of action. ?]
 [? if communist_dissent > 30: Communists are making noises about a party split. ?]
 
 Something must be done to reinforce party unity.
@@ -30,7 +30,7 @@ Something must be done to reinforce party unity.
 
 @enforce_unity
 title: Enforce party discipline.
-on-arrival: reformist_dissent -= 5; maximalist_dissent -= 5; syndicalist_dissent -= 5; communist_dissent -= 5; workers_psi -= 4; middle_class_psi -= 2; veterans_psi -= 2
+on-arrival: reformist_dissent -= 5; maximalist_dissent -= 5; labour_dissent -= 5; communist_dissent -= 5; workers_psi -= 4; middle_class_psi -= 2; veterans_psi -= 2
 
 Enforcing party discipline reduces dissent, but it could lead to an exit of dissenting members.
 
@@ -61,13 +61,13 @@ We have promised that we will listen to the left wing of the party. Of course, t
 
 @concessions_labour
 title: Give concessions to labour.
-view-if: syndicalist_dissent > 30
-on-arrival: syndicalist_dissent -= 7; maximalist_dissent += 5
+view-if: labour_dissent > 30
+on-arrival: labour_dissent -= 7; maximalist_dissent += 5
 
 The trade unions will be granted more influence in party decision making. This upsets the maximalists, who would prefer to centralize political decision making within the party.
 
 @do_nothing
 title: Let the factions argue with themselves.
-on-arrival: syndicalist_dissent += 1; communist_dissent += 1; maximalist_dissent += 1; reformist_dissent += 1
+on-arrival: labour_dissent += 1; communist_dissent += 1; maximalist_dissent += 1; reformist_dissent += 1
 
 Let the factions bicker; perhaps dissent is healthy for the party.

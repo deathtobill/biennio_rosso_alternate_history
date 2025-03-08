@@ -8,13 +8,13 @@ Q.game_over = true;
 // civil war
 if (Q.civil_war_seen == 0 && Q.rome_civil_war == 0) {
     if (Q.difficulty == -1) {
-        this.achieve('unita_e_legge');
+        this.achieve('stella_rossa');
     }
     if (Q.difficulty == 0) {
-        this.achieve('unita_e_giustizia');
+        this.achieve('sol_dell_avenire');
     }
     if (Q.difficulty == 1) {
-        this.achieve('unita_e_liberta');
+        this.achieve('rossa_primavera');
     }
     if (Q.difficulty == 2) {
         this.achieve('verde_bianco_rosso');
@@ -47,7 +47,7 @@ if (Q.middle_class_psi_normalised && Q.middle_class_psi_normalised >= 50) {
     this.achieve('borghesia_rossa');
 }
 if (Q.rural_psi_normalised && Q.rural_psi_normalised >= 50) {
-    this.achieve('contadini_rivoluzionari');
+    this.achieve('i_gracchi_riscattati');
 }
 if (Q.industrialists_psi_normalised && Q.industrialists_psi_normalised >= 50) {
     this.achieve('rivoluzione_industriale');
@@ -56,7 +56,7 @@ if (Q.veterans_psi_normalised && Q.veterans_psi_normalised >= 50) {
     this.achieve('redenzione_dei_veterani');
 }
 if (Q.catholic_psi_normalised && Q.catholic_psi_normalised >= 50) {
-    this.achieve('cattolici_in_rosa');
+    this.achieve('bolscevismo_bianco');
 }
 if (Q.middle_class_psi_normalised >= 40 && Q.rural_psi_normalised >= 40 && Q.industrialists_psi_normalised >= 50 && Q.veterans_psi_normalised >= 50 && Q.catholic_psi_normalised >= 50) {
     this.achieve('partito_del_popolo');
@@ -232,11 +232,11 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_guerra_civile: **Guerra Civile** - Enter a long civil war. ?]
 
-[? if game_achievement_unita_e_legge: **Unità e Legge** - Reach the end of the game without a civil war on Easy. ?]
+[? if game_achievement_stella_rossa: **Stella Rossa** - Reach the end of the game without a civil war on Easy. ?]
 
-[? if game_achievement_unita_e_giustizia: **Unità e Giustizia** - Reach the end of the game without a civil war on Normal. ?]
+[? if game_achievement_sol_dell_avenire: **Sol dell'Avenire** - Reach the end of the game without a civil war on Normal. ?]
 
-[? if game_achievement_unita_e_liberta: **Unità e Libertà** - Reach the end of the game without a civil war on Hard. ?]
+[? if game_achievement_rossa_primavera: **Rossa Primavera** - Reach the end of the game without a civil war on Hard. ?]
 
 [? if game_achievement_verde_bianco_rosso: **Verde-Bianco-Rosso** - Reach the end of the game without a civil war on Historical. ?]
 
@@ -248,7 +248,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_governo_monocolore: **Governo Monocolore** - Form a PSI-Only Government. ?]
 
-[? if game_achievement_marciume_del_traditore: **Marciume del Traditore** - Imprison Mussolini. ?]
+[? if game_achievement_il_traditore_e_sempre_un_infame: **Il Traditore è Sempre un Infame** - Imprison Mussolini. ?]
 
 [? if game_achievement_risorgimento_economico: **Risorgimento Economico** - Resolve the Economic Crisis. ?]
 
@@ -258,13 +258,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_borghesia_rossa: **Borghesia Rossa** - Have Middle Class support over 50%. ?]
 
-[? if game_achievement_contadini_rivoluzionari: **Contadini Rivoluzionari** - Have Rural support over 50%. ?]
+[? if game_achievement_i_gracchi_riscattati: **I Gracchi Riscattati** - Have Rural support over 50%. ?]
 
 [? if game_achievement_rivoluzione_industriale: **Rivoluzione Industriale** - Have Industrialist support over 50%. ?]
 
-[? if game_achievement_redenzione_dei_veterani: **Redenzione del Veterani** - Have Veteran support over 50%. ?]
+[? if game_achievement_redenzione_dei_veterani: **Redenzione dei Veterani** - Have Veteran support over 50%. ?]
 
-[? if game_achievement_cattolici_in_rosa: **Cattolici in Rosa** - Have Catholic support over 50%. ?]
+[? if game_achievement_bolscevismo_bianco: **Bolscevismo Bianco** - Have Catholic support over 50%. ?]
 
 [? if game_achievement_partito_del_popolo: **Partito del Popolo** - Have all demographic support over 40%. ?]
 
@@ -306,7 +306,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the PSI break away. ?]
 
-[? if game_achievement_follia_della_sinistra: **Follia della Sinistra** - Lose the Civil War. ?]
+[? if game_achievement_follia_di_sinistra: **Follia di Sinistra** - Lose the Civil War. ?]
 
 = Completed Achievements Overall
 
@@ -314,11 +314,11 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_guerra_civile: **Guerra Civile** - Enter a long civil war. ?]
 
-[? if achievement_unita_e_legge: **Unità e Legge** - Reach the end of the game without a civil war on Easy. ?]
+[? if achievement_stella_rossa: **Stella Rossa** - Reach the end of the game without a civil war on Easy. ?]
 
-[? if achievement_unita_e_giustizia: **Unità e Giustizia** - Reach the end of the game without a civil war on Normal. ?]
+[? if achievement_sol_dell_avenire: **Sol dell'Avenire** - Reach the end of the game without a civil war on Normal. ?]
 
-[? if achievement_unita_e_liberta: **Unità e Libertà** - Reach the end of the game without a civil war on Hard. ?]
+[? if achievement_rossa_primavera: **Rossa Primavera** - Reach the end of the game without a civil war on Hard. ?]
 
 [? if achievement_verde_bianco_rosso: **Verde-Bianco-Rosso** - Reach the end of the game without a civil war on Historical. ?]
 
@@ -330,7 +330,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_governo_monocolore: **Governo Monocolore** - Form a PSI-Only Government. ?]
 
-[? if achievement_marciume_del_traditore: **Maricume del Traditore** - Imprison Mussolini. ?]
+[? if achievement_il_traditore_e_sempre_un_infame: **Il Traditore è Sempre un Infame** - Imprison Mussolini. ?]
 
 [? if achievement_risorgimento_economico: **Risorgimento Economico** - Resolve the Economic Crisis. ?]
 
@@ -340,13 +340,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_borghesia_rossa: **Borghesia Rossa** - Have Middle Class support over 50%. ?]
 
-[? if achievement_contadini_rivoluzionari: **Contadini Rivoluzionari** - Have Rural support over 50%. ?]
+[? if achievement_i_gracchi_riscattati: **I Gracchi Riscattati** - Have Rural support over 50%. ?]
 
 [? if achievement_rivoluzione_industriale: **Rivoluzione Industriale** - Have Industrialist support over 50%. ?]
 
-[? if achievement_redenzione_dei_veterani: **Redenzione del Veterani** - Have Veteran support over 50%. ?]
+[? if achievement_redenzione_dei_veterani: **Redenzione dei Veterani** - Have Veteran support over 50%. ?]
 
-[? if achievement_cattolici_in_rosa: **Cattolici in Rosa** - Have Catholic support over 50%. ?]
+[? if achievement_bolscevismo_bianco: **Bolscevismo Bianco** - Have Catholic support over 50%. ?]
 
 [? if achievement_partito_del_popolo: **Partito del Popolo** - Have all demographic support over 40%. ?]
 
@@ -388,7 +388,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the PSI break away. ?]
 
-[? if achievement_follia_della_sinistra: **Follia della Sinistra** - Lose the Civil War. ?]
+[? if achievement_follia_di_sinistra: **Follia di Sinistra** - Lose the Civil War. ?]
 
 = Incomplete Achievements
 
@@ -396,11 +396,11 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_guerra_civile: **Guerra Civile** - Enter a long civil war. ?]
 
-[? if not achievement_unita_e_legge: **Unità e Legge** - Reach the end of the game without a civil war on Easy. ?]
+[? if not achievement_stella_rossa: **Stella Rossa** - Reach the end of the game without a civil war on Easy. ?]
 
-[? if not achievement_unita_e_giustizia: **Unità e Giustizia** - Reach the end of the game without a civil war on Normal. ?]
+[? if not achievement_sol_dell_avenire: **Sol dell'Avenire** - Reach the end of the game without a civil war on Normal. ?]
 
-[? if not achievement_unita_e_liberta: **Unità e Libertà** - Reach the end of the game without a civil war on Hard. ?]
+[? if not achievement_rossa_primavera: **Rossa Primavera** - Reach the end of the game without a civil war on Hard. ?]
 
 [? if not achievement_verde_bianco_rosso: **Verde-Bianco-Rosso** - Reach the end of the game without a civil war on Historical. ?]
 
@@ -412,7 +412,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_governo_monocolore: **Governo Monocolore** - Form a PSI-Only Government. ?]
 
-[? if not achievement_marciume_del_traditore: **Maricume del Traditore** - Imprison Mussolini. ?]
+[? if not achievement_il_traditore_e_sempre_un_infame: **Il Traditore è Sempre un Infame** - Imprison Mussolini. ?]
 
 [? if not achievement_risorgimento_economico: **Risorgimento Economico** - Resolve the Economic Crisis. ?]
 
@@ -422,13 +422,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_borghesia_rossa: **Borghesia Rossa** - Have Middle Class support over 50%. ?]
 
-[? if not achievement_contadini_rivoluzionari: **Contadini Rivoluzionari** - Have Rural support over 50%. ?]
+[? if not achievement_i_gracchi_riscattati: **I Gracchi Riscattati** - Have Rural support over 50%. ?]
 
 [? if not achievement_rivoluzione_industriale: **Rivoluzione Industriale** - Have Industrialist support over 50%. ?]
 
-[? if not achievement_redenzione_dei_veterani: **Redenzione del Veterani** - Have Veteran support over 50%. ?]
+[? if not achievement_redenzione_dei_veterani: **Redenzione dei Veterani** - Have Veteran support over 50%. ?]
 
-[? if not achievement_cattolici_in_rosa: **Cattolici in Rosa** - Have Catholic support over 50%. ?]
+[? if not achievement_bolscevismo_bianco: **Bolscevismo Bianco** - Have Catholic support over 50%. ?]
 
 [? if not achievement_partito_del_popolo: **Partito del Popolo** - Have all demographic support over 40%. ?]
 
@@ -470,7 +470,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the PSI break away. ?]
 
-[? if not achievement_follia_della_sinistra: **Follia della Sinistra** - Lose the Civil War. ?]
+[? if not achievement_follia_di_sinistra: **Follia di Sinistra** - Lose the Civil War. ?]
 
 @end_game
 game-over: true

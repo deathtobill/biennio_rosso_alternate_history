@@ -131,15 +131,15 @@ if (Q.unemployment <= 1) {
 }
 
 // re-calculate dissent.
-var total_strength = Q.communist_strength + Q.maximalist_strength + Q.syndicalist_strength + Q.reformist_strength;
+var total_strength = Q.communist_strength + Q.maximalist_strength + Q.labour_strength + Q.reformist_strength;
 
 // normalize strength for the different factions
 Q.communist_strength = 100*Q.communist_strength/total_strength;
 Q.maximalist_strength = 100*Q.maximalist_strength/total_strength;
-Q.syndicalist_strength = 100*Q.syndicalist_strength/total_strength;
+Q.labour_strength = 100*Q.labour_strength/total_strength;
 Q.reformist_strength = 100*Q.reformist_strength/total_strength;
 
-var total_dissent = Q.communist_strength*Q.communist_dissent + Q.maximalist_strength*Q.maximalist_dissent + Q.syndicalist_strength*Q.syndicalist_dissent + Q.reformist_strength*Q.reformist_dissent;
+var total_dissent = Q.communist_strength*Q.communist_dissent + Q.maximalist_strength*Q.maximalist_dissent + Q.labour_strength*Q.labour_dissent + Q.reformist_strength*Q.reformist_dissent;
 
 
 Q.dissent = 0.01*total_dissent/total_strength;
@@ -507,27 +507,27 @@ if (Q.week_actions >= 1) {
             }
         }
 
-        if (Q.psi_in_government) {
+        if (Q.psi_in_government == 1) {
             if (Q.economic_growth > 0) {
-                Q.economic_progress += 10;
+                Q.economic_progress += 5;
             }
             if (Q.economic_growth > 5) {
-                Q.economic_progress += 10;
+                Q.economic_progress += 5;
             }
             if (Q.economic_growth > 10) {
-                Q.economic_progress += 10;
+                Q.economic_progress += 5;
             }
             if (Q.inflation < 10) {
-                Q.economic_progress += 5;
+                Q.economic_progress += 2;
             }
             if (Q.inflation < 5) {
-                Q.economic_progress += 5;
+                Q.economic_progress += 1;
             }
             if (Q.unemployment < 10) {
-                Q.economic_progress += 5;
+                Q.economic_progress += 2;
             }       
             if (Q.unemployment < 5) {
-                Q.economic_progress += 5;
+                Q.economic_progress += 1;
             } 
         }
  

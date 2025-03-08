@@ -25,9 +25,9 @@ go-to: menu
 
 The Kingdom of Italy, also known as Italy, is a Constitutional Monarchy under a King and a Bicameral Parliament, composing the appointed Senate and the elective Chamber of Deputies. The Chamber is responsible for governing, while the King has a largely ceremonial role as well as a few important responsibilities. 
 
-The Chamber of Deputies is elected based on a proportional representation voting system, added alongside newly introduced universal male suffrage. The King then appoints the Prime Minister and Cabinet, usually under the request of the Chamber of Deputies. A majority vote-of-no-confidence can remove the current government.
+The Chamber of Deputies is elected based on a proportional representation voting system, apportioning 508-535 seats based on the D'Hondt method, added alongside newly introduced universal male suffrage. The King then appoints the Prime Minister and Cabinet, usually under the request of the Chamber of Deputies. A majority vote-of-no-confidence can remove the current government, though a new coalition is typically formed utilising the same composition of the Chamber of Deputies.
 
-Italy is divided into a number of states, each of which have their own governments with some responsibilities.
+Italy is divided into a number of states, each of which have their own governments with some responsibilities, albeit insignificant.
 
 @weimar_timeline
 go-to: menu
@@ -61,16 +61,16 @@ Prime Minister: [+ prime_minister +] ([+ prime_minister_party +])
 
 Chamber of Deputies composition:
 
-PSI: [+ psi_r +]%
-[? if pcdi_formed : PCd'I: [+ pcdi_r +] ?]
-[? if psu_formed : PSU: [+ psu_r +] ?]
-PSRI: [+ psri_r +]%
-DS: [+ ds_r +]%
-PPI: [+ ppi_r +]%
-[+ ldr_name +]: [+ ldr_r +]%
-[+ ul_name +]: [+ ul_r +]%
-PNF: [+ pnf_r +]%
-Others: [+ other_r +]%
+PSI: [+ psi_seating_disp +]%
+[? if pcdi_formed : PCd'I: [+ pcdi_seating_disp +] ?]
+[? if psu_formed : PSU: [+ psu_seating_disp +] ?]
+PSRI: [+ psri_seating_disp +]%
+DS: [+ ds_seating_disp +]%
+PPI: [+ ppi_seating_disp +]%
+[+ ldr_name +]: [+ ldr_seating_disp +]%
+[+ ul_name +]: [+ ul_seating_disp +]%
+PNF: [+ pnf_seating_disp +]%
+Others: [+ other_seating_disp +]%
 
 PSI position: [? if psi_in_government : in government - ?][? if psi_in_government == 0 : opposition ?]
 [? if left_wing_coalition and psi_in_government : Left-Wing Coalition ?][? if centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if in_minority_government and psi_in_government: Minority government ?]
@@ -292,13 +292,21 @@ Strength: [+ maximalist_strength : strength +]
 
 Dissent: [+ maximalist_dissent : dissent +]
 
-**Trade Unionists**
+**Labour**
 
 The Trade Unionists, known also as Labour, are a minority faction in the party, generally advocating for further workers' control and the strengthening of unions.
 
-Strength: [+ syndicalist_strength : strength +]
+Strength: [+ labour_strength : strength +]
 
-Dissent: [+ syndicalist_dissent : dissent +]
+Dissent: [+ labour_dissent : dissent +]
+
+[? if syndicalist_active : **Syndicalists** ?]
+
+[? if syndicalist_active : The Syndicalists are a minority faction within the party, splintering from Labour to advocate for strikes and workers' councils. ?]
+
+[? if syndicalist_active : Strength: [+ syndicalist_strength : strength +] ?]
+
+[? if syndicalist_active : Dissent: [+ syndicalist_dissent : dissent +] ?]
 
 **Reformists**
 
@@ -470,27 +478,28 @@ data.push({
 {!<svg id="chamber" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div></td><td>!} **PSI:** {!</td><td>!} **[+ psi_r +]%** {!</td></tr>!}
+{!<tr><td>Parties/Groups</td><td>% Seats</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div></td><td>!} **PSI:** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!}
 
-[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div></td> <td>!} PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td></tr>!} ?]
+[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div></td> <td>!} PCd'I: {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
 
-[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div></td> <td>!} PSU: {!</td><td>!} [+ psu_r +]% {!</td></tr>!} ?]
+[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div></td> <td>!} PSU: {!</td><td>!} [+ psu_seating_disp +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#FFC0CB'> </div></td> <td>!} PSRI: {!</td><td>!} [+ psri_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#FFC0CB'> </div></td> <td>!} PSRI: {!</td><td>!} [+ psri_seating_disp +]% {!</td></tr>!}
 
-[? if pri_prominent : {!<tr><td><div class="box" style='background-color:#3CB371'> </div></td> <td>!} PRI: {!</td><td>!} [+ pri_r +]% {!</td></tr>!} ?]
+[? if pri_prominent : {!<tr><td><div class="box" style='background-color:#3CB371'> </div></td> <td>!} PRI: {!</td><td>!} [+ pri_seating_disp +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#1E99C5'> </div></td><td>!} DS: {!</td><td>!} [+ ds_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#1E99C5'> </div></td><td>!} DS: {!</td><td>!} [+ ds_seating_disp +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} [+ ldr_name +]: {!</td><td>!} [+ ldr_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} [+ ldr_name +]: {!</td><td>!} [+ ldr_seating_disp +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#87CEFA'> </div></td><td>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#87CEFA'> </div></td><td>!} PPI: {!</td><td>!} [+ ppi_seating_disp +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#00008B'> </div></td><td>!} [+ ul_name +]: {!</td><td>!} [+ ul_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#00008B'> </div></td><td>!} [+ ul_name +]: {!</td><td>!} [+ ul_seating_disp +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#000000'> </div></td><td>!} [+ pnf_name +]: {!</td><td>!} [+ pnf_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#000000'> </div></td><td>!} [+ pnf_name +]: {!</td><td>!} [+ pnf_seating_disp +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_seating_disp +] % {!</td></tr>!}
 {!</table>!}
 
 = Election history

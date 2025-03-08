@@ -21,6 +21,7 @@ Q.middle_class_psi += 1;
 Q.workers_pnf += 4;
 Q.middle_class_pnf += 3;
 Q.veterans_pnf += 6;
+Q.government_collapse += 1;
 !}
 tags: event
 

@@ -24,7 +24,7 @@ With control of the Labour & Social Security Ministry, we can set national stand
 
 @working_hours
 view-if: working_hours < 2
-on-arrival: working_hours += 1; syndicalist_dissent -= 8; communist_dissent -= 5; syndicalist_strength += 5; workers_psi += 7*(1-dissent); ldr_relation -= 4; ds_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1 if ldr_relation <= 30; inflation += 0.1; economic_growth -= 0.1; socialist_sentiment += 1;
+on-arrival: working_hours += 1; labour_dissent -= 8; communist_dissent -= 5; labour_strength += 5; workers_psi += 7*(1-dissent); ldr_relation -= 4; ds_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1 if ldr_relation <= 30; inflation += 0.1; economic_growth -= 0.1; socialist_sentiment += 1;
 
 The Kingdom of Italy does not have a current labour code, nor a set maximum amount of hours per work week. However, taking from our allies in the Entente and the Weimar Republic, the party advocates for a new 40-hour work week. 
 
@@ -33,13 +33,13 @@ Now, with the force of the Labour Ministry, we are able to implement this work w
 @shorten_hours
 view-if: working_hours >= 2
 subtitle: Could we induce more hiring and reduce unemployment by reducing work hours?
-on-arrival: working_hours += 1; syndicalist_dissent -= 8; communist_dissent -= 5; syndicalist_strength += 5; workers_psi += 7*(1-dissent); ldr_relation -= 4; ds_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1; unemployment -= 0.3; economic_growth -= 0.2; socialist_sentiment += 3;
+on-arrival: working_hours += 1; labour_dissent -= 8; communist_dissent -= 5; labour_strength += 5; workers_psi += 7*(1-dissent); ldr_relation -= 4; ds_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1; unemployment -= 0.3; economic_growth -= 0.2; socialist_sentiment += 3;
 
 Some in the labour movement argue that by reducing the maximum number of hours worked, employers would be induced to hire more workers, reducing unemployment. The argument also goes that this would be complementary to deflation, maintaining the same purchasing power for workers by cutting hours without cutting wages. Employers, however, resist this policy, arguing for more flexibility in hiring and firing.
 
 
 @safety
-on-arrival: workers_safety += 1; syndicalist_dissent -= 5; syndicalist_strength += 2; workers_psi += 5*(1-dissent); capital_strike_progress += 1 if workers_safety >= 3; socialist_sentiment += 1;
+on-arrival: workers_safety += 1; labour_dissent -= 5; labour_strength += 2; workers_psi += 5*(1-dissent); capital_strike_progress += 1 if workers_safety >= 3; socialist_sentiment += 1;
 
 The Labour Ministry works on developing and enforcing safety regulations, in order to ensure healthy working conditions for the proletariat. [? if workers_safety >= 3 : Businesses have begun to argue that our focus on safety is overbearing and unnecessary, interfering with the economy. ?]
 

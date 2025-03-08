@@ -262,7 +262,7 @@ Q.str_change_bn = Q.str_change_bn.toFixed(1);
 
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
 for (var party of Q.parties) {
-    election_result[party] = Q[party + '_r'];
+    election_result[party] = Q[party + '_seating_disp'];
 }
 Q.election_records.push(election_result);
 !}

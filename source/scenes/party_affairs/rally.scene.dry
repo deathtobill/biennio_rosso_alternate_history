@@ -25,7 +25,7 @@ on-arrival: workers_psi += 4*(1-dissent); veterans_psi += 3*(1-dissent) if commu
 Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalisation_progress > 0 : Our achievements in nationalisation have assisted our messaging. ?]
 
 @welfare
-on-arrival: veterans_psi += 3*(1-dissent); workers_psi += 3*(1-dissent) if welfare > 0; veterans_psi += 3*(1-dissent) if welfare > 0; veterans_psi += 4*(1-dissent) if welfare > 1; reformist_strength += 3; syndicalist_strength += 4; reformist_dissent -= 3; syndicalist_dissent -= 3;
+on-arrival: veterans_psi += 3*(1-dissent); workers_psi += 3*(1-dissent) if welfare > 0; veterans_psi += 3*(1-dissent) if welfare > 0; veterans_psi += 4*(1-dissent) if welfare > 1; reformist_strength += 3; labour_strength += 4; reformist_dissent -= 3; labour_dissent -= 3;
 
 The reformist message appeals to the organized workers, whose benefits are the accomplishments of social democracy. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?]
 
