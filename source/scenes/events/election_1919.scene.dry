@@ -121,7 +121,7 @@ if (Q.year >= 1921) {
 
 for (var party of Q.parties) {
     Q[party + '_seating_disp'] = (Q[party + '_seating']/total_available_seats)*100;
-    Q[party + '_seating_disp'].toFixed(1);
+    Q[party + '_seating_disp'] = Q[party + '_seating_disp'].toFixed(1);
 }
 
 Q.ppi_min_relations = 40;

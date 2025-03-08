@@ -100,7 +100,7 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
 
 for (var party of Q.parties) {
     Q[party + '_seating_disp'] = (Q[party + '_seating']/535)*100;
-    Q[party + '_seating_disp'].toFixed(1);
+    Q[party + '_seating_disp'] = Q[party + '_seating_disp'].toFixed(1);
 }
 
 // The largest party can only be the PNF or the PSI.
