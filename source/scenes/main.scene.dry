@@ -15,27 +15,25 @@ max-cards: 3
 
 [? if year = 1919 and month = 1 and week = 3: The *Spartacist Uprising* in Berlin has fallen, suppressed forcefully by the government and *Freikorps*. It's leaders are slaughtered under command of Friedrich Ebert and Gustav Noske. The League of Nations is founded. ?]
 
-[? if year = 1919 and month = 2 and week = 1: Friedrich Erbert is elected as the First President of Germany, with the founding of the Weimar Republic. ?]
+[? if year = 1919 and month = 2 and week = 1: Friedrich Erbert is elected as the First President of Germany. The Weimar Republic is founded. ?]
 
-[? if year = 1919 and month = 2 and week = 3: The Republic of Poland invades the Russian SFSR in the middle of its civil war and begins the *Soviet-Polish War*, with Polish intentions to regain its Eastern territories held under control of the Russian SFSR. ?]
+[? if year = 1919 and month = 2 and week = 3: The Republic of Poland invades the Russian SFSR and begins the *Soviet-Polish War*. ?]
 
-[? if year = 1919 and month = 3 and week = 1: The Communist International is founded, and it's first Congress is held in Moscow. The Congress establishes the *Executive Committee*, as Grigory Zinoview is elected as Secretary. We are not invited to attend. ?]
+[? if year = 1919 and month = 3 and week = 1: The Communist International is founded. ?]
 
-[? if year = 1919 and month = 3 and week = 3: Béla Kun establishes the *Hungarian Soviet Republic*, succeeding the *First Hungarian Republic*. ?]
-
-[? if year = 1919 and month = 4 and week = 1: Ernst Toller establishes the *Bavarian Soviet Republic*, weeks after the Hungarian Soviets and succeeding the short-lived *People's State of Bavaria*. ?]
+[? if year = 1919 and month = 4 and week = 1: The Bavarian Soviet Republic is established. ?]
 
 [? if year = 1919 and month = 5 and week = 1: Weimar Republic forces, alongside the Freikorps occupy Munich and dissolve the Bavarian Soviet Republic. ?]
 
-[? if year = 1919 and month = 5 and week = 3: Mustafa Kemal Pasha, Brigadier-General of the Ottoman Empire lands at Samsun on the Black Sea coast, refusing to surrender to Entente forces. ?]
+[? if year = 1919 and month = 5 and week = 3: Mustafa Kemal Pasha lands at Samsun on the Black Sea coast, refusing to surrender to Entente forces. ?]
 
 [? if year = 1919 and month = 6 and week = 1: The *Treaty of Versailles* is signed, ending the state of war between the Weimar Republic and the Entente. ?]
 
-[? if year = 1919 and month = 8 and week = 1: The *Hungarian Soviet Republic* collapses after Romanian forces intervene, leading to a power vacuum. ?]
+[? if year = 1919 and month = 8 and week = 1: The Hungarian Soviet Republic collapses after Romanian intervention, leading to a power vacuum. ?]
 
 [? if year = 1919 and month = 9 and week = 1: The *Treaty of Saint-Germain-en-Laye* is signed, ceding Austrian Littoral, South Tyrol alongside various Dalmatian islands to Italy. The remainder goes to the newly established Kingdom of Serbs, Croats and Slovenes, in violation of the 1915 *Treaty of London*. ?]
 
-[? if year = 1919 and month = 9 and week = 3: The current bourgeois-right government has fallen after D'Annunzio's controversial march to Fiume. The next elections are slated for November of this year. ?]
+[? if year = 1919 and month = 9 and week = 3: The current bourgeois-right government has fallen after D'Annunzio's march to Fiume. The next elections are slated for November of this year. ?]
 
 [? if year = 1919 and month = 11 and week = 3: The *Treaty of Neuilly-sur-Seine* is signed, ending the state of war between the Tsardom of Bulgaria and the Entente. ?]
 
@@ -65,7 +63,7 @@ max-cards: 3
 
 [? if year = 1920 and month = 9 and week = 3: The Russian SFSR sues for peace with the Republic of Poland following its failure to capture Warsaw. ?]
 
-[? if year = 1920 and month = 11 and week = 1: Warren G. Harding defeats Democrat James M. Cox and Socialist Eugene V. Debs in the 1920 United States Election. ?]
+[? if year = 1920 and month = 11 and week = 1: Warren G. Harding defeats Democrat James M. Cox and Socialist Eugene V. Debs in the 1920 United States Presidential Election. ?]
 
 [? if year = 1920 and month = 12 and week = 3 and fiume_free = 1: The Regio Esercito and Regia Marina engage in combat with D'Annunzio, forcing him to surrender and establishing the Free City of Fiume. ?]
 
@@ -80,6 +78,82 @@ max-cards: 3
 [? if year = 1921 and month = 12 and week = 3: The Banca Italiana di Sconto goes bankrupt and is given one year of moratorium to resolve its financial problems. It's impact on banking and the economy in Italy is minimal. ?]
 
 [? if year = 1922 and month = 2 and week = 1: The *Five Power Naval Disarmament Treaty* is signed between the United Kingdom, United States, Japan, France and Italy. Foreign Minister [+ foreign_minister +] signs the treaty as a representative of Italy. ?]
+
+[? if year = 1922 and month = 2 and week = 3: The United Kingdom ends its protectorate and grants nominal independence to Egypt following the *Unilateral Declaration of Egyptian Independence* ?]
+
+[? if year = 1922 and month = 4 and week = 1: Joesph Stalin is appointed General Secretary of the Central Committee of the Soviet Communist Party. ?]
+
+[? if year = 1922 and month = 9 and week = 1: The Autodromo Nazionale di Monza motorsport race track officially opens in Monza. ?]
+
+[? if year = 1922 and month = 12 and week = 1: The *Irish Free State* is officially established after the Irish War of Independence and the following Irish Civil War. ?]
+
+[? if year = 1922 and month = 12 and week = 3: The Russian, Ukrainian, Belorussian, Transcaucasian Soviet Federative Socialist Republics sign the Declaration and Treaty on the Creation of the Union of Soviet Socialist Republics, uniting into one nation. ?]
+
+[? if year = 1923 and month = 1 and week = 1: French and Belgian troops occupy the Ruhr region of Germany after its numerous defaults on its war debts. The British oppose French and Belgian action. ?]
+
+[? if year = 1923 and month = 3 and week = 1: Vladimir Lenin, leader of the Union of Soviet Socialist Republics, suffers a stroke and becomes bedridden. ?]
+
+[? if year = 1923 and month = 3 and week = 3: The Italian Air Wing of the *Regio Esercito* and *Regia Marina* is established as an independent wing of the armed forces, called the *Regia Aeronautica*. ?]
+
+[? if year = 1923 and month = 6 and week = 3: Mount Etna erupts on the east cost of Sicily, resulting in an estimated 60,000 to go homeless. ?]
+
+[? if year = 1923 and month = 7 and week = 3: The *Treaty of Lausanne* is signed by Turkey, Greece, Bulgaria and the Entente, officially marking the end of the Ottoman Empire. Foreign Minister [+ foreign_minister +] is sent as our signatory. ?]
+
+[? if year = 1923 and month = 10 and week = 3: The *Hamburg Uprising*, organised by the KPD (Communist Party of Germany), has fallen, suppressed forcefully by the government within just one day. ?]
+
+[? if year = 1923 and month = 11 and week = 1: The *Beer Hall Putsch*, organised by Adolf Hitler and the Kampfbund in Munich, has fallen, suppressed forcefully by the government within just one day. ?]
+
+[? if year = 1923 and month = 11 and week = 3: Hyperinflation in the Weimar Republic reaches historic highs, worsening the economic crisis and collapses Gustav Streseman's governing coalition. ?]
+
+[? if year = 1923 and month = 12 and week = 1: The Gieno Dam, located in the northern province of Bergamo bursts, resulting in the deaths of an estimated 356 people. ?]
+
+[? if year = 1924 and month = 1 and week = 3 : The 1924 Winter Olympics, the first of its kind, opens in Chamonix, France. Italy comes in last place. ?]
+
+[? if year = 1924 and month = 1 and week = 3 : Vladimir Ilyich Ulyanov, Premier of the Union of Soviet Socialist Republic, passes away. Aleksej Rykov succeeds him as Premier, representing the moderate wing of the Bolshevik faction. ?]
+
+[? if year = 1924 and month = 1 and week = 3 : Ramsey McDonald, leader of the Labour Party of the United Kingdom, is elected the first Labour British Prime Minister. ?]
+
+[? if year = 1924 and month = 3 and week = 1 : The Grand National Assembly of Turkey abolishes the Ottoman Caliphate via decree, deposing caliph Abdülmecid II alongside it.  ?]
+
+[? if year = 1924 and month = 4 and week = 1 : Adolf Hitler is sentenced to 5 years in prison for his responsibility in the *Beer Hall Putsch*. ?]
+
+[? if year = 1924 and month = 9 and week = 1 : The *Dawes Plan* is signed and approved by the Weimar Republic, establishing an alternate means of repayment and ending the occupation of the Ruhr. French and Belgian forces are set to evacuate the region soon. ?]
+
+[? if year = 1924 and month = 10 and week = 1 : The *Geneva Protocol* is adopted by the League of Nations for compulsory arbitration of disputes. It is set to be ratified. ?]
+
+[? if year = 1924 and month = 11 and week = 1 : Calvin Coolidge defeats Democratic nominee John W. Davis and Progressive nominee Robert M. La Follette in the 1924 United States Presidential Election. ?]
+
+[? if year = 1924 and month = 12 and week = 3 : Adolf Hitler is released from prison, serving out only 9 months of the 5 years sentenced due to his involvement in the *Beer Hall Putsch*. ?]
+
+[? if year = 1925 and month = 7 and week = 3 : Adolf Hitler publishes volume 1 of his manifesto, *Mein Kampf*. ?]
+
+[? if year = 1925 and month = 8 and week = 3 : The last of the French forces evacuate the Ruhr, following the resumption of German reparations payments under the Dawes Plan, ending the almost three year occupation. ?]
+
+[? if year = 1925 and month = 11 and week = 1 : The *Schutzstaffel* is established as a paramilitary organisation to protect Adolf Hitler. ?]
+
+[? if year = 1925 and month = 12 and week = 1 : The *Locarno Treaties* are signed in London, pledging to guarantee the inviolability of the borders between Germany and France & Belgium, alongside various other agreements to ensure the Weimar Republic would ensure peaceful arbitration in the event of disputes. ?]
+
+[? if year = 1926 and month = 5 and week = 1 : The Trades Union Congress begins a strike in the United Kingdom in support of the Miners' Federation. Martial Law is declared just nine days later that ends the strike. ?]
+
+[? if year = 1926 and month = 5 and week = 1 : Marshal Józef Piłsudski overthrows the democratically elected government of the Republic of Poland, establishing a military dictatorship. ?]
+
+[? if year = 1926 and month = 5 and week = 3 : Army Officer Manuel Gomes da Costa overthrows the democratically elected government of the Portugal, establishing a military dictatorship. ?]
+
+[? if year = 1926 and month = 7 and week = 1 : The National Revolutionary Army, led by Chiang Kai-shek of the Chinese Kuomintang, begins the *Northern Expedition*, seeking to reunite Northern China. ?]
+
+[? if year = 1926 and month = 9 and week = 1 : The Weimar Republic joins the League of Nations. ?]
+
+[? if year = 1926 and month = 12 and week = 1 : Martial Law in response to the General Strike in the United Kingdom ends. ?]
+
+[? if year = 1926 and month = 12 and week = 3 : Emperor Taishō passes away from a heart attack, ending the Taishō era. Succeeding him is Emperor Shōwa, who begins the Shōwa era. ?]
+
+[? if year = 1927 and month = 3 and week = 3 : Foreign ships, including our own, bombard the city of Nanjing after its capture by the National Revolutionary Army to defend foreign residents. ?]
+
+[? if year = 1927 and month = 5 and week = 3 : Due to revelations of espionage and underground agitation, the United Kingdom cuts diplomatic ties with the Union of Soviet Socialist Republics. ?]
+
+[? if year = 1927 and month = 6 and week = 1 : The Kingdom of Serbs, Croats and Slovenes cuts diploatic ties with the Kingdom of Albania. ?]
+
+[? if year = 1927 and month = 11 and week = 1 : Leon Trotsky is expelled from the Communist Party of the Soviet Union. ?]
 
 - @party
 - @paramilitary
