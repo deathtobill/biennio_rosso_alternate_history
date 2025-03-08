@@ -108,6 +108,13 @@ if (Q.pnf_r >= Q.psi_r && Q.pnf_r >= Q.psri_r && Q.pnf_r >= Q.pcdi_r) {
     Q.largest_party = 'PNF';
 }
 
+// seating percentage
+
+for (var party of Q.parties) {
+    Q[party + '_seating_disp'] = (Q[party + '_seating']/total_available_seats)*100
+    Q[party + '_seating_disp'].toFixed(1);
+}
+
 Q.ppi_min_relations = 40;
 Q.ldr_min_relations = 35;
 
@@ -359,30 +366,30 @@ go-to: coalition_menu
 {!<svg id="chamber" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td>Parties/Groups</td><td>Vote Share</td><td>% Change</td><td>Seats Given</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} PSI: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]% {!</td><td>!} [+ psi_seating +]** {!</td></tr>!}
+{!<tr><td>Parties/Groups</td><td>Vote Share</td><td>% Change</td><td>Seats Given</td></td>% Seats</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} PSI: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]% {!</td><td>!} [+ psi_seating +]** {!</td><td>!} [+ psi_seating_disp +] {!</td></tr>!}
 
-[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div>!} PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td><td>!} [+ pcdi_seating +] {!</td></tr>!} ?]
+[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div>!} PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td><td>!} [+ pcdi_seating +] {!</td><td>!} [+ pcdi_seating_disp +] {!</td></tr>!} ?]
 
-[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div>!} PSU: {!</td><td>!} [+ psu_r +]% {!</td><td>!} [+ str_change_psu +]% {!</td><td>!} [+ psu_seating +] {!</td></tr>!} ?]
+[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div>!} PSU: {!</td><td>!} [+ psu_r +]% {!</td><td>!} [+ str_change_psu +]% {!</td><td>!} [+ psu_seating +] {!</td><td>!} [+ psu_seating_disp +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#FFC0CB'> </div>!} PSRI: {!</td><td>!} [+ psri_r +]% {!</td><td>!} [+ str_change_psri +]% {!</td><td>!} [+ psri_seating +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#FFC0CB'> </div>!} PSRI: {!</td><td>!} [+ psri_r +]% {!</td><td>!} [+ str_change_psri +]% {!</td><td>!} [+ psri_seating +] {!</td><td>!} [+ psri_seating_disp +] {!</td></tr>!}
 
-[? if pri_prominent : {!<tr><td><div class="box" style='background-color:#3CB371'> </div>!} PRI: {!</td><td>!} [+ pri_r +]% {!</td><td>!} [+ str_change_pri +]% {!</td><td>!} [+ pri_seating +] {!</td></tr>!} ?]
+[? if pri_prominent : {!<tr><td><div class="box" style='background-color:#3CB371'> </div>!} PRI: {!</td><td>!} [+ pri_r +]% {!</td><td>!} [+ str_change_pri +]% {!</td><td>!} [+ pri_seating +] {!</td><td>!} [+ pri_seating_disp +] {!</td></tr>!} ?]
 
-[? if not ds_in_bn : {!<tr><td><div class="box" style='background-color:#1E99C5'> </div>!} DS: {!</td><td>!} [+ ds_r +]% {!</td><td>!} [+ str_change_ds +]% {!</td><td>!} [+ ds_seating +] {!</td></tr>!} ?]
+[? if not ds_in_bn : {!<tr><td><div class="box" style='background-color:#1E99C5'> </div>!} DS: {!</td><td>!} [+ ds_r +]% {!</td><td>!} [+ str_change_ds +]% {!</td><td>!} [+ ds_seating +] {!</td><td>!} [+ ds_seating_disp +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#87CEFA'> </div>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td><td>!} [+ str_change_ppi +]% {!</td><td>!} [+ ppi_seating +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#87CEFA'> </div>!} PPI: {!</td><td>!} [+ ppi_r +]% {!</td><td>!} [+ str_change_ppi +]% {!</td><td>!} [+ ppi_seating +] {!</td><td>!} [+ ppi_seating_disp +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#FFD700'> </div>!} [+ ldr_name +]: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td><td>!} [+ ldr_seating +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#FFD700'> </div>!} [+ ldr_name +]: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td><td>!} [+ ldr_seating +] {!</td><td>!} [+ ldr_seating_disp +] {!</td></tr>!}
 
-[? if bn_formed : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} BN: {!</td><td>!} [+ bn_r +]% {!</td><td>!} [+ str_change_bn +]% {!</td><td>!} [+ bn_seating +] {!</td></tr>!} ?]
+[? if bn_formed : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} BN: {!</td><td>!} [+ bn_r +]% {!</td><td>!} [+ str_change_bn +]% {!</td><td>!} [+ bn_seating +] {!</td><td>!} [+ bn_seating_disp +] {!</td></tr>!} ?]
 
-[? if not ul_in_bn : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} [+ ul_name +]: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td><td>!} [+ ul_seating +] {!</td></tr>!} ?]
+[? if not ul_in_bn : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} [+ ul_name +]: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td><td>!} [+ ul_seating +] {!</td><td>!} [+ ul_seating_disp +] {!</td></tr>!} ?]
 
-[? if not pnf_in_bn : {!<tr><td><div class="box" style='background-color:#000000'> </div>!} [+ pnf_name +]: {!</td><td>!} [+ pnf_r +]% {!</td><td>!} [+ str_change_pnf +]% {!</td><td>!} [+ pnf_seating +] {!</td></tr>!} ?]
+[? if not pnf_in_bn : {!<tr><td><div class="box" style='background-color:#000000'> </div>!} [+ pnf_name +]: {!</td><td>!} [+ pnf_r +]% {!</td><td>!} [+ str_change_pnf +]% {!</td><td>!} [+ pnf_seating +] {!</td><td>!} [+ pnf_seating_disp +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div>!} Others: {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +]% {!</td><td>!} [+ other_seating +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div>!} Others: {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +]% {!</td><td>!} [+ other_seating +] {!</td><td>!} [+ other_seating_disp +] {!</td></tr>!}
 {!</table>!}
 
 **Potential Coalitions:**
