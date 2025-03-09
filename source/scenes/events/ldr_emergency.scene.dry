@@ -27,15 +27,18 @@ go-to: nitti_elected
 
 @nitti_elected
 on-arrival: ldr_leader = "Nitti"; ldr_moderates -= 2; ldr_right -= 2; ldr_relation += 5;
+face-image: img/portraits/FrancescoSaverioNitti.png
 
 It seems that, fortunately, Nitti has come out on top in the struggle, elected as the party's Secretary General. He is expected to continue the party's liberal's alignment, though he seems at the very least willing to negotiate with us.
 
 @orlando_elected
 on-arrival: ldr_leader = "Orlando"; ldr_left -= 2; ldr_right -= 2;
+face-image: img/portraits/VittorioEmanueleOrlando.jpg
 
 It seems that Vittorio Emanuele Orlando has come out on top in the leadership struggle, elected as the party's Secretary General. He continues the party's historic alignment and the status-quo.
 
 @salandra_elected
 on-arrival: ldr_leader = "Salandra"; ldr_left -= 2; ldr_moderates -= 2; ldr_relation -= 5;
+face-image: img/portraits/AntonioSalandra.jpg
 
 Antonio Salandra, unfortunately, has won the leadership struggle. He will continue the party's ideological alignment with liberalism, albeit with a willingness to be friendly to the right against us.

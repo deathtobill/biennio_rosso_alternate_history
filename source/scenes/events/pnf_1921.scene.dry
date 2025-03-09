@@ -21,6 +21,7 @@ go-to: mussolini_1921 if not mussolini_jailed and (pnf_seating_disp >= 10 or fiu
 
 @mussolini_1921
 on-arrival: pnf_leader = "Mussolini"
+face-image: img/portraits/BenitoMussolini.jpg
 
 Partly due to his successes and partly due to there being no other leaders, Mussolini has been able to mediate the party split and come out on top, quelling the unrest of the paramilitaries, avowing the pacification pact as well.
 
@@ -31,6 +32,7 @@ With the continued absence of Mussolini, alongside no other prominent leadership
 
 @dannunzio_1921
 on-arrival: pnf_leader = "D'Annunzio"; veterans_pnf += 17; middle_class_pnf += 6;
+face-image: img/portraits/GabrieleDAnnunzio.jpg
 
 [? if mussolini_jailed : Surprisingly, it seems Gabriele D'Annunzio has taken control of the party, dismissing the Grand Council and establishing his own group with overwhelming support. D'Annunzio's leadership has, unfortunately, revitalised the party, bring the organisation to the forefront of Futurist and Far-Right politics. ?]
 

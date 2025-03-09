@@ -23,7 +23,7 @@ Where should we begin?
 - @southern_infrastructure: Begin public works initiatives focused on the South.
 - @southern_literacy: Expand the education system & begin literacy programs in the South.
 - @southern_mafia: Crackdown on Mafia activity in the South.
-- @as_is: Leave the South as it is.
+- @root: Leave the South as it is.
 - @easy_discard
 
 @southern_land_reform_gov
@@ -51,7 +51,7 @@ The Red Guard, under our orders begin forceful seizures of landowner properties 
 [? if anti_socialist_coalition_r > 50: The Liberals are able to rally a majority to call a vote of no-confidence against us, and are able to succeed. ?]
 
 @southern_infrastructure
-subtitle: -1 Budget - [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
+subtitle: -1 Budget [? if budget = 0 and liberal_budget_accepted :- This will put us into a deficit! ?]
 choose-if: public_works_minister_party = "PSI"
 unavailable-subtitle: The PSI does not control the Public Works Ministry.
 on-arrival: {!
@@ -78,7 +78,7 @@ We begin a series of infrastructural projects directed by the Public Works Minis
 [? if ldr_promise_failed : Unfortunately, our funding of new projects has led to a budget deficit, breaking our agreement with the Liberals, who have already requested a meeting. ?]
 
 @southern_literacy
-subtitle: -1 Budget - [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
+subtitle: -1 Budget [? if budget = 0 and liberal_budget_accepted :- This will put us into a deficit! ?]
 choose-if: public_education_minister_party = "PSI"
 unavailable-subtitle: The PSI does not control the Public Education Ministry.
 on-arrival: {!
@@ -120,5 +120,3 @@ The Carabinieri are able to uncover files regarding illegal activity among a num
 @investigate_mafia_failure
 
 Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
-
-@as_is

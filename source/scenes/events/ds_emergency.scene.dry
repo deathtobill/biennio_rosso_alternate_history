@@ -37,11 +37,13 @@ go-to: giuffrida_elected
 
 @colonna_elected
 on-arrival: ds_leader = "Colonna"; ds_left -= 1; ds_right -= 2; ds_relation += 2;
+face-image: img/portraits/GiovanniAntonioColonna.jpg
 
 It seems like Colonna has been able to succeed in retaining the leadership against the Carnazza and the Right-Wing, who have exhausted their influence, along with the Left-wing of the party, who have utilised some influence to make sure the party did not fall to Carnazza,
 
 @giuffrida_elected
 on-arrival: ds_leader = "Giuffrida"; ds_split = 1; ds_relation += 10; middle_class_pnf += middle_class_ds * 0.4; middle_class_ds *= 0.4; industrialists_pnf += industrialists_ds * 0.4; industrialists_ds *= 0.4; 
+face-image: img/portraits/VincenzoGiuffrida.jpg
 
 Surprisingly, it seems Giuffrida has been elected leader of the DS. Already, our delegates have experienced a positive change in tone, and we can expect our relations with the new DS to deepen further.
 
@@ -49,6 +51,7 @@ However, the only thing keeping the party from splintering, Colonna, has fallen 
 
 @carnazza_elected
 on-arrival: ds_leader = "Carnazza"; ds_split = 1; ds_relation -= 10; workers_psi += workers_ds * 0.4; workers_ds *= 0.4; rural_psi += rural_ds * 0.4; rural_ds *= 0.4; 
+face-image: img/portraits/GabrielloCarnazza.jpg
 
 Gabriello Carnazza, unfortunately, has won the leadership struggle. He represents a significant turn in the party's politics, actively reaching out to the Fascists and co-operating with them.
 

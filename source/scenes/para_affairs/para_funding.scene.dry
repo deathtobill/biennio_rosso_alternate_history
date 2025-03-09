@@ -15,7 +15,7 @@ For better or for worse, both the party and the paramilitaries cannot exist with
 - @small_fund: Siphon a small amount into the Red Guards.
 - @small_decrease: Siphon a small amount back into our coffers.
 - @big_decrease: Siphon a large amount back into our coffers.
-- @maintain: Maintain current funds.
+- @return: Maintain current funds.
 - @easy_discard
 - @cancel_advisor_action
 
@@ -50,7 +50,3 @@ subtitle: +1 Party Resources, -1 Paramilitary Resources
 on-arrival: resources += 1; para_resources -= 1;
 
 Large amounts of funds are transferred back to the party coffers.
-
-@maintain
-
-We maintain our current division of funds.

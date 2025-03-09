@@ -16,6 +16,7 @@ go-to: mussolini_1920 if not mussolini_jailed; council_1920 if mussolini_jailed
 
 @mussolini_1920
 on-arrival: pnf_leader = "Mussolini"
+face-image: img/portraits/BenitoMussolini.jpg
 
 Unsurprisingly, Mussolini has triumphed once again. The organisation has however, surprisingly turned from left-wing politics, instead exalting the existing institutions, seemingly becoming a new reactionary force in response to us.
 

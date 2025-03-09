@@ -101,13 +101,6 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
 
 // get change arrows and signs
 
-
-// The largest party can only be the PNF or the PSI.
-Q.largest_party = 'PSI';
-if (Q.pnf_r >= Q.psi_r && Q.pnf_r >= Q.psri_r && Q.pnf_r >= Q.pcdi_r) {
-    Q.largest_party = 'PNF';
-}
-
 // seating percentage
 
 var total_available_seats = 0;
@@ -122,6 +115,12 @@ if (Q.year >= 1921) {
 for (var party of Q.parties) {
     Q[party + '_seating_disp'] = (Q[party + '_seating']/total_available_seats)*100;
     Q[party + '_seating_disp'] = Q[party + '_seating_disp'].toFixed(1);
+}
+
+// The largest party can only be the PNF or the PSI.
+Q.largest_party = 'PSI';
+if (Q.pnf_seating_disp >= Q.psi_seating_disp && Q.pnf_seating_disp >= Q.psri_seating_disp && Q.pnf_seating_disp >= Q.pcdi_seating_disp) {
+    Q.largest_party = 'PNF';
 }
 
 Q.ppi_min_relations = 40;
@@ -141,40 +140,40 @@ if (Q.ldr_leader === "Salandra") {
 }
 
 // coalitions
-Q.left_wing_coalition_r = Q.psi_r + Q.psri_r;
-Q.centre_left_coalition_r = Q.psi_r + Q.ldr_r + Q.psri_r;
-Q.socialist_catholic_coalition_r = Q.psi_r + Q.psri_r + Q.ppi_r;
-Q.grand_coalition_r = Q.psri_r + Q.ppi_r + Q.ul_r + Q.ldr_r + Q.ds_r + Q.other_r;
-Q.centre_right_coalition_r = Q.pnf_r + Q.ul_r;
-Q.anti_socialist_coalition_r = Q.pnf_r + Q.ul_r;
+Q.left_wing_coalition_r = Q.psi_seating_disp + Q.psri_seating_disp ;
+Q.centre_left_coalition_r = Q.psi_seating_disp + Q.ldr_seating_disp + Q.psri_seating_disp;
+Q.socialist_catholic_coalition_r = Q.psi_seating_disp + Q.psri_seating_disp + Q.ppi_seating_disp;
+Q.grand_coalition_r = Q.psri_seating_disp + Q.ppi_seating_disp + Q.ul_seating_disp + Q.ldr_seating_disp + Q.ds_seating_disp + Q.other_seating_disp;
+Q.centre_right_coalition_r = Q.pnf_seating_disp + Q.ul_seating_disp;
+Q.anti_socialist_coalition_r = Q.pnf_seating_disp + Q.ul_seating_disp;
 
 if (Q.pri_prominent == 1) {
-    Q.left_wing_coalition_r += Q.pri_r;
-    Q.centre_left_coalition_r += Q.pri_r;
-    Q.socialist_catholic_coalition_r += Q.pri_r;
+    Q.left_wing_coalition_r += Q.pri_seating_disp;
+    Q.centre_left_coalition_r += Q.pri_seating_disp;
+    Q.socialist_catholic_coalition_r += Q.pri_seating_disp;
 }
 
 if (Q.ds_leader === "Giuffrida" || (Q.ds_leader === "Colonna" && Q.largest_party === "PSI")) {
-    Q.left_wing_coalition_r += Q.ds_r;
-    Q.centre_left_coalition_r += Q.ds_r;
-    Q.socialist_catholic_coalition_r += Q.ds_r;
+    Q.left_wing_coalition_r += Q.ds_seating_disp;
+    Q.centre_left_coalition_r += Q.ds_seating_disp;
+    Q.socialist_catholic_coalition_r += Q.ds_seating_disp;
     Q.ds_allies = 1;
 } 
 
 if (Q.ds_leader === "Carnazza" || (Q.ds_leader === "Colonna" && Q.largest_party === "PNF")) {
-    Q.centre_right_coalition_r += Q.ds_r;
-    Q.anti_socialist_coalition_r += Q.ds_r;
+    Q.centre_right_coalition_r += Q.ds_seating_disp;
+    Q.anti_socialist_coalition_r += Q.ds_seating_disp;
     Q.ds_enemies = 1;
 }
 
 if (Q.ldr_leader === "Salandra") {
-    Q.centre_right_coalition_r += Q.ldr_r;
-    Q.anti_socialist_coalition_r += Q.ldr_r;
+    Q.centre_right_coalition_r += Q.ldr_seating_disp;
+    Q.anti_socialist_coalition_r += Q.ldr_seating_disp;
     Q.ldr_enemies = 1;
 }
 
 if (Q.ul_leader === "Giolitti") {
-    Q.centre_left_coalition_r += Q.ul_r;
+    Q.centre_left_coalition_r += Q.ul_seating_disp;
     Q.ul_allies = 1;
 }
 
@@ -223,21 +222,21 @@ Q.agriculture_minister_party = Q.ldr_name;
 Q.public_education_minister = 'Berenini';
 Q.public_education_minister_party = 'PSRI';
 
-Q.leverage = Q.psi_r;
+Q.leverage = Q.psi_seating_disp;
 
-Q.bn_r = 0;
+Q.bn_seating_disp = 0;
 Q.str_change_bn = 0;
 
 if (Q.ul_in_bn == 1) {
-    Q.bn_r += Q.ul_r;
+    Q.bn_seating_disp += Q.ul_seating_disp;
     Q.str_change_bn += parseFloat(Q.str_change_ul);
 }
 if (Q.ds_in_bn == 1) {
-    Q.bn_r += Q.ds_r;
+    Q.bn_seating_disp += Q.ds_seating_disp;
     Q.str_change_bn += parseFloat(Q.str_change_ds);
 }
 if (Q.pnf_in_bn == 1) {
-    Q.bn_r += Q.pnf_r;
+    Q.bn_seating_disp += Q.pnf_seating_disp;
     Q.str_change_bn += parseFloat(Q.str_change_pnf);
 }
 
@@ -249,11 +248,11 @@ for (var party of Q.parties) {
 }
 Q.election_records.push(election_result);
 !}
-on-departure: fasci_urgency = 1 if (fasci_urgency == 0 and pnf_r >= 15)
+on-departure: fasci_urgency = 1 if (fasci_urgency == 0 and pnf_seating_disp >= 15)
 on-display: {!
 data = []
 
-if (Q.pcdi_formed && Q.pcdi_r) {
+if (Q.pcdi_formed && Q.pcdi_seating_disp) {
     data.push({
         "id": "pcdi",
         "legend": "PCD'I",
@@ -269,7 +268,7 @@ data.push({
     "seats": Math.round(Q.psi_seating),
 });
 
-if (Q.psu_formed && Q.psu_r) {
+if (Q.psu_formed && Q.psu_seating_disp) {
     data.push({
         "id": "psu",
         "legend": "PSU",
@@ -278,7 +277,7 @@ if (Q.psu_formed && Q.psu_r) {
     });
 }
 
-if (Q.pri_prominent && Q.pri_r) {
+if (Q.pri_prominent && Q.pri_seating_disp) {
     data.push({
         "id": "pri",
         "legend": "PRI",
@@ -294,7 +293,7 @@ data.push({
         "seats": Math.round(Q.psri_seating),
 });
 
-if (Q.ds_in_bn != 1 && Q.ds_r) {
+if (Q.ds_in_bn != 1 && Q.ds_seating_disp) {
     data.push({
         "id": "ds",
         "legend": "DS",
@@ -317,7 +316,7 @@ data.push({
         "seats": Math.round(Q.ldr_seating),
 });
 
-if (Q.bn_formed === 1 && Q.bn_r) {
+if (Q.bn_formed === 1 && Q.bn_seating_disp) {
     data.push({
         "id": "bn",
         "legend": "BN",
@@ -326,7 +325,7 @@ if (Q.bn_formed === 1 && Q.bn_r) {
     })
 }
 
-if (Q.ul_in_bn != 1 && Q.ul_r) {
+if (Q.ul_in_bn != 1 && Q.ul_seating_disp) {
     data.push({
         "id": "ul",
         "legend": "UL",
@@ -335,7 +334,7 @@ if (Q.ul_in_bn != 1 && Q.ul_r) {
     });
 }
 
-if (Q.pnf_in_bn != 1 && Q.pnf_r) {
+if (Q.pnf_in_bn != 1 && Q.pnf_seating_disp) {
     data.push({
         "id": "pnf",
         "legend": "PNF",
@@ -415,7 +414,7 @@ Centre-Right Coalition (PNF + [+ ul_name +][? if ds_enemies: + DS?][? if ldr_ene
 
 Anti-Socialist Coalition (PNF + [+ ul_name +][? if ds_enemies: + DS?][? if ldr_enemies: + [+ ldr_name +]?]): [+ anti_socialist_coalition_r +]%
 
-[? if fasci_urgency <= 2 and pnf_r >= 15 : The rapid rise in National Fascist Party votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest obstacle to socialism in Italy. ?]
+[? if fasci_urgency <= 2 and pnf_seating_disp >= 15 : The rapid rise in National Fascist Party votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest obstacle to socialism in Italy. ?]
 
 There are some potential coalition arrangements.
 
@@ -431,8 +430,8 @@ There are some potential coalition arrangements.
 
 @psi_majority
 title: PSI majority alone
-subtitle: PSI: [+ psi_r +]%
-view-if: psi_r >= 50
+subtitle: PSI: [+ psi_seating_disp +]%
+view-if: psi_seating_disp >= 50
 on-arrival: {!
 Q.prime_minister = "Turati"; 
 Q.prime_minister_party = "PSI";
@@ -517,9 +516,9 @@ Who should we select to be Prime Minister?
 
 @centre_left_coalition
 title: Open negotiations with the Liberal parties.
-subtitle: PSI + PSRI + [+ ldr_name +][? if pri_prominent : + PRI?][? if ds_allies : + DS?][? if ul_allies: + [+ ul_name +]?]: ([+ centre_left_coalition_r +]%). [? if (((centre_left_coalition_r + ul_r) >= 50) and (centre_left_coalition_r <= 50)) and not ul_allies : We will have to negotiate with the [+ ul_name +] to secure a majority coalition. ?]
+subtitle: PSI + PSRI + [+ ldr_name +][? if pri_prominent : + PRI?][? if ds_allies : + DS?][? if ul_allies: + [+ ul_name +]?]: ([+ centre_left_coalition_r +]%). [? if (((centre_left_coalition_r + ul_seating_disp) >= 50) and (centre_left_coalition_r <= 50)) and not ul_allies : We will have to negotiate with the [+ ul_name +] to secure a majority coalition. ?]
 unavailable-subtitle: PSI + PSRI + [+ ldr_name +][? if pri_prominent : + PRI?][? if ds_allies : + DS?][? if ul_allies: + [+ ul_name +]?]: ([+ centre_left_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ldr_relation < ldr_min_relations : We do not have adequate relations with the [+ ldr_name +]. ?][? if liberal_coalition_failed : The Liberals are unwilling to accept another coalition right after the previous one failed. ?][? if southern_land_reformed = 1 : The [+ ldr_name +] has vowed against coalitions with us since our southern land reforms. ?]
-view-if: centre_left_coalition_r >= 50 or ((centre_left_coalition_r + ul_r >= 50) and not ul_allies)
+view-if: centre_left_coalition_seating_disp >= 50 or ((centre_left_coalition_r + ul_seating_disp >= 50) and not ul_allies)
 choose-if: participating = 1 and ldr_relation >= ldr_min_relations and ldr_negotiations_failed = 0 and southern_land_reformed = 0
 on-arrival: {!
 if (Q.centre_left_coalition_r >= 50) {
@@ -574,7 +573,7 @@ if (Q.centre_left_coalition_r >= 50) {
 }
 !}
 on-departure: liberal_negotiations = 0;
-go-to: liberal_demands if centre_left_coalition_r >= 50; sonnino_demands if ((centre_left_coalition_r + ul_r >= 50) and not ul_allies)
+go-to: liberal_demands if centre_left_coalition_r >= 50; sonnino_demands if ((centre_left_coalition_r + ul_seating_disp >= 50) and not ul_allies)
 
 @socialist_catholic_coalition 
 title: Open negotiations with the People's Party.
@@ -629,10 +628,10 @@ on-departure: catholic_negotiations = 0
 go-to: catholic_demands
 
 @grand_coalition
-title: [? if (socialist_catholic_coalition_r >= 50) or (centre_left_coalition_r > 50 and ul_allies) or ((centre_left_coalition_r + ul_r > 50) and (not ul_allies)) : Refuse to form a government, and let the other parties assume responsibility. ?][? if (socialist_catholic_coalition_r < 50) or (centre_left_coalition_r < 50 and ul_allies) or ((centre_left_coalition_r + ul_r < 50) and (not ul_allies)) : We are unable to form a government. The task is handed over to the Liberals. ?]
+title: [? if (socialist_catholic_coalition_r >= 50) or (centre_left_coalition_r > 50 and ul_allies) or ((centre_left_coalition_r + ul_seating_disp > 50) and (not ul_allies)) : Refuse to form a government, and let the other parties assume responsibility. ?][? if (socialist_catholic_coalition_r < 50) or (centre_left_coalition_r < 50 and ul_allies) or ((centre_left_coalition_r + ul_seating_disp < 50) and (not ul_allies)) : We are unable to form a government. The task is handed over to the Liberals. ?]
 view-if: centre_right_coalition_r < 50 and anti_socialist_coalition_r < 50
 subtitle: PPI + [+ ldr_name +] + [+ ul_name +] + DS + Others ([+ grand_coalition_r +]%). 
-go-to: grand_coalition_yes if (socialist_catholic_coalition_r < 50) or (centre_left_coalition_r < 50 and ul_allies) or ((centre_left_coalition_r + ul_r < 50) and (not ul_allies)) 
+go-to: grand_coalition_yes if (socialist_catholic_coalition_r < 50) or (centre_left_coalition_r < 50 and ul_allies) or ((centre_left_coalition_r + ul_seating_disp < 50) and (not ul_allies)) 
 
 Are we sure we wish to give up our opportunity to form the government?
 
@@ -686,7 +685,7 @@ if (Q.ldr_enemies == 1) {
 }
 Q.public_works_minister_party = "PNF";
 !}
-view-if: centre_right_coalition_r >= 50 and ul_r + ldr_r >= pnf_r 
+view-if: centre_right_coalition_r >= 50 and ul_seating_disp + ldr_seating_disp >= pnf_seating_disp 
 
 @anti_socialist_coalition
 title: Anti-Socialist Coalition
@@ -737,7 +736,7 @@ if (Q.ldr_enemies == 1) {
 }
 Q.public_works_minister_party = "PNF";
 !}
-view-if: anti_socialist_coalition_r >= 50 and pnf_r > ul_r + ldr_r
+view-if: anti_socialist_coalition_r >= 50 and pnf_seating_disp > ul_seating_disp + ldr_seating_disp
 
 It seems our radicalism and abstentionism has pushed the Liberals to ally with the National Fascist Party, as a junior partner to their list. [+ pnf_leader +] has made himself crucial to this coalition, and been able to come out on top in the inter-party struggle, being appointed Prime Minister by the King.
 
