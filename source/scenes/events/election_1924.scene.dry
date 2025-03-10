@@ -137,7 +137,7 @@ if (party_majority_num >= 25) {
 
 for (var party of Q.parties) {
     Q[party + '_seating_disp'] = (Q[party + '_seating']/535)*100;
-    Q[party + '_seating_disp'] = Q[party + '_seating_disp'].toFixed(1);
+    Q[party + '_seating_disp'] = parseFloat(Q[party + '_seating_disp'].toFixed(1));
 }
 
 // The largest party can only be the PNF or the PSI.
@@ -163,7 +163,7 @@ if (Q.ldr_leader === "Salandra") {
 }
 
 // coalitions
-Q.left_wing_coalition_r = Q.psi_seating_disp + Q.psri_seating_disp ;
+Q.left_wing_coalition_r = Q.psi_seating_disp + Q.psri_seating_disp;
 Q.centre_left_coalition_r = Q.psi_seating_disp + Q.ldr_seating_disp + Q.psri_seating_disp;
 Q.socialist_catholic_coalition_r = Q.psi_seating_disp + Q.psri_seating_disp + Q.ppi_seating_disp;
 Q.grand_coalition_r = Q.psri_seating_disp + Q.ppi_seating_disp + Q.ul_seating_disp + Q.ldr_seating_disp + Q.ds_seating_disp + Q.other_seating_disp;
@@ -252,15 +252,15 @@ Q.str_change_bn = 0;
 
 if (Q.ul_in_bn == 1) {
     Q.bn_seating_disp += Q.ul_seating_disp;
-    Q.str_change_bn += parseFloat(Q.str_change_ul);
+    Q.str_change_bn += (Q.str_change_ul);
 }
 if (Q.ds_in_bn == 1) {
     Q.bn_seating_disp += Q.ds_seating_disp;
-    Q.str_change_bn += parseFloat(Q.str_change_ds);
+    Q.str_change_bn += (Q.str_change_ds);
 }
 if (Q.pnf_in_bn == 1) {
     Q.bn_seating_disp += Q.pnf_seating_disp;
-    Q.str_change_bn += parseFloat(Q.str_change_pnf);
+    Q.str_change_bn += (Q.str_change_pnf);
 }
 
 Q.str_change_bn = Q.str_change_bn.toFixed(1);
