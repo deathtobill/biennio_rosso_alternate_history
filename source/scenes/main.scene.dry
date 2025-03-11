@@ -81,7 +81,7 @@ max-cards: 3
 
 [? if year = 1922 and month = 2 and week = 3: The United Kingdom ends its protectorate and grants nominal independence to Egypt following the *Unilateral Declaration of Egyptian Independence* ?]
 
-[? if year = 1922 and month = 4 and week = 1: Joesph Stalin is appointed General Secretary of the Central Committee of the Soviet Communist Party. ?]
+[? if year = 1922 and month = 4 and week = 1: Joseph Stalin is appointed General Secretary of the Central Committee of the Soviet Communist Party. ?]
 
 [? if year = 1922 and month = 9 and week = 1: The Autodromo Nazionale di Monza motorsport race track officially opens in Monza. ?]
 
@@ -244,7 +244,7 @@ max-cards: 4
 
 [? if year = 1922 and month = 2 and week = 3: The United Kingdom ends its protectorate and grants nominal independence to Egypt following the *Unilateral Declaration of Egyptian Independence* ?]
 
-[? if year = 1922 and month = 4 and week = 1: Joesph Stalin is appointed General Secretary of the Central Committee of the Soviet Communist Party. ?]
+[? if year = 1922 and month = 4 and week = 1: Joseph Stalin is appointed General Secretary of the Central Committee of the Soviet Communist Party. ?]
 
 [? if year = 1922 and month = 9 and week = 1: The Autodromo Nazionale di Monza motorsport race track officially opens in Monza. ?]
 
